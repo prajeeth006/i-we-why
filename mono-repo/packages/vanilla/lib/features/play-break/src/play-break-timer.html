@@ -1,0 +1,9 @@
+@if (message) {
+    <div (click)="playBreakTrackingService.trackHeaderMessageContactUs(playBreakTimer?.playBreakInGc)">
+        <span
+            [innerHtml]="message | format: (remainingTime | vnTotalTime: 'short')"
+            [style]="messages?.cssStyle"
+            class="d-flex align-items-center justify-content-center txt-sm-v2 py-1 mx-2 mb-1">
+        </span>
+    </div>
+}

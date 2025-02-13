@@ -1,0 +1,25 @@
+@if (config.forms; as forms) {
+    <form [formGroup]="form" novalidate>
+        @switch (loginOption) {
+            @case (LoginOption.ConnectCardOption) {
+                @if (config.connectCard; as content) {
+                    <vn-connect-card-login [content]="content" (submit)="login()" (onBack)="onBack()" />
+                }
+            }
+            @case (LoginOption.DanskeSpilOption) {
+                <vn-danske-spil-login />
+            }
+            @default {
+                @if (forms[config.isMobileLoginEnabled ? 'mobilenumber' : 'username']; as content) {
+                    <vn-username [content]="content" [isMobileLoginEnabled]="config.isMobileLoginEnabled" />
+                }
+                @if (forms.password; as content) {
+                    <vn-password [content]="content" />
+                }
+            }
+        }
+        @if (forms.loginbutton; as content) {
+            <vn-login-button [content]="content" (onSubmit)="login()" />
+        }
+    </form>
+}

@@ -1,0 +1,31 @@
+<div class="am-inbox">
+    @if (useFastIconType === true) {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            displayMode="FastIcon"
+            badgePosition="FastIcon"
+            iconClass="ui-icon ui-icon-size-lg"
+            [badgeClass]="isCH ? 'badge badge-circle badge-size-sm badge-offset badge-t-r ch-accent' : 'badge-offset badge-size-sm theme-spot-filled'"
+            [processClick]="false"
+            (click)="processClick($event, item, false)" />
+    } @else {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            displayMode="icon"
+            badgePosition="icon"
+            iconClass="ui-icon ui-icon-size-lg"
+            [badgeClass]="isCH ? 'badge badge-circle badge-size-sm badge-offset badge-t-r ch-accent' : 'badge-offset badge-size-sm theme-spot-filled'"
+            [processClick]="false"
+            (click)="processClick($event, item, false)" />
+    }
+
+    @if (!isCH) {
+        <div class="inbox-count">
+            @if (newMessagesCount) {
+                <span class="inbox-count-txt">{{ newMessagesText }}</span>
+            }
+        </div>
+    }
+</div>

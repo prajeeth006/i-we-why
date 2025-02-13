@@ -1,0 +1,13 @@
+<div class="bb-tutorial-container" [ngClass]="item.class" [class.bb-active]="active">
+    @for (child of item.children; track trackByItem($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        @if (isTutorialTooltipsEnabled) {
+            <vn-tooltips
+                [tooltips]="tutorials"
+                (onNextClick)="nextClick()"
+                (onPreviousClick)="previousClick()"
+                [tooltipItem]="tutorialItem"
+                [itemName]="child.name" />
+        }
+    }
+</div>

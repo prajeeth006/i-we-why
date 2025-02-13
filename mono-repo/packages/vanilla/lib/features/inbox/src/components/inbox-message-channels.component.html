@@ -1,0 +1,15 @@
+<span class="game-section-title" [innerHtml]="sectionTitle"></span>
+@if (channelList && channelList.length) {
+    <span>
+        <span class="game-section-title"> (</span>
+        @for (channel of channelList; track trackByItem(i, channel); let i = $index; let isLast = $last) {
+            <span>
+                <span class="game-section-title" [innerHtml]="contentMessages[channelList[i]!] | trustAsHtml"> </span>
+                @if (!isLast) {
+                    <span [innerHtml]="'/' | trustAsHtml"></span>
+                }
+            </span>
+        }
+        <span class="game-section-title">)</span>
+    </span>
+}

@@ -1,0 +1,172 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page>
+            <ng-container header-content>
+                <gn-dark-theme-header-full
+                    [title]="vm?.latestSixResultsStaticContent?.contentParameters?.Title ?? ''"
+                    [racingImage]="vm?.latestSixResultsStaticContent?.darkThemeLatestResultImage?.src">
+                </gn-dark-theme-header-full>
+            </ng-container>
+            <ng-container body-content>
+                <div #latestResultBlock class="meetingResultBlock"></div>
+                <div class="latest-results__page">
+                    <ng-container *ngFor="let latestResult of latestTableResult?.latestResultsTable; let i = index">
+                        <ng-container
+                            *ngIf="
+                                (i + 1 < latestTwoResultCount && !isLatestFourResultTemplate) ||
+                                (i + 1 < latestFourResultCount && isLatestFourResultTemplate)
+                            ">
+                            <ng-container *ngIf="latestResult.page == pageDetails.currentPageNumber">
+                                <table id="customers" class="selection-table" *ngIf="latestResult?.runnerList?.length > 0">
+                                    <tr class="meeting-results-header">
+                                        <th class="runner-number">
+                                            <div id="eventdatetime">
+                                                {{ latestResult?.eventDateTime ? (latestResult?.eventDateTime | eventDatetimeChangeformat) : '' }}
+                                            </div>
+                                        </th>
+                                        <th class="runner-info">
+                                            <div class="event-details">
+                                                <div>
+                                                    <span id="EventName" class="event-name">{{ latestResult?.eventName }}</span>
+                                                </div>
+                                                <div class="run-count">
+                                                    <span id="RunnerCount" *ngIf="latestResult?.runnerCount">
+                                                        {{ latestResult?.runnerCount }}
+                                                        {{
+                                                            vm?.latestSixResultsStaticContent?.contentParameters?.RAN
+                                                                ? (vm?.latestSixResultsStaticContent?.contentParameters?.RAN | titlecase)
+                                                                : ''
+                                                        }}</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th class="runner-status">
+                                            <div
+                                                *ngIf="
+                                                    latestResult?.stewardsState ===
+                                                    vm?.latestSixResultsStaticContent?.contentParameters?.AmendedResult
+                                                "
+                                                id="eachWay"
+                                                class="each-way text-yellow">
+                                                {{ latestResult?.stewardsState | titlecase }}
+                                            </div>
+                                        </th>
+                                        <th id="ForeCast" class="forecast">
+                                            <div class="forecast-number">
+                                                {{
+                                                    vm?.latestSixResultsStaticContent?.contentParameters?.ForeCast
+                                                        ? (vm?.latestSixResultsStaticContent?.contentParameters?.ForeCast | titlecase)
+                                                        : ''
+                                                }}
+                                            </div>
+                                        </th>
+                                        <th id="TriCast" class="tricast">
+                                            <div class="tricast-number">
+                                                {{
+                                                    vm?.latestSixResultsStaticContent?.contentParameters?.TriCast
+                                                        ? (vm?.latestSixResultsStaticContent?.contentParameters?.TriCast | titlecase)
+                                                        : ''
+                                                }}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr class="meeting-results-data" *ngIf="latestResult?.runnerList?.length > 0">
+                                        <td>
+                                            <ul>
+                                                <li *ngFor="let runners of latestResult?.runnerList" id="runnerDetails">
+                                                    <span class="runner-position">
+                                                        <span *ngIf="runners?.isDeadHeat">
+                                                            {{ vm?.latestSixResultsStaticContent?.contentParameters?.DH ?? '' }}
+                                                        </span>
+                                                        <span *ngIf="runners?.position" id="Position">
+                                                            {{ runners?.position | runnerPositionSuffix }}
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li *ngFor="let runners of latestResult?.runnerList" id="runnerDetails">
+                                                    <span class="runner-details">
+                                                        <span id="RunnerNumber" class="selection-number">
+                                                            {{ runners?.categoryName }} {{ runners?.selectionRunnerNumber }}</span
+                                                        >
+                                                        <span id="HorseName" class="selection-name">
+                                                            {{ runners?.selectionName | titlecase }}
+                                                            <span id="Reserved" class="reserve-text"
+                                                                >{{
+                                                                    runners?.isReserved
+                                                                        ? '(' +
+                                                                          (vm.latestSixResultsStaticContent?.contentParameters?.NewDesignRes ?? '') +
+                                                                          ')'
+                                                                        : ''
+                                                                }}
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li *ngFor="let runners of latestResult?.runnerList" id="runnerDetails">
+                                                    <span id="Price" class="selection-current-price"
+                                                        >{{ runners?.price | marketPriceTransform }}
+                                                    </span>
+                                                    <span
+                                                        id="favorite"
+                                                        class="selction-favorite"
+                                                        [ngClass]="{ 'fav-bg': runners?.isJointFavorite }"
+                                                        *ngIf="!!runners?.jointFavorite">
+                                                        <span class="fav" *ngIf="runners?.jointFavorite == 'F'">
+                                                            {{ vm.latestSixResultsStaticContent?.contentParameters?.Favourite ?? '' }}</span
+                                                        >
+                                                        <span *ngIf="runners?.jointFavorite != 'F'">{{ runners?.jointFavorite }}</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="cast-column" id="foreCast">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4 forecast-number"
+                                                        [gnDividendsVScroll]="latestResult?.isForecastVerticalScroll"
+                                                        *ngIf="latestResult?.foreCast"
+                                                        id="ForeCastPrice">
+                                                        <span *ngFor="let foreCast of slashSeperator(latestResult?.foreCast)">{{ foreCast }}</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li class="cast-column" id="triCast">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4 tricast-number"
+                                                        [gnDividendsVScroll]="latestResult?.isForecastVerticalScroll"
+                                                        *ngIf="latestResult?.triCast"
+                                                        id="ForeCastPrice">
+                                                        <span *ngFor="let triCast of slashSeperator(latestResult?.triCast)">{{ triCast }}</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <gn-dark-theme-filler-page [pageName]="'latestresults'" [fillerPageMessage$]="fillerPageMessage$"></gn-dark-theme-filler-page>
+            </ng-container>
+            <ng-container footer-content *ngIf="vm?.latestResultsTable?.length > 0">
+                <gn-dark-theme-footer [leftSideText]="" [rightSideText]="pageDetails.paginationText"> </gn-dark-theme-footer>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

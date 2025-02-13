@@ -1,0 +1,48 @@
+<gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [title]="vm.horseRacingContent?.contentParameters?.TodaysMatchBets ?? ''"
+            [racingImage]="vm?.isVirtualEvent ? vm?.horseRacingContent?.racingVirtualImage?.src : vm?.horseRacingContent?.horseRacingImage?.src">
+            <ng-container raceStage-content>
+                <div class="tilted-card header-race-stage-wrap default-fontsize">
+                    <span class="tilted-text" id="matchBetStatus">{{
+                        vm.horseRacingContent?.contentParameters?.MatchBetsAvailableUntilTheOff ?? ''
+                    }}</span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+    <ng-container body-content>
+        <div class="match-bets__content">
+            <ul class="match-bet__selections">
+                <li id="event-info" class="match-bet__selections--row event-info">
+                    <span id="matchBetsInfo">{{ vm.eventTimePlusTypeName | titlecase }}</span>
+                </li>
+                <li *ngFor="let selection of vm.selections" id="eventSelection" class="match-bet__selections--row">
+                    <div id="selectionName" class="match-bet__selections--title">
+                        {{ selection.selectionName | truncateAndFormat }}
+                    </div>
+                    <div class="match-bet__selections--price-wrap">
+                        <ng-container *ngIf="selection.prices.price[0]">
+                            <div id="selectionprice" class="price-info selection-result tilted-card" autoAdjustFont>
+                                <span class="tilted-text">{{ selection.price | marketPriceTransform }}</span>
+                            </div>
+                        </ng-container>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-dark-theme-footer>
+            <ng-container left-side-content>
+                <span>{{
+                    vm.horseRacingContent?.contentParameters?.MatchBetsLeftSideText
+                        ? (vm.horseRacingContent?.contentParameters?.MatchBetsLeftSideText | sentenceCase)
+                        : ''
+                }}</span>
+            </ng-container>
+        </gn-dark-theme-footer>
+    </ng-container>
+</gn-dark-theme-base-page>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

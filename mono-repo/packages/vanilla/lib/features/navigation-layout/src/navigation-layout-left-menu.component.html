@@ -1,0 +1,14 @@
+<div class="nav-b-b">
+    @if (item) {
+        <nav class="nav flex-column">
+            @for (leftMenuItem of item.leftMenuItems | dsl | async; track trackByText($index, leftMenuItem)) {
+                <a
+                    class="nav-link dh"
+                    [class.active]="sourceItem && leftMenuItem.name === item.selectedLeftItem"
+                    (click)="processClick($event, leftMenuItem)">
+                    {{ leftMenuItem.text }}
+                </a>
+            }
+        </nav>
+    }
+</div>

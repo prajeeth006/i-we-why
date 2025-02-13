@@ -1,0 +1,20 @@
+@if (content(); as content) {
+    <vn-dialog [headerTitle]="content.title | format: getSelectedPlayBreakDuration(content?.validation)() : selectedPlayBreakStart()">
+        <ng-container content>
+            @if (content.children?.image; as imageItem) {
+                <vn-image [src]="imageItem.image.src" [imageClass]="imageItem.class" />
+            }
+            <div [vnDynamicHtml]="content.text | format: getSelectedPlayBreakDuration(content?.validation)()" class="pt-3"></div>
+        </ng-container>
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                @if (content.messages?.InfoButtonText || content.messages?.InfoButtonTextGc) {
+                    <div
+                        [innerHtml]="(playBreakInGc() ? content.messages?.InfoButtonTextGc : content.messages?.InfoButtonText) | trustAsHtml"
+                        (click)="contactUs()"></div>
+                }
+                <button class="btn btn-primary btn-md btn-mw" (click)="continue()">{{ content.messages?.OkButtonText }}</button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

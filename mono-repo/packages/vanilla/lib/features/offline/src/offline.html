@@ -1,0 +1,5 @@
+<div class="vn-offline">
+    <div class="offline-icon"></div>
+    <div class="offline-text" [vnDynamicHtml]="content().text || ''"></div>
+    <div class="btn btn-primary" (click)="refresh(true)">{{ content().messages?.CTA }}</div>
+</div>

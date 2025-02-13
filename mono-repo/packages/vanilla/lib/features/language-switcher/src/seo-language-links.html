@@ -1,0 +1,5 @@
+<div class="language-links">
+    @for (lang of languages; track trackByNativeName($index, lang)) {
+        <a [href]="lang.url">{{ lang.nativeName }}</a>
+    }
+</div>

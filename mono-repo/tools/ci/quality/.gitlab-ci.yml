@@ -1,0 +1,36 @@
+stages:
+  - quality
+
+lighthouse:
+  stage: quality
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-centos8-chrome:120
+  tags:
+    - linux-docker-runner
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  artifacts:
+    paths:
+      - lhci-reports/**
+  script:
+    - npm install -g @lhci/cli --registry https://artifactory.bwinparty.corp/artifactory/api/npm/npmjs.org
+    - pwsh -c '$env:LIGHTHOUSE_URLS.Split([Environment]::NewLine) | ForEach { lhci autorun --collect.numberOfRuns=3 --collect.settings.chromeFlags="--no-sandbox" --collect.url=$_ --upload.target=filesystem --upload.outputDir=lhci-reports --upload.reportFilenamePattern="%%HOSTNAME%%-%%PATHNAME%%-%%DATETIME%%.%%EXTENSION%%" }'
+    - echo "Uploaded To https://artifactory.bwinparty.corp:443/artifactory/bpty-nuget-local/frontend-lighthouse-analysis/monorepo"
+
+esbuild-bundle-analyze:
+  stage: quality
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-centos8-chrome:120
+  tags:
+      - linux-docker-runner
+  parallel:
+    matrix:
+      - APP:
+        - testweb-app
+  script:
+    - nvm use 20.10.0
+    - yarn install --immutable
+    - yarn nx run $APP:build:production --stats-json    
+    - npm install -g esbuild-visualizer
+    - esbuild-visualizer --metadata ./dist/build/packages/$APP/stats.json --filename $CI_COMMIT_SHORT_SHA.html
+    - jfrog rt u $CI_COMMIT_SHORT_SHA.html bpty-nuget-local/frontend-bundle-analysis/$APP/
+    - echo "Uploaded To https://artifactory.bwinparty.corp:443/artifactory/bpty-nuget-local/frontend-bundle-analysis/$APP/$CI_COMMIT_SHORT_SHA.html"

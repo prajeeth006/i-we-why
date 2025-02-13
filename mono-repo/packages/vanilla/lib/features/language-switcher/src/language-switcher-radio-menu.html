@@ -1,0 +1,18 @@
+<div class="language-switcher-radio-menu" [ngStyle]="{ 'grid-template-columns': '2fr' }">
+    @if (languageSwitcherService.getLanguageSwitcherData() | async; as languages) {
+        @for (lang of languages; track trackByNativeName($index, lang)) {
+            <div class="language-switcher-item-wrapper">
+                @if (lang.isActive) {
+                    <div class="language-switcher-item active">
+                        <vn-language-item [lang]="lang" />
+                    </div>
+                }
+                @if (!lang.isActive) {
+                    <a (click)="change(lang)" class="language-switcher-item">
+                        <vn-language-item [lang]="lang" />
+                    </a>
+                }
+            </div>
+        }
+    }
+</div>

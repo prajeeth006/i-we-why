@@ -1,0 +1,41 @@
+@if (loginConfig.fastLoginToggleEnabled && fields[0]; as field) {
+    <div class="form-control-us-switcher d-flex justify-content-between align-items-center">
+        <div class="d-flex us-switcher-label">
+            @if (fastLoginIconClasses[field.value]; as iconClass) {
+                <span [ngClass]="iconClass" class="theme-face-id us-switcher-label-icon d-flex align-items-center"></span>
+            }
+            <span class="us-switcher-label-text">{{ field.text }}</span>
+            @if (loginContentService.content.messages?.FastLoginInfo) {
+                <span class="theme-info-i d-flex align-items-center" [floatUi]="popper.content"></span>
+                <vn-popper-content cssClass="tooltip-info" #popper>
+                    <ng-container content>{{ loginContentService.content.messages?.FastLoginInfo | format: field.text }}</ng-container>
+                </vn-popper-content>
+            }
+        </div>
+        <div class="switcher-lg">
+            <ds-switch
+                name="autologin"
+                [attr.id]="field.value"
+                [checked]="loginService.fastLoginEnabled"
+                (checkedChange)="onValueChange($event ? field.value : fastLoginValues.FastLoginDisabled)" />
+        </div>
+    </div>
+} @else {
+    <div class="form-element">
+        <div
+            class="form-control-tabs-segmented-v2 form-control-tabs-container"
+            [ngClass]="{ 'three-tabs': fields?.length === 3, 'four-tabs': fields?.length === 4 }">
+            @for (field of fields; track $index) {
+                <input
+                    class="form-control-tabs-segmented-v2-input"
+                    type="radio"
+                    name="autologin"
+                    (change)="onValueChange($event.target.value)"
+                    [value]="field.value"
+                    [attr.id]="field.value"
+                    [checked]="field.checked" />
+                <label class="form-control-tabs-segmented-v2-label" [attr.for]="field.value">{{ field.text }}</label>
+            }
+        </div>
+    </div>
+}

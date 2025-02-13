@@ -1,0 +1,15 @@
+@if (deviceService.isMobilePhone) {
+    <lh-header-bar (onClose)="onHistoryBack()" [content]="item.title" />
+} @else {
+    <div class="custom-header" [ngClass]="customHeaderClass">
+        <div class="header-ctrl-l">
+            <vn-icon name="theme-arrow-left" extraClass="ui-icon ui-icon-size-lg ui-back d-flex align-items-center" (click)="onHistoryBack()" />
+        </div>
+        @if (item.title) {
+            <div class="header-ctrl-txt">{{ item.title }}</div>
+        }
+    </div>
+}
+<div class="pc-text pc-component" [ngClass]="item.class">
+    <div class="pc-txt" [vnDynamicHtml]="item.text"></div>
+</div>

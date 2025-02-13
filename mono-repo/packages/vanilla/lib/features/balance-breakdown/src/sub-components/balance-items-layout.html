@@ -1,0 +1,9 @@
+<div
+    class="list-nav px-wrapper"
+    [ngClass]="item.class"
+    [class.single-product]="balanceBreakdownService.isSingleProduct()"
+    [class.portal-center-wrapper]="!balanceContent.v2">
+    @for (child of item.children; track trackByItem($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+    }
+</div>

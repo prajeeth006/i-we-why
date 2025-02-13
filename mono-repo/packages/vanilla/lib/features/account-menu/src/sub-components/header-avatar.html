@@ -1,0 +1,37 @@
+@if (version > 2) {
+    <div class="ch-account-menu-v3__detail-container d-flex justify-content-center" [ngClass]="{ scrolled: scrolled }" (click)="restore()">
+        <div class="am-avatar-text ch-account-menu-v3__detail-name">
+            <div class="am-avatar-text-user">{{ userService.displayName }}</div>
+            <div class="am-anchor" [vnElementKey]="VanillaElements.ACCOUNT_MENU_HEADER_ANCHOR"></div>
+        </div>
+    </div>
+} @else {
+    <div class="am-avatar">
+        <div class="am-avatar-icon" [ngClass]="item.parameters['avatar-class']">
+            @if (!accountMenuVipService.isVip || !accountMenuVipService.vipIcon) {
+                <vn-icon [name]="iconClass" size="28" />
+            }
+            @if (accountMenuVipService.isVip && accountMenuVipService.vipIcon) {
+                <vn-image [src]="accountMenuVipService.vipIcon" [alt]="accountMenuVipService.vipLabel" imageClass="vip-icon" />
+            }
+        </div>
+        <div class="am-avatar-text">
+            <div class="am-avatar-text-user">{{ userService.displayName }}</div>
+            @if (accountMenuVipService.isVip) {
+                <div class="am-avatar-text-vip">
+                    <div class="vip-text">{{ item.resources.VipText }}</div>
+                    <ng-template #vipLevel>
+                        <div class="vip-level" [ngClass]="accountMenuVipService.vipLevel.toLowerCase()">{{ accountMenuVipService.vipLabel }}</div>
+                    </ng-template>
+                    @if (accountMenuVipService.vipUrl) {
+                        <a [href]="accountMenuVipService.vipUrl" class="vip-link">
+                            <ng-container *ngTemplateOutlet="vipLevel" />
+                        </a>
+                    } @else {
+                        <div class="vip-level" [ngClass]="accountMenuVipService.vipLevel.toLowerCase()">{{ accountMenuVipService.vipLabel }}</div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}

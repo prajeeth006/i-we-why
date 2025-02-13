@@ -1,0 +1,25 @@
+@import '../../../../global-style/all-variables';
+
+.screenPart {
+    width: 49.8%;
+    height: 49.5vh;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+.screenPartIframe {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
+}

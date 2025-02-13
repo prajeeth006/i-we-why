@@ -1,0 +1,53 @@
+<div class="generic-modal-title">
+    <div class="header-ctrl-wrapper">
+        <div class="header-ctrl d-flex justify-content-between align-items-center">
+            <div class="header-ctrl-txt text-truncate" [innerHtml]="bonusHeader | trustAsHtml"></div>
+            @if (rtmsConfig.showCloseButtonOnBonusTeaser && !message.content.restrictedOverlay) {
+                <div (click)="close()" class="header-ctrl-r">
+                    <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@if (message.content; as content) {
+    <div class="generic-modal-content-wrapper">
+        <div class="generic-modal-content">
+            <div class="over-content">
+                <vn-image
+                    [textClass]="'bonus-teaser'"
+                    [src]="content.bonusImage.src"
+                    [alt]="content.bonusImage.alt"
+                    [intro]="content.overlayImageIntroductoryText"
+                    [title]="content.overlayImageTitleText"
+                    [subtitle]="content.overlayImageSubtitleText"
+                    [titleFontSize]="content.overlayImageTitleFontSize"
+                    [textAlign]="content.overlayImageTextAlignment" />
+            </div>
+            <div class="generic-modal-overlay-content">
+                <div [innerHtml]="content.bonusText | trustAsHtml"></div>
+            </div>
+        </div>
+    </div>
+}
+@if (message.isShowTnc) {
+    <div class="generic-modal-tc">
+        <div class="generic-modal-tc-header d-flex align-items-center justify-content-between" (click)="tacExpanded()">
+            <span>{{ content.messages?.TermsAndConditions }}</span>
+            @if (isTacExpanded) {
+                <vn-icon name="theme-up" extraClass="toggle-tnc-icon" size="16" />
+            } @else {
+                <vn-icon name="theme-down" extraClass="toggle-tnc-icon" size="16" />
+            }
+        </div>
+        <div class="generic-modal-tc-body" [innerHtml]="message.tnCData | trustAsHtml"></div>
+    </div>
+}
+<div class="generic-modal-actions">
+    <button type="button" class="btn btn-light btn-md" (click)="decline()">
+        {{ content.messages?.Decline }}
+    </button>
+    <button type="button" class="btn btn-primary btn-md" (click)="accept()">
+        {{ message.isBonusTncAccepted && !message.isNoDepositBonus ? content.messages?.DepositNow : content.messages?.Accept }}
+    </button>
+</div>

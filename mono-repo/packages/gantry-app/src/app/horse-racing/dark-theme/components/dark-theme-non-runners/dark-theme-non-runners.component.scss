@@ -1,0 +1,86 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    width: 240px;
+    height: 129px;
+    @include flex-center;
+    font-size: $font-54;
+    padding: 0 12px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        width: 120px;
+        height: 64px;
+        font-size: $font-27;
+        border-width: 2.5px;
+    }
+}
+
+.nonrunner__header--content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    font-size: $font-40;
+    line-height: 34px;
+    font-weight: 500;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 16px;
+        font-size: $font-20;
+        line-height: 17px;
+    }
+}
+
+.nonrunner__table {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0px;
+    margin-top: 36px;
+    margin-bottom: 39px;
+    gap: 34px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 18px;
+        margin-bottom: 19px;
+        gap: 17px;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        height: 46px;
+        font-size: $font-64;
+        line-height: 46px;
+        font-weight: $fw-bold;
+
+        @include breakpoint(multidesktop) {
+            height: 23px;
+            font-size: $font-32;
+            line-height: 23px;
+        }
+    }
+}
+
+.nonrunner__meeting,
+.nonrunner__header--meeting {
+    flex-basis: 45%;
+    min-width: 45%;
+}
+
+.nonrunner__number,
+.nonrunner__header--number {
+    flex-basis: 10%;
+    min-width: 10%;
+    text-align: center;
+}
+
+.nonrunner__name,
+.nonrunner__header--runner {
+    flex-basis: 45%;
+    min-width: 45%;
+    text-align: right;
+}

@@ -1,0 +1,51 @@
+@if (loginConfig.betstation; as content) {
+    <div [class]="content.cssClass">
+        <lh-header-bar [content]="content.text" [titleCssClass]="content.parameters.titleCssClass" (onClose)="close()" />
+        <div class="login-screen-content p-4">
+            @if (content.image; as image) {
+                <vn-image [src]="image.src" [alt]="image.alt" [imageClass]="content.parameters.imageCssClass" />
+            }
+            @if (betstationPinForm; as pinForm) {
+                <div class="py-3 value-ticket-text mt-4">{{ pinForm.label }}</div>
+            }
+            <fieldset [formGroup]="form" class="mt-half form-base ten-top card-pin-form">
+                <input type="hidden" name="connectCardNumber" formControlName="connectCardNumber" />
+                <!--TODO: Extract validation in Sitecore-->
+                <div class="login-screen-input__out mt-2">
+                    <div class="login-screen-input__in">
+                        <input
+                            readonly
+                            type="password"
+                            name="pin"
+                            lhNumberOnly
+                            pattern="[0-9]*"
+                            formControlName="pin"
+                            inputmode="numeric"
+                            class="login-screen-input"
+                            autocomplete="current-password"
+                            maxlength="4" />
+                    </div>
+                </div>
+                @if (loginService.incorrectPin | async; as incorrectPin) {
+                    <div class="login-screen-pin-error" [innerHTML]="incorrectPin"></div>
+                }
+                <div class="login-screen-numpad">
+                    @for (digit of digits; track trackByItem($index, digit)) {
+                        <div>
+                            @if (digit >= 0) {
+                                <div class="login-screen-numpad-key" (click)="digitClick(digit)">{{ digit }}</div>
+                            } @else {
+                                <div class="login-screen-numpad-key" (click)="digitClick(-1)">Delete</div>
+                            }
+                        </div>
+                    }
+                </div>
+            </fieldset>
+            @if (betstationLoginButtonForm; as loginButton) {
+                <button class="login-screen-btn btn btn-primary" [disabled]="!form.valid || form.disabled" (click)="login($event)">
+                    {{ form.disabled ? commonMessages.PleaseWait : loginButton.label }}
+                </button>
+            }
+        </div>
+    </div>
+}

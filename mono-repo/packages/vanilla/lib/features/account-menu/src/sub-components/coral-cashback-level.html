@@ -1,0 +1,10 @@
+@if (model) {
+    <div class="coral-cashback-level-content">
+        <a [href]="model.url" class="coral-cashback-level-link">
+            @if (model.image; as image) {
+                <vn-image [src]="image.src" [alt]="image.alt" [width]="image.width" [height]="image.height" imageClass="coral-cashback-level-img" />
+            }
+        </a>
+        <div class="coral-cashback-level-txt">{{ model.text }}</div>
+    </div>
+}

@@ -1,0 +1,68 @@
+stages:
+  - .pre
+  - changelog
+  - beta
+  - official
+
+include:
+  - tools/ci/common/node-module-cache.tpl.yml
+
+.base-release:
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  extends:
+    - .node_modules-cache
+  tags:
+    - linux-docker-runner
+  variables:
+    GIT_DEPTH: 1000
+  before_script:
+    - git remote set-url origin git@vie.git.bwinparty.com:vanilla/monorepo.git
+    - yarn install --immutable
+  after_script:
+    - yarn ts-node --project ./tools/tsconfig.json tools/ci/release/scripts/send-teams-notification.ts
+  when: manual
+  rules:
+    - if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == "main" || $CI_COMMIT_REF_NAME =~ /^release/) && $VERSION_BUMP
+      variables:
+        VERSION_BUMP: $VERSION_BUMP
+    - if: ($CI_COMMIT_REF_NAME == "main" && $VERSION_BUMP == null)
+      variables:
+        VERSION_BUMP: "MINOR"
+    - if: ($CI_COMMIT_REF_NAME =~ /^release/ && $VERSION_BUMP == null)
+      variables:
+        VERSION_BUMP: "PATCH"
+
+changelog:
+  stage: changelog
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  extends:
+    - .node_modules-cache
+  tags:
+    - linux-docker-runner
+  variables:
+    GIT_DEPTH: 1000
+  script:
+    - apk add git-cliff
+    - git remote set-url origin git@vie.git.bwinparty.com:vanilla/monorepo.git
+    - git checkout $CI_COMMIT_REF_NAME
+    - git fetch --tags --force
+    - yarn ts-node --project ./tools/tsconfig.json tools/ci/release/scripts/changelog.ts --branch "$CI_COMMIT_REF_NAME"
+  artifacts:
+    reports:
+      dotenv: variables.env
+    paths:
+      - RELEASE_CHANGELOG.md
+
+publish_release:
+  stage: official
+  image: docker-public.dev.docker.env.works/gitlab-org/release-cli:latest
+  needs: ['changelog']
+  when: manual
+  tags:
+    - linux-docker-runner
+  script:
+    - echo "Publishing release for $TAG"
+  release:
+    name: 'Release $TAG'
+    tag_name: '$TAG'
+    description: RELEASE_CHANGELOG.md

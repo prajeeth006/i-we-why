@@ -1,0 +1,11 @@
+@if (item) {
+    <div class="ch ch-inbox ch-shade mt-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <div class="ch__font--title font-weight-bold" [innerHtml]="item.text"></div>
+                <div class="ch-inbox__content ch__font" [innerHtml]="inboxMessagesText"></div>
+            </div>
+            <vn-menu-item linkClass="btn btn-light btn-md flex-shrink-0" [item]="item" [text]="item.resources.TextCTA" />
+        </div>
+    </div>
+}

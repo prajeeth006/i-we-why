@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+
+html[data-domain*='ladbrokes.com'] {
+    --color-p1: rgba(240, 30, 40); //#ED1C24;
+    --color-p1-bg: rgba(240, 30, 40); //#ed1c2480;
+    --color-p1-text: rgba(26, 37, 51); //#1A2533;
+    --color-p1-dark: rgba(175, 22, 30); //#AF161E;
+    --color-p2: rgba(26, 37, 51); //#1A2533;
+    --color-p2-light: rgba(211, 211, 211); //#D3D3D3;
+
+    --black: rgba(0, 0, 0); //#000000;
+
+    --color-p4: rgba(102, 130, 80); //#668250;
+    --color-p4-light-bg: rgba(207, 227, 202); //#CFE3CA;
+
+    --color-p5: rgba(254, 206, 47); //#FECE2F;
+    --color-p6: rgba(243, 243, 243); //#F3F3F3;
+
+    --body-color-p2: rgba(26, 37, 51); //#1A2533;
+    --body-color-p2-light: rgba(220, 182, 184); //#DCB6B8;
+
+    --body-color-p2-light-bg: rgba(243, 213, 213); //#ebebeb;
+    --body-color-p2-light-bg-dark: rgba(149, 149, 149); //#959595;
+    --body-color-p2-lighter-bg: rgba(229, 236, 244); //#E5ECF4;
+
+    --white: rgba(255, 255, 255); //#ffffff;
+    --red: rgba(240, 30, 40); //#ED1C24;
+
+    --border-color: rgba(25, 35, 48); //#192330;
+    --border-color-drak: rgba(25, 35, 48); //#192330;
+    --text-light: rgba(149, 177, 206, 0.522); //#95b1ce85;
+    --body-color-txt: rgba(26, 37, 51); //#1A2533;
+
+    --time-stamp-color-text: rgba(255, 255, 255); //#ffffff;
+
+    --time-stamp-color-value: rgba(255, 255, 255); //#ffffff;
+
+    --bg-table-column-dark-color: 175, 22, 30;
+    --lead-title-color-text: rgb(153, 15, 21); //#990F15;
+
+    --feature-market-bg-color: rgba(229, 232, 238); //#E5E8EE
+    --feature-market-price-bg-color: rgba(206, 211, 222); //#CED3DE
+
+    --bg-image-dark: rgb(214, 215, 216); //#D6D7D8
+    --result-top-msg-bg-color: rgba(239, 51, 64); //#EF3340;
+
+    --early-price-bg-color: rgba(220, 182, 184); //#DCB6B8;
+    --betting-wo-bg-color: rgba(211, 211, 211); //#D3D3D3;
+    --top-finish-bg-color: rgba(207, 227, 202); //#CFE3CA;
+    --favorite-box: rgba(255, 242, 0); //#FFF200;
+    --favorite-border-color: rgba(255, 242, 0);
+    --bg-body: rgba(235, 235, 235); //#EBEBEB;
+    --market-price-text: var(--black);
+    --early-price-bg-arrow: var(--black); //#004779;
+    --betting-wo-bg-arrow: var(--black); //#EF3340;
+    --top-finish-bg-arrow: var(--black); //#68A51C;
+    --eps-amend-text-color: var(--color-p5);
+    --bg-v-2: rgba(243, 243, 243); //#F2F6FA;
+    --wins-text-color: var(--black);
+}

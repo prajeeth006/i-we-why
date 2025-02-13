@@ -1,0 +1,9 @@
+<div class="user-summary-container overlay-content">
+    <h2 class="user-summary-title">{{ content().template.title }}</h2>
+    @for (item of content().summaryItems; track trackByText($index, item)) {
+        <vn-user-summary-item [summary]="item" />
+    }
+    <div class="form-element btn-container">
+        <button class="btn btn-primary w-100" (click)="close()">{{ content().template.messages?.DialogOk }}</button>
+    </div>
+</div>

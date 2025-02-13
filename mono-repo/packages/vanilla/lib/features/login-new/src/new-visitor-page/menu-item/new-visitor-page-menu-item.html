@@ -1,0 +1,15 @@
+@if (useFastIconType === true) {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.NewVisitorPage"
+        displayMode="FastIcon"
+        [processClick]="false"
+        (click)="processClick($event, item)" />
+} @else {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.NewVisitorPage"
+        displayMode="icon"
+        [processClick]="false"
+        (click)="processClick($event, item)" />
+}

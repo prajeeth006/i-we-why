@@ -1,0 +1,30 @@
+@if (productMenuService.apps(); as apps) {
+    @if (apps.children?.slice(0, config.numberOfApps); as children) {
+        @if (children?.length) {
+            <div class="product-menu-apps">
+                @if (apps.text) {
+                    <div class="product-menu-apps-title">{{ apps.text }}</div>
+                }
+                <div class="product-menu-apps-tabs">
+                    @for (item of children; track trackByText($index, item)) {
+                        @if (useFastIconType === true) {
+                            <vn-menu-item
+                                [item]="item"
+                                [section]="MenuSection.ProductMenuApps"
+                                (onClick)="productMenuService.toggle(false)"
+                                [displayMode]="MenuDisplayMode.FastIcon"
+                                badgePosition="FastIcon" />
+                        } @else {
+                            <vn-menu-item
+                                [item]="item"
+                                [section]="MenuSection.ProductMenuApps"
+                                (onClick)="productMenuService.toggle(false)"
+                                [displayMode]="MenuDisplayMode.Icon"
+                                badgePosition="icon" />
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+}

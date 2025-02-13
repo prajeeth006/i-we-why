@@ -1,0 +1,11 @@
+<main>
+    <div id="main-content">
+        <vn-dynamic-layout-slot [slot]="SlotName.MainContentHeader" />
+
+        <router-outlet></router-outlet>
+
+        <vn-dynamic-layout-slot [slot]="SlotName.MainContentFooter" />
+
+        <vn-dynamic-layout-slot [slot]="SlotName.Background" />
+    </div>
+</main>

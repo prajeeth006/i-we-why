@@ -1,0 +1,12 @@
+<div class="h-balance navbar-user-info dh" [ngClass]="item.class" (click)="processClick()">
+    @if (showVisibilityToggle && isBalanceVisible) {
+        <i class="theme-hide-password"></i>
+    }
+    @if (!isBalanceVisible) {
+        <span>{{ item.text }}</span>
+    }
+    @if (balance && isBalanceVisible) {
+        <div class="user-balance">{{ balance | async | vnCurrency }}</div>
+    }
+</div>
+<div class="account-menu-anchor" [vnElementKey]="VanillaElements.TERMINAL_BALANCE_HEADER_ANCHOR"></div>

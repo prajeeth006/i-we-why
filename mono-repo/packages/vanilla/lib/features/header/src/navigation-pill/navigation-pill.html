@@ -1,0 +1,25 @@
+@if (item.parameters; as params) {
+    @if (useFastIconType === true) {
+        <vn-menu-item
+            [section]="MenuSection.HeaderPills"
+            [item]="item"
+            [addItemClassToLinkClasses]="false"
+            [linkClass]="item.class"
+            [badgeClass]="params.badgeClass"
+            badgePosition="FastIcon"
+            [imageClass]="params.imageClass"
+            [displayMode]="MenuDisplayMode.FastIcon"
+            (onClick)="navigationPillService.setActiveItem(item)" />
+    } @else {
+        <vn-menu-item
+            [section]="MenuSection.HeaderPills"
+            [item]="item"
+            [addItemClassToLinkClasses]="false"
+            [linkClass]="item.class"
+            [badgeClass]="params.badgeClass"
+            [badgePosition]="params.badgeType === BadgeType.Icon ? 'beforeText' : 'afterText'"
+            [imageClass]="params.imageClass"
+            [displayMode]="item.image ? MenuDisplayMode.Icon : undefined"
+            (onClick)="navigationPillService.setActiveItem(item)" />
+    }
+}

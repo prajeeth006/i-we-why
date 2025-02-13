@@ -1,0 +1,76 @@
+<!-- playerinbox details -->
+<!-- TODO: remove player-inbox-item-details and player-inbox-message-container classes when cleaning the not responsive layout -->
+@if (message) {
+    <div class="inbox-content player-inbox-message-container inbox-message-container pc-txt">
+        <div class="position-relative inbox-message-img" [ngClass]="{ 'no-image': !message.content.detailImage }">
+            @if (message.content.detailImage) {
+                <lh-inbox-cta-action [inboxMessage]="message" [inboxCtaActionMessages]="content.messages" (action)="inboxCtaActions($event)">
+                    @if (renderImageLink()) {
+                        <a [href]="getDetailImageLink()" class="ctaImageLink">
+                            <ng-template [ngTemplateOutlet]="detailImage" />
+                        </a>
+                    }
+                    @if (!renderImageLink()) {
+                        <ng-template [ngTemplateOutlet]="detailImage" />
+                    }
+                </lh-inbox-cta-action>
+            }
+            @if (message.content.headerTermsAndConditionsInbox) {
+                <div class="tc-overlay" [innerHtml]="message.content.headerTermsAndConditionsInbox"></div>
+            }
+        </div>
+        <div class="d-flex flex-row align-items-center">
+            <span class="text-muted" [innerHtml]="message.createdDate"></span>
+            @if (message.isExpired) {
+                <span class="badge badge-secondary ml-2" [innerHtml]="content.messages?.MessageExpired"></span>
+            }
+        </div>
+        <p class="font-weight-bold" [innerHtml]="message.content.detailTitle | trustAsHtml"></p>
+        <lh-inbox-cta-action
+            [detailContent]="message.content.detailDescription"
+            [inboxMessage]="message"
+            [inboxCtaActionMessages]="content.messages"
+            (action)="inboxCtaActions($event)" />
+        @if (!showJumioTriggerButton && showCallToActionButton) {
+            <lh-inbox-cta-action
+                class="player-inbox-item-cta ctaaction"
+                [detailContent]="message.content.detailCallToAction"
+                [inboxMessage]="message"
+                [inboxCtaActionMessages]="content.messages"
+                (action)="inboxCtaActions($event)" />
+        }
+        @if (showJumioTriggerButton) {
+            <div class="jumio-trigger-button">
+                <button (click)="triggerJumio()" type="button" class="btn btn-primary submit">{{ content.messages?.VerifyNowButton }}</button>
+            </div>
+        }
+        @if (showTermsAndConditions) {
+            <div class="player-inbox-item-tnc">
+                <div class="player-inbox-item-tnc-caption" (click)="toggleTacExpanded()">
+                    <p [innerHtml]="termsAndConditionsTitle | trustAsHtml"></p>
+                    @if (isTacExpanded) {
+                        <vn-icon name="theme-up" extraClass="toggle-tnc-icon" />
+                    } @else {
+                        <vn-icon name="theme-down" extraClass="toggle-tnc-icon" />
+                    }
+                </div>
+                <div class="player-inbox-item-tnc-details" [innerHtml]="termsAndConditionsData | trustAsHtml" [hidden]="!isTacExpanded"></div>
+            </div>
+        }
+        <lh-inbox-mobile-game-list [message]="message" [contentMessages]="content.messages" />
+        <lh-inbox-desktop-game-list [message]="message" [contentMessages]="content.messages" />
+    </div>
+}
+<ng-template #detailImage>
+    @if (message.content; as content) {
+        <vn-image
+            [imageClass]="'img-fluid'"
+            [textClass]="'vn-img'"
+            [src]="content.detailImage.detailImage"
+            [title]="content.inboxImageTitleText"
+            [intro]="content.inboxImageIntroductoryText"
+            [subtitle]="content.inboxImageSubtitleText"
+            [titleFontSize]="content.inboxImageTitleFontSize"
+            [textAlign]="content.inboxImageTextAlignment" />
+    }
+</ng-template>

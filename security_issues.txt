@@ -1,0 +1,45 @@
+The following is a list of security issues that Fortify can identify:
+
+Cross-Site Scripting (XSS)
+SQL Injection
+Command Injection
+Path Injection
+Regular Expression Injection
+HTTP Parameter Pollution
+File Inclusion
+Object Injection
+Remote Code Execution (RCE)
+Insecure Direct Object References (IDOR)
+Broken Authentication and Session Management
+Improper Access Control
+Improper Input Validation
+Security Misconfigurations
+Sensitive Data Exposure
+Use of Cryptographically Weak Algorithms
+Insecure Communication
+Denial of Service (DoS) Attacks
+Cross-Site Request Forgery (CSRF)
+XML External Entity (XXE) Injection
+Deserialization Vulnerabilities
+In addition to these common security issues, Fortify can also identify a wide range of other vulnerabilities, such as:
+
+Business Logic Vulnerabilities
+Information Leakage
+Resource Exhaustion Vulnerabilities
+Race Conditions
+Concurrency Vulnerabilities
+Cryptographic Vulnerabilities
+Code Quality Vulnerabilities
+Fortify also provides a taxonomy of security vulnerabilities, known as the "Seven Plus One" Pernicious Kingdoms. This taxonomy organizes vulnerabilities into seven main categories, based on their root cause:
+
+Input Validation and Representation
+API Abuse
+Security Features
+Time and State
+Errors
+Code Quality
+Encapsulation
+Environment
+The "Seven Plus One" taxonomy is useful for understanding the different types of security vulnerabilities that can exist in software, and for developing strategies to mitigate them.
+
+Fortify can be used to scan a variety of software assets, including source code, compiled binaries, and web applications. By identifying security issues early in the development process, Fortify can help organizations to build more secure software.

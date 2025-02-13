@@ -1,0 +1,6 @@
+@if (model) {
+    <div class="px-wrapper pc-txt pt-3 pb-3 shadow-sm">
+        <div class="font-weight-bold" [innerHtml]="model.title | trustAsHtml"></div>
+        <a [ngClass]="model.link.cssClass" [href]="model.link.url"><span [innerHtml]="model.link.text | trustAsHtml"></span></a>
+    </div>
+}

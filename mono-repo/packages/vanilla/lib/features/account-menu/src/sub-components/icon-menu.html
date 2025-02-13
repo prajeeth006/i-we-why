@@ -1,0 +1,39 @@
+@if (templateVersion === 1) {
+    <div class="list-nav px-wrapper">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}
+@if (templateVersion === 2) {
+    <div class="am-items" [ngClass]="item.class">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+        }
+    </div>
+}
+@if (templateVersion === 3) {
+    @if (accountMenuDrawerService.drawerPosition(); as drawerPosition) {
+        <div class="am-items" [ngClass]="item.class">
+            <div class="account-drawer" [style.height]="drawerPosition.height + 'px'">
+                <div class="account-drawer__container">
+                    <div
+                        vnSwipe
+                        (onSwipe)="onSwipe($event, drawerPosition.position)"
+                        (click)="setNextHeight(drawerPosition.position)"
+                        class="account-drawer__header">
+                        <span class="arrow-status-icon" [ngClass]="getIcon(drawerPosition.position)">
+                            <span class="left-bar"></span>
+                            <span class="right-bar"></span>
+                        </span>
+                    </div>
+                    <div #linkContainer class="account-drawer__link-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+                        @for (child of item.children; track trackByText($index, child)) {
+                            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

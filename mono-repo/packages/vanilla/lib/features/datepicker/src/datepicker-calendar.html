@@ -1,0 +1,47 @@
+@if (headerEnabled) {
+    <div class="vn-dp-header d-flex">
+        <span class="vn-dp-text">{{ rangeEnabled ? commonMessages.SelectDateRange : commonMessages.SelectDate }}</span>
+        <span class="vn-dp-close ml-auto" (click)="close()">
+            <a class="vn-dp-close-link">{{ commonMessages.Close }}</a>
+        </span>
+    </div>
+}
+
+<ngb-datepicker
+    class="vn-dp border-0"
+    [(ngModel)]="selected"
+    (ngModelChange)="onDateChange($event)"
+    outsideDays="hidden"
+    [dayTemplate]="dayTemplate"
+    [footerTemplate]="footerTemplate"
+    navigation="arrows"
+    #dpm>
+</ngb-datepicker>
+
+<ng-template #dayTemplate let-date let-today="today" let-focused="focused" let-selected="selected" let-disabled="disabled">
+    <div
+        class="vn-dp-day"
+        [class.today]="today"
+        [class.focused]="focused"
+        [class.disabled]="disabled"
+        [class.selected]="!rangeEnabled && (focused || date.equals(startDate))"
+        [class.hover]="date.equals(hoveredDate)"
+        [class.range-start]="rangeEnabled && date.equals(startDate)"
+        [class.range-end]="rangeEnabled && date.equals(endDate)"
+        [class.range-faded]="rangeEnabled && (isInsideRange(date) || isSelectingRange(date))"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null"
+        onselectstart="return false">
+        <span class="vn-dp-day-text">{{ date.day }}</span>
+    </div>
+</ng-template>
+
+<ng-template #footerTemplate>
+    @if (footerEnabled) {
+        <div class="form-element vn-dp-btn-container">
+            <button class="btn btn-primary btn-sm w-100" (click)="save()" [disabled]="rangeEnabled && !endDate">
+                {{ saveText || commonMessages.Save }}
+            </button>
+        </div>
+    }
+</ng-template>

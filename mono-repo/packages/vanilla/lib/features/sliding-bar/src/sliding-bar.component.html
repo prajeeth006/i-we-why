@@ -1,0 +1,27 @@
+<div [ngClass]="{ 'slider': !mobileView(), 'slider-touch': mobileView() }">
+    <div class="slider-wrapper">
+        <div class="slider-track">
+            <div #carousel class="slider-inner" [ngClass]="{ 'slider-inner-slide-left': !mobileView() }">
+                <ng-content />
+            </div>
+        </div>
+    </div>
+    @if (!mobileView()) {
+        <div class="btn-circle-wrapper">
+            @if (hasPrev() && items.length > 2) {
+                <ds-arrow (click)="prev()" size="medium" class="dh slider-control slider-prev">
+                    <ng-template #dsArrow>
+                        <vn-icon name="theme-left" />
+                    </ng-template>
+                </ds-arrow>
+            }
+            @if (hasNext() && items.length > 2) {
+                <ds-arrow (click)="next()" size="medium" class="dh slider-control slider-next">
+                    <ng-template #dsArrow>
+                        <vn-icon name="theme-right" />
+                    </ng-template>
+                </ds-arrow>
+            }
+        </div>
+    }
+</div>

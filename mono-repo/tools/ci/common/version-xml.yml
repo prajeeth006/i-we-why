@@ -1,0 +1,41 @@
+include:
+  - tools/ci/common/rules.yml
+
+version-xml:
+  stage: .pre
+  needs: ['version']
+  extends:
+    - .rules-on-success
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-centos8:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - echo $VERSION
+    - git --no-pager log --max-count=10 --pretty=oneline --pretty=format:"%H %s" > raw-entries.txt
+    - tr -d '\n' < raw-entries.txt > entries.txt #remove line breaks
+    - cat entries.txt
+    - CI_COMMIT_BRANCH="${CI_COMMIT_BRANCH:-$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}"
+    - |
+      if [[ "$VERSION" =~ ^(\d+)\.(\d+)\.(\d+)\.(\d+-\w+)$ ]] && [[ "${BASH_REMATCH[3]}" == "0" ]]; then
+        DX_SUCCESS=true
+      else
+        DX_SUCCESS=false
+      fi
+      toolchain metadata versionxml \
+        --hash $CI_COMMIT_SHA \
+        --hash-short $CI_COMMIT_SHORT_SHA \
+        --log-entries "$(cat entries.txt)" \
+        --last-commit "$CI_COMMIT_MESSAGE" \
+        --branch $CI_COMMIT_BRANCH \
+        --repository $CI_PROJECT_URL \
+        --revision $CI_PIPELINE_ID \
+        --output version.xml \
+        --version "$VERSION" \
+        --dxsuccess $DX_SUCCESS \
+        --dxpillar $DX_PILLAR \
+        --dxdomain $DX_DOMAIN \
+        --dxsubdomain $DX_SUBDOMAIN \
+        --dxteam $DX_TEAM
+  artifacts:
+    paths:
+      - version.xml

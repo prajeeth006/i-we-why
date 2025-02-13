@@ -1,0 +1,24 @@
+{
+    "name": "vanilla-testing",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/vanilla/testing/src",
+    "projectType": "library",
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/vanilla/testing/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/vanilla/testing/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    },
+    "tags": ["scope:vanilla", "type:testing"]
+}

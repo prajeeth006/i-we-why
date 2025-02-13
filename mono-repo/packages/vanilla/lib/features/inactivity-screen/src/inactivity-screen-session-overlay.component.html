@@ -1,0 +1,16 @@
+<vn-dialog [headerTitle]="messages.Overlay_Session_title" [showHeaderCloseIcon]="inactivityScreenConfig.showHeaderCloseButton" (onClose)="close()">
+    <ng-container content>
+        <div class="web-inactivity">
+            <div class="web-inactivity-text" [innerHtml]="text | trustAsHtml"></div>
+        </div>
+    </ng-container>
+
+    <ng-container actions>
+        <div class="generic-modal-actions no-shadow" [ngClass]="{ 'justify-content-center': messages.Overlay_Session_Ok }">
+            @if (inactivityScreenConfig.showOkButton && messages.Overlay_Session_Ok) {
+                <button class="btn btn-secondary btn-md" (click)="okClose()" [innerHtml]="messages.Overlay_Session_Ok | trustAsHtml"></button>
+            }
+            <button class="btn btn-primary btn-md" (click)="login()" [innerHtml]="messages.Overlay_Session_Login | trustAsHtml"></button>
+        </div>
+    </ng-container>
+</vn-dialog>

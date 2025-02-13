@@ -1,0 +1,12 @@
+@if (content(); as content) {
+    <lh-cross-product-layout>
+        <vn-header-bar [title]="content.title" (onBack)="onBackClick()" (onClose)="onCloseClick()" />
+        <div class="portal-center-wrapper pt-4">
+            <div [innerHtml]="content.text | trustAsHtml"></div>
+
+            @if (content.form?.button?.label; as buttonLabel) {
+                <button (click)="onButtonClick()" class="btn btn-light w-100 login" [innerHtml]="buttonLabel"></button>
+            }
+        </div>
+    </lh-cross-product-layout>
+}

@@ -1,0 +1,18 @@
+@if (config().resources.messages; as messages) {
+    <div class="generic-container-wrapper generic-container-wrapper--neutral">
+        <div class="generic-container-title">
+            <div class="header-ctrl-wrapper">
+                <div class="header-ctrl d-flex justify-content-between align-items-center">
+                    <div class="header-ctrl-txt" [innerHtml]="messages.Title | trustAsHtml"></div>
+                </div>
+            </div>
+        </div>
+        <div class="betstation-error-message">
+            <div class="betstation-error-message__text" [innerHtml]="text() | trustAsHtml"></div>
+        </div>
+        <div class="form-element btn-container">
+            <button class="btn btn-secondary w-100" (click)="continue()" [innerHtml]="messages.ContinueButtonText | trustAsHtml"></button>
+            <button class="btn btn-secondary w-100" (click)="logout()" [innerHtml]="messages.LogoutButtonText | trustAsHtml"></button>
+        </div>
+    </div>
+}

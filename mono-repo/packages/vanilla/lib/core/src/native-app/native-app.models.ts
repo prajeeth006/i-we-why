@@ -1,0 +1,101 @@
+﻿/**
+ * @description Provides supported CCB event type names
+ *
+ * @stable
+ */
+export enum NativeEventType {
+    APPFOREGROUND = 'APP_FOREGRND',
+    APPINITIALIZED = 'APP_INITIALIZED',
+    BALANCE_TRANSFER = 'BALANCE_TRANSFER',
+    CCBINITIALIZED = 'CCB_INITIALIZED',
+    DEVICEDETAILS = 'DEVICE_DETAILS',
+    FEATURE_LOADED = 'FEATURE_LOADED',
+    FINGERPRINT = 'FINGERPRINT',
+    FINGERPRINTSCANNER = 'FINGERPRINT_SCANNER',
+    GAMING_DECLARATION_ACCEPTED = 'GAMING_DECLARATION_ACCEPTED',
+    GEO_LOCATION_POSITION = 'GEO_LOCATION_POSITION',
+    GETBALANCE = 'GET_BALANCE',
+    GET_APPLICATION_SETTINGS = 'GET_APPLICATION_SETTINGS',
+    GET_GEO_LOCATION_POSITION = 'GET_GEO_LOCATION_POSITION',
+    INBOXCLOSED = 'INBOX_CLOSED',
+    IsLoggedIn = 'IS_LOGGED_IN',
+    LANGUAGEUPDATED = 'LanguageUpdated',
+    LOCATION = 'Location',
+    LOGIN = 'LOGIN',
+    LOGINFAILED = 'LOGIN_FAILED',
+    LOGIN_INTERCEPTOR = 'LOGIN_INTERCEPTOR',
+    LOGINPREFILL = 'LOGIN_PREFILL',
+    LOGINSCREENACTIVE = 'Login_Screen_Active',
+    LOGIN_USERNAME_PREFILL = 'LOGIN_USERNAME_PREFILL',
+    LOGOUT = 'LOGOUT',
+    MENUCLOSED = 'MENU_CLOSED',
+    MENU_ITEM_NAVIGATION = 'MENU_ITEM_NAVIGATION',
+    NAVIGATETO = 'NAVIGATE_TO',
+    NotificationCount = 'NOTIFICATION_COUNT',
+    OPENLOGINDIALOG = 'OPEN_LOGIN_DIALOG',
+    OPENREGISTRATIONSCREEN = 'openRegistrationScreen',
+    OPEN_CHAT = 'OPEN_CHAT',
+    OPEN_LOGIN_SCREEN = 'OPEN_LOGIN_SCREEN',
+    OSPrimerSelected = 'OSPrimerSelected',
+    PAGECLOSED = 'PAGE_CLOSED',
+    POSTLOGIN = 'POST_LOGIN',
+    PRELOGIN = 'PRE_LOGIN',
+    REMEMBER_ME_CLOSE = 'REMEMBER_ME_CLOSE',
+    REMEMBER_ME_LOGIN_FAILED = 'REMEMBER_ME_LOGIN_FAILED',
+    REMOVECOOKIE = 'REMOVE_COOKIE',
+    RETRIEVE_POST_LOGIN = 'RETRIEVE_POST_LOGIN',
+    SENSITIVEPAGE = 'SensitivePage',
+    SESSION_NOTIFICATION = 'SESSION_NOTIFICATION',
+    SESSION_NOTIFICATION_CONTINUE = 'SESSION_NOTIFICATION_CONTINUE',
+    SET_APPLICATION_SETTINGS = 'SET_APPLICATION_SETTINGS',
+    SHARE = 'SHARE',
+    SSO_LOGIN = 'SSO_LOGIN',
+    TRACKDEVICEIDFA = 'TRACK_DEVICE_IDFA',
+    TRIGGER_GEO_LOCATION = 'TRIGGER_GEO_LOCATION',
+    UPDATEBALANCE = 'UPDATE_BALANCE',
+    UPDATE_APPLICATION_SETTINGS = 'UPDATE_APPLICATION_SETTINGS',
+    USERBALANCE = 'UserBalance',
+    enableOSPrimer = 'enableOSPrimer',
+
+    // Betstation
+    BARCODESCANNED = 'BARCODESCANNED',
+    DEPOSIT_LIMIT_EXCEEDED = 'DEPOSIT_LIMIT_EXCEEDED',
+    DEVICE_FAILURE = 'DEVICE_FAILURE',
+    DEVICE_FIXED = 'DEVICE_FIXED',
+    EVENT_CAPTURE = 'EVENT_CAPTURE',
+    LARGE_CASH_INSERT = 'LARGE_CASH_INSERT',
+    NFCCARDSCANNED = 'NFCCARDSCANNED',
+    NFC_SCAN_FAILED = 'NFC_SCAN_FAILED',
+    RESET_TERMINAL = 'RESET_TERMINAL',
+    SCAN_VT_COMPLETE = 'SCAN_VT_COMPLETE',
+    SCAN_VT_ERROR = 'SCAN_VT_ERROR',
+    SESSION_ALERT = 'SESSION_ALERT',
+    SESSION_CONTINUE = 'SESSION_CONTINUE',
+    SESSION_EXIT = 'SESSION_EXIT',
+}
+
+/**
+ * @whatItDoes Represents an CCB event sent from or to a native app
+ *
+ * @stable
+ */
+export interface NativeEvent {
+    eventName: string;
+    parameters?: { [key: string]: any };
+    id?: string;
+}
+
+export interface NativeWindow {
+    messageToZendesk: (event: NativeEvent) => void;
+    messageToNative: (event: NativeEvent) => void;
+    external: {
+        NativeDispatch: (event: string, params: string) => void;
+    };
+    webkit?: {
+        messageHandlers?: {
+            observer?: {
+                postMessage: (event: string, params: string) => void;
+            };
+        };
+    };
+}

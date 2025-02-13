@@ -1,0 +1,7 @@
+<div class="product-switch-cool-off-container overlay-content">
+    <div class="product-switch-cool-off-title" [vnDynamicHtml]="title()"></div>
+    <div class="product-switch-cool-off-text" [vnDynamicHtml]="text()"></div>
+    <div class="product-switch-cool-off-actions">
+        <button class="btn btn-primary" (click)="confirm()">{{ content().messages?.OKButton }}</button>
+    </div>
+</div>

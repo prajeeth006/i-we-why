@@ -1,0 +1,90 @@
+# @WhatItDoes Generates and uploads disme artifact.
+
+# @Needs
+# $ZIP_DIRECTORY represents directory path where zip file is located
+# $ZIP_FILE_NAME represents name of compressed file without extension
+# $ZIP_FILE_EXTENSION represents zip file extension
+# $DISME_API_KEY represents disme api key
+# $SHORTCUT represents disme shortcut
+# $DOCUMENTNAME represents disme folder name
+
+# @OnSuccess Stores disme response as artifact
+# @OnFailure Fails task
+
+include:
+  - tools/ci/common/version.yml
+
+.disme-upload:
+  tags:
+    - windows-shell-runner
+    - pwsh
+  script:
+    - echo $VERSION
+    - echo $ZIP_DIRECTORY
+    - echo $ZIP_FILE_NAME
+    - echo $ZIP_FILE_EXTENSION
+    - echo $DISME_SHORTCUT
+    - $encodedDismeShortcut = [uri]::EscapeDataString($DISME_SHORTCUT) 
+    - echo $encodedDismeShortcut
+    - echo $DISME_DOCUMENTNAME
+    - $encodedDocumentName = [uri]::EscapeDataString($DISME_DOCUMENTNAME)
+    - echo $encodedDocumentName
+    - echo $CI_COMMIT_MESSAGE
+    - $commitMessage = [uri]::EscapeUriString($CI_COMMIT_MESSAGE)
+    - $commitMessage = $commitMessage.Replace("'","")
+    - $commitMessage.Length
+    - $currentZipFile = If($ZIP_DIRECTORY) { $ZIP_DIRECTORY + '/' + $ZIP_FILE_NAME + $ZIP_FILE_EXTENSION } else { $ZIP_FILE_NAME + $ZIP_FILE_EXTENSION }
+    - echo $currentZipFile
+    - $newFileName = $ZIP_FILE_NAME + '_' + $VERSION + $ZIP_FILE_EXTENSION
+    - echo $newFileName
+    - Rename-Item -Path $currentZipFile -NewName $newFileName
+    - $newZipFile = If($ZIP_DIRECTORY) { $ZIP_DIRECTORY + '/' + $newFileName } else { $newFileName }
+    - echo $newZipFile
+    - '$Result = (&"D:\buildprocess\tools\git_2.9.3\mingw32\bin\curl.exe" -g -s -S -k -H "Accept: application/json" -H "Api-key: $env:DismeServiceApiKey" --form "file1=@$newZipFile" "https://disme.bwin.corp/api/document_upload.php?shortcut=$encodedDismeShortcut&documentname=$encodedDocumentName&comment=[$env:CI_COMMIT_BRANCH][$env:GITLAB_USER_LOGIN][$commitMessage]") | ConvertFrom-Json'
+    - echo $Result | ConvertTo-Json > disme-upload-result.json
+    - echo $Result
+    - IF ($Result.success.ToString() -eq "False") { exit 1 }
+    - $documentId = $Result.result._documentId
+    - $url = "https://disme.prod.env.works/out/out.ViewDocument.php?documentid=$documentId"
+    - echo $url
+  artifacts:
+    when: always
+    paths:
+      - disme-upload-result.json
+    
+# @WhatItDoes Deploys a disme package with version and documentId.
+
+# @Needs
+# $DISME_API_KEY represents disme api key
+# $DISME_SHORTCUT represents disme shortcut
+# $DISME_ENVIRONMENT represents environment to deploy to
+# $DISME_SERVER represents server to deploy to
+# $DISME_VERSION version to deploy - read from disme-upload-result.xml
+# $DOCUMENT_ID document id to deploy - read from disme-upload-result.xml
+
+# @OnSuccess Deploy disme artifact with given documentid and version to given environment
+# @OnFailure Fails task
+
+.disme-deploy:
+  tags:
+    - windows-shell-runner
+    - pwsh
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - $UploadResult = Get-Content -Path .\disme-upload-result.json | ConvertFrom-Json
+    - $DOCUMENT_ID = $UploadResult.result._documentId
+    - echo $DOCUMENT_ID
+    - $DISME_VERSION = $UploadResult.result._version
+    - echo $DISME_VERSION
+    - echo $env:DismeServiceApiKey
+    - echo $env:DISME_SHORTCUT
+    - $encodedDismeShortcut = [uri]::EscapeDataString($DISME_SHORTCUT)
+    - echo $encodedDismeShortcut
+    - echo $env:DISME_ENVIRONMENT
+    - echo $env:DISME_SERVER
+    - $URL = "https://disme.prod.env.works/api/document_deploy.php?shortcut=$encodedDismeShortcut&version=$DISME_VERSION&documentid=$DOCUMENT_ID&changenumber=auto&changedescription=auto&env=$env:DISME_ENVIRONMENT&server=$env:DISME_SERVER"
+    - echo $URL
+    - $Result = Invoke-RestMethod -Method POST -Uri $URL -Headers @{"Api-Key" = "$env:DismeServiceApiKey"}
+    - echo $Result
+    - IF ($Result.success.ToString() -eq "False") { exit 1 }

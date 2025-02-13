@@ -1,0 +1,21 @@
+spec:
+  inputs:
+    target:
+---
+beta-$[[ inputs.target ]]:
+  stage: beta
+  extends: .base-release
+  needs: []
+  script:
+    - yarn nx run $[[ inputs.target ]] --versionSuffix build.$CI_PIPELINE_ID --branch $CI_COMMIT_REF_NAME --versionBump $VERSION_BUMP
+    - echo "BETA_VERSION_BUMP=$VERSION_BUMP" > release.env
+  artifacts:
+    reports:
+      dotenv: release.env
+
+official-$[[ inputs.target ]]:
+  stage: official
+  extends: .base-release
+  needs: ["beta-$[[ inputs.target ]]"]
+  script:
+    - yarn nx run $[[ inputs.target ]] -c official --branch $CI_COMMIT_REF_NAME --versionBump $BETA_VERSION_BUMP

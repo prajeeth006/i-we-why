@@ -1,0 +1,8 @@
+<vn-am-widget [hideSkeleton]="hideSkeleton" [item]="item" [mode]="mode">
+    @if (item?.resources.Title; as title) {
+        <div class="ch__font--title font-weight-bold mb-2" [innerHtml]="title | trustAsHtml"></div>
+    }
+    @if (item?.resources.Text; as text) {
+        <div class="ch__font--description" [innerHtml]="text | trustAsHtml"></div>
+    }
+</vn-am-widget>

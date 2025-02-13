@@ -1,0 +1,23 @@
+@if (accountMenuService.version === 5) {
+    <div class="ch-balance__details" [ngClass]="item.class" (click)="processClick($event, item)">
+        <div class="ch-balance__label">
+            {{ item.text }}
+            <span class="ch-balance__detail" [ngClass]="item.parameters['amount-class']">{{ balance | async | vnCurrency }}</span>
+        </div>
+    </div>
+} @else {
+    <div
+        class="ch"
+        [class.account-balance]="mainBalance"
+        [class.account-info-small]="!mainBalance"
+        [ngClass]="item.class"
+        (click)="processClick($event, item)">
+        <div [ngClass]="{ 'ch-account-menu-v3__info-small': !mainBalance, 'ch-account-menu-v3__balance': mainBalance && mode !== 'page' }">
+            <span [class.ch-account-menu-v3__info-small--opacity]="!mainBalance">{{ item.text }} </span>
+            <span [ngClass]="{ 'ch-accent font-weight-bold pr-1': mainBalance }" class="">{{ balance | async | vnCurrency }}</span>
+            @if (mainBalance && mode !== 'page' && !hideArrow) {
+                <vn-icon name="theme-right" size="10" />
+            }
+        </div>
+    </div>
+}

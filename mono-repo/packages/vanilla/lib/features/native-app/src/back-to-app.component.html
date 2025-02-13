@@ -1,0 +1,12 @@
+<div class="px-wrapper">
+    <vn-message-panel [scope]="MessageScope.BackToApp" />
+    <div id="backToApp">
+        <fieldset>
+            <section class="center-content">
+                <button class="btn btn-primary w-100 login" (click)="continueToApp()" [disabled]="wait()">
+                    {{ wait() ? commonMessages.PleaseWait : commonMessages.Continue }}
+                </button>
+            </section>
+        </fieldset>
+    </div>
+</div>

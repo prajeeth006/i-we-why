@@ -1,0 +1,20 @@
+@if (content(); as content) {
+    <vn-dialog [showHeaderCloseIcon]="true" [headerTitle]="content.title" (onClose)="close()">
+        <ng-container content>
+            @if (content.children?.image; as imageContent) {
+                <vn-image [src]="imageContent.image.src" [imageClass]="imageContent.class" />
+            }
+            <div [vnDynamicHtml]="content.text"></div>
+        </ng-container>
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button (click)="takeBreakLater()" class="btn btn-link btn-link-light btn-md">
+                    {{ content.messages?.CloseButtonText }}
+                </button>
+                <button (click)="takeBreakNow()" class="btn btn-primary btn-md">
+                    {{ content.messages?.OkButtonText }}
+                </button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

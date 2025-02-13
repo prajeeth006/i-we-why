@@ -1,0 +1,3 @@
+@for (child of items | dsl | async; track trackByText($index, child)) {
+    <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+}

@@ -1,0 +1,16 @@
+<div class="vn-donut">
+    <svg viewBox="0 0 42 42">
+        <circle class="vn-donut-hole" cx="21" cy="21" r="15.91549430918954"></circle>
+        <circle class="vn-donut-ring" cx="21" cy="21" r="15.91549430918954"></circle>
+        @for (segment of svgSegments; track $index) {
+            <circle
+                class="vn-donut-segment"
+                [ngClass]="segment.class"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                [attr.stroke-dasharray]="segment.dashArray"
+                [attr.stroke-dashoffset]="segment.dashOffset"></circle>
+        }
+    </svg>
+</div>

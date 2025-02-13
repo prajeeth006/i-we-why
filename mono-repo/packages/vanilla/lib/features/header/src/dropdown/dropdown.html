@@ -1,0 +1,28 @@
+<li class="tab-nav-item nav-item tab-nav-list" [ngClass]="{ 'show-nav-sub': showChildren }">
+    <vn-menu-item
+        (click)="toggle()"
+        [item]="item"
+        [section]="MenuSection.Header"
+        class="theme-arrow-down"
+        linkClass="tab-nav-link"
+        badgePosition="afterText"
+        badgeClass="badge badge-circle badge-t-r badge-offset badge-size-sm badge-danger" />
+    @if (item.children && showChildren) {
+        <ul class="tab-nav-sub">
+            @for (child of item.children | dsl | async; track trackByText($index, child)) {
+                <li class="tab-nav-sub-item">
+                    <vn-menu-item
+                        [item]="child"
+                        (click)="toggle()"
+                        [section]="MenuSection.Header"
+                        class="tab-nav-item nav-item"
+                        [ngClass]="child.class"
+                        [addItemClassToLinkClasses]="false"
+                        badgeClass="badge-size-sm badge-offset"
+                        badgePosition="afterText"
+                        linkClass="tab-nav-link" />
+                </li>
+            }
+        </ul>
+    }
+</li>

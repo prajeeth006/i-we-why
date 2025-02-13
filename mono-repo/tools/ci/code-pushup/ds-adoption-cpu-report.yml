@@ -1,0 +1,41 @@
+spec:
+  inputs:
+    projects:
+      description: "Projects to run Design System adoption Code PushUp reports against"
+---
+
+stages:
+  - code-pushup
+
+cpu-report:
+  stage: code-pushup
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  needs:
+    - pipeline: $PARENT_PIPELINE_ID
+      job: affected
+  variables:
+    GITLAB_API_ENDPOINT: "projects/$CI_PROJECT_ID/merge_requests/$CI_MERGE_REQUEST_IID/notes"
+  script:
+    - yarn install
+    - |
+      projects="$[[ inputs.projects ]]"
+      for project in $projects; do
+        yarn nx run "$project:code-pushup-ds-report"
+      done
+  after_script:
+    - |
+      projects="$[[ inputs.projects ]]"
+      for project in $projects; do
+        yarn ts-node --project ./tools/tsconfig.json ./tools/ci/common/scripts/create-or-update-comment.ts --projectId "$CI_PROJECT_ID" --mergeRequestIid "$CI_MERGE_REQUEST_IID" \
+        --notePrefix "DS adoption - $project" --noteBodyPath ".code-pushup/packages/$project/report.md"
+      done
+
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+      variables:
+        TARGET_SUB_DIR: latest
+    - if: $CI_MERGE_REQUEST_ID
+      variables:
+        TARGET_SUB_DIR: "$CI_PIPELINE_ID"

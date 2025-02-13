@@ -1,0 +1,12 @@
+@if (showErrors() && getMessage(); as message) {
+    <div class="custom-error m2-validation-messages theme-error-i">
+        <span class="m2-validation-message" [innerHtml]="message | trustAsHtml"></span>
+    </div>
+}
+@if (showSuccess()) {
+    <div class="m2-validation-messages theme-success-i">
+        @if (showErrors() && getMessage(); as message) {
+            <span class="m2-validation-message" [innerHtml]="message | trustAsHtml"></span>
+        }
+    </div>
+}

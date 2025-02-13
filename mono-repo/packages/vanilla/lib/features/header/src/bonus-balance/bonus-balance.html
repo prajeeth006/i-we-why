@@ -1,0 +1,10 @@
+<button ds-bonus-button inverse type="button" (click)="processClick($event)">
+    @if (item.text; as text) {
+        {{ text }}
+    }
+    <span slot="value">
+        @if (item.parameters.balance) {
+            {{ headerService.bonusBalance() | vnCurrency }}
+        }
+    </span>
+</button>

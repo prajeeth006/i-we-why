@@ -1,0 +1,111 @@
+.e2e-playwright-base:
+  extends: .node_modules-cache
+  image: docker-public.dev.docker.env.works/b2d-frontend-automation:1.0
+  tags:
+    - linux-docker-runner
+  artifacts:
+    when: always
+    paths:
+      - $OUTPUT_DIR/**
+
+.e2e:
+  extends: .e2e-playwright-base
+  timeout: 2 hours
+  parallel: 4
+  script:
+    - echo $BASE_URL
+    - yarn nx e2e $APP --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL -c "$PW_PROJECT" --skipInstall
+
+# My Account app e2e tests
+# Note: Setting variables at the top of the yml file breaks node_modules caching. Proxies are used only in my-account-app-e2e tests.
+# variables:
+#   CI_NODE_INDEX: $CI_NODE_INDEX
+#   CI_NODE_TOTAL: $CI_NODE_TOTAL
+#   http_proxy: http://10.152.193.28:3128
+#   https_proxy: http://10.152.193.28:3128
+#   no_proxy: 10.0.0.0/8
+
+.e2e-playwright-common:
+  extends: .e2e
+  script:
+    - PLAYWRIGHT_PROJECT_INFO=(${SCHEDULED_PLAYWRIGHT_PROJECTS//-/ })
+    - PW_TEST_TYPE="${PLAYWRIGHT_PROJECT_INFO[0]}"
+    - PW_ENV="${PLAYWRIGHT_PROJECT_INFO[1]}"
+    - PW_LABEL=${PLAYWRIGHT_PROJECT_INFO[2]}
+    - BYPASS_EXP="10.0.0.0/8"
+    - |
+      if [[ "$PW_ENV" =~ ^(qa81|qa81\.|beta|beta-)$ ]] && [[ "$PW_TEST_TYPE" == "e2e" ]]; then
+        BYPASS_EXP="${BYPASS_EXP},${PW_LABEL}"
+      elif [[ "$PW_TEST_TYPE" == "api" ]]; then
+        BYPASS_EXP="${BYPASS_EXP},ivycomptech.co.in"
+      fi
+    - export HTTP_PROXY=http://10.152.193.28:3128
+    - export HTTPS_PROXY=http://10.152.193.28:3128
+    - export http_proxy=http://10.152.193.28:3128
+    - export https_proxy=http://10.152.193.28:3128
+    - export NO_PROXY=$BYPASS_EXP
+    - export no_proxy=$BYPASS_EXP
+    - echo "Running on Lambdatest? - ${LAMBDATEST_ENABLED}"
+    - |
+      if [ "${LAMBDATEST_ENABLED}" == "true" ]; then
+        LT --user ${LAMBDATEST_USERNAME} --key ${LAMBDATEST_ACCESSKEY} --tunnelName lambdatest-dynamic-tunnel-${CI_PIPELINE_ID} --skip-upgrade --load-balanced &
+      fi
+    - yarn nx e2e ${APP} --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL -c "$PW_PROJECT" --skipInstall
+
+.e2e-merge-reports:
+  extends: .e2e-playwright-base
+  allow_failure: true
+  rules:
+    - when: always
+  script:
+    - export PLAYWRIGHT_JUNIT_OUTPUT_FILE=results.xml
+    - export PLAYWRIGHT_JSON_OUTPUT_FILE=json-merge-results.json
+    - cp $OUTPUT_DIR/test-results.json .
+    - npx playwright merge-reports --reporter html,junit,json $OUTPUT_DIR/blob-report
+    - echo report link 
+    - echo https://vanilla.vie.pages.bwinparty.corp/-/monorepo/-/jobs/${CI_JOB_ID}/artifacts/playwright-report/index.html
+  after_script:
+    - yarn ts-node --project ./tools/tsconfig.json tools/ci/playwright/scripts/send-teams-notification.ts
+    - yarn nx send-xray-report e2e-test-framework-reporting-xray-utils
+    - yarn nx send-email-notification e2e-test-framework-reporting-custom-reports-utils
+    - yarn nx append-to-html e2e-test-framework-reporting-custom-reports-utils
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/**
+      - test-results.json
+      - json-merge-results.json
+    expire_in: 2 days
+    reports:
+      junit: results.xml
+
+.e2e-merge-reports-multi-project:
+  extends: .e2e-playwright-base
+  allow_failure: true
+  rules:
+    - when: always
+  script:
+    - |
+      REPORT_DIRS=""
+      IFS=',' read -r -a project_outputs_array <<< "$PROJECT_OUTPUTS"
+      for project in "${project_outputs_array[@]}"; do
+        dir="$project/blob-report"
+        echo "Checking directory: $dir"
+        if [ -d "$dir" ]; then
+          REPORT_DIRS="$REPORT_DIRS $dir"
+        fi
+      done
+      if [ -n "$REPORT_DIRS" ]; then
+        npx playwright merge-reports --reporter html,junit $REPORT_DIRS
+      else
+        echo "No reports to merge"
+      fi
+  after_script:
+    - yarn ts-node --project ./tools/tsconfig.json tools/ci/playwright/scripts/send-teams-notification.ts
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/**
+    expire_in: 2 days
+    reports:
+      junit: results.xml

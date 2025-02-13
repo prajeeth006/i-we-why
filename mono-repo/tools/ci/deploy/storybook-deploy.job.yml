@@ -1,0 +1,54 @@
+spec:
+  inputs:
+    project:
+      description: "Project to deploy"
+    artifactsPath:
+      description: "Path where to find the project's artifacts"
+    deploy-suffix:
+      description: "The suffix added to the folder when the project is deployed"
+---
+storybook-$[[ inputs.project ]]-deploy:
+  extends: .storybook:deploy:base
+  variables:
+    TARGET_SERVER1: storybook@atvd1xangx105.apz.unix
+    TARGET_SERVER2: storybook@atvd1xangx106.apz.unix
+    TARGET_DIR: /opt/websrv/nginx-storybook/$TARGET_SUB_DIR
+    TARGET_DIR1: storybook@atvd1xangx105.apz.unix:/opt/websrv/nginx-storybook/$TARGET_SUB_DIR
+    TARGET_DIR2: storybook@atvd1xangx106.apz.unix:/opt/websrv/nginx-storybook/$TARGET_SUB_DIR
+    SOURCE_DIR: $[[ inputs.artifactsPath ]]
+  after_script:
+    - echo "BODY=$TARGET_DOMAIN" > data.env
+    - echo "GITLAB_API_ENDPOINT=projects/$CI_PROJECT_ID/merge_requests/$CI_MERGE_REQUEST_IID/notes" >> data.env
+    - cat data.env
+  artifacts:
+    reports:
+      dotenv: data.env
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+      variables:
+        TARGET_SUB_DIR: htdocs-storybook/latest$[[ inputs.deploy-suffix ]]
+        TARGET_DOMAIN: "https://storybook.entaingroup.corp/latest$[[ inputs.deploy-suffix ]]"
+    - if: $CI_MERGE_REQUEST_ID
+      variables:
+        TARGET_SUB_DIR: "htdocs-storybook-builds/$CI_PIPELINE_ID$[[ inputs.deploy-suffix ]]"
+        TARGET_DOMAIN: "https://storybook-builds.entaingroup.corp/$CI_PIPELINE_ID$[[ inputs.deploy-suffix ]]"
+
+storybook-$[[ inputs.project ]]-note:
+  stage: deploy
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  needs:
+    - storybook-$[[ inputs.project ]]-deploy
+  variables:
+    GIT_DEPTH: 1
+  script:
+    - echo "[$BODY]($BODY)" > body.md
+    - echo "" >> body.md
+    - echo "Updated at $(date)" >> body.md
+    - yarn install
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/common/scripts/create-or-update-comment.ts --projectId "$CI_PROJECT_ID" --mergeRequestIid "$CI_MERGE_REQUEST_IID" --notePrefix "Storybook - $[[ inputs.project ]]" --noteBodyPath "body.md" --showDetails
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+      when: on_success
+    - when: never

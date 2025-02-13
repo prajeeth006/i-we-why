@@ -1,0 +1,8 @@
+stages:
+  - .pre
+  - deploy
+  - test
+
+include:
+  - tools/ci/common/version.yml
+  - tools/ci/common/version-xml.yml

@@ -1,0 +1,27 @@
+.rules-on-success:
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == "main" || $CI_COMMIT_REF_NAME =~ /^release/
+      when: on_success
+    - when: never
+
+.rules-manual:
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == "main" || $CI_COMMIT_REF_NAME =~ /^release/
+      when: manual
+    - when: never
+
+.rules-never:
+  rules:
+    - when: never
+
+.rules-only-mr:
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+.rules-mr-main-release-no-schedule:
+  rules:
+    - if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == "main" || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+
+.rules-main-release-no-schedule-skip-first-commit:
+  rules:
+    - if: ($CI_COMMIT_REF_NAME == "main" || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule" && $CI_COMMIT_BEFORE_SHA != "0000000000000000000000000000000000000000"

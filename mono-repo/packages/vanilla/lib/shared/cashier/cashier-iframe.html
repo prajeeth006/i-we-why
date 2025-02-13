@@ -1,0 +1,3 @@
+<div #wrapper [attr.data-url]="url()" [ngClass]="cssClass()">
+    <vn-iframe #cashierIframe [class]="iframeClass()" [origin]="host()" [url]="url()" allowPaymentAttr="true" />
+</div>

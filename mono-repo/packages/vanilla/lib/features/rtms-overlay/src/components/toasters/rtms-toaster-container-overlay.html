@@ -1,0 +1,7 @@
+<div class="toast-container rtms-toast toast-bottom-center" (click)="toggleStacking()">
+    <div class="rtms-toast-stack dh" [ngClass]="{ 'rtms-toast-stack--closed': stacked }">
+        @for (toaster of toasterItems; track trackById($index, toaster)) {
+            <vn-rtms-toaster-item [notification]="toaster" [messagesContent]="messagesContent" (onClose)="close($event)" />
+        }
+    </div>
+</div>

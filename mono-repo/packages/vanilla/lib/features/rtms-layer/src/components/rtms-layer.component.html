@@ -1,0 +1,31 @@
+@if (rtmsLayerVisible) {
+    <div class="pc-text pc-component overflow-visible" [attr.sitecoreId]="currentMessage?.payload.baseTemplateId">
+        <div class="pc-richtext">
+            <div id="rtmsNotify">
+                @if (currentMessage?.type === 'OVERLAY' && !messageContent.content.useRewardsOverlay && !messageContent.isBonusTeaser) {
+                    <div class="rtms-popup-container">
+                        <div class="rtms-background"></div>
+                        <lh-rtms-layer-overlay [message]="messageContent" [content]="sitecoreContent" (closeEvent)="closeManually()" />
+                    </div>
+                }
+                @if (currentMessage?.type === 'OVERLAY' && messageContent.content.useRewardsOverlay && !messageContent.isBonusTeaser) {
+                    <div class="rtms-popup-container">
+                        <div class="rtms-background"></div>
+                        <lh-rtms-layer-custom-overlay [message]="messageContent" [content]="sitecoreContent" (closeEvent)="closeManually()" />
+                    </div>
+                }
+                @if (currentMessage?.type === 'OVERLAY' && messageContent.isBonusTeaser) {
+                    <div class="rtms-popup-container">
+                        <div class="rtms-background"></div>
+                        <lh-rtms-layer-bonus-teaser [message]="messageContent" [content]="sitecoreContent" (closeEvent)="closeManually()" />
+                    </div>
+                }
+                @if (currentMessage?.type === 'TOASTER') {
+                    <div vnSwipe (onSwipe)="onSwipe($event)" (click)="leaveMessageVisible()">
+                        <lh-rtms-layer-toaster [message]="messageContent" [content]="sitecoreContent" (onManualClose)="close()" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

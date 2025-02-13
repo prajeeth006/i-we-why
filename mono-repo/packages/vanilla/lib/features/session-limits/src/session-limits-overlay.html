@@ -1,0 +1,82 @@
+@if (config.version === 1) {
+    <vn-header-bar [showBack]="false" [showClose]="false" [title]="config.content.title" class="session-limits-header" />
+    <div class="session-limits-container overlay-content">
+        <div class="text-center session-limits-description">
+            {{ showPercentageElapsed() ? config.content.text : config.content.messages?.TimeoutLimitSubTitle }}
+        </div>
+        @if (showPercentageElapsed()) {
+            <div
+                class="session-limits-title text-center"
+                [innerHtml]="
+                    (sessionLimitsNotification().isSessionExpired
+                        ? config.content.messages?.SessionLimits
+                        : config.content.messages?.LoginDurationLimits
+                    ) | trustAsHtml
+                "></div>
+            <vn-session-limits-item class="session-limits-item" [limits]="sessionLimitsNotification().sessionLimits" />
+        }
+        @if (buttonsDisabled()) {
+            <div class="close-message text-center">{{ config.content.messages?.CloseMessage | format: countdown().toString() }}</div>
+        }
+        <div class="form-element btn-container">
+            <button (click)="close()" [disabled]="buttonsDisabled()" class="btn btn-light w-100">
+                {{ config.content.messages?.CloseButtonText }}
+            </button>
+            @if (!sessionLimitsNotification().isSessionExpired) {
+                <vn-menu-item [item]="config.updateCTA" [ngClass]="{ disabled: buttonsDisabled() }" linkClass="btn btn-primary w-100" />
+            }
+        </div>
+    </div>
+} @else if (config.version === 2) {
+    <div class="session-limits-container-v2 overlay-content p-0">
+        <div class="session-limits-title p-2 m-0" [innerHtml]="limitTypeReminder() | trustAsHtml"></div>
+        <vn-session-limits-item class="session-limits-item" [limits]="sessionLimitsNotification().sessionLimits" />
+        @if (buttonsDisabled()) {
+            <div class="close-message text-center">{{ config.content.messages?.CloseMessage | format: countdown().toString() }}</div>
+        }
+        <div class="form-element btn-container-v2 d-flex justify-content-center">
+            @if (!sessionLimitsNotification().isSessionExpired && !sessionLimitsNotification().fromSource) {
+                <vn-menu-item
+                    (onClick)="updateClick()"
+                    [item]="config.updateCTA"
+                    [ngClass]="{ disabled: buttonsDisabled() }"
+                    linkClass="btn btn-light btn-lg" />
+                <button (click)="close()" [disabled]="buttonsDisabled()" class="btn btn-primary btn-lg ml-3">
+                    {{ config.content.messages?.CloseButtonText }}
+                </button>
+            }
+            @if (sessionLimitsNotification().fromSource === 'postlogin') {
+                <button (click)="close()" [disabled]="buttonsDisabled()" class="btn btn-light btn-lg ml-3">
+                    {{ config.content.messages?.CloseButtonText }}
+                </button>
+                <button (click)="logOut()" class="btn btn-primary btn-lg ml-3">
+                    {{ config.content.messages?.LogOutButtonText }}
+                </button>
+            }
+        </div>
+    </div>
+} @else if (config.version === 3) {
+    <vn-header-bar [showBack]="false" [showClose]="false" [title]="config.content.title" class="session-limits-header" />
+    <div class="session-limits-container overlay-content">
+        <div class="session-limits-timeicon">
+            <div class="session-limits-icon-container">
+                @if (config.content.children?.image; as imageContent) {
+                    <vn-image [src]="imageContent['image'].src" [imageClass]="imageContent['class']" />
+                }
+            </div>
+        </div>
+        <vn-session-limits-item class="session-limits-item" [limits]="sessionLimitsNotification().sessionLimits" />
+        <div class="form-element btn-container session-limits-btn-container">
+            @if (config.content.messages?.CloseButtonText; as closeButtonText) {
+                <button ds-button (click)="close()" class="btn btn-primary btn-lg">
+                    {{ closeButtonText }}
+                </button>
+            }
+            @if (config.updateCTA; as updateButton) {
+                <a ds-button [href]="updateButton.url" (click)="trackUpdate()" class="btn btn-light btn-lg ds-btn-outline-primary">
+                    {{ updateButton.text }}
+                </a>
+            }
+        </div>
+    </div>
+}

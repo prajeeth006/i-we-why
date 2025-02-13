@@ -1,0 +1,30 @@
+@if (version <= 1) {
+    <vn-header-bar [title]="item.text" (onBack)="goBack()" (onClose)="close()" [showClose]="media.isActive('lt-md')" [showBack]="showBack" />
+    <div class="account-menu-wrapper">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}
+@if (version === 2 || version === 3 || version === 5) {
+    <vn-header-bar [title]="item.text" (onBack)="goBack()" (onClose)="close()" [showClose]="true" [showBack]="showBack" />
+    <div class="am-items am-menu-items" [ngClass]="item.parameters['list-layout-class']">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}
+@if (version === 4) {
+    <vn-header-bar
+        class="account-header-bar"
+        [title]="item.text"
+        (onBack)="goBack()"
+        (onClose)="close()"
+        [showClose]="showCloseV4"
+        [showBack]="showBackV4" />
+    <div class="account-menu-wrapper">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}

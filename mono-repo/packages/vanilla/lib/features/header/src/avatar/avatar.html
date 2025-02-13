@@ -1,0 +1,22 @@
+<div class="h-avatar navbar-user-info dh" [class.has-text]="item.text" [ngClass]="item.class" (click)="processClick($event)">
+    <div class="avatar avatar-bg" [ngClass]="avatarClass">
+        <div class="avatar-content">
+            @if (showBadge) {
+                <span
+                    vnMenuItemBadge
+                    [section]="MenuSection.Header"
+                    [item]="item.name"
+                    [badgeClass]="item.parameters?.badgeClass || 'badge-offset badge-size-sm'"
+                    [badgeType]="item.parameters?.badgeType">
+                </span>
+            }
+            <div class="avatar-icon">
+                <vn-icon [name]="iconClass" extraClass="nav-icon" size="20" />
+            </div>
+        </div>
+    </div>
+    @if (item.text) {
+        <div class="avatar-text">{{ item.text }}</div>
+    }
+</div>
+<div class="account-menu-anchor" [vnElementKey]="VanillaElements.AVATAR_HEADER_ANCHOR"></div>

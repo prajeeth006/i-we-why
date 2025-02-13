@@ -1,0 +1,81 @@
+@if (accountMenuDataService.version === 3) {
+    <lh-navigation-layout-page class="ch" sourceItem="profile" [showTitle]="false" topMenuVisibility="Never">
+        <div class="ch-account-menu-v3__header-info d-flex align-items-start">
+            @if (content) {
+                <div class="ch-account-menu-v3__detail-container ch-account-menu-v3__detail-container--desktop align-items-start flex-column">
+                    {{ content.resources.Title }}
+                    <div class="ch-account-menu-v3__detail-name mt-0">
+                        <span>{{ user.displayName }}</span>
+                    </div>
+                </div>
+            }
+            <vn-account-menu route="menu/balance" mode="page" />
+        </div>
+        @if (accountMenuRoutesAvailable) {
+            <div class="ch-account-menu-v3__account mt-4">
+                <div class="ch-account-menu-v3__col">
+                    <vn-account-menu route="menu/tasks" mode="page" />
+                    @if (commonActions) {
+                        <vn-common-actions-card [item]="commonActions" />
+                    }
+                    @if (inbox && inboxConfig.enabled) {
+                        <vn-inbox-card [item]="inbox" />
+                    }
+                </div>
+                <div class="ch-account-menu-v3__col ch-account-menu-v3__col--double">
+                    <vn-account-menu route="menu/widgets" mode="page" />
+                    <vn-profile-page-nudges />
+                </div>
+            </div>
+        }
+        @if (help) {
+            <vn-help-card [item]="help" />
+        }
+    </lh-navigation-layout-page>
+} @else if (accountMenuDataService.version === 5) {
+    <lh-navigation-layout-page sourceItem="profile" [showTitle]="false" [isProfilePage]="true" topMenuVisibility="Never">
+        <div class="ch-welcome">
+            @if (content) {
+                <div class="ch-welcome__legend">{{ content!.resources.Title }}</div>
+                <div class="ch-welcome__title">{{ content!.resources.Description }}</div>
+            }
+        </div>
+        @if (accountMenuRoutesAvailable) {
+            @if (profilePageItemsPositionCount()) {
+                <div class="ch-my-hub ch-my-hub--custom-item-position">
+                    <vn-account-menu route="menu/tasks" mode="page" [style.--tasks-position]="profilePageItemsPosition().tasksPosition" />
+                    <vn-account-menu route="menu/widgets" mode="page" [style.--widgets-position]="profilePageItemsPosition().widgetsPosition" />
+                    <vn-profile-page-nudges [style.--nudges-position]="profilePageItemsPosition().nudgesPosition" />
+                    @if (inbox && inboxConfig.enabled) {
+                        <vn-inbox-card [item]="inbox" [style.--inbox-position]="profilePageItemsPosition().inboxPosition" />
+                    }
+                    @if (commonActions) {
+                        <vn-common-actions-card [item]="commonActions" [style.--actions-position]="profilePageItemsPosition().actionsPosition" />
+                    }
+                    @if (help) {
+                        <vn-help-card [item]="help" [style.--help-position]="profilePageItemsPosition().helpPosition" />
+                    }
+                </div>
+            } @else {
+                <div class="ch-my-hub">
+                    <div class="ch-my-hub__col">
+                        <vn-account-menu route="menu/tasks" mode="page" />
+                        @if (commonActions) {
+                            <vn-common-actions-card [item]="commonActions" />
+                        }
+                        @if (inbox && inboxConfig.enabled) {
+                            <vn-inbox-card [item]="inbox" />
+                        }
+                    </div>
+                    <div class="ch-my-hub__col ch-my-hub__col--double">
+                        <vn-account-menu route="menu/widgets" mode="page" />
+                        <vn-profile-page-nudges />
+                    </div>
+                </div>
+                @if (help) {
+                    <vn-help-card [item]="help" />
+                }
+            }
+        }
+    </lh-navigation-layout-page>
+}

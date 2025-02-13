@@ -1,0 +1,20 @@
+spec:
+  inputs:
+    name:
+    when:
+    image:
+    tag:
+    parallel:
+      type: number
+    script:
+---
+$[[ inputs.name ]]:
+  stage: load
+  extends:
+    - .rules-$[[ inputs.when ]]
+  image: $[[ inputs.image ]]
+  tags:
+    - $[[ inputs.tag ]]
+  parallel: $[[ inputs.parallel ]]
+  script:
+    - $[[ inputs.script ]]

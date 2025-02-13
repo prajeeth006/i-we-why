@@ -1,0 +1,6 @@
+@if (!hideIfZero || balance !== 0) {
+    <div class="list-nav-link dnh" [ngClass]="item.name">
+        <div class="list-nav-txt balance-text">{{ text }}</div>
+        <div class="font-weight-bold ml-auto balance-amount">{{ balance | number: '1.2-2' }}</div>
+    </div>
+}

@@ -1,0 +1,27 @@
+<div class="real-time-toast rtm-toast-top rtm-animate-top-slide light">
+    @if (!message.content.restrictedOverlay) {
+        <vn-icon
+            id="dialog-close"
+            name="theme-ex"
+            extraClass="close-btn ui-icon-size-sm ui-icon ui-icon-closethick dh"
+            unselectable="on"
+            (click)="close()" />
+    }
+    @if (message.content; as content) {
+        <a class="ctaImageLink">
+            <vn-image [textClass]="'toster'" [src]="content.tosterImage" />
+        </a>
+    }
+    @if (message.content.headerTermsAndConditionsToaster) {
+        <div class="header-terms-and-conditions" [innerHtml]="message.content.headerTermsAndConditionsToaster"></div>
+    }
+    <div class="content" [innerHtml]="message.content.toasterDescription"></div>
+    <h4>
+        <lh-rtms-cta-action
+            class="dh"
+            [content]="message.content.toasterCallToAction"
+            [rtmsCtaAction]="message"
+            [rtmsCtaActionMessages]="content?.messages"
+            (action)="rtmsCtaActions($event)" />
+    </h4>
+</div>

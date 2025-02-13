@@ -1,0 +1,65 @@
+@if (useV2) {
+    @if (mlife) {
+        <div class="mlife-v3" [ngClass]="mlife.tierItem?.class">
+            @if (mlife.tierItem?.image; as image) {
+                <vn-image [src]="image.src" [alt]="image.alt" [width]="image.width" [height]="image.height" imageClass="mlife-v3__img" />
+            }
+            <div class="mlife-v3__user">
+                <div class="mlife-v3__fullname font-weight-bold" [innerHtml]="mlife.userGreeting | trustAsHtml"></div>
+                <div class="mlife-v3__desc-with-number d-flex">
+                    <span
+                        class="font-weight-normal mlife-v3__desc-with-number__text mr-1"
+                        [ngClass]="mlife.tierItem?.parameters['membership-class'] ?? ''"
+                        [innerHtml]="mlife.tierDescription | trustAsHtml"></span>
+                    <span class="mlife-v3__desc-with-number__tier-number"></span>
+                    #{{ mlife.tierNumber }}
+                </div>
+            </div>
+        </div>
+    }
+} @else if (accountMenuVersion === 4) {
+    @if (mlife) {
+        <div class="mlife-v2 d-flex align-items-stretch">
+            <div class="mlife-v2__card" [style.background]="'url(' + mlife.tierItem?.image?.src + ')'" [style.background-size]="'cover'"></div>
+            <div class="mlife-v2__user d-flex justify-content-between flex-column">
+                <div class="mlife-v2__fullname font-weight-medium" [innerHtml]="mlife.fullNameLower | trustAsHtml"></div>
+                <div class="mlife-v2__tier-number-text txt-s-v2 txt-md-v2">
+                    <span [innerHtml]="mlife.tierNumberText | trustAsHtml"></span>
+                    {{ mlife.tierNumber }}
+                </div>
+                <div class="mlife-v2__data d-flex justify-content-between align-items-center mt-2">
+                    <span
+                        class="mlife-v2__tier-level txt-xs-v2 text-uppercase font-weight-medium"
+                        [ngClass]="mlife.tierItem?.class"
+                        [innerHtml]="mlife.tierDescription | trustAsHtml">
+                    </span>
+                    <span
+                        class="mlife-v2__details d-flex txt-xs-v2 align-items-center text-info font-weight-medium"
+                        (click)="processClick($event, item)">
+                        <span class="mr-1">{{ mlife.viewDetailsText }}</span>
+                        <vn-icon name="theme-right" size="8" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+} @else {
+    @if (mlife) {
+        <div
+            class="mlife-content-wrapper px-wrapper pc-txt pt-2 pb-2 text-right"
+            *ngIf="mlife"
+            [style.background]="'url(' + mlife.tierItem?.image?.src + ')'"
+            [style.background-size]="'cover'">
+            <div class="mlife-content" [ngClass]="mlife.tierItem?.class">
+                <div class="mlife-fullname font-weight-bold" [innerHtml]="mlife.fullName | trustAsHtml"></div>
+                <div class="mlife-tier-number">{{ mlife.tierNumber }}</div>
+                <div class="mlife-data pt-2">
+                    <span class="mlife-tier-description text-uppercase" [innerHtml]="mlife.tierDescription | trustAsHtml"></span>
+                    -
+                    <span class="mlife-tier-credits" [innerHtml]="mlife.tierCredits | trustAsHtml"></span>
+                    <vn-icon name="theme-right" extraClass="mlife-details" size="12" />
+                </div>
+            </div>
+        </div>
+    }
+}

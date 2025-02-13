@@ -1,0 +1,39 @@
+﻿<div class="generic-modal-wrapper" [ngClass]="actionsLayout">
+    <!-- Header -->
+    @if (headerTitle) {
+        <div class="generic-modal-title">
+            <div class="header-ctrl-wrapper">
+                <div class="header-ctrl d-flex justify-content-between align-items-center">
+                    <!-- Back button -->
+                    @if (showHeaderBackButton) {
+                        <div class="header-ctrl-l">
+                            <vn-icon name="theme-left" extraClass="ui-icon ui-icon-size-lg ui-back d-flex align-items-center" />
+                        </div>
+                    }
+                    <!-- Title -->
+                    <div class="header-ctrl-txt text-truncate" [innerHtml]="headerTitle | trustAsHtml"></div>
+                    <!-- Close button icon-->
+                    @if (showHeaderCloseIcon) {
+                        <div (click)="close()" class="header-ctrl-r">
+                            <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" />
+                        </div>
+                    }
+                    <!-- Close button text-->
+                    @if (headerCloseButtonText) {
+                        <div (click)="close()">
+                            <span class="header-ctrl-txt-close txt-underlined dh txt-sm-v2">{{ headerCloseButtonText }}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    <!-- Content -->
+    <div class="generic-modal-content-wrapper">
+        <div class="generic-modal-content">
+            <ng-content select="[content]" />
+        </div>
+    </div>
+    <!-- CTA buttons -->
+    <ng-content select="[actions]" />
+</div>

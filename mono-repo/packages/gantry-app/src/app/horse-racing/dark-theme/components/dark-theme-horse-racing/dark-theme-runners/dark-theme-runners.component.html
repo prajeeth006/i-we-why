@@ -1,0 +1,271 @@
+<div class="racing-runners" [ngClass]="isNonAvrVirtualRace && 'virtuals'">
+    <gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+        <ng-container header-content>
+            <gn-dark-theme-header
+                [title]="vm?.eventTimePlusTypeName"
+                [isPlus1MarketPresent]="vm?.arePlus1MarketPricesPresent"
+                [isFrom]="'horse'"
+                [racingImage]="vm?.isVirtualEvent ? vm?.horseRacingContent?.racingVirtualImage?.src : vm?.horseRacingContent?.horseRacingImage?.src">
+                <ng-container raceStage-content>
+                    <gn-dark-theme-race-stage [horseRacingResult]="vm"></gn-dark-theme-race-stage>
+                </ng-container>
+            </gn-dark-theme-header>
+        </ng-container>
+
+        <ng-container body-content>
+            <ul
+                class="horse-table selection-table"
+                [ngClass]="isNonAvrVirtualRace && 'horse-table-virtuals'"
+                [attr.data-runner-list]="vm.horseRacingEntries?.length">
+                <div *ngIf="scrollAtTop" (wheel)="$event.preventDefault()">
+                    <div class="autoScroll">
+                        <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }" (@autoScroll.done)="onEnd($event)">
+                            <li #scrollItem *ngFor="let horseRacingEntry of horseRacingAutoScrollRunners">
+                                <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }"> </ng-template>
+                            </li>
+                        </div>
+                    </div>
+                    <li *ngFor="let horseRacingEntry of horseRacingFixedRunnersResult">
+                        <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }"> </ng-template>
+                    </li>
+                </div>
+                <div *ngIf="!scrollAtTop" (wheel)="$event.preventDefault()">
+                    <li
+                        id="sRunners"
+                        class="runnersSevenplus"
+                        [ngClass]="vm?.horseRacingEntries?.length >= 7 && 'runnersSevenplus'"
+                        *ngFor="let horseRacingEntry of horseRacingFixedRunnersResult">
+                        <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }"> </ng-template>
+                    </li>
+
+                    <div class="autoScroll" *ngIf="horseRacingAutoScrollRunnersResult?.length">
+                        <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }" (@autoScroll.done)="onEnd($event)">
+                            <li #scrollItem class="runnersSevenplus" *ngFor="let horseRacingEntry of horseRacingAutoScrollRunners">
+                                <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }"> </ng-template>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+
+            <ng-template #tplHorseRacing let-horseRacingEntry let-vm="vm">
+                <div id="HorseNumber" class="selection-number">{{ horseRacingEntry?.horseNumber }}</div>
+
+                <div class="selection-image">
+                    <img
+                        id="Images"
+                        [retrySrc]="horseRacingEntry?.jockeySilkImage"
+                        hasFallback="true"
+                        fallbackImage="{{ vm?.horseRacingContent?.fallbackImage?.src }}" />
+                </div>
+                <div
+                    class="selection-name"
+                    [ngClass]="!(vm?.arePastPricesPresent || vm?.areCurrentPricesPresent || vm?.arePlus1MarketPricesPresent) ? 'race-start' : ''">
+                    <div id="HorseName">
+                        {{ horseRacingEntry?.horseName | titlecase }}
+                        <span id="reserved" class="" *ngIf="horseRacingEntry?.isReserved && !horseRacingEntry?.nonRunner">
+                            ({{ vm?.horseRacingContent?.contentParameters?.Res ? (vm?.horseRacingContent?.contentParameters?.Res | titlecase) : '' }})
+                        </span>
+                    </div>
+                </div>
+                <div class="selection-content">
+                    <div
+                        class="racingpost-image"
+                        *ngIf="
+                            !vm?.isHalfScreenType &&
+                            vm?.spotlightHorseName &&
+                            !horseRacingEntry?.nonRunner &&
+                            !horseRacingEntry?.isWithdrawn &&
+                            vm?.spotlightHorseName?.toLowerCase() == horseRacingEntry?.horseName?.toLowerCase()
+                        ">
+                        <img class="c-logo" [src]="vm?.horseRacingContent?.darkThemeRacingPostImage?.src" id="logo" height="15vh" />
+                    </div>
+
+                    <ng-container *ngIf="vm?.raceStage || vm?.arePastPricesPresent">
+                        <div
+                            id="pastPrice1"
+                            *ngIf="horseRacingEntry?.pastPrice1Str"
+                            [ngClass]="
+                                (!horseRacingEntry.hidePrice[vm?.markets[0]?.marketName] &&
+                                    vm?.markets[0]?.marketStatus != vm?.horseRacingContent?.contentParameters?.MarketStatus &&
+                                    vm?.eventStatus != vm?.horseRacingContent?.contentParameters?.EventStatus) ||
+                                vm?.isRaceOff ||
+                                vm?.isVirtualEvent ||
+                                (vm?.eventStatus != vm?.horseRacingContent?.contentParameters?.EventStatus &&
+                                    vm?.markets[0]?.marketStatus != vm?.horseRacingContent?.contentParameters?.MarketStatus &&
+                                    horseRacingEntry.hidePrice[vm?.markets[0]?.marketName] &&
+                                    (horseRacingEntry?.nonRunner || horseRacingEntry?.isWithdrawn))
+                                    ? 'selection-past-price'
+                                    : ''
+                            ">
+                            {{
+                                horseRacingEntry?.pastPrice1Str
+                                    | darkThemeMarketPriceTransform
+                                        : vm?.markets[0]?.marketName
+                                        : horseRacingEntry
+                                        : true
+                                        : vm?.markets[0]
+                                        : vm?.isRaceOff
+                                        : vm?.eventStatus
+                                        : vm?.displayStatus
+                                        : vm?.isVirtualEvent
+                            }}
+                        </div>
+                    </ng-container>
+
+                    <div
+                        id="currentPrice"
+                        *ngIf="vm?.areCurrentPricesPresent"
+                        class="selection-current-price tilted-card"
+                        [ngClass]="
+                            !horseRacingEntry?.nonRunner &&
+                            !horseRacingEntry?.isWithdrawn &&
+                            vm?.bettingFavouritePrice &&
+                            vm?.bettingFavouritePrice === horseRacingEntry?.currentPrice &&
+                            (horseRacingEntry?.prices[vm?.markets[0]?.marketName]
+                                | darkThemeMarketPriceTransform
+                                    : vm?.markets[0]?.marketName
+                                    : horseRacingEntry
+                                    : false
+                                    : vm?.markets[0]
+                                    : vm?.isRaceOff
+                                    : vm?.eventStatus
+                                    : vm?.displayStatus
+                                    : vm?.isVirtualEvent) != ' ' &&
+                            (horseRacingEntry?.prices[vm?.markets[0]?.marketName]
+                                | darkThemeMarketPriceTransform
+                                    : vm?.markets[0]?.marketName
+                                    : horseRacingEntry
+                                    : false
+                                    : vm?.markets[0]
+                                    : vm?.isRaceOff
+                                    : vm?.eventStatus
+                                    : vm?.displayStatus
+                                    : vm?.isVirtualEvent) != selectionAndPrice
+                                ? 'favorite-box'
+                                : 'early-price'
+                        "
+                        autoAdjustFont>
+                        <span class="tilted-text">{{
+                            horseRacingEntry?.prices[vm?.markets[0].marketName]
+                                | darkThemeMarketPriceTransform
+                                    : vm?.markets[0].marketName
+                                    : horseRacingEntry
+                                    : false
+                                    : vm?.markets[0]
+                                    : vm?.isRaceOff
+                                    : vm?.eventStatus
+                                    : vm?.displayStatus
+                                    : vm?.isVirtualEvent
+                        }}</span>
+                    </div>
+                    <div
+                        *ngIf="!vm?.areCurrentPricesPresent"
+                        id="SpecialPrice"
+                        class="selection-current-price tilted-card filled-bg-white"
+                        autoAdjustFont>
+                        <span class="tilted-text">{{
+                            horseRacingEntry?.nonRunner
+                                ? priceTypes.nonRunner
+                                : horseRacingEntry?.isWithdrawn
+                                  ? priceTypes.withDrawn
+                                  : (vm?.horseRacingContent?.contentParameters?.SpecialPrice ?? '')
+                        }}</span>
+                    </div>
+                    <div
+                        *ngIf="
+                            vm?.arePlus1MarketPricesPresent &&
+                            ((vm?.isRaceOff && vm?.markets[1]?.marketStatus == marketStatus) ||
+                                (!vm?.isRaceOff && vm?.markets[1]?.marketStatus != marketStatus))
+                        "
+                        id="tableitemprices1"
+                        class="selection-plus1-market tilted-card"
+                        [ngClass]="vm?.isBettingWithout ? 'betting-bg' : ''"
+                        autoAdjustFont>
+                        <span class="tilted-text">{{
+                            horseRacingEntry?.prices[vm?.markets[1]?.marketName]
+                                | darkThemeMarketPriceTransform
+                                    : vm?.markets[1]?.marketName
+                                    : horseRacingEntry
+                                    : false
+                                    : vm?.markets[1]
+                                    : vm?.isRaceOff
+                                    : vm?.eventStatus
+                                    : vm?.displayStatus
+                                    : vm?.isVirtualEvent
+                        }}</span>
+                    </div>
+                </div>
+            </ng-template>
+
+            <div *ngIf="vm?.isRaceOff" class="off-event">
+                <div class="tilted-card">
+                    <span id="offEvent" class="tilted-text">OFF</span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container footer-content>
+            <gn-dark-theme-each-way
+                [runnerCount]="vm?.runnerCount | runnerCount"
+                [marketEachWayString]="vm?.darkThemeEachWayString"
+                [horseRacingContent]="vm?.horseRacingContent"
+                [isNonRunner]="vm?.isNonRunner"
+                [isWithdrawn]="vm?.isWithdrawn"
+                [raceNo]="vm?.racingContent?.raceNo"
+                [evrRaceType]="vm?.racingContent?.evrRaceType"
+                [distance]="vm?.racingContent?.distance"
+                [going]="vm?.racingContent?.going"
+                [racingPostTipHorseName]="vm?.spotlightHorseName"
+                [isHalfScreenType]="vm?.isHalfScreenType"
+                [isRaceOff]="vm?.isRaceOff"
+                [rcTemplate]="false"
+                [isVirtualRace]="isVirtualRaceFlag"
+                [FcTcValue]="vm?.forecastTricastValue">
+                <ng-container
+                    *ngIf="vm?.arePlus1MarketPricesPresent"
+                    [ngTemplateOutlet]="vm?.markets[1].isEachWayAvailable === 'true' ? eachWayMarket : winOnlyMarket"
+                    [ngTemplateOutletContext]="{
+                        market: vm?.markets[1],
+                        marketIndex: 1,
+                        horseRacingContent: vm?.horseRacingContent,
+                        vm: vm,
+                    }">
+                </ng-container>
+
+                <ng-template #eachWayMarket let-market="market" let-marketIndex="marketIndex" let-horseRacingContent="horseRacingContent">
+                    <div class="places" [ngClass]="marketIndex === 1 ? 'standardPlus1' : ''">
+                        {{
+                            market?.eachWayFactorNum == market?.eachWayFactorDen
+                                ? 'WIN ONLY'
+                                : (horseRacingContent?.contentParameters?.EW ?? '') +
+                                  ': ' +
+                                  market?.eachWayFactorNum +
+                                  '/' +
+                                  market?.eachWayFactorDen +
+                                  ', '
+                        }}
+                        {{
+                            market?.eachWayFactorNum == market?.eachWayFactorDen
+                                ? ''
+                                : market?.eachWayPlaces + ' ' + (horseRacingContent?.contentParameters?.PLACES ?? '')
+                        }}
+                    </div>
+                </ng-template>
+
+                <ng-template #winOnlyMarket let-market="market" let-marketIndex="marketIndex" let-horseRacingContent="horseRacingContent">
+                    <div
+                        *ngIf="
+                            vm?.arePlus1MarketPricesPresent &&
+                            ((vm?.isRaceOff && vm?.markets[1]?.marketStatus == marketStatus) ||
+                                (!vm?.isRaceOff && vm?.markets[1]?.marketStatus != marketStatus))
+                        "
+                        id="wins"
+                        class="wins"
+                        [ngClass]="marketIndex === 1 ? (vm?.isBettingWithout ? 'standardPlus2' : '') : ''">
+                        {{ horseRacingContent?.contentParameters?.WinOnly ? (horseRacingContent?.contentParameters?.WinOnly | titlecase) : '' }}
+                    </div>
+                </ng-template>
+            </gn-dark-theme-each-way>
+        </ng-container>
+    </gn-dark-theme-base-page>
+</div>

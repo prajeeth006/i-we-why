@@ -1,0 +1,75 @@
+<div class="form-control-container">
+    @switch (isMobileNumber) {
+        @case (true) {
+            <div class="d-flex flex-wrap">
+                <div class="col-4 pl-0">
+                    <lh-form-field layout="col" [labelText]="countryCodeText">
+                        <input
+                            type="text"
+                            class="form-control form-control-f-w"
+                            [countrycode]="model.countryCode"
+                            [(ngModel)]="model.countryCode"
+                            [disabled]="isDisabled"
+                            [required]="true"
+                            (ngModelChange)="onCountryChanged()"
+                            maxlength="4"
+                            id="countryCode"
+                            name="countrycode"
+                            autocomplete="tel-country-code"
+                            onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 0)" />
+                    </lh-form-field>
+                </div>
+                <div class="col-8 pr-0">
+                    <lh-form-field layout="col" [labelText]="mobileNumberText">
+                        <input
+                            type="text"
+                            #userID
+                            [countrycode]="model.countryCode"
+                            class="form-control form-control-f-w"
+                            [(ngModel)]="model.userId"
+                            id="userId"
+                            name="username"
+                            [disabled]="isDisabled"
+                            [required]="true"
+                            autocomplete="tel-national"
+                            (ngModelChange)="onModelChanged()"
+                            (change)="userIdChanged($event)"
+                            (blur)="userIdBlur()"
+                            (focus)="userIdFocus()" />
+                    </lh-form-field>
+                </div>
+                @if (validationMessages) {
+                    <lh-validation-messages [showOnSuccess]="true" [formElementRef]="userID" [formElement]="control" [messages]="validationMessages">
+                    </lh-validation-messages>
+                }
+            </div>
+        }
+        @case (false) {
+            <lh-form-field
+                [showSuccessValidation]="true"
+                [labelText]="usernameLabel"
+                [validationMessages]="validationMessages"
+                [ignoreMaxLength]="true"
+                [elementClass]="'form-group-label-i-l'">
+                <input
+                    type="text"
+                    #userID
+                    name="username"
+                    id="userId"
+                    [disabled]="isDisabled"
+                    [required]="true"
+                    autocomplete="username"
+                    [(ngModel)]="model.userId"
+                    (ngModelChange)="onModelChanged()"
+                    (change)="userIdChanged($event)"
+                    (blur)="userIdBlur()"
+                    (focus)="userIdFocus()"
+                    vnTrackingEvent="Event.Functionality.Login"
+                    [vnTrackingData]="{ 'page.referringAction': 'Login_Centered_Email_Typed', 'page.siteSection': 'Authentication' }"
+                    [vnTrackingTrigger]="['change']"
+                    class="form-control form-control-i-l form-group-i-l" />
+                <vn-icon name="theme-account" extraClass="ui-icon vn-login__icon-left" />
+            </lh-form-field>
+        }
+    }
+</div>

@@ -1,0 +1,9 @@
+@if (item) {
+    @if (isDesktop) {
+        <lh-navigation-layout-page [sourceItem]="item.name" />
+    }
+    @if (!isDesktop) {
+        <lh-header-bar [enabled]="showHeader" [content]="item.pageTitle" />
+        <lh-navigation-layout-left-menu [itemsParent]="item.name" />
+    }
+}

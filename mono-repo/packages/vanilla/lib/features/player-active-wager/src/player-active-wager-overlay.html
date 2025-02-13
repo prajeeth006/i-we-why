@@ -1,0 +1,26 @@
+@if (config.content.messages; as messages) {
+    <vn-dialog [headerTitle]="config.content.title">
+        <ng-container content>
+            <div [outerHTML]="config.content.text | trustAsHtml"></div>
+            <div class="generic-modal-content" [innerHtml]="messages.ElapsedTime"></div>
+            <div class="player-wager-popup-wrapper justify-content-between align-items-center">
+                <div class="player-wager-popup-timer" [innerHtml]="timeUnits[0]"></div>
+                <div class="player-wager-popup-timer">:</div>
+                <div class="player-wager-popup-timer" [innerHtml]="timeUnits[1]"></div>
+                <div class="player-wager-popup-timer">:</div>
+                <div class="player-wager-popup-timer" [innerHtml]="timeUnits[2]"></div>
+                <span [innerHtml]="messages.Hours"></span>
+                <div></div>
+                <span [innerHtml]="messages.Minutes"></span>
+                <div></div>
+                <span [innerHtml]="messages.Seconds"></span>
+            </div>
+        </ng-container>
+
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button (click)="close()" class="btn btn-lg btn-primary" [innerHtml]="config.gotItCta.text"></button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

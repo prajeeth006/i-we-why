@@ -1,0 +1,13 @@
+@if (version > 1) {
+    <div class="am-items" [ngClass]="item.class">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+        }
+    </div>
+} @else {
+    <div class="list-nav px-wrapper">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}

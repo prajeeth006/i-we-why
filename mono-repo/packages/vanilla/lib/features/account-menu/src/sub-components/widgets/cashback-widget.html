@@ -1,0 +1,20 @@
+<vn-am-widget [hideSkeleton]="hideSkeleton" [item]="item" [mode]="mode">
+    <ng-container>
+        <div class="d-flex justify-content-between">
+            @if (descriptionV3) {
+                <div class="ch__font mb-2 ch__font--description" [innerHtml]="descriptionV3"></div>
+            }
+            @if (!descriptionV3) {
+                <div class="ch__font--subtitle font-weight-bold mb-2" [ngClass]="{ 'text-success': isCompleted, 'text-danger': !isCompleted }">
+                    {{ cashbackAmount }}
+                </div>
+                <div class="text-right">
+                    <div [innerHtml]="minCollection"></div>
+                    @if (left) {
+                        <div [innerHtml]="left"></div>
+                    }
+                </div>
+            }
+        </div>
+    </ng-container>
+</vn-am-widget>

@@ -1,0 +1,7 @@
+<div class="ch-balance__header" (click)="processClick($event, item)">
+    <div class="ch-balance__title">{{ greetings() }}</div>
+    <div class="ch-balance__legend">
+        {{ item.resources?.description ?? '' }}
+        <vn-icon name="theme-right" size="8" extraClass="ch-balance__icon d-flex" />
+    </div>
+</div>

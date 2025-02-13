@@ -1,0 +1,144 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+.header-current-price {
+    width: 234px;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+    }
+}
+
+.horse-table {
+    margin: $spacing-20 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: calc($spacing-20 / 2) 0 0;
+    }
+
+    li {
+        .selection-number {
+            font-size: $font-64;
+            font-style: normal;
+            font-weight: $fw-bold;
+            height: 80px;
+            line-height: normal;
+            text-transform: capitalize;
+            width: 90px;
+
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-32;
+                width: 45px;
+                height: 40px;
+            }
+        }
+
+        .selection-image {
+            @include flex-center;
+
+            margin-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 12px;
+            }
+
+            img {
+                height: 68px;
+                object-fit: contain;
+                width: 80px;
+
+                @include breakpoint(multidesktop) {
+                    width: 40px;
+                    height: 34px;
+                }
+            }
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+
+            font-size: $font-64;
+            font-weight: $fw-bold;
+            padding-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 12px;
+                font-size: $font-32;
+            }
+        }
+
+        .selection-content {
+            margin-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 12px;
+            }
+
+            .selection-current-price {
+                @include flex-center;
+
+                font-size: $font-64;
+                font-weight: $fw-bold;
+                height: 84px;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $font-32;
+                    height: 42px;
+                }
+            }
+
+            .selection-current-price {
+                background-color: $color-white;
+                color: $early-price-text;
+            }
+
+            .favorite-box {
+                background-color: $theme-yellow;
+            }
+        }
+    }
+
+    .autoScroll {
+        max-height: 286px;
+        overflow: hidden;
+        padding-bottom: 1px;
+        scroll-behavior: smooth;
+
+        @include breakpoint(multidesktop) {
+            max-height: 142px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            max-height: 270px;
+        }
+
+        .ng-trigger-autoScroll {
+            backface-visibility: hidden;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+    }
+
+    .autoScroll::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.places {
+    min-width: 234px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        min-width: 117px;
+    }
+}
+
+.wins {
+    width: 234px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+    }
+}

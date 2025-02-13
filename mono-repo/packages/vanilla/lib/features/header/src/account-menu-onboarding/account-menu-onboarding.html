@@ -1,0 +1,17 @@
+@if (headerComponentEnabled) {
+    <div [floatUi]="popper.content" [placement]="FloatUiPlacements.TOPEND" (click)="hotspotClicked()">
+        <span class="ch ch-onboarding__dot ch-onboarding__dot--header dh" [class.ch-onboarding__dot--pulse]="headerPulseEffectEnabled"></span>
+    </div>
+}
+<vn-popper-content
+    cssClass="tooltip-info"
+    (onCloseLinkClick)="closeClicked($event)"
+    [closeLinkText]="item.resources.OnboardingHeaderPopperDismiss"
+    #popper>
+    <ng-container content>
+        <div [vnDynamicHtml]="item.resources.OnboardingHeaderPopper"></div>
+    </ng-container>
+    <ng-container buttons>
+        <a class="popper-show-more-link dh" (click)="toggleAccountMenu()">{{ item.resources.OnboardingHeaderPopperShowMeMore }}</a>
+    </ng-container>
+</vn-popper-content>

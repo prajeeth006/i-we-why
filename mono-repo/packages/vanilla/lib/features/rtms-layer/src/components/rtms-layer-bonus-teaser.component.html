@@ -1,0 +1,57 @@
+<div class="bcms d-flex flex-column rtms-bonus-teaser">
+    <lh-header-bar [disableClose]="!rtmsConfig.showCloseButtonOnBonusTeaser" [content]="bonusHeader" (onClose)="close()" class="bcms-header" />
+    <div class="rtms-bonus-teaser-container" #bcmcontainer>
+        <!-- Image Section -->
+        @if (message.content; as content) {
+            <div class="rtms-bonus-teaser-image">
+                <vn-image
+                    [imageClass]="'bonus-image'"
+                    [textClass]="'bonus-teaser'"
+                    [src]="content.bonusImage.src"
+                    [alt]="content.bonusImage.alt"
+                    [intro]="content.overlayImageIntroductoryText"
+                    [title]="content.overlayImageTitleText"
+                    [subtitle]="content.overlayImageSubtitleText"
+                    [titleFontSize]="content.overlayImageTitleFontSize"
+                    [textAlign]="content.overlayImageTextAlignment" />
+            </div>
+        }
+        <div class="rtms-bonus-teaser-content">
+            <!-- Content Section -->
+            <div class="bonus-teaser-text" [innerHtml]="message.content.bonusText | trustAsHtml"></div>
+            <!-- TnC -->
+            <div #bcmtnc>
+                @if (message.isShowTnc) {
+                    <div class="bcms-toggle-tnc">
+                        <div class="bcms-toggle-tnc-caption" (click)="tacExpanded()">
+                            <span>{{ content.messages?.TermsAndConditions }}</span>
+                            @if (isTacExpanded) {
+                                <vn-icon name="theme-up" extraClass="toggle-tnc-icon" />
+                            } @else {
+                                <vn-icon name="theme-down" extraClass="toggle-tnc-icon" />
+                            }
+                        </div>
+                        <div
+                            class="bcms-toggle-tnc-details pc-txt txt-xs"
+                            [innerHtml]="message.tnCData | trustAsHtml"
+                            [hidden]="!isTacExpanded"></div>
+                        <span class="bcms-toggle-tnc-fade" [hidden]="!isTacExpanded"></span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Buttons Section -->
+    <div class="rtms-bonus-button-section">
+        <div class="btn-decline" (click)="decline()">
+            <button type="button" class="btn btn-light">
+                {{ content.messages?.Decline }}
+            </button>
+        </div>
+        <div class="btn-accept" (click)="accept()">
+            <button type="button" class="btn btn-light">
+                {{ message.isBonusTncAccepted && !message.isNoDepositBonus ? content.messages?.DepositNow : content.messages?.Accept }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+@if (message()) {
+    <div class="login-duration" [ngClass]="{ 'login-duration-txt-empty': isDurationTextHidden() }">
+        <span class="login-duration-text" [vnDynamicHtml]="message()"></span>
+    </div>
+}

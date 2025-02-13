@@ -1,0 +1,356 @@
+@if (loginContentService.content; as content) {
+    <lh-header-bar
+        [content]="headerContent"
+        [titleCssClass]="headerCssClass"
+        (onClose)="close()"
+        [showBackButton]="showHeaderBackButton"
+        [closeButtonText]="closeButtonText"
+        [closeButtonTextCssClass]="loginConfig.closeButtonTextCssClass"
+        (onBack)="back()"
+        [leftContentClass]="loginContent.elements.leftItems?.length > 0 ? 'rg-logo' : ''">
+        @if (loginContent.elements.leftItems?.length > 0) {
+            <ng-container left>
+                <vn-l-header-section [items]="loginContent.elements.leftItems" />
+            </ng-container>
+        }
+    </lh-header-bar>
+    @if (v3) {
+        <div class="login-v3__info-banner">{{ content.messages?.HeaderText }}</div>
+    }
+    <div class="scroll-container d-flex flex-column">
+        <div
+            id="login"
+            class="loginplugin portal-page width-restricted-small portal-center-wrapper login-v3__content-wrapper"
+            [ngClass]="{ 'v2-login-form': v2 }">
+            <ng-container *ngTemplateOutlet="loginpagemessages; context: { messages: loginContent.loginPageMessages }" />
+            @if (!v2 || !isConnectCardInLoginOptions) {
+                <lh-login-option-tabs
+                    [loginOptions]="loginOptions"
+                    [loginContent]="loginContentService.content"
+                    (select)="selectLoginOption($event?.id)" />
+            }
+            @if (v3) {
+                <div class="login-v3__account-title">{{ content.messages?.AccessText }}</div>
+            }
+            <vn-message-panel scope="login" />
+            <vn-message-panel scope="login-messages" />
+            @if (selectedLoginOption !== 'undefined' && !v3) {
+                @switch (selectedLoginOption) {
+                    @case ('connectcardoption') {
+                        <lh-connect-card-login-option
+                            [content]="loginContentService.content"
+                            (submit)="onConnectCardSubmitted($event)"
+                            (onBack)="back()" />
+                    }
+                    @case ('danskespiloption') {
+                        <lh-danske-spil-login-option />
+                    }
+                    @default {
+                        <form [formGroup]="formGroup" novalidate class="mt-half form-base floating-form ten-top" method="POST">
+                            <fieldset>
+                                <section>
+                                    @if (isMobileLoginEnabled) {
+                                        <vn-username-mobile-number
+                                            name="username"
+                                            [usernameLabel]="usernameLabel"
+                                            [validationMessages]="usernameValidations"
+                                            (onBlurUserId)="usernameBlur()"
+                                            (modelChanged)="usernameChanged($event)"
+                                            (isMobileEvent)="isMobileChangedEvent($event)"
+                                            formControlName="username" />
+                                    } @else {
+                                        <ng-container *ngTemplateOutlet="username; context: { form: formGroup }"></ng-container>
+                                    }
+                                    <ng-container *ngTemplateOutlet="password; context: { form: formGroup }"></ng-container>
+
+                                    @if (showValidationHint) {
+                                        <lh-validation-hint
+                                            [title]="content.messages?.PasswordHintsHeader"
+                                            [messages]="content.form.password?.values"
+                                            [control]="formGroup.get('password')" />
+                                    }
+                                    @if (loginConfig.isDateOfBirthEnabled) {
+                                        <lh-form-field [validationMessages]="content.form.date?.validation || {}">
+                                            <vn-date
+                                                name="dateOfBirth"
+                                                formControlName="dateOfBirth"
+                                                [required]="true"
+                                                (onDayChanged)="onDayChanged()"
+                                                (onMonthChanged)="onMonthChanged()"
+                                                (onYearChanged)="onYearChanged()" />
+                                        </lh-form-field>
+                                    }
+
+                                    <ng-container *ngTemplateOutlet="fastlogin; context: { form: formGroup }"></ng-container>
+
+                                    <ng-container *ngTemplateOutlet="rememberme; context: { form: formGroup }"></ng-container>
+
+                                    @if (loginConfig.prefillUsernameToggleEnabled) {
+                                        <lh-form-field>
+                                            <lh-prefill-username-toggle name="prefillUsername" formControlName="prefillusername" />
+                                        </lh-form-field>
+                                    }
+                                    @if (!v2) {
+                                        <lh-login-links [highlightHints]="highlightHints" [text]="content.text" />
+                                    }
+
+                                    <ng-container *ngTemplateOutlet="loginBtn; context: { form: formGroup }"></ng-container>
+                                    @if (v2) {
+                                        <lh-login-links
+                                            [highlightHints]="highlightHints"
+                                            [text]="content.children.forgotpassword?.text"
+                                            class="reset-password-link" />
+                                        @if (content.children.forgotemail?.text; as text) {
+                                            <lh-login-links [highlightHints]="highlightHints" [text]="text" class="reset-password-link" />
+                                        }
+                                    }
+                                </section>
+                            </fieldset>
+                        </form>
+                    }
+                }
+            }
+            <!--LOGIN PROVIDERS: Facebook, Google, etc.-->
+            @if (!isConnectCardPage && providers.length) {
+                @if (v2 && content.messages?.DividerText) {
+                    <div class="form-element">
+                        <div class="form-separator d-flex justify-content-center align-items-center">
+                            <span class="form-separator-text">{{ content.messages?.DividerText }}</span>
+                        </div>
+                    </div>
+                }
+                @if (+getToggleProvidersButtonValue('visibleCount') && content.messages?.LoginWithProviderTitle) {
+                    <p class="login-providers-title">
+                        {{ content.messages?.LoginWithProviderTitle }}
+                    </p>
+                }
+                @for (provider of visibleProviders; track trackByItem($index, provider)) {
+                    <vn-login-provider-button [provider]="provider" (loginEvent)="invokeLoginWith(getProvider(provider), $event)" />
+                }
+                @if (content.form.toggleprovidersbutton; as toggleButton) {
+                    @if (providers.length > +getToggleProvidersButtonValue('visibleCount')) {
+                        <a (click)="onShowMoreProvidersClick()" [ngClass]="toggleButton?.htmlAttributes?.cssClass">
+                            {{
+                                toggleButton.label
+                                    | format: (showLessProviders ? getToggleProvidersButtonValue('less') : getToggleProvidersButtonValue('more'))
+                            }}
+                            @if (showLessProviders) {
+                                <vn-icon extraClass="toggle-providers-button__arrow" name="theme-up" />
+                            } @else {
+                                <vn-icon extraClass="toggle-providers-button__arrow" name="theme-down" />
+                            }
+                        </a>
+                    }
+                    @if (!showLessProviders) {
+                        @for (provider of providers | slice: +getToggleProvidersButtonValue('visibleCount'); track trackByItem($index, provider)) {
+                            @if (getProviderIconStyle(provider); as icon) {
+                                <span class="login-provider-icon" [ngStyle]="icon" [ngClass]="provider"></span>
+                            }
+                        }
+                    }
+                }
+            }
+            @if (v2 && showConnectCardButton) {
+                <div class="connect-card-group">
+                    @if (content.messages?.ConnectCardDividerText) {
+                        <div class="form-element">
+                            <div class="form-separator d-flex justify-content-center align-items-center">
+                                <span class="form-separator-text">{{ content.messages?.DividerText }}</span>
+                            </div>
+                        </div>
+                    }
+                    <a
+                        class="btn btn-social-login w-100"
+                        [ngClass]="content.form.connectcardbutton?.htmlAttributes?.cssClass"
+                        (mousedown)="loginWithConnectCard()"
+                        [ngStyle]="{ 'background-image': 'url(' + connectCardImage?.src + ')' }">
+                        {{ content.form.connectcardbutton?.label }}
+                    </a>
+                </div>
+            }
+            <!--Login links-->
+            @if (v2) {
+                @if ((!showRegisterButton && loginContent.loginPageLinks.length) || (!isConnectCardPage && showRegisterButton) || isConnectCardPage) {
+                    <div class="login-bottom-links">
+                        @if (!showRegisterButton) {
+                            <ng-container *ngTemplateOutlet="loginpagemessages; context: { messages: loginContent.loginPageLinks }" />
+                        }
+                        @if (registerLinkItem?.text && showRegisterButton) {
+                            <ng-container *ngTemplateOutlet="newuser"></ng-container>
+                        }
+                        @if (isConnectCardPage && loginConfig.connectCardVersion === 1) {
+                            <div #useCredentialsLink>
+                                <lh-login-links
+                                    [text]="content.children.useryourcredentialslink?.text"
+                                    (click)="back()"
+                                    class="already-upgraded-link" />
+                            </div>
+                        }
+                    </div>
+                }
+            } @else {
+                @if (showRegisterButton && !v3) {
+                    <div class="form-element">
+                        <button class="de-emphasize w-100" [ngClass]="content.form.registerbutton?.htmlAttributes?.cssClass" (mousedown)="register()">
+                            {{ content.form.registerbutton?.label }}
+                        </button>
+                    </div>
+                }
+            }
+            @if (v2 && content.messages?.ResponsibleGambling) {
+                <div class="form-element">
+                    <div class="form-separator d-flex justify-content-center align-items-center"></div>
+                </div>
+                <div [innerHtml]="content.messages?.ResponsibleGambling | trustAsHtml" class="pc-txt responsible-gambling"></div>
+            }
+            <ng-container *ngTemplateOutlet="loginpagemessages; context: { messages: loginContent.loginPageMessagesBottom }" />
+            @if (v3) {
+                <form [formGroup]="formGroup" novalidate class="mt-half form-base floating-form ten-top login-v3" method="POST">
+                    <fieldset>
+                        <section>
+                            <ng-container *ngTemplateOutlet="username; context: { form: formGroup }"></ng-container>
+                            <ng-container *ngTemplateOutlet="password; context: { form: formGroup }"></ng-container>
+                            <ng-container *ngTemplateOutlet="fastlogin; context: { form: formGroup }"></ng-container>
+                            <ng-container *ngTemplateOutlet="rememberme; context: { form: formGroup }"></ng-container>
+                            <lh-login-links [highlightHints]="highlightHints" [text]="content.text" />
+                            <ng-container *ngTemplateOutlet="loginBtn; context: { form: formGroup }"></ng-container>
+                            @if (registerLinkItem?.text) {
+                                <ng-container *ngTemplateOutlet="newuser"></ng-container>
+                            }
+                        </section>
+                    </fieldset>
+                </form>
+            }
+        </div>
+        @if (v3) {
+            @if (bottomLinks && bottomLinks.children.length > 0) {
+                <div class="login-v3__footer">
+                    <div [ngClass]="bottomLinks.class" class="login-v3__footer-links">
+                        @for (child of bottomLinks.children; track trackByItem($index, child.name)) {
+                            @if (child.type === 'copy-right') {
+                                <vn-copyright [copyright]="getCopyrightText(child.text)" class="login-v3__footer-copyright"></vn-copyright>
+                            } @else {
+                                <vn-menu-item
+                                    [linkClass]="child.parameters?.class"
+                                    [textClass]="child.parameters?.cssClass"
+                                    [processClick]="false"
+                                    [item]="child"
+                                    class="login-v3__footer-links-item" />
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <ng-template #loginpagemessages let-messages="messages">
+        @if (messages.length) {
+            <div class="login-content-messages">
+                <vn-content-messages [messages]="messages | dsl | async" closedCookieKey="m2-lmb" />
+            </div>
+        }
+    </ng-template>
+    <ng-template #username let-form="form">
+        <lh-form-field
+            [formGroup]="form"
+            [showSuccessValidation]="v2 || v3"
+            [labelText]="usernameLabel"
+            [validationMessages]="usernameValidations"
+            [ignoreMaxLength]="true"
+            [elementClass]="'form-group-label-i-l'">
+            <input
+                type="text"
+                name="username"
+                id="userId"
+                autocomplete="username"
+                formControlName="username"
+                (blur)="usernameBlur()"
+                (change)="usernameChanged($event)"
+                vnTrackingEvent="Event.Functionality.Login"
+                [vnTrackingData]="{
+                    'page.referringAction': 'Login_Centered_Email_Typed',
+                    'page.siteSection': 'Authentication',
+                }"
+                [vnTrackingTrigger]="['change']"
+                class="form-control form-control-i-l form-group-i-l" />
+            <vn-icon name="theme-account" extraClass="ui-icon vn-login__icon-left" />
+        </lh-form-field>
+    </ng-template>
+    <ng-template #password let-form="form">
+        <lh-form-field
+            [formGroup]="form"
+            [showSuccessValidation]="v2 || v3"
+            [labelText]="content.form?.password?.label"
+            [validationMessages]="content.form?.password?.validation"
+            [elementClass]="'form-group-label-i-l'">
+            <input
+                [type]="showPassword ? 'text' : 'password'"
+                autocomplete="current-password"
+                name="password"
+                formControlName="password"
+                (focus)="passwordfocus()"
+                (blur)="passwordBlur()"
+                (change)="passwordChanged($event)"
+                class="form-control-i-l form-control-pw w-100" />
+            <vn-icon name="theme-locked-i" extraClass="ui-icon vn-login__icon-left" />
+            @if (!showPassword) {
+                <vn-icon
+                    (click)="togglePassword()"
+                    extraClass="toggle-password-button psw-i-l ui-icon vn-login__icon-right"
+                    name="theme-hide-password"
+                    class="placeholder-old-icon psw-i-l" />
+            } @else {
+                <vn-icon
+                    (click)="togglePassword()"
+                    extraClass="toggle-password-button psw-i-l ui-icon vn-login__icon-right"
+                    name="theme-show-password"
+                    class="placeholder-old-icon psw-i-l" />
+            }
+        </lh-form-field>
+    </ng-template>
+    <ng-template #fastlogin let-form="form">
+        @if (loginConfig.fastLoginToggleEnabled && showFastLoginToggles) {
+            <lh-form-field [formGroup]="form">
+                <lh-fast-login name="autoLogin" formControlName="fastloginenabled" />
+            </lh-form-field>
+        } @else {
+            @if (showFastLoginToggles) {
+                <lh-form-field [formGroup]="form">
+                    <div class="form-element pb-0">
+                        <div class="pc-txt txt-s mb-0" [innerHtml]="content.messages?.FastLogin | trustAsHtml"></div>
+                    </div>
+                    <lh-fast-login name="autoLogin" formControlName="fastloginenabled" />
+                </lh-form-field>
+            }
+        }
+    </ng-template>
+    <ng-template #rememberme let-form="form">
+        @if (loginConfig.rememberMeEnabled || rememberMeConfig.isEnabled) {
+            <lh-form-field [formGroup]="form">
+                <lh-remember-me name="rememberMe" formControlName="rememberme" />
+            </lh-form-field>
+        }
+    </ng-template>
+    <ng-template #loginBtn let-form="form">
+        <!--TODO: Remove the element when empty-->
+        <lh-form-field [formGroup]="form">
+            <vn-re-captcha formControlName="captcharesponse" name="reCaptcha" area="Login" />
+            @if (reCaptchaControl && reCaptchaControl.touched && reCaptchaControl.errors) {
+                <div class="custom-error m2-validation-messages">
+                    <span class="m2-validation-message" [innerHtml]="reCaptchaControl.errors?.verification.message"></span>
+                </div>
+            }
+        </lh-form-field>
+        <div class="form-element">
+            <button class="login w-100" [ngClass]="loginButtonCSS" [disabled]="disabled || isFormInvalid" (click)="login()">
+                {{ formGroup.disabled ? commonMessages.PleaseWait : content.form.loginbutton?.label }}
+            </button>
+        </div>
+    </ng-template>
+    <ng-template #newuser>
+        <div #registerLink>
+            <lh-login-links [text]="registerLinkItem?.text" class="registration-link" />
+        </div>
+    </ng-template>
+}

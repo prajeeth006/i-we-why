@@ -1,0 +1,115 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header-race-stage-wrap {
+    border-radius: 25px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    font-size: $font-list-title;
+    height: 130px;
+    width: 240px;
+
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        border-radius: 12.5px;
+        border-width: 2.5px;
+        font-size: $txt-sm-font-size;
+        height: 65px;
+        width: 120px;
+    }
+
+    span {
+        line-height: 35px;
+        text-align: center;
+        width: 184px;
+        @include breakpoint(multidesktop) {
+            line-height: 17.5px;
+            width: 92px;
+        }
+    }
+}
+
+.match-bets__content {
+    @include flex-container(center, flex-start);
+
+    height: 100%;
+
+    .match-bet__selections {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        list-style: none;
+        margin: 150px 0 0;
+        padding: 0;
+        width: 100%;
+
+        @include breakpoint(multidesktop) {
+            gap: 50px;
+            margin-top: 75px;
+        }
+
+        &--row {
+            @include flex-container(space-between, center);
+
+            font-size: 70px;
+            font-style: normal;
+            font-weight: 900;
+            gap: 30px;
+
+            line-height: normal;
+            text-transform: capitalize;
+
+            @include breakpoint(multidesktop) {
+                font-size: 35px;
+                gap: 15px;
+            }
+
+            &.event-info {
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 44px; /* 73.333% */
+
+                @include breakpoint(multidesktop) {
+                    font-size: 30px;
+                    line-height: 22px;
+                }
+            }
+        }
+        &--title {
+            color: $color-white;
+        }
+        &--price-wrap {
+            align-items: center;
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+            position: relative;
+            &::before {
+                background: var(--color-white);
+                content: '';
+                height: 4px;
+                position: absolute;
+                width: 100%;
+                z-index: 0;
+
+                @include breakpoint(multidesktop) {
+                    height: 2px;
+                }
+            }
+            .price-info {
+                background: #fff;
+                color: $early-price-text;
+                height: 96px;
+                position: relative;
+
+                @include flex-center;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}

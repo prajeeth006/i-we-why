@@ -1,0 +1,18 @@
+@if (item.title) {
+    <vn-pc-component-header-v2 [item]="item" />
+}
+@if (item.video?.id; as src) {
+    <div class="pc-video-wrapper">
+        <cloudflare-stream
+            [controls]="!!item.controls"
+            [autoplay]="settings.autoplay"
+            [loop]="settings.loop"
+            [muted]="settings.muted"
+            [preload]="settings.preload"
+            [poster]="settings.poster"
+            [src]="src"
+            (play)="onPlay($event)"
+            (pause)="onPause()">
+        </cloudflare-stream>
+    </div>
+}

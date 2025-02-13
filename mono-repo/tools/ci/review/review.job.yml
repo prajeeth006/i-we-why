@@ -1,0 +1,76 @@
+spec:
+  inputs:
+    name:
+    project:
+    e2eProject:
+    rules:
+    e2eRules:
+    environment:
+    deployEnvironment:
+    autoStopIn:
+    backendProduct:
+    backendProjectName:
+    backendProjectPath:
+    afterDeployJob:
+    userFlowsPath:
+    additionalHosts:
+    labels:
+---
+start-$[[ inputs.project ]]:
+  stage: start
+  tags:
+    - linux-shell-runner
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .rules-$[[ inputs.rules ]]
+  script:
+    - echo 'Started review-deploy of $[[ inputs.project ]]'
+
+build-server-$[[ inputs.project ]]:
+  stage: build
+  extends: .build-server
+  needs: ['version', 'version-xml', 'start-$[[ inputs.project ]]']
+  variables:
+    PROJECT: $[[ inputs.backendProjectPath ]]
+
+publish-$[[ inputs.project ]]:
+  stage: publish
+  extends: 
+    - .review-publish
+    - .rules-on-success
+  needs: ['version', 'build-server-$[[ inputs.project ]]']
+  variables:
+    PRODUCT: $[[ inputs.backendProduct ]]
+    CI_PROJECT_DIR: $[[ inputs.backendProjectPath ]]
+    PROJECT: $[[ inputs.backendProjectName ]]
+    CI_APPLICATION_REPOSITORY: "$CI_DOCKER_REPOSITORY/$[[ inputs.project ]]"
+
+deploy-$[[ inputs.name ]]:
+  stage: deploy
+  extends:
+    - .review-deploy
+    - .rules-$[[ inputs.rules ]]
+  needs: ['version', 'publish-$[[ inputs.project ]]']
+  environment:
+    on_stop: 'cleanup-$[[ inputs.name ]]'
+    auto_stop_in: $[[ inputs.autoStopIn ]]
+  variables:
+    ENVIRONMENT: $[[ inputs.environment ]]
+    DEPLOY_ENVIRONMENT: $[[ inputs.deployEnvironment ]]
+    CI_APPLICATION_REPOSITORY: "$CI_DOCKER_REPOSITORY/$[[ inputs.project ]]"
+    APP: "$[[ inputs.project ]]" 
+    KUBE_NAMESPACE: $[[ inputs.project ]]
+    ADDITIONAL_HOSTS: $[[ inputs.additionalHosts ]]
+    LABELS: $[[ inputs.labels ]]
+
+cleanup-$[[ inputs.name ]]:
+  extends:
+    - .review-cleanup
+    - .rules-manual
+  needs: ['deploy-$[[ inputs.name ]]']
+  variables:
+    ENVIRONMENT: $[[ inputs.environment ]]
+    DEPLOY_ENVIRONMENT: $[[ inputs.deployEnvironment ]]
+    APP: "$[[ inputs.project ]]"
+    KUBE_NAMESPACE: $[[ inputs.project ]]

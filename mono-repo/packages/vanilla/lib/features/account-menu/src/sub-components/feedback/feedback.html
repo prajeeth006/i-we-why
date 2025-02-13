@@ -1,0 +1,17 @@
+@if (description) {
+    <div class="ch-widget__normative">
+        <div class="normative-feedback mt-2" [ngClass]="isPathological ? 'normative-feedback__warning' : 'normative-feedback__info'">
+            <div class="d-flex">
+                @if (isPathological) {
+                    <vn-icon name="theme-warning" extraClass="ch__font--subtitle text-warning d-block mr-2" height="24" width="16" />
+                }
+                <div class="ch__font--sm" [ngClass]="{ 'pb-3': isPathological }" [innerHTML]="description | trustAsHtml"></div>
+            </div>
+            @if (isPathological) {
+                <div class="normative-options">
+                    <a [href]="item.url" (click)="click($event)" class="text-uppercase font-weight-bold">{{ item.resources.SetLimitCtaText }}</a>
+                </div>
+            }
+        </div>
+    </div>
+}

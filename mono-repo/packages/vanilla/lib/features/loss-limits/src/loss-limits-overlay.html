@@ -1,0 +1,21 @@
+@if (config().content; as content) {
+    <vn-header-bar [title]="content.title" class="loss-limits-header" [showBack]="false" [showClose]="false" />
+    @if (content.messages; as messages) {
+        <div class="loss-limits-container overlay-content">
+            <div class="text-center loss-limits-description">{{ content.text }}</div>
+            <div class="loss-limits-title text-center" [vnDynamicHtml]="messages.SubTitle"></div>
+            @for (item of lossLimitsDetails(); track $index) {
+                <div class="loss-limits-item-group">
+                    <vn-loss-limits-item class="loss-limits-item" [item]="item" />
+                </div>
+            }
+            @if (buttonsDisabled()) {
+                <div class="close-message text-center">{{ closeMessage() }}</div>
+            }
+            <div class="form-element btn-container">
+                <button [disabled]="buttonsDisabled()" class="btn btn-light w-100" (click)="close()">{{ messages.CloseButtonText }}</button>
+                <vn-menu-item [item]="config().updateCTA" [ngClass]="{ disabled: buttonsDisabled() }" linkClass="btn btn-primary w-100" />
+            </div>
+        </div>
+    }
+}

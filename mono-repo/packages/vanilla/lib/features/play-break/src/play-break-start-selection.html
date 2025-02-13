@@ -1,0 +1,27 @@
+@if (config.templates.breakstartselection; as content) {
+    <vn-dialog [headerTitle]="content.title" [headerCloseButtonText]="content.messages?.CloseButtonText" (onClose)="close()">
+        <form content [formGroup]="startSelectionForm()" class="mt-half form-base floating-form">
+            @if (breakStartForm(); as breakStartForm) {
+                <fieldset class="form-group">
+                    <div class="font-weight-bold txt-md-v2" [innerHtml]="breakStartForm.label"></div>
+                    <lh-form-field [labelText]="breakStartForm.toolTip">
+                        <select formControlName="startOptions" class="form-control form-control-select please-select w-100">
+                            @for (option of breakStartForm.values; track trackByText($index, option)) {
+                                <option [value]="option.value">
+                                    {{ option.text }}
+                                </option>
+                            }
+                        </select>
+                    </lh-form-field>
+                </fieldset>
+            }
+        </form>
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button (click)="confirmSelection()" [disabled]="!startSelectionForm().valid" class="btn btn-primary btn-md">
+                    {{ content.messages?.OkButtonText }}
+                </button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

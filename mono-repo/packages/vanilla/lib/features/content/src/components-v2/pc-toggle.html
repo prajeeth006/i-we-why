@@ -1,0 +1,8 @@
+@if (item.text) {
+    <input class="pc-toggle-checker" type="checkbox" [attr.id]="id" />
+    <label class="pc-toggle-label" [attr.for]="id"
+        >{{ item.title }} <vn-icon name="theme-up" extraClass="pc-toggle__icon-up"></vn-icon
+        ><vn-icon name="theme-down" extraClass="pc-toggle__icon-down" />
+    </label>
+    <div class="pc-txt pc-toggle-txt" [vnDynamicHtml]="item.text"></div>
+}

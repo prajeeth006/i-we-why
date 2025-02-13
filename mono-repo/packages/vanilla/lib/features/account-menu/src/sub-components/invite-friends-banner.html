@@ -1,0 +1,16 @@
+<a class="am-banner-v2" [ngClass]="item.class" (click)="processClick($event, item)">
+    <div class="am-banner-v2__txt">
+        <div [ngClass]="item.parameters['text-class']" [innerHTML]="item.text"></div>
+        <div [ngClass]="item.parameters['text-amount-class']">
+            {{ item.resources.TextAmount }}
+            <span [ngClass]="item.parameters['text-number-class']" [innerHTML]="item.resources.TextNumber"></span>
+        </div>
+        <div [ngClass]="item.parameters['text-invite-class']">
+            {{ item.resources.TextInvite }}
+            <vn-icon name="theme-right" class="am-banner-v2__icon" size="9" />
+        </div>
+    </div>
+    @for (child of item.children; track child.name) {
+        <vn-image [src]="child.image.src" [imageClass]="child.class" />
+    }
+</a>

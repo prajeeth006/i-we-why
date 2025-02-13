@@ -1,0 +1,27 @@
+@if (newVisitorContent | async; as content) {
+    <div class="newvisitor-wrapper d-flex flex-column">
+        <div class="newvisitor-background">
+            @if (content.image; as image) {
+                <vn-image [src]="image.src" [alt]="image.alt" [imageClass]="content.parameters.imageCssClass" />
+            }
+        </div>
+        <div class="newvisitor-content">
+            @if (getButtons(content.children); as buttons) {
+                <div class="newvisitor-btn-container d-flex flex-column align-items-center" [ngClass]="buttons.class || ''">
+                    @for (item of buttons | dsl | async; track trackByText($index, item)) {
+                        <ng-container *vnDynamicComponent="getItemComponent(item.type); attr: { item }" />
+                    }
+                </div>
+            }
+            @if (getBottomItems(content.children); as bottomItems) {
+                <div class="newvisitor-footer">
+                    <div class="newvisitor-footer-wrapper" [ngClass]="bottomItems.class || ''">
+                        @for (item of bottomItems | dsl | async; track trackByText($index, item)) {
+                            <ng-container *vnDynamicComponent="getItemComponent(item.type); attr: { item }" />
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

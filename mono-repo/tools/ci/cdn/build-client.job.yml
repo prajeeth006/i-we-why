@@ -1,0 +1,16 @@
+spec:
+  inputs:
+    name:
+    app:
+    buildConfig:
+    artifactsPath:
+---
+build-client-$[[ inputs.name ]]:
+  stage: build
+  extends:
+    - .build-client
+    - .rules-manual
+  variables:
+    APP: $[[ inputs.app ]]
+    APP_BUILD_CONFIG: $[[ inputs.buildConfig ]]
+    APP_ARTIFACTS_PATH: $[[ inputs.artifactsPath ]]/**

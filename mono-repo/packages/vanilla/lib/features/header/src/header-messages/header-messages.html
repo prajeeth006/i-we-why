@@ -1,0 +1,10 @@
+@if (headerService.headerVisible()) {
+    @if (headerMessagesService.headerMessages(); as messages) {
+        <vn-content-messages
+            [messages]="messages"
+            [dynamicValues]="kycStatusService.status()?.additionalRibbonInfo"
+            class="content-messages-top"
+            closedCookieKey="vn-t"
+            cssClassForHtmlNode="has-header-messages" />
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": false,
+        "target": "es2022",
+        "useDefineForClassFields": false,
+        "module": "esnext",
+        "stripInternal": true,
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "importHelpers": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "allowUnreachableCode": false,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "experimentalDecorators": true,
+        "exactOptionalPropertyTypes": true,
+        "lib": ["es2020", "dom", "dom.iterable"],
+        "noImplicitAny": true,
+        "strictFunctionTypes": true,
+        "skipLibCheck": true,
+        "strictBindCallApply": true,
+        "strictNullChecks": true,
+        "typeRoots": ["../../../node_modules/@types"],
+        "noUnusedParameters": true,
+        "noUnusedLocals": true
+    },
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ],
+    "angularCompilerOptions": {
+        "strictInputTypes": true,
+        "strictInputAccessModifiers": true,
+        "strictInjectionParameters": true,
+        "skipTemplateCodegen": true,
+        "strictMetadataEmit": true,
+        "fullTemplateTypeCheck": true,
+        "enableResourceInlining": true,
+        "compilationMode": "partial",
+        "enableI18nLegacyMessageIdFormat": false
+    }
+}

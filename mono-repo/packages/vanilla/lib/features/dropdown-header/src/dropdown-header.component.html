@@ -1,0 +1,9 @@
+<nav class="vn-dh-nav d-flex">
+    <vn-dropdown-header-section [items]="content.elements.leftItems" class="vn-dh-button-wrapper" />
+    <div class="vn-dh-links-wrapper navbar-wrapper-right">
+        @for (item of content.elements.links | dsl | async; track trackByText($index, item)) {
+            <vn-dropdown-header-item [item]="item" />
+        }
+    </div>
+</nav>
+<vn-dropdown-header-products />

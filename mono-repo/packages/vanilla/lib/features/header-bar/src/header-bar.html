@@ -1,0 +1,30 @@
+@if (enabled) {
+    <div class="header-ctrl-wrapper">
+        <div class="header-ctrl d-flex justify-content-between align-items-center">
+            <div class="header-ctrl-l" [ngClass]="leftContentClass">
+                @if (showBack !== false) {
+                    <span class="ui-icon ui-icon-size-lg ui-back theme-left d-flex align-items-center" (click)="onBackClick()">
+                        @if (backButtonText) {
+                            <span class="txt-xs text-nowrap ml-2 back-button-text m-0">{{ backButtonText }}</span>
+                        }
+                    </span>
+                }
+                <ng-content select="[left]" />
+            </div>
+            @if (title) {
+                <div [ngClass]="titleCssClass" class="header-ctrl-txt">{{ title }}</div>
+            }
+            <div class="header-ctrl-r" [ngClass]="{ 'header-ctrl-r__btn': closeButtonText }">
+                @if (!closeButtonText) {
+                    @if (showClose !== false) {
+                        <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" (click)="onCloseClick()" />
+                    }
+                } @else {
+                    @if (showClose !== false) {
+                        <span class="close-text btn btn-md" [ngClass]="closeButtonTextCssClass" (click)="onCloseClick()">{{ closeButtonText }}</span>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}

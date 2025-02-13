@@ -1,0 +1,7 @@
+<div class="list-group li-cashier mx-auto my-4">
+    <div class="px-2 py-3">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+</div>

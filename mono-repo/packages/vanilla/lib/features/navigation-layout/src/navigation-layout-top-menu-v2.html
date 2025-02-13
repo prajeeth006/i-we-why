@@ -1,0 +1,11 @@
+@if (topMenuItems) {
+    <nav class="navigation-layout-nav">
+        <div class="navigation-layout-nav-items">
+            @for (topMenuItem of topMenuItems; track trackByText($index, topMenuItem)) {
+                <div class="nav-item" [class.active]="topMenuItem.name === item?.selectedTopItem">
+                    <a class="nav-link" (click)="processClick($event, topMenuItem)">{{ topMenuItem.text }}</a>
+                </div>
+            }
+        </div>
+    </nav>
+}

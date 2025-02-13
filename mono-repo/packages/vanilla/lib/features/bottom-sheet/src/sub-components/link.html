@@ -1,0 +1,25 @@
+@if (useFastIconType === true) {
+    <vn-menu-item
+        class="bottom-sheet-item"
+        [item]="item"
+        [section]="MenuSection.BottomSheet"
+        (onClick)="close()"
+        displayMode="FastIcon"
+        badgePosition="FastIcon"
+        linkClass="list-nav-link"
+        iconClass="ui-icon ui-icon-size-xl"
+        badgeClass="badge-offset"
+        textClass="list-nav-txt" />
+} @else {
+    <vn-menu-item
+        class="bottom-sheet-item"
+        [item]="item"
+        [section]="MenuSection.BottomSheet"
+        (onClick)="close()"
+        displayMode="icon"
+        badgePosition="icon"
+        linkClass="list-nav-link"
+        iconClass="ui-icon ui-icon-size-xl"
+        badgeClass="badge-offset"
+        textClass="list-nav-txt" />
+}

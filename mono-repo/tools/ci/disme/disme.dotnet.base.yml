@@ -1,0 +1,27 @@
+stages:
+  - .pre
+  - start
+  - build
+  - upload
+  - deploy
+
+variables:
+  RUNTIME_IDENTIFIER: win-x64
+
+include:
+  - tools/ci/common/node-module-cache.tpl.yml
+  - tools/ci/common/rules.yml
+  - tools/ci/common/version.yml
+  - tools/ci/common/version-xml.yml
+  - tools/ci/common/build-client.yml
+  - tools/ci/common/build-server.yml
+  - tools/ci/common/disme.yml
+
+.disme-upload-shared:
+  stage: upload
+  extends:
+    - .disme-upload
+    - .rules-on-success
+  before_script:
+    - if ($env:APP_ARTIFACTS_PATH.Length) { Copy-Item -Path $APP_ARTIFACTS_PATH -Destination $ZIP_DIRECTORY/ClientDist -Recurse }
+    - Compress-Archive -Path $ZIP_DIRECTORY/* -DestinationPath $ZIP_DIRECTORY/$ZIP_FILE_NAME$ZIP_FILE_EXTENSION

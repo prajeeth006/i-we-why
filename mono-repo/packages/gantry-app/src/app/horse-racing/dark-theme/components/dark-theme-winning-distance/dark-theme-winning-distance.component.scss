@@ -1,0 +1,93 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    font-size: $font-54;
+    color: $color-white;
+    border: solid 5px $color-white;
+    padding: 0 12px;
+    text-align: center;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: $font-27;
+        border-width: 2.5px;
+        padding: 0 6px;
+    }
+}
+
+.winning-distance-page {
+    .winning-distance-list {
+        &:first-child {
+            .winning-title {
+                margin-top: 48px;
+
+                @include breakpoint(multidesktop) {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 37px;
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 18.5px;
+            }
+        }
+
+        .winning-title {
+            font-size: $font-56;
+            line-height: 40px;
+            margin-top: 54px;
+            font-weight: $fw-medium;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-28;
+                line-height: 20px;
+                margin-top: 27px;
+            }
+        }
+
+        .selection-table {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            margin-bottom: 0;
+            row-gap: 20px;
+
+            @include breakpoint(multidesktop) {
+                margin-top: 15px;
+                row-gap: 10px;
+            }
+
+            li {
+                height: 80px;
+                font-size: $font-70;
+                display: flex;
+                justify-content: space-between;
+                font-weight: $fw-bold;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                    font-size: $font-35;
+                }
+
+                .current-price__tilted {
+                    height: 80px;
+                    font-size: $font-60;
+                    font-weight: $fw-bold;
+                    background-color: $color-white;
+                    color: $theme-white-bg-text;
+                    @include flex-center;
+
+                    @include breakpoint(multidesktop) {
+                        height: 40px;
+                        font-size: $font-30;
+                    }
+                }
+            }
+        }
+    }
+}

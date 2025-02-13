@@ -1,0 +1,8 @@
+<div [class]="content.htmlAttributes?.formClass">
+    @if (form) {
+        <button [class]="content.htmlAttributes?.class" [disabled]="form.disabled" (click)="onSubmit.next()">
+            <i class="glyphicon" [ngClass]="form.disabled ? 'glyphicon-time' : 'glyphicon-ok'"></i>
+            {{ form.disabled ? content.toolTip : content.label }}
+        </button>
+    }
+</div>

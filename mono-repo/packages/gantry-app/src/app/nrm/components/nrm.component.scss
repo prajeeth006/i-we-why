@@ -1,0 +1,20 @@
+@import '../../../global-style/all-variables';
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.iframeStyling {
+    width: 100%;
+    height: 100vh;
+
+    ::ng-deep html {
+        body {
+            margin: 0 !important;
+            padding: 0;
+            overflow: hidden;
+        }
+    }
+}

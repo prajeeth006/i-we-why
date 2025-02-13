@@ -1,0 +1,10 @@
+<div class="inbox-notification-banner">
+    <div class="inbox-notification-banner-textwrapper">
+        <span class="inbox-notification-banner-text" [innerHtml]="content.messages?.NotificationBannerText | trustAsHtml"></span>
+        <span
+            class="inbox-notification-banner-button"
+            [innerHtml]="content.messages?.NotificationBannerButton | trustAsHtml"
+            (click)="turnOnNotifications()"></span>
+    </div>
+    <vn-icon name="theme-ex" extraClass="ui-icon ml-auto" size="14" (click)="close()" />
+</div>

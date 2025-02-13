@@ -1,0 +1,22 @@
+@if (config.content.messages; as messages) {
+    @if (item(); as item) {
+        <span class="loss-limits-item-type font-weight-bold"> {{ messages[item.notificationType] }} : {{ usedPercentage() }}% </span>
+        <div class="progress-bar">
+            <div class="background-bar">
+                <div class="progress bg-danger" [style.width.%]="usedPercentage()"></div>
+            </div>
+        </div>
+        <div class="loss-limits-item-row">
+            <b class="current-limit"> {{ messages.CurrentLimits }}: </b>
+            <span> {{ item.playerLimitAmount | vnCurrency: item.currency }} </span>
+        </div>
+        <div class="loss-limits-item-row">
+            <b class="limit-label used-limit"> {{ messages.Used }}: </b>
+            <span> {{ item.totalLossAmount | vnCurrency: item.currency }} </span>
+        </div>
+        <div class="loss-limits-item-row">
+            <b class="limit-label remaining-limit"> {{ messages.Remaining }}: </b>
+            <span> {{ item.pendingLossAmount | vnCurrency: item.currency }} {{ messages.RemainingLeftText }} </span>
+        </div>
+    }
+}

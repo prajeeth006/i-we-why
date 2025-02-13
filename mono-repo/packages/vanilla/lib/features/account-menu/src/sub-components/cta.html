@@ -1,0 +1,30 @@
+@if (version <= 1 || version === 4) {
+    <vn-menu-item
+        [section]="MenuSection.Menu"
+        [item]="item"
+        [linkClass]="linkClass"
+        [processClick]="false"
+        [displayMode]="menuDisplayMode"
+        (onClick)="processClick($event, item, false)"
+        class="menu-btn-wrapper" />
+}
+@if (version === 2) {
+    <vn-menu-item
+        [section]="MenuSection.Menu"
+        [item]="item"
+        linkClass="btn btn-icon btn-dark btn-sm theme-handhsake mw-100"
+        [processClick]="false"
+        [displayMode]="menuDisplayMode"
+        (onClick)="processClick($event, item, false)"
+        class="am-cta" />
+}
+@if (version === 3 || version === 5) {
+    <vn-menu-item
+        [section]="MenuSection.Menu"
+        [item]="item"
+        [linkClass]="linkClass"
+        [processClick]="false"
+        [displayMode]="menuDisplayMode"
+        (onClick)="processClick($event, item, false)"
+        class="am-cta" />
+}

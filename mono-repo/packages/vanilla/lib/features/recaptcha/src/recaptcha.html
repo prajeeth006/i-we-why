@@ -1,0 +1,3 @@
+@if (isEnabled()) {
+    <vn-recaptcha-enterprise [(ngModel)]="model" (success)="onResolved($event)" [action]="area" />
+}

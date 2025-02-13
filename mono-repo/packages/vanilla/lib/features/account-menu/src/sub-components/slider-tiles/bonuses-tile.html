@@ -1,0 +1,20 @@
+<vn-am-tile cssClass="am-bonuses-tile" [item]="item">
+    <ng-container left>
+        @if (count) {
+            <div class="bonuses-count bonuses-count-new">{{ count }}</div>
+        }
+        @if (!count) {
+            <div class="bonuses-icon-wrapper">
+                <vn-icon [name]="item.parameters.iconClass" extraClass="bonuses-icon" />
+            </div>
+        }
+    </ng-container>
+    <ng-container right>
+        @if (text) {
+            <div class="bonuses-text">{{ text }}</div>
+        }
+        @if (description) {
+            <div class="bonuses-description">{{ description }}</div>
+        }
+    </ng-container>
+</vn-am-tile>

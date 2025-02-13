@@ -1,0 +1,54 @@
+<div *ngIf="vm$ | async as vm" class="money-boost__page">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page>
+            <ng-container header-content>
+                <gn-dark-theme-header [title]="vm?.eventTimePlusTypeName" [racingImage]="vm?.horseRacingContent?.horseRacingImage?.src">
+                    <ng-container raceStage-content>
+                        <div class="header-status-box tilted-card default-fontsize">
+                            <span class="tilted-text">
+                                {{ vm.horseRacingContent?.contentParameters?.Boost ?? '' }}
+                            </span>
+                        </div>
+                    </ng-container>
+                </gn-dark-theme-header>
+            </ng-container>
+            <ng-container body-content>
+                <div *ngIf="vm.selection && !vm?.selection?.hideEntry" class="money-boost-content">
+                    <div class="money-boost__image">
+                        <img [src]="vm?.horseRacingContent?.moneyBoostImage?.src" alt="Arrow Images" />
+                    </div>
+                    <div class="money-boost__info">
+                        <div class="price-boost__wrapper">
+                            <div class="price-boost__text">
+                                {{
+                                    vm.horseRacingContent?.contentParameters?.MoneyBoostSubtitleLeft
+                                        ? (vm.horseRacingContent?.contentParameters?.MoneyBoostSubtitleLeft | titlecase)
+                                        : ''
+                                }}
+                            </div>
+                            <div class="selection-name">{{ vm.selection.selectionName | titlecase }}</div>
+                        </div>
+                        <div class="price-wrapper">
+                            <div class="current-price current-price__tilted" autoAdjustFont>
+                                <span class="current-price__tilted--text">
+                                    {{ vm.selection?.price | marketPriceTransform: vm.selection?.hidePrice }}
+                                </span>
+                            </div>
+                            <div *ngIf="vm.oldPriceString" class="past-price">
+                                {{ vm.oldPriceString | titlecase }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <div class="money-boost-footer">
+                    <gn-dark-theme-footer-full [leftSideText]="vm.horseRacingContent?.contentParameters?.NewMoneyBoostLeftSideText ?? ''">
+                    </gn-dark-theme-footer-full>
+                </div>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

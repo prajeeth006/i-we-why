@@ -1,0 +1,38 @@
+@if (configReady && footerSlot.display()) {
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-top-links">
+                @if (showResponsiveLanguageSwitcher) {
+                    <vn-responsive-language-switcher class="responsive-language-switcher" />
+                }
+                @if (config.showLabelSwitcher) {
+                    <vn-label-switcher class="label-switcher" />
+                }
+                @for (item of config.links.items | dsl | async; track trackByText($index, item)) {
+                    <vn-footer-menu-item class="footer-menu-items" [item]="item" />
+                }
+                <vn-dynamic-layout-slot [class]="SlotName.FooterItemsInline" [slot]="SlotName.FooterItemsInline" />
+                @if (config.showHelpButton) {
+                    <vn-f-help-button class="footer-help-btn" [item]="helpButton" />
+                }
+            </div>
+            @if (config.footerTopItems.length > 0) {
+                <vn-content-messages [messages]="config.footerTopItems | dsl | async" closedCookieKey="vn-f" />
+            }
+            <div class="footer-nav-seo-container">
+                @for (seoSection of config.seoLinks | dsl | async; track trackBySectionName($index, seoSection)) {
+                    <vn-footer-menu-section [section]="seoSection" />
+                }
+            </div>
+            <vn-content-messages [messages]="config.contentMessages | dsl | async" closedCookieKey="vn-f" />
+            @if (logoSections.length) {
+                <div class="footer-nav-logos">
+                    @for (logoSection of logoSections | dsl | async; track trackBySectionName($index, logoSection)) {
+                        <vn-footer-menu-section [section]="logoSection" />
+                    }
+                </div>
+            }
+            <vn-dynamic-layout-slot [slot]="SlotName.FooterItems" />
+        </div>
+    </footer>
+}

@@ -1,0 +1,5 @@
+{
+    "name": "@frontend/vanilla/features/tracking",
+    "version": "0.0.0",
+    "sideEffects": false
+}

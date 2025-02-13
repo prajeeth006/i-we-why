@@ -1,0 +1,61 @@
+@if (version <= 1) {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.Menu"
+        [displayMode]="menuDisplayMode"
+        [badgePosition]="badgeDisplayMode"
+        linkClass="list-nav-link"
+        iconClass="ui-icon ui-icon-size-xl"
+        badgeClass="badge-offset"
+        textClass="list-nav-txt"
+        [additionalIcon]="additionalIcon"
+        [processClick]="false"
+        (onClick)="processClick($event, item, false)" />
+}
+@if (version === 4) {
+    @if (show) {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            linkClass="am-menu-item"
+            [displayMode]="menuDisplayMode"
+            [badgePosition]="badgeDisplayMode"
+            iconClass="ui-icon am-menu-icn"
+            badgeClass="badge-offset"
+            textClass="menu-item-txt"
+            [additionalIcon]="additionalIcon"
+            [processClick]="false"
+            (onClick)="processClick($event, item, false)" />
+    }
+}
+@if (version === 2 || version === 3) {
+    @if (show) {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            linkClass="am-menu-item"
+            [displayMode]="menuDisplayMode"
+            [badgePosition]="badgeDisplayMode"
+            iconClass="ui-icon"
+            badgeClass="badge-offset"
+            textClass="menu-item-txt"
+            [processClick]="false"
+            (onClick)="processClick($event, item, false)" />
+    }
+}
+
+@if (version === 5) {
+    @if (show) {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            linkClass="am-menu-item"
+            [displayMode]="menuDisplayMode"
+            [badgePosition]="badgeDisplayMode"
+            iconClass="am-v5-icon"
+            badgeClass="badge-offset"
+            textClass="menu-item-txt"
+            [processClick]="false"
+            (onClick)="processClick($event, item, false)" />
+    }
+}

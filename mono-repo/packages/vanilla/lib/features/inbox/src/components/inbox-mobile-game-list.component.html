@@ -1,0 +1,44 @@
+<div class="player-inbox-item-games mobile" [hidden]="isGameListHidden">
+    <div class="player-inbox-item-games-header">
+        <span [innerHtml]="contentMessages.MobileGames | trustAsHtml"></span>
+    </div>
+    <div class="player-inbox-item-games-list">
+        @if (message.mobileChannelList && message.mobileChannelList.length) {
+            <lh-inbox-message-channels
+                [sectionTitle]="contentMessages.ApplicableMobileGames"
+                [contentMessages]="contentMessages"
+                [channelList]="message.mobileChannelList" />
+        }
+        <div [hidden]="!message.mobileGameTitles">
+            <span class="game-section-title" [innerHtml]="' : ' | trustAsHtml"></span>{{ message.mobileGameTitles }}
+        </div>
+        <div [hidden]="message.mobileSectionGamesViewModel.length === 0">
+            <span class="game-section-title">:</span>
+            @for (sectionNameGames of message.mobileSectionGamesViewModel; track trackByTitle($index, sectionNameGames)) {
+                <div><span class="game-section-title" [innerHtml]="sectionNameGames.title + ': '"></span>{{ sectionNameGames.value }}</div>
+            }
+        </div>
+        <div [hidden]="!message.isAllMobileGames">
+            <span class="game-section-title" [innerHtml]="' : ' | trustAsHtml"></span>
+            @if (isBonusApplied()) {
+                <a (click)="goTo(message.casinoHomeLink)" href="javascript:void(0)" [innerHtml]="contentMessages.AllCasinoGames"></a>
+            }
+            @if (!isBonusApplied()) {
+                <span [innerHtml]="contentMessages.AllCasinoGames"></span>
+            }
+        </div>
+        <div [ngClass]="{ 'game-section-all': message.mobileGames.length }">
+            @for (current of message.mobileAllList; track trackBySectionTitle($index, current)) {
+                <div>
+                    <span class="game-section-title" [innerHtml]="getSectionTitle(current.sectionTitle) + ': '"></span>
+                    @if (isBonusApplied()) {
+                        <a (click)="goTo(current.link)" href="javascript:void(0)" [innerHtml]="contentMessages.All"></a>
+                    }
+                    @if (!isBonusApplied()) {
+                        <span [innerHtml]="contentMessages.All"></span>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

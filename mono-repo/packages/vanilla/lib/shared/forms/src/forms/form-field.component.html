@@ -1,0 +1,24 @@
+<ng-content select="[ptTop]" />
+@if (labelText) {
+    <label class="form-group-label" [ngClass]="elementClass" [class.form-group-label--invalid]="control.invalid" [class.floating-label]="isFloating">
+        {{ isFloating && floatedLabelText ? floatedLabelText : labelText }}
+    </label>
+}
+<div class="form-control-container" [id]="control.name">
+    <ng-content />
+    @if (validationMessages) {
+        <lh-validation-messages
+            [showOnSuccess]="showSuccessValidation"
+            [formElementRef]="element"
+            [formElement]="control.control"
+            [messages]="validationMessages" />
+    }
+    @if (showTooltips) {
+        <lh-custom-tooltip-messages
+            [formElementRef]="element"
+            [formElement]="control.control"
+            [messages]="validationMessages"
+            [addInfoTooltips]="additionalTooltips" />
+    }
+</div>
+<ng-content select="[ptBottom]" />

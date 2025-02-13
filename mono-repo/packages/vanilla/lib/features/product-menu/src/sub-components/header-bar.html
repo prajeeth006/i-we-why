@@ -1,0 +1,7 @@
+<vn-header-bar
+    (onClose)="localProductMenuService.toggle()"
+    [class]="config.headerBarCssClass"
+    [closeButtonTextCssClass]="config.closeButtonTextCssClass"
+    [closeButtonText]="config.showCloseButtonAsText ? item.resources['close-button-text'] : ''"
+    [showBack]="false"
+    [title]="title" />

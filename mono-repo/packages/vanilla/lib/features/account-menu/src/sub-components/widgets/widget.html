@@ -1,0 +1,37 @@
+@if (hideSkeleton) {
+    <div class="ch ch-shade ch-widget ch__font dh p-3 mb-3" (click)="processClick($event, item)">
+        @if (item.text; as title) {
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <span class="text-center mr-2 d-flex align-items-center">
+                        @if (item.image; as image) {
+                            <vn-image
+                                [src]="image.src"
+                                [alt]="image.alt"
+                                [width]="image.width"
+                                [height]="image.height"
+                                imageClass="ch-widget__icon" />
+                        } @else {
+                            <span class="ch-widget__icon ch__font--subtitle" [ngClass]="item.parameters.icon"></span>
+                        }
+                    </span>
+                    <span class="ch__font--title font-weight-bold">{{ title }}</span>
+                </div>
+                <vn-icon name="theme-right" size="12" extraClass="d-flex align-items-center" [attr.aria-label]="title" />
+            </div>
+            <ds-divider />
+        }
+        <div class="ch-widget--content">
+            <ng-content />
+        </div>
+        @if (footerContent) {
+            <ds-divider />
+            <div class="d-flex justify-content-center align-items-center">
+                <vn-icon name="theme-info-i" size="14" extraClass="d-flex mr-1 text-info" />
+                <span class="ch__font--sm ch__font--description" [vnDynamicHtml]="footerContent"></span>
+            </div>
+        }
+    </div>
+} @else {
+    <vn-skeleton [type]="SkeletonType.AccountMenuWidget" />
+}

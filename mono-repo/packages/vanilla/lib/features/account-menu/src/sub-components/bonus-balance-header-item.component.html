@@ -1,0 +1,35 @@
+@if (!hideIfZero || balance !== 0) {
+    <div [ngClass]="item.class" class="bonus-balance-header__item">
+        <div class="d-flex align-items-center" (click)="item.children.length && expand()">
+            <div class="bonus-balance-header__item-text pr-1">{{ item.text }}</div>
+            @if (tooltipText) {
+                <vn-icon name="theme-info" size="14" extraClass="d-flex align-items-center" [floatUi]="popper.content" (click)="trackTooltip()" />
+            }
+            <vn-popper-content cssClass="tooltip-info" closeType="button" (onCloseLinkClick)="closeClicked($event)" #popper>
+                <ng-container content>{{ tooltipText }}</ng-container>
+            </vn-popper-content>
+            <div class="bonus-balance-header__item-balance ml-auto">
+                {{ balance | vnCurrency }}
+            </div>
+            <div class="bonus-balance-header__item-icon">
+                @if (item.children) {
+                    @if (expanded) {
+                        <vn-icon name="theme-up" size="12" extraClass="d-flex align-items-center justify-content-center" />
+                    } @else {
+                        <vn-icon name="theme-down" size="12" extraClass="d-flex align-items-center justify-content-center" />
+                    }
+                }
+            </div>
+        </div>
+        @if (description) {
+            <div [vnDynamicHtml]="description" class="bonus-balance-header__item-desc"></div>
+        }
+        @if (expanded) {
+            <div class="bonus-balance-header__subitems">
+                @for (child of item.children; track trackByText($index, child)) {
+                    <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                }
+            </div>
+        }
+    </div>
+}

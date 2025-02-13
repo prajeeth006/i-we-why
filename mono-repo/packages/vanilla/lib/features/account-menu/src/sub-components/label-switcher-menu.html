@@ -1,0 +1,17 @@
+@if (service.items.length) {
+    <div class="label-switcher-menu flexbox flex-column" [ngClass]="{ 'single-page-mode': accountMenuDataService.singlePageMode }">
+        @for (item of service.items; track trackByName($index, item)) {
+            <div class="form-element form-element-right">
+                <input
+                    type="radio"
+                    class="custom-control-input custom-control-radio"
+                    name="label-switcher"
+                    (change)="switchLabel(item)"
+                    [value]="item.name"
+                    [attr.id]="item.name"
+                    [checked]="item.isActive" />
+                <label [attr.for]="item.name">{{ item.text }}</label>
+            </div>
+        }
+    </div>
+}

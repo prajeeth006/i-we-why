@@ -1,0 +1,10 @@
+@if (item.title) {
+    <vn-pc-component-header-v2 [item]="item" />
+}
+@if (item.menu) {
+    <div class="pc-menu-items">
+        @for (menuItem of items; track trackByText($index, menuItem)) {
+            <vn-pc-menu-item [item]="menuItem" [section]="section" [id]="menuItem.name" />
+        }
+    </div>
+}

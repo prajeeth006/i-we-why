@@ -1,0 +1,16 @@
+<div class="ch-toggle-with-icon d-flex" (click)="toggleDarkMode()" [class.ch-toggle-with-icon--toggle]="service.isEnabled">
+    @if (service.isEnabled) {
+        <vn-icon name="theme-moon" size="14" extraClass="ch-toggle-with-icon__icon d-flex" />
+    } @else {
+        <vn-icon name="theme-sun" size="14" extraClass="ch-toggle-with-icon__icon d-flex" />
+    }
+
+    <div class="ch-toggle-with-icon__title">
+        @if (service.isEnabled) {
+            <span>{{ item.resources?.night }}</span>
+        } @else {
+            <span>{{ item.resources?.light }}</span>
+        }
+        <span>{{ item.resources?.mode }}</span>
+    </div>
+</div>

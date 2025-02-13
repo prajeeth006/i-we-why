@@ -1,0 +1,19 @@
+<div class="bb-expander-container" [ngClass]="item.class">
+    @if (expanderItem) {
+        <div class="bb-expander-item">
+            <ng-container *vnDynamicComponent="getItemComponent(expanderItem?.type); attr: { item: expanderItem }" />
+            @if (expandableItems?.length > 0) {
+                @if (expanded) {
+                    <vn-icon name="theme-minus" extraClass="ui-icon ui-icon-size-sm" (click)="expand()" />
+                } @else {
+                    <vn-icon name="theme-plus" extraClass="ui-icon ui-icon-size-sm" (click)="expand()" />
+                }
+            }
+        </div>
+    }
+    <div class="bb-expander-item-wrapper" [class.expanded]="expanded" [@toggleAnimation]="expanded" style="overflow: hidden">
+        @for (child of expandableItems; track trackByItem($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+</div>

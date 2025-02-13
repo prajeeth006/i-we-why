@@ -1,0 +1,44 @@
+<div class="login-screen-container login-screen-container-sm">
+    <lh-header-bar [content]="loginContentService.content.title" [titleCssClass]="loginConfig.titleCssClass" (onClose)="close()" />
+    <div class="login-screen-content p-4">
+        @if (loginContentService.content.children.gridconnectimage?.image; as image) {
+            <vn-image [src]="image.src" height="150px" imageClass="login-screen-img" />
+        }
+        <div class="py-3 value-ticket-text mt-4">{{ loginContentService.content.form.pinterminal?.label }}</div>
+        <form [formGroup]="formGroup" novalidate class="mt-half form-base ten-top card-pin-form">
+            <fieldset>
+                <input type="hidden" name="connectCardNumber" formControlName="connectCardNumber" />
+                <div class="login-screen-input__out mt-2">
+                    <div class="login-screen-input__in">
+                        <input
+                            readonly
+                            type="password"
+                            name="pin"
+                            lhNumberOnly
+                            pattern="[0-9]*"
+                            formControlName="pin"
+                            inputmode="numeric"
+                            class="login-screen-input"
+                            autocomplete="current-password"
+                            maxlength="4" />
+                    </div>
+                </div>
+                <div class="login-screen-pin-error" [innerHTML]="errorMessage"></div>
+                <div class="login-screen-numpad">
+                    @for (d of digits; track trackByItem($index, d)) {
+                        <div>
+                            @if (d >= 0) {
+                                <div class="login-screen-numpad-key" (click)="digitClick(d)">{{ d }}</div>
+                            } @else {
+                                <div class="login-screen-numpad-key" (click)="digitClick(-1)">Delete</div>
+                            }
+                        </div>
+                    }
+                </div>
+            </fieldset>
+        </form>
+        <button class="login-screen-btn btn btn-primary" [disabled]="!formGroup.valid || formGroup.disabled" (click)="login($event)">
+            {{ formGroup.disabled ? commonMessages.PleaseWait : loginContentService.content.form.loginbutton?.label }}
+        </button>
+    </div>
+</div>

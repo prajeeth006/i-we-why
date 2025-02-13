@@ -1,0 +1,58 @@
+<ng-container>
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+            <ng-container header-content>
+                <gn-dark-theme-header
+                    [title]="
+                        isUkTemplate
+                            ? (vm.horseRacingContent?.contentParameters?.NewTodaysNonRunnersUK ?? '')
+                            : (vm.horseRacingContent?.contentParameters?.NewTodaysNonRunnersNonUK ?? '')
+                    "
+                    [racingImage]="vm?.horseRacingContent?.horseRacingImage?.src">
+                    <ng-container raceStage-content>
+                        <div class="header-status-box tilted-card default-fontsize">
+                            <span class="tilted-text">
+                                {{ vm.horseRacingContent?.contentParameters?.Today ?? '' }}
+                            </span>
+                        </div>
+                    </ng-container>
+                </gn-dark-theme-header>
+            </ng-container>
+            <ng-container body-content>
+                <div id="nonrunner__header" class="nonrunner__header--content">
+                    <div id="subContent1" class="nonrunner__header--meeting">
+                        {{ vm.horseRacingContent?.contentParameters?.Meeting ? (vm.horseRacingContent?.contentParameters?.Meeting | titlecase) : '' }}
+                    </div>
+                    <div id="subContent2" class="nonrunner__header--number">
+                        {{ vm.horseRacingContent?.contentParameters?.No ? (vm.horseRacingContent?.contentParameters?.No | titlecase) : '' }}.
+                    </div>
+                    <div id="subContent3" class="nonrunner__header--runner">
+                        {{ vm.horseRacingContent?.contentParameters?.Runner ? (vm.horseRacingContent?.contentParameters?.Runner | titlecase) : '' }}
+                    </div>
+                </div>
+                <div class="nonrunner__content">
+                    <ul class="nonrunner__table">
+                        <li
+                            *ngFor="let nonRunnersEvent of vm.nonRunnersEvents | slice: pageDetails.startIndex : pageDetails.endIndex"
+                            id="nonRunnersEvents">
+                            <div id="dateTime" class="nonrunner__meeting">
+                                {{ nonRunnersEvent?.eventDateTime | eventDatetimeChangeformat }} {{ nonRunnersEvent?.meetingName | titlecase }}
+                            </div>
+                            <div id="eventNumber" class="nonrunner__number">
+                                {{ nonRunnersEvent?.nonRunnerNumber }}
+                            </div>
+                            <div id="runnerName" class="nonrunner__name">
+                                {{ nonRunnersEvent?.nonRunnerName | titlecase }}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <gn-dark-theme-footer [leftSideText]="" [rightSideText]="pageDetails.paginationText"> </gn-dark-theme-footer>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

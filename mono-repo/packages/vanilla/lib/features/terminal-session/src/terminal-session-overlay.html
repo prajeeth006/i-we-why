@@ -1,0 +1,27 @@
+@if (terminalSessionConfig.content; as content) {
+    <vn-header-bar [showBack]="false" [showClose]="false" [title]="content.title" class="terminal-session-header" />
+    <div class="terminal-session-container overlay-content text-center">
+        <div class="terminal-session__sub-title" [innerHtml]="content.text | trustAsHtml"></div>
+
+        @if (content.messages; as messages) {
+            <div class="terminal-session__time-active" [innerHtml]="messages.timeActive | format: timeActive() | trustAsHtml"></div>
+            <div
+                class="terminal-session__deposit-amount"
+                [innerHtml]="messages.depositAmount | format: (terminalSessionNotification().cumulativeBalance | vnCurrency) | trustAsHtml"></div>
+            <div class="terminal-session__text" [innerHtml]="messages.text | trustAsHtml"></div>
+        }
+
+        <div class="form-element btn-container terminal-session-btn-container">
+            @if (terminalSessionConfig.continueSessionButton; as continueSessionButton) {
+                <button ds-button (click)="continueSession()" class="btn btn-primary btn-lg">
+                    {{ continueSessionButton.text }}
+                </button>
+            }
+            @if (terminalSessionConfig.finishButton; as finishButton) {
+                <button ds-button (click)="finishSession()" class="btn btn-light btn-lg ds-btn-outline-primary">
+                    {{ finishButton.text }}
+                </button>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,5 @@
+<div class="am-row align-items-center" [class.active]="isActive()" [ngClass]="item.class">
+    @for (child of item.children; track trackByText($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+    }
+</div>

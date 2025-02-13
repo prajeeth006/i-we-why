@@ -1,0 +1,12 @@
+<div class="form-element form-links">
+    @if (highlightHints) {
+        <div class="message-panel">
+            <div class="theme-info-i">
+                <div class="cms-container" [vnDynamicHtml]="text"></div>
+            </div>
+        </div>
+    }
+    @if (!highlightHints) {
+        <div class="pc-txt txt-s mb-0" [vnDynamicHtml]="text"></div>
+    }
+</div>

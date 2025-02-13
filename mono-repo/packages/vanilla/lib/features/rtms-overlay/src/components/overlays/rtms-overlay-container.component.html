@@ -1,0 +1,32 @@
+<div
+    class="generic-modal-wrapper"
+    [class.actions-in-row]="!messageContent.isShowTnc"
+    [class.actions-with-tc]="messageContent.isShowTnc ? true : false"
+    [class.gm-overlay-title]="messageContent.content.overlayHeaderType === HeaderType.TRANSPARENT"
+    [ngClass]="{ 'tc-active': tacActive, 'tc-closed': !tacActive }"
+    [attr.sitecoreId]="currentMessage?.payload.baseTemplateId">
+    @if (!messageContent.content.useRewardsOverlay && !messageContent.isBonusTeaser) {
+        <vn-rtms-overlay
+            class="rtms-content"
+            (tacExpandedEvent)="toggleTaC($event)"
+            [message]="messageContent"
+            [content]="sitecoreContent"
+            (closeEvent)="close()" />
+    }
+    @if (messageContent.content.useRewardsOverlay && !messageContent.isBonusTeaser) {
+        <vn-rtms-custom-overlay
+            class="rtms-content"
+            (tacExpandedEvent)="toggleTaC($event)"
+            [message]="messageContent"
+            [content]="sitecoreContent"
+            (closeEvent)="close()" />
+    }
+    @if (messageContent.isBonusTeaser) {
+        <vn-rtms-bonus-teaser
+            class="rtms-content"
+            (tacExpandedEvent)="toggleTaC($event)"
+            [message]="messageContent"
+            [content]="sitecoreContent"
+            (closeEvent)="close()" />
+    }
+</div>

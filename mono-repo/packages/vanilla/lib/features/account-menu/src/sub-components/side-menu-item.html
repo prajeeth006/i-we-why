@@ -1,0 +1,23 @@
+@if (useFastIconType === true) {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.Menu"
+        displayMode="FastIcon"
+        badgePosition="FastIcon"
+        linkClass="am-side-item"
+        iconClass="ui-icon"
+        textClass="side-item-txt"
+        [processClick]="false"
+        (onClick)="click($event, item)" />
+} @else {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.Menu"
+        displayMode="icon"
+        badgePosition="afterText"
+        linkClass="am-side-item"
+        iconClass="ui-icon"
+        textClass="side-item-txt"
+        [processClick]="false"
+        (onClick)="click($event, item)" />
+}

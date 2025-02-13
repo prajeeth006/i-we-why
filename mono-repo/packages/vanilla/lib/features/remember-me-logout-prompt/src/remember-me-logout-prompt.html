@@ -1,0 +1,10 @@
+@if (config.content; as content) {
+    <lh-cross-product-layout>
+        <vn-header-bar titleCssClass="brand-logo" title="dummyTitle" [showClose]="false" [showBack]="false" />
+        <div class="portal-center-wrapper pt-4">
+            <div [innerHtml]="content.text | trustAsHtml"></div>
+            <button class="btn btn-primary w-100" (click)="rememberMe()" [innerHtml]="content.messages?.rememberme"></button>
+            <button class="btn btn-link txt-underlined w-100" (click)="close()" [innerHtml]="content.messages?.close"></button>
+        </div>
+    </lh-cross-product-layout>
+}

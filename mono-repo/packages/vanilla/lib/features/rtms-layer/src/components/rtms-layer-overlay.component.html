@@ -1,0 +1,66 @@
+<div id="dialog-box" class="real-time-popup">
+    <div class="close-btn-container d-flex header-ctrl">
+        @if (!message.content.restrictedOverlay) {
+            <vn-icon name="theme-ex" extraClass="close-btn dh ui-icon ui-icon-size-lg ui-close ui-close-primary ml-auto" (click)="close()" />
+        }
+    </div>
+    <div class="wrapper pc-txt bg-light" #bcmcontainer>
+        @if (message.content; as content) {
+            <div class="position-relative">
+                <vn-image
+                    [textClass]="'overlay'"
+                    [src]="content.overlayImage"
+                    [intro]="content.overlayImageIntroductoryText"
+                    [title]="content.overlayImageTitleText"
+                    [subtitle]="content.overlayImageSubtitleText"
+                    [titleFontSize]="content.overlayImageTitleFontSize"
+                    [textAlign]="content.overlayImageTextAlignment" />
+                @if (content.headerTermsAndConditionsOverlay) {
+                    <div class="tc-overlay" [innerHtml]="content.headerTermsAndConditionsOverlay"></div>
+                }
+            </div>
+        }
+        <div class="text">
+            <div class="player-inbox-item-title" [innerHtml]="message.content.overlayTitle | trustAsHtml"></div>
+            <div class="description pc-txt">
+                <lh-rtms-cta-action
+                    class="player-inbox-item-description"
+                    [content]="message.content.overlayDescription"
+                    [rtmsCtaAction]="message"
+                    [rtmsCtaActionMessages]="content.messages"
+                    rtmsType="OVERLAY"
+                    rtmsCtaContentType="DESCRIPTION"
+                    (action)="rtmsCtaActions($event)" />
+            </div>
+            <div #bcmtnc>
+                @if (message.isShowTnc) {
+                    <div class="bcms-toggle-tnc">
+                        <div class="bcms-toggle-tnc-caption" (click)="tacExpanded()">
+                            <span>{{ content.messages?.TermsAndConditions }}</span>
+                            @if (isTacExpanded) {
+                                <vn-icon name="theme-up" extraClass="toggle-tnc-icon" />
+                            } @else {
+                                <vn-icon name="theme-down" extraClass="toggle-tnc-icon" />
+                            }
+                        </div>
+                        <div
+                            class="bcms-toggle-tnc-details pc-txt txt-xs"
+                            [innerHtml]="message.tnCData | trustAsHtml"
+                            [hidden]="!isTacExpanded"></div>
+                        <span class="bcms-toggle-tnc-fade" [hidden]="!isTacExpanded"></span>
+                    </div>
+                }
+            </div>
+            <div class="rtms-cta-block">
+                <lh-rtms-cta-action
+                    class="player-inbox-item-cta ctaaction clearfix"
+                    [content]="message.content.overlayCallToAction"
+                    [rtmsCtaAction]="message"
+                    [rtmsCtaActionMessages]="content.messages"
+                    rtmsType="OVERLAY"
+                    rtmsCtaContentType="CTA"
+                    (action)="rtmsCtaActions($event)" />
+            </div>
+        </div>
+    </div>
+</div>

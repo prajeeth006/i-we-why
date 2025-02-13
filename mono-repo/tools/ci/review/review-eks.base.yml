@@ -1,0 +1,110 @@
+stages:
+  - start
+  - build
+  - publish
+  - deploy
+  - e2e
+
+variables:
+  CI_DOCKER_REPOSITORY: 577638359335.dkr.ecr.eu-west-1.amazonaws.com
+  RUNTIME_IDENTIFIER: linux-x64
+  HELM_UPGRADE_VALUES_FILE: .gitlab/auto-deploy-values.yaml
+  GENERATED_ARTIFACTS_DEST: 'dist/tools/ci/artifacts'
+
+include:
+  - tools/ci/common/node-module-cache.tpl.yml
+  - tools/ci/common/rules.yml
+  - tools/ci/common/version.yml
+  - tools/ci/common/version-xml.yml
+  - tools/ci/common/build-client.yml
+  - tools/ci/common/build-server.yml
+  - tools/ci/common/e2e.yml
+
+.review-publish:
+  image: docker-public.dev.docker.env.works/b2d-kaniko:latest
+  tags:
+    - eks-sports-betting-dev
+  variables:
+    CI_APPLICATION_TAG: "$VERSION"
+  script:
+    - echo "{\"credsStore\":\"ecr-login\"}" > /kaniko/.docker/config.json
+    - /kaniko/executor --build-arg PROJECT=$PROJECT --build-arg PRODUCT=$PRODUCT --build-arg PROJECT_DIR=$CI_PROJECT_DIR --build-arg APP_ARTIFACTS_PATH=$APP_ARTIFACTS_PATH --context backend --destination $CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG
+
+.review-deploy-base:
+  image: "${CI_TEMPLATE_REGISTRY_HOST}/gitlab-org/cluster-integration/auto-deploy-image:${AUTO_DEPLOY_IMAGE_VERSION}"
+  tags:
+    - linux-docker-runner
+  allow_failure: true
+  environment:
+    name: $DEPLOY_ENVIRONMENT/$APP/$ENVIRONMENT/$CI_COMMIT_REF_NAME
+  variables:
+    AUTO_DEPLOY_IMAGE_VERSION: "v2.77.0"
+    REPLICAS: 1
+    KUBE_CONTEXT: $EKS_KUBE_CONTEXT
+    CI_APPLICATION_TAG: "$VERSION"
+    INGRESS_TLS_SECRET_NAME: wildcard.$KUBE_INGRESS_BASE_DOMAIN
+    K8S_SECRET_VANILLA_LABEL_RESOLUTION: "1"
+    K8S_SECRET_VANILLA_HOSTING_PLATFORM: "EKS"
+    AUTO_DEVOPS_CHART_REPOSITORY_NAME: "bpty-helm-public"
+    AUTO_DEVOPS_CHART_REPOSITORY: "https://artifactory.bwinparty.corp/artifactory/api/helm/bpty-helm-public"
+    AUTO_DEVOPS_CHART: "bpty-helm-public/auto-deploy-app-eks"
+    AUTO_DEVOPS_CHART_REPOSITORY_INSECURE: "true"
+    AUTO_DEVOPS_CHART_CUSTOM_ONLY: "true"
+    AUTO_DEVOPS_CHART_VERSION: "3.0.4"
+
+.review-deploy:
+  extends: .review-deploy-base
+  script:
+    - printenv
+    # KUBE_INGRESS_BASE_DOMAIN name check: https://gitlab.com/gitlab-org/cluster-integration/auto-deploy-image/-/blob/master/src/bin/auto-deploy#L33
+    #- auto-deploy check_kube_domain
+    - auto-deploy download_chart
+    # Check cluster availability and choose the next if not ready to use
+    # In case of MR the ci_commit_branch variable is empty
+    - if [ -z "$CI_COMMIT_BRANCH" ]; then BRANCH_NAME=$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME; else BRANCH_NAME=$CI_COMMIT_BRANCH; fi
+    - if [ $DEPLOY_ENVIRONMENT = 'staging' ]; then export KUBE_NAMESPACE+=-staging; fi
+    #- export KUBE_CONTEXT+=$CURRENT_CLUSTER_INDEX
+    # Use the KUBE_CONTEXT if possible anyway it uses the default
+    # https://gitlab.com/gitlab-org/cluster-integration/auto-deploy-image/-/blob/master/src/bin/auto-deploy#L24
+    - auto-deploy use_kube_context || true
+    # Check and create namespace if needed based on KUBE_NAMESPACE
+    # https://gitlab.com/gitlab-org/cluster-integration/auto-deploy-image/-/blob/master/src/bin/auto-deploy#L117
+    - auto-deploy ensure_namespace
+    - kubectl label namespaces $KUBE_NAMESPACE istio-injection=enabled
+    # kubernetes deployment cleanup
+    - kubectl -n $KUBE_NAMESPACE get deployment | awk '{print $1 "\t\t" $5}' | grep -E '[0-9]+d' || true | awk '{print $1}' | xargs -I {} helm uninstall -n $KUBE_NAMESPACE {}
+    # Add help extra args for multi label deployment support
+    - export HELM_UPGRADE_EXTRA_ARGS="--set entain.app=$APP --set gitlab.ciCommitRefSlug=$CI_COMMIT_REF_SLUG --set entain.env=$ENVIRONMENT --set entain.labels=$LABELS --set service.additionalHosts=$ADDITIONAL_HOSTS --set baseDomain=$KUBE_INGRESS_BASE_DOMAIN"
+    # Start deployment https://gitlab.com/gitlab-org/cluster-integration/auto-deploy-image/-/blob/master/src/bin/auto-deploy#L219
+    - auto-deploy deploy
+    # Persist product base domain to consume in e2e test jobs
+    - echo "BASE_URL=https://$PRODUCT_BASE_DOMAIN" > deploy-url.env;
+    - echo "PRODUCT_BASE_DOMAIN=$PRODUCT_BASE_DOMAIN" > product-base-domain.env;
+  variables:
+    KUBE_INGRESS_BASE_DOMAIN: "sports-betting-dev.aws.local"
+    K8S_SECRET_ASPNETCORE_ENVIRONMENT: $ENVIRONMENT
+    REVIEW_DOMAIN: $CI_COMMIT_REF_SLUG.$ENVIRONMENT.$KUBE_INGRESS_BASE_DOMAIN
+    PRODUCT_BASE_DOMAIN: $APP.$REVIEW_DOMAIN
+  environment:
+    url: https://$PRODUCT_BASE_DOMAIN
+  artifacts:
+    reports:
+      dotenv: 
+        - deploy-url.env
+        - product-base-domain.env
+    paths:
+      - deploy-url.env
+      - product-base-domain.env
+    when: always
+
+.review-cleanup:
+  extends: .review-deploy-base
+  stage: .post
+  variables:
+    GIT_STRATEGY: none
+  environment:
+    action: stop
+  script:
+    - if [ $DEPLOY_ENVIRONMENT = 'staging' ]; then export KUBE_NAMESPACE+=-staging; fi
+    - auto-deploy use_kube_context || true
+    - auto-deploy delete

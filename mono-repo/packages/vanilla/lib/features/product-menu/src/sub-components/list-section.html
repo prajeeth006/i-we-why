@@ -1,0 +1,10 @@
+<div class="product-menu-section" [ngClass]="item.class">
+    @if (item.text) {
+        <div class="product-menu-section-title">{{ item.text }}</div>
+    }
+    <div class="product-menu-section-list">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+</div>

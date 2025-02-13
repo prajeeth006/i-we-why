@@ -1,0 +1,12 @@
+@if (useFastIconType === true) {
+    <vn-menu-item
+        class="bottom-sheet-item"
+        [item]="item"
+        [section]="MenuSection.BottomSheet"
+        displayMode="FastIcon"
+        badgePosition="FastIcon"
+        (onClick)="close()"
+        linkClass="btn" />
+} @else {
+    <vn-menu-item class="bottom-sheet-item" [item]="item" [section]="MenuSection.BottomSheet" (onClick)="close()" linkClass="btn" />
+}

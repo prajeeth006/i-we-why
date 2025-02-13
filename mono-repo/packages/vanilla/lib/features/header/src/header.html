@@ -1,0 +1,87 @@
+@if (config | async; as config) {
+    @if (config.version === 2) {
+        @if (headerService.headerVisible()) {
+            <header class="header" (vnObserveSize)="headerService.headerElementRect.set($event)">
+                @if (headerMessagesService.stickyTopMessages(); as messages) {
+                    <vn-content-messages [messages]="messages" class="content-messages-header-top" closedCookieKey="vn-ts" toggle-scroll="all" />
+                }
+                @if (!headerService.itemDisabled(SlotName.HeaderTopItems)) {
+                    <vn-dynamic-layout-slot [slot]="SlotName.HeaderTopItems" toggle-scroll="one" />
+                }
+                @if (!headerService.itemDisabled('header_sections')) {
+                    <nav class="navbar navbar-expand-md" toggle-scroll="one">
+                        <vn-header-section [items]="(headerService.leftItems$ | async) || []" class="navbar-wrapper-left product-nav-wrapper" />
+                        <ng-container *vnAuthstate="{ authenticated: 'hide', workflow: 'hide' }">
+                            @if (headerService.unauthItems(); as items) {
+                                <vn-header-section [items]="items" class="navbar-wrapper-right" />
+                            }
+                        </ng-container>
+                        <ng-container *vnAuthstate="{ unauthenticated: 'hide', workflow: 'hide' }">
+                            <vn-header-section
+                                [items]="(headerService.authItems$ | async) || []"
+                                [vnElementKey]="VanillaElements.AUTH_HEADER_SECTION"
+                                class="navbar-wrapper-right" />
+                        </ng-container>
+                    </nav>
+                }
+                @if (headerService.productItems(); as items) {
+                    @if (items.length > 0) {
+                        <div class="product-items" toggle-scroll="one">
+                            <vn-header-section [items]="items" class="navbar-wrapper-left product-items-wrapper" />
+                        </div>
+                    }
+                }
+                @if (headerService.pillItems()?.length > 0) {
+                    <div class="pill-items" toggle-scroll="one">
+                        @if (navigationPillService.currentNavigationPill(); as pill) {
+                            @if (pill.children; as filters) {
+                                <vn-icon name="theme-close" (click)="navigationPillService.resetActiveItem()" />
+                                <div class="pill-items__container">
+                                    <vn-header-section [items]="[pill]" class="navbar-wrapper-left nav-pill-items-wrapper" />
+                                    <vn-header-section [items]="filters" class="navbar-wrapper-left filter-pill-items-wrapper" />
+                                </div>
+                            } @else {
+                                <vn-header-section [items]="headerService.pillItems() || []" class="navbar-wrapper-left nav-pill-items-wrapper" />
+                            }
+                        } @else {
+                            <vn-header-section [items]="headerService.pillItems() || []" class="navbar-wrapper-left nav-pill-items-wrapper" />
+                        }
+                    </div>
+                }
+                @if (!headerService.itemDisabled(SlotName.HeaderBottomItems)) {
+                    <vn-dynamic-layout-slot [slot]="SlotName.HeaderBottomItems" />
+                }
+            </header>
+        }
+        <vn-dynamic-layout-slot [slot]="SlotName.HeaderSubNav" toggle-scroll="one" />
+    } @else {
+        @if (headerService.headerVisible()) {
+            <header class="header" (vnObserveSize)="headerService.headerElementRect.set($event)">
+                @if (headerMessagesService.stickyTopMessages(); as messages) {
+                    <vn-content-messages [messages]="messages" class="content-messages-header-top" closedCookieKey="vn-ts" />
+                }
+                @if (!headerService.itemDisabled(SlotName.HeaderTopItems)) {
+                    <vn-dynamic-layout-slot [slot]="SlotName.HeaderTopItems" />
+                }
+                @if (!headerService.itemDisabled('header_sections')) {
+                    <nav class="navbar navbar-expand-md">
+                        <vn-header-section [items]="(headerService.leftItems$ | async) || []" class="navbar-wrapper-left product-nav-wrapper" />
+                        <ng-container *vnAuthstate="{ authenticated: 'hide', workflow: 'hide' }">
+                            <vn-header-section [items]="headerService.unauthItems() || []" class="navbar-wrapper-right" />
+                        </ng-container>
+                        <ng-container *vnAuthstate="{ unauthenticated: 'hide', workflow: 'hide' }">
+                            <vn-header-section
+                                [items]="(headerService.authItems$ | async) || []"
+                                class="navbar-wrapper-right"
+                                [vnElementKey]="VanillaElements.AUTH_HEADER_SECTION" />
+                        </ng-container>
+                    </nav>
+                }
+                @if (!headerService.itemDisabled(SlotName.HeaderBottomItems)) {
+                    <vn-dynamic-layout-slot [slot]="SlotName.HeaderBottomItems" />
+                }
+            </header>
+        }
+        <vn-dynamic-layout-slot [slot]="SlotName.HeaderSubNav" />
+    }
+}

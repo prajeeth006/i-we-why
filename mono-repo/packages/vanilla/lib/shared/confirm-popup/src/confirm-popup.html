@@ -1,0 +1,24 @@
+@if (content(); as content) {
+    <div class="generic-modal-wrapper actions-in-row">
+        <div class="generic-modal-title">
+            <div class="header-ctrl-wrapper">
+                <div class="header-ctrl d-flex justify-content-between align-items-center">
+                    <div class="header-ctrl-l">
+                        <vn-icon name="theme-left" extraClass="ui-icon ui-icon-size-lg ui-back d-flex align-items-center" />
+                    </div>
+                    <div class="header-ctrl-txt text-truncate">{{ content.title }}</div>
+                    <div (click)="stay()" class="header-ctrl-r">
+                        <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="generic-modal-content-wrapper">
+            <div class="generic-modal-content" [innerHTML]="content.text"></div>
+        </div>
+        <div class="generic-modal-actions">
+            <button class="btn btn-light btn-md" (click)="leave()">{{ content.leaveButton }}</button>
+            <button class="btn btn-primary btn-md" (click)="stay()">{{ content.stayButton }}</button>
+        </div>
+    </div>
+}

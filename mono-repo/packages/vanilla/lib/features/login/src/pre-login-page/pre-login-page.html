@@ -1,0 +1,12 @@
+@if (item) {
+    <div class="newvisitor-wrapper d-flex flex-column">
+        <vn-header-bar [title]="title" [backButtonText]="item.messages?.Back || ''" (onBack)="back()" [showClose]="false" />
+        <div class="newvisitor-content">
+            <div class="newvisitor-content__text" [innerHtml]="item.text"></div>
+            <div class="newvisitor-btn-container d-flex justify-content-center">
+                <button class="btn btn-lg btn-primary w-50" (click)="register()">{{ item.messages?.Register }}</button>
+                <button class="btn btn-lg btn-secondary w-50" (click)="login()">{{ item.messages?.Login }}</button>
+            </div>
+        </div>
+    </div>
+}

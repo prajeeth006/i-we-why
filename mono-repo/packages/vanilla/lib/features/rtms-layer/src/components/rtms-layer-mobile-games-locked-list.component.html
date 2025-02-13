@@ -1,0 +1,47 @@
+<div class="bcms-games-container mobile" [hidden]="message.mobileGames.length === 0 && !message.isAllMobileGames">
+    @if (!isOfferClaimed) {
+        <div class="bcms-games-wrapper">
+            <div [hidden]="message.mobileGames.length === 0" class="scrollable-games top-game-section bcms-games">
+                @if (message.mobileGames.length <= 3) {
+                    <div class="bcms-games-img-container no-slider">
+                        @for (game of message.mobileGames; track trackByTitle($index, game)) {
+                            <div class="bcms-single-game-container">
+                                <a class="bcms-game-img-link dh">
+                                    <div class="bcms-game-locked">
+                                        <vn-icon
+                                            name="theme-locked"
+                                            extraClass="ui-icon ui-icon-size-xl d-flex justify-content-center align-items-center" />
+                                        <vn-image [src]="game.icon.src" [alt]="game.title" width="140" height="140" imageClass="bcms-game-img" />
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                }
+                @if (message.mobileGames.length > 3) {
+                    <vn-swiper [swiperOptions]="{ slidesPerView }" swiperClass="bcms-games-img-container">
+                        @for (game of message.mobileGames; track trackByTitle($index, game)) {
+                            <div class="swiper-slide">
+                                <div class="bcms-single-game-container">
+                                    <a class="bcms-game-img-link dh">
+                                        <div class="bcms-game-locked">
+                                            <vn-icon
+                                                name="theme-locked"
+                                                extraClass="ui-icon ui-icon-size-xl d-flex justify-content-center align-items-center" />
+                                            <vn-image [src]="game.icon.src" [alt]="game.title" width="140" height="140" imageClass="bcms-game-img" />
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </vn-swiper>
+                }
+            </div>
+        </div>
+    }
+</div>
+<!-- <div [hidden]="!message.isAllMobileGames">
+<a (click)="goTo(message.casinoHomeLink)" class="game-image-link">
+  <img alt="AllGames" width="140" height="140" [src]="message.casinoAllGamesIconSrc" />
+</a>
+</div> -->

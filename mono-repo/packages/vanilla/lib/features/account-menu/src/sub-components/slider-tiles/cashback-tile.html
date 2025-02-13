@@ -1,0 +1,26 @@
+@if (ignoreVipLevel) {
+    <vn-am-tile class="am-cashback-tile" [item]="item">
+        @if (text) {
+            <ng-container left>
+                <div class="cashback-description" [innerHtml]="availablePointsTitle | trustAsHtml"></div>
+                <div class="coral-cashback-current-points" [innerHtml]="text | trustAsHtml"></div>
+            </ng-container>
+        }
+        <ng-container right>
+            <div class="cashback-description" [innerHtml]="cashValueTitle | trustAsHtml"></div>
+            <div class="coral-cashback-cash-value" [innerHtml]="cashbackAmount | trustAsHtml"></div>
+        </ng-container>
+    </vn-am-tile>
+} @else {
+    <vn-am-tile [cssClass]="{ 'am-cashback-tile': true, 'cashback-completed': isCompleted }" [item]="item">
+        @if (chartSegments) {
+            <vn-donut-chart left class="cashback-donut" [segments]="chartSegments" />
+        }
+        <ng-container right>
+            @if (text) {
+                <div class="cashback-amount">{{ text }}</div>
+            }
+            <div class="cashback-description" [innerHtml]="description | trustAsHtml"></div>
+        </ng-container>
+    </vn-am-tile>
+}

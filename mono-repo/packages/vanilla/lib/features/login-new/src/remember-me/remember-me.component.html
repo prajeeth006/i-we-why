@@ -1,0 +1,26 @@
+@if (config.v2) {
+    <div class="form-control-us-switcher d-flex justify-content-between align-items-center">
+        <div class="d-flex us-switcher-label">
+            <span class="us-switcher-label-text">{{ content.label }}</span>
+            <span class="theme-info-i d-flex align-items-center" [floatUi]="popper.content" (click)="trackRememberMeTooltip()"></span>
+            <vn-popper-content cssClass="tooltip-info" #popper>
+                <ng-container content>{{ content.toolTip }}</ng-container>
+            </vn-popper-content>
+        </div>
+        <div class="switcher-lg">
+            <ds-switch id="rememberMe" name="rememberMe" [checked]="value" (checkedChange)="onValueChange($event)" />
+        </div>
+    </div>
+}
+@if (!config.v2) {
+    <div class="form-element">
+        <input
+            type="checkbox"
+            class="custom-control-input custom-control-checkbox"
+            name="rememberMe"
+            (change)="onValueChange($event.target.checked)"
+            [checked]="value"
+            id="rememberMe" />
+        <label for="rememberMe">{{ content.label }}</label>
+    </div>
+}

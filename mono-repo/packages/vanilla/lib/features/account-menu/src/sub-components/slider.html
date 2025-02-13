@@ -1,0 +1,7 @@
+<vn-swiper [swiperOptions]="swiperConfig" [swiperClass]="[item.class, 'swiper--buttons-sm swiper--buttons-shadow']">
+    @for (child of item.children | slice: 0 : 5; track trackByText($index, child)) {
+        <div class="swiper-slide am-slider-item">
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        </div>
+    }
+</vn-swiper>

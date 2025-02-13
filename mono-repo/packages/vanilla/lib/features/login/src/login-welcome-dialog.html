@@ -1,0 +1,21 @@
+<lh-header-bar [content]="loginContentService.content.title" [titleCssClass]="loginConfig.titleCssClass" (onClose)="close()" />
+<div id="login" class="scroll-container portal-center-wrapper text-center">
+    @if (loginContentService.content.messages?.WelcomeHeaderText; as headerText) {
+        <h1 class="welcome_dialog__title">{{ headerText }}</h1>
+    }
+    @if (data.pictureUrl) {
+        <img [src]="data.pictureUrl" [alt]="data.name" width="80" height="80" class="welcome_dialog__profile-picture rounded-circle mx-auto mb-2" />
+    }
+    <vn-login-provider-button [provider]="data.provider" (loginEvent)="loginWithProvider()" />
+    <p class="welcome_dialog__description">{{ welcomeDescription }}</p>
+    @if (loginContentService.content.messages?.DividerText; as dividerText) {
+        <p class="welcome_dialog__separator">{{ dividerText }}</p>
+    }
+    @if (loginContentService.content.form.welcomecancelbutton?.label; as cancelButtonText) {
+        <button
+            [ngClass]="loginContentService.content.form.welcomecancelbutton?.htmlAttributes?.cssClass || undefined"
+            (mousedown)="onWelcomeCancel()">
+            {{ cancelButtonText }}
+        </button>
+    }
+</div>

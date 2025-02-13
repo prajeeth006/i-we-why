@@ -1,0 +1,6 @@
+@if (balance !== null) {
+    <div [attr.data-testid]="item.name" class="bonus-balance-item">
+        <div class="text-truncate bonus-balance-text">{{ item.text }}</div>
+        <div class="text-truncate bonus-balance-amount">{{ balance | async | vnCurrency }}</div>
+    </div>
+}

@@ -1,0 +1,4 @@
+﻿@if (commonMessages.ClockText; as clockText) {
+    <span class="clock-text">{{ clockText }}</span>
+}
+<span class="clock-time">{{ time() | date: format }}</span>

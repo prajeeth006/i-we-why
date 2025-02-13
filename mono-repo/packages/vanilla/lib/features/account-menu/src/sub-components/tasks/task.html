@@ -1,0 +1,91 @@
+@if (version === 5) {
+    <div
+        class="ch-task-card"
+        [class.ch-task-card--important]="tasksService.isUrgent(item)"
+        [class.ch-task-card--onboarding]="'onboarding'"
+        [ngClass]="item.class">
+        <div class="ch-task-card__content d-flex align-items-center">
+            <div class="ch-task-card__text-wrapper d-flex align-items-center mr-2">
+                <vn-icon
+                    [name]="!tasksService.isUrgent(item) ? 'theme-ch-stories' : 'theme-error-i'"
+                    size="20"
+                    extraClass="ch-task-card__icn d-flex" />
+                <div class="ch-task-card__text">
+                    <div class="ch__font font-weight-bold" [innerHtml]="item.text | trustAsHtml"></div>
+                    @if (item.resources.Description; as description) {
+                        <div class="ch__font--sm ch__font--description" [vnDynamicHtml]="description"></div>
+                    }
+                </div>
+            </div>
+            <div class="ml-auto">
+                <a (click)="processClick($event, item)" class="btn btn-light btn-sm" href="#">{{ resources?.start ?? '' }}</a>
+            </div>
+        </div>
+    </div>
+} @else {
+    <div
+        vnSwipe
+        class="am-task ch-shade--light ch-task-card"
+        [class.ch-task-card--important]="tasksService.isUrgent(item)"
+        [ngClass]="item.class"
+        (click)="processClick($event, item)"
+        (onSwipe)="onSwipe($event, item)">
+        <div class="ch-task-card__content">
+            @switch (item?.layout) {
+                @case ('adhoc') {
+                    @if (tasksService.isUrgent(item)) {
+                        <vn-icon name="theme-error-i" size="12" extraClass="ch-task-card__icn" />
+                    }
+                    <div [ngClass]="'d-flex flex-direction-row'">
+                        <div class="ch-task-card__text mr-2">
+                            <div class="ch__font font-weight-bold" [innerHtml]="item.text | trustAsHtml">
+                                <vn-icon name="theme-right" size="12" extraClass="ch-task-card__arrow" />
+                            </div>
+                            @if (item.resources.Description; as description) {
+                                <div class="ch__font--sm ch__font--description" [vnDynamicHtml]="description"></div>
+                            }
+                        </div>
+                    </div>
+                }
+                @case ('onboarding') {
+                    @if (tasksService.isUrgent(item)) {
+                        <vn-icon name="theme-error-i" size="12" extraClass="ch-task-card__icn" />
+                    }
+                    <div class="ch-onboarding__dot--task">
+                        <span class="ch-task-card__icn ch-onboarding__dot--task-bg"></span>
+                        <span class="ch-task-card__icn ch-onboarding__dot ch-onboarding__dot--task-dot ch-onboarding__dot--pulse"></span>
+                    </div>
+                    <div [ngClass]="'d-flex flex-direction-row'">
+                        <vn-icon name="theme-ch-stories" size="20" extraClass="ch__font--gray-3 d-flex p-0 mr-2 mt-1" />
+                        <div class="ch-task-card__text mr-2">
+                            <div class="ch__font font-weight-bold" [innerHtml]="item.text | trustAsHtml">
+                                <vn-icon name="theme-right" size="12" extraClass="ch-task-card__arrow" />
+                            </div>
+                            @if (item.resources.Description; as description) {
+                                <div class="ch__font--sm ch__font--description" [vnDynamicHtml]="description"></div>
+                            }
+                        </div>
+                    </div>
+                }
+                @case ('deadline') {
+                    @if (!tasksService.isUrgent(item) && mode !== 'page') {
+                        <vn-icon name="theme-close-small" size="12" extraClass="ch-task-card__close" (click)="close(item)" />
+                    }
+                    @if (tasksService.isUrgent(item)) {
+                        <vn-icon name="theme-error-i" size="12" extraClass="ch-task-card__icn" />
+                    }
+                    <div>
+                        <div class="ch-task-card__text mr-2">
+                            <div class="ch__font font-weight-bold" [innerHtml]="item.text | trustAsHtml">
+                                <vn-icon name="theme-right" size="12" extraClass="ch-task-card__arrow" />
+                            </div>
+                            @if (item.resources.Description; as description) {
+                                <div class="ch__font--sm ch__font--description" [vnDynamicHtml]="description"></div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}

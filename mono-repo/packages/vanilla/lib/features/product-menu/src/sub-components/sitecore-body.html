@@ -1,0 +1,7 @@
+@if (content) {
+    <div class="product-menu-content">
+        @for (section of content | dsl | async; track trackByText($index, section)) {
+            <ng-container *vnDynamicComponent="getItemComponent(section.type); attr: { item: section }" />
+        }
+    </div>
+}

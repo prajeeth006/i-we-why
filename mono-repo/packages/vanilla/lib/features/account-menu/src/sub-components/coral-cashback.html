@@ -1,0 +1,16 @@
+<div class="coral-cashback-content-wrapper">
+    @if (model) {
+        <div class="coral-cashback-vip">
+            <div class="coral-cashback-title" [innerHtml]="model.title | trustAsHtml"></div>
+            <div class="coral-cashback-current-points" [innerHtml]="model.currentPoints | trustAsHtml"></div>
+            <div class="coral-cashback-cash-value" [innerHtml]="model.cashValue | trustAsHtml"></div>
+            <div class="coral-cashback-required-points" [innerHtml]="model.minRequiredPointsForRedeem | trustAsHtml"></div>
+        </div>
+    }
+    @if (nonVipMessage) {
+        <div class="coral-cashback-non-vip">
+            <div class="coral-cashback-message" [innerHtml]="nonVipMessage | trustAsHtml"></div>
+        </div>
+    }
+</div>
+<lh-am-coral-cashback-level [item]="item" />

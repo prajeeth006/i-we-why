@@ -1,0 +1,30 @@
+@if (labelSwitcherService.items.length) {
+    <div class="label-switcher">
+        @if (labelSwitcherConfig.resources.messages.Label_Switcher_Heading; as heading) {
+            <div class="location-heading">
+                {{ heading }}
+            </div>
+        }
+        @if (labelSwitcherService.currentLabelItem; as item) {
+            <div (click)="toggle()" class="label-switcher-current" [class.label-switcher-open]="showLabels">
+                @if (item.image && !hideFlag) {
+                    <img
+                        [attr.src]="item.image.src"
+                        [attr.alt]="item.image.alt"
+                        [width]="item.image.width"
+                        [height]="item.image.height"
+                        class="label-switcher-current-icon" />
+                }
+                {{ item.text }}
+                <vn-icon name="theme-down" size="8" extraClass="dropdown-toggle-icon" />
+            </div>
+        }
+        @if (showLabels) {
+            <div class="label-switcher-item-wrapper">
+                @for (item of labelSwitcherService.items; track trackByName($index, item)) {
+                    <a [class.active]="item.isActive" class="label-switcher-item" (click)="switchLabel(item)">{{ item.text }}</a>
+                }
+            </div>
+        }
+    </div>
+}

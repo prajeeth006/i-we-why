@@ -1,0 +1,10 @@
+<div class="generic-container-wrapper generic-container-wrapper--xl overlay-content">
+    <i class="theme-error"></i>
+
+    <h2 class="generic-container-title" [innerHTML]="commonMessages.ActiveSessionTitle"></h2>
+    <p class="generic-container-text" [innerHTML]="commonMessages.ActiveSessionText | trustAsHtml"></p>
+
+    <div class="form-element btn-container">
+        <button class="btn btn-secondary w-100" (click)="ok()">{{ commonMessages.Okay }}</button>
+    </div>
+</div>

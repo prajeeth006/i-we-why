@@ -1,0 +1,9 @@
+@if (version > 1) {
+    @if (show) {
+        <div class="am-last-login">{{ message }}</div>
+    }
+} @else {
+    @if (show) {
+        <div class="footer-auth-info px-wrapper">{{ message }}</div>
+    }
+}

@@ -1,0 +1,7 @@
+@if (item.children.length > 1) {
+    <div class="pm-tabs" [ngClass]="item.class">
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+}

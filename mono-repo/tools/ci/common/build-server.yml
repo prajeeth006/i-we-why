@@ -1,0 +1,34 @@
+include:
+  - tools/ci/common/rules.yml
+
+.health-spa-cache:
+  cache:
+    key:
+      files:
+        - backend/vanilla/Frontend.Vanilla.Diagnostics.App/Frontend.Vanilla.Diagnostics.App.csproj
+      prefix: $CI_JOB_IMAGE
+    paths:
+      - backend/vanilla/Frontend.Vanilla.Features/SpaFiles
+    policy: pull-push
+  before_script:
+    - if [ ! -d "backend/vanilla/Frontend.Vanilla.Features/SpaFiles" ]; then
+        cd backend/vanilla/Frontend.Vanilla.Diagnostics.App;
+        dotnet restore;
+        dotnet msbuild /t:CopySpaArtifacts;
+        cd ../../../;
+      fi
+
+.build-server:
+  extends:
+    - .rules-on-success
+    - .health-spa-cache
+  needs: ['version', 'version-xml']
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - dotnet publish $PROJECT -c Release --runtime $RUNTIME_IDENTIFIER --sc true -p:InformationalVersion="$VERSION"
+    - pwsh -c 'Copy-Item version.xml -Destination (new-item -force ("dist/$env:PROJECT/$env:RUNTIME_IDENTIFIER/publish/srvadm/version.xml"))'
+  artifacts:
+    paths:
+      - dist/$PROJECT/$RUNTIME_IDENTIFIER/publish/**

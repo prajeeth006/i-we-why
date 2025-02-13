@@ -1,0 +1,5 @@
+<vn-am-widget [item]="item" [mode]="mode" [hideSkeleton]="!!userDocumentsService.userDocuments()" [footerContent]="item.resources.FooterText">
+    @if (userDocumentsService.userDocuments(); as documents) {
+        <vn-am-user-documents [userDocuments]="documents" [item]="item" />
+    }
+</vn-am-widget>

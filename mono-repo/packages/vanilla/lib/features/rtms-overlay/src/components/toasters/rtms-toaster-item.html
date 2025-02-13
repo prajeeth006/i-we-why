@@ -1,0 +1,80 @@
+<div
+    #toaster
+    class="rtms-toast__container"
+    (panleft)="swipe($event, toaster)"
+    (panright)="swipe($event, toaster)"
+    (panend)="swipeEnd($event, toaster, notification.id)"
+    id="notification.id">
+    <div class="rtms-toast__content d-flex">
+        @if (notification.content; as content) {
+            <vn-image [imageClass]="'rtms-toast__img'" [textClass]="'toster'" [src]="content.tosterImage" />
+        }
+        @if (notification.content.headerTermsAndConditionsToaster) {
+            <div class="header-terms-and-conditions" [innerHtml]="notification.content.headerTermsAndConditionsToaster"></div>
+        }
+        <div class="rtms-toast__message">
+            <div class="rtms-toast__title" [innerHtml]="notification.content.toasterTitle"></div>
+            <div class="rtms-toast-txt" [innerHtml]="notification.content.toasterDescription"></div>
+        </div>
+        <!--Single ghost CTA container -->
+        @if (notification.content.toasterPrimaryGhostCallToAction && !notification.content.toasterCloseCallToActionLabel) {
+            <div class="btn btn-sm btn-link d-flex align-items-center">
+                <vn-rtms-cta-action
+                    [content]="notification.content.toasterPrimaryGhostCallToAction"
+                    [rtmsCtaAction]="notification"
+                    [rtmsCtaActionMessages]="messagesContent?.messages"
+                    (action)="rtmsCtaActions($event, notification.id)" />
+            </div>
+        }
+        <!---->
+        <!--Close x container -->
+        <div class="rtms-toast__close d-flex flex-column align-items-center dh">
+            @if (!notification.content.toasterCloseAfterTimeout) {
+                <vn-icon name="theme-ex" (click)="close($event, notification.id)" />
+            }
+            @if (notification.content.toasterCloseAfterTimeout) {
+                <div class="radial-timer" (click)="close($event, notification.id)">
+                    <vn-icon name="theme-ex" class="radial-timer__close" />
+                    <div class="radial-timer__time"></div>
+                </div>
+            }
+        </div>
+        <!---->
+    </div>
+    <!--CTAs container -->
+    @if (
+        notification.content.toasterCallToAction ||
+        notification.content.toasterPrimaryGhostCallToAction ||
+        notification.content.toasterCloseCallToActionLabel
+    ) {
+        <div class="rtms-toast__footer text-center">
+            @if (notification.content.toasterCallToAction) {
+                <div class="btn btn-sm btn-primary rtms-toast__btn">
+                    <vn-rtms-cta-action
+                        [content]="notification.content.toasterCallToAction"
+                        [rtmsCtaAction]="notification"
+                        [rtmsCtaActionMessages]="messagesContent?.messages"
+                        (action)="rtmsCtaActions($event, notification.id)" />
+                </div>
+            }
+            <div class="d-flex justify-content-end">
+                @if (notification.content.toasterCloseCallToActionLabel) {
+                    <div
+                        class="btn btn-sm btn-link"
+                        [innerHtml]="notification.content.toasterCloseCallToActionLabel"
+                        (click)="close($event, notification.id)"></div>
+                }
+                @if (notification.content.toasterPrimaryGhostCallToAction && notification.content.toasterCloseCallToActionLabel) {
+                    <div class="btn btn-sm btn-link">
+                        <vn-rtms-cta-action
+                            [content]="notification.content.toasterPrimaryGhostCallToAction"
+                            [rtmsCtaAction]="notification"
+                            [rtmsCtaActionMessages]="messagesContent?.messages"
+                            (action)="rtmsCtaActions($event, notification.id)" />
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    <!---->
+</div>

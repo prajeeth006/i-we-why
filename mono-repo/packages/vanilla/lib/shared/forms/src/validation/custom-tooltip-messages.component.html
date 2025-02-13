@@ -1,0 +1,32 @@
+<div [hidden]="!isVisible">
+    <div class="tooltip">
+        <div class="lh-tooltip-h">{{ commonMessages.MinReq }}</div>
+
+        <ul class="list-unstyled txt-s m-0">
+            @for (tooltip of tooltips | keyvalue; track $index) {
+                <ng-container [ngTemplateOutlet]="tooltipTemplate" [ngTemplateOutletContext]="{ tooltip }" />
+            }
+        </ul>
+
+        @if (infoTooltips?.length) {
+            <ul class="list-unstyled txt-s info m-0">
+                @for (tooltip of infoTooltips | keyvalue; track $index) {
+                    <ng-container [ngTemplateOutlet]="tooltipTemplate" [ngTemplateOutletContext]="{ tooltip }" />
+                }
+            </ul>
+        }
+
+        <ng-template #tooltipTemplate let-tooltip="tooltip">
+            <li class="d-flex align-items-center">
+                @if (tooltip.value.isValid === true) {
+                    <vn-icon name="theme-check" extraClass="ui-icon ui-icon-size-sm icon" />
+                } @else if (tooltip.value.isValid === false) {
+                    <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-sm icon" />
+                } @else if (tooltip.value.isValid) {
+                    <vn-icon name="theme-info-i" extraClass="ui-icon ui-icon-size-sm icon" />
+                }
+                <div [innerHtml]="tooltip.value.text | trustAsHtml" class="txt-xs d-inline m-0"></div>
+            </li>
+        </ng-template>
+    </div>
+</div>

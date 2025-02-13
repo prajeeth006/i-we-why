@@ -1,0 +1,41 @@
+{
+    "name": "vanilla-tracking-feature",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/vanilla/tracking-feature/src",
+    "prefix": "lib",
+    "tags": ["scope:vanilla", "type:feature"],
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "options": {
+                "tsConfig": "packages/vanilla/tracking-feature/tsconfig.lib.json",
+                "project": "packages/vanilla/tracking-feature/ng-package.json"
+            },
+            "outputs": ["{workspaceRoot}/dist/build/{projectRoot}"]
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{workspaceRoot}/dist/lint/{projectRoot}"],
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/src/**/*.ts", "{projectRoot}/src/**/*.html", "{projectRoot}/src/**/*.json"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/vanilla/tracking-feature/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/vanilla/tracking-feature/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

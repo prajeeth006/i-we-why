@@ -1,0 +1,11 @@
+spec:
+  inputs:
+    type:
+---
+$[[ inputs.type ]]-pipeline:
+  stage: trigger
+  trigger:
+    include: tools/ci/$[[ inputs.type ]]/.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: $SCHEDULED_PIPELINE_TYPE == "$[[ inputs.type ]]"

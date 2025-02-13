@@ -1,0 +1,21 @@
+@if (profile$ | async; as profile) {
+    @if (buttonForm) {
+        <div class="form-element">
+            <button
+                ds-social-button
+                class="w-100"
+                [variant]="buttonForm.htmlAttributes?.variant || 'filled'"
+                [socialApp]="dsProvider"
+                size="large"
+                [disabled]="false"
+                (click)="emmitLogin(!!profile.name)">
+                <span slot="start">
+                    @if (buttonForm.htmlAttributes?.iconName) {
+                        <vn-icon [name]="buttonForm.htmlAttributes?.iconName" />
+                    }
+                </span>
+                {{ getLabel(profile.name) }}
+            </button>
+        </div>
+    }
+}

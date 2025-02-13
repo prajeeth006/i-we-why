@@ -1,0 +1,71 @@
+{
+    "extends": ["../../../.eslintrc.base.json"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "files": ["*.json"],
+            "parser": "jsonc-eslint-parser",
+            "rules": {
+                "@nx/dependency-checks": [
+                    "error",
+                    {
+                        "ignoredDependencies": ["moxxi"]
+                    }
+                ]
+            }
+        },
+        {
+            "extends": [
+                "plugin:@nx/angular",
+                "plugin:@angular-eslint/template/process-inline-templates",
+                "../../eslint-utils/angular-ngrx",
+                "../../eslint-utils/jest"
+            ],
+            "files": ["*.ts"],
+            "parserOptions": {
+                "project": ["packages/vanilla/lib/tsconfig.*?.json"]
+            },
+            "rules": {
+                "@angular-eslint/component-selector": [
+                    "error",
+                    {
+                        "prefix": ["vn", "lh", "pg"],
+                        "style": "kebab-case",
+                        "type": "element"
+                    }
+                ],
+                "@angular-eslint/directive-class-suffix": "off",
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "prefix": ["vn", "lh", "pg"],
+                        "style": "camelCase",
+                        "type": "attribute"
+                    }
+                ],
+                "@angular-eslint/no-attribute-decorator": "error",
+                "@angular-eslint/no-forward-ref": "warn",
+                "@angular-eslint/no-host-metadata-property": "off",
+                "@angular-eslint/no-output-native": "off",
+                "@angular-eslint/no-output-on-prefix": "off",
+                "@angular-eslint/use-pipe-transform-interface": "off",
+                "@nx/enforce-module-boundaries": "warn",
+                "no-restricted-globals": ["error", "document"],
+                "no-restricted-properties": [
+                    "error",
+                    {
+                        "object": "window",
+                        "property": "document"
+                    }
+                ]
+            }
+        },
+        {
+            "extends": ["plugin:@nx/angular-template", "../../eslint-utils/angular-ngrx"],
+            "files": ["*.html"],
+            "rules": {
+                "@angular-eslint/template/use-track-by-function": "error"
+            }
+        }
+    ]
+}

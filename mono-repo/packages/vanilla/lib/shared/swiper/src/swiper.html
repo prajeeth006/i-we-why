@@ -1,0 +1,14 @@
+﻿<div #swiperContainer class="swiper" [ngClass]="swiperClass()">
+    <div class="swiper-wrapper">
+        <ng-content />
+    </div>
+    @if (showPagination()) {
+        @if (swiperOptions().pagination) {
+            <div class="swiper-pagination"></div>
+        }
+        @if (swiperOptions().navigation) {
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        }
+    }
+</div>

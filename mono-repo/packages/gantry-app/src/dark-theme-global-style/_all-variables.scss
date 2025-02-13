@@ -1,0 +1,145 @@
+@import './coral/all-variables';
+@import './ladbrokes/all-variables';
+@import '../shared-styles/mixins';
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/ClientDist/assets/RobotoCondensed-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/ClientDist/assets/RobotoCondensed-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    // black shades
+    --color-black-s25: rgba(0 0 0 /0.25);
+    --color-black-s50: rgba(0 0 0 /0.5);
+    // white shades
+    --color-white-s50: rgba(255 255 255 /0.5);
+}
+
+$betting-bg: var(--betting-bg);
+$color-black: var(--color-black);
+$color-white: var(--color-white);
+$color-red: var(--color-red);
+$color-theme: var(--color-theme);
+$early-price-text: var(--early-price-text);
+$footer-yellow-text: var(--footer-yellow-text);
+$template-bg: var(--template-gradient-background);
+$theme-white-bg-text: var(--theme-white-bg-text);
+$theme-yellow: var(--theme-yellow);
+$top-2-finish-bg: var(--top-2-finish-bg);
+$time-box-bg: var(--time-box-background);
+$state-box-bg: var(--state-box-background);
+$state-box-text: var(--state-box-text);
+
+$market-title-color: var(--market-title-color);
+$coral-yellow-lads-white: var(--coral-yellow-lads-white);
+
+// black shades
+$color-black-s25: var(--color-black-s25);
+$color-black-s50: var(--color-black-s50);
+// white shades
+$color-white-s50: var(--color-white-s50);
+
+//Typography
+$ff-header-title: var(--ff-header-title);
+$ff-roboto-condensed: 'Roboto Condensed';
+$ff-roboto: 'Roboto', Verdana, Arial;
+
+$fs-full-lead-title: var(--fs-full-lead-title);
+$fs-quad-lead-title: var(--fs-quad-lead-title);
+
+$fs-full-early-price: 40px;
+$fs-quad-early-price: 20px;
+
+$fs-full-result-stage: 40px;
+$fs-quad-result-stage: 20px;
+
+$fs-full-selection-name: 64px;
+$fs-quad-selection-name: 32px;
+
+$fs-full-price-odds: 40px;
+$fs-quad-price-odds: 20px;
+
+$fs-full-past-price-text: 40px;
+$fs-quad-past-price-text: 20px;
+
+$tilted-angle: 15deg !default;
+
+$fs-full-result-position: 46px;
+$fs-quad-result-position: 23px;
+
+$fs-full-result-fav: 40px;
+$fs-quad-result-fav: 20px;
+
+$fs-full-result-forecast: 48px;
+$fs-quad-result-forecast: 24px;
+
+$fw-bold: 900;
+$fw-medium: 500;
+$fw-normal: 400;
+$fw-semibold: 700;
+
+$font-18: 18px;
+$font-20: 20px;
+$font-22: 22px;
+$font-24: 24px;
+$font-26: 26px;
+$font-27: 27px;
+$font-28: 28px;
+$font-30: 30px;
+$font-32: 32px;
+$font-35: 35px;
+$font-36: 36px;
+$font-38: 38px;
+$font-45: 45px;
+$font-40: 40px;
+$font-44: 44px;
+$font-48: 48px;
+$font-50: 50px;
+$font-52: 52px;
+$font-56: 56px;
+$font-54: 54px;
+$font-60: 60px;
+$font-64: 64px;
+$font-70: 70px;
+$font-76: 76px;
+$font-80: 80px;
+$font-90: 90px;
+$font-100: 100px;
+$font-120: 120px;
+
+$spacing-20: 20px;
+
+$font-list-title: 30px !default;
+$txt-sm-font-size: 15px !default;
+
+$header-full-height: 129px;
+$footer-full-height: 79px;
+
+$header-quad-height: 64px;
+$footer-quad-height: 40px;
+
+// Meeting Results
+$fs-md-row-data-meeting-result: 48px;
+$fs-xs-row-data-meeting-result: 24px;
+$fw-row-meeting-result: 700;
+$fw-subheader-meeting-result: 500;
+$fw-header-meeting-result: 400;
+$fs-md-row-header-meeting-result: 40px;
+$fs-xs-row-header-meeting-result: 20px;
+$fs-md-row-height-meeting-result: 34px;
+$fs-xs-row-height-meeting-result: 17px;
+
+// Cricket CDS
+$fs-md-cricket-row-height: 80px;
+$fs-sm-cricket-row-height: 40px;

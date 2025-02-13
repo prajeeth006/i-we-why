@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+@font-face {
+    font-family: 'Tungsten';
+    src: url('/ClientDist/assets/Tungsten-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html[data-domain*='ladbrokes.com'] {
+    --template-gradient-background: linear-gradient(90deg, #480c08 0%, #a1090e 25.21%, #d20613 48.96%, #a6090e 71.61%, #400c08 100%);
+    --color-white: rgba(255, 255, 255); //#ffffff
+    --color-black: rgba(0, 0, 0); //#000000
+    --color-red: rgba(237, 28, 36, 1); //#ED1C24;
+    --color-theme: rgb(240, 30, 40); //#f01e28
+    --theme-yellow: rgba(255, 242, 0, 1); //#FFF200
+    --theme-white-bg-text: rgba(0, 0, 0); //#000000
+    --early-price-text: rgba(0, 0, 0); //#000000
+    --top-2-finish-bg: rgba(0, 128, 5, 1); //#008005
+    --betting-bg: rgba(0, 0, 0); //#000000
+    --footer-yellow-text: rgba(255, 242, 0, 1); //#FFF200
+    --coral-yellow-lads-white: rgba(255, 255, 255); //#ffffff;
+
+    //Font size
+    --fs-full-lead-title: 120px;
+    --fs-quad-lead-title: 60px;
+    --time-box-background: #000;
+    --state-box-background: #fff;
+    --state-box-text: #000;
+
+    --market-title-color: rgba(255, 255, 255); //#ffffff
+
+    // Font Families
+    --ff-header-title: 'Tungsten';
+}

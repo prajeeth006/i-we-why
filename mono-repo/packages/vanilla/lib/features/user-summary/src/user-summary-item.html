@@ -1,0 +1,7 @@
+@if (summary().parameters?.separatorClass; as separatorClass) {
+    <div [ngClass]="separatorClass"></div>
+}
+<div class="user-summary-row" [ngClass]="[summary().name ?? '', summary().class ?? '', summary().parameters?.class ?? '']">
+    <span class="user-summary-label"> {{ summary().text }} </span>
+    <span class="user-summary-value"> {{ summaryValue() | vnCurrency }} </span>
+</div>

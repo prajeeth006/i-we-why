@@ -1,0 +1,20 @@
+@if (smartBanner().content && smartBanner().appInfo && smartBanner().appStoreInfo) {
+    <div class="smart-banner">
+        <vn-icon [name]="closeIcon" extraClass="ui-icon" (click)="close()" />
+        @if (smartBanner().appInfo?.image; as image) {
+            <img [attr.src]="image.src" [attr.alt]="image.alt" [width]="image.width" [height]="image.height" class="smart-banner-app-logo" />
+        }
+        <div class="smart-banner-txt-content">
+            <span class="smart-banner-app-name">{{ smartBanner().appStoreInfo?.name }}</span>
+            <span class="smart-banner-app-desc">{{ smartBanner().appInfo.parameters?.description }}</span>
+            @if (smartBanner().showRating) {
+                <vn-smart-banner-stars [rating]="smartBanner().appStoreInfo.rating" />
+            }
+        </div>
+        @if (smartBanner().content.messages; as messages) {
+            <a [ngClass]="messages.OpenButtonClass || undefined" (click)="open(smartBanner().appInfo.url)">
+                {{ messages.OpenButton }}
+            </a>
+        }
+    </div>
+}

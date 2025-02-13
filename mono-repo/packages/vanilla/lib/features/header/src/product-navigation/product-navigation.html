@@ -1,0 +1,78 @@
+<div class="h-product-nav tab-nav navbar-nav">
+    @for (product of config.products | dsl | async; track trackByText($index, product)) {
+        @if (product.type !== 'dropdown' && product.resources.TooltipText) {
+            @if (popper?.content) {
+                @if (useFastIconType === true) {
+                    <vn-menu-item
+                        [item]="product"
+                        [section]="MenuSection.Header"
+                        class="tab-nav-item nav-item"
+                        [class.active]="product.name === headerService.activeProduct()?.name"
+                        [ngClass]="product.type === 'icon' ? '' : product.class"
+                        [addItemClassToLinkClasses]="false"
+                        badgeClass="badge-size-sm badge-offset"
+                        badgePosition="FastIcon"
+                        linkClass="tab-nav-link"
+                        [displayMode]="getDisplayMode('FastIcon')"
+                        [placement]="FloatUiPlacements.BOTTOM"
+                        [positionFixed]="true"
+                        [floatUi]="popper.content"
+                        [showTrigger]="product.resources.TooltipText ? FloatUiTriggers.hover : FloatUiTriggers.none" />
+                } @else {
+                    <vn-menu-item
+                        [item]="product"
+                        [section]="MenuSection.Header"
+                        class="tab-nav-item nav-item"
+                        [class.active]="product.name === headerService.activeProduct()?.name"
+                        [ngClass]="product.type === 'icon' ? '' : product.class"
+                        [addItemClassToLinkClasses]="false"
+                        badgeClass="badge-size-sm badge-offset"
+                        badgePosition="afterText"
+                        linkClass="tab-nav-link"
+                        [displayMode]="getDisplayMode(product.type)"
+                        [placement]="FloatUiPlacements.BOTTOM"
+                        [positionFixed]="true"
+                        [floatUi]="popper.content"
+                        [showTrigger]="product.resources.TooltipText ? FloatUiTriggers.hover : FloatUiTriggers.none" />
+                }
+            }
+            <ng-container>
+                <vn-popper-content #popper cssClass="{{ product.resources.TooltipContentCss }}" cssTextClass="{{ product.resources.TooltipTextCss }}">
+                    @if (product.resources.TooltipText) {
+                        <ng-container content>{{ product.resources.TooltipText }}</ng-container>
+                    }
+                </vn-popper-content>
+            </ng-container>
+        }
+        @if (product.type !== 'dropdown' && !product.resources.TooltipText) {
+            @if (useFastIconType === true) {
+                <vn-menu-item
+                    [item]="product"
+                    [section]="MenuSection.Header"
+                    class="tab-nav-item nav-item"
+                    [class.active]="product.name === headerService.activeProduct()?.name"
+                    [ngClass]="product.type === 'icon' ? '' : product.class"
+                    [addItemClassToLinkClasses]="false"
+                    badgeClass="badge-size-sm badge-offset"
+                    badgePosition="afterText"
+                    linkClass="tab-nav-link"
+                    [displayMode]="getDisplayMode(product.type)" />
+            } @else {
+                <vn-menu-item
+                    [item]="product"
+                    [section]="MenuSection.Header"
+                    class="tab-nav-item nav-item"
+                    [class.active]="product.name === headerService.activeProduct()?.name"
+                    [ngClass]="product.type === 'icon' ? '' : product.class"
+                    [addItemClassToLinkClasses]="false"
+                    badgeClass="badge-size-sm badge-offset"
+                    badgePosition="afterText"
+                    linkClass="tab-nav-link"
+                    [displayMode]="getDisplayMode(product.type)" />
+            }
+        }
+        @if (product.type === 'dropdown') {
+            <vn-h-dropdown [item]="product" />
+        }
+    }
+</div>

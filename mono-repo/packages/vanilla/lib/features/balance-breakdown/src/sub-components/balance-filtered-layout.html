@@ -1,0 +1,13 @@
+<div class="bb-filtered-container" [ngClass]="item.class">
+    @if (isSingleProduct) {
+        <div class="bb-filtered-text">
+            <span>{{ item.text }}</span>
+            <a class="bb-filtered-tutorial-link" [attr.href]="item.url" [attr.target]="item.target" (click)="processClick($event, item)">
+                <vn-icon name="theme-question" extraClass="ui-icon ui-icon-size-lg text-info" />
+            </a>
+        </div>
+    }
+    @for (child of currentSlide?.children; track trackByItem($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+    }
+</div>

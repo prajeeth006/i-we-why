@@ -1,0 +1,14 @@
+<vn-dialog [headerTitle]="content().title">
+    <ng-container content>
+        <div [outerHTML]="text() | trustAsHtml"></div>
+    </ng-container>
+
+    <ng-container actions>
+        <div class="generic-modal-actions">
+            <button
+                (click)="accept()"
+                [ngClass]="content().form.accept?.htmlAttributes?.class || undefined"
+                [innerHtml]="content().form.accept?.label"></button>
+        </div>
+    </ng-container>
+</vn-dialog>

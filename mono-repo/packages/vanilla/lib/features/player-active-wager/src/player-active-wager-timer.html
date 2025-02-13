@@ -1,0 +1,9 @@
+@if (config.content.messages; as messages) {
+    <div class="player-wager-session" [ngClass]="{ 'player-wager-duration-txt-empty': durationWithoutText }">
+        @if (messages.ElapsedLugasText; as text) {
+            <span class="player-wager-text" [innerHTML]="text | trustAsHtml"> </span>
+        }
+        <span class="player-wager-timer">{{ timer }}</span>
+        <vn-icon name="theme-info" extraClass="ui-icon-size-sm" size="14" (click)="playerActiveWagerOverlayService.show(elapsedTime)"> </vn-icon>
+    </div>
+}

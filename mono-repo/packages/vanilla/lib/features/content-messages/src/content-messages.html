@@ -1,0 +1,10 @@
+@if (messagesToShow.length) {
+    <div class="content-message-container">
+        @for (message of messagesToShow; track trackByName($index, message)) {
+            <vn-content-message
+                [scope]="closedCookieKey"
+                [message]="message"
+                (close)="closeMessage($event.message, $event.showOnNextSession, $event.showOnNextLogin)" />
+        }
+    </div>
+}

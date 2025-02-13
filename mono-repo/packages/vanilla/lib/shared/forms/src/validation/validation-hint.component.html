@@ -1,0 +1,11 @@
+<div class="validation-hints">
+    <span [innerHTML]="title"></span>
+    <ul>
+        @for (hint of validationsHints; track trackByClassName($index, hint)) {
+            <li [ngClass]="hint.hintTextClass">
+                <vn-icon [name]="hint.hintIconClass" />
+                <span [ngClass]="hint.className">{{ hint.message }}</span>
+            </li>
+        }
+    </ul>
+</div>

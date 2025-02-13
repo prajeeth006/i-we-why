@@ -1,0 +1,13 @@
+@if (messages.length && isLatest) {
+    <div class="message-panel">
+        @for (message of messages; track trackByHtml($index, message)) {
+            <div
+                [class.theme-error-i]="message.type === 'Error'"
+                [class.theme-success-i]="message.type === 'Success'"
+                [class.theme-info-i]="message.type === 'Information' || message.type === 'Warning'"
+                [ngClass]="message.type === 'Warning' ? 'theme-warning warning' : ''">
+                <div class="cms-container" [vnDynamicHtml]="message.html"></div>
+            </div>
+        }
+    </div>
+}

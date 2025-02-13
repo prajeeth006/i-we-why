@@ -1,0 +1,36 @@
+<div class="info-row">
+    <gn-dark-theme-footer>
+        <ng-container left-side-content>
+            <span id="RunCount" class="run-count"
+                >{{ !!runnerCount ? runnerCount : '' }}
+                {{
+                    !!runnerCount
+                        ? isEventResulted
+                            ? horseRacingContent?.contentParameters?.RAN
+                                ? (horseRacingContent?.contentParameters?.RAN | titlecase)
+                                : ''
+                            : horseRacingContent?.contentParameters?.RUN
+                              ? (horseRacingContent?.contentParameters?.RUN | titlecase)
+                              : ''
+                        : ''
+                }}
+            </span>
+            <span id="RaceType" *ngIf="evrRaceType">
+                {{ evrRaceType | titlecase }}
+            </span>
+
+            <span id="Distance" *ngIf="distance">
+                {{ distance | titlecase }}
+            </span>
+            <span id="Going" *ngIf="going">
+                {{ horseRacingContent?.contentParameters?.GOING ? (horseRacingContent?.contentParameters?.GOING | titlecase) : '' }}:
+                {{ going | titlecase }}
+            </span>
+        </ng-container>
+
+        <ng-container right-side-content>
+            <span id="marketEachWay" class="market-each-way">{{ marketEachWayString | titlecase }}</span>
+        </ng-container>
+        <ng-content></ng-content>
+    </gn-dark-theme-footer>
+</div>

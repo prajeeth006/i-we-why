@@ -1,0 +1,38 @@
+﻿@if (template(); as template) {
+    <vn-confetti></vn-confetti>
+    <vn-dialog actionsLayout="actions-in-column bonus-notification-actions congrats-dialog">
+        <ng-container content>
+            @if (template.children?.image['image']; as image) {
+                <span class="congrats-dialog-image">
+                    <vn-image class="animated" [src]="image['src']" [alt]="image['alt']" [width]="image['width']" [height]="image['height']" />
+                </span>
+            }
+            <div class="bonus-notification-header text-center">{{ template.title }}</div>
+            @if (message().depositAmount; as depositAmount) {
+                <div
+                    class="bonus-notification-dialog-content text-center"
+                    [innerHtml]="
+                        template.text | format: (message().bonusAmount | vnCurrency) : (depositAmount | vnCurrency) : message().username | trustAsHtml
+                    "></div>
+            } @else {
+                <div
+                    class="text-center bonus-notification-dialog-content"
+                    [innerHtml]="template.text | format: (message().bonusAmount | vnCurrency) : message().username | trustAsHtml"></div>
+            }
+        </ng-container>
+        <ng-container actions>
+            @if (template.messages; as messages) {
+                <div class="generic-modal-actions bonus-notification-dialog-actions">
+                    <button ds-button (click)="close()" class="btn btn-primary btn-md">
+                        {{ messages.closeButtonText }}
+                    </button>
+                    @if (template.links.link; as link) {
+                        <a ds-button class="btn btn-link btn-link-light btn-lg" [href]="link['url']">
+                            {{ messages.viewReferralsLinkText }}
+                        </a>
+                    }
+                </div>
+            }
+        </ng-container>
+    </vn-dialog>
+}

@@ -1,0 +1,11 @@
+@if ('avatar' | getLazyComponent | async; as avatarComponent) {
+    <ng-container *vnDynamicComponent="avatarComponent; attr: { item: item }" />
+}
+@if ('balance' | getLazyComponent | async; as balanceComponent) {
+    <ng-container *vnDynamicComponent="balanceComponent; attr: { item: item }" />
+}
+@for (child of item.children | dsl | async; track trackByText($index, child)) {
+    @if (child?.type | getLazyComponent | async; as cmp) {
+        <ng-container *vnDynamicComponent="cmp; attr: { item: child }"></ng-container>
+    }
+}

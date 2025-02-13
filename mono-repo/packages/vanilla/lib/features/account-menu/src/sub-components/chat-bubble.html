@@ -1,0 +1,7 @@
+@if (isAvailable) {
+    <div class="am-chat-bubble">
+        <button class="btn btn-chat" (click)="processClick($event, item)">
+            <span [class]="item.class"></span>
+        </button>
+    </div>
+}

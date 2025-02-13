@@ -1,0 +1,26 @@
+@if (isAvailable) {
+    @if (content.v2) {
+        <div class="pm-wrapper" [ngClass]="{ 'pm-no-tabs': productMenuService.tabCount <= 1 }">
+            <ng-container *vnDynamicComponent="productMenuService.getProductMenuComponent(menu.layout); attr: { item: menu }"></ng-container>
+        </div>
+    } @else {
+        <div class="product-menu" [ngClass]="content?.header?.class">
+            @if (title) {
+                <vn-header-bar
+                    [title]="title"
+                    [showBack]="false"
+                    (onClose)="close()"
+                    [closeButtonText]="closeButtonText"
+                    [class]="content.headerBarCssClass"
+                    [closeButtonTextCssClass]="content.closeButtonTextCssClass" />
+            }
+            <div class="product-menu-content">
+                @if (!content.hideTabsV1) {
+                    <vn-product-menu-tabs [useFastIconType]="useFastIcon" />
+                }
+                <vn-product-menu-apps [useFastIconType]="useFastIcon" />
+                <vn-product-menu-body [useFastIconType]="useFastIcon" />
+            </div>
+        </div>
+    }
+}

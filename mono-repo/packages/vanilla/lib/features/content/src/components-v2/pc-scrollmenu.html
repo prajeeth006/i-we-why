@@ -1,0 +1,24 @@
+<div class="pc-navscroll-menu" [style.visibility]="currentItem ? 'visible' : 'hidden'">
+    <div class="pc-navscroll-menu__inner" id="pc-navscroll-menu-inner">
+        @for (child of item.menuItems; track trackByName($index, child)) {
+            <div class="pc-navscroll-menu__item" [ngClass]="{ 'pc-navscroll--active': currentItem === child.name }" (click)="scrollTo(child.name)">
+                <span class="pc-navscroll-menu__item-text">{{ child.title }}</span>
+                <div class="pc-navscroll-menu__dot-wrapper">
+                    <span class="pc-navscroll-menu__dot"></span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div
+    vnScrollMenu
+    id="pc-scroll-menu-content"
+    [navBarTopHeight]="navBarTopHeight"
+    [menuTimeOut]="menuTimeOut"
+    (sectionChange)="sectionChanged($event)"
+    (scrollStop)="scrollStop()"
+    class="pc-scroll-menu__content">
+    @for (child of item.items; track trackByName($index, child)) {
+        <ng-container *vnPageMatrix="child" />
+    }
+</div>

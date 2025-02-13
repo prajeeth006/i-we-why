@@ -1,0 +1,6 @@
+<div class="bonus-balance-title">{{ item.text }}</div>
+<div class="bonus-balance-grid">
+    @for (child of item.children; track trackByText($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+    }
+</div>

@@ -1,0 +1,16 @@
+<div attr.data-testid="text{{ item.name }}" class="text-truncate balance-text">{{ item.text }}</div>
+@if (balanceFormula) {
+    @if (balancePropertiesService.balanceInfo(); as balance) {
+        <div attr.data-testid="amount{{ item.name }}" class="text-truncate balance-amount">
+            {{ balanceFormula | vnSolve: balance | vnCurrency }}
+        </div>
+    }
+} @else {
+    @if (balanceValue | async; as balance) {
+        <div attr.data-testid="amount{{ item.name }}" class="text-truncate balance-amount">
+            {{ balance | vnCurrency }}
+        </div>
+    } @else {
+        <div attr.data-testid="amount{{ item.name }}" class="text-truncate balance-amount">{{ 0 | vnCurrency }}</div>
+    }
+}

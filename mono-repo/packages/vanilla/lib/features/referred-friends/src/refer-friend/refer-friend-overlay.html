@@ -1,0 +1,77 @@
+﻿@if (config.content; as content) {
+    <div class="refer-friend" [@flyInOut]="state()" (@flyInOut.start)="onAnimationEvent($event)" (@flyInOut.done)="onAnimationEvent($event)">
+        @if (content.header; as header) {
+            <vn-header-bar
+                [title]="header.title"
+                [showBack]="false"
+                (onClose)="close()"
+                [closeButtonText]="header.messages?.closeButtonText"
+                [class]="header.validation?.cssClass"
+                [closeButtonTextCssClass]="header.validation?.closeButtonTextCssClass" />
+        }
+        <div class="refer-friend-body-container">
+            <div class="refer-friend-body-container-scroll th-scroll">
+                @if (content.top; as top) {
+                    <div class="pc-steps pc-steps-unordered">
+                        @for (info of referralInfo(); track info; let last = $last) {
+                            <div class="pc-step text-center">
+                                <div class="pc-step-content">
+                                    <div class="pc-step-content-title" [innerText]="last ? (info[1] | vnCurrency) : info[1]"></div>
+                                    <div class="pc-step-content-txt">
+                                        {{ info[0] }}
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <hr />
+                }
+
+                @if (content.body; as body) {
+                    <div class="refer-friend-body">
+                        <h2 class="refer-friend-title">{{ body.title }}</h2>
+                        <ul class="promohub-steps-container vertical">
+                            @for (step of referralSteps(); track step; let index = $index; let isLast = $last) {
+                                <li class="step focused completed">
+                                    <div class="container">
+                                        @if (isLast) {
+                                            <div class="symbol reaction theme-present"></div>
+                                        } @else {
+                                            <div class="symbol action">{{ index + 1 }}</div>
+                                        }
+                                        <div class="step-description">{{ step }}</div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <hr />
+                }
+
+                @if (content.footer; as footer) {
+                    <div class="refer-friend-footer">
+                        <h2 class="refer-friend-title">{{ footer.title }}</h2>
+                        <div [innerHtml]="footer.text | trustAsHtml"></div>
+                        <hr />
+                    </div>
+                }
+            </div>
+            @if (content.footer; as footer) {
+                <div class="refer-friend-footer">
+                    <div class="generic-modal-actions">
+                        @if (detailsButton(); as detailsButton) {
+                            <a ds-button kind="secondary" variant="outline" [href]="detailsButton.url" class="btn btn-light btn-lg">
+                                {{ detailsButton.text }}
+                            </a>
+                        }
+                        @if (footer.messages; as footerMessages) {
+                            <button ds-button (click)="shareReferralLink()" class="btn btn-primary btn-lg">
+                                {{ deviceService.isMobile ? footerMessages.shareReferralLinkButtonText : footerMessages.copyReferralLinkButtonText }}
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

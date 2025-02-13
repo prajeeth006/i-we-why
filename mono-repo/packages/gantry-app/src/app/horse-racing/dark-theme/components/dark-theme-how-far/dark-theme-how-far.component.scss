@@ -1,0 +1,70 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    @include flex-center;
+    font-size: 54px;
+    padding: 0 12px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: 27px;
+        border-width: 2.5px;
+    }
+}
+
+.horse-name-title {
+    margin-top: 160px;
+    margin-bottom: 100px;
+    font-size: $font-60;
+    font-weight: $fw-medium;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 80px;
+        margin-bottom: 50px;
+        font-size: $font-30;
+    }
+
+    strong {
+        font-weight: $fw-bold;
+    }
+}
+
+.selection-table {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    margin: 0;
+
+    @include breakpoint(multidesktop) {
+        row-gap: 50px;
+    }
+
+    li {
+        height: 96px;
+        font-size: $font-70;
+        display: flex;
+        justify-content: space-between;
+        font-weight: $fw-bold;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            font-size: $font-35;
+        }
+
+        .current-price__tilted {
+            height: 96px;
+            font-weight: $fw-bold;
+            background-color: $color-white;
+            color: $theme-white-bg-text;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                height: 48px;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@if (isAvailable) {
+    @if (content) {
+        <div
+            [ngClass]="{
+                'menu-wrapper': version === 1,
+                'am-wrapper': version > 1,
+                'am-v2': version === 2,
+                'am-v3': version === 3,
+                'am-v4': version === 4,
+                'am-v5': version === 5,
+                'ch': version === 3 || version === 5,
+            }">
+            <ng-container *vnDynamicComponent="getItemComponent(content.layout); attr: { item: content, mode: mode }" />
+        </div>
+    }
+}

@@ -1,0 +1,48 @@
+<div class="vn-dp-container">
+    @if (deviceService.isMobilePhone) {
+        <div class="vn-dp-input-container form-control-container" (click)="openDialog()">
+            <input type="text" class="vn-dp-input form-control form-control-i-l" readonly [(ngModel)]="formattedValue" />
+            <vn-icon name="theme-calendar" [extraClass]="calendarDropdownEnabled ? 'vn-dp__icon-left' : 'vn-dp__icon-right'" />
+            @if (calendarDropdownEnabled) {
+                @if (overlayRef && overlayRef.hasAttached()) {
+                    <vn-icon name="theme-up" extraClass="vn-dp__icon-right" />
+                }
+                @if (!overlayRef || (overlayRef && !overlayRef.hasAttached())) {
+                    <vn-icon name="theme-down" extraClass="vn-dp__icon-right" />
+                }
+            }
+        </div>
+    } @else {
+        <div
+            class="vn-dp-input-container form-control-container"
+            [floatUi]="dpPopperContent"
+            [showTrigger]="FloatUiTriggers.click"
+            [hideOnScroll]="false"
+            [disabled]="disabled"
+            [placement]="FloatUiPlacements.BOTTOM">
+            <input type="text" class="vn-dp-input form-control form-control-i-l" readonly [(ngModel)]="formattedValue" />
+            <vn-icon name="theme-calendar" [extraClass]="calendarDropdownEnabled ? 'vn-dp__icon-left' : 'vn-dp__icon-right'" />
+            @if (calendarDropdownEnabled) {
+                @if (!dpPopperContent.state) {
+                    <vn-icon name="theme-down" extraClass="vn-dp__icon-right" />
+                }
+                @if (dpPopperContent.state) {
+                    <vn-icon name="theme-up" extraClass="vn-dp__icon-right" />
+                }
+            }
+        </div>
+        <float-ui-content class="ngxp__tooltip vn-dp-popper" #dpPopperContent>
+            <vn-datepicker-calendar
+                [rangeEnabled]="rangeEnabled"
+                [dateFormat]="dateFormat"
+                [startDate]="model?.start"
+                [endDate]="model?.end"
+                [saveText]="saveText"
+                [headerEnabled]="headerEnabled"
+                [footerEnabled]="footerEnabled"
+                (onDateChangeEvent)="onDateChange($event)"
+                (onDateSelectedEvent)="onDateSelected($event)"
+                (onCloseEvent)="dpPopperContent.hide()" />
+        </float-ui-content>
+    }
+</div>

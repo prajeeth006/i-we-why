@@ -1,0 +1,10 @@
+@if (overlay(); as overlay) {
+    <div class="generic-container-wrapper generic-container-wrapper--xl overlay-content">
+        <i class="theme-error"></i>
+        <h2 class="generic-container-title" [innerHTML]="overlay.title"></h2>
+        <p class="generic-container-text" [innerHTML]="overlay.text | trustAsHtml"></p>
+        <div class="form-element btn-container">
+            <button class="btn btn-secondary w-100" (click)="close()">{{ overlay.messages?.closeButtonText }}</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,10 @@
+<div class="am-header" [ngClass]="{ scrolled: scrolled }">
+    @for (child of item.children; track trackByText($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+    }
+    @if (version < 3) {
+        <div class="am-close">
+            <vn-icon name="theme-ex" size="24" (click)="close()" />
+        </div>
+    }
+</div>

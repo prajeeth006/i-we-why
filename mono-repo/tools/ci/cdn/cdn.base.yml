@@ -1,0 +1,8 @@
+stages:
+  - build
+  - deploy
+
+include:
+  - tools/ci/common/version.yml
+  - tools/ci/common/node-module-cache.tpl.yml
+  - tools/ci/common/build-client.yml

@@ -1,0 +1,15 @@
+@if (hint; as hint) {
+    <div class="hint-message" [ngClass]="hint.parameters?.hintClass || undefined">
+        @if (hint?.parameters; as parameters) {
+            @if (parameters.hintIcon) {
+                <span class="hint-icon" [ngClass]="parameters.hintIcon"></span>
+            }
+            @if (parameters.showCloseButton === 'true') {
+                <vn-icon [name]="closeIcon" extraClass="ui-icon hint-message__icon-close" (click)="closeMessage()" />
+            }
+        }
+        @if (hint; as hint) {
+            <vn-page-matrix [content]="hint" />
+        }
+    </div>
+}

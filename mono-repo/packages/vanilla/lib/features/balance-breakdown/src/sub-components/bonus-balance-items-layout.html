@@ -1,0 +1,8 @@
+<div class="bonus-balance-items portal-center-wrapper">
+    <div class="bonus-balance-title">{{ item.text }}</div>
+    <div class="bonus-balance-grid">
+        @for (child of item.children; track trackByItem($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+</div>

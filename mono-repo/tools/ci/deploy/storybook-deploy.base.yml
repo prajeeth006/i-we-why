@@ -1,0 +1,26 @@
+.storybook:deploy:base:
+  stage: deploy
+  tags:
+    - linux-shell-runner
+  needs:
+    - pipeline: $PARENT_PIPELINE_ID
+      job: affected
+  script:
+    - echo "Received $SOURCE_DIR, $TARGET_DIR1 and $TARGET_DIR2"
+    - chmod 600 $STORYBOOK_SSH_PRIVATE_KEY
+    # Delete all builds when running script from CI pipeline builds that are older than 30 days
+    # The empty folder is created so that at least a folder exists as otherwise command fails
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER1 'mkdir -p /opt/websrv/nginx-storybook/htdocs-storybook-builds/empty'
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER2 'mkdir -p /opt/websrv/nginx-storybook/htdocs-storybook-builds/empty'
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER1 'find /opt/websrv/nginx-storybook/htdocs-storybook-builds/* -depth \( \( -type f -daystart -mtime +7 \) -o -type d -empty \) -delete || true'
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER2 'find /opt/websrv/nginx-storybook/htdocs-storybook-builds/* -depth \( \( -type f -daystart -mtime +7 \) -o -type d -empty \) -delete || true'
+    # Copy new build to target dir
+    # The folder has to be created first otherwise ssh fails
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER1 "mkdir -p $TARGET_DIR"
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER2 "mkdir -p $TARGET_DIR"
+    - scp -r -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $SOURCE_DIR/* $TARGET_DIR1
+    - scp -r -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $SOURCE_DIR/* $TARGET_DIR2
+    # Delete from directory itself old files (e.g. when overriding latest, maybe rsync with delete is better)
+    # This cleans old files older than two days if new data is just added to folder, so that it also works if script is executed over midnight
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER1 "find $TARGET_DIR/* -depth \( \( -type f -daystart -mtime +2 \) -o -type d -empty \) -delete"
+    - ssh -i "$STORYBOOK_SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no $TARGET_SERVER2 "find $TARGET_DIR/* -depth \( \( -type f -daystart -mtime +2 \) -o -type d -empty \) -delete"

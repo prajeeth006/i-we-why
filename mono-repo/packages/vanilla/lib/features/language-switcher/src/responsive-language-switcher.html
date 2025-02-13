@@ -1,0 +1,31 @@
+@if (!deviceService.isRobot) {
+    <div class="dropdown dh" [ngClass]="version === 1 ? 'language-switcher' : 'language-switcher-v2'">
+        <div class="current" menu-toggle="closed">
+            @if (commonMessages.LanguageSwitcherHeading; as heading) {
+                <div class="language-heading">{{ heading }}</div>
+            }
+            @if (version === 1) {
+                <div class="dropdown-toggle-group" (click)="openMenu()">
+                    @if (currentLanguage) {
+                        <vn-language-item [lang]="currentLanguage" [displayRadioButton]="false" />
+                    }
+                    <vn-icon name="theme-down" size="8" extraClass="dropdown-toggle-icon" />
+                </div>
+            }
+            @if (version === 2) {
+                <div class="dropdown-toggle-group" (click)="openRadioMenu()">
+                    @if (currentLanguage) {
+                        <vn-language-item [lang]="currentLanguage" [displayRadioButton]="false" />
+                    }
+                    <vn-icon name="theme-down" size="8" extraClass="dropdown-toggle-icon" />
+                    @if (showV2) {
+                        <vn-language-switcher-radio-menu />
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+@if (deviceService.isRobot) {
+    <vn-seo-language-links />
+}

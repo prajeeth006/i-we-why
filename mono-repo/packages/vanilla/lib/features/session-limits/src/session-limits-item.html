@@ -1,0 +1,50 @@
+@if (config.content.messages; as messages) {
+    @if (config.version === 1) {
+        @for (limit of limits(); track $index) {
+            <div class="session-limits-item-group">
+                @if (limit.sessionLimitType && messages[limit.sessionLimitType]; as limitType) {
+                    <span class="session-limits-item-type font-weight-bold"> {{ limitType }} : {{ limit.percentageElapsed }}%</span>
+                }
+                <div class="progress-bar">
+                    <div class="background-bar">
+                        <div class="progress bg-danger" [style.width.%]="limit.percentageElapsed"></div>
+                    </div>
+                </div>
+                <div class="session-limits-item-row">
+                    <b class="current-limit">{{ messages.CurrentLimits }}:</b>
+                    <span>{{ TimeSpan.fromMinutes(limit.sessionLimitConfiguredMins) | vnTotalTime }}</span>
+                </div>
+                <div class="session-limits-item-row">
+                    <b class="limit-label used-limit">{{ messages.Used }}:</b>
+                    <span>{{ TimeSpan.fromMinutes(limit.sessionLimitElaspedMins) | vnTotalTime: UnitFormat.Short }}</span>
+                </div>
+                <div class="session-limits-item-row">
+                    <b class="limit-label remaining-limit">{{ messages.Remaining }}:</b>
+                    <span>
+                        {{ TimeSpan.fromMinutes(limit.sessionLimitConfiguredMins - limit.sessionLimitElaspedMins) | vnTotalTime }}
+                        {{ messages.RemainingLeftText }}
+                    </span>
+                </div>
+            </div>
+        }
+    } @else if (config.version === 2) {
+        <div class="session-limits-item-group px-3">
+            @if (limits().length === 1) {
+                <div class="d-block btn session-limits-item-row-border my-3" [innerHTML]="formattedTimeTemplate() | trustAsHtml"></div>
+            }
+            <div class="session-limits-item-row-v2">
+                {{ messages.SessionLengthText }}
+            </div>
+            <br />
+            <div class="session-limits-item-row-v2">
+                {{ messages.ExplainText }}
+            </div>
+        </div>
+    } @else if (config.version === 3) {
+        <div class="text-center session-limits-description">
+            <div class="session-limits-description-data">{{ messages.SessionLengthText }}</div>
+            <div class="session-limits-description-time">{{ formattedTime() }}</div>
+            <div class="mt-2" [innerHtml]="config.content.text | trustAsHtml"></div>
+        </div>
+    }
+}

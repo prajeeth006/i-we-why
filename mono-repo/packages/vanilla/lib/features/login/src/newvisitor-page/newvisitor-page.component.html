@@ -1,0 +1,32 @@
+@if (content) {
+    <div class="newvisitor-wrapper d-flex flex-column">
+        @if (content.topItems; as topItems) {
+            <div class="newvisitor-header">
+                <div class="newvisitor-header-wrapper" [ngClass]="topItems.class">
+                    @for (child of topItems.children | dsl | async; track trackByText($index, child)) {
+                        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                    }
+                </div>
+            </div>
+        }
+        <div class="newvisitor-background">
+            <ng-container *vnPageMatrix="content.background | dsl | async" />
+        </div>
+        <div class="newvisitor-content">
+            <div class="newvisitor-btn-container d-flex flex-column align-items-center" [ngClass]="content.ctas.class">
+                @for (child of content.ctas.children | dsl | async; track trackByText($index, child)) {
+                    <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                }
+            </div>
+            @if (content.bottomItems; as bottomItems) {
+                <div class="newvisitor-footer">
+                    <div class="newvisitor-footer-wrapper" [ngClass]="bottomItems.class">
+                        @for (child of bottomItems.children | dsl | async; track trackByText($index, child)) {
+                            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

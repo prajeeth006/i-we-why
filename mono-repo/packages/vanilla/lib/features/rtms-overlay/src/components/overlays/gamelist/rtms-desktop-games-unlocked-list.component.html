@@ -1,0 +1,30 @@
+<div class="bcms-games-container mobile bcms-padding" [hidden]="message.desktopGames.length === 0 && !message.isAllDesktopGames">
+    <div class="bcms-games-wrapper">
+        <div [hidden]="message.desktopGames.length === 0" class="bcms-games">
+            @if (message.desktopGames.length <= 3) {
+                <div class="bcms-games-img-container no-slider">
+                    @for (game of message.desktopGames; track trackByTitle($index, game)) {
+                        <div class="bcms-single-game-container">
+                            <a (click)="goTo(game.launchUrl)" class="bcms-game-img-link dh">
+                                <vn-image [src]="game.icon.src" [alt]="game.title" width="140" height="140" imageClass="bcms-game-img" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+            @if (message.desktopGames.length > 3) {
+                <vn-swiper [swiperOptions]="{ slidesPerView, navigation: arrows }" swiperClass="bcms-games-img-container">
+                    @for (game of message.desktopGames; track trackByTitle($index, game)) {
+                        <div class="swiper-slide">
+                            <div class="bcms-single-game-container">
+                                <a (click)="goTo(game.launchUrl)" class="bcms-game-img-link dh">
+                                    <vn-image [src]="game.icon.src" [alt]="game.title" width="140" height="140" imageClass="bcms-game-img" />
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </vn-swiper>
+            }
+        </div>
+    </div>
+</div>

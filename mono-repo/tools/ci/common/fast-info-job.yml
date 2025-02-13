@@ -1,0 +1,18 @@
+spec:
+  inputs:
+    name:
+    stage:
+    echoMessage:
+---
+$[[ inputs.name ]]:
+  stage: $[[ inputs.stage ]]
+  interruptible: true
+  tags:
+    - linux-shell-runner
+  variables:
+    GIT_STRATEGY: none
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  script: echo "$[[ inputs.echoMessage ]]"

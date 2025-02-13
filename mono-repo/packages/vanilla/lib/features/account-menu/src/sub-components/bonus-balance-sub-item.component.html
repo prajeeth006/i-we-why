@@ -1,0 +1,19 @@
+@if (!hideIfZero || balance !== 0) {
+    <div [ngClass]="item.class" class="bonus-balance-header__item d-flex align-items-center">
+        <div class="bonus-balance-header__item-text pr-1">{{ item.text }}</div>
+        @if (balance >= 0) {
+            <div class="bonus-balance-header__item-balance ml-auto">
+                {{ balance | vnCurrency }}
+            </div>
+        }
+        <div class="bonus-balance-header__item-icon">
+            @if (balance > 0) {
+                <vn-icon
+                    name="theme-right"
+                    size="12"
+                    extraClass="d-flex align-items-center justify-content-center"
+                    (click)="processClick($event, item)" />
+            }
+        </div>
+    </div>
+}

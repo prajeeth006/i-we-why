@@ -1,0 +1,5 @@
+<div [ngClass]="item.class">
+    @for (child of item.children; track trackByItem($index, child)) {
+        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+    }
+</div>

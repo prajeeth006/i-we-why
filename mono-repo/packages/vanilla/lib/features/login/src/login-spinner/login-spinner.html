@@ -1,0 +1,6 @@
+<div class="login-spinner" [hidden]="!loginSpinnerService.visible()">
+    <ds-loading-spinner />
+    @if (loginContentService.content?.children?.loginspinner?.text; as message) {
+        <span class="login-message">{{ message }}</span>
+    }
+</div>

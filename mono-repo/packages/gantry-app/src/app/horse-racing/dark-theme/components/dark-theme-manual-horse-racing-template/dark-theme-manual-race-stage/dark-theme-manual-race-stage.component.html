@@ -1,0 +1,21 @@
+<div class="header__title--block-right">
+    <ng-container>
+        <div [ngClass]="{ 'filled-bg-white': !horseRacingResult?.isRaceOff }" class="header-current-price tilted-card">
+            <ng-container *ngIf="horseRacingResult?.isRaceOff; then raceOffStage; else livePriceStage"></ng-container>
+            <ng-template #raceOffStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{ currentStage | titlecase }}
+                </span>
+            </ng-template>
+            <ng-template #livePriceStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{
+                        horseRacingResult?.horseRacingContent?.contentParameters?.LivePrice
+                            ? (horseRacingResult?.horseRacingContent?.contentParameters?.LivePrice | titlecase)
+                            : ''
+                    }}
+                </span>
+            </ng-template>
+        </div>
+    </ng-container>
+</div>

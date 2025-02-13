@@ -1,0 +1,8 @@
+<vn-header-bar title="teste" class="redirect-header" [showBack]="false" [showClose]="false" titleCssClass="brand-logo" />
+<div class="redirect-message-container overlay-content">
+    <div class="redirect-message" [vnDynamicHtml]="message()"></div>
+    <div class="form-element redirect-btn-container">
+        <button class="btn btn-primary w-100 spacer-b spacer-t" (click)="redirect()">{{ continueTo() }}</button>
+        <button class="btn-return w-100 btn btn-light" (click)="close()">{{ returnTo() }}</button>
+    </div>
+</div>

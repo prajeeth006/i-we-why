@@ -1,0 +1,65 @@
+<lh-header-bar [content]="loginContentService.content.title" [titleCssClass]="loginConfig.titleCssClass" (onClose)="close()" />
+<div class="scroll-container d-flex flex-column">
+    <div id="login" class="loginplugin portal-page width-restricted-small portal-center-wrapper">
+        <vn-message-panel scope="login" />
+        <form [formGroup]="formGroup" novalidate class="mt-half form-base floating-form ten-top" method="POST">
+            <fieldset>
+                <section>
+                    <lh-form-field
+                        [labelText]="loginContentService.content.form.username?.label || ''"
+                        [validationMessages]="loginContentService.content.form.username?.validation"
+                        [ignoreMaxLength]="true"
+                        [elementClass]="'form-group-label-i-l'">
+                        <input
+                            type="text"
+                            name="username"
+                            formControlName="username"
+                            vnTrackingEvent="Event.Functionality.Login"
+                            [vnTrackingData]="{ 'page.referringAction': 'Login_Centered_Email_Typed', 'page.siteSection': 'Authentication' }"
+                            [vnTrackingTrigger]="['change']"
+                            class="form-control form-control-i-l form-group-i-l" />
+                        <vn-icon name="theme-account" />
+                    </lh-form-field>
+                    <lh-form-field
+                        [labelText]="loginContentService.content.form.password?.label || ''"
+                        [validationMessages]="loginContentService.content.form.password?.validation"
+                        [elementClass]="'form-group-label-i-l'">
+                        <input
+                            [type]="showPassword ? 'text' : 'password'"
+                            name="password"
+                            formControlName="password"
+                            class="form-control-i-l form-control-pw w-100" />
+                        <vn-icon name="theme-locked-i" />
+                        @if (!showPassword) {
+                            <vn-icon name="theme-hide-password" extraClass="toggle-password-button psw-i-l" (click)="togglePassword()" />
+                        } @else {
+                            <vn-icon name="theme-show-password" extraClass="toggle-password-button psw-i-l" (click)="togglePassword()" />
+                        }
+                    </lh-form-field>
+                    <lh-form-field>
+                        <vn-re-captcha formControlName="captcharesponse" name="reCaptcha" area="Login" />
+                        @if (reCaptchaControl && reCaptchaControl.touched && reCaptchaControl.errors) {
+                            <div class="custom-error m2-validation-messages">
+                                <span class="m2-validation-message" [innerHtml]="reCaptchaControl.errors?.verification.message"></span>
+                            </div>
+                        }
+                    </lh-form-field>
+                    <div class="form-element form-links">
+                        <div class="pc-txt txt-s" [vnDynamicHtml]="loginContentService.content.text"></div>
+                        <div class="pc-txt txt-s mb-0" [vnDynamicHtml]="loginContentService.content.messages?.OAuthAdditionalText || ''"></div>
+                    </div>
+                    <div class="form-element">
+                        <button
+                            class="login w-100"
+                            [ngClass]="loginContentService.content.form.linkaccountsbutton?.htmlAttributes?.cssClass || undefined"
+                            [disabled]="disabled"
+                            (click)="login()">
+                            <i class="glyphicon" [class.glyphicon-time]="disabled" [class.glyphicon-ok]="!disabled"></i>
+                            {{ formGroup.disabled ? commonMessages.PleaseWait : loginContentService.content.form.linkaccountsbutton?.label }}
+                        </button>
+                    </div>
+                </section>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+@if (v2) {
+    <div class="form-control-us-switcher d-flex justify-content-between align-items-center">
+        <div class="d-flex us-switcher-label">
+            <span class="us-switcher-label-text">{{ loginContentService.content.form.prefillusername?.label }}</span>
+        </div>
+        <div class="switcher-lg">
+            <ds-switch name="prefillUsername" id="prefillUsername" [checked]="value" (checkedChange)="onValueChange($event)" />
+        </div>
+    </div>
+} @else {
+    <div class="form-element">
+        <input
+            type="checkbox"
+            class="custom-control-input custom-control-checkbox"
+            name="prefillUsername"
+            (change)="onValueChange($event.target.checked)"
+            [checked]="value"
+            id="prefillUsername" />
+        <label for="prefillUsername">{{ loginContentService.content.form.prefillusername?.label }}</label>
+    </div>
+}

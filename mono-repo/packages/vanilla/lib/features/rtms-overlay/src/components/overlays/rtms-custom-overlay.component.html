@@ -1,0 +1,104 @@
+<div class="generic-modal-title">
+    <div class="header-ctrl-wrapper">
+        <div class="header-ctrl d-flex justify-content-between align-items-center">
+            <div
+                class="header-ctrl-txt text-truncate"
+                [class.brand-logo]="message.content.overlayHeaderType === HeaderType.LOGO"
+                [innerHtml]="headerTitle | trustAsHtml"></div>
+            @if (!message.content.restrictedOverlay) {
+                <div (click)="close()" class="header-ctrl-r">
+                    <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="generic-modal-content-wrapper">
+    <div class="generic-modal-content">
+        @if (message.content; as content) {
+            <div class="generic-modal-disclaimer">
+                <vn-image
+                    [textClass]="'vn-img'"
+                    [src]="overlayImage"
+                    [intro]="imageIntroductoryText"
+                    [title]="imageTitleText"
+                    [subtitle]="imageSubtitleText"
+                    [titleFontSize]="imageTitleFontSize"
+                    [textAlign]="imageTextAlignment" />
+                <div class="generic-modal-disclaimer-content" [innerHtml]="content.preAcceptanceKeyTerms | trustAsHtml"></div>
+                @if (content.headerTermsAndConditionsRewardsOverlay) {
+                    <div class="generic-modal-disclaimer-content" [innerHtml]="content.headerTermsAndConditionsRewardsOverlay"></div>
+                }
+            </div>
+        }
+        <div class="generic-modal-overlay-content">
+            <div class="bcms-item-title" [innerHtml]="title | trustAsHtml"></div>
+            <!--Pre acceptance title / Post acceptance title-->
+            <vn-rtms-cta-action
+                class="bcms-item-description"
+                [content]="description"
+                [rtmsCtaAction]="message"
+                [rtmsCtaActionMessages]="content.messages"
+                rtmsType="OVERLAY"
+                rtmsCtaContentType="DESCRIPTION"
+                (action)="rtmsCtaActions($event)" />
+            @if (!isOfferClaimed) {
+                <div>
+                    @if (isMobile) {
+                        <vn-rtms-mobile-games-locked-list [content]="content" [message]="message" />
+                    }
+                    @if (!isMobile) {
+                        <vn-rtms-desktop-games-locked-list [content]="content" [message]="message" />
+                    }
+                </div>
+            }
+            @if (isOfferClaimed) {
+                <div>
+                    @if (isMobile) {
+                        <vn-rtms-mobile-games-unlocked-list [content]="content" [message]="message" />
+                    }
+                    @if (!isMobile) {
+                        <vn-rtms-desktop-games-unlocked-list [content]="content" [message]="message" />
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@if (message.isShowTnc) {
+    <div class="generic-modal-tc">
+        <div class="generic-modal-tc-header d-flex align-items-center justify-content-between" (click)="tacExpanded()">
+            <span>{{ content.messages?.TermsAndConditions }}</span>
+            @if (isTacExpanded) {
+                <vn-icon name="theme-up" extraClass="toggle-tnc-icon" size="16" />
+            } @else {
+                <vn-icon name="theme-down" extraClass="toggle-tnc-icon" size="16" />
+            }
+        </div>
+        <div class="generic-modal-tc-body" [innerHtml]="message.tnCData | trustAsHtml"></div>
+    </div>
+}
+@if (!isOfferClaimed) {
+    <div class="generic-modal-actions">
+        <vn-rtms-cta-action
+            class="bcms-cta"
+            [content]="message.content.preAcceptanceCTA1 + message.content.preAcceptanceCTA2"
+            [rtmsCtaAction]="message"
+            [rtmsCtaActionMessages]="content.messages"
+            rtmsType="OVERLAY"
+            rtmsCtaContentType="CTA"
+            (action)="rtmsCtaActions($event)" />
+    </div>
+}
+@if (isOfferClaimed) {
+    <div class="generic-modal-actions">
+        <vn-rtms-cta-action
+            class="bcms-cta"
+            [content]="message.content.postAcceptanceCTA"
+            [rtmsCtaAction]="message"
+            [rtmsCtaActionMessages]="content.messages"
+            rtmsType="OVERLAY"
+            rtmsCtaContentType="CTA"
+            (action)="rtmsCtaActions($event)" />
+    </div>
+}

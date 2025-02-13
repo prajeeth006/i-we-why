@@ -1,0 +1,39 @@
+{
+    "name": "@frontend/vanilla",
+    "version": "0.0.0",
+    "description": "vanilla client framework",
+    "peerDependencies": {
+        "@angular/animations": "18.2.6",
+        "@angular/cdk": "18.2.6",
+        "@angular/common": "18.2.6",
+        "@angular/core": "18.2.6",
+        "@angular/forms": "18.2.6",
+        "@angular/material": "18.2.6",
+        "@angular/platform-browser": "18.2.6",
+        "@angular/router": "18.2.6",
+        "@cloudflare/stream-angular": "1.0.1",
+        "@ng-bootstrap/ng-bootstrap": "16.0.0",
+        "@push-based/ngx-fast-svg": "18.1.0",
+        "@rtms/client": "1.0.10",
+        "@rx-angular/cdk": "^18.0.0",
+        "deviceatlas-clientside": "192.3.0-rc1",
+        "launchdarkly-js-client-sdk": "^3.4.0",
+        "@seontechnologies/seon-javascript-sdk": "^6.3.0",
+        "lodash-es": "4.17.21",
+        "ngx-float-ui": "^17.0.1",
+        "ngx-toastr": "^17.0.2",
+        "rxjs": "7.8.1",
+        "simple-keyboard": "^3.5.56",
+        "swiper": "^11.0.4",
+        "@frontend/ui": "0.0.1",
+        "canvas-confetti": "^1.9.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://vie.git.bwinparty.com/vanilla/monorepo"
+    },
+    "keywords": [
+        "Vanilla"
+    ],
+    "author": "Team Vanilla"
+}

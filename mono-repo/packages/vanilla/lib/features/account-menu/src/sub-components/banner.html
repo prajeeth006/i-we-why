@@ -1,0 +1,8 @@
+<div class="am-banner dh" (click)="processClick($event, item)">
+    <a class="am-banner__img">
+        @for (item of item.children; track trackByText($index, item)) {
+            <vn-image [src]="item.image.src" [imageClass]="item.class" />
+        }
+    </a>
+    <div class="am-banner__txt">{{ item.text }}</div>
+</div>

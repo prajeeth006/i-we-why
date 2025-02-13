@@ -1,0 +1,24 @@
+<div [ngClass]="item?.class" class="bonus-balance-header">
+    <div class="bonus-balance-header__title d-flex align-items-center">
+        @if (item?.parameters.withdrawIconClass; as withdrawIconClass) {
+            <span [ngClass]="withdrawIconClass"></span>
+        }
+        @if (item?.text; as text) {
+            <span>{{ text }}</span>
+        }
+    </div>
+    <div class="bonus-balance-header__content">
+        @if (balanceItems?.length > 0) {
+            @for (child of balanceItems; track trackByText($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+            }
+        }
+    </div>
+    @if (ctaItems?.length > 0) {
+        <div class="bonus-balance-header__cta d-flex align-items-center">
+            @for (child of ctaItems; track trackByText($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+            }
+        </div>
+    }
+</div>

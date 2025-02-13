@@ -1,0 +1,13 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+gn-dark-theme-footer {
+    .market-each-way {
+        color: $footer-yellow-text;
+        min-width: 234px;
+        text-align: right;
+
+        @include breakpoint(multidesktop) {
+            min-width: 117px;
+        }
+    }
+}

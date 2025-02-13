@@ -1,0 +1,223 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.latest-results__page {
+    .selection-table {
+        min-height: 350px;
+        width: 100%;
+        margin-top: 70px;
+        border-collapse: collapse;
+
+        @include breakpoint(multidesktop) {
+            min-height: 175px;
+            margin-top: 35px;
+        }
+
+        &:first-child {
+            margin-top: 28px;
+            @include breakpoint(multidesktop) {
+                margin-top: 14px;
+            }
+        }
+
+        .meeting-results-header {
+            height: 54px;
+            @include breakpoint(multidesktop) {
+                height: 27px;
+            }
+        }
+
+        th {
+            font-size: $font-40;
+            line-height: 28px;
+            font-weight: $fw-normal;
+            padding-bottom: 21px;
+            text-align: left;
+            height: 28px;
+            border-bottom: solid 4px $color-white;
+
+            &.runner-number {
+                width: 111px;
+                font-weight: $fw-semibold;
+
+                @include breakpoint(multidesktop) {
+                    width: 55.5px;
+                }
+            }
+
+            &.runner-info {
+                width: 683px;
+                padding-right: 14px;
+
+                @include breakpoint(multidesktop) {
+                    width: 341.5px;
+                    padding-right: 7px;
+                }
+            }
+
+            &.runner-status {
+                width: 526px;
+
+                @include breakpoint(multidesktop) {
+                    width: 263px;
+                }
+            }
+
+            &.forecast {
+                width: 262px;
+
+                @include breakpoint(multidesktop) {
+                    width: 131px;
+                }
+            }
+
+            &.tricast {
+                width: 180px;
+
+                @include breakpoint(multidesktop) {
+                    width: 90px;
+                }
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-20;
+                padding-bottom: 10.5px;
+                height: 14px;
+                line-height: 14px;
+                border-width: 2px;
+            }
+
+            .event-details {
+                display: flex;
+                justify-content: space-between;
+                .event-name {
+                    font-weight: $fw-semibold;
+                }
+            }
+        }
+
+        td {
+            text-align: left;
+            vertical-align: top;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                row-gap: 42px;
+                padding-left: 0;
+                margin-bottom: 0;
+                margin-top: 30px;
+
+                @include breakpoint(multidesktop) {
+                    row-gap: 21px;
+                    margin-top: 15px;
+                }
+
+                li {
+                    font-size: $font-48;
+                    height: 34px;
+                    line-height: 34px;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $font-24;
+                        height: 17px;
+                        line-height: 17px;
+                    }
+
+                    .runner-details {
+                        display: flex;
+                    }
+
+                    &.cast-column {
+                        line-height: 36px;
+                        height: 36px;
+
+                        @include breakpoint(multidesktop) {
+                            line-height: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .runner-position {
+            width: 82px;
+
+            @include breakpoint(multidesktop) {
+                width: 41px;
+            }
+        }
+
+        .run-count {
+            width: 258px;
+            text-align: center;
+
+            @include breakpoint(multidesktop) {
+                width: 129px;
+            }
+        }
+
+        .selection-number {
+            width: 138px;
+            text-align: center;
+            margin-right: 57px;
+
+            @include breakpoint(multidesktop) {
+                width: 69px;
+                margin-right: 28.5px;
+            }
+        }
+
+        .selection-name {
+            width: 517px;
+
+            @include breakpoint(multidesktop) {
+                width: 258px;
+            }
+        }
+
+        .selection-current-price {
+            width: 160px;
+            text-align: center;
+
+            @include breakpoint(multidesktop) {
+                width: 80px;
+            }
+        }
+
+        .selction-favorite {
+            width: 120px;
+            margin-left: 70px;
+
+            @include breakpoint(multidesktop) {
+                width: 60px;
+                margin-left: 35px;
+            }
+        }
+
+        .each-way {
+            color: $theme-yellow;
+        }
+
+        .forecast-number,
+        .tricast-number {
+            text-align: center;
+        }
+    }
+}
+
+.dividends-grid {
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+    place-items: center;
+    height: 36px;
+
+    @include breakpoint(multidesktop) {
+        height: 22px;
+    }
+
+    &__col-4 {
+        position: relative;
+    }
+}

@@ -1,0 +1,71 @@
+<div class="generic-modal-title">
+    <div class="header-ctrl-wrapper">
+        <div class="header-ctrl d-flex justify-content-between align-items-center">
+            <div
+                class="header-ctrl-txt text-truncate"
+                [class.brand-logo]="message.content.overlayHeaderType === HeaderType.LOGO"
+                [innerHtml]="message.content.overlayTitle | trustAsHtml"></div>
+            @if (!message.content.restrictedOverlay) {
+                <div (click)="close()" class="header-ctrl-r">
+                    <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="generic-modal-content-wrapper" #modalContentWrapperEl>
+    <div class="generic-modal-content" #modalContentEl>
+        <!-- <div class="over-content">
+    <img [src]="message.content.overlayImage" />
+  </div> -->
+        @if (message.content; as content) {
+            <div class="generic-modal-disclaimer">
+                <vn-image
+                    [textClass]="'overlay'"
+                    [src]="content.overlayImage"
+                    [intro]="content.overlayImageIntroductoryText"
+                    [title]="content.overlayImageTitleText"
+                    [subtitle]="content.overlayImageSubtitleText"
+                    [titleFontSize]="content.overlayImageTitleFontSize"
+                    [textAlign]="content.overlayImageTextAlignment" />
+                @if (message.content.headerTermsAndConditionsOverlay) {
+                    <div class="generic-modal-disclaimer-content" [innerHtml]="message.content.headerTermsAndConditionsOverlay"></div>
+                }
+            </div>
+        }
+        <div class="generic-modal-overlay-content">
+            <vn-rtms-cta-action
+                class="player-inbox-item-description"
+                [content]="message.content.overlayDescription"
+                [rtmsCtaAction]="message"
+                [rtmsCtaActionMessages]="content.messages"
+                rtmsType="OVERLAY"
+                rtmsCtaContentType="DESCRIPTION"
+                (action)="rtmsCtaActions($event)" />
+        </div>
+    </div>
+</div>
+
+@if (message.isShowTnc) {
+    <div class="generic-modal-tc" [class.with-shadow]="isShadowOnActions">
+        <div class="generic-modal-tc-header d-flex align-items-center justify-content-between" (click)="tacExpanded()">
+            <span>{{ content.messages?.TermsAndConditions }}</span>
+            @if (isTacExpanded) {
+                <vn-icon name="theme-up" extraClass="toggle-tnc-icon" size="16" />
+            } @else {
+                <vn-icon name="theme-down" extraClass="toggle-tnc-icon" size="16" />
+            }
+        </div>
+        <div class="generic-modal-tc-body" [innerHtml]="message.tnCData | trustAsHtml"></div>
+    </div>
+}
+<div class="generic-modal-actions" [class.with-shadow]="isShadowOnActions && !message.isShowTnc">
+    <vn-rtms-cta-action
+        class="player-inbox-item-cta ctaaction clearfix"
+        [content]="message.content.overlayCallToAction"
+        [rtmsCtaAction]="message"
+        [rtmsCtaActionMessages]="content.messages"
+        rtmsType="OVERLAY"
+        rtmsCtaContentType="CTA"
+        (action)="rtmsCtaActions($event)" />
+</div>

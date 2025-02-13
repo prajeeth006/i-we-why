@@ -1,0 +1,82 @@
+﻿@if (config()?.templates?.content; as content) {
+    <vn-dialog (onClose)="onClose()" [headerTitle]="content.title" [showHeaderCloseIcon]="true" class="vn-datepicker vn-range-date-picker">
+        <ng-container content>
+            <form novalidate class="mt-half form-base floating-form ten-top">
+                <fieldset>
+                    <div [innerHtml]="content.text | trustAsHtml" class="period-text pt-3"></div>
+                    @if (content.form.periodselectionform; as periodSelectionForm) {
+                        <ul class="nav nav-pills py-4">
+                            @for (period of periodSelectionForm.values; track period; let index = $index) {
+                                <li class="nav-item">
+                                    <button
+                                        ds-pill
+                                        (click)="setDateRange(period.value)"
+                                        [class.active]="period.value === selectedRange()"
+                                        class="nav-link">
+                                        {{ period.text }}
+                                    </button>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </fieldset>
+                <fieldset>
+                    @if (content.form.startdateform; as startDateForm) {
+                        <div class="startdate-label pb-3 pl-0">{{ startDateForm.toolTip }}</div>
+                    }
+                    <div class="daterange-container">
+                        @if (content.form.startdateform; as startDateForm) {
+                            <div class="daterange-container__form">
+                                <lh-form-field [labelText]="startDateForm.label" [validationMessages]="startDateForm.validation || {}">
+                                    <vn-datepicker
+                                        [(ngModel)]="dateRange.start"
+                                        (onDateChangeEvent)="setStartDate($event)"
+                                        [name]="startDateForm.id"
+                                        [config]="datepickerConfig()"
+                                        [dateFormat]="content.validation?.dateFormat"
+                                        [calendarDropdownEnabled]="false"
+                                        [headerEnabled]="false"
+                                        [footerEnabled]="false" />
+                                </lh-form-field>
+                            </div>
+                        }
+
+                        @if (content.form.enddateform; as endDateForm) {
+                            <div class="daterange-container__form">
+                                <lh-form-field [validationMessages]="endDateForm.validation || {}" [labelText]="endDateForm.label">
+                                    <vn-datepicker
+                                        [(ngModel)]="dateRange.end"
+                                        (onDateChangeEvent)="setEndDate($event)"
+                                        [name]="endDateForm.id"
+                                        [config]="datepickerConfig()"
+                                        [dateFormat]="content.validation?.dateFormat"
+                                        [calendarDropdownEnabled]="false"
+                                        [headerEnabled]="false"
+                                        [footerEnabled]="false" />
+                                </lh-form-field>
+                            </div>
+                        }
+                    </div>
+                </fieldset>
+            </form>
+        </ng-container>
+        <ng-container actions>
+            @if (content.messages; as messages) {
+                <div class="generic-modal-actions">
+                    <div class="form-element action-items">
+                        <button
+                            ds-button
+                            class="btn btn-light btn-md action-items__button"
+                            (click)="onClear()"
+                            [disabled]="options?.disableClear || (!dateRange.start && !dateRange.end)">
+                            {{ messages.clearButtonText }}
+                        </button>
+                        <button ds-button (click)="onApply()" [disabled]="options?.disableApply" class="btn btn-primary btn-md">
+                            {{ messages.applyButtonText }}
+                        </button>
+                    </div>
+                </div>
+            }
+        </ng-container>
+    </vn-dialog>
+}

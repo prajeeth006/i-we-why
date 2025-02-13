@@ -1,0 +1,21 @@
+@if (productMenuService.childTabs(); as childTabs) {
+    <div [ngClass]="'items-' + childTabs.length" class="product-menu-tabs">
+        @for (item of childTabs; track trackByText($index, item)) {
+            @if (useFastIconType === true) {
+                <vn-menu-item
+                    [item]="item"
+                    [section]="MenuSection.ProductMenuTop"
+                    (onClick)="onClick(item)"
+                    displayMode="FastIcon"
+                    badgePosition="FastIcon" />
+            } @else {
+                <vn-menu-item
+                    [item]="item"
+                    [section]="MenuSection.ProductMenuTop"
+                    (onClick)="onClick(item)"
+                    displayMode="icon"
+                    badgePosition="icon" />
+            }
+        }
+    </div>
+}

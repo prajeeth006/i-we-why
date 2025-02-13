@@ -1,0 +1,20 @@
+@if (layoutSlot?.display()) {
+    <!--Single Slot-->
+    @if (layoutSlot.slotType === SlotType.Single) {
+        @if (layoutSlot.component; as componentInfo) {
+            <ng-container *vnDynamicComponent="componentInfo.component; attr: componentInfo.attr; injector: componentInfo.customInjector" />
+        }
+    }
+    <!--Multi Slot-->
+    @if (layoutSlot.slotType === SlotType.Multi) {
+        @for (componentInfo of layoutSlot.components; track $index) {
+            <ng-container *vnDynamicComponent="componentInfo.component; attr: componentInfo.attr; injector: componentInfo.customInjector" />
+        }
+    }
+    <!--Sitecore content-->
+    @for (template of templates; track $index) {
+        @if (template | dsl | async; as content) {
+            <div [ngClass]="content?.messages?.cssClass || undefined" [vnDynamicHtml]="content?.text || ''"></div>
+        }
+    }
+}

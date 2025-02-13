@@ -1,0 +1,17 @@
+@if (isTooltipEnabled()) {
+    <vn-menu-item
+        [section]="MenuSection.Header"
+        [item]="item"
+        [floatUi]="popper.content"
+        [placement]="FloatUiPlacement.BOTTOMEND"
+        [showOnStart]="true"
+        linkClass="h-deposit-button header-btn btn btn-primary" />
+
+    <vn-popper-content closeType="button" cssClass="tooltip-info" (onCloseLinkClick)="onTooltipClose()" #popper>
+        <ng-container content>{{ item.toolTip }}</ng-container>
+    </vn-popper-content>
+} @else {
+    <vn-menu-item [section]="MenuSection.Header" [item]="item" linkClass="h-deposit-button header-btn btn btn-primary" />
+}
+
+<div class="deposit-button-anchor" [vnElementKey]="VanillaElements.DEPOSIT_BUTTON_ANCHOR"></div>

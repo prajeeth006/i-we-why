@@ -1,0 +1,12 @@
+﻿<div class="loading" [hidden]="!loadingIndicatorService.visible()">
+    @if (content) {
+        @if (loadingIndicatorV2) {
+            <ds-loading-spinner />
+        } @else {
+            <div [innerHtml]="content"></div>
+        }
+    }
+    @if (commonMessages.PleaseWait; as message) {
+        <span>{{ message }}</span>
+    }
+</div>

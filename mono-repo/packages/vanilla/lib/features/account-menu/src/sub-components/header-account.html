@@ -1,0 +1,16 @@
+<div class="ch-account-menu-v3__detail-container d-flex justify-content-center" [ngClass]="{ scrolled: scrolled }" (click)="restore()">
+    <div class="am-avatar-text ch-account-menu-v3__detail-name">
+        <div class="am-avatar-text-user">
+            <vn-image [src]="item.image.src" imageClass="am-avatar-img" />
+        </div>
+        <div [innerHtml]="item.text | trustAsHtml"></div>
+        <div class="am-anchor" [vnElementKey]="VanillaElements.ACCOUNT_MENU_HEADER_ANCHOR"></div>
+        <div class="am-btn-actions">
+            @for (child of item.children | dsl | async; track trackByText($index, child)) {
+                @if (getItemComponent(child.type); as component) {
+                    <ng-container *vnDynamicComponent="component; attr: { item: child }" />
+                }
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+stages:
+  - e2e
+  - reports
+
+include:
+  - tools/ci/common/rules.yml
+  - tools/ci/common/e2e.yml

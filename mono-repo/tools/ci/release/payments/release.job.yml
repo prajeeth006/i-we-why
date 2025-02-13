@@ -1,0 +1,101 @@
+build-betslipqd-app:
+  stage: beta
+  extends: .base-release
+  script:
+    - yarn nx run betslipqd-app:build
+  artifacts:
+    paths:
+      - dist/build/packages/payments/betslipqd-app
+
+push-betslipqd-app:
+  stage: official
+  extends: .base-release
+  needs:
+    - job: build-betslipqd-app
+  variables:
+    PAYMENTS_CI_PUSH_BRANCH: "master"
+  script:
+    - COMMIT_HASH=$(git rev-parse --short HEAD)
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="release"
+      elif [[ "$CI_COMMIT_REF_NAME" =~ ^release ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="master"
+      fi
+    
+    - git clone https://gitlab-ci-token:${PAYMENTS_CI_PUSH_TOKEN}@vie.git.bwinparty.com/entain/ppac/cashier/webui/partycashier_static_package.git partycashier_static_package
+    - cd partycashier_static_package
+    - git checkout $PAYMENTS_CI_PUSH_BRANCH
+    - rm -rf static/htdocs/cashierBetslipQD/*
+    - cp -r ../dist/build/packages/payments/betslipqd-app/* static/htdocs/cashierBetslipQD/
+    - git add .
+    - 'git commit -m "feat(payments): deploying betslipqd-app monorepo artifacts from commit ${COMMIT_HASH}"'
+    - git push origin $PAYMENTS_CI_PUSH_BRANCH
+
+build-quickdeposit-app:
+  stage: beta
+  extends: .base-release
+  script:
+    - yarn nx run quickdeposit-app:build
+  artifacts:
+    paths:
+      - dist/build/packages/payments/quickdeposit-app
+
+push-quickdeposit-app:
+  stage: official
+  extends: .base-release
+  needs:
+    - job: build-quickdeposit-app
+  variables:
+    PAYMENTS_CI_PUSH_BRANCH: "master"
+  script:
+    - COMMIT_HASH=$(git rev-parse --short HEAD)
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="release"
+      elif [[ "$CI_COMMIT_REF_NAME" =~ ^release ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="master"
+      fi
+    
+    - git clone https://gitlab-ci-token:${PAYMENTS_CI_PUSH_TOKEN}@vie.git.bwinparty.com/entain/ppac/cashier/webui/partycashier_static_package.git partycashier_static_package
+    - cd partycashier_static_package
+    - git checkout $PAYMENTS_CI_PUSH_BRANCH
+    - rm -rf static/htdocs/cashierQuickDepositV2/*
+    - cp -r ../dist/build/packages/payments/quickdeposit-app/* static/htdocs/cashierQuickDepositV2/
+    - git add .
+    - 'git commit -m "feat(payments): deploying quickdeposit-app monorepo artifacts from commit ${COMMIT_HASH}"'
+    - git push origin $PAYMENTS_CI_PUSH_BRANCH
+
+build-cashier-app:
+  stage: beta
+  extends: .base-release
+  script:
+    - yarn nx run cashier-app:build
+  artifacts:
+    paths:
+      - dist/build/packages/payments/cashier-app
+
+push-cashier-app:
+  stage: official
+  extends: .base-release
+  needs:
+    - job: build-cashier-app
+  variables:
+    PAYMENTS_CI_PUSH_BRANCH: "master"
+  script:
+    - COMMIT_HASH=$(git rev-parse --short HEAD)
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="release"
+      elif [[ "$CI_COMMIT_REF_NAME" =~ ^release ]]; then
+        PAYMENTS_CI_PUSH_BRANCH="master"
+      fi
+    
+    - git clone https://gitlab-ci-token:${PAYMENTS_CI_PUSH_TOKEN}@vie.git.bwinparty.com/entain/ppac/cashier/webui/partycashier_static_package.git partycashier_static_package
+    - cd partycashier_static_package
+    - git checkout $PAYMENTS_CI_PUSH_BRANCH
+    - rm -rf static/htdocs/cashierV2/*
+    - cp -r ../dist/build/packages/payments/cashier-app/* static/htdocs/cashierV2/
+    - git add .
+    - 'git commit -m "feat(payments): deploying cashier-app monorepo artifacts from commit ${COMMIT_HASH}"'
+    - git push origin $PAYMENTS_CI_PUSH_BRANCH

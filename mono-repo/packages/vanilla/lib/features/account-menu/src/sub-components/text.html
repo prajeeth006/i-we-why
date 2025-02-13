@@ -1,0 +1,5 @@
+@if (version > 1) {
+    <div [ngClass]="item.class" class="am-text" [innerHtml]="item.text | trustAsHtml"></div>
+} @else {
+    <span [ngClass]="item.class" class="account-menu-text" [innerHtml]="item.text | trustAsHtml"></span>
+}

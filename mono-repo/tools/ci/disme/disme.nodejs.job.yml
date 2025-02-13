@@ -1,0 +1,81 @@
+spec:
+  inputs:
+    project:
+    when:
+    artifacts:
+    artifactsRoot:
+    artifactsDir:
+    dismeShortcut:
+    dismeEnvironment:
+    dismeServers:
+    dismePrimaryServer:
+      type: number
+    dismeEntity:
+      type: number
+---
+start-$[[ inputs.project ]]:
+  stage: start
+  tags:
+    - linux-shell-runner
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .rules-$[[ inputs.when ]]
+  script:
+    - echo 'Started nodejs disme job of $[[ inputs.project ]]'
+
+build-$[[ inputs.project ]]:
+  stage: build
+  extends:
+    - .node_modules-cache
+    - .rules-on-success
+  needs: ['version-xml','start-$[[ inputs.project ]]']
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - yarn nx build $[[ inputs.project ]]
+    - cp version.xml $[[ inputs.artifacts ]]
+    - cd $[[ inputs.artifacts ]]
+    - yarn install --no-immutable
+    - cd ..
+    - tar czf $[[ inputs.project ]].tar.gz $[[ inputs.artifactsDir ]]
+  artifacts:
+    paths:
+      - $[[ inputs.artifactsRoot ]]/$[[ inputs.project ]].tar.gz
+      - version.xml
+
+disme-upload-$[[ inputs.project ]]:
+  stage: upload
+  extends:
+    - .disme-upload
+    - .rules-on-success
+  needs: ['build-$[[ inputs.project ]]']
+  variables:
+    ZIP_FILE_NAME: $[[ inputs.project ]]
+    ZIP_FILE_EXTENSION: .tar.gz
+    ZIP_DIRECTORY: $[[ inputs.artifactsRoot ]]
+    DISME_SHORTCUT: $[[ inputs.dismeShortcut ]]
+    DISME_DOCUMENTNAME: $[[ inputs.project ]]
+
+disme-deploy-$[[ inputs.project ]]:
+  stage: deploy
+  extends:
+    - .disme-deploy
+    - .rules-manual
+  needs: ['disme-upload-$[[ inputs.project ]]']
+  after_script:
+    # We run in after script so that we do not override script part and !reference is not working
+    # Note that we only restart the primary server (server=) as only one server should run (race conditions)
+    #   but upload it to both servers so in case of some issue, the other node server can be started
+    - $URL2 = "https://disme.prod.env.works/api/task.php?entity=service&entityid=$env:DISME_ENTITY&stageid=1&jobid=111&server=$env:DISME_PRIMARY_SERVER"
+    - echo $URL2
+    - $HEADER2 = "Api-Key:$env:DismeServiceApiKey"
+    - curl -X POST -H $HEADER2 $URL2
+  variables:
+    DISME_SHORTCUT: $[[ inputs.dismeShortcut ]]
+    DISME_DOCUMENTNAME: $[[ inputs.project ]]
+    DISME_ENVIRONMENT: $[[ inputs.dismeEnvironment ]]
+    DISME_SERVER: $[[ inputs.dismeServers ]]
+    DISME_PRIMARY_SERVER: $[[ inputs.dismePrimaryServer ]]
+    DISME_ENTITY: $[[ inputs.dismeEntity ]]

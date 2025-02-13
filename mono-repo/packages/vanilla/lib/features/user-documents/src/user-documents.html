@@ -1,0 +1,84 @@
+@if (userDocuments() && item().resources; as resources) {
+    <!--Deposit limit notice-->
+    @if (balancePropertiesService.balanceProperties | async; as balance) {
+        @if (config.depositLimitNoticeThreshold > 0 && balance.availableBalance > config.depositLimitNoticeThreshold) {
+            @if (getTemplate('notice'); as template) {
+                <div class="ch-widget__footer ch__font--title text-center my-3" [vnDynamicHtml]="template.text"></div>
+            }
+        }
+    }
+    <!--Documents status notice-->
+    @if (getNotice(); as notice) {
+        <div [vnDynamicHtml]="notice || ''" class="ch-widget__footer ch__font--title text-center my-3"></div>
+    }
+    <!--No documents to show-->
+    <!--Use-case document group-->
+    @if (userDocuments().documentVerificationStatus.length) {
+        @for (documents of userDocuments().documentVerificationStatus; track $index) {
+            <!--Document use-case group title-->
+            <div class="ch__font--subtitle font-weight-bold">
+                {{ resources[documents.useCase] }}
+                <!--Grace period-->
+                @if (!documents.isVerified && (documentHaveStatus(DocumentStatus.Required) || documentHaveStatus(DocumentStatus.Failed))) {
+                    @if (kycStatus(); as kycStatus) {
+                        @if (documents.useCase === VerificationUseCase.Sof) {
+                            @if (sofStatusDetails | async; as sofStatus) {
+                                @if (getGracePeriod(documents.useCase, kycStatus, sofStatus.redStatusDays); as gracePeriod) {
+                                    <span class="ch__font--subtitle text-warning font-weight-normal ml-4 ch-widget__countdown">
+                                        {{ gracePeriod }}
+                                    </span>
+                                }
+                            }
+                        } @else {
+                            @if (getGracePeriod(documents.useCase, kycStatus); as gracePeriod) {
+                                <span class="ch__font--subtitle text-warning font-weight-normal ml-4 ch-widget__countdown">
+                                    {{ gracePeriod }}
+                                </span>
+                            }
+                        }
+                        <ng-template #gracePeriod>
+                            @if (getGracePeriod(documents.useCase, kycStatus); as gracePeriod) {
+                                <span class="ch__font--subtitle text-warning font-weight-normal ml-4 ch-widget__countdown">
+                                    {{ gracePeriod }}
+                                </span>
+                            }
+                        </ng-template>
+                    }
+                }
+            </div>
+            <!--Document use-case group list-->
+            @if (documents.documentDetails.length) {
+                <div class="ch-widget__timeline mt-2">
+                    @for (documentDetails of documents.documentDetails; track $index) {
+                        @if (getTemplate(documentDetails.documentStatus); as template) {
+                            <div class="ch-widget__timestep d-flex align-items-center">
+                                @if (template.parameters?.iconClass) {
+                                    <span [ngClass]="template.parameters?.iconClass" class="ui-icon ui-icon-size-md p-0 mr-2"></span>
+                                }
+                                <span class="text-truncate ch__font--title">
+                                    @if (documentDetails.documentsCount > 0) {
+                                        {{ documentDetails.documentsCount }}
+                                    }
+                                    {{ template.text | format: resources[documentDetails.documentType] || resources.Documents }}
+                                </span>
+                                @if (template.resources.Link || getLink(documents.useCase, documentDetails.documentStatus); as link) {
+                                    <span [vnDynamicHtml]="link || ''" class="ml-auto text-truncate ch__font--sm ch__font--underline"> </span>
+                                }
+                            </div>
+                        }
+                    }
+                </div>
+            } @else {
+                @if (getTemplate('empty'); as template) {
+                    <div class="ch__font--subtitle font-weight-bold">{{ template.text }}</div>
+                    <div class="ch__font--title mt-2" [vnDynamicHtml]="template.resources.Link"></div>
+                }
+            }
+        }
+    } @else {
+        @if (getTemplate('empty'); as template) {
+            <div class="ch__font--subtitle font-weight-bold">{{ template.text }}</div>
+            <div class="ch__font--title mt-2" [vnDynamicHtml]="template.resources.Link"></div>
+        }
+    }
+}

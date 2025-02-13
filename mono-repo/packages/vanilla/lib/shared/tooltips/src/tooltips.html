@@ -1,0 +1,18 @@
+@if (tooltipsService.getTooltip(itemName)?.isActive) {
+    <div class="ngxp__tooltip tooltip-info" [attr.data-testid]="itemName">
+        <div class="float-ui-container ngxp__animation ngxp__inner">
+            <vn-icon (click)="tooltipsService.closeTooltip()" name="theme-ex" extraClass="ui-icon ui-close" size="10" />
+            <div [vnDynamicHtml]="tooltipsService.getTooltip(itemName)?.text || ''"></div>
+            <div class="tooltips-nav">
+                @if (tooltipsService.hasPrevious(itemName)) {
+                    <span (click)="previous(itemName)">{{ commonMessages.PopoverPreviousText }}</span>
+                }
+                @if (tooltipsService.hasNext(itemName)) {
+                    <span (click)="next(itemName)">{{ commonMessages.PopoverNextText }}</span>
+                } @else {
+                    <span (click)="tooltipsService.closeTooltip()">{{ commonMessages.PopoverCloseText }}</span>
+                }
+            </div>
+        </div>
+    </div>
+}

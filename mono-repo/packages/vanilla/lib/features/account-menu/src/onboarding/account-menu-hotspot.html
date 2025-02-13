@@ -1,0 +1,10 @@
+@if (hotspotComponentEnabled) {
+    <div [floatUi]="popper.content" (click)="hotspotClicked()" class="ch-onboarding__hotspot">
+        <vn-icon name="theme-ch-stories" extraClass="ui-icon d-flex justify-content-center align-items-center" />
+    </div>
+}
+<vn-popper-content cssClass="tooltip-info" closeType="none" #popper>
+    <ng-container content>
+        <div [vnDynamicHtml]="content.account.root.resources.OnboardingAccuntMenuHotspotPopper"></div>
+    </ng-container>
+</vn-popper-content>

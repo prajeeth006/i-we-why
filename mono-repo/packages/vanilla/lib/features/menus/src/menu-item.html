@@ -1,0 +1,159 @@
+@if (item.type === 'text') {
+    <ng-container *ngTemplateOutlet="plainText" />
+} @else {
+    <a
+        class="menu-item-link"
+        [vnHtmlAttrs]="htmlAttributes"
+        [class.active]="isActive$ | async"
+        [ngClass]="linkClasses"
+        [attr.href]="item.url"
+        (click)="click($event)"
+        [attr.target]="item.target"
+        [attr.rel]="item.rel"
+        [attr.title]="item.toolTip"
+        *vnAuthstate="item.authstate">
+        @if (displayMode === DisplayMode.Icon) {
+            @if (item.image) {
+                <div class="image-icon">
+                    <ng-container *ngTemplateOutlet="image" />
+                    @if (badgePosition === 'icon') {
+                        <ng-container *ngTemplateOutlet="badge" />
+                    }
+                </div>
+            } @else {
+                @if (item.class) {
+                    <i [class]="item.class" [ngClass]="iconClass">
+                        @if (badgePosition === 'icon') {
+                            <ng-container *ngTemplateOutlet="badge" />
+                        }
+                    </i>
+                }
+            }
+        }
+        @if (displayMode === DisplayMode.FastIcon) {
+            <ng-container *ngTemplateOutlet="vnicon" />
+        }
+
+        @if (displayMode === DisplayMode.SvgIcon && item.svgImage) {
+            <ng-container *ngTemplateOutlet="svg" />
+        }
+        @if (badgePosition === 'beforeText') {
+            <ng-container *ngTemplateOutlet="badge" />
+        }
+
+        <ng-container *ngTemplateOutlet="plainText" />
+        @if (itemDescription) {
+            <vn-menu-item-text-content
+                [text]="itemDescription"
+                [cssClass]="descriptionCssClass || 'menu-item-sub'"
+                [renderHtmlText]="renderHtmlText"
+                [attr.data-testid]="item.name" />
+        }
+        @if (displayMode !== DisplayMode.Icon && item.image) {
+            <ng-container *ngTemplateOutlet="image" />
+        }
+        @if (badgePosition === 'afterText') {
+            <ng-container *ngTemplateOutlet="badge" />
+        }
+        @if (additionalIcon || item.parameters['additional-class']) {
+            <span [ngClass]="additionalIcon || item.parameters['additional-class']" class="ui-icon ui-icon-size-sm ml-auto additional-icon"> </span>
+        }
+        @if (item.parameters['badge-text']) {
+            <span
+                [ngClass]="item.parameters.badgeTextClass || item.parameters['badge-text-class'] + ' ml-2 badge badge-pill'"
+                [innerHtml]="item.parameters['badge-text'] | trustAsHtml">
+            </span>
+        }
+        <!--popper-->
+        @if (tooltipText) {
+            <span [floatUi]="popper?.content || ''" popperTrigger="none"></span>
+            <vn-popper-content showCloseLink="false" [cssClass]="tooltipClass" closeType="button" #popper>
+                <ng-container content>
+                    <div [vnDynamicHtml]="tooltipText || ''"></div>
+                </ng-container>
+            </vn-popper-content>
+        }
+    </a>
+}
+
+<!--tooltip text-->
+@if (item.parameters.tooltip === 'true') {
+    @if (item.toolTip) {
+        <span [ngClass]="item.parameters.tooltipClass" [innerHtml]="item.toolTip | trustAsHtml"></span>
+    }
+}
+
+<!--icon-->
+<ng-template #icon>
+    @if (item.class) {
+        <i [class]="item.class" [ngClass]="iconClass">
+            @if (badgePosition === 'icon') {
+                <ng-container *ngTemplateOutlet="badge" />
+            }
+        </i>
+    }
+</ng-template>
+
+<!--svg icon-->
+<ng-template #svg>
+    <vn-svg
+        [containerClass]="item.parameters.containerClass"
+        [cssClass]="item.cssClass"
+        [customAnimation]="item.customAnimation"
+        [defaultAnimation]="item.defaultAnimation"
+        [displayMode]="DisplayMode.SvgIcon"
+        [iconType]="item.iconType"
+        [image]="item.svgImage"
+        [size]="item.size"
+        [viewBox]="item.viewBox" />
+</ng-template>
+
+<!--vn-icon-->
+<ng-template #vnicon>
+    @if (iconName) {
+        <vn-icon [name]="iconName" />
+    }
+    @if (iconName2) {
+        <vn-icon [name]="iconName2" class="ui-icon ml-auto additional-icon" />
+    }
+    @if (badgePosition === 'FastIcon') {
+        <ng-container *ngTemplateOutlet="badge" />
+    }
+</ng-template>
+
+<!--image-->
+<ng-template #image>
+    <vn-image
+        [alt]="item.image.alt"
+        [height]="item.image.height"
+        [imageClass]="'menu-item-img' + (imageClass ? ' ' + imageClass : '')"
+        [priority]="!lazyLoad"
+        [src]="item.image.src"
+        [width]="item.image.width">
+    </vn-image>
+</ng-template>
+
+<!--badge-->
+<ng-template #badge>
+    <span
+        [badgeClass]="item.parameters?.badgeClass || badgeClass"
+        [badgeType]="item.parameters?.badgeType"
+        [item]="item.name"
+        [section]="section"
+        vnMenuItemBadge></span>
+    @if (badgeText) {
+        <span class="badge-text">{{ badgeText }}</span>
+    }
+</ng-template>
+
+<!--plain text-->
+<ng-template #plainText>
+    @if (text || item.text) {
+        <vn-menu-item-text-content
+            cssClass="menu-item-txt"
+            [text]="text || item.text"
+            [additionalClass]="textClass"
+            [renderHtmlText]="renderHtmlText"
+            [attr.data-testid]="item.name" />
+    }
+</ng-template>

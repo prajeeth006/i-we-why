@@ -1,0 +1,32 @@
+<vn-am-widget [hideSkeleton]="hideSkeleton" [item]="item" [mode]="mode">
+    @if (model) {
+        <span class="ch__font--title">{{ model.rangeText }}</span>
+        <div class="ch__font--subtitle font-weight-bold d-flex align-items-center mt-2">
+            @if (model?.arrowClass) {
+                <div class="pb-1 mr-1">
+                    <div [ngClass]="model?.arrowClass"></div>
+                </div>
+            }
+            <div>{{ model?.balance | vnCurrency }}</div>
+        </div>
+        <div class="mb-1 ch__font--description">{{ item.resources.Description }}</div>
+        <div class="ch__font--title d-flex justify-content-between mt-2 mb-2">
+            <span>{{ item.resources.TotalDepositText }}</span>
+            <span class="font-weight-bold">{{ model?.totalDeposit | vnCurrency }}</span>
+        </div>
+        <div class="ch__font--title d-flex justify-content-between mt-1">
+            <span>{{ item.resources.TotalWithdrawalsText }}</span>
+            <span class="font-weight-bold">{{ model?.totalWithdrawals | vnCurrency }}</span>
+        </div>
+        <div>
+            @for (child of item.children; track trackByText($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+            }
+        </div>
+        @if (showFooterText) {
+            <div class="ch-widget__footer ch__font text-center mt-2">
+                <div [vnDynamicHtml]="item.resources.FooterText"></div>
+            </div>
+        }
+    }
+</vn-am-widget>

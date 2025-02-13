@@ -1,0 +1,15 @@
+{
+    "extends": ["../../../.eslintrc.base.json"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        { "files": ["*.js", "*.jsx"], "rules": {} },
+        { "files": ["*.json"], "parser": "jsonc-eslint-parser", "rules": { "@nx/dependency-checks": "error" } },
+        { "files": ["./package.json"], "parser": "jsonc-eslint-parser", "rules": { "@nx/nx-plugin-checks": "error" } },
+        {
+            "extends": ["../../eslint-utils/jest", "../../eslint-utils/typescript"],
+            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "rules": {}
+        },
+        { "files": ["*.ts", "*.tsx"], "parserOptions": { "project": ["packages/vanilla/nx-plugin/tsconfig.*?.json"] }, "rules": {} }
+    ]
+}

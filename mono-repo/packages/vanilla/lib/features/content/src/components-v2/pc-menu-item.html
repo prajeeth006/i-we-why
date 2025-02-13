@@ -1,0 +1,19 @@
+<div class="pc-menu-item-container">
+    <vn-menu-item class="pc-menu-item" [item]="item" [section]="section" linkClass="pc-menu-link" (onClick)="onClick($event)" />
+    @if (item.children && item.children.length) {
+        <div class="pc-menu-item-indicator">
+            @if (!item.expanded) {
+                <vn-icon name="theme-plus" extraClass="ui-icon ui-icon-size-sm" (click)="item.expanded = !item.expanded" />
+            } @else {
+                <vn-icon name="theme-minus" extraClass="ui-icon ui-icon-size-sm" (click)="item.expanded = !item.expanded" />
+            }
+        </div>
+    }
+</div>
+@if (item.children) {
+    <div class="pc-menu-submenu pc-menu-level-{{ level }}" [class.collapsed]="!item.expanded">
+        @for (subItem of item.children; track trackByText($index, subItem)) {
+            <ng-container *vnDynamicComponent="type; attr: { item: subItem, section: section, level: level + 1 }" />
+        }
+    </div>
+}

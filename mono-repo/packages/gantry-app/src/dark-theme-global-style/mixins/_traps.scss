@@ -1,0 +1,320 @@
+@import '../all-variables';
+
+// Common styles for text-fill and text-stroke
+@mixin trap-text-styles($fillColor, $strokeColor: $color-white) {
+    span {
+        -webkit-text-fill-color: $fillColor;
+        -webkit-text-stroke: 3.52px $strokeColor;
+
+        @include breakpoint(multidesktop) {
+            -webkit-text-stroke: 1.76px $strokeColor;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            -webkit-text-stroke: 2.44px $strokeColor;
+        }
+    }
+}
+
+// Common styles for box layout
+@mixin trap-box-layout {
+    @include flex-center;
+    border-radius: 14px;
+    overflow: hidden;
+    user-select: none;
+}
+
+// Trap number with stroke mixin
+@mixin trap-num-with-stroke($fillColor, $strokeColor: $color-white) {
+    @include trap-text-styles($fillColor, $strokeColor);
+}
+
+// Common styles for specific trap classes
+@mixin trap-common-styles($color, $bgColor) {
+    color: $color;
+    background: $bgColor;
+}
+
+// stripes styles
+@mixin trap-stripes() {
+    position: relative;
+    &::before,
+    &::after {
+        @include trap-common-styles($color-black, $color-white);
+        content: '';
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 18px;
+        @include breakpoint(multidesktop) {
+            height: 9px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            height: 12px;
+        }
+    }
+    &::before {
+        top: 18px;
+
+        @include breakpoint(multidesktop) {
+            top: 9px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            top: 12px;
+        }
+    }
+
+    &::after {
+        bottom: 18px;
+
+        @include breakpoint(multidesktop) {
+            bottom: 9px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            bottom: 12px;
+        }
+    }
+}
+
+// Two tone styles
+@mixin trap-two-tone($secong-bg) {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 43%;
+        height: 100%;
+        background: $secong-bg;
+    }
+}
+
+// Trap box styles mixin
+@mixin trap-box-styles($width: 120px, $height: 90px, $fontSize: 82px) {
+    .selection-number {
+        @include trap-box-layout;
+        width: $width;
+        height: $height;
+        font-size: $fontSize;
+        font-weight: $fw-bold;
+
+        @include breakpoint(multidesktop) {
+            border-radius: 7.333px;
+            width: calc($width / 2);
+            height: calc($height / 2);
+            font-size: calc($fontSize / 2);
+        }
+
+        @include breakpoint(multidesktophalf) {
+            border-radius: 10px;
+            width: $width;
+            height: $height;
+            font-size: round(calc($fontSize * 0.695));
+        }
+
+        span {
+            z-index: 1;
+            line-height: $height;
+
+            @include breakpoint(multidesktop) {
+                line-height: calc($height / 2);
+            }
+        }
+
+        // Trap-1 styles
+        &.trap-1 {
+            @include trap-common-styles($color-white, rgb(212, 52, 38));
+        }
+
+        // Trap-2 styles
+        &.trap-2 {
+            @include trap-common-styles($color-white, rgb(0, 113, 188));
+            &.trap__country--aus {
+                @include trap-stripes();
+                @include trap-common-styles(rgb(238, 28, 37), $color-black);
+                @include trap-num-with-stroke(rgb(238, 28, 37));
+            }
+        }
+
+        // Trap-3 styles
+        &.trap-3 {
+            @include trap-common-styles($color-black, $color-white);
+        }
+
+        // Trap-4 styles
+        &.trap-4 {
+            @include trap-common-styles($color-white, $color-black);
+            &.trap__country--aus {
+                @include trap-common-styles($color-white, rgba(43, 78, 197, 1));
+            }
+            &.traps__country--uk {
+                @include trap-common-styles($color-white, #00a868);
+            }
+        }
+
+        // Trap-5 styles
+        &.trap-5 {
+            @include trap-common-styles($color-black, rgb(244, 140, 40));
+            &.trap__country--aus {
+                @include trap-common-styles($color-black, rgba(255, 241, 0, 1));
+            }
+        }
+
+        // Trap-6 styles
+        &.trap-6 {
+            @include trap-common-styles(rgb(238, 28, 37), $color-black);
+            @include trap-stripes();
+            @include trap-num-with-stroke(rgb(238, 28, 37));
+            &.trap__country--aus {
+                @include trap-common-styles(rgba(238, 28, 37, 1), rgba(0, 167, 77, 1));
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        // Trap-7 styles
+        &.trap-7 {
+            @include trap-common-styles(rgb(238, 28, 37), rgb(77, 148, 104));
+            @include trap-num-with-stroke(rgb(238, 28, 37));
+            &.trap__country--aus {
+                @include trap-common-styles(rgba(244, 232, 0, 1), $color-black);
+                @include trap-num-with-stroke(unset, transparent);
+            }
+        }
+
+        // Trap-8 styles
+        &.trap-8 {
+            @include trap-common-styles($color-white, $color-black);
+            @include trap-two-tone(rgb(255, 244, 0));
+            @include trap-num-with-stroke($color-white, $color-black);
+            &.trap__country--aus {
+                @include trap-common-styles($color-black, rgba(255, 48, 175, 1));
+                &::before {
+                    display: none;
+                }
+                @include trap-num-with-stroke($color-black, $color-white);
+            }
+        }
+    }
+}
+// stripes styles
+@mixin trap-number-stripes($height: 13.4px) {
+    position: relative;
+
+    &::before,
+    &::after {
+        @include trap-common-styles($color-black, $color-white);
+        content: '';
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: $height;
+
+        @include breakpoint(multidesktop) {
+            height: calc($height / 2);
+        }
+    }
+
+    &::before {
+        top: $height;
+
+        @include breakpoint(multidesktop) {
+            top: calc($height / 2);
+        }
+    }
+
+    &::after {
+        bottom: $height;
+
+        @include breakpoint(multidesktop) {
+            bottom: calc($height / 2);
+        }
+    }
+}
+
+@mixin motor-avr-selections() {
+    width: 120px;
+    height: 90px;
+    border-radius: 15px;
+    border: 3.6px solid $color-white;
+    @include flex-container(center, center);
+
+    @include breakpoint(multidesktop) {
+        width: 60px;
+        height: 45px;
+        border-width: 1.8px;
+        border-radius: 7.5px;
+    }
+
+    span {
+        font-size: 84px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 90px;
+        letter-spacing: -12.6px;
+        margin-left: -12.6px;
+
+        @include breakpoint(multidesktop) {
+            font-size: 42px;
+            line-height: 45px;
+            letter-spacing: -6.3px;
+            margin-left: -6.3px;
+        }
+    }
+
+    &--1 {
+        background: #a22525;
+    }
+
+    &--2 {
+        background: #4f3626;
+    }
+
+    &--3 {
+        background: #21355d;
+    }
+
+    &--4 {
+        background: #304e69;
+    }
+
+    &--5 {
+        background: #2b492b;
+    }
+
+    &--6 {
+        background: #29692d;
+    }
+
+    &--7 {
+        background: #cdcb41;
+    }
+
+    &--8 {
+        background: #9f4210;
+    }
+
+    &--9 {
+        background: #404142;
+    }
+
+    &--10 {
+        background: #8c9297;
+    }
+
+    &--11 {
+        background: #5d2662;
+    }
+
+    &--12 {
+        background: #a581aa;
+    }
+}

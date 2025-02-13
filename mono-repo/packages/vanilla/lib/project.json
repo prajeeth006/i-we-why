@@ -1,0 +1,63 @@
+{
+    "name": "vanilla-lib",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/vanilla/lib",
+    "projectType": "library",
+    "prefix": "vn",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "options": {
+                "tsConfig": "packages/vanilla/lib/tsconfig.lib.json",
+                "project": "packages/vanilla/lib/ng-package.json"
+            },
+            "outputs": ["{workspaceRoot}/dist/build/{projectRoot}"]
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "packages/vanilla/lib/test.ts",
+                "tsConfig": "packages/vanilla/lib/tsconfig.spec.json",
+                "karmaConfig": "packages/vanilla/lib/karma.conf.js"
+            },
+            "configurations": {
+                "ci": {
+                    "codeCoverage": true,
+                    "codeCoverageExclude": ["**/test/**/*.*"]
+                }
+            },
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"]
+        },
+        "publish": {
+            "executor": "@frontend/nx-plugin:publish",
+            "configurations": {
+                "artifactory": {},
+                "verdaccio": {
+                    "dest": "http://localhost:4873/"
+                },
+                "path": {
+                    "ver": "0.0.0",
+                    "dest": "$VANILLA_SYNC_TARGET",
+                    "watchBuild": true
+                }
+            },
+            "defaultConfiguration": "verdaccio"
+        },
+        "check-bundle-size": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "yarn size-limit"
+            },
+            "dependsOn": ["build"]
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/vanilla/lib/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    },
+    "tags": ["type:core-lib", "scope:vanilla"]
+}

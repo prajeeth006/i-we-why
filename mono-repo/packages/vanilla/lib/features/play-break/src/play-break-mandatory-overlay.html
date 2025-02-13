@@ -1,0 +1,28 @@
+@if (content(); as content) {
+    <vn-dialog [headerTitle]="content.title">
+        <ng-container content>
+            @if (content.children?.image; as imageItem) {
+                <vn-image [src]="imageItem.image.src" [imageClass]="imageItem.class" />
+            }
+            @if (content.text; as text) {
+                <div [innerHtml]="text | format: getGraceEndTime(content?.validation)() | trustAsHtml"></div>
+            }
+            @if (content.messages?.ChatButtonText; as chatButtonText) {
+                <div class="play-break-livechat-container">
+                    <button class="btn btn-primary btn-md w-100" (click)="openChat()">
+                        {{ chatButtonText }}
+                    </button>
+                </div>
+            }
+            @if (config.templates.contactsection; as contacts) {
+                <div [vnDynamicHtml]="contacts.text"></div>
+            }
+        </ng-container>
+
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button class="btn btn-primary btn-md w-100" (click)="close()">{{ content.messages?.Close }}</button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

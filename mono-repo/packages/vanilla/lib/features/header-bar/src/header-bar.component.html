@@ -1,0 +1,20 @@
+<vn-header-bar
+    [enabled]="enabled"
+    [title]="content"
+    [titleCssClass]="titleCssClass"
+    [showBack]="showBackButton"
+    (onBack)="back()"
+    [showClose]="!disableClose"
+    (onClose)="close()"
+    [backButtonText]="backButtonText"
+    [closeButtonText]="closeButtonText"
+    [class]="headerCssClass"
+    [closeButtonTextCssClass]="closeButtonTextCssClass"
+    [leftContentClass]="leftContentClass"
+    [showConfirmPopup]="showConfirmPopup()"
+    [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+    [confirmPopupTrackClick]="confirmPopupTrackClick()"
+    [trackBackClickEvent]="trackBackClickEvent()"
+    [trackCloseClickEvent]="trackCloseClickEvent()">
+    <ng-container left><ng-content select="[left]" /></ng-container>
+</vn-header-bar>

@@ -1,0 +1,22 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-useless-template-literals": "off",
+        "@typescript-eslint/unified-signatures": "off",
+        "eqeqeq": "off",
+        "no-param-reassign": "off",
+        "no-prototype-builtins": "off",
+        "sonarjs/cognitive-complexity": "off"
+    }
+}

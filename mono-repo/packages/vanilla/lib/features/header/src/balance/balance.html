@@ -1,0 +1,20 @@
+<div class="h-balance navbar-user-info dh" [ngClass]="item.class" (click)="processClick($event)">
+    <div class="user-container">
+        @if (item.type === 'balance') {
+            <div class="user-name">{{ user.displayName }}</div>
+        }
+        @if (balanceFormula) {
+            <div class="user-balance">
+                @if (balancePropertiesService.balanceInfo(); as balanceInfo) {
+                    {{ balanceFormula | vnSolve: balanceInfo | vnCurrency }}
+                }
+            </div>
+        } @else {
+            <div class="user-balance">{{ headerService.balance() || 0 | vnCurrency }}</div>
+        }
+    </div>
+    @if (showArrow) {
+        <vn-icon [name]="arrowClass" extraClass="balance-arrow" />
+    }
+</div>
+<div class="account-menu-anchor" [vnElementKey]="VanillaElements.BALANCE_HEADER_ANCHOR"></div>

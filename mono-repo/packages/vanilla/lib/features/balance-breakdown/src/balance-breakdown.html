@@ -1,0 +1,20 @@
+@if (isAvailable) {
+    <lh-navigation-layout-page
+        [title]="balanceContent.myBalanceContent.resources.Title"
+        topMenuVisibility="Never"
+        [hideLeftMenu]="!balanceContent.v2">
+        @if (balanceContent.v2) {
+            <div class="bb-wrapper bb-v2" [class.bb-tutorial-active]="tooltipsService.activeTooltip | async">
+                @for (child of balanceContent.myBalanceContent.children | dsl | async; track trackByText(i, child); let i = $index) {
+                    @if (visible(child)) {
+                        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                    }
+                }
+            </div>
+        } @else {
+            @for (child of balanceContent.myBalanceContent.children | dsl | async; track trackByText($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+            }
+        }
+    </lh-navigation-layout-page>
+}

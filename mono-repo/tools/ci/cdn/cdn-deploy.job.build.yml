@@ -1,0 +1,23 @@
+spec:
+  inputs:
+    name:
+    cdnFolder:
+    environment:
+    artifactsPath:
+    when:
+---
+deploy-cdn-$[[ inputs.name ]]-$[[ inputs.environment ]]:
+  extends: .cdn_deploy_base
+  needs: ['version', 'build-client-$[[ inputs.name ]]']
+  environment:
+    name: $[[ inputs.name ]]-$[[ inputs.environment ]]
+  rules:
+    - if: '"$[[ inputs.environment ]]" != "PROD" && $CI_MERGE_REQUEST_ID'
+    - if: '"$[[ inputs.environment ]]" != "PROD" && $CI_COMMIT_REF_NAME == "main"'
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  variables:
+    CDN_PUBLISH_PROJECT: "$[[ inputs.cdnFolder ]]"
+    CDN_PUBLISH_DIR: $[[ inputs.artifactsPath ]]/
+    CDN_PUBLISH_STAGER: $CDN_STAGER_$[[ inputs.environment ]]
+    CDN_PUBLISH_KEY: $CDN_PUBLISH_KEY_$[[ inputs.environment ]]
+  when: $[[ inputs.when ]]

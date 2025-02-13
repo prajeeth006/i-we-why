@@ -1,0 +1,55 @@
+<div class="base-page-wrapper winning-distance-page">
+    <ng-container *ngIf="vm$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-dark-theme-base-page>
+                <ng-container header-content>
+                    <gn-dark-theme-header [title]="vm.marketTitle" [racingImage]="vm?.horseRacingContent?.horseRacingImage?.src">
+                        <ng-container raceStage-content>
+                            <div class="header-status-box tilted-card default-fontsize">
+                                <span class="tilted-text" id="eventStatus">
+                                    {{ vm.horseRacingContent?.contentParameters?.Today ?? '' }}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </gn-dark-theme-header>
+                </ng-container>
+                <ng-container body-content>
+                    <div>
+                        <div
+                            class="winning-distance-list"
+                            id="eventList"
+                            [ngClass]="(vm.events?.length == 2 && 'winning-distance-list-2') || (vm.events?.length >= 3 && 'winning-distance-list-3')"
+                            *ngFor="let event of vm.events | slice: pageDetails.startIndex : pageDetails.endIndex">
+                            <div id="winning-Title" class="winning-title">{{ event.name | titlecase }}</div>
+                            <ul class="selection-table">
+                                <li *ngFor="let selection of event.selections" id="eventSelections">
+                                    <div id="selectionName">
+                                        {{ selection.name | titlecase }}
+                                    </div>
+                                    <div class="selection-content">
+                                        <div id="selectionPrice" class="current-price__tilted" autoAdjustFont>
+                                            <ng-container *ngIf="selection?.price">
+                                                <span class="current-price__tilted--text">
+                                                    {{ selection?.price | marketPriceTransform: selection?.hideEntry }}
+                                                </span>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-dark-theme-footer-full [rightSideText]="pageDetails.paginationText">
+                        <ng-container footer-left-content>
+                            {{ vm.winOrEachWayText }}
+                        </ng-container>
+                    </gn-dark-theme-footer-full>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

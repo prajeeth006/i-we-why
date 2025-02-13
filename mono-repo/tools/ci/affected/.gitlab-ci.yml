@@ -1,0 +1,128 @@
+stages:
+  - Run
+
+variables:
+  GENERATED_ARTIFACTS_DEST: 'dist/tools/ci/artifacts'
+
+.base-pipeline:
+  stage: Run
+  extends: .node_modules-cache
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  variables:
+    NX_VERBOSE_LOGGING: 'true'
+    NX_CI_EXECUTION_ENV: 'b2d-alpine-frontend:1.0'
+    NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 7
+    NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+    NX_CLOUD_DTE_V2: 'true'
+    NX_CLOUD_API: 'https://nxcloud.dev.env.works'
+    NODE_OPTIONS: '--max-old-space-size=32768'
+  tags:
+    - linux-docker-runner
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  after_script:
+    - if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
+        yarn ts-node --project ./tools/tsconfig.json tools/ci/affected/scripts/send-teams-notification.ts;
+      fi
+
+include:
+  - 'tools/ci/common/node-module-cache.tpl.yml'
+  - 'tools/ci/common/rules.yml'
+  - local: tools/ci/affected/jobs-dte.yml
+    rules:
+      - if: $NX_TASKS_RUNNER == "default"
+  - local: tools/ci/affected/jobs-local.yml
+    rules:
+      - if: $NX_TASKS_RUNNER == "local"
+
+trigger-deploy-pipeline:
+  stage: Run
+  extends:
+    - .node_modules-cache
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/deploy/scripts/generate-deploy-pipeline.ts
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+  artifacts:
+    paths:
+      - $GENERATED_ARTIFACTS_DEST/deploy-pipeline.yml
+
+deploy-pipeline:
+  stage: Run
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+  needs:
+    - job: affected
+    - job: trigger-deploy-pipeline
+  trigger:
+    include:
+      - artifact: $GENERATED_ARTIFACTS_DEST/deploy-pipeline.yml
+        job: trigger-deploy-pipeline
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_REF_NAME == "main"
+    - if: $CI_COMMIT_REF_NAME =~ /^release/
+
+trigger-sonar-pipeline:
+  stage: Run
+  extends:
+    - .node_modules-cache
+    - .rules-on-success
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/sonar/scripts/generate-sonar-pipeline.ts
+  artifacts:
+    paths:
+      - $GENERATED_ARTIFACTS_DEST/sonar-pipeline.yml
+
+sonar-pipeline:
+  stage: Run
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+  extends:
+    - .rules-on-success
+  needs:
+    - job: affected
+    - job: trigger-sonar-pipeline
+  trigger:
+    include:
+      - artifact: $GENERATED_ARTIFACTS_DEST/sonar-pipeline.yml
+        job: trigger-sonar-pipeline
+
+trigger-chromatic-pipeline:
+  stage: Run
+  extends:
+    - .node_modules-cache
+    - .rules-on-success
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/chromatic/scripts/generate-chromatic-pipeline.ts
+  artifacts:
+    paths:
+      - $GENERATED_ARTIFACTS_DEST/chromatic-pipeline.yml
+
+chromatic-pipeline:
+  stage: Run
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+  extends:
+    - .rules-on-success
+  needs:
+    - job: affected
+    - job: trigger-chromatic-pipeline
+  trigger:
+    include:
+      - artifact: $GENERATED_ARTIFACTS_DEST/chromatic-pipeline.yml
+        job: trigger-chromatic-pipeline
+    strategy: depend

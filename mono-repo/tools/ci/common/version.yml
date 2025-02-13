@@ -1,0 +1,29 @@
+include:
+  - tools/ci/common/rules.yml
+
+version:
+  stage: .pre
+  extends:
+    - .rules-on-success
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-centos8:1.0
+  tags:
+    - linux-docker-runner
+  variables:
+    GIT_DEPTH: 1
+  script:
+    - REVISION="$(($CI_PIPELINE_IID%65535))" #https://learn.microsoft.com/en-us/archive/blogs/msbuild/why-are-build-numbers-limited-to-65535
+    - echo $REVISION
+    - TARGET_BRANCH="${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:-$CI_COMMIT_BRANCH}"
+    - echo $TARGET_BRANCH
+    - if [[ "$TARGET_BRANCH" =~ ^release/.* ]]; then
+        IFS='/' read -ra BRANCH_SEGMENTS <<< "$TARGET_BRANCH";
+        BRANCH_VERSION=${BRANCH_SEGMENTS[-1]};
+        VERSION=${BRANCH_VERSION}.$REVISION-$(git log -1 --date=format:%y.%V --format="%h");
+        echo "VERSION=$VERSION" > version.env;
+      else
+        echo "VERSION=$(git log -1 --date=format:%y.%V --format="%cd" | awk -F. '{print $1 "." $2+0}').0.$REVISION-$(git log -1 --date=format:%y.%V --format="%h")" > version.env;
+      fi
+    - cat version.env
+  artifacts:
+    reports:
+      dotenv: version.env

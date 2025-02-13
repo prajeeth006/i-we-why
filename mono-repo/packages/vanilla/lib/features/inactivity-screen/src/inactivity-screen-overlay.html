@@ -1,0 +1,81 @@
+@switch (mode) {
+    @case (InactivityMode.Betstation) {
+        <div class="inactivity-screen">
+            <div class="inactivity-screen-wrapper d-flex flex-column justify-content-center align-items-center h-100 text-center flexbox">
+                <div class="inactivity-title" [innerHtml]="messages.Overlay_Title | trustAsHtml"></div>
+                <div class="inactivity-timer">
+                    <span class="inactivity-timer-txt" [innerHtml]="messages.Overlay_LogoutMessage | trustAsHtml"></span>
+                    <span class="inactivity-timer-clock">{{ countdown() }}</span>
+                    <span class="inactivity-funds-txt" [innerHtml]="messages.Overlay_Funds_Text | trustAsHtml"></span>
+                </div>
+                <button class="inactivity-btn btn btn-secondary" [innerHtml]="messages.Overlay_ContinueMessage | trustAsHtml"></button>
+            </div>
+        </div>
+    }
+    @case (InactivityMode.Web) {
+        @if (this.isWebVersion2()) {
+            <vn-dialog [headerTitle]="messages.Overlay_Title" [showHeaderCloseIcon]="config.showHeaderCloseButton" (onClose)="continue()">
+                <ng-container content>
+                    <div class="web-inactive-container">
+                        <div class="web-inactive" [style.--progress]="percentageElapsed()">
+                            <div class="web-inactive__inner-circle"></div>
+                            <div class="web-inactive__time" [innerHtml]="countdown() | trustAsHtml"></div>
+                        </div>
+                        <div class="web-inactivity-container__text" [innerHtml]="text | trustAsHtml"></div>
+                    </div>
+                </ng-container>
+
+                <ng-container actions>
+                    <div class="generic-modal-actions no-shadow justify-content-center">
+                        <button
+                            class="btn btn-primary btn-md"
+                            (click)="continue($event)"
+                            [innerHtml]="messages.Overlay_Continue | trustAsHtml"></button>
+                    </div>
+                </ng-container>
+            </vn-dialog>
+        } @else {
+            <vn-dialog [headerTitle]="messages.Overlay_Title" [showHeaderCloseIcon]="config.showHeaderCloseButton" (onClose)="continue()">
+                <ng-container content>
+                    <div class="web-inactivity">
+                        @if (boxedTimer) {
+                            <div class="web-inactivity-text" [innerHtml]="text | trustAsHtml"></div>
+                            <div class="web-inactivity-timer">
+                                <div class="web-inactivity-clock d-flex justify-content-center">
+                                    <div>
+                                        <div [ngClass]="{ 'txt-color-40': countdown().split(':')[0] === '00' }">
+                                            {{ countdown().split(':')[0] }}
+                                        </div>
+                                        <div class="txt-xs-v2 txt-color-40">{{ messages.Overlay_Minutes }}</div>
+                                    </div>
+                                    <div class="web-inactivity-time-divider">:</div>
+                                    <div>
+                                        <div>{{ countdown().split(':')[1] }}</div>
+                                        <div class="txt-xs-v2 txt-color-40">{{ messages.Overlay_Seconds }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        } @else {
+                            <div class="web-inactivity-text" [innerHtml]="text | format: countdown() | trustAsHtml"></div>
+                        }
+                    </div>
+                </ng-container>
+
+                <ng-container actions>
+                    <div class="generic-modal-actions no-shadow" [ngClass]="{ 'justify-content-center': !boxedTimer }">
+                        @if (config.showLogoutButton) {
+                            <button
+                                class="btn btn-secondary btn-md"
+                                (click)="logout($event)"
+                                [innerHtml]="messages.Overlay_Logout | trustAsHtml"></button>
+                        }
+                        <button
+                            class="btn btn-primary btn-md"
+                            (click)="continue($event)"
+                            [innerHtml]="messages.Overlay_Continue | trustAsHtml"></button>
+                    </div>
+                </ng-container>
+            </vn-dialog>
+        }
+    }
+}

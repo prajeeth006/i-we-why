@@ -1,0 +1,106 @@
+@if (ready) {
+    <div class="form-group form-group-col form-group-3-col form-control-f-w no-padding flexbox flex-wrap d-flex">
+        <ng-template #monthForm>
+            @if (commonMessages.DateMonthPlaceholder; as monthText) {
+                <lh-form-field layout="col" [labelText]="monthText" [ngClass]="dateConfig.showMonthFirst ? 'col-4 pl-0' : 'col-4 px-0'">
+                    <select
+                        autofocus
+                        name="month"
+                        [(ngModel)]="model.month"
+                        (blur)="onMonthChange($event)"
+                        (ngModelChange)="onModelChange()"
+                        [disabled]="isDisabled"
+                        [required]="required"
+                        [attr.autocomplete]="autocomplete && 'bday-month'">
+                        <option [ngValue]="null" disabled hidden></option>
+                        @for (m of months; track dateConfig.showMonthLongName ? trackByLongName : trackByShortName($index, m)) {
+                            <option [ngValue]="m.numeric">
+                                {{ dateConfig.showMonthLongName ? m.longName : m.shortName }}
+                            </option>
+                        }
+                    </select>
+                </lh-form-field>
+            }
+        </ng-template>
+        <ng-template #dayForm>
+            @if (commonMessages.DateDayPlaceholder; as dayText) {
+                <lh-form-field layout="col" [labelText]="dayText" [ngClass]="!dateConfig.showMonthFirst ? 'col-4 pl-0' : 'col-4 px-0'">
+                    <input
+                        lhNumberOnly
+                        #dayInput
+                        name="day"
+                        [(ngModel)]="model.day"
+                        (blur)="onDayChange($event)"
+                        (ngModelChange)="onModelChange()"
+                        [disabled]="isDisabled"
+                        [required]="required"
+                        minlength="1"
+                        maxlength="2"
+                        type="tel"
+                        [attr.autocomplete]="autocomplete && 'bday-day'" />
+                </lh-form-field>
+            }
+        </ng-template>
+        @if (dateConfig.showMonthFirst) {
+            <ng-container *ngTemplateOutlet="monthForm" />
+        } @else {
+            @if (commonMessages.DateDayPlaceholder; as dayText) {
+                <lh-form-field layout="col" [labelText]="dayText" [ngClass]="!dateConfig.showMonthFirst ? 'col-4 pl-0' : 'col-4 px-0'">
+                    <input
+                        #dayInput
+                        lhNumberOnly
+                        name="day"
+                        [(ngModel)]="model.day"
+                        (blur)="onDayChange($event)"
+                        (ngModelChange)="onModelChange()"
+                        [disabled]="isDisabled"
+                        [required]="required"
+                        minlength="1"
+                        maxlength="2"
+                        type="tel"
+                        [attr.autocomplete]="autocomplete && 'bday-day'" />
+                </lh-form-field>
+            }
+        }
+        @if (dateConfig.showMonthFirst) {
+            <ng-container *ngTemplateOutlet="dayForm" />
+        } @else {
+            @if (commonMessages.DateMonthPlaceholder; as monthText) {
+                <lh-form-field layout="col" [labelText]="monthText" [ngClass]="dateConfig.showMonthFirst ? 'col-4 pl-0' : 'col-4 px-0'">
+                    <select
+                        autofocus
+                        name="month"
+                        [(ngModel)]="model.month"
+                        (blur)="onMonthChange($event)"
+                        (ngModelChange)="onModelChange()"
+                        [disabled]="isDisabled"
+                        [required]="required"
+                        [attr.autocomplete]="autocomplete && 'bday-month'">
+                        <option [ngValue]="null" disabled hidden></option>
+                        @for (m of months; track dateConfig.showMonthLongName ? trackByLongName : trackByShortName($index, m)) {
+                            <option [ngValue]="m.numeric">
+                                {{ dateConfig.showMonthLongName ? m.longName : m.shortName }}
+                            </option>
+                        }
+                    </select>
+                </lh-form-field>
+            }
+        }
+        @if (commonMessages.DateYearPlaceholder; as yearText) {
+            <lh-form-field layout="col" [labelText]="yearText" class="col-4 pr-0">
+                <input
+                    lhNumberOnly
+                    name="year"
+                    [(ngModel)]="model.year"
+                    (blur)="onYearChange($event)"
+                    (ngModelChange)="onModelChange()"
+                    [disabled]="isDisabled"
+                    [required]="required"
+                    minlength="4"
+                    maxlength="4"
+                    type="tel"
+                    [attr.autocomplete]="autocomplete && 'bday-year'" />
+            </lh-form-field>
+        }
+    </div>
+}

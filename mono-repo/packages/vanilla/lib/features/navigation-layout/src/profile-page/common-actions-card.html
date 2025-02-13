@@ -1,0 +1,57 @@
+@if (item) {
+    @if (accountMenuDataService.version === 5) {
+        <div class="ch ch-quick-links ch-shade mt-3">
+            <div class="ch-quick-links__title ch__font--title font-weight-bold" [innerHtml]="item.text"></div>
+            <div class="ch-quick-links__container">
+                @for (child of item.children; track trackByText($index, child)) {
+                    @if (useFastIconType === true) {
+                        <vn-menu-item
+                            [item]="child"
+                            [section]="MenuSection.ProfilePageCommonActions"
+                            displayMode="FastIcon"
+                            iconClass="ch-quick-links-tile__icon theme-account"
+                            imageClass="ch-quick-links-tile__icon"
+                            linkClass="ch-quick-links-tile d-flex flex-column align-items-center"
+                            textClass="ch-quick-links-tile__text text-center ch__font d-block" />
+                    } @else {
+                        <vn-menu-item
+                            [item]="child"
+                            [section]="MenuSection.ProfilePageCommonActions"
+                            displayMode="icon"
+                            iconClass="ch-quick-links-tile__icon theme-account"
+                            imageClass="ch-quick-links-tile__icon"
+                            linkClass="ch-quick-links-tile d-flex flex-column align-items-center"
+                            textClass="ch-quick-links-tile__text text-center ch__font d-block" />
+                    }
+                }
+            </div>
+        </div>
+    } @else if (accountMenuDataService.version === 3) {
+        <div class="ch ch-quick-links ch-shade mt-3">
+            <div class="ch-quick-links__title ch__font--title font-weight-bold" [innerHtml]="item.text"></div>
+            <div class="d-flex flex-wrap justify-content-between">
+                @for (child of item.children; track trackByText($index, child)) {
+                    @if (useFastIconType === true) {
+                        <vn-menu-item
+                            [item]="child"
+                            [section]="MenuSection.ProfilePageCommonActions"
+                            displayMode="FastIcon"
+                            iconClass="ch-quick-links-tile__icon theme-account"
+                            imageClass="ch-quick-links-tile__icon"
+                            linkClass="am-menu-item ch-quick-links-tile ch-shade ch-shade--light d-flex flex-column align-items-center"
+                            textClass="ch-quick-links-tile__text text-center ch__font" />
+                    } @else {
+                        <vn-menu-item
+                            [item]="child"
+                            [section]="MenuSection.ProfilePageCommonActions"
+                            displayMode="icon"
+                            iconClass="ch-quick-links-tile__icon theme-account"
+                            imageClass="ch-quick-links-tile__icon"
+                            linkClass="am-menu-item ch-quick-links-tile ch-shade ch-shade--light d-flex flex-column align-items-center"
+                            textClass="ch-quick-links-tile__text text-center ch__font" />
+                    }
+                }
+            </div>
+        </div>
+    }
+}

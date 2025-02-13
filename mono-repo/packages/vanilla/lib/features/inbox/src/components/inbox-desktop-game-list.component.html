@@ -1,0 +1,30 @@
+<div class="player-inbox-item-games desktop" [hidden]="isGameListHidden">
+    <div class="player-inbox-item-games-header">
+        <span [innerHtml]="contentMessages.DesktopGames | trustAsHtml"></span>
+    </div>
+    <div class="player-inbox-item-games-list">
+        @if (message && message.desktopChannelList && message.desktopChannelList.length) {
+            <lh-inbox-message-channels
+                [sectionTitle]="contentMessages.ApplicableDesktopGames"
+                [contentMessages]="contentMessages"
+                [channelList]="message.desktopChannelList" />
+        }
+        <div [hidden]="!message.desktopGameTitles">
+            <span class="game-section-title" [innerHtml]="' : ' | trustAsHtml"></span>{{ message.desktopGameTitles }}
+        </div>
+        @for (sectionNameGames of message.desktopSectionGamesViewModel; track trackByTitle($index, sectionNameGames)) {
+            <div [hidden]="!message.desktopSectionGamesViewModel || message.desktopSectionGamesViewModel.length === 0">
+                <span class="game-section-title" [innerHtml]="' : ' | trustAsHtml"></span>
+                <div><span class="game-section-title" [innerHtml]="sectionNameGames.title + ': '"></span>{{ sectionNameGames.value }}</div>
+            </div>
+        }
+        <div [hidden]="!message.isAllDesktopGames">
+            <span class="game-section-title" [innerHtml]="' : ' | trustAsHtml"></span>{{ contentMessages.AllCasinoGames }}
+        </div>
+    </div>
+    <div>
+        @for (current of message.desktopAllList; track trackBySectionTitle($index, current)) {
+            <div><span class="game-section-title" [innerHtml]="getSectionTitle(current.sectionTitle) + ': '"></span>{{ contentMessages.All }}</div>
+        }
+    </div>
+</div>

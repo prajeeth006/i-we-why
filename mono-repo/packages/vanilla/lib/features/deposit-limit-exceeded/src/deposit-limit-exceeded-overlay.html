@@ -1,0 +1,10 @@
+<vn-header-bar [showBack]="false" [title]="" class="betstation-deposit-limit-header" />
+@if (config.template.messages; as messages) {
+    <div class="betstation-deposit-limit-container overlay-content">
+        <h2 class="betstation-deposit-limit__title text-center" [vnDynamicHtml]="messages.DialogTitle"></h2>
+        <p class="betstation-deposit-limit__text text-center" [vnDynamicHtml]="messages.DialogText"></p>
+        <div class="form-element btn-container">
+            <button class="btn btn-primary w-100" (click)="close()">{{ messages.DialogClose }}</button>
+        </div>
+    </div>
+}

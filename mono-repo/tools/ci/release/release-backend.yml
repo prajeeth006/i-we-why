@@ -1,0 +1,37 @@
+include:
+  - tools/ci/common/build-server.yml
+
+beta-backend:
+  stage: beta
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  extends:
+    - .rules-manual
+    - .health-spa-cache
+  script:
+    - dotnet pack backend/Frontend.sln -c Release -o dist/backend/pack -p:VersionSuffix=build.$CI_PIPELINE_ID
+    - dotnet nuget push dist/backend/pack/*.nupkg --source $NUGET_FEED_URL --api-key $NUGET_API_KEY
+
+official-backend:
+  stage: official
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  extends:
+    - .rules-manual
+    - .health-spa-cache
+  parallel:
+    matrix:
+      - BUMP_ARGUMENTS:
+          - '--versionBump MAJOR'
+          - ''
+  script:
+    - dotnet pack backend/Frontend.sln -c Release -o dist/backend/pack
+    - dotnet nuget push dist/backend/pack/*.nupkg --source $NUGET_FEED_URL --api-key $NUGET_API_KEY
+    - yarn install --immutable
+    - yarn nx run backend-nx-plugin:vanilla-bump-version --branch $CI_COMMIT_REF_NAME $BUMP_ARGUMENTS
+    - git add .
+    - git commit -m "Updated Directory.Build.props after release"
+    - git pull --rebase
+    - git push

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+// html[data-domain*='.coral.co.uk']{
+//   --colorP-p12:         #ED1C24;
+// }
+
+html:not([data-domain*='coral.co.uk']):not([data-domain*='ladbrokes.com']) {
+    --color-p1: rgba(0, 71, 121); //#004779
+    --color-p1-bg: rgba(0, 71, 121); //#004779
+    --color-p1-text: rgba(0, 71, 121); //#004779
+    --color-p1-dark: rgba(0, 71, 121); //#004779
+
+    --color-p2: rgba(237, 28, 36); //#ed1c24;
+    --color-p2-light: rgba(231, 199, 208); //#E7C7D0;
+
+    --black: rgba(0, 0, 0); //#000000;
+
+    --color-p4: rgba(102, 130, 80); //#668250;
+    --color-p4-light-bg: rgba(207, 227, 202); //#CFE3CA;
+
+    --color-p5: rgba(254, 206, 47); //#FECE2F;
+    --color-p6: rgba(242, 246, 250); //#F2F6FA;
+
+    --body-color-p2: rgba(0, 71, 121); //#004779;
+    --body-color-p2-light: rgba(197, 206, 223); //#C5CEDF;
+
+    --body-color-p2-light-bg: rgba(206, 215, 229); //#CED7E5;
+    --body-color-p2-light-bg-dark: rgba(149, 149, 149); //#CED7E5;
+    --body-color-p2-lighter-bg: rgba(229, 236, 244); //#E5ECF4;
+
+    --white: rgba(255, 255, 255); //#ffffff;
+    --red: rgba(237, 28, 36); //#ED1C24;
+
+    --border-color: rgba(0, 70, 150); //#004696;
+    --border-color-drak: rgba(1, 30, 85); //#011E55;
+
+    --text-light: rgba(149, 177, 206); //#95b1ce85;
+    --body-color-txt: rgba(0, 71, 121); //#004779;
+
+    --bg-table-column-dark-color: 0, 0, 89;
+    --time-stamp-color-text: rgba(163, 178, 207); //#A3B2CF;
+    --time-stamp-color-value: rgba(254, 206, 47); //#FECE2F;
+    --lead-title-color-text: rgba(163, 178, 207); //#A3B2CF;
+    --bg-image-dark: rgba(242, 246, 250); //#F2F6FA;
+
+    --eps-header-yellow-text: rgba(255, 205, 0); //#FFCD00;
+    --eps-header-red-text: rgba(239, 51, 64); //#EF3340;
+    --eps-live-race-text: rgba(0, 30, 85); //#001E55;
+    --eps-race-off-bg-color: rgba(160, 165, 170); //#A0A5AA
+    --favorite-border-color: var(--color-p1) --feature-market-bg-color: rgba(229, 232, 238); //#E5E8EE
+    --feature-market-price-bg-color: rgba(206, 211, 222); //#CED3DE
+    --bg-v-2: rgba(242, 246, 250); //#F2F6FA
+    --alpha: 1;
+    --eps-amend-text-color: var(--eps-header-yellow-text);
+    --wins-text-color: var(--color-p4);
+}

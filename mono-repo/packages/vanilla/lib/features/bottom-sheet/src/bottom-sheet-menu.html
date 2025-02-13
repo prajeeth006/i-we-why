@@ -1,0 +1,10 @@
+<div class="bottom-sheet list-nav">
+    @if (content.menu.title) {
+        <div class="bottom-sheet-h py-1 px-wrapper" [ngClass]="content.menu.class">{{ content.menu.title }}</div>
+    }
+    <div class="bottom-sheet-menu list-nav px-wrapper">
+        @for (child of content.menu.items | dsl | async; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </div>
+</div>

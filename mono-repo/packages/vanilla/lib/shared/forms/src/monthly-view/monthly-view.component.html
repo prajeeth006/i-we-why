@@ -1,0 +1,41 @@
+<div class="form-layout-horizontal">
+    <fieldset>
+        <section>
+            <div class="form-element">
+                <select id="period" [(ngModel)]="selectedPeriod" (ngModelChange)="getItems(true, true)">
+                    @for (value of dropdownValues; track trackById($index, value)) {
+                        <option [ngValue]="value">{{ value.selectText }}</option>
+                    }
+                </select>
+            </div>
+        </section>
+    </fieldset>
+</div>
+<div class="message-panel">
+    @if (!itemsObj.items?.length && selectedPeriod?.type === 0 && !loadingData && !hideNoItemsFoundMessage) {
+        <div class="theme-info-i">
+            <div class="cms-container" [innerHtml]="noItemsFound"></div>
+        </div>
+    }
+    @if (displayGotoDesktopMessage) {
+        <div class="theme-info-i">
+            <div class="cms-container" [innerHtml]="content.messages.GoToDesktopForOlderEntries"></div>
+        </div>
+    }
+</div>
+<ng-content />
+@if (displayMonthPagination) {
+    <div class="month-navigation">
+        <div [innerHtml]="datesCollection[currentDatePeriodId].shortText"></div>
+        <ul>
+            <li class="previous-month btn" [class.disabled]="disablePrevious" (click)="navigateMonths(false, disablePrevious)">
+                <vn-icon name="theme-left" />
+                {{ datesCollection[currentDatePeriodId].previousMonth }}
+            </li>
+            <li class="next-month btn" [class.disabled]="disableNext" (click)="navigateMonths(true, disableNext)">
+                {{ datesCollection[currentDatePeriodId].nextMonth }}
+                <vn-icon name="theme-right" />
+            </li>
+        </ul>
+    </div>
+}

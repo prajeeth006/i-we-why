@@ -1,0 +1,27 @@
+@if (visible) {
+    <nav class="bottom-nav fixed-bottom d-flex justify-content-around text-center">
+        @for (item of content.items | dsl | async; track trackByText($index, item)) {
+            @if (useFastIcon === true) {
+                <vn-menu-item
+                    [item]="item"
+                    [section]="MenuSection.BottomNav"
+                    [displayMode]="getDisplayMode('FastIcon')"
+                    badgeClass="badge-size-sm badge-offset"
+                    badgePosition="FastIcon"
+                    linkClass="bottom-nav-link"
+                    textClass="text-truncate d-block"
+                    iconClass="ui-icon ui-icon-size-lg" />
+            } @else {
+                <vn-menu-item
+                    [item]="item"
+                    [section]="MenuSection.BottomNav"
+                    [displayMode]="getDisplayMode(item.parameters.displayMode)"
+                    badgeClass="badge-size-sm badge-offset"
+                    badgePosition="icon"
+                    linkClass="bottom-nav-link"
+                    textClass="text-truncate d-block"
+                    iconClass="ui-icon ui-icon-size-lg" />
+            }
+        }
+    </nav>
+}

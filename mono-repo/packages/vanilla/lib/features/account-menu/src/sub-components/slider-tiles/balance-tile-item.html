@@ -1,0 +1,4 @@
+<div class="am-balance" [ngClass]="item.class">
+    <div class="balance-amount">{{ balance | async | vnCurrency }}</div>
+    <div class="balance-text">{{ item.text }}</div>
+</div>

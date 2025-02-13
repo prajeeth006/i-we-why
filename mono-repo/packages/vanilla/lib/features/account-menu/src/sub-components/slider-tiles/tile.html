@@ -1,0 +1,14 @@
+<div class="am-tile" [ngClass]="cssClass" (click)="processClick($event, item)">
+    <div class="tile-header">
+        <span class="tile-title">{{ item.text }}</span>
+        <span class="tile-link">{{ moreInfo }}</span>
+    </div>
+    <div class="tile-body">
+        <div class="tile-body-left">
+            <ng-content select="[left]" />
+        </div>
+        <div class="tile-body-right">
+            <ng-content select="[right]" />
+        </div>
+    </div>
+</div>

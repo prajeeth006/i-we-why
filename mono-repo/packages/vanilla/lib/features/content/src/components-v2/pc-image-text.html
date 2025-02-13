@@ -1,0 +1,22 @@
+@if (item.title) {
+    <vn-pc-component-header-v2 [item]="item" />
+}
+@if (item.image) {
+    <ng-template #pic>
+        @if (item.image) {
+            <img [vnProfilesSrc]="item.image.src" [vnProfilesWidth]="item.image.width" [alt]="item.image.alt" class="pc-img" />
+        }
+    </ng-template>
+    @if (item.imageLink) {
+        <a [href]="item.imageLink.url" [vnHtmlAttrs]="item.imageLink.attributes" class="pc-img-a">
+            <ng-container *ngTemplateOutlet="pic" />
+        </a>
+    } @else {
+        @if (item.image) {
+            <img [vnProfilesSrc]="item.image.src" [vnProfilesWidth]="item.image.width" [alt]="item.image.alt" class="pc-img" />
+        }
+    }
+}
+@if (item.text) {
+    <div class="pc-txt" [vnDynamicHtml]="item.text"></div>
+}

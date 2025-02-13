@@ -1,0 +1,97 @@
+<div class="bcms d-flex flex-column">
+    @if (!message.content.restrictedOverlay) {
+        <lh-header-bar [content]="headerTitle" (onClose)="close()" class="bcms-header" />
+    }
+    <div class="bcms-container" #bcmcontainer>
+        @if (message.content; as content) {
+            <div class="bcms-banner position-relative">
+                <vn-image
+                    [imageClass]="'bcms-banner-img'"
+                    [textClass]="'vn-img'"
+                    [src]="overlayImage"
+                    [intro]="imageIntroductoryText"
+                    [title]="imageTitleText"
+                    [subtitle]="imageSubtitleText"
+                    [titleFontSize]="imageTitleFontSize"
+                    [textAlign]="imageTextAlignment" />
+                @if (message.content.headerTermsAndConditionsRewardsOverlay) {
+                    <div class="tc-overlay" [innerHtml]="message.content.headerTermsAndConditionsRewardsOverlay"></div>
+                }
+            </div>
+        }
+        <div class="text-center pt-4">
+            <div class="bcms-item-title" [innerHtml]="title | trustAsHtml"></div>
+            <div class="bcms-txt pc-txt">
+                <lh-rtms-cta-action
+                    class="bcms-item-description"
+                    [content]="description"
+                    [rtmsCtaAction]="message"
+                    [rtmsCtaActionMessages]="content.messages"
+                    rtmsType="OVERLAY"
+                    rtmsCtaContentType="DESCRIPTION"
+                    (action)="rtmsCtaActions($event)" />
+            </div>
+            <div class="bcms-txt-tnc" [innerHtml]="message.content.preAcceptanceKeyTerms | trustAsHtml"></div>
+        </div>
+        @if (!isOfferClaimed) {
+            <div>
+                @if (isMobile) {
+                    <lh-rtms-layer-mobile-games-locked-list [content]="content" [message]="message" />
+                }
+                @if (!isMobile) {
+                    <lh-rtms-layer-desktop-games-locked-list [content]="content" [message]="message" />
+                }
+            </div>
+        }
+        @if (isOfferClaimed) {
+            <div>
+                @if (isMobile) {
+                    <lh-rtms-layer-mobile-games-unlocked-list [content]="content" [message]="message" />
+                }
+                @if (!isMobile) {
+                    <lh-rtms-layer-desktop-games-unlocked-list [content]="content" [message]="message" />
+                }
+            </div>
+        }
+        <div #bcmtnc>
+            @if (message.isShowTnc) {
+                <div class="bcms-toggle-tnc">
+                    <div class="bcms-toggle-tnc-caption" (click)="tacExpanded()">
+                        <span>{{ content.messages?.TermsAndConditions }}</span>
+                        @if (isTacExpanded) {
+                            <vn-icon name="theme-up" extraClass="toggle-tnc-icon" />
+                        } @else {
+                            <vn-icon name="theme-down" extraClass="toggle-tnc-icon" />
+                        }
+                    </div>
+                    <div class="bcms-toggle-tnc-details pc-txt txt-xs" [innerHtml]="message.tnCData | trustAsHtml" [hidden]="!isTacExpanded"></div>
+                    <span class="bcms-toggle-tnc-fade" [hidden]="!isTacExpanded"></span>
+                </div>
+            }
+        </div>
+    </div>
+    @if (!isOfferClaimed) {
+        <div class="bcms-cta-container">
+            <lh-rtms-cta-action
+                class="bcms-cta-item ctaaction clearfix"
+                [content]="message.content.preAcceptanceCTA1 + message.content.preAcceptanceCTA2"
+                [rtmsCtaAction]="message"
+                [rtmsCtaActionMessages]="content.messages"
+                rtmsType="OVERLAY"
+                rtmsCtaContentType="CTA"
+                (action)="rtmsCtaActions($event)" />
+        </div>
+    }
+    @if (isOfferClaimed) {
+        <div class="bcms-cta-container">
+            <lh-rtms-cta-action
+                class="bcms-cta-item ctaaction clearfix"
+                [content]="message.content.postAcceptanceCTA"
+                [rtmsCtaAction]="message"
+                [rtmsCtaActionMessages]="content.messages"
+                rtmsType="OVERLAY"
+                rtmsCtaContentType="CTA"
+                (action)="rtmsCtaActions($event)" />
+        </div>
+    }
+</div>

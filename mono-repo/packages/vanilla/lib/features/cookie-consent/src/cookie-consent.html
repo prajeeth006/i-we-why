@@ -1,0 +1,8 @@
+<div class="cookie-consent-message">
+    @if (config.content.text; as text) {
+        <div class="cookie-message" [vnDynamicHtml]="text"></div>
+    }
+    @if (config.content.messages?.OKButton; as OkButton) {
+        <a id="btnCookieConsent" class="btn btn-success" (click)="close()">{{ OkButton }}</a>
+    }
+</div>

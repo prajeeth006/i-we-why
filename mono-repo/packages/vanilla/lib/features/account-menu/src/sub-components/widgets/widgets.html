@@ -1,0 +1,15 @@
+@if (showWidgets) {
+    @if (version === 5) {
+        @for (child of items; track trackByText($index, child)) {
+            <div class="ch-my-hub__col--dynamic">
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+            </div>
+        }
+    } @else {
+        @for (child of items; track trackByText($index, child)) {
+            <div class="ch-account-menu-v3__col--dynamic">
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+            </div>
+        }
+    }
+}

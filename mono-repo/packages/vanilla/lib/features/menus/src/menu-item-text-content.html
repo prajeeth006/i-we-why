@@ -1,0 +1,6 @@
+﻿@if (renderHtmlText) {
+    <span [class]="cssClass" [ngClass]="additionalClass || undefined" [innerHtml]="text | trustAsHtml"> </span>
+}
+@if (!renderHtmlText) {
+    <span [class]="cssClass" [ngClass]="additionalClass || undefined" [innerText]="text"> </span>
+}

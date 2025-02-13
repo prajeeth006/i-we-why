@@ -1,0 +1,31 @@
+@if (version > 1) {
+    <vn-menu-item [item]="item" [section]="MenuSection.Menu" linkClass="am-logout" textClass="logout-txt" [processClick]="false" (click)="logout()" />
+} @else {
+    @if (useFastIconType === true) {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            displayMode="FastIcon"
+            badgePosition="FastIcon"
+            linkClass="list-nav-link"
+            iconClass="ui-icon ui-icon-size-xl"
+            badgeClass="badge-offset"
+            textClass="list-nav-txt"
+            [text]="wait ? msg.PleaseWait : item.text || msg.SignOut"
+            [processClick]="false"
+            (click)="logout()" />
+    } @else {
+        <vn-menu-item
+            [item]="item"
+            [section]="MenuSection.Menu"
+            displayMode="icon"
+            badgePosition="icon"
+            linkClass="list-nav-link"
+            iconClass="ui-icon ui-icon-size-xl"
+            badgeClass="badge-offset"
+            textClass="list-nav-txt"
+            [text]="wait ? msg.PleaseWait : item.text || msg.SignOut"
+            [processClick]="false"
+            (click)="logout()" />
+    }
+}

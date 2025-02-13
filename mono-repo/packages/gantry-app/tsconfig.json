@@ -1,0 +1,45 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "useDefineForClassFields": false,
+        "forceConsistentCasingInFileNames": true,
+        "strictNullChecks": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowJs": false,
+        "target": "es2020",
+        "module": "esnext",
+        "stripInternal": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es6", "dom", "es2021"],
+        "importHelpers": true,
+        "noImplicitAny": true,
+        "noUnusedParameters": false,
+        "noUnusedLocals": true,
+        "typeRoots": ["../../node_modules/@types"]
+    },
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ],
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": false,
+        "preserveWhitespaces": true,
+        "enableIvy": true,
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true
+    }
+}

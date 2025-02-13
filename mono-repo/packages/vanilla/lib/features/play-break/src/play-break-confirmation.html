@@ -1,0 +1,15 @@
+@if (config.templates.breakconfirmation; as content) {
+    <vn-dialog [headerTitle]="content.title" [headerCloseButtonText]="content.messages?.CloseButtonText" (onClose)="close()">
+        <div content [vnDynamicHtml]="content.text | format: getSelectedPlayBreakDuration(content.validation)() : selectedPlayBreakStart()"></div>
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button (click)="changeSettings()" class="btn btn-link-underlined btn-link-light btn-md">
+                    {{ content.messages?.EditButtonText }}
+                </button>
+                <button (click)="confirm()" class="btn btn-primary btn-md">
+                    {{ content.messages?.OkButtonText }}
+                </button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

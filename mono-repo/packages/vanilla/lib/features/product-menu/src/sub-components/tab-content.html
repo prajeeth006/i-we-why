@@ -1,0 +1,5 @@
+@if (content) {
+    <div class="pm-tab-content" [ngClass]="content.class">
+        <ng-container *vnDynamicComponent="getItemComponent(content.layout); attr: { item: content }" />
+    </div>
+}

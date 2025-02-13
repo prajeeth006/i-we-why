@@ -1,0 +1,42 @@
+@if (dialog(); as dialog) {
+    <div class="generic-container-wrapper generic-container-wrapper--xl" [ngClass]="dialog.type?.toLowerCase()">
+        <div class="value-ticket-dialog" [ngClass]="dialog.type">
+            @switch (dialog.type?.toLowerCase()) {
+                @case (DialogType.Error) {
+                    <i class="theme-error"></i>
+                }
+                @case (DialogType.Success) {
+                    <i class="theme-success-i"></i>
+                }
+                @case (DialogType.Info) {
+                    <i class="theme-info"></i>
+                }
+                @case (DialogType.Question) {
+                    <i class="theme-question"></i>
+                }
+            }
+            @if (dialog.title) {
+                @if (dialog.status === TicketStatus.SCANNED) {
+                    <h2
+                        class="generic-container-title"
+                        [innerHTML]="dialog.title | format: (ticketData.amount / 100 | vnCurrency: ticketData.currency)"></h2>
+                } @else {
+                    <h2 class="generic-container-title" [innerHTML]="dialog.title"></h2>
+                }
+            }
+            @if (dialog.text) {
+                <p class="generic-container-text" [innerHTML]="dialog.text | trustAsHtml"></p>
+            }
+            <div class="form-element btn-container">
+                @if (dialog.closeButtonText) {
+                    <button class="btn btn-secondary w-100" (click)="close()">{{ dialog.closeButtonText }}</button>
+                }
+                @if (dialog.acceptButtonText && dialog.status === TicketStatus.SCANNED) {
+                    <button [disabled]="isPayoutInProgress()" class="btn btn-primary w-100" (click)="accept()">
+                        {{ dialog.acceptButtonText }}
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+}

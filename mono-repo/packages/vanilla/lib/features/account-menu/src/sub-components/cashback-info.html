@@ -1,0 +1,12 @@
+<div class="am-cashback" [class.cashback-completed]="isCompleted">
+    @if (text) {
+        <div class="cashback-main">
+            @if (chartSegments) {
+                <vn-donut-chart [segments]="chartSegments" />
+            }
+            <div class="cashback-amount">{{ text }}</div>
+            <div class="cashback-additional-text" [innerHtml]="additionalText | trustAsHtml"></div>
+        </div>
+    }
+    <div class="cashback-description" [innerHtml]="description | trustAsHtml"></div>
+</div>

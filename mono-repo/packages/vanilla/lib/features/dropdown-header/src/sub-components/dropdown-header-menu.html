@@ -1,0 +1,14 @@
+<div class="vn-dh-menu">
+    @if (item) {
+        <a
+            (click)="menuClick(!expanded)"
+            class="vn-dh-logo-link"
+            [attr.href]="item.url"
+            [attr.alt]="item.text"
+            [ngClass]="item?.parameters['link-class']">
+            <i class="vn-dh-logo-icon" [ngClass]="item?.parameters['icon-class']"></i>
+            <div class="vn-dh-logo" [ngClass]="item.class">{{ item.text }}</div>
+            <i class="vn-dh-arrow" [ngClass]="{ 'theme-up': expanded, 'theme-down': !expanded }"></i>
+        </a>
+    }
+</div>

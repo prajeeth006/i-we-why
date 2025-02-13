@@ -1,0 +1,7 @@
+<vn-swiper [swiperOptions]="swiperOptions" [swiperClass]="swiperClass">
+    @for (child of item.items | slice: 0 : item.maxItems; track $index) {
+        <div class="swiper-slide">
+            <ng-container *vnPageMatrix="child" />
+        </div>
+    }
+</vn-swiper>

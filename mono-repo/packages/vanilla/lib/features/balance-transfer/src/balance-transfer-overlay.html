@@ -1,0 +1,14 @@
+<div class="generic-container-wrapper generic-container-wrapper--success">
+    <div class="generic-container-title">
+        <div class="header-ctrl-wrapper">
+            <div class="header-ctrl d-flex justify-content-between align-items-center"></div>
+        </div>
+    </div>
+    <div class="betstation-error-message">
+        <div class="betstation-error-message__title" [innerHTML]="commonMessages.BalanceTransferText | trustAsHtml"></div>
+    </div>
+    <div class="form-element btn-container">
+        <button class="btn btn-secondary w-100" (click)="transfer()">{{ commonMessages.Continue }}</button>
+        <button class="btn btn-secondary w-100" (click)="logout()">{{ commonMessages.LogOut }}</button>
+    </div>
+</div>

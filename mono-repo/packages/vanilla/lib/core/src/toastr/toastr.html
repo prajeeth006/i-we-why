@@ -1,0 +1,23 @@
+<div (onSwipe)="onSwipe($event)" vnSwipe>
+    @if (options.closeButton) {
+        <button (click)="remove()" class="toast-close-button theme-ex" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    }
+    @if (title) {
+        <div [class]="options.titleClass" [attr.aria-label]="title">
+            {{ title }}
+            @if (duplicatesCount) {
+                [{{ duplicatesCount + 1 }}]
+            }
+        </div>
+    }
+    @if (message) {
+        <div role="alertdialog" aria-live="polite" [class]="options.messageClass" [vnDynamicHtml]="message"></div>
+    }
+    @if (options.progressBar) {
+        <div>
+            <div class="toast-progress" [style.width]="width + '%'"></div>
+        </div>
+    }
+</div>

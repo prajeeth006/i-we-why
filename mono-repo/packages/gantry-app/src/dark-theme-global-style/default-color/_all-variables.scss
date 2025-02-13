@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+
+// Used coral as defaults
+html:not([data-domain*='coral.co.uk']):not([data-domain*='ladbrokes.com']) {
+    --white: rgba(255, 255, 255); //#ffffff
+    --black: rgba(0, 0, 0); //#000000
+    --color-theme: rgb(0, 71, 121); // #004779
+    --template-gradient-background: linear-gradient(90deg, #01243c 0%, #0a3a62 25.21%, #004779 48.96%, #0a3a62 71.61%, #02263f 100%);
+    --theme-white-bg-text: rgba(0, 71, 121, 1); //#004779
+    --theme-yellow: rgba(255, 205, 0, 1); //#FFCD00
+    --early-price-text: rgba(0, 71, 121, 1); //#004779
+    --top-2-finish-bg: rgba(0, 128, 5, 1); //#008005
+    --betting-bg: rgba(239, 51, 64, 1); //##EF3340
+    --footer-yellow-text: rgba(255, 205, 0, 1); //#FFCD00
+    --fs-full-lead-title: 90px;
+    --fs-quad-lead-title: 45px;
+    --time-box-background: #ef3340;
+    --state-box-background: #fff;
+    --state-box-text: #004779;
+}

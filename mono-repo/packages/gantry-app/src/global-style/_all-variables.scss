@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colorspac
+----------------------- */
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import './ladbrokes/_all-variables.scss';
+@import './coral/_all-variables.scss';
+@import './default-color/_all-variables.scss';
+@import '../shared-styles/_mixins.scss';
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/ClientDist/assets/RobotoCondensed-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/ClientDist/assets/RobotoCondensed-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Midnight Sans RD Pro 12';
+    src: url('/ClientDist/assets/MidnightSansRDPro-12Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+$color-p1: var(--color-p1); // Brand color 01 - header color
+$color-p1-bg: var(--color-p1-bg);
+$color-p1-text: var(--color-p1-text);
+$color-p1-dark: var(--color-p1-dark);
+$coral-gradient-background: var(--coral-gradient-background);
+
+$color-p2: var(--color-p2);
+$color-p2-light: var(--color-p2-light);
+
+$black: var(--black);
+
+$color-p4: var(--color-p4);
+$color-p4-light-bg: var(--color-p4-light-bg);
+
+$color-p5: var(--color-p5);
+$color-p6: var(--color-p6);
+
+$body-color-p2: var(--body-color-p2);
+$body-color-p2-light: var(--body-color-p2-light);
+$body-color-p2-light-bg: var(--body-color-p2-light-bg);
+$body-color-p2-light-bg-dark: var(--body-color-p2-light-bg-dark);
+$body-color-p2-lighter-bg: var(--body-color-p2-lighter-bg);
+$white: var(--white);
+$red: var(--red);
+$border-color: var(--border-color);
+$border-color-drak: var(--border-color-drak);
+$text-light: var(--text-light);
+$body-color-txt: var(--body-color-txt);
+
+$bg-table-column-dark-color: var(--bg-table-column-dark-color);
+
+$time-stamp-color-text: var(--time-stamp-color-text);
+$time-stamp-color-value: var(--time-stamp-color-value);
+$lead-title-color-text: var(--lead-title-color-text);
+$bg-image-dark: var(--bg-image-dark);
+
+$eps-header-yellow-text: var(--eps-header-yellow-text);
+$eps-header-red-text: var(--eps-header-red-text);
+$eps-live-race-text: var(--eps-live-race-text);
+$eps-race-off-bg-color: var(--eps-race-off-bg-color);
+
+$feature-market-bg-color: var(--feature-market-bg-color);
+$favorite-border-color: var(--favorite-border-color);
+$feature-market-price-bg-color: var(--feature-market-price-bg-color);
+$result-top-msg-bg-color: var(--result-top-msg-bg-color);
+$eps-amend-text-color: var(--eps-amend-text-color);
+$bg-v-2: var(--bg-v-2);
+$wins-text-color: var(--wins-text-color);
+
+// $alpha:                                               var(--alpha1);
+/* Shades Of Grey
+----------------- */
+
+$primary: $color-p1;
+
+$early-price-bg-color: var(--early-price-bg-color);
+$betting-wo-bg-color: var(--betting-wo-bg-color);
+$top-finish-bg-color: var(--top-finish-bg-color);
+$favorite-box: var(--favorite-box);
+$bg-body: var(--bg-body);
+$market-price-text: var(--market-price-text);
+$early-price-bg-arrow: var(--early-price-bg-arrow);
+$betting-wo-bg-arrow: var(--betting-wo-bg-arrow);
+$top-finish-bg-arrow: var(--top-finish-bg-arrow);
+/*Breakpoints media queries*/
+
+//For typography
+
+$h1-lg-font-size: 75px !default;
+$h2-lg-font-size: 35px !default;
+$h3-lg-font-size: 40px !default;
+$h4-lg-font-size: 35px !default;
+$h5-lg-font-size: 30px !default;
+
+$h1-font-size: 38px !default;
+$h2-font-size: 25px !default;
+$h2-md-font-size: 24px !default;
+$h2-md-font-motorsize: 24px !default;
+$h3-font-size: 17px !default;
+
+$ff-eps-header: 'Midnight Sans RD Pro 12';
+
+/* Paragraphs
+================== */
+
+// $txt-xl-font2-size:                                     75px !default;
+// $txt-lg-font2-size:                                     40px !default;
+// $txt-md-font2-size:                                     35px !default;
+// $txt-font2-size:                                        30px !default;
+// $title-sec-font2-size:                                  28px !default;
+// $cont-sm-font2-size:                                    25px !default;
+// $header-font2-size:                                     24px !default;
+// $cont-end-font2-size:                                   20px !default;
+
+$hotshow-win-ratio-txt: 160px !default;
+$avr-count-value-83: 83px !default;
+$font-list-lg-title: 80px !default;
+$font-list-lg-title-avr: 56px !default;
+$font-list-lg-title-outright: 56px !default;
+$font-list-lg-title-avrmotor: 50px !default;
+$font-list-lg-title-nfl: 50px !default;
+$font-list-md-title: 65px !default;
+$font-list-md2-62: 62px !default;
+$font-list-md2-title: 60px !default;
+$font-list-md3-title: 70px !default;
+$font-list-title: 30px !default;
+$single-list-title: 40px !default;
+$winning-text-39: 39px !default;
+$txt-xl-font-size: 38px !default;
+$winning-title-36: 36px !default;
+$font-list-lg1-title: 35px !default;
+$font-list-run-title: 34px !default;
+
+$txt-lg-title-size: 50px !default;
+
+$avr-count-txt-32: 32px !default;
+$txt-lg-font1-size: 28px !default;
+$txt-lg-font-size: 25px !default;
+$antipost-font-list-title: 22px !default;
+$txt-md-font1-size: 20px !default;
+$txt-md-font2-size: 18px !default;
+$txt-md-font3-size: 22px !default;
+$txt-md-font-size: 17px !default;
+$txt-sm-font-size: 15px !default;
+$txt-sm-font1-size: 14px !default;
+$txt-sm-font2-size: 12px !default;
+$txt-results-th-11: 11px !default;
+$txt-xs-font1-size: 10px !default;
+$txt-eps-2-size: 8px !default;
+
+$txt-forecast: 44px !default;
+$txt-formula-h: 45px !default;
+$font-lg-48: 48px !default;
+$font-lg-16: 16px !default;
+
+//padding
+$p-20: 20px !default;
+$p-10: 10px !default;
+
+.away .oddsRight {
+    flex-direction: row-reverse;
+}
+
+.screenPart {
+    body {
+        padding: 0;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    background-color: $white;
+
+    @include breakpoint(multidesktop) {
+        overflow: hidden;
+        font-size: $txt-sm-font2-size;
+    }
+}
+
+.screenPartIframe {
+    .base-page-wrapper {
+        padding: 10px 20px 20px;
+        min-height: calc(100vh - 30px);
+
+        .horse-table {
+            li {
+                .table-item-1 {
+                    min-height: 35px;
+                }
+
+                .table-item-3 {
+                    font-size: $txt-lg-font-size;
+                }
+            }
+        }
+    }
+
+    .main-title {
+        font-size: $font-list-title;
+        flex-basis: 80%;
+    }
+}
+
+.bet-details-header {
+    @include flex-container(space-between);
+    color: $body-color-txt;
+    font-size: $txt-lg-title-size;
+    padding-top: 20px;
+
+    @include breakpoint(multidesktop) {
+        padding-top: 10px;
+        font-size: $txt-lg-font-size;
+    }
+
+    .bet-details-title {
+        flex: 1;
+        text-align: center;
+    }
+
+    .bet-price {
+        width: 160px;
+        text-align: center;
+
+        @include breakpoint(multidesktop) {
+            width: 80px;
+        }
+    }
+}

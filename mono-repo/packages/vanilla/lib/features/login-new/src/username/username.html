@@ -1,0 +1,34 @@
+<ng-container [formGroup]="form">
+    @if (isMobileLoginEnabled) {
+        <vn-username-mobile-number
+            formControlName="username"
+            [usernameLabel]="content.label"
+            [validationMessages]="content.validation"
+            (onBlurUserId)="onBlurUserId()"
+            (onFocusUserId)="onFocusUserId()"
+            (modelChanged)="usernameChanged()"
+            (isMobileEvent)="isMobileChanged()" />
+    } @else {
+        <lh-form-field
+            [showSuccessValidation]="false"
+            [labelText]="content.label"
+            [validationMessages]="content.validation"
+            [ignoreMaxLength]="true"
+            [elementClass]="content.htmlAttributes?.labelClass || ''">
+            <input
+                type="text"
+                name="username"
+                id="userId"
+                autocomplete="username"
+                formControlName="username"
+                (blur)="onBlurUserId()"
+                (focus)="onFocusUserId()"
+                (change)="usernameChanged()"
+                vnTrackingEvent="Event.Functionality.Login"
+                [vnTrackingData]="trackingData"
+                [vnTrackingTrigger]="['change']"
+                [class]="content.htmlAttributes?.class" />
+            <i class="theme-account"></i>
+        </lh-form-field>
+    }
+</ng-container>

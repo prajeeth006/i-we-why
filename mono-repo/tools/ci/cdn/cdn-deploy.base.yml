@@ -1,0 +1,23 @@
+.cdn_access_prepare_cmd: &cdn_access_prepare_cmd |
+  cat "$CDN_PUBLISH_KEY" > ~/.ssh/id_rsa
+  chmod 0600 ~/.ssh/id_rsa
+  echo -e "\n\nHost staging-cdn-vanilla.*.env.works\n  User jboss" >>~/.ssh/config
+
+.cdn_deploy_base:
+  stage: deploy
+  image: bpty-docker-local.artifactory.bwinparty.corp/leanops/rsync:1.0
+  tags:
+    # Use dedicated GitLab runner for PROD deployments
+    - proddeploy-linux-docker-runner
+  needs:
+    - version
+    - pipeline: $PARENT_PIPELINE_ID
+      job: affected
+  script:
+    - *cdn_access_prepare_cmd
+    - echo "Publishing from $CDN_PUBLISH_DIR"
+    - echo "Publishing to $CDN_PUBLISH_PROJECT"
+    - VERSION_WITHOUT_HASH="${VERSION%%-*}"
+    - echo "Publishing version $VERSION using $VERSION_WITHOUT_HASH"
+    - echo "Publishing using stager $CDN_PUBLISH_STAGER"
+    - time rsync -rzve "ssh -v" "$CDN_PUBLISH_DIR" "$CDN_PUBLISH_STAGER:/$CDN_PUBLISH_PROJECT/$VERSION_WITHOUT_HASH"

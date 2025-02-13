@@ -1,0 +1,12 @@
+<lh-cross-product-layout>
+    <div class="gaming-declaration portal-center-wrapper pt-4">
+        <vn-message-panel [scope]="MessageScope.GamingDeclaration" />
+        @if (content(); as content) {
+            <div [innerHtml]="content.text | trustAsHtml"></div>
+            <button
+                (click)="accept()"
+                [ngClass]="content.form.accept?.htmlAttributes?.class || undefined"
+                [innerHtml]="content.form.accept?.label"></button>
+        }
+    </div>
+</lh-cross-product-layout>

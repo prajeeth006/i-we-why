@@ -1,0 +1,83 @@
+.dte-agent:
+  extends: .base-pipeline
+  allow_failure: true
+  script:
+    - yarn nx-cloud start-agent
+
+# Main job running DTE
+affected:
+  extends: .base-pipeline
+  script:
+    # Init Base sha
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/scripts/generate-base-sha.util.ts
+    - NX_BASE=$(cat $GENERATED_ARTIFACTS_DEST/base-sha.txt)
+    - echo $NX_BASE
+    - NX_HEAD=$CI_COMMIT_SHA
+    - echo $NX_HEAD
+    # Start Nx cloud
+    - yarn nx-cloud start-ci-run --require-explicit-completion --distribute-on=manual
+    # Check format of code
+    - yarn nx-cloud record -- yarn nx format:check --base=$NX_BASE --head=$NX_HEAD
+    # Construct commands based on the value of AFFECTED_ALL
+    - |
+      longs_exit_status=0
+      shorts_exit_status=0
+      builds_exit_status=0
+      if [ "$AFFECTED_ALL" = "true" ]; then
+        yarn nx run-many -t lint lint-styles test test-betslip lint-betslip build-storybook integrity scss-checks --parallel=1 --exclude="*,!tag:ci:long-tasks" &
+        longs=$!
+        yarn nx run-many -t lint lint-styles test test-betslip lint-betslip build-storybook integrity scss-checks --parallel=4 --exclude=tag:ci:long-tasks &
+        shorts=$!
+        yarn nx run-many -t build --parallel=4 &
+        builds=$!
+        wait $shorts
+        shorts_exit_status=$?
+        wait $longs
+        longs_exit_status=$?
+        wait $builds
+        builds_exit_status=$?
+      else
+        yarn nx affected -t lint lint-styles test test-betslip lint-betslip build-storybook integrity scss-checks --parallel=1 --base=$NX_BASE --exclude="*,!tag:ci:long-tasks" &
+        longs=$!
+        yarn nx affected -t lint lint-styles test test-betslip lint-betslip build-storybook integrity scss-checks --parallel=4 --base=$NX_BASE --exclude=tag:ci:long-tasks &
+        shorts=$!
+        yarn nx affected -t build --parallel=4 --base=$NX_BASE &
+        builds=$!
+        wait $shorts
+        shorts_exit_status=$?
+        wait $longs
+        longs_exit_status=$?
+        wait $builds
+        builds_exit_status=$?
+      fi
+      if [ $longs_exit_status -ne 0 ] || [ $shorts_exit_status -ne 0 ] || [ $builds_exit_status -ne 0 ]; then
+        exit 1
+      fi
+
+    # Complete Nx cloud right after successful affected commands
+    - yarn nx-cloud complete-ci-run
+
+  after_script:
+    # Stop agents again in case of failure
+    - yarn nx-cloud complete-ci-run
+  artifacts:
+    expire_in: 5 days
+    when: always
+    paths:
+      - dist
+
+# Create as many agents as you want
+nx-dte-agent1:
+  extends: .dte-agent
+nx-dte-agent2:
+  extends: .dte-agent
+nx-dte-agent3:
+  extends: .dte-agent
+nx-dte-agent4:
+  extends: .dte-agent
+nx-dte-agent5:
+  extends: .dte-agent
+nx-dte-agent6:
+  extends: .dte-agent
+nx-dte-agent7:
+  extends: .dte-agent

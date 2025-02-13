@@ -1,0 +1,6 @@
+<span [ngClass]="item.class" [floatUi]="popper.content" (click)="toggle()"></span>
+<vn-popper-content closeType="none" [cssClass]="item.parameters.tooltipClass" #popper>
+    <ng-container content>
+        <div [vnDynamicHtml]="item.resources.tooltipText"></div>
+    </ng-container>
+</vn-popper-content>

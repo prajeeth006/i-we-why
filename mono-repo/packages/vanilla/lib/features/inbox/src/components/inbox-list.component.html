@@ -1,0 +1,64 @@
+<div (click)="$event.stopPropagation()" [hidden]="wait || isDetailsVisible">
+    <!-- playerinbox empty -->
+    @if (!wait && messages.length === 0) {
+        <div class="player-inbox-content">
+            <div class="player-inbox-message-container-empty">
+                <ul>
+                    <li class="player-inbox-message-empty-text">
+                        <span [innerHtml]="content.messages?.NoMessages | trustAsHtml"></span>
+                        <span class="theme-mail-open"
+                            ><span class="player-inbox-sparkle-icon">+<span>.</span></span></span
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+
+    <vn-message-panel [scope]="MessageScope.Inbox" class="player-inbox-error-messages" />
+
+    @for (msg of messagesDisplayed; track trackByOfferId($index, msg)) {
+        <div (click)="open(msg)" [attr.sitecoreid]="msg.sitecoreId">
+            <div
+                class="inbox-px-wrapper"
+                [ngClass]="{
+                    'inbox-item-active': selectedMessage === msg,
+                    'inbox-item-new': msg.isNew,
+                    'inbox-item-expired': msg.isExpired,
+                    'inbox-item-read': msg.messageStatus === MessageStatus.read,
+                    'inbox-item-unread': msg.messageStatus === MessageStatus.unread,
+                }">
+                <div class="inbox-item border-bottom">
+                    <div class="align-self-center inbox-checkbox-wrap" (click)="$event.stopPropagation()">
+                        <input
+                            type="checkbox"
+                            class="ng-untouched ng-pristine ng-valid"
+                            [(ngModel)]="msg.selected"
+                            name="piaction{{ msg.id }}"
+                            id="piaction{{ msg.id }}"
+                            (ngModelChange)="selectMessage()" />
+                        <label
+                            for="piaction{{ msg.id }}"
+                            [class.theme-checkbox-on-i]="msg.selected"
+                            [class.theme-checkbox-off]="!msg.selected"></label>
+                    </div>
+                    <div class="inbox-img align-self-center">
+                        @if (msg.content.shortImage; as src) {
+                            <vn-image [src]="src" [alt]="msg.content.snippetTitle" />
+                        }
+                    </div>
+                    <div class="inbox-txt-wrapper">
+                        <div class="inbox-date" [innerHtml]="msg.createdDate"></div>
+                        @if (msg.isExpired) {
+                            <span class="player-inbox-date-status badge badge-secondary" [innerHtml]="content.messages?.MessageExpired"></span>
+                        }
+                        <div class="inbox-title" [innerHtml]="msg.content.snippetTitle | trustAsHtml"></div>
+                        @if (msg.content.snippetDescription) {
+                            <div class="inbox-description" [innerHtml]="msg.content.snippetDescription | trustAsHtml"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

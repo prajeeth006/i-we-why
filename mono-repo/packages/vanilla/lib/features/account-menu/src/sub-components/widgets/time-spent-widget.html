@@ -1,0 +1,37 @@
+<vn-am-widget [hideSkeleton]="hideSkeleton" [item]="item" [mode]="mode">
+    @if (hideSkeleton) {
+        <span class="ch__font--title font-weight-bold">{{ aggregationTypeText }}</span>
+        <div class="ch__font--subtitle font-weight-bold d-flex align-items-center mb-2">
+            @if (activeTimeSpent?.totalMinutes && !isBelowActiveTimeThreshold) {
+                <div>
+                    {{ activeTimeSpent | vnTotalTime: 'short' : 'HM' : false }}
+                </div>
+            }
+            @if (isBelowActiveTimeThreshold) {
+                <div [innerText]="item.resources.EmptyAveragePeriod | format: item.parameters.averagePeriodThresholdInMinutes"></div>
+            }
+        </div>
+        @if (!isBelowActiveTimeThreshold) {
+            @if (percentByProduct?.length > 0) {
+                <div class="mb-1 ch__font--description">{{ item.resources.Description }}</div>
+                <div class="progress">
+                    @for (item of percentByProduct; track trackByProduct($index, item)) {
+                        <div class="progress-bar" [ngClass]="item.colorClass" [style.width.%]="item.percentage"></div>
+                    }
+                </div>
+                <div class="progress_legend">
+                    @for (item of percentByProduct; track trackByProduct($index, item)) {
+                        <div class="progress_legend-item">
+                            <span class="progress-bar_circle" [ngClass]="item.colorClass"></span>
+                            <span class="progress-bar_text">{{ item.product }}</span>
+                        </div>
+                    }
+                </div>
+            } @else {
+                <div class="ch__font empty-percent-by-product-text d-flex align-items-center mt-2">
+                    <div [innerText]="item.resources.EmptyValuesText"></div>
+                </div>
+            }
+        }
+    }
+</vn-am-widget>

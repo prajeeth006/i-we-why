@@ -1,0 +1,9 @@
+<div class="content-message" [attr.data-id]="message.name" [ngClass]="message.parameters?.messageClass" (click)="onClick()">
+    @if (message.parameters?.messageIcon; as messageIcon) {
+        <span class="message-icon" [ngClass]="messageIcon"></span>
+    }
+    @if (message.parameters?.showCloseButton === 'true') {
+        <vn-icon [name]="iconClass" extraClass="ui-icon" (click)="closeMessage()" />
+    }
+    <vn-page-matrix [content]="message" />
+</div>

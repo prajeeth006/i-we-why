@@ -1,0 +1,18 @@
+@if (config.content; as content) {
+    <div class="generic-modal-wrapper actions-in-row">
+        <div class="generic-modal-content-wrapper">
+            <vn-icon name="theme-ex" extraClass="ui-icon ui-icon-size-lg ui-close" (click)="overlayRef.detach()" />
+            <div class="generic-modal-content">
+                <div class="jackpot-winner-popup-wrapper">
+                    <vn-image [src]="content.image?.src" [class]="content.parameters?.imgStyle" />
+                    <div class="jackpot-winner__title h2-v2" [innerHtml]="content.resources?.winText"></div>
+                    <div class="jackpot-winner__prize">{{ Number(item.winValue) | vnCurrency: item.currency }}</div>
+                    <div class="jackpot-winner__message txt-xl-v2" [innerHtml]="content.resources?.gameText"></div>
+                </div>
+            </div>
+        </div>
+        <div class="generic-modal-actions justify-content-center">
+            <button (click)="overlayRef.detach()" class="btn btn-lg btn-primary" [innerHtml]="content.text"></button>
+        </div>
+    </div>
+}

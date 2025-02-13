@@ -1,0 +1,115 @@
+@if (version === 5) {
+    @if (items.length || mode === 'page') {
+        <div class="ch-shade ch-task-card-stack d-inline-block" [ngClass]="tasksExpandoClass">
+            <div class="ch-task-card-stack__header">
+                <div class="ch-task-card__title ch__font--title font-weight-bold">{{ item.text }}</div>
+                @if (items.length) {
+                    <div class="ch__font ch-task-card-stack__details font-weight-bold">{{ count }} Pending</div>
+                }
+            </div>
+            @if (items.length) {
+                <div class="ch-task-card-stack__cards">
+                    @for (child of items; track trackByText($index, child)) {
+                        <div class="ch-task-card-stack__task">
+                            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+                        </div>
+                    }
+                </div>
+                @if (items.length > 2) {
+                    <div (click)="toggle()" class="ch-task-card-stack__footer w-100 text-center font-weight-bold py-2 ch__font--sm">
+                        {{ item.resources.show }} {{ item.resources[accountMenuTasksService.expanded ? 'less' : 'more'] }}
+                        <vn-icon name="theme-down" size="12" extraCLass="ch-task-card-stack__chevron ml-1" />
+                    </div>
+                }
+            }
+            @if (!items.length) {
+                <div class="ch-task-card-stack__description">
+                    <div class="ch__font--sm font-weight-bold">{{ item.resources['no-pending-tasks-message'] }}</div>
+                    <div class="ch-task-card-stack__description-more ch__font--sm" [vnDynamicHtml]="item.resources['no-tasks-message']"></div>
+                </div>
+            }
+        </div>
+    }
+} @else {
+    @if (template === 'menu') {
+        @if (items.length > 0) {
+            <div class="ch ch-account-menu-v3__info-tasks dh" (click)="gotoProfile()">
+                <div class="ch-widget__footer text-center">
+                    <span class="d-block txt-sm-v2"><span [innerHtml]="pendingMessage | trustAsHtml"></span></span>
+                    @if (urgentCount) {
+                        <span class="d-block txt-xs-v2">
+                            (<span class="badge badge-circle badge-size-sm badge-danger">{{ urgentCount }}</span> {{ urgentLabel }})
+                        </span>
+                    }
+                </div>
+            </div>
+        }
+        <div [hidden]="true">
+            @for (child of items; track trackByText($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+            }
+        </div>
+    }
+    @if (template === 'page') {
+        <div class="ch-shade ch-task-card-stack d-inline-block" [ngClass]="tasksExpandoClass">
+            <div class="ch-task-card-stack__header">
+                <div class="ch__font--title font-weight-bold">{{ item.text }}</div>
+                <div class="ch__font ch-task-card-stack__details">
+                    @if (items.length > 0) {
+                        <span class="ch-accent font-weight-bold">{{ count }}</span>
+                        <span class="ch__font ch-task-card-stack__details--desktop">
+                            {{ pendingLabel }}
+                            @if (urgentCount) {
+                                (<span class="text-danger font-weight-bold">{{ urgentCount }}</span> {{ urgentLabel }})
+                            }
+                        </span>
+                    }
+                    @if (items.length === 0) {
+                        <span [innerHtml]="item.resources.none | trustAsHtml"></span>
+                    }
+                </div>
+            </div>
+            @if (items.length > 0) {
+                <div class="ch-task-card-stack__cards">
+                    @for (child of items; track trackByText($index, child)) {
+                        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+                    }
+                </div>
+                @if (items.length > 2) {
+                    <div (click)="toggle()" class="ch-task-card-stack__footer w-100 text-center font-weight-bold py-2 ch__font--sm text-uppercase">
+                        {{ item.resources.show }} {{ item.resources[accountMenuTasksService.expanded ? 'less' : 'more'] }}
+                    </div>
+                }
+            }
+            @if (items.length === 0) {
+                <div class="ch__font--sm mx-3 mb-3 ch-nudge d-flex flex-column" [vnDynamicHtml]="item.resources['no-tasks-message']"></div>
+            }
+        </div>
+    }
+    @if (template === 'menu-mobile') {
+        @if (items.length > 0 || accountMenuTasksService.hasHidden()) {
+            <div class="pl-4 pr-4">
+                <div class="ch-task-card-stack__header">
+                    <div class="ch__font text-uppercase font-weight-bold">{{ item.text }}:</div>
+                    <div class="ch__font ch-task-card-stack__details">
+                        <span class="ch-accent font-weight-bold">{{ accountMenuTasksService.totalCount }} </span>
+                        @if (accountMenuTasksService.hasHidden()) {
+                            <span (click)="showAllHidden($event)"
+                                >(<u>{{ item.resources['show-all'] }}</u
+                                >)</span
+                            >
+                        }
+                    </div>
+                </div>
+                <div class="ch-shade ch-task-card-stack" [ngClass]="tasksExpandoClass">
+                    <div vnSwipe (onSwipe)="onSwipe($event)" (click)="toggle()" class="ch-task-card-stack__cards">
+                        @for (child of items; track trackByText($index, child)) {
+                            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child, mode: mode }" />
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="am-tasks-anchor" [vnElementKey]="VanillaElements.ACCOUNT_MENU_TASKS_ANCHOR"></div>
+    }
+}

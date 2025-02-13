@@ -1,0 +1,56 @@
+@if (content().resources; as messages) {
+    <div class="generic-modal-wrapper login-duration-content">
+        <vn-message-panel [scope]="MessageScope.SessionInfo" />
+        @if (messages.Title; as title) {
+            <div class="generic-modal-title">
+                <div class="header-ctrl-wrapper">
+                    <div class="header-ctrl d-flex justify-content-between align-items-center">
+                        <div [vnDynamicHtml]="title" class="header-ctrl-txt text-truncate"></div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="generic-modal-content-wrapper">
+            <div class="generic-modal-content">
+                <div class="login-duration-content-inner">
+                    <div class="login-duration-content-image-wrapper">
+                        @if (content().image; as image) {
+                            <vn-image
+                                [alt]="image.alt"
+                                [height]="image.height"
+                                [src]="image.src"
+                                [width]="image.width"
+                                imageClass="login-duration-content-image">
+                            </vn-image>
+                        }
+                    </div>
+
+                    <div [vnDynamicHtml]="loginDuration()" class="login-duration-content-text"></div>
+
+                    @if (config().showWinningsLosses) {
+                        <div [vnDynamicHtml]="winningsLosses()" class="winnings-losses-content-text"></div>
+                    }
+
+                    @if (config().showTotalWager) {
+                        <div [vnDynamicHtml]="totalWager()" class="total-wager-content-text"></div>
+                    }
+                </div>
+                <div [ngClass]="{ 'align-items-end d-flex': !config().enableLogoutButton }" class="session-timeout-alert-actions overlay-actions">
+                    <button (click)="close()" [ngClass]="{ 'w-100': config().enableLogoutButton }" class="btn btn-primary">
+                        {{ messages.KeepPlaying }}
+                    </button>
+
+                    @if (config().enableLogoutButton) {
+                        <button (click)="logout()" class="btn btn-light w-100">
+                            {{ messages.StopPlaying }}
+                        </button>
+                    }
+                </div>
+
+                @if (messages.Description; as description) {
+                    <div [vnDynamicHtml]="description" class="login-duration-description-text"></div>
+                }
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,25 @@
+@if (version === 1) {
+    @if (useFastIcon) {
+        @if (lang.routeValue; as src) {
+            <vn-icon [name]="src + '-flag'" />
+        }
+    } @else {
+        @if (lang.image; as src) {
+            <vn-image [src]="src" imageClass="flag flag-{{ lang.routeValue }}" />
+        }
+    }
+
+    <span class="lang-label">{{ lang.nativeName }}</span>
+} @else {
+    <div class="form-element form-element-right">
+        @if (displayRadioButton) {
+            <input
+                type="radio"
+                name="language"
+                [checked]="lang.isActive"
+                [attr.id]="lang.routeValue"
+                class="custom-control-input custom-control-radio" />
+        }
+        <label [attr.for]="lang.routeValue" class="lang-label">{{ lang.nativeName }}</label>
+    </div>
+}

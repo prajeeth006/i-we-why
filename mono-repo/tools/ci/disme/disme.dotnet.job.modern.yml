@@ -1,0 +1,51 @@
+spec:
+  inputs:
+    project:
+    when:
+    backendProject:
+    dismeShortcut:
+    dismeDocumentName:
+    dismeEnvironment:
+    dismeServers:
+    zipDirectory:
+    zipFileName:
+---
+start-$[[ inputs.project ]]:
+  stage: start
+  tags:
+    - linux-shell-runner
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .rules-$[[ inputs.when ]]
+  script:
+    - echo 'Started modern disme job of $[[ inputs.project ]]'
+
+build-server-$[[ inputs.project ]]:
+  stage: build
+  extends: .build-server
+  needs: ['version', 'version-xml', 'start-$[[ inputs.project ]]']
+  variables:
+    PROJECT: $[[ inputs.backendProject ]]
+
+disme-upload-$[[ inputs.project ]]:
+  extends: .disme-upload-shared
+  needs: ['version', 'build-server-$[[ inputs.project ]]']
+  variables:
+    DISME_SHORTCUT: $[[ inputs.dismeShortcut ]]
+    DISME_DOCUMENTNAME: $[[ inputs.dismeDocumentName ]]
+    ZIP_DIRECTORY: $[[ inputs.zipDirectory ]]
+    ZIP_FILE_NAME: $[[ inputs.zipFileName ]]
+    ZIP_FILE_EXTENSION: .zip
+
+disme-deploy-$[[ inputs.project ]]:
+  stage: deploy
+  extends:
+    - .disme-deploy
+    - .rules-$[[ inputs.when ]]
+  needs: ['disme-upload-$[[ inputs.project ]]']
+  variables:
+    DISME_SHORTCUT: $[[ inputs.dismeShortcut ]]
+    DISME_DOCUMENTNAME: $[[ inputs.dismeDocumentName ]]
+    DISME_ENVIRONMENT: $[[ inputs.dismeEnvironment ]]
+    DISME_SERVER: $[[ inputs.dismeServers ]]

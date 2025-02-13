@@ -1,0 +1,5 @@
+<div class="star-rating">
+    @for (item of starClass(); track trackByItem($index, item)) {
+        <vn-icon extraClass="star" [name]="item" />
+    }
+</div>

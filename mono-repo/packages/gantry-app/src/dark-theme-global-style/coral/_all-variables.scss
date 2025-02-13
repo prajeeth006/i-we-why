@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+
+@font-face {
+    font-family: 'Midnight Sans RD Pro 12';
+    src: url('/ClientDist/assets/MidnightSansRDPro-12Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+html[data-domain*='coral.co.uk'] {
+    --template-gradient-background: linear-gradient(90deg, #01243c 0%, #0a3a62 25.21%, #004779 48.96%, #0a3a62 71.61%, #02263f 100%);
+    --color-white: rgba(255, 255, 255); //#ffffff
+    --color-black: rgba(0, 0, 0); //#000000
+    --color-red: rgba(237, 28, 36, 1); //#ED1C24;
+    --color-theme: rgb(0, 71, 121); // #004779
+    --theme-yellow: rgba(255, 205, 0, 1); //#FFCD00
+    --theme-white-bg-text: rgba(0, 71, 121, 1); //#004779
+    --early-price-text: rgba(0, 71, 121, 1); //#004779
+    --top-2-finish-bg: rgba(0, 128, 5, 1); //#008005
+    --betting-bg: rgba(239, 51, 64, 1); //##EF3340
+    --footer-yellow-text: rgba(255, 205, 0, 1); //#FFCD00
+    --coral-yellow-lads-white: rgba(255, 205, 0, 1); //#FFCD00
+
+    // Font size
+    --fs-full-lead-title: 110px;
+    --fs-quad-lead-title: 55px;
+    --time-box-background: #ef3340;
+    --state-box-background: #fff;
+    --state-box-text: #004779;
+    --market-title-color: rgba(255, 205, 0, 1); // #FFCD00;
+
+    // Font Families
+    --ff-header-title: 'Midnight Sans RD Pro 12';
+}

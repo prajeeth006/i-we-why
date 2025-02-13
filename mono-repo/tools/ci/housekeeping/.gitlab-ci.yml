@@ -1,0 +1,11 @@
+stages:
+  - housekeeping
+
+branch-cleaner:
+  stage: housekeeping
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - cd backend/tools/Frontend.GitLab.BranchCleaner
+    - dotnet run -c Release

@@ -1,0 +1,129 @@
+# modified copy from https://gitlab.com/code-pushup/gitlab-pipelines-template/-/blob/main/code-pushup.yml?ref_type=heads
+# this job requires a CP_GITLAB_TOKEN variable with a GitLab token with API access and Developer|Reporter|Maintainer role
+spec:
+  inputs:
+    monorepo_task:
+      type: string
+      default: code-pushup
+      description: |
+        Name of task for running Code PushUp CLI in monorepo mode. Defaults to `code-pushup`.
+
+        Dependending on what monorepo tool is being used, this task may represent a `package.json` script, binary executable, Nx target or Turbo task.
+    bin:
+      type: string
+      default: npx --no-install @code-pushup/cli
+      description: Custom code-pushup executable
+    config:
+      type: string
+      default: ''
+      description: Custom code-pushup.config path
+    directory:
+      type: string
+      default: ''
+      description: Custom working directory
+    silent:
+      type: boolean
+      default: false
+      description: Silence logs from Code Pushup CLI
+    debug:
+      type: boolean
+      default: false
+      description: Print debug logs
+    detect_new_issues:
+      type: boolean
+      default: false
+      description: Whether to compare report diffs
+    output:
+      type: string
+      default: '.code-pushup/{project}'
+      description: Custom report output directory, see https://github.com/code-pushup/cli/tree/main/packages/ci#user-content-fn-2-d6725bca845da2efbfee2b8cad3eb5a6
+    skip_nx_cache:
+      type: boolean
+      default: false
+      description: Skip Nx cache
+    publish_all:
+      type: boolean
+      default: false
+      description: Whether to publish individual and complete CPU report in the comments or just the diff when there is one
+    when:
+      description: When to run the job
+    if:
+      description: When to run the job
+      default: $CI_MERGE_REQUEST_ID
+
+---
+$[[ inputs.monorepo_task ]]-run:
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  extends: .node_modules-cache
+  stage: trigger
+  rules:
+    - when: $[[ inputs.when ]]
+      if: $[[ inputs.if ]]
+      changes:
+        - packages/**/*
+        - backend/**/*
+        - tools/**/*
+  before_script:
+    - if [[ "$CP_DIRECTORY" != "" ]]; then cd $CP_DIRECTORY; fi
+  script:
+    - npx --yes @code-pushup/gitlab-ci
+  artifacts:
+    expire_in: 5 days
+    paths:
+      # this path is used by @code-pushup/ci to store the reports and compare them
+      - .code-pushup
+  variables:
+    NX_SKIP_NX_CACHE: $[[ inputs.skip_nx_cache ]]
+    CP_DETECT_NEW_ISSUES: $[[ inputs.detect_new_issues ]]
+    CP_MONOREPO: 'true'
+    CP_MONOREPO_TOOL: 'nx'
+    CP_MONOREPO_TASK: $[[ inputs.monorepo_task ]]
+    CP_BIN: $[[ inputs.bin ]]
+    CP_CONFIG: $[[ inputs.config ]]
+    CP_DIRECTORY: $[[ inputs.directory ]]
+    CP_SILENT: $[[ inputs.silent ]]
+    CP_DEBUG: $[[ inputs.debug ]]
+    CP_OUTPUT: $[[ inputs.output ]]
+
+$[[ inputs.monorepo_task ]]-report:
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  extends: .node_modules-cache
+  stage: report
+  rules:
+    - when: on_success
+      if: $[[ inputs.if ]]
+      changes:
+        - packages/**/*
+        - backend/**/*
+        - tools/**/*
+  needs:
+    - $[[ inputs.monorepo_task ]]-run
+  before_script:
+    - GITLAB_PRIVATE_TOKEN=$CP_GITLAB_TOKEN
+  script:
+    - cd .code-pushup
+    - |
+      if [ "$CI_MERGE_REQUEST_IID" != "" ]; then
+        if [ "$[[ inputs.publish_all ]]" = "true" ]; then
+          for report in *-report.md; do
+            if [ -f "$report" ]; then
+              prefix=$(echo "$report" | sed 's/-report\.md$//')
+              yarn ts-node --project ../tools/tsconfig.json ../tools/ci/common/scripts/create-or-update-comment.ts \
+                --projectId "$CI_PROJECT_ID" \
+                --mergeRequestIid "$CI_MERGE_REQUEST_IID" \
+                --notePrefix "CPU report - $prefix" \
+                --noteBodyPath "$report"
+            fi
+          done
+        elif [ -f "report-diff.md" ]; then
+          yarn ts-node --project ../tools/tsconfig.json ../tools/ci/common/scripts/create-or-update-comment.ts \
+            --projectId "$CI_PROJECT_ID" \
+            --mergeRequestIid "$CI_MERGE_REQUEST_IID" \
+            --notePrefix "CPU report - $[[ inputs.monorepo_task ]]" \
+            --noteBodyPath "report-diff.md"
+        fi
+      fi

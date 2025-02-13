@@ -1,0 +1,74 @@
+@if (version === 1 || version === 4) {
+    <div class="d-flex flex-column flex-sm-row" id="settingsLayout">
+        @if (!hideLeftSection) {
+            <div [ngClass]="{ 'd-none d-sm-block': hideLeftXs }" class="nav-left">
+                <ng-content select="[left]" />
+            </div>
+        }
+        <div class="portal-center-wrapper">
+            <ng-content select="[center]" />
+        </div>
+        @if (!hideRightSection) {
+            <div [ngClass]="{ 'd-none d-sm-block': hideRightXs }" class="right-section">
+                <ng-content select="[right]" />
+            </div>
+        }
+    </div>
+}
+@if (version === 2) {
+    <div class="navigation-layout d-flex flex-column flex-sm-row">
+        <ng-container *ngTemplateOutlet="contentView" />
+        @if (!hideMenu) {
+            <div class="navigation-menu-wrapper d-none d-lg-block">
+                <vn-account-menu route="menu/items" />
+            </div>
+            <div class="navigation-tiles-wrapper d-none d-lg-block">
+                <vn-account-menu route="menu/tiles" />
+            </div>
+        }
+    </div>
+}
+@if (version === 3) {
+    <div class="d-flex ch ch-account-menu-v3 navigation-layout" [style.height]="height" [vnElementKey]="VanillaElements.NAV_LAYOUT_CONTAINER">
+        @if (!hideMenu) {
+            <div
+                [class.d-none]="!isMediaQueryActive"
+                class="th-scroll th-scroll--y ch-shade ch-account-menu-v3__wrapper ch-account-menu-v3__wrapper--menu">
+                <vn-account-menu route="menu/items" mode="page" />
+            </div>
+        }
+        <ng-container *ngTemplateOutlet="contentView" />
+    </div>
+}
+@if (version === 5) {
+    <div class="ch-navigation-layout__wrapper" [style.height]="height" [vnElementKey]="VanillaElements.NAV_LAYOUT_CONTAINER">
+        @if (!hideMenu) {
+            <div [class.d-none]="!isMediaQueryActive" class="th-scroll th-scroll--y ch-shade account-menu-v5 ch-navigation-layout__menu">
+                <vn-account-menu route="menu/balance" />
+                <vn-account-menu route="menu/coins" />
+                @if (isProfilePage()) {
+                    <vn-account-menu route="menu/myhub" mode="page" />
+                } @else {
+                    <div class="am-items ch-menu-hub-tasks-wrapper ch-shade my-3">
+                        <vn-account-menu route="menu/myhub" mode="page" />
+                        <vn-account-menu route="menu/tasks" />
+                    </div>
+                }
+                <vn-account-menu route="menu/items" />
+            </div>
+        }
+        <ng-container *ngTemplateOutlet="contentView" />
+    </div>
+}
+<ng-template #contentView>
+    <div
+        (scroll)="onScroll($event)"
+        [ngClass]="{
+            'navigation-content-wrapper': version !== 3 && version !== 5,
+            'th-scroll th-scroll--y': version === 3 || version === 5,
+            'ch-account-menu-v3__wrapper': version === 3,
+            'ch-navigation-layout__my-hub': version === 5,
+        }">
+        <ng-content />
+    </div>
+</ng-template>

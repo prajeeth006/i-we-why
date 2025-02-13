@@ -1,0 +1,18 @@
+@if (visible) {
+    <a
+        (click)="showInbox()"
+        class="h-inbox inbox-icon ui-icon ui-icon-size-lg theme-inbox dh mr-3"
+        [ngClass]="item?.class"
+        [class.has-text]="item?.text">
+        <span
+            vnMenuItemBadge
+            [section]="MenuSection.Header"
+            item="inbox"
+            [badgeClass]="item.parameters?.badgeClass || 'badge-offset badge-size-sm'"
+            [badgeType]="item.parameters?.badgeType">
+        </span>
+        @if (item?.text) {
+            <div class="inbox-text">{{ item.text }}</div>
+        }
+    </a>
+}

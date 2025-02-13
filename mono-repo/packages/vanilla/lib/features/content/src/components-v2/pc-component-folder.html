@@ -1,0 +1,6 @@
+@if (item.title) {
+    <vn-pc-component-header-v2 [item]="item" />
+}
+@for (child of item.items | slice: 0 : item.maxItems; track trackByName) {
+    <ng-container *vnPageMatrix="child" />
+}

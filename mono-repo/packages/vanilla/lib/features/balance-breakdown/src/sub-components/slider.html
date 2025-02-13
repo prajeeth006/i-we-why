@@ -1,0 +1,42 @@
+<div class="bb-slider-container" [ngClass]="item.class">
+    <div class="bb-slider-text">
+        <span>{{ item.text }}</span>
+        @if (item.children.length > 1) {
+            <a class="bb-slider-tutorial-link" [attr.href]="item.url" [attr.target]="item.target" (click)="processClick($event, item)">
+                <vn-icon name="theme-question" extraClass="ui-icon ui-icon-size-lg text-info" />
+            </a>
+        }
+    </div>
+    <div class="bb-slider">
+        @if (sortedItems.length > 1) {
+            <vn-swiper [swiperOptions]="swiperConfig" swiperClass="balancebreakdownslider">
+                @for (child of sortedItems; track trackByItem($index, child)) {
+                    <div class="swiper-slide am-slider-item bb-slider-item">
+                        <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+                    </div>
+                }
+            </vn-swiper>
+            @if (swiperConfig.pagination) {
+                <div class="vn-carousel bb-dots-container">
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                        @for (child of sortedItems; track trackByItem(i, child); let i = $index) {
+                            <span class="swiper-pagination-handle" index="i">
+                                <span
+                                    (click)="goToSlide(i)"
+                                    [ngClass]="{ 'swiper-pagination-bullet-active': i === currentIndex }"
+                                    class="swiper-pagination-bullet"
+                                    index="i"
+                                    tabindex="i"
+                                    role="button"></span>
+                            </span>
+                        }
+                    </div>
+                </div>
+            }
+        } @else {
+            @for (child of sortedItems; track trackByItem($index, child)) {
+                <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+            }
+        }
+    </div>
+</div>

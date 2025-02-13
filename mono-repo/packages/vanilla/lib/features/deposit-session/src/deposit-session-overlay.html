@@ -1,0 +1,30 @@
+@if (depositSessionConfig.content; as content) {
+    <vn-header-bar [showBack]="false" [showClose]="false" [title]="content.title" class="deposit-session-header" />
+    <div class="deposit-session-container overlay-content text-center">
+        <div class="deposit-session__sub-title" [innerHtml]="content.text | trustAsHtml"></div>
+
+        @if (content.messages; as messages) {
+            <div
+                class="deposit-session__deposit-amount"
+                [innerHtml]="
+                    messages.depositAmount
+                        | format: (depositSessionEvent().cumulativeAmount | vnCurrency: depositSessionEvent().currency)
+                        | trustAsHtml
+                "></div>
+            <div class="deposit-session__text" [innerHtml]="messages.text | trustAsHtml"></div>
+        }
+
+        <div class="form-element btn-container deposit-session-btn-container">
+            @if (depositSessionConfig.continueSessionButton; as continueSessionButton) {
+                <button ds-button (click)="continueSession()" class="btn btn-primary btn-lg">
+                    {{ continueSessionButton.text }}
+                </button>
+            }
+            @if (depositSessionConfig.finishButton; as finishButton) {
+                <button ds-button (click)="finishSession()" class="btn btn-light btn-lg ds-btn-outline-primary">
+                    {{ finishButton.text }}
+                </button>
+            }
+        </div>
+    </div>
+}

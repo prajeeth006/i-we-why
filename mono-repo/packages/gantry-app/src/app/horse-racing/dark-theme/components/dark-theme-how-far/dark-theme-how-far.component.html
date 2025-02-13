@@ -1,0 +1,51 @@
+<div class="how-far-page">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+            <ng-container header-content>
+                <gn-dark-theme-header [title]="vm?.eventTimePlusTypeName" [racingImage]="vm?.horseRacingContent?.horseRacingImage?.src"
+                    >>
+                    <ng-container raceStage-content>
+                        <div class="header-status-box tilted-card default-fontsize">
+                            <span class="tilted-text" id="RightHeaderID">
+                                {{ vm?.horseRacingContent?.contentParameters?.Today ?? '' }}
+                            </span>
+                        </div>
+                    </ng-container>
+                </gn-dark-theme-header>
+            </ng-container>
+            <ng-container body-content>
+                <div class="how-far-content">
+                    <div id="hTitle" class="horse-name-title">
+                        {{
+                            vm?.horseRacingContent?.contentParameters?.HowFarWill
+                                ? (vm?.horseRacingContent?.contentParameters?.HowFarWill | capitalizeFirst)
+                                : ''
+                        }}
+                        <strong>{{ vm?.marketNameOnTemplate | titlecase }}</strong>
+                        {{ vm?.horseRacingContent?.contentParameters?.WinBy ? (vm?.horseRacingContent?.contentParameters?.WinBy | lowercase) : '' }}
+                    </div>
+                    <ul class="selection-table">
+                        <li *ngFor="let selection of vm?.selections" id="events">
+                            <div id="selectionName" class="selection-name">
+                                {{ selection?.selectionName | titleCaseExceptPipe }}
+                            </div>
+                            <div class="selection-content">
+                                <div id="selectionPrice" class="current-price__tilted" autoAdjustFont>
+                                    <span id="selectionPriceId" class="current-price__tilted--text" *ngIf="selection?.prices?.price[0]">
+                                        {{ selection?.price | marketPriceTransform: selection?.hideEntry }}
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <gn-dark-theme-footer-full [leftSideText]="vm?.horseRacingContent?.contentParameters?.DarkHowFarLeftSideText ?? ''">
+                </gn-dark-theme-footer-full>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

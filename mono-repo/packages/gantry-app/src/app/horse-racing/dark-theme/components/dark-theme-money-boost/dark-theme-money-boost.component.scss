@@ -1,0 +1,122 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    font-size: $font-54;
+    color: $color-white;
+    border: solid 5px $color-white;
+    padding: 0 12px;
+    text-align: center;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: $font-27;
+        border-width: 2.5px;
+        padding: 0 6px;
+    }
+}
+
+.money-boost-content {
+    display: flex;
+    align-items: center;
+    column-gap: 68px;
+
+    @include breakpoint(multidesktop) {
+        column-gap: 34px;
+    }
+
+    .money-boost__image {
+        align-self: flex-end;
+
+        img {
+            width: 294px;
+            height: auto;
+
+            @include breakpoint(multidesktop) {
+                width: 147px;
+            }
+        }
+    }
+
+    .money-boost__info {
+        display: flex;
+        column-gap: 38px;
+
+        @include breakpoint(multidesktop) {
+            column-gap: 19px;
+        }
+
+        .price-boost__wrapper {
+            flex: 0 0 900px;
+
+            @include breakpoint(multidesktop) {
+                flex-basis: 450px;
+            }
+        }
+
+        .price-wrapper {
+            @include flex-center;
+            flex-direction: column;
+            flex: 1 0 420px;
+
+            @include breakpoint(multidesktop) {
+                flex-basis: 210px;
+            }
+        }
+    }
+}
+
+.price-boost__text {
+    font-size: $font-100;
+    line-height: $font-100;
+    font-weight: $fw-medium;
+    color: $theme-yellow;
+    margin-bottom: 51px;
+
+    @include breakpoint(multidesktop) {
+        font-size: $font-50;
+        line-height: $font-50;
+        margin-bottom: 25px;
+    }
+}
+
+.selection-name {
+    font-size: $font-70;
+    font-weight: $fw-bold;
+    line-height: 82px;
+
+    @include breakpoint(multidesktop) {
+        font-size: $font-35;
+        line-height: 41px;
+    }
+}
+
+.current-price {
+    height: 168px;
+    font-size: $font-120;
+    font-weight: $fw-bold;
+    background: $color-white;
+    color: $theme-white-bg-text;
+    text-align: center;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        height: 84px;
+        font-size: $font-60;
+    }
+}
+
+.past-price {
+    font-size: $font-60;
+    line-height: $font-60;
+    font-weight: $fw-bold;
+    text-align: center;
+    margin-top: 30px;
+
+    @include breakpoint(multidesktop) {
+        font-size: $font-30;
+        line-height: $font-30;
+        margin-top: 15px;
+    }
+}

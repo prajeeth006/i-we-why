@@ -1,0 +1,21 @@
+@if (languageSwitcherService.headerEnabled()) {
+    <vn-header-bar [enabled]="true" [title]="commonMessages.LanguageSwitcherTitle" (onClose)="close()" [showClose]="true" [showBack]="false" />
+}
+<div class="language-switcher-menu" [ngStyle]="{ 'grid-template-rows': 'repeat(' + gridRows + ', auto)' }">
+    @if (languages) {
+        @for (lang of languages; track trackByNativeName($index, lang)) {
+            <div class="language-switcher-item-wrapper">
+                @if (lang.isActive) {
+                    <div (click)="close()" class="language-switcher-item active">
+                        <vn-language-item [lang]="lang" />
+                    </div>
+                }
+                @if (!lang.isActive) {
+                    <a (click)="change(lang)" class="language-switcher-item">
+                        <vn-language-item [lang]="lang" />
+                    </a>
+                }
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,13 @@
+@if (section().title) {
+    <div class="footer-menu-section-title" (click)="toggle()" [class.expandable]="config.expandableModeEnabled">
+        @if (config.expandableModeEnabled) {
+            <i class="ui-icon ui-icon-size-sm" [class]="expanded() ? config.expandableModeIcons.expanded : config.expandableModeIcons.collapsed"></i>
+        }
+        {{ section().title }}
+    </div>
+}
+@if (expanded()) {
+    @for (item of section().items; track 'text') {
+        <vn-footer-menu-item [item]="item" />
+    }
+}

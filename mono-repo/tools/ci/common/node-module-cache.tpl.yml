@@ -1,0 +1,13 @@
+.node_modules-cache:
+  cache:
+    key:
+      files:
+        - yarn.lock
+      prefix: $CI_JOB_IMAGE
+    paths:
+      - node_modules
+    policy: pull
+  before_script:
+    - if [ -d "node_modules" ]; then
+      chmod +x ./node_modules/.bin/*;
+      fi

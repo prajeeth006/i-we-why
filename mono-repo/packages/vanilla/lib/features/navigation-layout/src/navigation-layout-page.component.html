@@ -1,0 +1,200 @@
+@if (version === 1 || version === 4) {
+    <div class="h-100">
+        <lh-header-bar
+            class="d-block d-sm-none"
+            [enabled]="headerEnabled"
+            [content]="title ? title : item?.pageTitle || ''"
+            [showBackButton]="!hideBackButton"
+            (onBack)="back()"
+            (onClose)="close()"
+            [disableClose]="hideCloseButton || !!item?.hideHeaderCloseButton"
+            [showConfirmPopup]="showConfirmPopup()"
+            [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+            [confirmPopupTrackClick]="confirmPopupTrackClick()"
+            [trackBackClickEvent]="trackBackClickEvent()"
+            [trackCloseClickEvent]="trackCloseClickEvent()" />
+        <lh-navigation-layout
+            [version]="version"
+            [bodyClass]="'settingPage'"
+            [hideLeftSection]="hideLeftMenu"
+            [hideLeftXs]="true"
+            [hideRightXs]="true"
+            [sourceItem]="sourceItem"
+            [hideRightSection]="!showRightSection"
+            [scrolledToBottomPadding]="scrolledToBottomPadding">
+            <div left class="font-weight-normal">
+                <h2 [class]="titleClass">{{ item?.leftMenuTitle }}</h2>
+                <lh-navigation-layout-left-menu [sourceItem]="sourceItem" />
+            </div>
+            <div class="navigation-layout-content" center>
+                @if (showTitle) {
+                    <h2 class="d-none d-sm-flex">{{ title ? title : item?.pageTitle }}</h2>
+                }
+                <ng-container *ngTemplateOutlet="contentView" />
+            </div>
+            <div right></div>
+        </lh-navigation-layout>
+    </div>
+}
+@if (version === 2) {
+    <div class="d-none d-sm-block" class="navigation-layout-page" id="navigation-layout-page">
+        <vn-header-bar
+            [enabled]="true"
+            [showBack]="false"
+            (onClose)="close()"
+            [showConfirmPopup]="showConfirmPopup()"
+            [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+            [confirmPopupTrackClick]="confirmPopupTrackClick()"
+            [trackBackClickEvent]="trackBackClickEvent()"
+            [trackCloseClickEvent]="trackCloseClickEvent()">
+            <div class="header-ctrl-avatar" left>
+                @if (headerImage) {
+                    <img
+                        class="header-ctrl-image"
+                        [src]="headerImage.src"
+                        [alt]="headerImage.alt"
+                        width="headerImage.width"
+                        height="headerImage.height" />
+                } @else {
+                    <vn-icon name="theme-account" extraClass="ui-icon" />
+                }
+                <span class="header-ctrl-username">{{ user.displayName }}</span>
+            </div>
+        </vn-header-bar>
+        <vn-header-bar
+            (onBack)="back()"
+            [enabled]="headerEnabled"
+            class="d-block d-sm-none"
+            [title]="title ? title : item?.pageTitle || ''"
+            (onClose)="close()"
+            [showConfirmPopup]="showConfirmPopup()"
+            [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+            [confirmPopupTrackClick]="confirmPopupTrackClick()"
+            [trackBackClickEvent]="trackBackClickEvent()"
+            [trackCloseClickEvent]="trackCloseClickEvent()" />
+        <lh-navigation-layout [version]="version" [hideMenu]="hideMenu" [scrolledToBottomPadding]="scrolledToBottomPadding" id="navigation-layout">
+            @if (showTitle) {
+                <div class="navigation-layout-page-title d-none d-sm-flex">{{ title ? title : item?.pageTitle }}</div>
+            }
+            @if (!hideTopMenu && item?.topMenuItems?.length > 1) {
+                <lh-navigation-layout-top-menu-v2 [item]="item" />
+            }
+            @if (showLoadingIndicator) {
+                <div class="loading d-none d-sm-flex">
+                    <span>{{ commonMessages.LoadingIndicatorFallbackMessage }}</span>
+                </div>
+            }
+            <div class="navigation-layout-page-content" id="navigation-layout-page-content">
+                <div [ngClass]="contentContainerClassV2">
+                    <ng-container *ngTemplateOutlet="contentView" />
+                </div>
+            </div>
+        </lh-navigation-layout>
+    </div>
+}
+@if (version === 3) {
+    <div class="navigation-layout-page">
+        <nav class="navbar navbar-expand-sm sub-nav-customer-hub d-none d-sm-flex">
+            <ul class="tab-nav navbar-nav">
+                <li (click)="navigation.goToLastKnownProduct()" class="tab-nav-item back-btn">
+                    <a class="tab-nav-link theme-left">{{ commonMessages.NavigationLayout_Home }}</a>
+                </li>
+                <li class="tab-nav-item">
+                    <a class="tab-nav-link">{{ commonMessages.NavigationLayout_MyAccount }}</a>
+                </li>
+            </ul>
+        </nav>
+        <vn-header-bar
+            (onBack)="back()"
+            [enabled]="headerEnabled"
+            class="d-block d-sm-none"
+            [title]="title ? title : item?.pageTitle || ''"
+            (onClose)="close()"
+            [showConfirmPopup]="showConfirmPopup()"
+            [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+            [confirmPopupTrackClick]="confirmPopupTrackClick()"
+            [trackBackClickEvent]="trackBackClickEvent()"
+            [trackCloseClickEvent]="trackCloseClickEvent()" />
+        <lh-navigation-layout
+            [version]="version"
+            [hideMenu]="hideMenu"
+            [scrolledToBottomPadding]="scrolledToBottomPadding"
+            id="navigation-layout"
+            [mediaQueries]="mediaQueries">
+            <div class="ch-account-menu-v3__content-bg" id="navigation-layout-content-container">
+                @if (showTitle) {
+                    <div class="navigation-layout-page-title d-none d-sm-flex">{{ title ? title : item?.pageTitle }}</div>
+                }
+                @if (!hideTopMenu && item?.topMenuItems?.length > 1) {
+                    <lh-navigation-layout-top-menu-v2 [item]="item" />
+                }
+                @if (showLoadingIndicator) {
+                    <div class="loading d-none d-sm-flex">
+                        <span>{{ commonMessages.LoadingIndicatorFallbackMessage }}</span>
+                    </div>
+                }
+                <div class="navigation-layout-page-content" id="navigation-layout-page-content">
+                    <ng-container *ngTemplateOutlet="contentView" />
+                </div>
+            </div>
+            <vn-dynamic-layout-slot [slot]="SlotName.NavLayoutFooter" />
+        </lh-navigation-layout>
+    </div>
+}
+
+@if (version === 5) {
+    <div class="ch-navigation-layout navigation-layout-page">
+        <nav class="navbar navbar-expand-sm sub-nav-customer-hub">
+            <ul class="tab-nav navbar-nav">
+                <li (click)="navigation.goToLastKnownProduct()" class="tab-nav-item back-btn">
+                    <a class="tab-nav-link theme-left">{{ commonMessages.NavigationLayout_Home }}</a>
+                </li>
+                <li class="tab-nav-item tab-nav-item--selected">
+                    <a class="tab-nav-link">{{ commonMessages.NavigationLayout_MyAccount }}</a>
+                </li>
+            </ul>
+        </nav>
+        <vn-header-bar
+            (onBack)="back()"
+            [enabled]="headerEnabled"
+            class="d-block d-sm-none"
+            [title]="title ? title : item?.pageTitle || ''"
+            (onClose)="close()"
+            [showConfirmPopup]="showConfirmPopup()"
+            [confirmPopupTrackLoad]="confirmPopupTrackLoad()"
+            [confirmPopupTrackClick]="confirmPopupTrackClick()"
+            [trackBackClickEvent]="trackBackClickEvent()"
+            [trackCloseClickEvent]="trackCloseClickEvent()" />
+        <lh-navigation-layout
+            [version]="version"
+            [hideMenu]="hideMenu"
+            [scrolledToBottomPadding]="scrolledToBottomPadding"
+            id="navigation-layout"
+            [mediaQueries]="mediaQueries"
+            [isProfilePage]="isProfilePage()">
+            <div
+                [class]="isProfilePage() ? 'ch-navigation-layout__my-hub-profile' : 'ch-navigation-layout__my-hub-page ch-shade'"
+                id="navigation-layout-content-container">
+                @if (showTitle) {
+                    <div class="navigation-layout-page-title d-none d-sm-flex h4-v2">{{ title ? title : item?.pageTitle }}</div>
+                }
+                @if (!hideTopMenu && item?.topMenuItems?.length > 1) {
+                    <lh-navigation-layout-top-menu-v2 [item]="item" />
+                }
+                @if (showLoadingIndicator) {
+                    <div class="loading d-none d-sm-flex">
+                        <span>{{ commonMessages.LoadingIndicatorFallbackMessage }}</span>
+                    </div>
+                }
+                <div class="ch-my-hub__wrapper" id="navigation-layout-page-content">
+                    <ng-container *ngTemplateOutlet="contentView" />
+                </div>
+            </div>
+            <vn-dynamic-layout-slot [slot]="SlotName.NavLayoutFooter" />
+        </lh-navigation-layout>
+    </div>
+}
+
+<ng-template #contentView>
+    <ng-content />
+</ng-template>

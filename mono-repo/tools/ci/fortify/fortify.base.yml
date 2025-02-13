@@ -1,0 +1,21 @@
+stages:
+  - fortify
+
+include:
+  - local: tools/ci/common/rules.yml
+
+.fortify:
+  stage: fortify
+  extends: .rules-manual
+  tags:
+    - fortify-docker
+  timeout: 2h
+  script:
+    - Copy-Item $BPTY_BUILD_PROJECT -Destination (new-item -force ("Fortify.proj"))
+    - cat Fortify.proj
+    - '& "$env:MSBUILD170_PATH\msbuild.exe" /target:Bpty_NuGetInstall,Bpty_Fortify_MSBuild Fortify.proj'
+  needs: []
+  artifacts:
+    when: on_failure
+    paths:
+      - .\\_build

@@ -1,0 +1,56 @@
+{
+    "name": "vanilla-nx-plugin",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/vanilla/nx-plugin/src",
+    "projectType": "library",
+    "tags": ["type:nx-plugin", "scope:vanilla"],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/build/packages/vanilla/nx-plugin",
+                "main": "packages/vanilla/nx-plugin/src/index.ts",
+                "tsConfig": "packages/vanilla/nx-plugin/tsconfig.lib.json",
+                "assets": [
+                    "packages/vanilla/nx-plugin/*.md",
+                    {
+                        "input": "./packages/vanilla/nx-plugin/src",
+                        "glob": "**/!(*.ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/vanilla/nx-plugin/src",
+                        "glob": "**/*.d.ts",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/vanilla/nx-plugin",
+                        "glob": "generators.json",
+                        "output": "."
+                    },
+                    {
+                        "input": "./packages/vanilla/nx-plugin",
+                        "glob": "executors.json",
+                        "output": "."
+                    }
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/packages/vanilla/nx-plugin"],
+            "options": {
+                "jestConfig": "packages/vanilla/nx-plugin/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/vanilla/nx-plugin/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

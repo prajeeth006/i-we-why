@@ -1,0 +1,149 @@
+{
+    "name": "workspace",
+    "$schema": "node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": ".",
+    "tags": ["scope:shared"],
+    "targets": {
+        "code-pushup-workspace": {
+            "cache": true,
+            "inputs": ["{workspaceRoot}/code-pushup.config.ts", "{workspaceRoot}/packages/code-pushup-utils", "production"],
+            "outputs": ["{workspaceRoot}/.code-pushup/workspace"],
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": ["npx @code-pushup/cli --config=code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false --verbose"]
+            },
+            "forwardAllArgs": true
+        },
+        "local-registry": {
+            "executor": "@nx/js:verdaccio",
+            "options": {
+                "port": 4873,
+                "config": ".verdaccio/config.yml",
+                "storage": "tmp/local-registry/storage"
+            }
+        },
+        "reset-registry": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": ["npm set registry https://artifactory.bwinparty.corp/artifactory/api/npm/npm-public/"]
+            }
+        },
+        "release-vanilla": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": ["vanilla-lib", "loaders-lib"]
+            },
+            "configurations": {
+                "official": {
+                    "changelog": {
+                        "path": "packages/vanilla/CHANGELOG.md",
+                        "headingPrefix": "### Vanilla ",
+                        "notReleasedSuffix": " [Not released yet]",
+                        "releaseDatePlaceholder": "[Release date: TBD]",
+                        "emptyChangesTemplate": "- DESCRIBE CHANGES HERE"
+                    },
+                    "email": {
+                        "from": "d.dtp.vanilla@entaingroup.com",
+                        "to": "d.dtp.vanilla-stakeholders@gvcgroup.com",
+                        "subject": "Vanilla {version} Released",
+                        "html": "<p>Dear colleagues</p><p>Vanilla {version} has been released.</p><p><a href='https://vie.git.bwinparty.com/vanilla/monorepo/blob/main/packages/vanilla/CHANGELOG.md#vanilla-{versionWithoutDots}'>Release notes</a><br /><br />Best regards,<br />Vanilla Team</p>"
+                    },
+                    "jira": {
+                        "name": "Vanilla {version}",
+                        "project": "DTP"
+                    },
+                    "shouldNotifyTeams": true
+                }
+            }
+        },
+        "release-themes": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": ["tag:type:theme"]
+            },
+            "configurations": {
+                "official": {
+                    "changelog": {
+                        "path": "packages/themepark/CHANGELOG.md",
+                        "headingPrefix": "### Vanilla Themes ",
+                        "notReleasedSuffix": " [Not released yet]",
+                        "releaseDatePlaceholder": "[Release date: TBD]",
+                        "emptyChangesTemplate": "- DESCRIBE CHANGES HERE"
+                    },
+                    "email": {
+                        "from": "\"Vanilla Themes - Honey Badgers\" <d.dtp.honeybadgers@entaingroup.com>",
+                        "to": "d.BPTY-Digital-Touchpoints-Vanilla-Themes-Stakeholders@entaingroup.com",
+                        "subject": "Vanilla Themes {version} Released",
+                        "html": "<p>Dear colleagues</p><p>Vanilla Themes {version} has been released.</p><p><a href='https://vie.git.bwinparty.com/vanilla/monorepo/-/blob/main/packages/themepark/CHANGELOG.md#vanilla-themes-{versionWithoutDots}'>Release notes</a><br /><br />Best regards,<br />Vanilla Themes - Honey Badgers Team</p>"
+                    },
+                    "shouldNotifyTeams": true
+                }
+            }
+        },
+        "release-design-system": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": ["design-system-ui"]
+            },
+            "configurations": {
+                "official": {
+                    "changelog": {
+                        "path": "packages/design-system/ui/CHANGELOG.md",
+                        "headingPrefix": "### Design System Components & Themes",
+                        "notReleasedSuffix": " [Not released yet]",
+                        "releaseDatePlaceholder": "[Release date: TBD]",
+                        "emptyChangesTemplate": "- DESCRIBE CHANGES HERE"
+                    },
+                    "shouldNotifyTeams": true
+                }
+            }
+        },
+        "release-frontend-kits": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": [
+                    "frontend-dev-kit",
+                    "frontend-migration-kit",
+                    "frontend-nx-plugin",
+                    "gitlab-data-access",
+                    "themepark-nx-plugin",
+                    "code-pushup-utils"
+                ]
+            },
+            "configurations": {
+                "official": {
+                    "shouldNotifyTeams": true
+                }
+            }
+        },
+        "release-promo-libs": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": ["promo-eds-widget-lib", "promo-offers-lib", "promo-smart-widget-lib", "promo-utils"]
+            },
+            "configurations": {
+                "official": {
+                    "changelog": {
+                        "path": "packages/promo/CHANGELOG.md",
+                        "headingPrefix": "### Promo libs",
+                        "notReleasedSuffix": " [Not released yet]",
+                        "releaseDatePlaceholder": "[Release date: TBD]",
+                        "emptyChangesTemplate": "- DESCRIBE CHANGES HERE"
+                    },
+                    "shouldNotifyTeams": true
+                }
+            }
+        },
+        "release-casino-libs": {
+            "executor": "@frontend/nx-plugin:release",
+            "options": {
+                "projects": ["casino-frontend-lib", "casino-platform-lib", "casino-loader-lib"]
+            },
+            "configurations": {
+                "official": {
+                    "shouldNotifyTeams": true
+                }
+            }
+        }
+    }
+}

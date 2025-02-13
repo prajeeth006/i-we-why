@@ -1,0 +1,27 @@
+@if (useFastIconType === true) {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.Menu"
+        linkClass="am-menu-item"
+        displayMode="FastIcon"
+        badgePosition="FastIcon"
+        [iconClass]="version === 4 ? 'ui-icon am-menu-icn' : 'ui-icon'"
+        badgeClass="badge-offset"
+        textClass="menu-item-txt"
+        [text]="text"
+        [processClick]="false"
+        (click)="processClick($event, item, false)" />
+} @else {
+    <vn-menu-item
+        [item]="item"
+        [section]="MenuSection.Menu"
+        linkClass="am-menu-item"
+        displayMode="icon"
+        badgePosition="icon"
+        [iconClass]="version === 4 ? 'ui-icon am-menu-icn' : 'ui-icon'"
+        badgeClass="badge-offset"
+        textClass="menu-item-txt"
+        [text]="text"
+        [processClick]="false"
+        (click)="processClick($event, item, false)" />
+}

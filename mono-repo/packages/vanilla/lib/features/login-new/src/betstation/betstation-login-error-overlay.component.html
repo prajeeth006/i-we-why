@@ -1,0 +1,14 @@
+<div class="generic-container-wrapper generic-container-wrapper--error">
+    <div class="generic-container-title">
+        <div class="header-ctrl-wrapper">
+            <div class="header-ctrl d-flex justify-content-between align-items-center"></div>
+        </div>
+    </div>
+    <div class="betstation-error-message" [innerHTML]="error"></div>
+
+    <div class="btn-container">
+        <button class="betstation-error-btn btn btn-primary" (click)="close()">
+            {{ commonMessages.Okay }}
+        </button>
+    </div>
+</div>

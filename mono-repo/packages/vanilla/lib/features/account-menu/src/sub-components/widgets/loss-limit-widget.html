@@ -1,0 +1,31 @@
+<vn-am-widget [hideSkeleton]="hideSkeleton" [item]="item" [mode]="mode">
+    @if (model) {
+        <div class="ch__font--subtitle font-weight-bold d-flex align-items-center mb-2">
+            @if (model?.arrowClass) {
+                <div class="pb-1 mr-1">
+                    <div [ngClass]="model?.arrowClass"></div>
+                </div>
+            }
+            <div>{{ model?.totalNetDeposit | vnCurrency }}</div>
+        </div>
+        <div class="ch__font--description">{{ model?.description }}</div>
+        <div class="background-bar">
+            <div class="progress" [style.width.%]="model?.percentageElapsed"></div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <span>{{ item.resources.GlobalLossLimit }}</span>
+            <span [innerHtml]="model.limitText"></span>
+        </div>
+        @if (model?.remainingDeposit > 0) {
+            <div class="ch-widget__footer ch__font text-center mt-2">
+                <div [innerHtml]="model.limitNotReachedText | trustAsHtml"></div>
+            </div>
+        }
+        @if (model?.remainingDeposit <= 0) {
+            <div class="ch-widget__footer ch__font d-flex align-items-center mt-2">
+                <vn-icon name="theme-warning" extraClass="ch__font--title d-flex text-warning mr-2" />
+                <div [vnDynamicHtml]="model.limitReachedText"></div>
+            </div>
+        }
+    }
+</vn-am-widget>

@@ -1,0 +1,43 @@
+spec:
+  inputs:
+    type:
+    uses:
+    when:
+    if:
+    depth:
+      type: number
+      default: 20
+---
+trigger-$[[ inputs.type ]]-pipeline:
+  stage: trigger
+  when: $[[ inputs.when ]]
+  variables:
+    GIT_DEPTH: $[[ inputs.depth ]]
+    CHILD_PIPELINE_TYPE: $[[ inputs.type ]]
+  extends:
+    - .node_modules-cache
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/$[[ inputs.uses ]]/scripts/generate-$[[ inputs.uses ]]-pipeline.ts
+  rules:
+    - if: $[[ inputs.if ]]
+  artifacts:
+    paths:
+      - $GENERATED_ARTIFACTS_DEST/$[[ inputs.type ]]-pipeline.yml
+
+$[[ inputs.type ]]-pipeline:
+  stage: trigger
+  needs:
+    - trigger-$[[ inputs.type ]]-pipeline
+  variables:
+    GIT_DEPTH: $[[ inputs.depth ]]
+  trigger:
+    include:
+      - artifact: $GENERATED_ARTIFACTS_DEST/$[[ inputs.type ]]-pipeline.yml
+        job: trigger-$[[ inputs.type ]]-pipeline
+    forward:
+      pipeline_variables: true
+  rules:
+    - if: $[[ inputs.if ]]

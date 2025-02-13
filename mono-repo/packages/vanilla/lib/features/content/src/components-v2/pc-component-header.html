@@ -1,0 +1,28 @@
+<ng-template #content>
+    @if (item.titleLink) {
+        <a [href]="item.titleLink.url" [vnHtmlAttrs]="item.titleLink.attributes" class="pc-h-a">{{ title }}</a>
+    }
+    @if (!item.titleLink) {
+        {{ title }}
+    }
+</ng-template>
+@switch (tag) {
+    @case ('h1') {
+        <h1 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h1>
+    }
+    @case ('h2') {
+        <h2 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h2>
+    }
+    @case ('h3') {
+        <h3 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h3>
+    }
+    @case ('h4') {
+        <h4 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h4>
+    }
+    @case ('h5') {
+        <h5 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h5>
+    }
+    @case ('h6') {
+        <h6 [id]="item.name" class="pc-h" [ngClass]="titleClass"><ng-container *ngTemplateOutlet="content" /></h6>
+    }
+}

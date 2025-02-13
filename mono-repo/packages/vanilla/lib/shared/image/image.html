@@ -1,0 +1,48 @@
+@if (src) {
+    <div class="vn-img">
+        @if (width && height) {
+            <img
+                disableOptimizedSrcset
+                [ngSrc]="src"
+                [attr.alt]="alt || title || null"
+                [priority]="priority"
+                [height]="height"
+                [width]="width"
+                [ngClass]="'vn-img__image-fluid' + (imageClass ? ' ' + imageClass : '')" />
+        }
+        <!--Remove when width and height are always defined-->
+        @if (!width || !height) {
+            <img
+                [src]="src"
+                [attr.alt]="alt || title || null"
+                [attr.height]="height || null"
+                [attr.width]="width || null"
+                [class]="'vn-img__image-fluid' + (imageClass ? ' ' + imageClass : '')" />
+        }
+        <!--Image overlay text-->
+        @if (intro || title || subtitle) {
+            <div
+                [class]="textClass + '__text-container'"
+                [ngClass]="{ 'text-center': textAlign?.toLowerCase() === 'center', 'text-right': textAlign?.toLowerCase() === 'right' }">
+                @if (intro) {
+                    <div
+                        [class]="textClass + '__intro'"
+                        [innerHTML]="intro | trustAsHtml"
+                        [ngClass]="{ 'text-sm': titleFontSize?.toLowerCase() === 'small' }"></div>
+                }
+                @if (title) {
+                    <div
+                        [class]="textClass + '__title'"
+                        [innerHTML]="title | trustAsHtml"
+                        [ngClass]="{ 'text-sm': titleFontSize?.toLowerCase() === 'small' }"></div>
+                }
+                @if (subtitle) {
+                    <div
+                        [class]="textClass + '__subtitle'"
+                        [innerHTML]="subtitle | trustAsHtml"
+                        [ngClass]="{ 'text-sm': titleFontSize?.toLowerCase() === 'small' }"></div>
+                }
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,27 @@
+@if (deviceService.isMobilePhone) {
+    <div class="generic-modal-wrapper">
+        <div class="generic-modal-content-wrapper">
+            <div [vnElementKey]="VanillaElements.QUICK_DEPOSIT_WRAPPER" class="player-quickdeposit-v2">
+                <div class="player-quickdeposit-content-loading-v2">
+                    <vn-cashier-iframe
+                        [url]="url()"
+                        cssClass="player-quickdeposit-iframe-wrapper"
+                        iframeClass="player-quickdeposit-iframe-v2"
+                        (onClosed)="close($event)"
+                        (onResized)="resize($event)" />
+                </div>
+            </div>
+        </div>
+    </div>
+} @else {
+    <div [vnElementKey]="VanillaElements.QUICK_DEPOSIT_WRAPPER" class="player-quickdeposit quickdeposit-v2">
+        <div class="player-quickdeposit-content-loading">
+            <vn-cashier-iframe
+                [url]="url()"
+                cssClass="player-quickdeposit-iframe-wrapper"
+                iframeClass="player-quickdeposit-iframe"
+                (onClosed)="close($event)"
+                (onResized)="resize($event)" />
+        </div>
+    </div>
+}

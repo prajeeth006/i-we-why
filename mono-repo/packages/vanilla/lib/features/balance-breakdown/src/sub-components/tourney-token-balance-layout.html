@@ -1,0 +1,28 @@
+@if (balanceContent.v2) {
+    @if (!hideIfZero || balance !== 0) {
+        <div [ngClass]="item.class">
+            <div class="list-nav-link dnh" [ngClass]="item.name">
+                @if (item.parameters['icon-class']; as iconClass) {
+                    <vn-icon [name]="iconClass" extraClass="ui-icon ui-icon-size-l" />
+                }
+                <div class="list-nav-txt balance-text">{{ text }}</div>
+                <div class="list-nav-txt balance-text-small">
+                    {{ item.resources.Description || '' }}
+                    @if (item.resources.DetailsText && (!hideDetailsIfZero || balance !== 0)) {
+                        <a [attr.href]="item.url" [attr.target]="item.target" (click)="processClick($event, item)"
+                            ><span class="text-info text-underline balance-details-link">{{ item.resources.DetailsText }}</span></a
+                        >
+                    }
+                </div>
+            </div>
+            <div class="balance-amount">{{ balance | number: '1.2-2' }}</div>
+        </div>
+    }
+} @else {
+    @if (!hideIfZero || balance !== 0) {
+        <div class="list-nav-link dnh" [ngClass]="item.name">
+            <div class="list-nav-txt balance-text">{{ text }}</div>
+            <div class="font-weight-bold ml-auto balance-amount">{{ balance | number: '1.2-2' }}</div>
+        </div>
+    }
+}

@@ -1,0 +1,26 @@
+stages:
+  - validate-workspaces
+
+matrix-validate-workspaces:
+  stage: validate-workspaces
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  parallel:
+    matrix:
+      - REPO:
+          - 'vanilla/monorepo'
+  variables:
+    TARGET_DIR: ./dist/workspace-validation/$REPO
+    GIT_DEPTH: 0
+  script:
+    - rm -f package.json && rm -f yarn.lock # Avoid Yarn error when running yarn install in a sub-folder
+    - mkdir -p $CI_PROJECT_DIR/repo && cd $CI_PROJECT_DIR/repo
+    - git clone --single-branch https://gitlab-ci-token:${CI_JOB_TOKEN}@vie.git.bwinparty.com/${REPO}.git .
+    - yarn config set enableImmutableInstalls false
+    - yarn install
+    - yarn add @frontend/migration-kit@latest -D
+    - yarn up @frontend/migration-kit@latest || echo "Yarn version of $REPO is incompatible with the monorepo one"
+    - yarn info @frontend/migration-kit
+    - cp ../tools/ci/workspace-validation/scripts/exec-workspace-validation.js .
+    - node exec-workspace-validation.js $TARGET_DIR

@@ -1,0 +1,8 @@
+<vn-am-tile cssClass="am-balance-tile" [item]="item">
+    <vn-donut-chart left class="balance-donut" [segments]="chartSegments" />
+    <ng-container right>
+        @for (child of item.children; track trackByText($index, child)) {
+            <ng-container *vnDynamicComponent="getItemComponent(child.type); attr: { item: child }" />
+        }
+    </ng-container>
+</vn-am-tile>

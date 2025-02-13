@@ -1,0 +1,179 @@
+spec:
+  inputs:
+    name:
+    project:
+    e2eProject:
+    rules:
+    e2eRules:
+    environment:
+    deployEnvironment:
+    autoStopIn:
+    backendProduct:
+    backendProjectName:
+    backendProjectPath:
+    additionalHosts:
+    labels:
+    clientAppName:
+    afterDeployJob:
+    userFlowsPath:
+    clientAppArtifactsPath:
+    clientAppConfiguration:
+---
+start-$[[ inputs.project ]]:
+  stage: start
+  tags:
+    - linux-shell-runner
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .rules-$[[ inputs.rules ]]
+  script:
+    - echo 'Started review-deploy of $[[ inputs.project ]]'
+
+build-server-$[[ inputs.project ]]:
+  stage: build
+  extends: .build-server
+  needs: ['version', 'version-xml', 'start-$[[ inputs.project ]]']
+  variables:
+    PROJECT: $[[ inputs.backendProjectPath ]]
+
+build-client-$[[ inputs.name ]]:
+  stage: build
+  extends: .build-client
+  needs: ['version', 'start-$[[ inputs.project ]]']
+  variables:
+    APP: $[[ inputs.clientAppName ]]
+    APP_BUILD_CONFIG: $[[ inputs.clientAppConfiguration ]]
+    APP_ARTIFACTS_PATH: $[[ inputs.clientAppArtifactsPath ]]/**
+
+publish-$[[ inputs.name ]]:
+  stage: publish
+  extends: 
+    - .review-publish
+    - .rules-on-success
+  needs: ['version', 'build-server-$[[ inputs.project ]]','build-client-$[[ inputs.name ]]']
+  variables:
+    PRODUCT: $[[ inputs.backendProduct ]]
+    CI_PROJECT_DIR: $[[ inputs.backendProjectPath ]]
+    PROJECT: $[[ inputs.backendProjectName ]]
+    CI_APPLICATION_REPOSITORY: "$CI_DOCKER_REPOSITORY/$[[ inputs.name ]]"
+    APP_ARTIFACTS_PATH: $[[ inputs.clientAppArtifactsPath ]]
+
+deploy-$[[ inputs.name ]]:
+  stage: deploy
+  extends:
+    - .review-deploy
+    - .rules-$[[ inputs.rules ]]
+  needs: ['version', 'publish-$[[ inputs.name ]]']
+  environment:
+    on_stop: 'cleanup-$[[ inputs.name ]]'
+    auto_stop_in: $[[ inputs.autoStopIn ]]
+  variables:
+    ENVIRONMENT: $[[ inputs.environment ]]
+    DEPLOY_ENVIRONMENT: $[[ inputs.deployEnvironment ]]
+    CI_APPLICATION_REPOSITORY: "$CI_DOCKER_REPOSITORY/$[[ inputs.name ]]"
+    APP: "$[[ inputs.project ]]" 
+    KUBE_NAMESPACE: $[[ inputs.project ]]
+    ADDITIONAL_HOSTS: $[[ inputs.additionalHosts ]]
+    LABELS: $[[ inputs.labels ]]
+
+trigger-$[[ inputs.project ]]-e2e-pipeline:
+  stage: e2e
+  variables:
+    APP: $[[ inputs.e2eProject ]]
+  extends:
+    - .node_modules-cache
+    - .rules-$[[ inputs.e2eRules ]]
+  needs: ['deploy-$[[ inputs.name ]]']
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - source deploy-url.env
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/playwright/scripts/generate-playwright-pipeline.ts
+  artifacts:
+    paths:
+      - $GENERATED_ARTIFACTS_DEST/playwright-pipeline.yml
+
+$[[ inputs.project ]]-e2e-pipeline:
+  stage: e2e
+  allow_failure: true
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+    APP: $[[ inputs.e2eProject ]]
+  extends:
+    - .rules-on-success
+    - .rules-$[[ inputs.e2eRules ]]
+  needs:
+    - job: 'trigger-$[[ inputs.project ]]-e2e-pipeline'
+  trigger:
+    include:
+      - artifact: $GENERATED_ARTIFACTS_DEST/playwright-pipeline.yml
+        job: 'trigger-$[[ inputs.project ]]-e2e-pipeline'
+
+start-jenkins-$[[ inputs.name ]]:
+  stage: .post
+  rules:
+    - if: '"$[[ inputs.afterDeployJob ]]" == "jenkins"'
+      when: manual
+    - when: never
+  needs: ['deploy-$[[ inputs.name ]]']
+  image: $CI_DOCKER_REPOSITORY/b2d-win-msbuild:17.0
+  tags:
+    - windows-docker-runner
+  variables:
+    GIT_DEPTH: 1
+    JENKINS_JOB: ''
+  script:
+    - IF ($JENKINS_JOB -eq "") { throw "ERROR => Jenkins job URL is not provided! Please provide the Jenkins job URL manually before triggering the start-jenkins-$[[ inputs.project ]] job!"}
+    - echo "Triggering Jenkins job=> $JENKINS_JOB"
+    - echo $BASE_URL
+    - echo $PRODUCT_BASE_DOMAIN
+    - backend/sports/scripts/waitForDNS.ps1 -DNS "$PRODUCT_BASE_DOMAIN" -Timeout 100 -RetryInterval 20
+    - backend/sports/scripts/triggerRobotJenkinsJobK8s.ps1 -FQDN $PRODUCT_BASE_DOMAIN -JenkinsJobUrl $JENKINS_JOB -PipelineId $CI_PIPELINE_ID
+  artifacts:
+    paths:
+      - xunit.xml
+    reports:
+      junit: xunit.xml
+    when: always
+    expire_in: 3 weeks
+  allow_failure: true
+  timeout: 2h
+
+start-user-flows-$[[ inputs.project ]]:
+  stage: deploy
+  image: $CI_DOCKER_REPOSITORY/b2d-centos8-chrome:120
+  tags:
+    - linux-docker-runner
+  needs: ['deploy-$[[ inputs.name ]]']
+  rules:
+    - if: '"$[[ inputs.userFlowsPath ]]" == ""'
+      when: never
+    - when: manual
+  before_script:
+    - export PUPPETEER_CACHE_DIR=/opt/google/chrome/chrome
+    - echo $PRODUCT_BASE_DOMAIN
+  script:
+    - nvm use 20.10.0
+    - yarn install --immutable
+    - echo $[[ inputs.userFlowsPath ]]
+    - npx @push-based/user-flow collect --rcPath=$[[ inputs.userFlowsPath ]] --url=https://$LABEL.$PRODUCT_BASE_DOMAIN --openReport=false
+    - node ./packages/sports/web/libs/user-flows-lib/src/assertions/comment.mjs
+    - node ./packages/sports/web/libs/user-flows-lib/src/assertions/assertions.mjs
+  artifacts:
+    paths:
+      - measures/
+    expire_in: 1 day
+  allow_failure: true
+    
+cleanup-$[[ inputs.name ]]:
+  extends:
+    - .review-cleanup
+    - .rules-manual
+  needs: ['deploy-$[[ inputs.name ]]']
+  variables:
+    ENVIRONMENT: $[[ inputs.environment ]]
+    DEPLOY_ENVIRONMENT: $[[ inputs.deployEnvironment ]]
+    APP: "$[[ inputs.project ]]"
+    KUBE_NAMESPACE: $[[ inputs.project ]]

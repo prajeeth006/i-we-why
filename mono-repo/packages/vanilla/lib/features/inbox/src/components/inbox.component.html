@@ -1,0 +1,89 @@
+@if (content) {
+    <div class="inbox-wrapper">
+        <!-- playerinbox header -->
+        <lh-header-bar [content]="content.title" [showBackButton]="showBackButton" (onBack)="back()" (onClose)="hide()" />
+        @if (nativeApplication.isNative && showNotificationBanner) {
+            <lh-inbox-notification-banner [content]="content" (onNotificationsTurnedOn)="notificationsTurnedOn()" />
+        }
+        @if (isLoading || messages.length > 0) {
+            <div class="inbox-main-wrapper row">
+                @if (listVisible) {
+                    <div class="inbox-item-wrapper col-xs-12 col-sm-5">
+                        <div class="inbox-fixed" (lhOnBottomScroll)="loadMoreMessages()" [elementsNumberBottomPadding]="loadBeforeItems">
+                            <lh-inbox-list
+                                [selectedMessage]="selectedMessage"
+                                [messages]="messages"
+                                [content]="content"
+                                [hidden]="wait"
+                                (action)="inboxListCallback($event)" />
+                        </div>
+                        @if (footerVisible) {
+                            <div class="inbox-btn-wrapper col-xs-12 col-md-4 py-3">
+                                <div class="select-all mr-3" [ngClass]="content?.form.selectall.htmlAttributes?.cssClass">
+                                    <div [innerHtml]="content?.messages?.All"></div>
+                                    <div class="inbox-checker-btn action">
+                                        <input
+                                            type="checkbox"
+                                            class="custom-control-input custom-control-checkbox"
+                                            [(ngModel)]="isAllCheckBoxesSelected"
+                                            id="checkbox_select_all"
+                                            (ngModelChange)="toggleAll()" />
+                                        <label for="checkbox_select_all"></label>
+                                    </div>
+                                </div>
+                                <a
+                                    [ngClass]="content?.form.delete.htmlAttributes?.cssClass"
+                                    [innerHtml]="deletedMessagesButton | trustAsHtml"
+                                    (click)="removeList()"></a>
+                            </div>
+                        }
+                    </div>
+                }
+                @if (detailsVisible) {
+                    <div class="inbox-message-wrapper col-sm-7 d-sm-block">
+                        <lh-inbox-details [message]="selectedMessage" [content]="content" [hidden]="wait" (action)="inboxDetailsActions($event)" />
+                    </div>
+                }
+            </div>
+        }
+        @if (messages.length === 0 && !isLoading) {
+            <div class="d-flex inbox-message-viewer-wrapper">
+                <div class="align-self-center mx-auto">
+                    <div class="inbox-message-viewer">
+                        <h2 [innerHtml]="content?.messages?.NoMessages | trustAsHtml"></h2>
+                        <span class="theme-mail-open d-flex justify-content-center">
+                            <span class="inbox-sparkle-icon">
+                                <span class="inbox-sparkle-icon-cross"></span>
+                                <span class="inbox-sparkle-icon-hexagon"></span>
+                                <span class="inbox-sparkle-icon-dot"></span>
+                                <span class="inbox-sparkle-icon-circle"></span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="player-inbox-content-loading" (click)="$event.stopPropagation()" [hidden]="!wait">
+            <div id="u_0_1p">
+                <div class="_4-u2 mbm _2iwp">
+                    <div class="_2iwo">
+                        <div class="_2iwq">
+                            <div class="_2iwr"></div>
+                            <div class="_2iws"></div>
+                            <div class="_2iwt"></div>
+                            <div class="_2iwu"></div>
+                            <div class="_2iwv"></div>
+                            <div class="_2iww"></div>
+                            <div class="_2iwx"></div>
+                            <div class="_2iwy"></div>
+                            <div class="_2iwz"></div>
+                            <div class="_2iw-"></div>
+                            <div class="_2iw_"></div>
+                            <div class="_2ix0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

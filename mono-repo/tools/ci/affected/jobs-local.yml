@@ -1,0 +1,28 @@
+.latest-sha: &latest-sha
+  - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/scripts/generate-base-sha.util.ts
+  - NX_BASE=$(cat $GENERATED_ARTIFACTS_DEST/base-sha.txt)
+  - echo $NX_BASE
+  - NX_HEAD=$CI_COMMIT_SHA
+
+format:
+  extends: .base-pipeline
+  script:
+    - *latest-sha
+      # Check format of code
+    - yarn nx format:check --base=$NX_BASE --head=$NX_HEAD
+
+affected:
+  extends: .base-pipeline
+  script:
+    - *latest-sha
+    - |
+      if [ "$AFFECTED_ALL" = "true" ]; then
+        yarn nx run-many -t build build-storybook lint lint-styles test test-betslip lint-betslip integrity scss-checks --parallel=2 --runner=local
+      else
+        yarn nx affected -t build build-storybook lint lint-styles test test-betslip lint-betslip integrity scss-checks --parallel=2 --base=$NX_BASE --head=$NX_HEAD --runner=local
+      fi
+  artifacts:
+    expire_in: 5 days
+    when: always
+    paths:
+      - dist

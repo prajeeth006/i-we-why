@@ -1,0 +1,16 @@
+.build-client:
+  extends:
+    - .node_modules-cache
+    - .rules-on-success
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  script:
+    - printenv
+    - yarn install
+    - BUILD_CONFIG="${APP_BUILD_CONFIG:-production}"
+    - echo $BUILD_CONFIG
+    - yarn nx run-many -t build -p $APP -c $BUILD_CONFIG
+  artifacts:
+    paths:
+      - $APP_ARTIFACTS_PATH

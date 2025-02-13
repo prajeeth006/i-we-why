@@ -1,0 +1,6 @@
+@if (item.title) {
+    <vn-pc-component-header-v2 [item]="item" />
+}
+@for (child of item.items; track trackByName($index, child)) {
+    <ng-container *vnPageMatrix="child" />
+}

@@ -1,0 +1,72 @@
+spec:
+  inputs:
+    project:
+      description: "Project to deploy"
+    artifactsPath:
+      description: "Path where to find the project's artifacts"
+    projectPath:
+      description: "The path to the storybook project"
+    additionalTracedPaths:
+      description: "Paths in addition to projectPath included in checking for changes"
+    chromaticProjectTokenSuffix:
+      description: "Variable suffix used for loading the chromatic token in CI"
+---
+stages:
+  - chromatic
+
+include:
+  - 'tools/ci/common/node-module-cache.tpl.yml'
+  - 'tools/ci/common/rules.yml'
+
+# This should be moved to affected once the image supports playwright test
+storybook-$[[ inputs.project ]]-test:
+  stage: chromatic
+  tags:
+    - linux-docker-runner
+  needs:
+    - pipeline: $PARENT_PIPELINE_ID
+      job: affected
+  extends:
+    - .node_modules-cache
+    - .rules-on-success
+  image: docker-public.dev.docker.env.works/b2d-frontend-automation:1.0
+  variables:
+    NODE_OPTIONS: '--max-old-space-size=32768'
+  script:
+    - yarn install
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/scripts/generate-base-sha.util.ts
+    - NX_BASE=$(cat $GENERATED_ARTIFACTS_DEST/base-sha.txt)
+    - echo $NX_BASE
+    - export HTTPS_PROXY=http://atvt1xismt002.apz.unix:3128 #enable internet
+    - |
+      if [ "$AFFECTED_ALL" = "true" ]; then
+        yarn nx run-many -t pipeline-test-storybook --parallel=1 --runner=local --no-agents
+      else
+        yarn nx affected -t pipeline-test-storybook --parallel=1 --base=$NX_BASE --runner=local --no-agents
+      fi
+
+
+chromatic-$[[ inputs.project ]]-upload:
+  stage: chromatic
+  tags:
+    - linux-docker-runner
+  extends:
+    - .node_modules-cache
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  variables:
+    # By chromatic guidelines we should set this to zero to detect previous commit id
+    # In a call the mentioned we should play around with this number so that we always have a last commit found
+    # If it does not find one to compare it, it has to take screenshots again, we try to set it to 1000
+    GIT_DEPTH: 1000
+    CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN_$[[ inputs.chromaticProjectTokenSuffix ]]
+  needs:
+    - storybook-$[[ inputs.project ]]-test
+    - pipeline: $PARENT_PIPELINE_ID
+      job: affected
+  rules:
+    - if: $CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == "main"
+      when: on_success
+    - when: never
+  script:
+    - export HTTPS_PROXY=http://atvt1xismt002.apz.unix:3128 #enable internet
+    - yarn chromatic --auto-accept-changes='main' --ci --only-changed --exit-once-uploaded --storybook-base-dir='./' --storybook-build-dir='$[[ inputs.artifactsPath ]]'  --working-dir='$[[ inputs.projectPath ]]' --untraced='!($[[ inputs.projectPath ]]/**$[[ inputs.additionalTracedPaths ]])'

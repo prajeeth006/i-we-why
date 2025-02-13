@@ -1,0 +1,24 @@
+<div class="list-nav-link dnh am-available-balance" [ngClass]="{ 'balance-paypal-enable': showPayPalBalanceMessage }">
+    <div class="list-nav-txt balance-text">{{ item.text }}</div>
+    <div class="font-weight-bold ml-auto balance-amount">{{ balance | vnCurrency }}</div>
+</div>
+@if (showPayPalBalanceMessage) {
+    <div>
+        <div class="balance-paypal-info">
+            {{ payPalBalanceMessage }}
+            @if (showReleaseFunds) {
+                <div class="list-nav-txt balance-text paypal-release-funds">
+                    <a (click)="releaseFunds()">
+                        <span class="dh balance-details-link font-weight-medium">
+                            <u class="balance-paypal-info">{{ releaseFundsText }}</u>
+                        </span>
+                    </a>
+                    <vn-icon name="theme-info-i" size="20" extraClass="" [floatUi]="popper.content" />
+                    <vn-popper-content cssClass="tooltip-info" #popper>
+                        <ng-container content>{{ releaseFundsTooltipText }}</ng-container>
+                    </vn-popper-content>
+                </div>
+            }
+        </div>
+    </div>
+}

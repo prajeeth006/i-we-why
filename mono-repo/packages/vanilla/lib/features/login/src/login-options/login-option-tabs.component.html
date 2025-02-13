@@ -1,0 +1,9 @@
+@if (loginTypeOptions?.length > 1) {
+    <div [formGroup]="formGroup" class="form-group">
+        <ds-segmented-control [fullWidth]="true" [inverse]="false" [activeOption]="" (activeOptionChange)="selectOption($event)">
+            @for (tab of loginTypeOptions; track trackById(i, tab); let i = $index) {
+                <ds-segmented-option [title]="tab.label" [name]="tab.id" vnTrackingEvent="Event.Tracking" [vnTrackingData]="eventTracking" />
+            }
+        </ds-segmented-control>
+    </div>
+}

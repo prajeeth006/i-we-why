@@ -1,0 +1,27 @@
+@if (config.templates.breakdurationselection; as content) {
+    <vn-dialog [headerTitle]="content.title" [headerCloseButtonText]="content.messages?.CloseButtonText" (onClose)="close()">
+        <form content [formGroup]="durationSelectionForm()" class="mt-half form-base floating-form">
+            @if (breakDurationForm(); as breakDurationForm) {
+                <fieldset class="form-group">
+                    <div [innerHtml]="breakDurationForm.label" class="font-weight-bold txt-md-v2"></div>
+                    <lh-form-field [labelText]="breakDurationForm.toolTip">
+                        <select formControlName="durationOptions" class="form-control form-control-select">
+                            @for (option of breakDurationForm.values; track trackByText($index, option)) {
+                                <option [value]="option.value">
+                                    {{ option.text }}
+                                </option>
+                            }
+                        </select>
+                    </lh-form-field>
+                </fieldset>
+            }
+        </form>
+        <ng-container actions>
+            <div class="generic-modal-actions">
+                <button (click)="confirmSelection()" [disabled]="!durationSelectionForm().valid" class="btn btn-primary btn-md">
+                    {{ content.messages?.OkButtonText }}
+                </button>
+            </div>
+        </ng-container>
+    </vn-dialog>
+}

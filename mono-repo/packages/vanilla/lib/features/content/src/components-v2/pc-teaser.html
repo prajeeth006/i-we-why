@@ -1,0 +1,73 @@
+<vn-pc-component-header-v2 [item]="item" />
+@if (item.image) {
+    <div class="pc-t-img-cont">
+        <ng-template #pic>
+            @if (item.image) {
+                <img
+                    [vnProfilesSrc]="item.image.src"
+                    [vnProfilesWidth]="item.image.width"
+                    [vnProfilesSet]="imageProfilesSet"
+                    [alt]="item.image.alt"
+                    class="pc-img" />
+            }
+        </ng-template>
+        @if (item.imageLink) {
+            <a [href]="item.imageLink.url" [vnHtmlAttrs]="item.imageLink.attributes" class="pc-img-a">
+                <ng-container *ngTemplateOutlet="pic" />
+            </a>
+        } @else {
+            @if (item.image) {
+                <img
+                    [vnProfilesSrc]="item.image.src"
+                    [vnProfilesWidth]="item.image.width"
+                    [vnProfilesSet]="imageProfilesSet"
+                    [alt]="item.image.alt"
+                    class="pc-img" />
+            }
+        }
+    </div>
+}
+@if (item.imageOverlay) {
+    <div class="pc-t-img-opt">
+        <img
+            [vnProfilesSrc]="item.imageOverlay.src"
+            [vnProfilesWidth]="item.imageOverlay.width"
+            [vnProfilesSet]="overlayImageProfilesSet"
+            [alt]="item.imageOverlay.alt"
+            [ngClass]="item.imageOverlayClass" />
+    </div>
+}
+<div class="pc-t-h-cont">
+    <ng-container *ngTemplateOutlet="title; context: { text: item.subtitle, tag: subtitleTag, class: subtitleClass }" />
+    <ng-container *ngTemplateOutlet="title; context: { text: item.summary, tag: summaryTag, class: summaryClass }" />
+</div>
+@if (item.text) {
+    <div class="pc-t-txt" [vnDynamicHtml]="item.text"></div>
+}
+@if (item.optionalText) {
+    <div class="pc-t-txt-opt" [vnDynamicHtml]="item.optionalText"></div>
+}
+<ng-template #title let-text="text" let-class="class" let-tag="tag">
+    @if (text) {
+        @switch (tag) {
+            @case ('h1') {
+                <h1 class="pc-h" [ngClass]="class">{{ text }}</h1>
+            }
+            @case ('h2') {
+                <h2 class="pc-h" [ngClass]="class">{{ text }}</h2>
+            }
+            @case ('h3') {
+                <h3 class="pc-h" [ngClass]="class">{{ text }}</h3>
+            }
+            @case ('h4') {
+                <h4 class="pc-h" [ngClass]="class">{{ text }}</h4>
+            }
+            @case ('h5') {
+                <h5 class="pc-h" [ngClass]="class">{{ text }}</h5>
+            }
+            @case ('h6') {
+                <h6 class="pc-h" [ngClass]="class">{{ text }}</h6>
+            }
+        }
+    }
+</ng-template>

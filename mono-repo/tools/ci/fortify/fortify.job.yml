@@ -1,0 +1,9 @@
+spec:
+  inputs:
+    project:
+    projFile:
+---
+fortify:$[[ inputs.project ]]:
+  extends: .fortify
+  variables:
+    BPTY_BUILD_PROJECT: $[[ inputs.projFile ]]

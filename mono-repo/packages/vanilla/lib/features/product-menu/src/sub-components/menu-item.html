@@ -1,0 +1,5 @@
+@if (useFastIconType === true) {
+    <vn-menu-item [item]="item" [section]="MenuSection.ProductMenu" displayMode="FastIcon" badgePosition="FastIcon" (onClick)="click()" />
+} @else {
+    <vn-menu-item [item]="item" [section]="MenuSection.ProductMenu" displayMode="icon" badgePosition="icon" (onClick)="click()" />
+}

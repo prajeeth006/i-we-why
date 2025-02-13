@@ -1,0 +1,5 @@
+stages:
+  - load
+
+include:
+  - tools/ci/common/rules.yml

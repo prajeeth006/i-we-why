@@ -1,0 +1,11 @@
+@if (items.length) {
+    @for (child of items; track trackByText($index, child)) {
+        <div class="ch-account-menu-v3__col--dynamic">
+            <div class="ch ch-nudge mb-3 flex-column">
+                <span class="font-weight-bold ch__font" [innerHtml]="child.text | trustAsHtml"></span>
+                <vn-icon name="theme-ex" extraClass="ch-nudge__close ui-icon-size-sm ui-icon" size="10" (click)="hide(child)" />
+                <div [vnDynamicHtml]="child.resources.Description"></div>
+            </div>
+        </div>
+    }
+}

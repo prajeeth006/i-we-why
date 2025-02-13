@@ -1,0 +1,20 @@
+@if (item?.parameters; as parameters) {
+    <a
+        class="h-logo navbar-logo-wrapper"
+        [attr.href]="item.url"
+        [attr.alt]="item.text"
+        [attr.aria-label]="item.text"
+        [ngClass]="parameters['link-class']"
+        (click)="click($event)">
+        @if (parameters.displayMode === 'svg') {
+            <vn-svg
+                displayMode="svg"
+                [viewBox]="parameters.viewBox"
+                [containerClass]="parameters.containerClass"
+                [image]="item.image"
+                [animationClass]="parameters.animationClass" />
+        } @else {
+            <div class="navbar-switch-logo brand-logo" [ngClass]="item.class"></div>
+        }
+    </a>
+}

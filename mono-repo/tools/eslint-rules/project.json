@@ -1,0 +1,15 @@
+{
+    "name": "eslint-rules",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "tools/eslint-rules",
+    "tags": ["scope:shared", "type:utils"],
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "tools/eslint-rules/jest.config.ts"
+            }
+        }
+    }
+}
