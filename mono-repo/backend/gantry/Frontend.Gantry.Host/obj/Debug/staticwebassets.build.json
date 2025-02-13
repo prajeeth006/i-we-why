@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "1hIpaViQLWsIgtVLFG9+gHUi9q98Uc8PurA0npg+BHk=",
+  "Source": "Frontend.Gantry.Host",
+  "BasePath": "_content/Frontend.Gantry.Host",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

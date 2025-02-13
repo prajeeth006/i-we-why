@@ -1,0 +1,72 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ProgressBarStories from '../progress-bar.component.stories';
+
+The `DsProgressBar` is a standalone component that provides a visually customizable progress bar. It supports different variants, fills, and configurations, including the ability to show progress counter.
+
+<Canvas of={ProgressBarStories.Default}></Canvas>
+
+## Usage
+
+Import `DsProgressBar` in your component.
+
+```ts
+import { DsProgressBar } from "@frontend/ui/progress-bar"; // 👈 add to file imports
+
+@Component({
+  template: `...`
+  imports: [DsProgressBar] // 👈 add to component imports
+})
+export class AppComponent {}
+
+```
+
+### Inputs
+
+#### variant
+
+-   **Type**: `string`
+-   **Options**: `'primary'`, `'secondary'`, `'positive'`, `'negative'`,
+-   **Default**: `'primary'`
+-   **Description**: Specifies the visual variant of the progress bar.
+
+```ts
+export const DS_PROGRESS_BAR_VARIANTS_ARRAY = ['primary', 'secondary', 'positive', 'negative'] as const;
+export type DsProgressBarVariant = (typeof DS_PROGRESS_BAR_VARIANTS_ARRAY)[number];
+```
+
+#### fill
+
+-   **Type**: `string`
+-   **Options**: `'solid'`, `'pattern'`,
+-   **Default**: `'solid'`
+-   **Description**: Specifies the progress fill.
+
+```ts
+export const DS_PROGRESS_BAR_FILLS_ARRAY = ['solid', 'pattern'] as const;
+export type DsProgressBarFill = (typeof DS_PROGRESS_BAR_FILLS_ARRAY)[number];
+```
+
+#### showCounter
+
+-   **Type**: `boolean`
+-   **Default**: `false`
+-   **Description**: Optionally displays the progress value within the bar.
+
+#### value
+
+-   **Type**: `number`
+-   **Options**: Automatically clamps the value between 0 and 100.
+-   **Default**: `'0'`
+-   **Description**: Sets the progress value as a percentage.
+
+### Slots
+
+#### slot="start"
+
+-   Description: Slot for content to be displayed on the left of the progress bar. Typically used for subtext.
+
+#### slot="end"
+
+-   Description: Slot for content to be displayed on the right of the progress bar. Typically used for subtext.

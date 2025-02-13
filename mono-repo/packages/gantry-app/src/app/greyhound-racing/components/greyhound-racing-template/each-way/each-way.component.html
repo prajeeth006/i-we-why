@@ -1,0 +1,24 @@
+<div class="info-row">
+    <gn-footer [rightSideText]="'showRight'" class="footer-sec">
+        <ng-container left-side-content>
+            <span id="runCount" class="run-count">{{ runnerCount ? runnerCount : ' ' }} {{ isEventResulted ? 'RAN' : 'RUN' }}</span>
+            <span id="MarketEachWay">{{ marketEachWayString ? marketEachWayString : '' }}</span>
+        </ng-container>
+        <ng-container right-side-content *ngIf="showRightSideContent">
+            <span class="tip-image" *ngIf="racingPostTipOrder?.length > 0"
+                ><img id="Postpic-logo" class="c-logo" [retrySrc]="racingPostTipImage"
+            /></span>
+            <span id="SilkImages" class="tip-name">
+                <img id="tipOrder" class="table-center border-dark" [retrySrc]="racingPostTipOrder[0]" /> {{ nap }}
+                <img id="tipOrder" class="table-center border-dark" [retrySrc]="racingPostTipOrder[1]" />
+                <img id="tipOrder" class="table-center border-dark" [retrySrc]="racingPostTipOrder[2]" />
+            </span>
+        </ng-container>
+    </gn-footer>
+    <div
+        *ngIf="(isUKEvent || isAdditionalMarket) && (ismarketSelectionPresent || showForm) && isFullScreenType"
+        id="FeaturePlusFooter"
+        class="feature-plus-template-footer">
+        <span *ngIf="showFooter"> {{ Footer }}</span>
+    </div>
+</div>

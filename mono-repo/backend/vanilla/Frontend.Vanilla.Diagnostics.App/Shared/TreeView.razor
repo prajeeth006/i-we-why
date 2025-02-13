@@ -1,0 +1,17 @@
+@using Newtonsoft.Json.Linq
+
+@code {
+
+    [Parameter]
+    public JObject Model { get; set; }
+
+}
+
+<BSTree>
+    <BSTreeNode>
+        @foreach (var property in Model.Properties().OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
+        {
+            <TreeItem Class="@($"text-{(Model[property.Name]["Passed"].Value<bool>() ? "success" : "danger")}")" Label="@property.Name" Value="@Model[property.Name]"></TreeItem>
+        }
+    </BSTreeNode>
+</BSTree>

@@ -1,0 +1,25 @@
+{
+    "documentVerificationStatus": [
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1651821711000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1651813530000)/",
+                    "uploadedReason": null
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1651821701000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1651813737000)/",
+                    "uploadedReason": null
+                }
+            ],
+            "isVerified": true,
+            "useCase": "KYC",
+            "verifiedTime": "/Date(1651821857000)/"
+        }
+    ]
+}

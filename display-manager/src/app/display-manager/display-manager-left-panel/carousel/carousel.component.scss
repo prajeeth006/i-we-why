@@ -1,0 +1,487 @@
+@use '../../../shared-css/helpers' as helper;
+@import '../../../shared-css/variables.scss';
+
+
+@mixin item-preview {
+    display: grid;
+    grid-template-columns: 56px 200px 340px 134px 1fr;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .item {
+        display: flex;
+
+        &.sortHolder {
+            img {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        .asset-name-label {
+            text-transform: uppercase;
+        }
+
+
+        &:nth-child(2) {
+            span {
+                height: 14px;
+                font-size: 12px;
+                display: inline-flex;
+                align-items: center;
+                width: 102px;
+                color: $white;
+                border-radius: 3px;
+                padding: 0 3px;
+            }
+        }
+
+        &:nth-child(3) {
+            img {
+                width: 28px;
+                height: 28px;
+            }
+
+            span {
+                height: 14px;
+                font-size: 12px;
+                display: inline-flex;
+                align-items: center;
+                width: 104px;
+                height: 45px;
+                justify-content: center;
+                border-radius: 3px;
+                padding: 0 3px;
+                box-sizing: border-box;
+
+                +span {
+                    width: auto;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &:last-child {
+            justify-content: center;
+        }
+
+        .item-remove-button {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: grid;
+            place-items: center;
+            font-size: $txt-md-font-size;
+            letter-spacing: normal;
+            line-height: 20px;
+        }
+        .asset-image {
+            display: flex;
+            margin: 5px;
+            position: relative;
+            
+            .asset-display-name {
+                position: absolute;
+                right: 2px;
+                top: 2px;
+                font-size: $txt-sm-font-size;
+                font-weight: 500;
+                line-height: 14px;
+                letter-spacing: 0.6px;
+                text-align: center;
+                padding: 0 2px;
+                color: $white;
+            }
+        }
+    }
+
+    .duration-and-remove {
+        display: flex;
+        justify-content: space-between;
+
+        .duration-section {
+            display: flex;
+            font-family: $default-font;
+            font-size: $txt-md-font-size;
+            line-height: 20px;
+            letter-spacing: normal;
+            font-weight: 400;
+            align-items: center;
+
+            .seconds-section {
+                margin-right: 10px;
+            }
+
+            .duration-text {
+                align-self: end;
+                margin-bottom: 8px;
+                font-size: $txt-md-font-size;
+                letter-spacing: 0.4px;
+                text-align: left;
+                color: $text-black-color;
+                margin-right: 10px;
+            }
+
+            .carosel-duration {
+                width: 37px;
+                padding: 0 7px;
+                border-radius: 4px;
+                border: 1px solid $border-grey-2;
+                background-color: $white;
+                height: 27px;
+                align-self: center;
+
+                &.red-border-class {
+                    border-color: $invalid-border;
+                }
+            }
+
+            .seconds-section {
+                align-self: center;
+                position: relative;
+
+                .seconds-text {
+                    position: absolute;
+                    top: -20px;
+                    left: 8px;
+                    font-size: $txt-xs-font-size;
+                    text-align: center;
+                    color: $background-grey-1;
+                }
+            }
+        }
+
+        .item-remove-button {
+            font-family: $default-font;
+            font-size: $txt-md-font-size;
+            font-weight: bold;
+            letter-spacing: 0.6px;
+            color: $text-black-color;
+            width: 135px;
+        }
+    }
+}
+
+::ng-deep #create-new-carousel {
+    padding: 0px;
+
+    .carousel-container {
+        .carousel-modal-form {
+            .carousel-header {
+                width: inherit;
+                box-sizing: border-box;
+                height: 70px;
+                justify-content: flex-start;
+                padding-left: 20px;
+                background-color: $background-grey-color;
+                display: flex;
+                align-items: center;
+                color: $white;
+                letter-spacing: 1.8px;
+                line-height: 20px;
+                font-size: $txt-md-font-size;
+                font-weight: bold;
+
+                .ng-star-inserted {
+                    color: $text-black-color;
+                    font-weight: normal;
+                    font-weight: 700;
+                    margin-right: 20px;
+                    letter-spacing: .4px;
+                }
+
+                .folder-name-input {
+                    width: 240px;
+                    height: 30px;
+                    border-radius: 4px;
+                    border: 1px solid $border-grey-2;
+                    padding-left: 15px;
+
+                    &.ng-invalid {
+                        border-color: $invalid-border;
+                    }
+
+                    &:focus-visible {
+                        border: 1px solid $border-grey-2;
+                        outline: 1px solid $border-grey-2;
+                    }
+                }
+            }
+
+            .carousel-step-2 {
+                padding: 20px 20px 0;
+                box-sizing: border-box;
+                width: inherit;
+
+
+                .carousel-header-block {
+                    box-sizing: border-box;
+                    display: grid;
+                    grid-template-columns: 56px 200px 340px 150px 1fr;
+                    background-color: $light-grey-bg-6;
+                    align-items: center;
+                    height: 30px;
+                    border-radius: 5px;
+                    font-weight: 700;
+                    letter-spacing: .4px;
+                    line-height: 30px;
+                    font-size: $txt-md-font-size;
+                }
+
+            }
+        }
+
+    }
+}
+
+.carouselDrop {
+    text-align: center;
+}
+
+.sortHolder {
+    cursor: move;
+    justify-content: center;
+}
+
+
+.carousel-container {
+    height: 100%;
+    overflow: hidden;
+
+    .carousel-modal-form {
+        display: grid;
+        height: 100%;
+        grid-template-rows: minmax(30px, 70px) minmax(100px, 675px) minmax(100px, 1fr);
+        width: 820px;
+
+        .carousel-main-section {
+            padding: 0px;
+            flex-grow: 1;
+
+            .carousel-drop {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .drag-drop-cls {
+                    height: 100%;
+                    border-radius: 5px;
+                    border: dashed 0.5px $light-black-border;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    min-height: 400px;
+                    font-family: $default-font-condensed;
+                    font-size: $txt-sm-font-size;
+                    font-weight: bold;
+                    letter-spacing: 0.4px;
+                    line-height: 20px;
+                    color: $text-black-color;
+                }
+            }
+        }
+
+        .carousel-step-2 {
+
+            .folder-name-control {
+                padding: 20px 50px;
+
+                .folder-name {
+                    font-family: $default-font;
+                    font-weight: 500;
+                    font-size: $txt-md-font-size;
+                    letter-spacing: 0.6px;
+                    text-align: left;
+                    color: $text-black-color;
+                    margin-right: 10px;
+                }
+
+                .folder-name-input {
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: solid 1px $color-black-3;
+                    background-color: $white;
+                    width: 50%;
+                    font-family: $default-font;
+                    font-weight: 400;
+                    font-size: $txt-md-font-size;
+                    color: $text-black-color;
+                    letter-spacing: 0.4px;
+
+                    &.red-border-class {
+                        border-color: $invalid-border;
+                    }
+                }
+            }
+
+            .carousel-drop {
+                flex-grow: 1;
+                overflow-y: auto;
+                max-height: 100%;
+                padding-top: 10px;
+                box-sizing: border-box;
+                height: 100%;
+
+                @include helper.customScrollBar;
+
+                .items-sections {
+                    padding-left: 0px;
+                    list-style: none;
+                    height: inherit;
+                    display: flex;
+                    flex-direction: column;
+
+                    .add-or-remove-section {
+                        @include item-preview;
+                        font-weight: 400;
+                        letter-spacing: normal;
+                        line-height: 20px;
+
+                    }
+
+                }
+            }
+
+            .carousel-drop-zero-margin {
+                padding: 0px;
+            }
+        }
+
+        .errors-section {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            align-items: center;
+            background: $light-grey-bg-7;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            border-color: $light-grey-bg-1;
+            padding: 10px 0;
+            font-size: $txt-md-font-size;
+
+            .error-message {
+                font-family: $default-font;
+                font-weight: 400;
+                font-size: $txt-sm-font-size;
+                letter-spacing: 0.5px;
+                color: $text-black-color;
+                display: flex;
+                align-items: center;
+                line-height: 20px;
+            }
+        }
+
+        .carousel-footer-btns {
+            padding: 0px;
+            margin-bottom: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border: none;
+
+            .items-count-and-duration {
+                .item {
+                    width: 200px;
+                    display: inline-block;
+                    text-align: center;
+                    font-family: $default-font;
+                    font-weight: 500;
+                    font-size: $txt-md-font-size;
+                    letter-spacing: 0.6px;
+                    color: $text-black-color;
+                    line-height: 20px;
+
+                    &.item-count,
+                    &.item-duration {
+                        font-weight: bold;
+
+                        .item-value {
+                            font-weight: normal;
+                        }
+                    }
+
+
+
+
+                }
+            }
+
+            .footer-btns {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 75px;
+                margin-top: auto;
+                align-items: center;
+                background-color: $background-grey-color;
+
+                .footer-btn-block {
+                    margin: 15px;
+                    line-height: 20px;
+                    .mat-mdc-button {
+                        height: 38px;
+                    }
+                }
+            }
+
+            .carousel-cancel-btn {
+                width: 140px;
+                background-color: $white;
+                border-radius: 3px;
+                letter-spacing: 0.6px;
+                line-height: 36px;
+                text-align: center;
+                font-family: $default-font;
+                font-weight: 700;
+                color: $text-black-color;
+                font-size: $txt-md-font-size;
+                border: solid 0.6px $light-black-border;
+            }
+
+            .carousel-save-btn {
+                width: 140px;
+                background-color: $btn-success-bg;
+                border-radius: 3px;
+                letter-spacing: 0.6px;
+                line-height: 36px;
+                text-align: center;
+                font-weight: bold;
+                color: $white;
+                font-size: $txt-md-font-size;
+                margin-left: 25px;
+                border: solid 0.6px $btn-success-bg;
+
+                &.carousel-save-disable {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.preview-item-section {
+    @include item-preview;
+}
+
+.info-icon-style {
+    color: black;
+    font-size: 10px;
+    border-radius: 50%;
+    border: solid 1px black;
+    width: 13px;
+    height: 13px;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}

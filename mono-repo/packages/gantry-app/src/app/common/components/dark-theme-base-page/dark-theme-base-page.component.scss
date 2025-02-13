@@ -1,0 +1,1760 @@
+@import '../../../../dark-theme-global-style/all-variables';
+@import '../../../../shared-styles/utilities';
+
+* {
+    box-sizing: border-box;
+}
+
+.base-page {
+    background: $template-bg;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 60px;
+    border: 10px solid $color-black;
+    min-height: 100vh;
+    color: $color-white;
+
+    @include breakpoint(multidesktop) {
+        padding: 0 30px;
+        border: 5px solid $color-black;
+    }
+
+    .base-page__header {
+        margin-top: 30px;
+        height: 124px;
+
+        @include breakpoint(multidesktop) {
+            height: 64px;
+            margin-top: 15px;
+        }
+    }
+
+    .base-page__body {
+        font-family: $ff-roboto;
+        height: calc(100vh - $header-full-height - $footer-full-height - 45px);
+
+        @include breakpoint(multidesktop) {
+            height: calc(100vh - $header-quad-height - $footer-quad-height - 25px);
+        }
+
+        .selection-table {
+            list-style: none;
+            padding: 0px;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .table-center {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .common-ouright-wrapper {
+            .selection-table {
+                li {
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: calc(100% - 270px) 270px;
+
+                    @include breakpoint(multidesktop) {
+                        grid-template-columns: calc(100% - 135px) 135px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .selection-name {
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        .selection-content,
+        .selection-content-result {
+            flex-grow: 1;
+            margin-left: 30px;
+            @include flex-container(flex-end, center);
+            position: relative;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 15px;
+            }
+        }
+
+        .selection-content {
+            & * {
+                z-index: 1;
+            }
+
+            &::before {
+                content: '';
+                z-index: 0;
+                position: absolute;
+                top: 50%;
+                left: 4px;
+                right: 8px;
+                height: 4px;
+                background: $color-white;
+
+                @include breakpoint(multidesktop) {
+                    height: 2px;
+                }
+            }
+        }
+
+        .moneybox-content {
+            .selection-content::before {
+                left: -90px;
+
+                @include breakpoint(multidesktop) {
+                    left: -45px;
+                }
+            }
+        }
+    }
+
+    .base-page__footer {
+        margin-top: auto;
+        height: $footer-full-height;
+
+        @include breakpoint(multidesktop) {
+            height: $footer-quad-height;
+        }
+    }
+}
+
+.market-each-way {
+    color: $footer-yellow-text;
+}
+
+.info-total {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filled-bg-favourite {
+    background-color: $theme-yellow;
+}
+
+.selection-position {
+    span {
+        width: 200px;
+        height: 64px;
+        border-radius: 114px;
+        border: 4px solid $color-white;
+        color: $color-white;
+        font-size: $fs-full-result-position;
+        font-weight: $fw-bold;
+        @include flex-center;
+
+        @include breakpoint(multidesktop) {
+            width: 100px;
+            height: 32px;
+            border-radius: 57px;
+            font-size: 23px;
+            border-width: 2px;
+        }
+    }
+}
+
+.selection-result {
+    font-size: 70px;
+    font-style: normal;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    border: 4px solid #fff;
+
+    @include breakpoint(multidesktop) {
+        border-width: 2.5px;
+    }
+}
+
+.selection-favourite {
+    @include flex-center;
+    height: 56px;
+    border-radius: 25px;
+    font-size: 40px;
+    font-weight: $fw-normal;
+    background-color: $color-white;
+    color: $theme-white-bg-text;
+
+    @include breakpoint(multidesktop) {
+        height: 28px;
+        font-size: 20px;
+    }
+}
+
+.off-event {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+
+    .tilted-card {
+        width: 1088px;
+        height: 566px;
+        @include flex-center;
+        color: $color-white-s50;
+        font-style: italic;
+        background: $color-black-s25;
+        font-size: 510px;
+        font-family: $ff-roboto-condensed;
+
+        @include breakpoint(multidesktop) {
+            width: 544px;
+            height: 284px;
+            font-size: 256px;
+            line-height: 256px;
+        }
+
+        .tilted-text {
+            position: relative;
+            left: -85px;
+
+            @include breakpoint(multidesktophalf) {
+                left: -40px;
+            }
+        }
+    }
+}
+
+.greyhound-footer {
+    .footer {
+        .footer__left--text {
+            :first-child {
+                padding-right: 24px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 12px;
+                }
+            }
+        }
+    }
+}
+
+.match-bets__content {
+    .match-bet__selections {
+        &--price-wrap {
+            .price-info {
+                width: 240px;
+
+                @include breakpoint(multidesktop) {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+
+.trap-wrapper {
+    .trap-layout {
+        .selection-price {
+            width: 270px;
+
+            @include breakpoint(multidesktop) {
+                width: 135px;
+            }
+        }
+
+        &.trap-layout-2,
+        &.trap-layout-3 {
+            .selection-price {
+                width: 240px;
+
+                @include breakpoint(multidesktop) {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+
+.moneybox-content {
+    .selection-price {
+        width: 270px;
+        border-radius: 25px;
+
+        @include breakpoint(multidesktop) {
+            width: 135px;
+            border-radius: 12.5px;
+        }
+    }
+}
+
+.favorite-box {
+    background-color: $theme-yellow;
+}
+
+.golf-page {
+    .footer-flex {
+        display: flex;
+
+        .pagination-text {
+            width: 238px;
+            text-align: right;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+            }
+        }
+    }
+}
+
+.outright-content {
+    .footer-flex {
+        display: flex;
+
+        .pagination-text {
+            padding-left: 20px;
+            text-align: right;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+// specific to coral
+html[data-domain*='coral.co.uk'] {
+    .horse-table {
+        li {
+            height: 93.75px;
+            margin-bottom: 4px;
+
+            @include breakpoint(multidesktop) {
+                height: 46.88px;
+                margin-bottom: 2px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                height: 91.1px;
+                margin-bottom: 2px;
+            }
+
+            .selection-position {
+                span {
+                    @include breakpoint(multidesktop) {
+                        border-radius: 60px;
+                    }
+                }
+            }
+
+            .selection-content {
+                .selection-current-price,
+                .selection-plus1-market,
+                .selection-result {
+                    width: 234px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 117px;
+                    }
+                }
+            }
+
+            .selection-content-result {
+                .selection-result {
+                    width: 234px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 117px;
+                    }
+                }
+            }
+
+            .selection-past-price {
+                border-radius: 25px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 12.5px;
+                }
+            }
+        }
+
+        &.result-table {
+            li {
+                height: 96px;
+                margin-bottom: 4px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                    margin-bottom: 2px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 114px;
+                }
+            }
+        }
+
+        &.rcTemplate12,
+        &.rcTemplate14,
+        &.rcTemplate16,
+        &.rcTemplate20 {
+            li {
+                .selection-content {
+                    .selection-current-price,
+                    .selection-plus1-market {
+                        width: 180px;
+
+                        @include breakpoint(multidesktop) {
+                            width: 90px;
+                        }
+
+                        @include breakpoint(multidesktophalf) {
+                            width: 117px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.rcTemplate4 {
+            li {
+                height: 191.5px;
+
+                @include breakpoint(multidesktop) {
+                    height: 95.75px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 153.17px;
+                }
+            }
+        }
+
+        &.rcTemplate6 {
+            li {
+                height: 126.33px;
+
+                @include breakpoint(multidesktop) {
+                    height: 63.17px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 153.17px;
+                }
+            }
+        }
+
+        &.rcTemplate8 {
+            li {
+                @include breakpoint(multidesktophalf) {
+                    height: 114.38px;
+                }
+            }
+        }
+
+        &.rcTemplate10 {
+            li {
+                height: 74.2px;
+
+                @include breakpoint(multidesktop) {
+                    height: 37.1px;
+                }
+            }
+        }
+
+        &.rcTemplate12 {
+            li {
+                height: 126px;
+
+                @include breakpoint(multidesktop) {
+                    height: 63.17px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 75px;
+                }
+            }
+        }
+
+        &.rcTemplate14 {
+            li {
+                height: 107px;
+
+                @include breakpoint(multidesktop) {
+                    height: 53.86px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 64px;
+                }
+            }
+        }
+
+        &.rcTemplate16 {
+            li {
+                height: 93px;
+
+                @include breakpoint(multidesktop) {
+                    height: 46.88px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 56px;
+                }
+            }
+        }
+
+        &.rcTemplate20 {
+            li {
+                height: 74.13px;
+
+                @include breakpoint(multidesktop) {
+                    height: 37.1px;
+                }
+            }
+        }
+    }
+
+    .greyhound-table {
+        li {
+            .selection-position {
+                span {
+                    @include breakpoint(multidesktop) {
+                        border-radius: 57px;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        height: 40px;
+                        font-size: 26px;
+                    }
+                }
+            }
+
+            .selection-content {
+                .selection-current-price,
+                .selection-plus1-market,
+                .selection-result {
+                    width: 240px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 120px;
+                    }
+                }
+            }
+
+            .selection-content-result {
+                .selection-result {
+                    width: 240px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 120px;
+                    }
+                }
+            }
+
+            .selection-past-price {
+                border-radius: 25px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 12.5px;
+                }
+            }
+        }
+    }
+
+    .base-page {
+        .selection-table {
+            li {
+                .selection-current-price,
+                .selection-plus1-market {
+                    border-radius: 24px;
+
+                    @include breakpoint(multidesktop) {
+                        border-radius: 12.5px;
+                    }
+                }
+            }
+        }
+
+        .tilted-card {
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                border-radius: 12.5px;
+            }
+        }
+
+        .current-price__tilted {
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                border-radius: 12.5px;
+            }
+        }
+
+        .off-event {
+            .tilted-card {
+                border-radius: 100px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 50px;
+                }
+
+                .tilted-text {
+                    left: -80px;
+
+                    @include breakpoint(multidesktop) {
+                        left: -40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .money-boost__page {
+        .header-status-box {
+            width: 240px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+            }
+        }
+
+        .money-boost-content {
+            margin: 158px 30px 0;
+            height: 441px;
+
+            @include breakpoint(multidesktop) {
+                height: 220.5px;
+                margin: 80px 20px 0;
+            }
+
+            .current-price {
+                width: 420px;
+
+                @include breakpoint(multidesktop) {
+                    width: 210px;
+                }
+            }
+        }
+    }
+
+    .winning-distance-page {
+        .header-status-box {
+            width: 240px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 238px;
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+                border-radius: 12.5px;
+            }
+        }
+    }
+
+    .how-far-page {
+        .header-status-box {
+            width: 240px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 240px;
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                border-radius: 12.5px;
+            }
+        }
+    }
+
+    .outright-content {
+        .header .header__title--block .header__title--block-left .header__logo img {
+            padding: 8px;
+
+            @include breakpoint(multidesktop) {
+                padding: 4px;
+            }
+        }
+
+        .header-status-box {
+            width: 240px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 240px;
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                border-radius: 12.5px;
+            }
+        }
+    }
+
+    .cricket-results,
+    .darts-result,
+    .snooker-result,
+    .tennis-results,
+    .rugby-container,
+    .boxing-results,
+    .correct-score {
+        .header .header__title--block .header__title--block-left .header__logo img {
+            padding: 8px;
+
+            @include breakpoint(multidesktop) {
+                padding: 4px;
+            }
+        }
+
+        .header-status-box {
+            width: 238px;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+            }
+        }
+
+        .bet-price,
+        .betOdds {
+            width: 238px;
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+                border-radius: 12.5px;
+            }
+
+            &.price-box__shrinked {
+                width: 220px;
+
+                @include breakpoint(multidesktop) {
+                    width: 110px;
+                }
+            }
+        }
+
+        .draw-price {
+            width: 305px;
+            margin: 0px 30px;
+
+            @include breakpoint(multidesktop) {
+                width: 152.5px;
+                margin: 0px 15px;
+            }
+        }
+    }
+
+    .golf-page {
+        .header .header__title--block .header__title--block-left .header__logo img {
+            padding: 8px;
+
+            @include breakpoint(multidesktop) {
+                padding: 4px;
+            }
+        }
+
+        .header-status-box {
+            width: 240px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 238px;
+            border-radius: 25px;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+                border-radius: 12.5px;
+            }
+        }
+    }
+}
+
+.nfl-result {
+    .header-status-box {
+        width: 240px;
+
+        @include breakpoint(multidesktop) {
+            width: 120px;
+        }
+    }
+
+    .header .header__title--block .header__title--block-left .header__logo img {
+        padding: 8px;
+
+        @include breakpoint(multidesktop) {
+            padding: 4px;
+        }
+    }
+
+    .bet-price {
+        width: 240px;
+        border-radius: 25px;
+
+        @include breakpoint(multidesktop) {
+            width: 120px;
+            border-radius: 12.5px;
+        }
+    }
+}
+
+//specific to ladbrokes
+html[data-domain*='ladbrokes.com'] {
+    .header-race-stage-result {
+        width: 200px;
+
+        @include breakpoint(multidesktop) {
+            width: 100px;
+            height: 64px;
+        }
+    }
+
+    .horse-table {
+        li {
+            height: 97.88px;
+            margin-bottom: 0px;
+
+            @include breakpoint(multidesktop) {
+                height: 48.94px;
+                margin-bottom: 0px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                height: 93.15px;
+            }
+
+            .selection-position {
+                span {
+                    @include breakpoint(multidesktop) {
+                        border-radius: 60px;
+                    }
+                }
+            }
+
+            .selection-content {
+                padding-right: 6px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 3px;
+                }
+
+                .selection-current-price,
+                .selection-plus1-market,
+                .selection-result {
+                    width: 212.05px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 106px;
+                    }
+                }
+            }
+
+            .selection-content-result {
+                padding-right: 6px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 3px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    padding-right: 3px;
+                }
+
+                .selection-result {
+                    width: 212px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 106px;
+                    }
+                }
+            }
+
+            .selection-past-price {
+                border-radius: 100px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        &.rcTemplate4 {
+            li {
+                height: 195.75px;
+
+                @include breakpoint(multidesktop) {
+                    height: 97.88px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 155.25px;
+                }
+            }
+        }
+
+        &.rcTemplate6 {
+            li {
+                height: 130.5px;
+
+                @include breakpoint(multidesktop) {
+                    height: 65.25px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 155.25px;
+                }
+            }
+        }
+
+        &.rcTemplate8 {
+            li {
+                @include breakpoint(multidesktophalf) {
+                    height: 116.44px;
+                }
+            }
+        }
+
+        &.rcTemplate10 {
+            li {
+                height: 78.3px;
+
+                @include breakpoint(multidesktop) {
+                    height: 39.15px;
+                }
+            }
+        }
+
+        &.rcTemplate10,
+        &.rcTemplate12,
+        &.rcTemplate14,
+        &.rcTemplate16,
+        &.rcTemplate20 {
+            li {
+                .selection-content {
+                    .selection-current-price,
+                    .selection-plus1-market {
+                        width: 214.05px;
+
+                        @include breakpoint(multidesktop) {
+                            width: 108px;
+                        }
+
+                        @include breakpoint(multidesktophalf) {
+                            width: 106px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.rcTemplate12 {
+            li {
+                height: 130.38px;
+
+                @include breakpoint(multidesktop) {
+                    height: 65.25px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 77.63px;
+                }
+            }
+        }
+
+        &.rcTemplate14 {
+            li {
+                height: 111.76px;
+
+                @include breakpoint(multidesktop) {
+                    height: 55.93px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 66.54px;
+                }
+            }
+        }
+
+        &.rcTemplate16 {
+            li {
+                height: 97.79px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48.94px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 58.22px;
+                }
+            }
+        }
+
+        &.rcTemplate20 {
+            li {
+                height: 78.23px;
+
+                @include breakpoint(multidesktop) {
+                    height: 39.15px;
+                }
+            }
+        }
+
+        &.result-table {
+            li {
+                height: 100px;
+                margin-bottom: 0px;
+
+                @include breakpoint(multidesktop) {
+                    height: 50px;
+                    margin-bottom: 0px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    height: 116px;
+                }
+            }
+        }
+    }
+
+    .greyhound-table {
+        li {
+            .selection-position {
+                span {
+                    @include breakpoint(multidesktop) {
+                        border-radius: 57px;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        height: 40px;
+                        font-size: 26px;
+                    }
+                }
+            }
+
+            .selection-content {
+                padding-right: 6px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 3px;
+                }
+
+                .selection-current-price,
+                .selection-plus1-market,
+                .selection-result {
+                    width: 218px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 108.8px;
+                    }
+                }
+            }
+
+            .selection-content-result {
+                padding-right: 6px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 3px;
+                }
+
+                .selection-result {
+                    width: 218px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 108.8px;
+                    }
+                }
+            }
+
+            .selection-past-price {
+                border-radius: 100px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+
+    .tilted-card {
+        border-radius: 0 25px;
+        transform: skew(-$tilted-angle);
+
+        @include breakpoint(multidesktop) {
+            border-radius: 0 12.5px;
+        }
+
+        .tilted-text {
+            transform: skew($tilted-angle);
+        }
+    }
+
+    .current-price__tilted {
+        border-radius: 0 32px;
+        transform: skew(-15deg);
+
+        @include breakpoint(multidesktop) {
+            border-radius: 0 16px;
+        }
+
+        .current-price__tilted--text {
+            transform: skew(15deg);
+        }
+    }
+
+    .off-event {
+        .tilted-card {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 0 100px;
+
+            @include breakpoint(multidesktop) {
+                border-radius: 0 50px;
+            }
+
+            .tilted-text {
+                color: rgba(0, 0, 0, 0.5);
+                left: -56px;
+
+                @include breakpoint(multidesktop) {
+                    left: -26px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    left: -30px;
+                }
+            }
+        }
+    }
+
+    .money-boost__page {
+        .header-status-box {
+            width: 206px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+        }
+
+        .money-boost-content {
+            margin: 168px 30px 0;
+            height: 386px;
+
+            @include breakpoint(multidesktop) {
+                height: 193px;
+                margin: 84px 20px 0;
+            }
+
+            .current-price {
+                width: 375px;
+
+                @include breakpoint(multidesktop) {
+                    width: 188px;
+                }
+            }
+        }
+    }
+
+    .winning-distance-page {
+        .header-status-box {
+            width: 206px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 217px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+            margin-right: 5px;
+
+            @include breakpoint(multidesktop) {
+                width: 106.5px;
+                border-radius: 0 8px;
+            }
+
+            .current-price__tilted--text {
+                transform: skew(15deg);
+            }
+        }
+    }
+
+    .how-far-page {
+        .header-status-box {
+            width: 206px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 215px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+            margin-right: 5px;
+
+            @include breakpoint(multidesktop) {
+                width: 107.5px;
+                border-radius: 0 8px;
+            }
+
+            .current-price__tilted--text {
+                transform: skew(15deg);
+            }
+        }
+    }
+
+    .match-bets__content {
+        .match-bet__selections {
+            &--price-wrap {
+                .price-info {
+                    width: calc(240px - 25.71px);
+
+                    @include breakpoint(multidesktop) {
+                        width: calc(120px - 12.86px);
+                    }
+                }
+            }
+        }
+    }
+
+    .trap-wrapper {
+        .trap-layout {
+            .selection-price {
+                width: 256px;
+
+                @include breakpoint(multidesktop) {
+                    width: 128px;
+                }
+            }
+
+            &.trap-layout-2,
+            &.trap-layout-3 {
+                .selection-price {
+                    width: 226px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 113px;
+                    }
+                }
+            }
+        }
+    }
+
+    .moneybox-content {
+        .selection-price {
+            width: 242px;
+            border-radius: 0 25px;
+            transform: skew(-$tilted-angle);
+
+            @include breakpoint(multidesktop) {
+                width: 121px;
+                border-radius: 0 12.5px 0 12.5px;
+            }
+
+            .selection-price__tilted {
+                transform: skew($tilted-angle);
+            }
+        }
+    }
+
+    .outright-content {
+        .header-status-box {
+            width: 206px;
+            padding: 0px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+        }
+
+        .current-price__tilted {
+            width: 215px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+            margin-right: 5px;
+
+            @include breakpoint(multidesktop) {
+                width: 107.5px;
+                border-radius: 0 8px;
+            }
+
+            .current-price__tilted--text {
+                transform: skew(15deg);
+            }
+        }
+
+        &__manual {
+            .manual-outright-pagination-content {
+                .selection-table li {
+                    margin-bottom: 2px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-bottom: 1px;
+                    }
+
+                    .current-price__tilted {
+                        width: 219.24px;
+                        max-height: 70px;
+
+                        @include breakpoint(multidesktop) {
+                            width: 109.7px;
+                            max-height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ante-post-pagination-content {
+        .current-price__tilted {
+            width: 219px;
+
+            @include breakpoint(multidesktop) {
+                width: 109.5px;
+            }
+        }
+    }
+
+    .cricket-results,
+    .darts-result,
+    .snooker-result,
+    .tennis-results,
+    .rugby-container,
+    .correct-score,
+    .boxing-results {
+        .header-status-box {
+            width: 206px;
+            padding: 0px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+        }
+
+        .bet-price,
+        .betOdds {
+            width: 216.57px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+
+            @include breakpoint(multidesktop) {
+                width: 109.3px;
+                border-radius: 0 8px;
+            }
+
+            &.price-box__shrinked {
+                width: 201px;
+
+                @include breakpoint(multidesktop) {
+                    width: 100.5px;
+                }
+            }
+        }
+
+        .draw-price {
+            width: 260.9px;
+            margin: 0px 30px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+
+            @include breakpoint(multidesktop) {
+                width: 130.45px;
+                margin: 0px 15px;
+                border-radius: 0 8px;
+            }
+        }
+    }
+
+    .boxing-results {
+        .correct-score-header {
+            margin-bottom: 14px;
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 7px;
+            }
+        }
+    }
+
+    .golf-page {
+        .header-status-box {
+            width: 206px;
+            padding: 0px;
+
+            @include breakpoint(multidesktop) {
+                width: 103px;
+            }
+
+            .tilted-text {
+                margin-left: 2px;
+
+                @include breakpoint(multidesktop) {
+                    margin-left: -0.5px;
+                }
+            }
+        }
+
+        .current-price__tilted {
+            width: 217px;
+            border-radius: 0 15.5px;
+            transform: skew(-15deg);
+
+            @include breakpoint(multidesktop) {
+                width: 108.5px;
+                border-radius: 0 8px;
+            }
+
+            .current-price__tilted--text {
+                transform: skew(15deg);
+            }
+        }
+    }
+
+    .nfl-result {
+        .header-status-box {
+            width: 202px;
+            padding: 0px;
+            height: 122px;
+
+            @include breakpoint(multidesktop) {
+                width: 101px;
+                height: 61px;
+            }
+        }
+
+        .header .header__title--block .header__title--block-left .header__logo img {
+            padding: 0px;
+        }
+
+        .bet-price {
+            width: 214.28px;
+
+            @include breakpoint(multidesktop) {
+                width: 107.14px;
+            }
+        }
+
+        .bet-details-container {
+            margin-left: 6px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 3px;
+            }
+        }
+    }
+
+    .header {
+        &__title--block {
+            .header__title--block-right {
+                .tilted-card {
+                    &:not(.default-fontsize) {
+                        span {
+                            font-size: 37px;
+
+                            @include breakpoint(multidesktop) {
+                                font-size: 18.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// base page reset in avr template
+.avr-template-wrapper {
+    &.base-page {
+        background: transparent;
+        padding: 0px 70px;
+        border: none;
+
+        @include breakpoint(multidesktop) {
+            padding: 0px 35px;
+            border: none;
+        }
+    }
+
+    .base-page__header {
+        height: 130px;
+
+        @include breakpoint(multidesktop) {
+            height: 65px;
+        }
+    }
+
+    .base-page__footer {
+        height: calc($footer-full-height + 10px);
+
+        @include breakpoint(multidesktop) {
+            height: calc($footer-quad-height + 5px);
+        }
+    }
+
+    .off-event {
+        .tilted-card {
+            background: $color-black-s50;
+
+            .tilted-text {
+                color: $color-white-s50;
+            }
+        }
+    }
+}
+
+html[data-domain*='coral.co.uk'] {
+    .avr-dog-racing-preamble {
+        .selection-price {
+            width: 240px;
+            height: 96px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                height: 48px;
+            }
+        }
+    }
+
+    .avr-dog-racing-result {
+        .selection-result {
+            width: 240px;
+            height: 84px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                height: 42px;
+            }
+        }
+    }
+
+    .avr-horse-racing-preamble {
+        .selection-number-8 {
+            .selection-price {
+                width: 240px;
+                height: 84px;
+
+                @include breakpoint(multidesktop) {
+                    width: 120px;
+                    height: 42px;
+                }
+            }
+        }
+
+        .selection-number-10,
+        .selection-number-12,
+        .selection-number-16 {
+            .selection-price {
+                width: 170px;
+                height: 68px;
+
+                @include breakpoint(multidesktop) {
+                    width: 85px;
+                    height: 34px;
+                }
+            }
+        }
+    }
+
+    .avr-horse-racing-result {
+        .selection-result {
+            width: 240px;
+            height: 96px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                height: 48px;
+            }
+        }
+    }
+
+    .avr-motor-racing-preamble {
+        .selection-price {
+            width: 190px;
+            height: 76px;
+
+            @include breakpoint(multidesktop) {
+                width: 95px;
+                height: 38px;
+            }
+        }
+    }
+
+    .avr-motor-racing-result {
+        .selection-result {
+            width: 240px;
+            height: 84px;
+
+            @include breakpoint(multidesktop) {
+                width: 120px;
+                height: 42px;
+            }
+        }
+    }
+}
+
+html[data-domain*='ladbrokes.com'] {
+    .avr-dog-racing-preamble {
+        .selection-price {
+            width: 228.72px;
+            height: 96px;
+
+            @include breakpoint(multidesktop) {
+                width: 112px;
+                height: 48px;
+            }
+        }
+
+        li {
+            .selection-content {
+                padding-right: 7px;
+
+                @include breakpoint(multidesktop) {
+                    padding-right: 3.5px;
+                }
+            }
+        }
+    }
+
+    .avr-dog-racing-result {
+        li {
+            .selection-content-result {
+                .selection-result {
+                    width: 228px;
+                    height: 84px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 114px;
+                        height: 42px;
+                    }
+                }
+            }
+        }
+    }
+
+    .avr-horse-racing-preamble {
+        .selection-number-8 {
+            .selection-price {
+                width: 228px;
+                height: 84px;
+
+                @include breakpoint(multidesktop) {
+                    width: 112px;
+                    height: 42px;
+                }
+            }
+
+            li {
+                .selection-content {
+                    padding-right: 7px;
+
+                    @include breakpoint(multidesktop) {
+                        padding-right: 3px;
+                    }
+                }
+            }
+        }
+
+        .selection-number-10,
+        .selection-number-12,
+        .selection-number-16 {
+            .selection-price {
+                width: 152px;
+                height: 68px;
+
+                @include breakpoint(multidesktop) {
+                    width: 78px;
+                    height: 34px;
+                }
+            }
+        }
+    }
+
+    .avr-horse-racing-result {
+        li {
+            .selection-content-result {
+                .selection-result {
+                    width: 230px;
+                    height: 96px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 114px;
+                        height: 48px;
+                    }
+                }
+            }
+        }
+    }
+
+    .avr-motor-racing-preamble {
+        .selection-price {
+            margin-right: 5px;
+            width: 170px;
+            height: 76px;
+
+            @include breakpoint(multidesktop) {
+                margin-right: 2.5px;
+                width: 85px;
+                height: 38px;
+            }
+        }
+    }
+
+    .avr-motor-racing-result {
+        li {
+            .selection-content-result {
+                .selection-result {
+                    margin-right: 5px;
+                    width: 234px;
+                    height: 84px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-right: 2.5px;
+                        width: 118px;
+                        height: 42px;
+                    }
+                }
+            }
+        }
+    }
+
+    .off-event {
+        .tilted-card {
+            background: $color-black-s50;
+
+            .tilted-text {
+                color: $color-white-s50;
+            }
+        }
+    }
+}

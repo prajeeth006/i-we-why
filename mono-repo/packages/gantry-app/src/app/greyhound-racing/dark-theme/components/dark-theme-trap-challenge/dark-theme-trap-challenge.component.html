@@ -1,0 +1,70 @@
+<div class="trap-challenge-page">
+    <gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+        <ng-container header-content>
+            <gn-dark-theme-header-full
+                [title]="vm.marketTitle"
+                [racingImage]="
+                    vm?.isVirtualEvent ? vm?.gantryCommonContent?.racingVirtualImage?.src : vm?.gantryCommonContent?.greyHoundRacingImage?.src
+                ">
+            </gn-dark-theme-header-full>
+        </ng-container>
+        <ng-container body-content>
+            <div class="trap-wrapper">
+                <div
+                    class="trap-layout"
+                    *ngFor="let event of vm.events | slice: pageDetails.startIndex : pageDetails.endIndex"
+                    [ngClass]="(vm.events?.length == 2 && 'trap-layout-2') || (vm.events?.length >= 3 && 'trap-layout-3')">
+                    <div id="eventName" class="trap-layout__title">
+                        {{ event.name | titlecase }} -
+                        {{
+                            vm.gantryCommonContent?.contentParameters?.AvailableUntil
+                                ? (vm.gantryCommonContent?.contentParameters?.AvailableUntil | sentenceCase)
+                                : ''
+                        }}
+                        {{ event.eventDateTime | date: 'h:mma' | sentenceCase }}
+                    </div>
+                    <div class="trap-layout__grid ulhorizontal">
+                        <div id="eventSelections" class="trap-layout__row lihorizontal" *ngFor="let selection of event?.selections">
+                            <div
+                                class="selection-number"
+                                [class]="[
+                                    'trap-' + selection?.runnerNumber,
+                                    vm.isUKEvent || vm.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus',
+                                ]">
+                                <span>{{ selection?.runnerNumber }}</span>
+                            </div>
+                            <div id="selectionPrice" class="selection-price selection-result tilted-card" autoAdjustFont>
+                                <span class="tilted-text">
+                                    {{ selection.price | marketPriceTransform: selection?.hidePrice }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container footer-content>
+            <gn-dark-theme-footer-full>
+                <ng-container footer-left-content>
+                    <div class="flex-shrink">
+                        <span>{{
+                            vm.gantryCommonContent?.contentParameters?.TrapChallengeLeftInfo
+                                ? (vm.gantryCommonContent?.contentParameters?.TrapChallengeLeftInfo | sentenceCase)
+                                : ''
+                        }}</span>
+                    </div>
+                    <div class="flex-container" [ngClass]="vm.events?.length >= displayPagination && 'space-between'">
+                        <span>{{
+                            vm.gantryCommonContent?.contentParameters?.TrapChallengeFooterLeftInfo
+                                ? (vm.gantryCommonContent?.contentParameters?.TrapChallengeFooterLeftInfo | sentenceCase)
+                                : ''
+                        }}</span>
+                        <span *ngIf="vm.events?.length >= displayPagination">{{ pageDetails.paginationText | sentenceCase }}</span>
+                    </div>
+                </ng-container>
+            </gn-dark-theme-footer-full>
+        </ng-container>
+    </gn-dark-theme-base-page>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

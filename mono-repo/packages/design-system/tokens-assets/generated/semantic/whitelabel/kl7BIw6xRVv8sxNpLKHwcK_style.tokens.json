@@ -1,0 +1,61 @@
+{
+    "semantic": {
+        "elevation": {
+            "raised-1": {
+                "box-shadow": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "semantic",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{reference.elevation.raised-1.box-shadow}"
+                }
+            },
+            "raised-2": {
+                "box-shadow": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "semantic",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{reference.elevation.raised-2.box-shadow}"
+                }
+            },
+            "raised-3": {
+                "box-shadow": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "semantic",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{reference.elevation.raised-3.box-shadow}"
+                }
+            },
+            "raised-4": {
+                "box-shadow": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "semantic",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{reference.elevation.raised-4.box-shadow}"
+                }
+            },
+            "raised-5": {
+                "box-shadow": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "semantic",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{reference.elevation.raised-5.box-shadow}"
+                }
+            }
+        }
+    }
+}

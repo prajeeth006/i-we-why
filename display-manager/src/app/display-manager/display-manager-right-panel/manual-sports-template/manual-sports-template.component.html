@@ -1,0 +1,166 @@
+<div [formGroup]="RacingEvent" section="manualsportssection" class="manual-sports-section">
+    <div class="manual-match-details-form" *ngIf="menuName == manualConstants.manual_sports_multi_market">
+        <div class="controls-section">
+            <div class="form-control mr-15">
+                <div class="item-label">ODDS*</div>
+                <mat-form-field appearance="fill" class="field-odds">
+                    <input matInput type="text" id="firstOdds" placeholder="1/1000" formControlName="firstOdds" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <div class="item-label">PLAYER / TEAM A*</div>
+                <mat-form-field appearance="fill" class="sport-event-outright-mmarket">
+                    <input matInput type="text" id="firstPlayer" placeholder="Enter Name"
+                        formControlName="firstPlayer" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="draw-section">
+                <div class="item-label">DRAW <mat-slide-toggle id="isDrawmm"
+                        formControlName="isDraw"></mat-slide-toggle></div>
+                <mat-form-field appearance="fill" class="draw-field">
+                    <input matInput type="text" id="draw" formControlName="draw" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control mr-15">
+                <div class="item-label">PLAYER / TEAM B*</div>
+                <mat-form-field appearance="fill" class="sport-event-outright-mmarket">
+                    <input matInput type="text" id="secondPlayer" placeholder="Enter Name"
+                        formControlName="secondPlayer" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <div class="item-label">ODDS*</div>
+                <mat-form-field appearance="fill" class="field-odds">
+                    <input matInput type="text" id="secondOdds" placeholder="1/1000" formControlName="secondOdds" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="sports-table-container"
+        [ngClass]="{'outright-table-container': menuName !== manualConstants.manual_sports_multi_market}">
+        <table class="manual-sports-table form-group table" #tableref cdkDropList (cdkDropListDropped)="sortEvents($event)">
+            <thead class="manual-sports-table-header">
+                <tr class="header-row" matHeaderRowDef="sticky:true">
+                    <th class="selection-number" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                        <span>#</span>
+                    </th>
+                    <th class="hamburger"></th>
+                    <th class="selection-name-col" *ngIf="menuName != manualConstants.manual_sports_coupon">SELECTION
+                        NAME*
+                    </th>
+                    <th class="time" *ngIf="menuName == manualConstants.manual_sports_coupon">TIME*</th>
+                    <th class="odds" *ngIf="menuName == manualConstants.manual_sports_coupon">ODDS*</th>
+                    <th class="player-team-name" *ngIf="menuName == manualConstants.manual_sports_coupon">PLAYER /
+                        TEAM
+                        A*</th>
+                    <th class="draw" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                        <mat-slide-toggle id="isDraw" [(ngModel)]="isDraw"
+                            *ngIf="menuName == manualConstants.manual_sports_coupon">DRAW</mat-slide-toggle>
+                    </th>
+                    <th class="player-team-name" *ngIf="menuName == manualConstants.manual_sports_coupon">PLAYER /
+                        TEAM
+                        B*</th>
+                    <th class="odds">ODDS*</th>
+                    <th class="table-close"></th>
+                </tr>
+            </thead>
+            <tbody class="manual-sports-table-body" formArrayName="Runners">
+                <ng-container *ngFor="let obj of runnersArray.controls; let i = index; let l = last">
+                    <tr cdkDrag [cdkDragPreviewClass]="'preview-item-section'" class="manual-sports-row"
+                        [formGroupName]="i">
+                        <td class="selection-number" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <span>{{ i + 1 }}</span>
+                        </td>
+                        <td class="hamburger" cdkDragHandle>
+                            <img class="hamburger-img" [src]="hamburgerPath" alt="hamburger">
+                        </td>
+                        <td class="selection-name-col"
+                            *ngIf="menuName != manualConstants.manual_sports_coupon  && menuName != manualConstants.manual_sports_outright">
+                            <mat-form-field appearance="fill" class="selection-name">
+                                <input matInput name="selectionName{{i}}" placeholder="Enter Name"
+                                    formControlName="selectionName" id="selectionName" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="selection-name-col" *ngIf="menuName == manualConstants.manual_sports_outright">
+                            <mat-form-field appearance="fill" class="selection-name" [ngClass]="{ 'is-invalid': ( ( obj.get('selectionName')?.invalid) && isSubmit)  }"> 
+                                <input matInput name="selectionName{{i}}" placeholder="Enter Name" required
+                                    formControlName="selectionName" id="selectionName" autocomplete="off"/>
+                            </mat-form-field>
+                        </td> 
+                        <td class="time" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="time">
+                                <input matInput name="time{{i}}" [OnlyNumber]="true" [maxlength]="2"
+                                    formControlName="time" id="time" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="odds" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="odds">
+                                <input matInput name="firstOdds{{i}}" [OnlyNumber]="true" [maxlength]="2"
+                                    formControlName="firstOdds" id="firstOdds" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="team" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="player-team-name">
+                                <input matInput name="firstPlayer{{i}}" placeholder="Enter Name"
+                                    formControlName="firstPlayer" id="firstPlayer" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="draw" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="draw">
+                                <input matInput name="draw{{i}}" formControlName="draw" id="draw" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="team" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="player-team-name">
+                                <input matInput name="secondPlayer{{i}}" placeholder="Enter Name"
+                                    formControlName="secondPlayer" id="secondPlayer" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="odds" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                            <mat-form-field appearance="fill" class="odds">
+                                <input matInput name="secondOdds{{i}}" [OnlyNumber]="true" [maxlength]="2"
+                                    formControlName="secondOdds" id="secondOdds" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="odds"
+                            *ngIf="menuName != manualConstants.manual_sports_coupon  && menuName != manualConstants.manual_sports_outright">
+                            <mat-form-field appearance="fill" class="odds">
+                                <input matInput name="odds{{i}}" [OnlyNumber]="true" [maxlength]="2"
+                                    formControlName="odds" id="odds" autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="odds" *ngIf="menuName == manualConstants.manual_sports_outright">
+                            <mat-form-field appearance="fill" class="odds" [ngClass]="{ 'is-invalid': ( ( obj.get('odds')?.invalid) && isSubmit)  }">
+                                <input matInput name="odds{{i}}" (change)="payoutChange(i)" [maxlength]="6"
+                                    formControlName="odds" id="odds" required autocomplete="off"/>
+                            </mat-form-field>
+                        </td>
+                        <td class="table-close">
+                            <mat-icon  id="close" class="close-icon" (click)="deleteRow(i)" aria-hidden="false"
+                                aria-label="close icon">close_alt</mat-icon>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container>
+                    <tr class="add-more-row">
+                        <td colspan="8" class="add-more">
+                            <button type="button" (click)="addNewRow()" class="button-addrow">
+                                <div class="addrow-div">
+                                    <img  id="plusImg" class="plus-img" [src]="addIconPath">
+                                    <span class="add-row-button">ADD ROW</span>
+                                </div>
+                            </button>
+                        </td>
+                    </tr>
+                    <ng-container *ngFor="let obj of emptyArray;">
+                        <tr class="empty-tr">
+                            <td colspan="8">
+                                <div class="button-empty-row"></div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

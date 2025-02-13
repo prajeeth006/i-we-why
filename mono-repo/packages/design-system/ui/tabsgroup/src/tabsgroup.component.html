@@ -1,0 +1,69 @@
+<div class="ds-tab-header">
+    <div
+        #tabHeaderItemsContainer
+        class="ds-tab-header-container"
+        [class.ds-tab-nav-enabled]="_scrollable()"
+        [class.ds-header-full-width]="fullWidthTabs"
+        [class.ds-header-non-full-width]="!fullWidthTabs"
+        [class.ds-tab-nav-mobile-scrolling]="addMobileNavScrollClass()">
+        <ul #tabHeaderItemsList role="tablist" (keydown)="onKeydown($event)" [class.ds-tab-full-width]="fullWidthTabs" [class]="tabHeaderItemsClass">
+            @for (tab of _tabs(); track tab.name()) {
+                <li
+                    #tabItem
+                    [id]="'ds-tab-id-' + _id + '-' + tab.name()"
+                    class="ds-tab-header-item"
+                    role="tab"
+                    [attr.tabindex]="tab.selected() ? 0 : -1"
+                    [attr.aria-selected]="tab.selected() ? 'true' : 'false'"
+                    [attr.aria-disabled]="tab.disabled() ? 'true' : 'false'"
+                    [attr.aria-label]="tab.title() || tab.name()"
+                    [class.ds-tab-selected]="tab.selected()"
+                    [class.ds-tab-horizontal]="variant === 'horizontal'"
+                    [class.ds-tab-vertical]="variant === 'vertical'"
+                    [class.ds-tab-disabled]="tab.disabled()"
+                    (click)="!tab.disabled() ? selectTab(tab.name(), $event) : null">
+                    <div class="ds-tab-item">
+                        @if (tab.customHeader) {
+                            <ng-container *ngTemplateOutlet="tab.customHeader; context: { $implicit: tab.selected(), name: tab.name() }" />
+                        } @else if (tab.title()) {
+                            {{ tab.title() }}
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <ng-content select="ds-divider" />
+
+    @if (showNavigationArrows()) {
+        <button
+            [class.ds-tab-hidden-arrow]="prevBtnHidden()"
+            (click)="handleArrowClick($event, 'prev')"
+            [class.ds-arrow-inverse]="inverse"
+            class="ds-tab-start-arrow"
+            [attr.aria-label]="ariaLabelNavigationArrowPrev">
+            @if (dsTabsLeftArrowTpl) {
+                <ng-container *ngTemplateOutlet="dsTabsLeftArrowTpl" />
+            } @else {
+                <ds-tabs-arrow [direction]="'left'" aria-hidden="true" />
+            }
+        </button>
+        <button
+            [class.ds-tab-hidden-arrow]="nextBtnHidden()"
+            (click)="handleArrowClick($event, 'next')"
+            [class.ds-arrow-inverse]="inverse"
+            class="ds-tab-end-arrow"
+            [attr.aria-label]="ariaLabelNavigationArrowNext">
+            @if (dsTabsRightArrowTpl) {
+                <ng-container *ngTemplateOutlet="dsTabsRightArrowTpl" />
+            } @else {
+                <ds-tabs-arrow [direction]="'right'" aria-hidden="true" />
+            }
+        </button>
+    }
+</div>
+
+<div class="ds-tab-content">
+    <ng-content />
+</div>

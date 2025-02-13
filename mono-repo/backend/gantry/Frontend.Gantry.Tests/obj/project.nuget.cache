@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "1h+rbQtHpMs=",
+  "success": false,
+  "projectFilePath": "C:\\dev\\monorepo\\backend\\gantry\\Frontend.Gantry.Tests\\Frontend.Gantry.Tests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'NUnit' from remote source 'https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public/FindPackagesById()?id='NUnit'&semVerLevel=2.0.0'.\r\n  An error occurred while sending the request.\r\n  The remote name could not be resolved: 'artifactory.bwinparty.corp'",
+      "libraryId": "NUnit"
+    }
+  ]
+}

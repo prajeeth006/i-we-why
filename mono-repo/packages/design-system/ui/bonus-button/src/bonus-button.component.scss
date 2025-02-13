@@ -1,0 +1,84 @@
+@use '../../generated/styles/components/button-bonus/button-bonus' as ds-bonus-button;
+@use '../../fonts/font-helper' as helper;
+
+.ds-bonus-button {
+    @include ds-bonus-button.shared;
+    @include ds-bonus-button.default;
+
+    --ds-button-bonus-border-width-local: 1px;
+    --ds-button-bonus-label-font-size-local: 9px;
+    --ds-button-bonus-label-line-height-local: 12px;
+    --ds-button-bonus-value-font-size-local: 11px;
+    --ds-button-bonus-value-line-height-local: 16px;
+    --ds-button-bonus-color-text: var(--ds-button-bonus-enabled-color-text);
+    --ds-button-bonus-bg: var(--ds-button-bonus-enabled-color-bg);
+    --ds-button-bonus-color-border: var(--ds-button-bonus-enabled-color-border);
+    --ds-button-bonus-color-label: var(--ds-button-bonus-enabled-color-label, var(--ds-button-bonus-color-label));
+
+    @include helper.set-font-variables('button', 'label', 'xs');
+    @include helper.setup-font-style('button');
+
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    height: var(--ds-button-bonus-size-tap-target);
+    justify-content: center;
+    background: var(--ds-button-bonus-bg);
+    border: var(--ds-button-bonus-border-width-local) solid var(--ds-button-bonus-color-border);
+    border-radius: var(--ds-button-bonus-radius-border);
+    box-sizing: border-box;
+    color: var(--ds-button-bonus-color-text);
+    content-visibility: auto;
+    gap: var(--ds-button-bonus-space-stack);
+    padding: var(--ds-button-bonus-space-padding-top) var(--ds-button-bonus-space-padding-right) var(--ds-button-bonus-space-padding-bottom)
+        var(--ds-button-bonus-space-padding-left);
+
+    .ds-bonus-btn-label {
+        color: var(--ds-button-bonus-color-label);
+        font-family: 'GT America', sans-serif;
+        font-size: var(--ds-button-bonus-label-font-size-local);
+        font-weight: 400;
+        line-height: var(--ds-button-bonus-label-line-height-local);
+    }
+
+    .ds-bonus-btn-value {
+        @include helper.set-font-variables('button', 'label', 'sm-strong');
+        @include helper.setup-font-style('button');
+    }
+
+    &.ds-btn-inverse {
+        @include ds-bonus-button.inverse;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-button-bonus-bg: var(--ds-button-bonus-hover-color-bg);
+            --ds-button-bonus-color-border: var(--ds-button-bonus-hover-color-border);
+            --ds-button-bonus-color-label: var(--ds-button-bonus-hover-color-label);
+
+            // --ds-button-bonus-color-text: var(--ds-button-bonus-hover-color-text);
+
+            color: var(--ds-button-hover-color-text);
+
+            /* added this temperory fix to overcome the anchor tag styles which are overriding from themepark file reboot.scss  which will be removed 
+        eventually once we are more stable with DS and more teams have adopted wide range of components from DS */
+        }
+    }
+
+    &:active {
+        --ds-button-bonus-color-text: var(--ds-button-bonus-active-color-text);
+        --ds-button-bonus-bg: var(--ds-button-bonus-active-color-bg);
+        --ds-button-bonus-color-border: var(--ds-button-bonus-active-color-border);
+        --ds-button-bonus-color-label: var(--ds-button-bonus-active-color-label);
+    }
+
+    &.ds-btn-bonus-disabled {
+        --ds-button-bonus-color-text: var(--ds-button-bonus-disabled-color-text);
+        --ds-button-bonus-bg: var(--ds-button-bonus-disabled-color-bg);
+        --ds-button-bonus-color-border: var(--ds-button-bonus-disabled-color-border);
+        --ds-button-bonus-color-label: var(--ds-button-bonus-disabled-color-label);
+
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "action": "ACTION1",
+        "campaign": "PC_Weekend_Clickard_UK_OPTIMOVE",
+        "group": "PC_WEEKEND_CLICKARD_REM_UK",
+        "templateId": "1",
+        "rewardAttributes": [
+            {
+                "Key": "EDS_EVENT_NAME",
+                "Value": "test2"
+            },
+            {
+                "Key": "EDS_START_DATE",
+                "Value": "07/12/2018 06:00:00"
+            },
+            {
+                "Key": "EDS_END_DATE",
+                "Value": "07/23/2028 05:59:59"
+            }
+        ]
+    }
+]

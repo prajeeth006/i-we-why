@@ -1,0 +1,26 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as ExpansionPanelStories from './expansion-panel.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './expansion-panel-tabs/overview.mdx';
+import MySecondTab from './expansion-panel-tabs/examples.mdx';
+
+# Expansion Panel
+
+<Meta of={ExpansionPanelStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

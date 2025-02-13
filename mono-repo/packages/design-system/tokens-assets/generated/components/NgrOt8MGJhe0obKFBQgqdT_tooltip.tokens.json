@@ -1,0 +1,176 @@
+{
+    "tooltip": {
+        "neutral": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                },
+                "title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                }
+            }
+        },
+        "shared": {
+            "color": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-16T17:13:16.553Z"
+                    }
+                },
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-16T17:13:16.553Z"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-16T17:13:16.553Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                },
+                "title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-16T17:13:16.553Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "max-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$type": "number",
+                    "$value": 300
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.sm}"
+                }
+            }
+        },
+        "utility": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.utility.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base-inverse}"
+                },
+                "title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tooltip",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base-inverse}"
+                }
+            }
+        }
+    }
+}

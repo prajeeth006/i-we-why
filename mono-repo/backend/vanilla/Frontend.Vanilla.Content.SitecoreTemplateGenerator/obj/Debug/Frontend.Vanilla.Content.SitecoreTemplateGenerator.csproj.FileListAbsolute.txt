@@ -1,0 +1,16 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\Frontend.Vanilla.Content.SitecoreTemplateGenerator.exe
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\Frontend.Vanilla.Content.SitecoreTemplateGenerator.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\Frontend.Vanilla.Content.SitecoreTemplateGenerator.runtimeconfig.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\Frontend.Vanilla.Content.SitecoreTemplateGenerator.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\Frontend.Vanilla.Content.SitecoreTemplateGenerator.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.32DBE768.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\refint\Frontend.Vanilla.Content.SitecoreTemplateGenerator.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\Frontend.Vanilla.Content.SitecoreTemplateGenerator.genruntimeconfig.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content.SitecoreTemplateGenerator\obj\Debug\ref\Frontend.Vanilla.Content.SitecoreTemplateGenerator.dll

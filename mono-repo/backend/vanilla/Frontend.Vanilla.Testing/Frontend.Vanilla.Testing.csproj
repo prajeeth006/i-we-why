@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework support for integration and unit testing.</Description>
+        <IsPackable>true</IsPackable>
+        <IsTestProject>false</IsTestProject>
+    </PropertyGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Data\DeviceRecognitionData_Integration.txt"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions"/>
+        <PackageReference Include="Moq"/>
+        <PackageReference Include="xunit.v3" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj"/>
+    </ItemGroup>
+</Project>

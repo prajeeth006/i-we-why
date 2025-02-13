@@ -1,0 +1,66 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-base-page>
+            <ng-container header-content>
+                <gn-banner
+                    [leadTitle]="vm.horseRacingContent?.contentParameters?.Title ? (vm.horseRacingContent?.contentParameters?.Title | uppercase) : ''"
+                    [title]="
+                        vm.horseRacingContent?.contentParameters?.RunningOnTotalsTitle
+                            ? (vm.horseRacingContent?.contentParameters?.RunningOnTotalsTitle | uppercase)
+                            : ''
+                    "
+                    [subtitleLeft]="
+                        vm.horseRacingContent?.contentParameters?.RunningOnTotalsSubtitleLeft
+                            ? (vm.horseRacingContent?.contentParameters?.RunningOnTotalsSubtitleLeft | uppercase)
+                            : ''
+                    ">
+                </gn-banner>
+            </ng-container>
+
+            <ng-container body-content>
+                <div class="mainContent">
+                    <ul class="list-section">
+                        <li *ngFor="let type of vm?.typeDetails | slice: pageDetails?.startIndex : pageDetails?.endIndex" class="course">
+                            <div>
+                                <div class="courseName">{{ type?.rpCourseName | uppercase }}</div>
+                                <div class="marketContent-center">
+                                    <span class="courseDetails">
+                                        <span [ngStyle]="{ color: type?.isResulted ? '#F60029' : '' }">{{ vm?.distanceAfterRace | uppercase }}</span>
+                                        <span *ngIf="!type?.isResulted"
+                                            >{{ type?.racesFinished + ' - ' + type?.distanceToWinner + 'L' | uppercase }}
+                                        </span>
+                                        <span *ngIf="type?.isResulted" style="color: #f60029"
+                                            >{{
+                                                type?.racesFinished +
+                                                    '
+                                            -
+                                            ' +
+                                                    type?.selectionName | uppercase
+                                            }}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+
+            <ng-container footer-content>
+                <!-- <gn-footer [leftSideText]="vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideText"> -->
+                <gn-footer [rightSideText]="pageDetails?.paginationText">
+                    <ng-container left-side-content>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextFirst ?? '' }}</span>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextSecond ?? '' }}</span>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextThird ?? '' }}</span>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextFourth ?? '' }}</span>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextFifth ?? '' }}</span>
+                        <span class="paddingThirty">{{ vm.horseRacingContent?.contentParameters?.RunningOnTotalsLeftSideTextSixth ?? '' }}</span>
+                    </ng-container>
+                </gn-footer>
+            </ng-container>
+        </gn-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

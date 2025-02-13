@@ -1,0 +1,31 @@
+import { Canvas, Meta, Source } from '@storybook/blocks';
+
+import * as InputFieldStories from './input-field.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './input-field-tabs/overview.mdx';
+import MySecondTab from './input-field-tabs/examples.mdx';
+import MyThirdTab from './input-field-tabs/api.mdx';
+
+# Input Field Component
+
+<Meta of={InputFieldStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

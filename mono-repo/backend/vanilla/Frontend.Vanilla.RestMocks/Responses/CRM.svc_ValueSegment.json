@@ -1,0 +1,25 @@
+{
+    "playerValueSegment": {
+        "customerId": 325132333,
+        "date": "/Date(1434427200000)/",
+        "segment": "Top NGR",
+        "segmentId": 9,
+        "optimoveInstance": "gvcdach",
+        "accountName": "pp_party347",
+        "lifeCycleStage": "Active Sport",
+        "ewvip": "No",
+        "netRevenue": 679.997097216547,
+        "netRevenue2W": 156.950011014938,
+        "highestAchievedSegment30D": "Top NGR",
+        "highestAchievedSegment90D": "Top NGR",
+        "highestAchievedSegment180D": "Top NGR",
+        "highestAchievedSegment365D": "Top NGR",
+        "highestAchievedSegmentLT": "Top NGR",
+        "lowestAchievedSegment365D": "Negative",
+        "microSegmentId": 198,
+        "microSegmentDesc": "Tier 3 Depositors-Mid Recency, High Frequency-High Activity, High Bet Amount",
+        "churnRate": 0.084808864553975,
+        "futureValue": 921.681511010879,
+        "potentialVip": 0.013935969868
+    }
+}

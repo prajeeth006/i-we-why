@@ -1,0 +1,17 @@
+export const FONT_NAMES_ARRAY = [
+    'GT America',
+    'PT Sans',
+    'Lato',
+    'Montserrat',
+    'Open Sans',
+    'Roboto',
+    'Poppins',
+    'Söhne',
+    'Ubuntu',
+    'Roboto Condensed',
+    'Inter',
+    'Raleway',
+    'FF DIN Pro',
+    'Helvetica Neue',
+    'sans-serif',
+] as const;

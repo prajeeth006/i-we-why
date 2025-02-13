@@ -1,0 +1,139 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+@import '../../../../../dark-theme-global-style/mixins/traps';
+
+.aus-column-styles {
+    flex-basis: 9%;
+
+    &:first-child {
+        flex-basis: 8.5%;
+    }
+
+    &.position {
+        flex-basis: 6.5%;
+    }
+
+    &.cast-column {
+        flex-basis: 12%;
+    }
+
+    &.gap {
+        flex-basis: 7%;
+    }
+}
+
+.uk-column-styles {
+    flex-basis: 9%;
+
+    &:first-child {
+        flex-basis: 7.5%;
+    }
+
+    &.position {
+        flex-basis: 8.5%;
+    }
+
+    &.cast-column {
+        flex-basis: 13%;
+    }
+
+    &.gap {
+        flex-basis: 7%;
+    }
+}
+
+.meeting-results-template {
+    margin-top: 26px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 13px;
+    }
+
+    .meeting-results-table-header {
+        display: flex;
+        align-items: center;
+        font-size: 44px;
+        margin-bottom: 28px;
+        height: 32px;
+
+        @include breakpoint(multidesktop) {
+            height: 16px;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        span {
+            @include flex-center;
+            @extend .aus-column-styles;
+
+            &:first-child {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .meeting-results-table-body {
+        .meeting-results-table-item {
+            display: flex;
+            align-items: center;
+            height: 72px;
+            margin-bottom: 20px;
+            font-size: 48px;
+
+            @include breakpoint(multidesktop) {
+                height: 36px;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            // trap styles
+            @include trap-box-styles(96px, 72px, 67.2px);
+
+            span {
+                text-align: center;
+                @extend .aus-column-styles;
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+
+            .selection-number {
+                display: inline-flex;
+
+                @include breakpoint(multidesktophalf) {
+                    width: 48px;
+                    height: 36px;
+                    font-size: 32px;
+                }
+
+                &.trap__country--uk {
+                    &.trap-6 {
+                        @include trap-number-stripes();
+                    }
+                }
+
+                &.trap__country--aus {
+                    &.trap-2 {
+                        @include trap-number-stripes();
+                    }
+                }
+            }
+        }
+    }
+}
+
+.uk-meeting-results-template {
+    .meeting-results-table-header {
+        span {
+            @extend .uk-column-styles;
+        }
+    }
+
+    .meeting-results-table-body {
+        .meeting-results-table-item {
+            span {
+                @extend .uk-column-styles;
+            }
+        }
+    }
+}

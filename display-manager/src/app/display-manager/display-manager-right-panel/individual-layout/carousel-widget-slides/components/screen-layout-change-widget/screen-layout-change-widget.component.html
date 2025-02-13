@@ -1,0 +1,43 @@
+<div [class]="'screen-toggle-widget ' + activeLayout" [class.disabled]="sequencencingHelper.sequenceJourneyStatus()">
+    <div class="screen-toggle" [ngClass]="{'active': showLayoutOptions }">
+
+        @if (showLayoutOptions) {
+        <ul role="unstyled" class="screen-toggle-layout-options">
+            @for (layout of screenLayouts; track layout;) {
+            <li class="screen-layout" [ngClass]="layout.class" [class.active]="activeLayout === layout.type"
+                (click)="checkLayoutConfirmation(layout.typeName)">
+                @for (widget of layout.widgets | range; track idx; let idx = $index) {
+                <ng-container *ngTemplateOutlet="screenWidgetTemplate"></ng-container>
+                }
+            </li>
+            }
+        </ul>
+        }
+        @else {
+        <div class="screen-toggle-active-layout-option">
+            @for (layout of screenLayouts; track layout;) {
+            @if (activeLayout === layout.type) {
+            <div class="screen-layout" [ngClass]="layout.class">
+                @for (widget of layout.widgets | range; track idx; let idx = $index) {
+                <ng-container *ngTemplateOutlet="screenWidgetTemplate"></ng-container>
+                }
+            </div>
+            }
+            }
+        </div>
+        }
+
+        <button class="screen-toggle-button" [ngClass]="{'active': showLayoutOptions }" (click)="handleScreenToggleClick($event)" [disabled]="sequencencingHelper.sequenceJourneyStatus()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.5 5.3335L4.5 9.3335L5.44 10.2735L8.5 7.22016L11.56 10.2735L12.5 9.3335L8.5 5.3335Z"
+                    fill="#485362" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Templates -->
+<ng-template #screenWidgetTemplate>
+    <div class="screen-widget"></div>
+</ng-template>

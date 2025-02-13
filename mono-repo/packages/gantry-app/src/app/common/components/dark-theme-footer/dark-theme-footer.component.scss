@@ -1,0 +1,64 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    color: $color-white;
+    font-size: $fs-full-price-odds;
+    line-height: $fs-full-price-odds;
+    border-top: solid 5px $color-white;
+    padding-top: 20px;
+    font-weight: $fw-semibold;
+
+    @include breakpoint(multidesktop) {
+        padding-top: 10px;
+        font-size: $fs-quad-price-odds;
+        line-height: $fs-quad-price-odds;
+        border-top: solid 2.5px $color-white;
+    }
+
+    .footer__left--text {
+        flex: 1 0 33.33%;
+        display: flex;
+        column-gap: 40px;
+
+        @include breakpoint(multidesktop) {
+            column-gap: 20px;
+        }
+
+        .meeting-result-betting-market {
+            color: $color-white;
+        }
+    }
+
+    .footer__center--text {
+        flex: 0 1 auto;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer__right--text {
+        flex: 1 0 33.33%;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 20px;
+
+        @include breakpoint(multidesktop) {
+            column-gap: 10px;
+        }
+    }
+
+    &.outright-content__footer,
+    &.meeting-results-content__footer,
+    &.footer-flex-content__auto {
+        .footer__left--text {
+            flex: 0 0 auto;
+        }
+
+        .footer__right--text {
+            flex: 0 0 auto;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+        <gn-base-page>
+            <ng-container header-content>
+                <gn-banner [leadTitle]="vm.event?.categoryName" [title]="vm.eventTimePlusTypeName"
+                    [subtitleLeft]="vm.horseRacingContent?.contentParameters?.MoneyBoostSubtitleLeft"
+                    [subtitleRight]="vm.horseRacingContent?.contentParameters?.MoneyBoostSubtitleRight">
+                </gn-banner>
+            </ng-container>
+            <ng-container body-content>
+                <div *ngIf="vm.selection && !vm?.selection?.hideEntry" class="money-boost-content">
+                    <div class="selection-names">{{vm.selection.selectionName}}</div>
+                    <div class="current-price">
+                        {{ vm.selection?.price  | marketPriceTransform : vm.selection?.hidePrice}}
+                    </div>
+                    <div *ngIf="vm.oldPriceString" class="old-price">
+                        {{ vm.oldPriceString }}
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <div class="money-boost-footer">
+                    <gn-footer [leftSideText]="vm.horseRacingContent?.contentParameters?.MoneyBoostLeftSideText">
+                    </gn-footer>
+                </div>
+            </ng-container>
+        </gn-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

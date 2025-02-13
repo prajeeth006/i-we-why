@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WfkXn4fvRhI=",
+  "success": true,
+  "projectFilePath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\prajeeth.alla\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\prajeeth.alla\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
+  "logs": []
+}

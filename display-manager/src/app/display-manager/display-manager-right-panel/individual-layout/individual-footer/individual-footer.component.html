@@ -1,0 +1,43 @@
+<div class="individual-footer">
+    <!-- Left Side -->
+    <div class="individual-footer-left">
+        <button id="apply-sequence-btn"
+            [ngClass]="footerDefaultbuttons ? 'apply-sequence-btn' : 'apply-sequence-btn active'"
+            (click)="applySequence()" [disabled]="!footerDefaultbuttons">
+            <img [src]="sequenceIconPath" alt="sequence_icon">
+        </button>
+    </div>
+
+    <!-- Right Side -->
+    <div class="individual-footer-right">
+        @if (footerDefaultbuttons) {
+
+        <button id="reset-changes-btn" mat-stroked-button class="footer-btn reset-btn" (click)="resetSequence()" [disabled]="!haveGantryTouched">
+            <div class="button-with-icon">
+                <img class="left-icon" [src]="resetIconPath">
+                <span>RESET CHANGES</span>
+            </div>
+        </button>
+
+        <div class="divider"></div>
+
+        <button id="publish-changes-btn" class="footer-btn publish-btn border-none" (click)="publishSequence()" [disabled]="!(haveGantryTouched && !isGantryDirty)">PUBLISH
+            CHANGES</button>
+
+        } @else {
+        <button id="start-over-btn" mat-stroked-button class="footer-btn start-over-btn" (click)="startOverSequence()">
+            <div class="button-with-icon">
+                <img class="left-icon" [src]="resetIconPath">
+                <span>START OVER</span>
+            </div>
+        </button>
+
+        <div class="divider"></div>
+
+        <button id="cancel-btn" class="footer-btn cancel-btn border-none" (click)="cancelSequence()">CANCEL</button>
+
+        <button id="continue-btn" class="footer-btn continue-sequence-btn border-none"
+            (click)="continueSequence()">CONTINUE</button>
+        }
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<gn-error [errorMessage$]="errorMessage$"></gn-error>
+<div [ngClass]="carouselUrls?.length > 0 ? 'container' : ''">
+    <ng-container *ngIf="vm$ | async">
+        <ng-container>
+            <ng-container>
+                <gn-slider class="carousel-slider" [carouselUrls]="carouselUrls"></gn-slider>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>

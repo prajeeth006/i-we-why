@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework domain specific language (DSL).</Description>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Core\Frontend.Vanilla.Core.csproj"/>
+    </ItemGroup>
+</Project>

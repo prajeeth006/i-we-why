@@ -1,0 +1,108 @@
+@inherits DslExpressionTesterComponent
+
+<BSForm Model="Model" OnValidSubmit="@TestExpressionAsync">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        <label for="formExpression">Expression</label>
+        <BSInput @bind-Value="Model.Expression" InputType="InputType.TextArea" ValidateOnChange="true" id="formExpression"
+                 placeholder="Expression to be tested e.g. User.AccountBalance > 100 AND QueryString.Get('bonus') = '123'"/>
+        <BSFeedback For="@(() => Model.Expression)"/>
+    </div>
+    <div class="form-group">
+        <label for="formResultType">Result Type</label>
+        <SelectList @bind-SelectedValue="Model.ResultType" Items="SupportedResultTypes" id="formResultType"/>
+    </div>
+    <div class="form-group">
+        <label for="formBrowserUrl">
+            Browser URL
+            <small class="text-muted">The URL that user would see in the browser address bar.</small>
+        </label>
+        <BSInput @bind-Value="Model.BrowserUrl" InputType="InputType.Text" ValidateOnChange="true" id="formBrowserUrl"/>
+        <BSFeedback For="@(() => Model.BrowserUrl)"/>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" disabled="@IsTestInProgress">
+            Test
+        </button>
+    </div>
+</BSForm>
+
+@if (IsTestInProgress)
+{
+    <div class="loading-indicator"></div>
+}
+
+@if (TestResult != null)
+{
+    <ul class="list-group" data-testid="evaluationResults">
+        <li class="list-group-item list-group-item-primary">
+            Tested input expression:
+            <span class="dsl-expression">@TestedExpression</span>
+        </li>
+        @if (TestResult.ParsedExpression != null)
+        {
+            <li class="list-group-item active">
+                Parsed out &amp; optimized expression:
+                <span class="dsl-expression">@TestResult.ParsedExpression</span>
+            </li>
+        }
+        @if (TestResult.SyntaxError != null)
+        {
+            <li class="list-group-item list-group-item-danger">
+                Syntax error: @TestResult.SyntaxError
+            </li>
+        }
+        else
+        {
+            <li class="list-group-item list-group-item-success">
+                Syntax is correct.
+            </li>
+        }
+        @foreach (var warning in TestResult.Warnings)
+        {
+            <li class="list-group-item list-group-item-warning">
+                Warning: @warning
+            </li>
+        }
+        @if (TestResult.ServerEvalResultJson != null)
+        {
+            <li class="list-group-item">
+                Result of full server evaluation:
+                <code>@TestResult.ServerEvalResultJson</code>
+            </li>
+        }
+        @if (TestResult.ServerEvalError != null)
+        {
+            <li class="list-group-item list-group-item-warning">
+                @TestResult.ServerEvalError
+            </li>
+        }
+        @if (TestResult.DslActionRedirect != null)
+        {
+            <li class="list-group-item">
+                DSL action redirected (<code>@GetRedirectCode(TestResult.DslActionRedirect.Permanent)</code>)
+                to URL: <code>@TestResult.DslActionRedirect.Url</code>
+            </li>
+        }
+        @if (TestResult.ClientEvalResultJson != null)
+        {
+            <li class="list-group-item">
+                Evaluation for client returned final result:
+                <code>@TestResult.ClientEvalResultJson</code>
+            </li>
+        }
+        @if (TestResult.ClientEvalClientExpression != null)
+        {
+            <li class="list-group-item">
+                Evaluation for client returned expression to be executed in browser:
+                <code>@TestResult.ClientEvalClientExpression</code>
+            </li>
+        }
+        @if (TestResult.ClientEvalError != null)
+        {
+            <li class="list-group-item list-group-item-warning">
+                @TestResult.ClientEvalError
+            </li>
+        }
+    </ul>
+}

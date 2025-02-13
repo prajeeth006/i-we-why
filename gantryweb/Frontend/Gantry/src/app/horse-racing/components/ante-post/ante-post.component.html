@@ -1,0 +1,20 @@
+<div class=ante-post-page>
+    <ng-container *ngIf="vm$ | async as vm">
+        <ng-container *ngIf="!(errorMessage$ | async)">
+            <ng-container *ngIf="vm.selections.length > 0 && vm.selections.length <= 6">
+                <gn-ante-post-small [result]="vm" [pageSize] ='6' [selectionLength] =nameLength></gn-ante-post-small>
+            </ng-container>
+            <ng-container *ngIf="vm.selections.length > 6 && vm.selections.length <= 12">
+                <gn-ante-post-medium [result]="vm" [pageSize] ='12' [selectionLength] =nameLength></gn-ante-post-medium>
+            </ng-container>
+            <ng-container *ngIf="vm.selections.length > 12 && vm.selections.length <= 20">
+                <gn-ante-post-large [result]="vm" [pageSize] ='20' [selectionLength] =nameLength></gn-ante-post-large>
+            </ng-container>
+            <ng-container *ngIf="vm.selections.length > 20">
+                <gn-ante-post-pagination [result]="vm" [pageSize] ='20' [selectionLength] =nameLength></gn-ante-post-pagination>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

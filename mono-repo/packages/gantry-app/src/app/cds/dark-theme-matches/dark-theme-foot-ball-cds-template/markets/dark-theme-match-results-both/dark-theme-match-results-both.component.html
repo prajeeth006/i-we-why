@@ -1,0 +1,25 @@
+<div class="match-betting-details">
+    <ng-container *ngIf="multiMarket?.selections?.length > 0">
+        <div class="bet-details-container" *ngFor="let selection of multiMarket?.selections">
+            <div class="match-betting-details-header">
+                <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title | titlecase }}</div>
+            </div>
+            <div class="match-betting-section">
+                <div id="homebetPrice" class="bet-price tilted-card" autoAdjustFont>
+                    <span *ngIf="selection?.homePrice" class="tilted-text"> {{ selection?.homePrice | prepareEvsPipe }} </span>
+                </div>
+                <div class="player-details-section">
+                    <div id="homeselectionTitle" class="full-market-1">
+                        <span *ngIf="selection?.homeSelectionTitle">{{ selection?.homeSelectionTitle | trimSelectionNamePipe: nameLength }} </span>
+                    </div>
+                    <div id="awayselectionTitle" class="full-market-2">
+                        <span *ngIf="selection?.awaySelectionTitle">{{ selection?.awaySelectionTitle | trimSelectionNamePipe: nameLength }}</span>
+                    </div>
+                </div>
+                <div id="awaybetPrice" class="bet-price tilted-card" autoAdjustFont>
+                    <span *ngIf="selection?.awayPrice" class="tilted-text"> {{ selection?.awayPrice | prepareEvsPipe }}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

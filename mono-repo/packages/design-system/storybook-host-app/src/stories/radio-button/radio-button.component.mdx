@@ -1,0 +1,98 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as DsRadioButtonStories from './radio-button.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './radio-button-tabs/overview.mdx';
+import MySecondTab from './radio-button-tabs/examples.mdx';
+import MyThirdTab from './radio-button-tabs/api.mdx';
+
+# Radio Button Component
+
+<Meta of={DsRadioButtonStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>
+
+## NgModelExample
+
+### FormsModule with ngModel
+
+The `FormsModule` is used to work with template-driven forms in Angular. It provides the ngModel directive, which is used for two-way data binding, allowing you to synchronize the `form controls` values with the component's properties.
+
+```ts
+import { FormsModule } from '@angular/forms'; // 👈 add to file imports
+```
+
+```html
+<form>
+    <ds-radio-group [(ngModel)]="value" name="radioGroup" size="${args.size}">
+        <ds-radio-button value="1" name="options">Option 1</ds-radio-button>
+        <ds-radio-button value="2" name="options">Option 2</ds-radio-button>
+        <ds-radio-button value="3" name="options" [disabled]="disabled">Option 3</ds-radio-button>
+    </ds-radio-group>
+    <p>Selected Value: {{ value }}</p>
+</form>
+```
+
+### In this story:
+
+-   The FormsModule is imported to enable template-driven forms.
+-   The ds-radio-group component uses \[(ngModel)] for two-way binding to the value property in the component.
+-   The name attribute is set on the ds-radio-group for form control name.
+
+{' '}
+
+<Canvas of={DsRadioButtonStories.NgModelExample} />
+
+{' '}
+
+<Controls of={DsRadioButtonStories.NgModelExample} />
+
+## ReactiveFormsExample
+
+### ReactiveFormsModule with Reactive Forms
+
+The `ReactiveFormsModule` is used to work with reactive forms in Angular. It provides a model-driven approach to handling form inputs, making it easier to manage and validate form state.
+
+```ts
+import { ReactiveFormsModule } from '@angular/forms'; // 👈 add to file imports
+```
+
+```html
+<form [formGroup]="form">
+    <ds-radio-group [value]="value" (valueChange)="value = $event" formControlName="radioGroup" size="${args.size}">
+        <ds-radio-button value="1" name="options">Option 1</ds-radio-button>
+        <ds-radio-button value="2" name="options">Option 2</ds-radio-button>
+        <ds-radio-button value="3" name="options" [disabled]="disabled">Option 3</ds-radio-button>
+    </ds-radio-group>
+</form>
+```
+
+### In this story:
+
+-   The ReactiveFormsModule is imported to enable reactive forms.
+-   A FormGroup with a FormControl is created and initialized with the value argument.
+-   The formGroup directive binds the form in the template to the form property in the component.
+-   The formControlName directive is used on the ds-radio-group to bind it to the radioGroup form control.
+-   The \[value] binding and (valueChange) event work similarly to the template-driven approach but are managed within the reactive form model.
+
+<Canvas of={DsRadioButtonStories.ReactiveFormsExample} />
+
+<Controls of={DsRadioButtonStories.ReactiveFormsExample} />

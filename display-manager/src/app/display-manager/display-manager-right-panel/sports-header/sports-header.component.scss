@@ -1,0 +1,304 @@
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+
+::ng-deep .cdk-overlay-container {
+    /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+    .mat-mdc-select-panel-wrap {
+
+        .category-dropdown-control,
+        .region-dropdown-control,
+        .competition-dropdown-control,
+        .market-dropdown-control {
+            margin-top: 22px !important;
+        }
+    }
+
+    #competition-panel,
+    .competition-dropdown-control {
+        transform-origin: 50% 8.79688px 0px;
+        font-size: 14px;
+        opacity: 1;
+        min-width: calc(100% + 41px);
+        transform: scaleY(1);
+        margin-left: -29px;
+    }
+
+    .cdk-overlay-pane {
+        .category-dropdown-control {
+            width: min-content !important;
+            max-width: 280px;
+            min-width: 215px;
+                margin-left: -8px;
+        }
+
+        .region-dropdown-control {
+                min-width: 256px;
+                margin-left:-28px;
+        }
+
+        .market-dropdown-control {
+            min-width: calc(100% + 9px);
+            margin-left: -4px;
+
+            .mat-pseudo-checkbox-minimal {
+                margin-left: 0px;
+            }
+            .mat-pseudo-checkbox {
+                width: 0px;
+                height: 0px;
+                visibility: hidden;
+            }
+        }
+
+        .mat-mdc-select-panel {
+            max-height: 256px;
+            padding: 0px;
+
+            .mat-mdc-option {
+                min-height: 42px;
+                padding: 0 16px;
+                --mat-select-trigger-text-size: 14px;
+                --mat-option-label-text-size: 14px;
+                letter-spacing: normal;
+                line-height: 42px;
+            }
+        }
+
+        .label-selector {
+            padding: 10px;
+            .mat-mdc-option.mdc-list-item {
+              min-height: 42px;
+              line-height: 42px;
+            }
+          }
+    }
+    
+}
+
+:host::ng-deep.cdk-overlay-container {
+        .cdk-overlay-pane {
+            width: min-content !important;
+            max-width: 100%;
+            min-width: 215px;
+    }
+}
+
+.sports-main-header {
+    display: grid;
+
+    .sports-match-details-wrapper {
+        height: 60px;
+        width: 1430px;
+
+    }
+}
+
+.mat-mdc-option {
+    @include abstract.breakpoint {
+        font-size: $txt-sm-font-size;
+    }
+}
+
+.sports-match-details-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-radius: 8px;
+    ::ng-deep .mat-mdc-select-trigger .mat-mdc-select-value {
+        height: 25px !important;
+    }
+
+    .controls-section {
+        display: flex;
+        column-gap: 15px;
+
+        .item-label {
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.25px;
+            color: $label-light-black;
+            font-size: $txt-md-font-size;
+
+            @include abstract.breakpoint {
+                font-size: $txt-sm-font-size;
+            }
+
+            @include abstract.breakpoint-2 {
+                font-size: $txt-md-font-size;
+            }
+        }
+
+        .date-range {
+            .date-range-control {
+                &:focus {
+                    outline: none;
+                }
+
+                cursor: pointer;
+                padding: 8px;
+                letter-spacing: 0.25px;
+                color: $color-black-4;
+                font-family: $default-font;
+                font-weight: 500;
+                font-size: $txt-md-font-size;
+                color: $color-black-4;
+                min-width: 30px;
+                width: 200px;
+                border-radius: 4px;
+                border: 1px solid $border-grey-2;
+                min-height: 30px;
+                max-height: 30px;
+                box-sizing: border-box;
+
+                @include abstract.breakpoint {
+                    width: 107px;
+                    font-size: $txt-sm-font-size;
+                    padding: 7px;
+                }
+
+                @include abstract.breakpoint-2 {
+                    width: 162px;
+                }
+            }
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        ::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+            padding-bottom: 0;
+            background-color: $white;
+            border: 1px solid $border-grey-2;
+            height: 30px;
+
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-mdc-form-field-underline {
+                display: none;
+            }
+
+            @include abstract.breakpoint {
+                width: 125px;
+                font-size: $txt-sm-font-size;
+            }
+
+            @include abstract.breakpoint-2 {
+                width: 170px;
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-mdc-form-field-flex {
+                border-radius: 3px;
+                padding: 0px 0.75em;
+                height: 30px;
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-mdc-form-field-infix {
+                    padding: 0.7em 0 0.5em 0;
+                    border-top: 0px;
+                    width: 175px;
+                    padding-top: 3px;
+                    margin-left: -15px;
+
+                    .mat-mdc-select {
+                        --mat-select-trigger-text-size: 14px;
+
+                        &:focus {
+                            outline: none;
+                        }
+                        /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+                        .mat-mdc-select-arrow-wrapper {
+                            padding-top: 0.9em;
+                            /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+                            .mat-mdc-select-arrow {
+                                color: $label-light-black;
+
+                                &::before {
+                                    content: "";
+                                    height: 30px;
+                                    position: absolute;
+                                    left: 3px;
+                                    top: -18px;
+                                    border-left: 1px solid $border-grey-2;
+
+                                    @include abstract.breakpoint {
+                                        height: 31px;
+                                        left: -3px;
+                                        top: -3px;
+                                    }
+
+                                }
+                                svg {
+                                    top: -100%;
+                                    left: 200%;
+                                }
+
+                            }
+
+                            @include abstract.breakpoint {
+                                transform: translate(15%, -40%);
+                            }
+
+                            @include abstract.breakpoint-2 {
+                                transform: translate(50%, -45%);
+                                padding-right: 13px;
+                            }
+
+                        }
+                        /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+                        .mat-mdc-select-value-text {
+                            letter-spacing: 0.25px;
+                            color: $color-black-4;
+                            display: inline-block;
+                            width: calc(100% - 10px);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.action-buttons {
+    align-self: flex-end;
+
+    .form-btn {
+        font-weight: 700;
+        font-size: $txt-md-font-size;
+        border-radius: 4px;
+        letter-spacing: 1.25px;
+        width: 8em;
+        height: 2.5em;
+
+        &:active {
+            border: none;
+        }
+
+        @include abstract.breakpoint {
+            width: 6em;
+            font-size: $txt-sm-font-size;
+        }
+
+        @include abstract.breakpoint-2 {
+            width: 6em;
+        }
+
+    }
+
+    .form-reset-btn {
+        margin-right: 15px;
+        background: $white;
+        color: $label-light-black;
+        border: 0.6px solid $label-light-black;
+        cursor: pointer;
+    }
+
+    .submit-form-btn {
+        background: $color-black-light;
+        color: $white;
+        cursor: pointer;
+        border: none;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+}

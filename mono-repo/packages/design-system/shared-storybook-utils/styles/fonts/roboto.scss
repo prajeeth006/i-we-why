@@ -1,0 +1,428 @@
+/******************** ROBOTO ****************/
+
+/* cyrillic-ext */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/d5ece741cc1047228695d21502b27b15.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/d7ba1446d147461b8ee23e587d8cdba4.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/972f63d1d65643b58c015576cc5e3733.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/a3d557a56853477cbf66b16d42c666a3.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/c29385a1e327476fbf99b163e74a237e.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6d8f8e8732d7477493cb44165fd3c11f.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    ascent-override: 100%;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/56ae9152430142d1ab2d032d9c2e65f7.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/895b891b4c4242e6a3ec6125a5ae10df.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/348177aecac7455186e2032cb1f11199.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6e3c7a45536e4df1839b2274c360b4f7.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/e65d13855783412a986c1ab790ff8217.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/c1f18a709f674c1ebd59838b94e40f6f.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    ascent-override: 100%;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/c0e67fd35c714587b520fd47ce8713ba.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6d44c4eea01148fea11820e4e7fdc929.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/39a2d3a35a7849a297efb6a73a8f3fa9.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/250bfa36c26b4876bbd5b9651ceb1a9b.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+1F00-1FFF;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6cf25c0531714d96ac3d5c9c56b33aac.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/1f01806aa4f1453781ba9dfe6360bee4.woff2') format('woff2');
+    unicode-range: U+1F00-1FFF;
+    ascent-override: 100%;
+}
+
+/* greek */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/dcb2343ef30f4657aebcf17012112b30.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/1450a8110ce74eec995fda6dfaebf936.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/e89123a716f94eaaa67a6d50c2af7f80.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/c9eeb7b9fbb14f889928ad26586b1346.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+0370-03FF;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/354a06ca271243ee8e8a5182d81bccab.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/ad5293c0a84f41908d85e07d280e979d.woff2') format('woff2');
+    unicode-range: U+0370-03FF;
+    ascent-override: 100%;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/04b7b268bf0e494b87a1727e541a4233.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/0311485d5a76414abf29becfa539d3e0.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/36561729f0f34b799b4cc12b064d6734.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/aae8d5b622854ba3bd00ad95da750224.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/01770d4317ee484cb1298e129042ef95.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/46681737d01445ae8cacce5710d654b6.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    ascent-override: 100%;
+}
+
+/* latin */
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/7a7ed40c8c5844738c2698017122d512.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/aa1772f14c9b404699af41a93b2ca814.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/3619afc9cea64a788270c65fff3140b4.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/343d8f849873478ea1b2162658a2c8e4.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}
+
+// @font-face {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-display: swap;
+//     src: url('') format('woff2');
+//     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+//         U+2215, U+FEFF, U+FFFD;
+// }
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/a7f86e6f29a3457db34a9f681f0a5020.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/dab8edb165d24eb39b4618946485a14c.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    ascent-override: 100%;
+}

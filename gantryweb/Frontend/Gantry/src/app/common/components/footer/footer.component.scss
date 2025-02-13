@@ -1,0 +1,89 @@
+@import './src/global-style/_all-variables.scss';
+
+.footer {
+    background-color: $body-color-p2-lighter-bg;
+    font-weight: bold;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $h2-lg-font-size;
+    height: 60px;
+
+    @include breakpoint(multidesktop) {
+        font-size: $txt-md-font-size;
+        height: 30px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        font-size: $txt-md-font-size;
+        height: 30px;
+    }
+}
+
+.left-side-text {
+    color: $body-color-txt;
+    padding: 10px 0 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: $h2-lg-font-size;
+
+    @include breakpoint(multidesktop) {
+        font-size: $txt-md-font-size;
+        padding: 5px 0px 5px 10px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        font-size: $txt-md-font-size;
+        padding: 5px 0px 5px 10px;
+    }
+}
+
+.center-side-text {
+    color: $body-color-txt;
+    padding-right: 20px;
+
+    @include breakpoint(multidesktop) {
+        padding-right: 10px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        padding-right: 10px;
+    }
+}
+
+.right-side-text {
+    font-size: $font-list-lg1-title;
+    padding: 10px 20px;
+    align-items: center;
+    display: flex;
+    color: $body-color-txt;
+
+    @include breakpoint(multidesktop) {
+        font-size: $txt-md-font-size;
+        padding: 5px 10px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        font-size: $txt-md-font-size;
+        padding: 5px 10px;
+    }
+
+    .c-logo {
+        height: 26px;
+        margin-right: 15px;
+
+        @include breakpoint(multidesktop) {
+            height: 13px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.info-row {
+    background-color: $white;
+    font-size: 35px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+}

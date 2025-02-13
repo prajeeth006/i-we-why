@@ -1,0 +1,280 @@
+@use '../../generated/styles/components/badge/badge' as ds-badge;
+@use '../../fonts/font-helper' as helper;
+
+.ds-badge {
+    @include helper.set-font-variables('badge', 'label', 'md-strong');
+    @include helper.setup-font-style('badge');
+
+    align-items: center;
+    background: var(--ds-badge-color-bg);
+    border-radius: var(--ds-badge-radius-border);
+    box-sizing: border-box;
+    color: var(--ds-badge-color-text);
+    content-visibility: auto;
+    display: inline-flex;
+    gap: var(--ds-badge-space-inline);
+    justify-content: center;
+    padding: var(--ds-badge-space-padding-top, 0) var(--ds-badge-space-padding-right, 0) var(--ds-badge-space-padding-bottom, 0)
+        var(--ds-badge-space-padding-left, 0);
+
+    &.ds-badge-primary {
+        @include ds-badge.primary;
+    }
+
+    &.ds-badge-secondary {
+        @include ds-badge.secondary;
+    }
+
+    &.ds-badge-secondary-strong {
+        @include ds-badge.secondary-strong;
+    }
+
+    &.ds-badge-secondary-subtle {
+        @include ds-badge.secondary-subtle;
+    }
+
+    &.ds-badge-green {
+        @include ds-badge.green;
+    }
+
+    &.ds-badge-green-strong {
+        @include ds-badge.green-strong;
+    }
+
+    &.ds-badge-green-subtle {
+        @include ds-badge.green-subtle;
+    }
+
+    &.ds-badge-blue {
+        @include ds-badge.blue;
+    }
+
+    &.ds-badge-blue-strong {
+        @include ds-badge.blue-strong;
+    }
+
+    &.ds-badge-blue-subtle {
+        @include ds-badge.blue-subtle;
+    }
+
+    &.ds-badge-red {
+        @include ds-badge.red;
+    }
+
+    &.ds-badge-red-strong {
+        @include ds-badge.red-strong;
+    }
+
+    &.ds-badge-red-subtle {
+        @include ds-badge.red-subtle;
+    }
+
+    &.ds-badge-neutral {
+        @include ds-badge.neutral;
+    }
+
+    &.ds-badge-neutral-strong {
+        @include ds-badge.neutral-strong;
+    }
+
+    &.ds-badge-neutral-subtle {
+        @include ds-badge.neutral-subtle;
+    }
+
+    &.ds-badge-purple {
+        @include ds-badge.purple;
+    }
+
+    &.ds-badge-purple-strong {
+        @include ds-badge.purple-strong;
+    }
+
+    &.ds-badge-purple-subtle {
+        @include ds-badge.purple-subtle;
+    }
+
+    &.ds-badge-yellow {
+        @include ds-badge.yellow;
+    }
+
+    &.ds-badge-yellow-strong {
+        @include ds-badge.yellow-strong;
+    }
+
+    &.ds-badge-yellow-subtle {
+        @include ds-badge.yellow-subtle;
+    }
+
+    &.ds-badge-orange {
+        @include ds-badge.orange;
+    }
+
+    &.ds-badge-orange-strong {
+        @include ds-badge.orange-strong;
+    }
+
+    &.ds-badge-orange-subtle {
+        @include ds-badge.orange-subtle;
+    }
+
+    &.ds-badge-primary-strong {
+        @include ds-badge.primary-strong;
+    }
+
+    &.ds-badge-primary-subtle {
+        @include ds-badge.primary-subtle;
+    }
+
+    &.ds-badge-disabled {
+        @include ds-badge.disabled;
+    }
+
+    &.ds-badge-inverse {
+        &.ds-badge-primary {
+            @include ds-badge.primary-inverse;
+        }
+
+        &.ds-badge-primary-strong {
+            @include ds-badge.primary-strong-inverse;
+        }
+
+        &.ds-badge-primary-subtle {
+            @include ds-badge.primary-subtle-inverse;
+        }
+
+        &.ds-badge-blue {
+            @include ds-badge.blue-inverse;
+        }
+
+        &.ds-badge-blue-strong {
+            @include ds-badge.blue-strong-inverse;
+        }
+
+        &.ds-badge-blue-subtle {
+            @include ds-badge.blue-subtle-inverse;
+        }
+
+        &.ds-badge-yellow {
+            @include ds-badge.yellow-inverse;
+        }
+
+        &.ds-badge-yellow-strong {
+            @include ds-badge.yellow-strong-inverse;
+        }
+
+        &.ds-badge-yellow-subtle {
+            @include ds-badge.yellow-subtle-inverse;
+        }
+
+        &.ds-badge-red {
+            @include ds-badge.red-inverse;
+        }
+
+        &.ds-badge-red-strong {
+            @include ds-badge.red-strong-inverse;
+        }
+
+        &.ds-badge-red-subtle {
+            @include ds-badge.red-subtle-inverse;
+        }
+
+        &.ds-badge-neutral {
+            @include ds-badge.neutral-inverse;
+        }
+
+        &.ds-badge-neutral-strong {
+            @include ds-badge.neutral-strong-inverse;
+        }
+
+        &.ds-badge-neutral-subtle {
+            @include ds-badge.neutral-subtle-inverse;
+        }
+
+        &.ds-badge-green {
+            @include ds-badge.green-inverse;
+        }
+
+        &.ds-badge-green-strong {
+            @include ds-badge.green-strong-inverse;
+        }
+
+        &.ds-badge-green-subtle {
+            @include ds-badge.green-subtle-inverse;
+        }
+
+        &.ds-badge-purple {
+            @include ds-badge.purple-inverse;
+        }
+
+        &.ds-badge-purple-strong {
+            @include ds-badge.purple-strong-inverse;
+        }
+
+        &.ds-badge-purple-subtle {
+            @include ds-badge.purple-subtle-inverse;
+        }
+
+        &.ds-badge-orange {
+            @include ds-badge.orange-inverse;
+        }
+
+        &.ds-badge-orange-strong {
+            @include ds-badge.orange-strong-inverse;
+        }
+
+        &.ds-badge-orange-subtle {
+            @include ds-badge.orange-subtle-inverse;
+        }
+
+        &.ds-badge-secondary {
+            @include ds-badge.secondary-inverse;
+        }
+
+        &.ds-badge-secondary-strong {
+            @include ds-badge.secondary-strong-inverse;
+        }
+
+        &.ds-badge-secondary-subtle {
+            @include ds-badge.secondary-subtle-inverse;
+        }
+
+        &.ds-badge-disabled {
+            @include ds-badge.disabled-inverse;
+        }
+    }
+
+    /* The following should be variables as soon as Figma supports it, we just assume now some default styling */
+    &.ds-badge-medium {
+        @include ds-badge.medium;
+        @include helper.set-font-variables('badge', 'label', 'md-strong');
+    }
+
+    &.ds-badge-xsmall {
+        @include ds-badge.xsmall;
+        @include helper.set-font-variables('badge', 'label', 'xs-strong');
+    }
+
+    &.ds-badge-medium,
+    &.ds-badge-xsmall {
+        /* stylelint-disable selector-max-attribute */
+        .ds-badge-slot-container {
+            align-items: center;
+            display: inline-flex;
+            height: var(--ds-badge-size-l-slot-height);
+            justify-content: center;
+            min-width: var(--ds-badge-size-l-slot-min-width);
+
+            svg {
+                height: var(--ds-badge-size-icon);
+                width: var(--ds-badge-size-icon);
+            }
+        }
+    }
+
+    .ds-badge-text,
+    .ds-badge-slot-container {
+        &:empty {
+            display: none;
+        }
+    }
+}

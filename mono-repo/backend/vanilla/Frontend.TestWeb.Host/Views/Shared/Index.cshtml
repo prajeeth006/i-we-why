@@ -1,0 +1,66 @@
+@using Frontend.Host
+@using Frontend.Host.Features.Assets
+@using Frontend.Host.Features.HtmlInjection
+@using Frontend.Vanilla.Features.WebAbstractions
+@inject IIndexViewDataProvider DataProvider
+@{
+    Layout = null;
+
+    Context.Response.DisableCache();
+
+    var titleTask = DataProvider.GetTitleAsync(Context);
+    var clientConfigTask = DataProvider.RenderClientConfigScriptAsync(Context);
+    var headTagsFromSitecoreTask = DataProvider.RenderHtmlHeadTagsFromSitecoreAsync(Context.RequestAborted);
+    var headTagsFromDynaconTask = DataProvider.RenderHtmlHeadTagsFromDynaconAsync(Context.RequestAborted);
+    var webAppMetadataTask = DataProvider.RenderWebAppMetadataAsync(Context.RequestAborted);
+    var siteScriptsTopTask = DataProvider.RenderSiteScriptsAsync(SiteScriptsPosition.Top, Context.RequestAborted);
+    var siteScriptsBottomTask = DataProvider.RenderSiteScriptsAsync(SiteScriptsPosition.Bottom, Context.RequestAborted);
+    var splashScreenTask = DataProvider.RenderSplashScreenAsync(Context.RequestAborted);
+    var fontPreloadTask = DataProvider.RenderFontPreloadAsync(Context.RequestAborted);
+    var noScriptTask = DataProvider.GetRequiredJavaScriptMessageAsync(Context.RequestAborted);
+    var delayedScriptTagsTask = DataProvider.RenderDelayedScriptTagsAsync(Context.RequestAborted);
+    var headBootstrapAssetsTask = @DataProvider.RenderBootstrapAssetsAsync(BootstrapAssetSection.Head, Context.RequestAborted);
+    var bodyBootstrapAssetsTask = @DataProvider.RenderBootstrapAssetsAsync(BootstrapAssetSection.Body, Context.RequestAborted);
+    var preloaderTask = @DataProvider.RenderPreloaderAsync(Context.RequestAborted);
+
+    var title = await titleTask;
+}
+<!doctype html>
+<html class="vn-@DataProvider.MajorVersion" lang="@DataProvider.GetHtmlLang()">
+
+<head>
+    <meta charset="utf-8" />
+    <title>@title</title>
+    <meta name="apple-mobile-web-app-title" content="@title" />
+    <meta name="description" content="@DataProvider.Description" />
+    <meta name="viewport" content="@DataProvider.GetViewport()" />
+    <script>
+        @DataProvider.RenderCurrentVersion()
+        @await clientConfigTask
+    </script>
+    @await headTagsFromSitecoreTask
+    @await headTagsFromDynaconTask
+    @DataProvider.RenderAbTestingScript()
+    @await webAppMetadataTask
+    @DataProvider.RenderCanonicalLinkTag(Context)
+    <base href="/" />
+    @await headBootstrapAssetsTask
+    @await siteScriptsTopTask
+    @DataProvider.RenderPartyTownScripts()
+</head>
+
+<body>
+    @await splashScreenTask
+    @await fontPreloadTask
+    @DataProvider.RenderDataLayer()
+    @DataProvider.RenderTagManagers()
+    <vn-app></vn-app>
+    <noscript>@await noScriptTask</noscript>
+    @await preloaderTask
+    @await bodyBootstrapAssetsTask
+    @await siteScriptsBottomTask
+    @await delayedScriptTagsTask
+    @DataProvider.RenderCurrentTime()
+</body>
+
+</html>

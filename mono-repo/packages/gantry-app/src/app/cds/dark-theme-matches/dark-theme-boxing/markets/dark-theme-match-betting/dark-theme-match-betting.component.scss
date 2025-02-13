@@ -1,0 +1,9 @@
+@import '../../../../../../../src/dark-theme-global-style/all-variables';
+
+.draw-details {
+    margin-top: 22px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 11px;
+    }
+}

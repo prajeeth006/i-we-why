@@ -1,0 +1,121 @@
+@mixin counter {
+    --ds-progress-bar-border-border-width: var(--semantic-size-xquarter);
+    --ds-progress-bar-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-progress-bar-size-min-height: var(--semantic-size-x4);
+    --ds-progress-bar-spacing-left-padding: var(--semantic-spacing-container-padding-xs);
+    --ds-progress-bar-spacing-right-padding: var(--semantic-spacing-container-padding-xs);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin error {
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-background: var(--semantic-color-negative-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-border: var(--semantic-color-negative-outline-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-negative-container);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-foreground: var(--semantic-color-negative-base);
+}
+
+@mixin negative-default {
+    --ds-progress-bar-color-background: var(--semantic-color-negative-container-base);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-negative-outline-base);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-negative-container);
+    --ds-progress-bar-color-foreground: var(--semantic-color-negative-base);
+}
+
+@mixin negative-inverse {
+    --ds-progress-bar-color-background: var(--semantic-color-negative-container-base-inverse);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-negative-outline-base-inverse);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-negative-container-inverse);
+    --ds-progress-bar-color-foreground: var(--semantic-color-negative-base-inverse);
+}
+
+@mixin positive-default {
+    --ds-progress-bar-color-background: var(--semantic-color-positive-container-base);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-positive-outline-base);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-positive-container);
+    --ds-progress-bar-color-foreground: var(--semantic-color-positive-base);
+}
+
+@mixin positive-inverse {
+    --ds-progress-bar-color-background: var(--semantic-color-positive-container-base-inverse);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-positive-outline-base-inverse);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-positive-container-inverse);
+    --ds-progress-bar-color-foreground: var(--semantic-color-positive-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin primary {
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-background: var(--semantic-color-primary-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-border: var(--semantic-color-primary-outline-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-primary-container);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-foreground: var(--semantic-color-primary-base);
+}
+
+@mixin primary-default {
+    --ds-progress-bar-color-background: var(--semantic-color-primary-container-base);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-primary-outline-base);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-primary-container);
+    --ds-progress-bar-color-foreground: var(--semantic-color-primary-base);
+}
+
+@mixin primary-inverse {
+    --ds-progress-bar-color-background: var(--semantic-color-primary-container-base-inverse);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-primary-outline-base-inverse);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-primary-container-inverse);
+    --ds-progress-bar-color-foreground: var(--semantic-color-primary-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin secondary {
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-background: var(--semantic-color-secondary-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-border: var(--semantic-color-secondary-outline-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-secondary-container);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-foreground: var(--semantic-color-secondary-base);
+}
+
+@mixin secondary-default {
+    --ds-progress-bar-color-background: var(--semantic-color-surface-base);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-secondary-outline-base);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-secondary-container);
+    --ds-progress-bar-color-foreground: var(--semantic-color-secondary-base);
+}
+
+@mixin secondary-inverse {
+    --ds-progress-bar-color-background: var(--semantic-color-secondary-container-base-inverse);
+    --ds-progress-bar-color-counter-border: var(--semantic-color-secondary-outline-base-inverse);
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-secondary-container-inverse);
+    --ds-progress-bar-color-foreground: var(--semantic-color-secondary-base-inverse);
+}
+
+@mixin shared {
+    --ds-progress-bar-color-text: var(--semantic-color-on-surface-base);
+    --ds-progress-bar-color-text-inverse: var(--semantic-color-on-surface-base-inverse);
+    --ds-progress-bar-radius-inside-end-border: var(--semantic-radius-squared);
+    --ds-progress-bar-radius-inside-start-border: var(--semantic-radius-max);
+    --ds-progress-bar-radius-outside-border: var(--semantic-radius-max);
+    --ds-progress-bar-size-bar-height: var(--semantic-size-x1);
+    --ds-progress-bar-spacing-bar-margins: var(--semantic-spacing-container-padding-md);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin success {
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-background: var(--semantic-color-positive-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-border: var(--semantic-color-positive-outline-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-counter-text: var(--semantic-color-on-positive-container);
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-progress-bar-color-foreground: var(--semantic-color-positive-base);
+}

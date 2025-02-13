@@ -1,0 +1,68 @@
+@use '../../generated/styles/components/card/card' as ds-card;
+
+.ds-card {
+    @include ds-card.shared;
+
+    --ds-card-box-shadow: var(--semantic-elevation-raised-2-box-shadow); // assigned to semantic until no component layer tokens supported
+
+    background: var(--ds-card-color-background);
+    border-radius: var(--ds-card-radius-border);
+    border: var(--ds-card-size-border) solid var(--ds-card-color-border);
+    box-shadow: var(--ds-card-box-shadow);
+    box-sizing: border-box;
+    display: block;
+
+    &.ds-card-no-elevation {
+        --ds-card-box-shadow: none;
+    }
+
+    &.ds-card-no-border-radius {
+        --ds-card-radius-border: 0;
+    }
+
+    &.ds-card-no-border {
+        --ds-card-size-border: 0;
+    }
+
+    &.ds-card-surface-lowest {
+        @include ds-card.surface-lowest;
+    }
+
+    &.ds-card-surface-low {
+        @include ds-card.surface-low;
+    }
+
+    &.ds-card-surface-high {
+        @include ds-card.surface-high;
+    }
+
+    &.ds-card-surface-highest {
+        @include ds-card.surface-highest;
+    }
+
+    &.ds-card-overflow-hidden {
+        overflow: hidden;
+    }
+
+    &.ds-card-hover-effect {
+        --transition: transform 0.1ms;
+        --transition-type: scale(1.02);
+
+        cursor: pointer;
+
+        @media (hover: hover) {
+            &:hover {
+                transform: var(--transition-type);
+                transition: var(--transition);
+            }
+        }
+
+        &:active,
+        &:active:hover {
+            --transition-type: scale(0.98);
+
+            transform: var(--transition-type);
+            transition: var(--transition);
+        }
+    }
+}

@@ -1,0 +1,116 @@
+include: 'https://vie.git.bwinparty.com/vanilla/gitlabcitemplates/-/raw/main/index.yml'
+
+# job templates
+.job_template: &bpty_docker
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-win-msbuild:17.0
+
+.job_template: &build_stage_common
+  stage: build
+
+.job_template: &schedule_never_rules
+    rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - when: always
+
+.job_template: &schedule_never_rules_master_always
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH != "master"
+      when: manual
+      allow_failure: true
+    - when: on_success
+
+.job_template: &publish_stage
+  stage: publish
+
+# stages
+stages:
+  - build  
+  - test
+  - publish
+  - deploy
+  - daily
+
+
+# build stage
+client-test:
+  stage: test
+  <<: *schedule_never_rules
+  script:
+    - 'cd ./Frontend/Gantry'
+    - 'yarn install --pure-lockfile'
+    - 'gulp test'
+  artifacts:
+    reports:
+      junit: 
+      - _build/frontend-test-results/*.xml 
+   
+server-test:   
+  stage: test
+  <<: *schedule_never_rules
+  script:   
+    - 'cd ./Gantry/Frontend.Gantry.Tests'
+    - 'dotnet test' 
+  artifacts:
+    reports:
+      junit:    
+      - ./Gantry/Frontend.Gantry.Tests/*.xml
+
+client-build:
+  <<: *build_stage_common
+  <<: *schedule_never_rules
+  script:
+    - 'cd ./Frontend/Gantry'
+    - 'yarn install --pure-lockfile'
+    - 'npm run fix-memory-limit'
+    - 'gulp build --prod'
+  artifacts:
+    paths:
+      - Gantry/Frontend.Gantry.Host/ClientDist/**
+
+server-build:
+  stage: build
+  <<: *bpty_docker
+  <<: *schedule_never_rules
+  script:
+    - 'powershell -File ./build-version.ps1'
+    - 'dotnet restore ./Gantry/Gantry.sln -s https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public'
+    - 'dotnet build ./Gantry/Gantry.sln -c Release --force --no-restore --no-incremental'
+    - 'dotnet publish ./Gantry/Frontend.Gantry.Host/Frontend.Gantry.Host.csproj -c Release -r win-x64 --force -o Gantry/Frontend.Gantry.Host/bin/Publish'
+  artifacts:
+    paths:    
+     - Gantry/Frontend.Gantry.Host/bin/Publish/**
+    when: always      
+
+
+# publish stage
+disme-upload:
+  <<: *publish_stage
+  <<: *schedule_never_rules_master_always
+  script:
+    - 'cp -r Gantry/Frontend.Gantry.Host/ClientDist Gantry/Frontend.Gantry.Host/bin/Publish/ClientDist'
+    - 'msbuild.exe -t:Bpty_Package,Bpty_DismeAPIUpload /p:Configuration=Publish /p:DismeApiAutoDeploy=true /p:DismeUploadComment="" ./Gantry/Bpty.Build.proj'
+  artifacts:
+    paths:
+      - Gantry/_build/deploy/*.xml 
+
+#fortify stage
+fortify:  
+  <<: *build_stage_common
+  tags:
+    - fortify-docker
+  <<: *schedule_never_rules
+  script:
+    - '&"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe" `@$env:BPTY_BUILD_ROOT\MSBuild40\MSBuild.rsp /target:Bpty_CleanSolution,Bpty_FetchNuget,Bpty_Fortify_MSBuild ./Gantry/Bpty.Build.proj'
+  timeout: 3 hours 30 minutes
+  needs: []

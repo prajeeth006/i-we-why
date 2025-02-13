@@ -1,0 +1,71 @@
+/** @deprecated This mixin is no longer available in Figma */
+@mixin default {
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-bg: var(--semantic-color-opacity-active);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-icon: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-icon: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-bg: var(--semantic-color-opacity-hover);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-icon: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-bg: var(--semantic-color-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-icon: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-label: var(--semantic-color-on-surface-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin inverse {
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-bg: var(--semantic-color-opacity-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-active-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-enabled-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-bg: var(--semantic-color-opacity-hover-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-hover-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-bg: var(--semantic-color-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-icon: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-selected-color-label: var(--semantic-color-on-surface-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin shared {
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-radius-border: var(--semantic-radius-l2-segment-item);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-size-min-width: var(--semantic-size-x11);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-space-padding-bottom: var(--semantic-spacing-container-padding-md);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    /** @deprecated This token is no longer available in Figma (2024-10-25T08:57:06.508Z) */
+    --ds-segement-item-space-padding-top: var(--semantic-spacing-container-padding-md);
+}

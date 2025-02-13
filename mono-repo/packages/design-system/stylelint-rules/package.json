@@ -1,0 +1,16 @@
+{
+    "name": "@design-system/stylelint-rules",
+    "version": "0.0.1",
+    "keywords": [
+        "stylelint",
+        "stylelint-plugin"
+    ],
+    "dependencies": {
+        "stylelint": "*",
+        "postcss": "*",
+        "@design-system/token-path-config-utils": "*"
+    },
+    "type": "commonjs",
+    "main": "./src/index.cjs",
+    "typings": "./src/index.d.ts"
+}

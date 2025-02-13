@@ -1,0 +1,133 @@
+/* Raleway */
+
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/3363ab29ed3c4e639d5904119f648f11.woff2') format('woff2');
+}
+
+// * cyrillic-ext-400 *//
+
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/d52b5e8c24c44e2c9dee83cf6ea56516.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/5b970994e03b4e008517f294a9a206fd.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/fe7563a90cb94c2c8b9ad5c39b9fc7b4.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/22e9237dd9a64b0aabb63ba72c12f3dc.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/2f92f61de4f24385825cb5d5ee565040.woff2') format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6490e1ab92b7420c8d52b504a9973c99.woff2') format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/9a5598a01ddf43f8af06b70f4ac312e9.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/7ac0f0f22d6747d4b5a7b5ae8189f499.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/c3c2f79b24be4de1ab099ff09e5c0092.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/b4e584bb7fd64dcfb43663745c003917.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6c84934ac3f24940841511b4af43bc24.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://scmedia.itsfogo.com/$-$/6781b6425b7f4f068356f41a15aee3a4.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}

@@ -1,0 +1,16 @@
+{
+    "AssociatedAccount": [
+        {
+            "userName": "user1",
+            "foreignUserId": "fuser1",
+            "loginDomainId": 1,
+            "sportsBookUserId": 1
+        },
+        {
+            "userName": "user2",
+            "foreignUserId": "fuser2",
+            "loginDomainId": 2,
+            "sportsBookUserId": 2
+        }
+    ]
+}

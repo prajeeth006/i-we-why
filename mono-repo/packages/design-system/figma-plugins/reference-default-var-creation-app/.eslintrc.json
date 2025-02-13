@@ -1,0 +1,7 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/use-unknown-in-catch-callback-variable": "off"
+    }
+}

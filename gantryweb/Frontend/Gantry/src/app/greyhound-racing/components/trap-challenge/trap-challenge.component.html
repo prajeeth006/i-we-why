@@ -1,0 +1,44 @@
+<div class=trap-challenge-page>
+    <ng-container *ngIf="vm$ | async as vm">
+        <ng-container *ngIf="!(errorMessage$ | async)">
+            <gn-base-page>
+                <ng-container header-content>
+                    <gn-banner [leadTitle]="vm.gantryCommonContent?.contentParameters?.Title" [title]="vm.marketTitle"
+                        [subtitleLeft]="vm.gantryCommonContent?.contentParameters?.TrapChallengeLeftInfo"
+                        [subtitleRight]="">
+
+                    </gn-banner>
+                </ng-container>
+                <ng-container body-content>
+                    <div class="trap-layout"
+                        *ngFor="let event of vm.events | slice:pageDetails.startIndex:pageDetails.endIndex"
+                        [ngClass]="vm.events?.length==2 && 'trap-layout-2' || vm.events?.length>=3 && 'trap-layout-3'">
+                        <div id="eventName" class="divtitletext">{{ event.name }} - {{
+                            vm.gantryCommonContent?.contentParameters?.AvailableUntil }} {{ event.eventDateTime |
+                            date:'h:mma' }}</div>
+                        <ul class="even-market-table ulhorizontal">
+                            <li id="eventSelections" class="lihorizontal" *ngFor="let selection of event?.selections">
+                                <div class="table-item-1 items border-dark table-center traps">
+                                    <img id="trapImg" [retrySrc]="selection?.trapImage" *ngIf="selection?.trapImage" />
+                                </div>
+                                <div id="selectionPrice" class="table-item-2 items">
+                                    <ng-container>
+                                        {{ selection.price | marketPriceTransform : selection?.hidePrice }}
+                                    </ng-container>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-footer [leftSideText]="vm.gantryCommonContent?.contentParameters?.TrapChallengeFooterLeftInfo"
+                        [rightSideText]="pageDetails.paginationText">
+                    </gn-footer>
+                </ng-container>
+            </gn-base-page>
+
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

@@ -1,0 +1,54 @@
+{
+    "agentName": "",
+    "amlCurrentStatus": "REJECTED",
+    "amlDecisionHistoryDetails": [
+        {
+            "amlAgentName": "",
+            "amlCurrentStatus": "BLOCKED",
+            "amlDecisionDate": "/Date(1633437107000)/",
+            "amlPreviousStatus": "",
+            "changeValueTicketDate": "/Date(1633437108000)/",
+            "comments": "test",
+            "isManualTicketLocking": true,
+            "lockingReasonAML": "Responsible Gambling Issue",
+            "shopAgentName": "Krishanth Murugan"
+        },
+        {
+            "amlAgentName": "Krishanth Murugan",
+            "amlCurrentStatus": "REJECTED",
+            "amlDecisionDate": "/Date(1633437263000)/",
+            "amlPreviousStatus": "BLOCKED",
+            "changeValueTicketDate": "/Date(1633437263000)/",
+            "comments": "test",
+            "isManualTicketLocking": "",
+            "lockingReasonAML": "",
+            "shopAgentName": "Krishanth Murugan"
+        }
+    ],
+    "amount": 8000,
+    "comments": "test",
+    "currency": "GBP",
+    "errorCode": "",
+    "errorMsg": "",
+    "lockingDetail": {
+        "lockingReason": "Responsible Gambling Issue",
+        "lockingTime": "/Date(1633437108000)/",
+        "lockingUser": "Krishanth Murugan",
+        "manualLock": true,
+        "status": "BLOCKED"
+    },
+    "paidOutDate": "",
+    "printedDate": "/Date(1633437079000)/",
+    "shopId": 2504,
+    "status": "SUCCESS",
+    "terminalId": 1,
+    "terminalIdPaidOut": "",
+    "unlockingDetail": {
+        "status": "REJECTED",
+        "unlockingReason": "",
+        "unlockingTime": "/Date(1633437263000)/",
+        "unlockingUser": "Krishanth Murugan"
+    },
+    "valueTicketId": "V-05083185VD2JSW5B",
+    "valueTicketStatus": "PRINTED"
+}

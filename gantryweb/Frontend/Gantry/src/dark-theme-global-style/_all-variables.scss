@@ -1,0 +1,61 @@
+@import '../shared-styles/_mixins.scss';
+@import './coral/all-variables';
+@import './ladbrokes/all-variables';
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    src: url('/ClientDist/assets/RobotoCondensed-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    src: url('/ClientDist/assets/RobotoCondensed-Regular.ttf');
+}
+
+
+$black: var(--black);
+$white: var(--white);
+$template-bg: var(--template-gradient-background);
+
+$theme-white-bg-text: var(--theme-white-bg-text);
+$theme-yellow: var(--theme-yellow);
+
+//Header Section
+$lead-title-text: var(--lead-title-text);
+$early-price-bg: var(--early-price-bg);
+$early-price-text: var(--early-price-text);
+
+$top-3-finish-bg: var(--top-3-finish-bg);
+$top-3-finish-text: var(--top-3-finish-text);
+
+$betting-bg: var(--betting-bg);
+$betting-text: var(--betting-text);
+
+$selection-count-text: var(--selection-count-text);
+$selection-name-text: var(--selection-name-text);
+
+$footer-seperator-color: var(--footer-seperator-color);
+$footer-white-text: var(--footer-white-text);
+$footer-yellow-text: var(--footer-yellow-text);
+$racing-post-bg: var(--racing-post-bg);
+$racing-post-text: var(--racing-post-text);
+
+
+//Typography
+$fs-lead-title: var(--fs-lead-title);
+$fs-lg-early-price: var(--fs-lg-early-price);
+$fs-md-early-price: var(--fs-md-early-price);
+$fs-quad-selection-name: var(--fs-quad-selection-name);
+$fs-full-selection-name: var(--fs-full-selection-name);
+$fs-price-odds: var(--fs-price-odds);
+
+
+$h1-lg-font-size: 60px !default;
+$h2-lg-font-size: 45px !default;
+$h3-lg-font-size: 40px !default;
+$h4-lg-font-size: 35px !default;
+$h5-lg-font-size: 32px !default;
+$h2-md-font-motorsize: 22px !default;
+

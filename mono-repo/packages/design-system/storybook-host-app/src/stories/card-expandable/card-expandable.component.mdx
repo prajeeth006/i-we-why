@@ -1,0 +1,26 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as CardExpandableStories from './card-expandable.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './card-expandable-tabs/overview.mdx';
+import MySecondTab from './card-expandable-tabs/examples.mdx';
+
+# Expandable Card
+
+<Meta of={CardExpandableStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

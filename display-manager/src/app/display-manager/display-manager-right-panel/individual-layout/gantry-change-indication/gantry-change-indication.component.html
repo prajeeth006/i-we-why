@@ -1,0 +1,17 @@
+@if(isSequenceDisrupted) {
+  <div class="sequence-title__wrapper">
+      <div class="title">{{headerTitle}}</div>
+      <div class="subtitle">
+        <img [src]="warningIcon" class="warning-icon-style" id="warningIcon" alt="warningIcon">{{screenDisruptedMsg}}</div>
+  </div>
+}
+@if (stateChange) {
+    <div class="change-live__wrapper">
+      <div class="live-btn btn" (click)="changeView(false)" [class.active-btn]="!readOnlyView">
+          Changes
+      </div>
+      <div class="live-btn btn" (click)="changeView(true)" [class.active-btn]="readOnlyView">
+          Live Now
+      </div>
+    </div>
+  }

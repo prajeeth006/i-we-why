@@ -1,0 +1,21 @@
+@mixin enabled {
+    --ds-clickable-card-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-clickable-card-color-border: var(--semantic-color-surface-outline-low-base);
+}
+
+@mixin selected {
+    --ds-clickable-card-color-bg: var(--semantic-color-primary-container-base);
+    --ds-clickable-card-color-border: var(--semantic-color-primary-outline-base);
+}
+
+@mixin shared {
+    --ds-clickable-card-radius-border: var(--semantic-radius-semi-rounded-md);
+    --ds-clickable-card-size-border: var(--semantic-size-xquarter);
+}
+
+@mixin space {
+    --ds-clickable-card-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-clickable-card-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-clickable-card-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-clickable-card-padding-top: var(--semantic-spacing-container-padding-lg);
+}

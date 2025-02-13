@@ -1,0 +1,20 @@
+@inherits DslProvidersShortcutsComponent
+
+<span id="shortcuts">
+    Jump to:
+    <a id="syntax-shortcut" class="badge badge-info" @onclick='() => Focus("Provider-access")'>Syntax</a>
+
+    @foreach (var provider in ProvidersMetadata)
+    {
+        <a class="badge badge-success expandable" @onclick="() => Focus(provider.Name)">@provider.Name</a>
+    }
+</span>
+
+@code
+{
+    async Task Focus(string id)
+    {
+        await OnScroll.InvokeAsync(id);
+        await JsRuntime.InvokeVoidAsync("scrollToElementId", id);
+    }
+}

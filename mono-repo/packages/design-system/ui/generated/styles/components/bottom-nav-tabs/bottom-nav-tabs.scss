@@ -1,0 +1,40 @@
+@mixin active {
+    --ds-bottom-nav-tabs-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-border: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-icon: var(--semantic-color-l2-navigation-on-background-base);
+    --ds-bottom-nav-tabs-color-text: var(--semantic-color-l2-navigation-on-background-base);
+}
+
+@mixin disabled {
+    --ds-bottom-nav-tabs-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-border: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-icon: var(--semantic-color-on-disabled-outline);
+    --ds-bottom-nav-tabs-color-text: var(--semantic-color-on-disabled-outline);
+}
+
+@mixin enabled {
+    --ds-bottom-nav-tabs-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-border: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-icon: var(--semantic-color-l2-navigation-on-background-subtle);
+    --ds-bottom-nav-tabs-color-text: var(--semantic-color-l2-navigation-on-background-subtle);
+}
+
+@mixin pressed {
+    --ds-bottom-nav-tabs-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-border: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-tabs-color-icon: var(--semantic-color-l2-navigation-on-background-base);
+    --ds-bottom-nav-tabs-color-text: var(--semantic-color-l2-navigation-on-background-base);
+}
+
+@mixin shared {
+    --ds-bottom-nav-tabs-color-indicator: var(--semantic-color-utility-base-inverse);
+    --ds-bottom-nav-tabs-color-indicator-outline: var(--semantic-color-l2-navigation-background-base);
+    --ds-bottom-nav-tabs-size-icon-size: var(--semantic-size-icon-large);
+    --ds-bottom-nav-tabs-size-min-height: var(--semantic-size-x11);
+    --ds-bottom-nav-tabs-size-min-width: var(--semantic-size-x11);
+    --ds-bottom-nav-tabs-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-tabs-space-padding-left: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-tabs-space-padding-right: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-tabs-space-padding-top: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-tabs-space-stack: var(--semantic-spacing-stack-xs);
+}

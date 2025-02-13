@@ -1,0 +1,44 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ArrowStories from '../arrow.component.stories';
+
+The arrow component is to show left and right arrows in the carousel manner components. These arrows are commonly used in web interfaces to display a series of images, content, or other elements in a sliding format. The right and left arrows are integral parts of the Carousel, allowing users to navigate through the carousel items.
+
+<Canvas of={ArrowStories.Default} />
+
+## Usage
+
+Import `DsArrow` in your component.
+
+```ts
+import { DsArrow } from '@frontend/ui/arrow'; // 👈 add to file imports
+
+@Component({
+    imports: [DsArrow], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+You can implement and customize these arrows by using `ds-arrow` selector.
+It provides default arrow from DS. Also you can pass `size`, `direction` and `inverse`values as input.
+
+### Left Arrow
+
+The left arrow is a navigational control that allows users to move to the previous item in the carousel.
+
+### Right Arrow
+
+The right arrow is a navigational control that allows users to move to the next item in the carousel.
+
+### With Custom Icon
+
+You can place your own icon inside the arrow component by using `<ng-template>`. Inside the `<ng-template>` you can place right or left svg icons
+
+### Inputs
+
+-   direction: left (default), right
+-   size: small, medium, large
+-   variant: strong, subtle
+-   inverse: It will render the inverse styles by passing `boolean` value to it

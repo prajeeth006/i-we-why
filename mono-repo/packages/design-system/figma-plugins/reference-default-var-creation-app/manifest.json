@@ -1,0 +1,14 @@
+{
+    "name": "ReferenceVariableCreator",
+    "id": "1366095620350678895",
+    "api": "1.0.0",
+    "main": "code.js",
+    "capabilities": [],
+    "enableProposedApi": false,
+    "documentAccess": "dynamic-page",
+    "editorType": ["figma"],
+    "ui": "ui.html",
+    "networkAccess": {
+        "allowedDomains": ["none"]
+    }
+}

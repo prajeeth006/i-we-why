@@ -1,0 +1,12 @@
+<div class="individual-tab-selections-group">
+    @if (!!gantryLayouts) {   
+    <div class="individual-tab-selections-group-section">
+        @for (gantryLayout of gantryLayouts; track $index; let i = $index) {
+        <button id="gantryTypeBtn" class="gantry-type-btn" [ngClass]="{'active-gantry-type': currentLayoutType === gantryLayout.GantryType.Name}"
+            [disabled]="sequencencingHelper.sequenceJourneyStatus()" (click)="selectGantryType(gantryLayout.GantryType.Name)">
+            <span class="shop-name" [ngClass]="{'dot-indicator': gantryLayout.GantryType.HaveTouched }">{{gantryLayout.GantryType.Name}}</span>
+        </button>
+        }
+    </div>   
+    }
+</div>

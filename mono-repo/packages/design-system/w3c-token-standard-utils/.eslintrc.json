@@ -1,0 +1,4 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {}
+}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Frontend.Vanilla.DotNetCore" Version="16.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Frontend.Gantry.Shared\Frontend.Gantry.Shared.csproj" />
+  </ItemGroup>
+</Project>

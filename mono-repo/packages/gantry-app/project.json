@@ -1,0 +1,110 @@
+{
+    "name": "gantry-app",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "packages/gantry-app/src",
+    "prefix": "gn",
+    "tags": ["type:app", "scope:gantry"],
+    "generators": {
+        "@schematics/angular:component": {
+            "style": "scss"
+        }
+    },
+    "targets": {
+        "build-base": {
+            "executor": "@nx/angular:browser-esbuild",
+            "options": {
+                "outputPath": "dist/build-base/packages/gantry-app",
+                "index": "packages/gantry-app/src/index.html",
+                "main": "packages/gantry-app/src/main.ts",
+                "polyfills": "packages/gantry-app/src/polyfills.ts",
+                "tsConfig": "packages/gantry-app/tsconfig.app.json",
+                "progress": true,
+                "sourceMap": true,
+                "styles": [],
+                "allowedCommonJsDependencies": ["rx-player", "cds-client"],
+                "assets": [
+                    {
+                        "glob": "**/*",
+                        "input": "packages/gantry-app/src/assets",
+                        "output": "/assets/"
+                    },
+                    {
+                        "input": "dist/generate-manifest/packages/gantry-app",
+                        "glob": "manifest.json",
+                        "output": "."
+                    }
+                ],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["packages/gantry-app/src/global-style"]
+                },
+                "scripts": []
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "packages/gantry-app/src/environments/environment.ts",
+                            "with": "packages/gantry-app/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "outputHashing": "all",
+                    "deployUrl": "/ClientDist/"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "extractLicenses": false,
+                    "deployUrl": "http://localhost:8896/ClientDist/"
+                }
+            },
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@nx/angular:dev-server",
+            "configurations": {
+                "production": {
+                    "buildTarget": "gantry-app:build-base:production"
+                },
+                "development": {
+                    "buildTarget": "gantry-app:build-base:development"
+                }
+            },
+            "defaultConfiguration": "development",
+            "options": {
+                "host": "localhost",
+                "port": 8896,
+                "servePath": "ClientDist",
+                "publicHost": "http://localhost:8896",
+                "disableHostCheck": true,
+                "liveReload": false
+            }
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "packages/gantry-app/src/test.ts",
+                "polyfills": "packages/gantry-app/src/polyfills.ts",
+                "tsConfig": "packages/gantry-app/tsconfig.spec.json",
+                "karmaConfig": "packages/gantry-app/karma.conf.js",
+                "scripts": [],
+                "codeCoverageExclude": ["**/test/**/*.*"]
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["packages/gantry-app/src/**/*.ts", "packages/gantry-app/src/**/*.html", "packages/gantry-app/src/**/*.json"]
+            },
+            "outputs": ["{workspaceRoot}/dist/lint/{projectRoot}"]
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": ["npx @code-pushup/cli --config=packages/gantry-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"]
+            }
+        }
+    }
+}

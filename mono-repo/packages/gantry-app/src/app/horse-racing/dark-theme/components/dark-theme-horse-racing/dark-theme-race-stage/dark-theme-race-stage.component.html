@@ -1,0 +1,60 @@
+<div class="header__title--block-right">
+    <ng-container *ngIf="horseRacingResult?.isVirtualEvent">
+        <div [ngClass]="{ 'filled-bg-white': !horseRacingResult?.isRaceOff }" class="header-current-price tilted-card">
+            <ng-container *ngIf="horseRacingResult?.isRaceOff; then raceOffStage; else livePriceStage"></ng-container>
+            <ng-template #raceOffStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{ currentStage$ | async | titlecase }}
+                </span>
+            </ng-template>
+            <ng-template #livePriceStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{
+                        horseRacingResult?.horseRacingContent?.contentParameters?.LivePrice
+                            ? (horseRacingResult?.horseRacingContent?.contentParameters?.LivePrice | titlecase)
+                            : ''
+                    }}
+                </span>
+            </ng-template>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!horseRacingResult?.isVirtualEvent && horseRacingResult?.showRaceStage">
+        <div
+            *ngIf="!!horseRacingResult?.defaultPriceColumn"
+            id="red"
+            [class.head-item-2-secondary]="(horseRacingResult?.raceStage && horseRacingResult?.raceStage[0] === 'O') || horseRacingResult?.isRaceOff"
+            [ngClass]="horseRacingResult?.defaultPriceColumn?.includes('||||') && 'finish'">
+            <ng-container *ngIf="!horseRacingResult?.defaultPriceColumn?.includes('||||')">
+                <div
+                    [ngClass]="{ 'race-it-off': horseRacingResult?.isRaceOff, 'filled-bg-white': isEarlyOrLivePrice }"
+                    class="tilted-card header-current-price"
+                    autoAdjustFont>
+                    <span id="DefaultPriceColumn" [ngClass]="!horseRacingResult?.raceStage ? 'unset-width' : ''" class="tilted-text">
+                        {{ currentStage$ | async | titlecase }}
+                    </span>
+                </div>
+            </ng-container>
+        </div>
+
+        <div
+            *ngIf="
+                horseRacingResult?.arePlus1MarketPricesPresent &&
+                ((horseRacingResult?.isRaceOff && horseRacingResult?.markets[1]?.marketStatus == marketStatus) ||
+                    (!horseRacingResult?.isRaceOff && horseRacingResult?.markets[1]?.marketStatus != marketStatus))
+            "
+            class="tilted-card header-plus1-market"
+            [ngClass]="horseRacingResult?.isBettingWithout ? 'betting-bg' : ''"
+            autoAdjustFont>
+            <span id="MarketName1" class="tilted-text">{{ horseRacingResult?.markets[1]?.marketName | marketName }}</span>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!horseRacingResult?.isVirtualEvent && !horseRacingResult?.showRaceStage">
+        <div *ngIf="!horseRacingResult?.areCurrentPricesPresent" class="header-current-price tilted-card filled-bg-white" autoAdjustFont>
+            <span id="AwaitingPriceColumn" class="tilted-text">
+                {{ currentStage$ | async | titlecase }}
+            </span>
+        </div>
+    </ng-container>
+</div>

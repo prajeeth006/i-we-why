@@ -1,0 +1,41 @@
+<div id="drop" class="event-screens-wrapper"
+  [ngClass]="{'disabled': data.IsDisabled, 'is-screen-active' : isScreenActive}" [appDroppable]="droppableContent"
+  [appDraggable]="!data.DisableDraggable && data.NowPlaying != null ? data.NowPlaying.Asset : undefined"
+  [IsSkyTv]="isSkyTv" [currentScreen]="currentScreen" (onDroppableComplete)="onZoneDrop($event, data)"
+  (contextmenu)="onRightClickEventScreenWrapper($event)">
+  <div id="screenContainer" class="screen-container">
+    <div id="screenHeader" class="screen-header" [ngStyle]="
+      {
+        'background-color':  data.ScreenDesign.AssetColor,
+        'border-color':  data.ScreenDesign.ScreenBorderColor,
+        'border-width': data.NowPlaying && !data.IsDisabled ? '0px' : '1px'
+      }">
+
+      <ng-container *ngIf="data?.IsMinAssetScreen">
+        <ng-container *ngIf="data?.ScreenDesign?.AssetColor; else disabledMinAssetIndicator">
+          <!-- Active Screen Indicator; -->
+          <img
+            *ngIf="data?.ScreenDesign?.AssetColor !== profileConstants.assetHighlightColour  && data?.ScreenDesign?.AssetColor !== profileConstants.assetDisableColour; else disabledMinAssetIndicator"
+            class="min-asset-indicator" src="{{lowestNoAssetIndicatorImage?.AssetActiveIcon}}"
+            alt="min asset indicator" />
+        </ng-container>
+        <ng-template #disabledMinAssetIndicator>
+          <!-- Empty Screen/Disabled Screen Indicator; -->
+          <img id="minAssetIndicator" class="min-asset-indicator"
+            src="{{lowestNoAssetIndicatorImage?.AssetDisabledIcon}}" alt="min asset indicator" />
+        </ng-template>
+      </ng-container>
+
+      <img id="eventImg" class="event-image" [src]="data.ScreenDesign.Image" [alt]="data.NowPlaying?.Name"
+        draggable="false">
+      <div class="asset-display-name" [class.disabled]="data.IsDisabled" *ngIf="data.screenDisplayAssetType">
+        {{data.screenDisplayAssetType}}</div>
+
+    </div>
+    <div id="screenType" class="screen-type" [ngClass]="{'longer-tv-txt-name': data.Name.length > 13}">{{data.Name}}
+    </div>
+  </div>
+  <div id="eventNameTime" class="event-name-and-time" [matTooltip]="ellipsisName? ellipsisName : ''"
+    matTooltipPosition="below" matTooltipClass='master-tooltip'>{{ data.NowPlaying | assetname}}</div>
+
+</div>

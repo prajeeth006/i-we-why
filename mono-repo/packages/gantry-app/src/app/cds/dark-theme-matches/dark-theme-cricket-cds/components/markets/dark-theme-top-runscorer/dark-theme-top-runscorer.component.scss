@@ -1,0 +1,9 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+.top-runscorer {
+    margin-top: 64px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 32px;
+    }
+}

@@ -1,0 +1,255 @@
+<div class="esp-Layout">
+    <ng-container *ngIf="result">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-base-page>
+                <ng-container header-content>
+                    <div class="banner-header-section">
+                        <gn-banner [title]="result?.title" [timer]="epsTime"> </gn-banner>
+                    </div>
+                </ng-container>
+
+                <ng-container body-content>
+                    <div #epsBlock></div>
+                    <div class="item-lg esp-block" *ngIf="result?.epsResultGroupedSorted">
+                        <ng-container *ngFor="let grp of result.epsResultGroupedSorted">
+                            <div
+                                class="marketContent esp-block-list"
+                                id="marketContentHeader"
+                                [style.width.%]="grp?.noOfPageGroupColumns[grp?.pages?.indexOf(pageDetails?.currentPageNumber)] * columnWidth"
+                                *ngIf="grp?.pages?.includes(pageDetails?.currentPageNumber)">
+                                <div class="esp-block-header">
+                                    <span class="meetingName" id="meetingName">{{ grp?.meetingName }}</span>
+                                    <span class="betOdds" *ngIf="result?.showBestOddsLevel">{{ result?.bestOddsGuaranteed }}</span>
+                                </div>
+                                <div
+                                    class="eventBlock"
+                                    [style.columns]="grp?.noOfPageGroupColumns[grp?.pages?.indexOf(pageDetails?.currentPageNumber)]">
+                                    <ng-container *ngFor="let evt of grp?.events">
+                                        <div class="eventBlock-lists" *ngIf="evt?.page == pageDetails?.currentPageNumber">
+                                            <div class="eventBlock-lists-block" *ngIf="evt?.isEventResulted">
+                                                <div class="eventHeader" [ngClass]="evt?.hideHeader && 'header-centre'">
+                                                    <span id="eventTime">{{ evt.eventTime | date: 'HH:mm' }}</span>
+                                                    <span *ngIf="!evt?.hideHeader" id="eachwayTerms">{{ evt?.winOrEachWayText }} </span>
+                                                    <span *ngIf="evt?.runnerCount && !evt?.hideHeader" id="runnerCount">{{
+                                                        evt?.runnerCount + ' ' + result?.Ran
+                                                    }}</span>
+                                                </div>
+                                                <div class="eventStatus" [ngClass]="evt.backgroundColor">
+                                                    <span class="resulted" id="resulted">{{ evt?.stewardsState }}</span>
+                                                    <span class="race-off-time" *ngIf="evt?.raceOffTime && !evt?.hideHeader" id="raceOffTime"
+                                                        >RACE OFF - {{ evt?.raceOffTime | date: 'HH:mm:ss' }}</span
+                                                    >
+                                                </div>
+                                                <div *ngIf="!evt.hideHeader">
+                                                    <table class="selectionList">
+                                                        <tr *ngFor="let rnr of evt?.runnerList" class="fivelist">
+                                                            <td width="6%" class="select-number" id="selectNumber">{{ rnr?.position }}</td>
+                                                            <td width="6%" id="runnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                            <td width="48%" class="text-align-left">
+                                                                <div class="text-ellipsis">
+                                                                    <span id="horseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                            <td width="10%" id="Favourite">{{ rnr?.favourite }}</td>
+                                                        </tr>
+                                                        <tr *ngFor="let rnr of evt?.nonRunnerList" class="threelist">
+                                                            <td width="6%"></td>
+                                                            <td width="6%" class="nonRunner" id="nonRunnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                            <td class="text-align-left nonRunner">
+                                                                <div class="text-ellipsis">
+                                                                    <span id="nonRunnerHorseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                            <td width="10%"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="eventBlock-lists-block" *ngIf="evt?.isEarlyPrice" id="EarlyPrice">
+                                                <div
+                                                    [ngClass]="{
+                                                        'header-centre': evt?.hideHeader,
+                                                        'eventHeader': evt?.stewardsState,
+                                                        'eventEarlyPriceHeader': !evt?.stewardsState,
+                                                    }">
+                                                    <span id="eventTime">{{ evt?.eventTime | date: 'HH:mm' }}</span>
+                                                    <span id="eachwayTerms" *ngIf="!evt?.hideHeader">{{ evt?.winOrEachWayText }}</span>
+                                                    <span id="runnerCount" *ngIf="evt?.runnerCount && !evt?.hideHeader">{{
+                                                        evt?.runnerCount + result?.Runners
+                                                    }}</span>
+                                                </div>
+                                                <div *ngIf="evt?.stewardsState?.toLowerCase() === 'abandoned'">
+                                                    <div class="eventStatus" [ngClass]="evt?.backgroundColor">
+                                                        <span class="resulted" id="resulted">{{ evt?.stewardsState }}</span>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="!evt.hideHeader">
+                                                    <table class="selectionList">
+                                                        <tr *ngFor="let rnr of evt?.allRunnerSelections" class="fivelist">
+                                                            <td width="6%" class="select-number" id="runnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                            <td width="40%" class="text-align-left">
+                                                                <div class="text-ellipsis">
+                                                                    <span id="horseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td width="10%" class="select-number horse-odds">
+                                                                {{ rnr?.horseOddsTwo | prepareEvsPipe }}
+                                                            </td>
+                                                            <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                            <td width="10%" id="Favourite">{{ rnr?.favourite }}</td>
+                                                        </tr>
+                                                        <tr *ngFor="let rnr of evt?.nonRunnerList" class="threelist">
+                                                            <td width="6%" class="nonRunner" id="nonRunnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                            <td colspan="2" class="text-align-left nonRunner">
+                                                                <div class="text-ellipsis">
+                                                                    <span id="nonRunnerHorseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                            <td width="10%"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="evt?.isLiveNowEvent">
+                                                <div class="eventBlock-lists-block" *ngIf="!evt?.isRaceOff">
+                                                    <div
+                                                        class="eventLiveHeader"
+                                                        [ngClass]="{
+                                                            'header-centre': evt?.hideHeader,
+                                                            'eventHeader': evt?.stewardsState,
+                                                            'eventLiveHeader': !evt?.stewardsState,
+                                                        }">
+                                                        <span>{{ evt.eventTime | date: 'HH:mm' }}</span>
+                                                        <span *ngIf="!evt.hideHeader">{{ evt?.winOrEachWayText }}</span>
+                                                        <span *ngIf="evt?.runnerCount && !evt?.hideHeader">{{
+                                                            evt?.runnerCount + result?.Runners
+                                                        }}</span>
+                                                    </div>
+
+                                                    <div class="eventStatus" [ngClass]="evt.backgroundColor">
+                                                        <span class="live" *ngIf="!evt?.hideHeader">LIVE SHOW</span>
+                                                        <span class="resulted" *ngIf="evt.stewardsState?.toLowerCase() === 'abandoned'">{{
+                                                            evt?.stewardsState
+                                                        }}</span>
+                                                    </div>
+                                                    <div *ngIf="!evt.hideHeader">
+                                                        <table class="selectionList">
+                                                            <tr *ngFor="let rnr of evt?.allRunnerSelections" class="fivelist">
+                                                                <td width="6%" id="runnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                                <td width="40%" class="text-align-left">
+                                                                    <div class="text-ellipsis">
+                                                                        <span id="horseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td width="10%" class="horse-odds">{{ rnr?.horseOddsTwo | prepareEvsPipe }}</td>
+                                                                <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                                <td width="10%" id="Favourite">{{ rnr?.favourite }}</td>
+                                                            </tr>
+                                                            <tr *ngFor="let rnr of evt?.nonRunnerList" class="threelist">
+                                                                <td width="6%" class="nonRunner" id="nonRunnerNumber">
+                                                                    {{ rnr?.horseRunnerNumber }}
+                                                                </td>
+                                                                <td colspan="2" class="text-align-left nonRunner">
+                                                                    <div class="text-ellipsis">
+                                                                        <span id="nonRunnerHorseName">{{
+                                                                            rnr?.horseName | titleCaseExceptPipe
+                                                                        }}</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                                <td width="10%"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="evt.isRaceOff">
+                                                    <div
+                                                        class="eventBlock-lists-block"
+                                                        [ngClass]="{
+                                                            'header-centre': evt?.hideHeader,
+                                                            'eventHeader': evt?.stewardsState,
+                                                            'eventLiveHeader': !evt?.stewardsState,
+                                                        }">
+                                                        <span>{{ evt?.eventTime | date: 'HH:mm' }}</span>
+                                                        <span *ngIf="!evt?.hideHeader">{{ evt?.winOrEachWayText }}</span>
+                                                        <span *ngIf="evt?.runnerCount && !evt?.hideHeader">{{
+                                                            evt?.runnerCount + result?.Runners
+                                                        }}</span>
+                                                    </div>
+                                                    <div
+                                                        class="eventStatus"
+                                                        [ngClass]="evt?.backgroundColor"
+                                                        *ngIf="evt?.stewardsState?.toLowerCase() === 'abandoned'">
+                                                        <span class="resulted">{{ evt?.stewardsState }}</span>
+                                                    </div>
+                                                    <div *ngIf="!evt.hideHeader">
+                                                        <div class="eventStatus" [ngClass]="{ 'is-raceOff': evt?.isRaceOff }">
+                                                            <span class="live" *ngIf="evt?.raceOffTime && !evt?.hideHeader"
+                                                                >RACE OFF - {{ evt?.raceOffTime | date: 'HH:mm:ss' }}</span
+                                                            >
+                                                        </div>
+                                                        <table class="selectionList" [ngClass]="{ 'is-raceOff': evt?.isRaceOff }">
+                                                            <tr *ngFor="let rnr of evt?.allRunnerSelections" class="twolist">
+                                                                <td width="6%" id="runnerNumber">{{ rnr?.horseRunnerNumber }}</td>
+                                                                <td colspan="2" class="text-align-left">
+                                                                    <div class="text-ellipsis">
+                                                                        <span id="horseName">{{ rnr?.horseName | titleCaseExceptPipe }}</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr *ngFor="let rnr of evt?.nonRunnerList" class="threelist">
+                                                                <td width="6%" class="nonRunner" id="nonRunnerNumber">
+                                                                    {{ rnr?.horseRunnerNumber }}
+                                                                </td>
+                                                                <td class="text-align-left nonRunner">
+                                                                    <div class="text-ellipsis">
+                                                                        <span id="nonRunnerHorseName">{{
+                                                                            rnr?.horseName | titleCaseExceptPipe
+                                                                        }}</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td width="10%" id="horsePrice">{{ rnr?.horseOdds | prepareEvsPipe }}</td>
+                                                                <td width="10%"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+                <ng-container footer-content>
+                    <div class="footer">
+                        <div class="left-side-text">
+                            <img class="footer-logo" [retrySrc]="result?.epsFooterLogoSrc" alt="logo" />
+                        </div>
+                        <div class="center-text">
+                            {{ result?.epsFooterText }}
+                        </div>
+                        <div class="right-side-text">
+                            {{ result?.bottomRightText }}
+                            <span class="pagination" id="pagination">{{ pageDetails?.paginationText }}</span>
+                        </div>
+                    </div>
+                </ng-container>
+            </gn-base-page>
+
+            <div class="banner-right" *ngIf="result?.promoImageSrc != null">
+                <div class="promo-banner">
+                    <img class="banner-image" [retrySrc]="result?.promoImageSrc" />
+                </div>
+                <div class="banner-info-txt" id="epsTermsBottomRightText">{{ result?.epsTermsBottomRightText }}</div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$" id="errorMessage"></gn-error>

@@ -1,0 +1,46 @@
+<div class="footer" [ngClass]="!!extendedWidthToHalf && extendedWidthToHalf">
+    <div id="leftsideText" class="footer__left--text">
+        {{ leftSideText | titlecase }}
+        <ng-content select="[left-side-content]"></ng-content>
+        <div class="meeting-result-betting-market" *ngIf="!!placePot || !!quadPot || !!jackPot">
+            <span *ngIf="placePot">
+                {{ contentParameter?.Placepot | titlecase }}
+                {{
+                    !!placePot
+                        ? (placePot | fixedDecimal) == DividendValue
+                            ? contentParameter?.NotWon
+                            : (placePot | fixedDecimal | currency: 'GBP' : true)
+                        : ''
+                }}
+            </span>
+            <span *ngIf="placePot && jackPot"> / </span>
+            <span *ngIf="jackPot">
+                {{ contentParameter?.Jackpot | titlecase }}
+                {{ jackPotIsNum(jackPot) ? (jackPot | fixedDecimal | currency: 'GBP' : true) : (jackPot | uppercase) }}
+            </span>
+            <span *ngIf="placePot && jackPot && quadPot"> / </span>
+            <span *ngIf="!placePot && quadPot && jackPot"> / </span>
+            <span *ngIf="quadPot">
+                {{ contentParameter?.Quadpot | titlecase }}
+                {{
+                    !!quadPot
+                        ? (quadPot | fixedDecimal) == DividendValue
+                            ? contentParameter?.NotWon
+                            : (quadPot | fixedDecimal | currency: 'GBP' : true)
+                        : ''
+                }}
+            </span>
+        </div>
+    </div>
+
+    <div id="centerText" class="footer__center--text">
+        {{ centerSideText }}
+        <ng-content select="[center-side-content]"></ng-content>
+    </div>
+
+    <div id="rightsideText" class="footer__right--text">
+        {{ rightSideText }}
+        <ng-content select="[right-side-content]"></ng-content>
+        <ng-content></ng-content>
+    </div>
+</div>

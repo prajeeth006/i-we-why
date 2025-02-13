@@ -1,0 +1,84 @@
+@import '../../../../../../../src/dark-theme-global-style/all-variables';
+
+.bet-details-item {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: center;
+    justify-content: center;
+    height: $fs-md-cricket-row-height;
+    font-size: $font-60;
+    font-weight: $fw-bold;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 3px;
+        height: $fs-sm-cricket-row-height;
+        font-size: $font-30;
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .betOdds {
+        height: 80px;
+        color: $state-box-text;
+        background-color: $state-box-bg;
+        @include flex-center;
+
+        @include breakpoint(multidesktop) {
+            height: 40px;
+        }
+    }
+
+    .bet-details {
+        flex: 1;
+        text-align: center;
+        height: 80px;
+        align-items: center;
+        margin: 0px 30px;
+        @include bottom-border-weight;
+
+        @include breakpoint(multidesktop) {
+            height: 40px;
+            margin: 0px 15px;
+        }
+    }
+}
+
+.bet-details-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .bet-details-item {
+        width: 1244px;
+
+        @include breakpoint(multidesktop) {
+            width: 622px;
+        }
+    }
+}
+
+.correct-score-header {
+    margin-bottom: 10px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 5px;
+    }
+
+    .bet-details-title {
+        color: $market-title-color;
+        font-size: $font-48;
+        font-weight: $fw-medium;
+        text-align: center;
+        height: 34px;
+        line-height: 34px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $font-24;
+            height: 17px;
+            line-height: 17px;
+        }
+    }
+}

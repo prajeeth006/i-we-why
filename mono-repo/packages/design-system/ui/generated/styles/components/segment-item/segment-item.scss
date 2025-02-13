@@ -1,0 +1,38 @@
+@mixin default {
+    --ds-segment-item-active-color-bg: var(--semantic-color-opacity-active);
+    --ds-segment-item-active-color-icon: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-active-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-segment-item-enabled-color-icon: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-enabled-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-hover-color-bg: var(--semantic-color-opacity-hover);
+    --ds-segment-item-hover-color-icon: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-hover-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-segment-item-selected-color-bg: var(--semantic-color-surface-base);
+    --ds-segment-item-selected-color-icon: var(--semantic-color-on-surface-base);
+    --ds-segment-item-selected-color-label: var(--semantic-color-on-surface-base);
+}
+
+@mixin inverse {
+    --ds-segment-item-active-color-bg: var(--semantic-color-opacity-active-inverse);
+    --ds-segment-item-active-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-active-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-segment-item-enabled-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-enabled-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-hover-color-bg: var(--semantic-color-opacity-hover-inverse);
+    --ds-segment-item-hover-color-icon: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-hover-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-segment-item-selected-color-bg: var(--semantic-color-surface-base-inverse);
+    --ds-segment-item-selected-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-segment-item-selected-color-label: var(--semantic-color-on-surface-base-inverse);
+}
+
+@mixin shared {
+    --ds-segment-item-radius-border: var(--semantic-radius-l2-segment-item);
+    --ds-segment-item-size-min-width: var(--semantic-size-x11);
+    --ds-segment-item-space-padding-bottom: var(--semantic-spacing-container-padding-md);
+    --ds-segment-item-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-segment-item-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-segment-item-space-padding-top: var(--semantic-spacing-container-padding-md);
+}

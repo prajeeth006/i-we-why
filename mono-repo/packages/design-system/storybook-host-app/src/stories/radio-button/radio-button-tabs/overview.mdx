@@ -1,0 +1,46 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsRadioButtonStories from '../radio-button.component.stories';
+
+The Ds Radio button Component is a customizable UI element. Radio buttons are typically rendered as small circles, which are filled or highlighted when selected..
+It can be used to represent and manage states such as on/off, active/inactive, or any other dual-state logic.
+
+A radio group is defined by giving each of radio buttons in the group the same name. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.
+
+You can have as many radio groups on a page as you like, as long as each has its own unique name.
+
+<Canvas of={DsRadioButtonStories.Default} />
+
+## Usage
+
+Import `DsRadioModule` in your component, and apply `ds-radio-group` & `ds-radio-button` in your component.
+
+```ts
+import { DsRadioModule } from '@frontend/ui/radio-button'; // 👈 add to file imports
+
+@Component({
+    imports: [DsRadioModule], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+-   value: **string** -> It supports which option to be select.
+-   disabled: **boolean** -> Specifies whether the radio button is in a disabled state.
+-   name: **string** -> Input name.
+-   **all inputs are optional**.
+
+### Outputs
+
+<h5>valueChange</h5>
+<p>`valueChange: EventEmitter<any>` - Emits the new value when the selected radio button changes.</p>
+
+### Size
+
+Radio button offers 2 sizes, that you can apply using the `size` input:
+
+-   small
+-   large (default)

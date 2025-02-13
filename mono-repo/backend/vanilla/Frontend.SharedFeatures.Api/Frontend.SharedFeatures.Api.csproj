@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IncludeSharedVanillaAppSettings>true</IncludeSharedVanillaAppSettings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj"/>
+        <ProjectReference Include="..\Frontend.Vanilla.RestMocks\Frontend.Vanilla.RestMocks.csproj"/>
+    </ItemGroup>
+
+</Project>

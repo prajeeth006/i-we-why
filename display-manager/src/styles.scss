@@ -1,0 +1,299 @@
+@use './app/shared-css/helpers' as *;
+@use './app/shared-css/abstracts' as *;
+@use './app/shared-css/base' as *;
+@use './app/shared-css/variables.scss' as variables;
+
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.checkbox-density(-1);
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons&display=block');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined&display=block');
+
+:root {
+  .progress-bar-color {
+    $special-primary: mat.m2-define-palette(mat.$m2-green-palette);
+    $special-accent: mat.m2-define-palette(mat.$m2-amber-palette);
+    $special-theme: mat.m2-define-dark-theme((color: (primary: $special-primary, accent: $special-accent, )));
+    @include mat.progress-bar-theme($special-theme);
+  }
+
+/* treeview left panel common styles */
+.tree-view-container {
+  padding: 10px 10px 0;
+  background-color: variables.$white;
+  height: calc(100% - 67px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom-right-radius: 8px;
+  transition: height 0.7s;
+  transition-timing-function: ease-out;
+
+  @include breakpoint {
+    height: calc(100vh - 214px);
+  }
+
+  @include breakpoint-2 {
+    height: calc(100% - 58.8px);
+  }
+
+  &.breadcrumb-with-preview-collapse {
+    height: calc(100% - 101px);
+
+    @include breakpoint {
+      height: calc(100vh - 76px);
+    }
+
+    @include breakpoint-2 {
+      height: calc(100vh - 248px);
+    }
+  }
+
+  /*  when breadcrumb shows */
+  &.tree-with-breadcrumb {
+    height: calc(100% - 101px);
+
+    @include breakpoint {
+      height: calc(100vh - 247px);
+    }
+
+    @include breakpoint-2 {
+      height: calc(100% - 92.8px);
+    }
+  }
+
+  @include customScrollBar;
+
+  .mat-tree {
+    min-height: 100%;
+
+    .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+      position: relative;
+    }
+  }
+
+  .toggle-arrow-btn {
+    width: 18px;
+  }
+
+  mat-tree-node {
+    .breadcrumb-folder-icon {
+      color: variables.$primary-color-3;
+      transform: scale(0.7);
+    }
+  }
+
+  .child-nodes {
+    display: flex;
+    padding-left: 26px;
+    align-items: center;
+    word-break: break-word;
+
+    .sub-node-img {
+      width: 2rem;
+      height: 1.3rem;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+
+  .brand-logo {
+    margin-right: 16px;
+  }
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+.mdc-switch--checked {
+  .mdc-switch__handle {
+    background-color: variables.$btn-success-bg;
+  }
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+.mdc-switch--checked {
+  .mdc-switch__track {
+    background-color: rgba(114, 190, 68, 0.38);
+  }
+}
+
+.mat-mdc-form-field .mat-mdc-input-element {
+  caret-color: variables.$black;
+}
+
+.mat-mdc-slide-toggle.mat-accent {
+  // Selected Slider
+  --mdc-switch-selected-focus-state-layer-color: #72be4461;
+  --mdc-switch-selected-handle-color: #72be44;
+  --mdc-switch-selected-hover-state-layer-color: #72be4461;
+  --mdc-switch-selected-pressed-state-layer-color: #72be4461;
+  --mdc-switch-selected-focus-handle-color: #72be44;
+  --mdc-switch-selected-hover-handle-color: #72be44;
+  --mdc-switch-selected-pressed-handle-color: #72be44;
+  --mdc-switch-selected-focus-track-color: #72be4461;
+  --mdc-switch-selected-hover-track-color: #72be4461;
+  --mdc-switch-selected-pressed-track-color: #72be4461;
+  --mdc-switch-selected-track-color: #72be4461;
+  // UnSelected Slider
+  --mdc-switch-disabled-selected-handle-color: #72be44;
+  --mdc-switch-disabled-selected-icon-color: #72be44;
+  --mdc-switch-disabled-selected-track-color: #72be4461;
+  --mdc-switch-disabled-unselected-handle-color: #00000061;
+  --mdc-switch-disabled-unselected-icon-color: #fafafa;
+  --mdc-switch-disabled-unselected-track-color: #00000061;
+  --mdc-switch-handle-surface-color: #fafafa;
+  --mdc-switch-handle-elevation-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024, 0 1px 3px 0 #0000001f;
+  --mdc-switch-handle-shadow-color: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024, 0 1px 3px 0 #0000001f;
+  --mdc-switch-disabled-handle-elevation-shadow: #00000061;
+  --mdc-switch-selected-icon-color: #fafafa;
+  --mdc-switch-unselected-focus-handle-color: #fafafa;
+  --mdc-switch-unselected-focus-state-layer-color: #fafafa;
+  --mdc-switch-unselected-focus-track-color: #00000061;
+  --mdc-switch-unselected-handle-color: #fafafa;
+  --mdc-switch-unselected-hover-handle-color: #fafafa;
+  --mdc-switch-unselected-hover-state-layer-color: #00000061;
+  --mdc-switch-unselected-hover-track-color: #00000061;
+  --mdc-switch-unselected-icon-color: #fafafa;
+  --mdc-switch-unselected-pressed-handle-color: #fafafa;
+  --mdc-switch-unselected-pressed-state-layer-color: #fafafa;
+  --mdc-switch-unselected-pressed-track-color: #fafafa;
+  --mdc-switch-unselected-track-color: #00000061;
+
+  .mdc-form-field {
+    padding-bottom: 10px;
+  }
+}
+
+.mat-mdc-form-field-infix {
+  min-height: 30px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.mat-mdc-select {
+  --mat-form-field-container-text-size: 14px;
+}
+
+.right-side-panel-tabs {
+  .main-tab-text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .mdc-tab--active {
+    .main-tab-text {
+      color: #343c46de;
+    }
+
+    .mdc-tab-indicator__content--underline {
+      border-color: variables.$white !important;
+    }
+  }
+}
+
+.left-panel-wrapper {
+  .mdc-tab--active {
+    --mdc-tab-indicator-active-indicator-color: #084d8d;
+
+    #leftPanelTabTitleText {
+      color: #343c46de;
+      letter-spacing: normal;
+      height: 20px;
+      margin-bottom: -5px;
+    }
+  }
+}
+
+.right-panel-wrapper,
+.left-panel-wrapper {
+  .mdc-tab--active {
+    .mat-mdc-tab-ripple {
+      background-color: variables.$white !important;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+
+.profile-settings-dropdown {
+  .mat-mdc-option {
+    min-height: 30px !important;
+  }
+}
+
+.mdc-text-field__input {
+  caret-color: variables.$black !important;
+}
+
+.profile-dropdown {
+  .mat-mdc-form-field {
+    .mat-mdc-text-field-wrapper {
+      --mat-select-enabled-trigger-text-color: rgba(52, 60, 70, 0.74);
+
+      .mdc-line-ripple::before {
+        border-bottom-style: none !important;
+      }
+    }
+
+    .mat-mdc-select-arrow-wrapper {
+
+      /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+      .mat-mdc-select-arrow {
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 30px;
+          left: -9px;
+          top: -12px;
+          border-left: 1px solid #D1D1D1;
+
+        }
+      }
+
+      .mat-mdc-select-arrow svg {
+        left: 76%;
+        color: #343c46de;
+      }
+
+    }
+  }
+}
+
+.mat-mdc-menu-item-text {
+  white-space: nowrap !important;
+}
+
+.cdk-overlay-pane {
+  .label-selector {
+    padding: 10px;
+
+    .mat-mdc-option.mdc-list-item {
+      min-height: 42px;
+      line-height: 42px;
+    }
+  }
+}
+.mat-mdc-slide-toggle .mdc-label{
+  font-size: var(--mat-slide-toggle-label-text-size);
+  letter-spacing: var(--mat-slide-toggle-label-text-tracking);
+  line-height: var(--mat-slide-toggle-label-text-line-height);
+}
+.tracking-normal{
+  letter-spacing: normal;
+}
+}
+
+ul[role="unstyled"] {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,0 +1,17 @@
+<div *ngIf="vm$ | async as vm">
+  <div *ngIf="multiViewUrls">
+    <div class="screenPart" *ngFor="let multiViewUrl of multiViewUrls | keyvalue">
+      <iframe
+        *ngIf="!multiViewUrl?.value?.carousel"
+        class="screenPartIframe"
+        frameBorder="0"
+        [src]="multiViewUrl?.value?.safeUrl"
+        allowfullscreen
+      ></iframe>
+
+      <div *ngIf="multiViewUrl?.value?.carousel" class="carousel">
+        <gn-slider [carouselUrls]="multiViewUrl?.value?.carousel"></gn-slider>
+      </div>
+    </div>
+  </div>
+</div>

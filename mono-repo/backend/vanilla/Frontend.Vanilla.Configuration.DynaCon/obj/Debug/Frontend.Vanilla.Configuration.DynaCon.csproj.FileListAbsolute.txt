@@ -1,0 +1,15 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\Frontend.Vanilla.Configuration.DynaCon.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\Frontend.Vanilla.Configuration.DynaCon.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\Frontend.Vanilla.Configuration.DynaCon.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\Frontend.Vanilla.Configuration.DynaCon.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.896100F2.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\refint\Frontend.Vanilla.Configuration.DynaCon.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\Frontend.Vanilla.Configuration.DynaCon.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Configuration.DynaCon\obj\Debug\ref\Frontend.Vanilla.Configuration.DynaCon.dll

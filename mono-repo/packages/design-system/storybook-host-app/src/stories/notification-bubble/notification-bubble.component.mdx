@@ -1,0 +1,28 @@
+import { ArgTypes, Canvas, ColorItem, ColorPalette, Controls, Meta, Story } from '@storybook/blocks';
+import * as DsNotificationBubbleStories from './notification-bubble.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './notification-bubble-tabs/overview.mdx';
+import MySecondTab from './notification-bubble-tabs/examples.mdx';
+
+<div className="variant-info-container">
+    <h1>Notification Bubble</h1>
+    <Story of={DsNotificationBubbleStories.ComplexityLevel}></Story>
+</div>
+
+<Meta of={DsNotificationBubbleStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

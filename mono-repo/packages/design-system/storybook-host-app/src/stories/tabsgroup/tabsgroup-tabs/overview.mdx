@@ -1,0 +1,212 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as TabsGroupStories from '../tabsgroup.component.stories';
+
+TabsGroup is used to organize content across different screens and views. It arrange content into distinct sections, allowing only one section to be visible at any given moment.
+
+The active tab can be determined either by setting the `activeTab` input or by the user clicking on one of the tab items in the header.
+
+<Canvas of={TabsGroupStories.Default} />
+
+## Usage
+
+Import `DsTabsModule` in your component.
+
+```ts
+import { DsTabsModule } from '@frontend/ui/tabsgroup'; // 👈 add to file imports
+
+@Component({
+    imports: [DsTabsModule], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Size
+
+Tabsgroup offers 2 sizes, that you can apply using the `size` input:
+
+-   small
+-   large (default)
+
+### Indicator
+
+We can style tab item area in 2 ways using `indicator` input as follows :
+
+-   fill
+-   underline (default)
+
+Disclaimer:
+The filled indicator is not supported for two line text.
+
+### Variant
+
+If tabsgroup items contain text and icon then we can change alignments of icon and text in 2 directions. It can be done using the `variant` input:
+
+-   horizontal
+-   vertical (default)
+
+### Full-Width:
+
+The component spans the entire width of its container, typically used when the tabs need to align with the container edges.
+In this layout, padding is applied to the left and right sides for alignment and visual balance.
+
+### Non-Full-Width
+
+The component does not occupy the full width of the container, allowing for a more compact placement.
+In this layout, left padding ensures proper alignment and spacing within the parent container.
+
+### Outputs
+
+<h5>activeTabChanged</h5>
+<p>Event emits when the tab selection has changed. Where the `$event` gives the selected tab name</p>
+
+<h5>tabChanged</h5>
+<p>Event emits when the tab selection has changed. Where the `$event` gives the selected tab name and click event object data</p>
+<span>Below is the object data sample for `tabChanged` EventEmitter</span>
+
+```json
+{
+    "name": "1",
+    "event": {
+        "isTrusted": true,
+        "altKey": false,
+        "altitudeAngle": 1.5707963267948966,
+        "azimuthAngle": 0,
+        "bubbles": true,
+        "button": 0,
+        "buttons": 0,
+        "cancelBubble": false,
+        "cancelable": true,
+        "clientX": 433,
+        "clientY": 85,
+        "composed": true,
+        "ctrlKey": false
+    }
+}
+```
+
+### How to use output events in tabs group:
+
+```html
+<ds-tabs-group (activeTabChanged)="onActiveNameChange($event)" (tabChanged)="onTabChanged($event)"></ds-tabs-group>
+```
+
+### Inverse
+
+`inverse`: Boolean value (`true/false`). If `true`, the tabsgroup will render with inverse styles.
+
+### Attribute
+
+To get the name of the active tab item, Every `ds-tab` should have **name** input which accepts **string** type values
+
+### Max Height
+
+The `max-height` property have been introduced for both the **underline** and **filled** tab items. This enhancement allows you to control the maximum height of each tab name, ensuring a consistent appearance even when tab names vary in length or content.
+
+### Divider
+
+If you want to show a border bottom on the TabsGroup header, you can use `<ds-divider />` component which is also published from the DesignSystem.
+
+```html
+<ds-tabs-group>
+    <ds-tab>...</ds-tab>
+
+    <ds-divider />
+    <!-- 
+        You can pass the variant input to the ds-divier based on your needs :
+        Example:  <ds-divider variant="on-surface-highest" /> 
+    -->
+</ds-tabs-group>
+```
+
+### Scrollable tab items
+
+For `TabsGroup`, when we have more items than the actual width specified by the consumer of this component then the user has to scroll the tab items. We show arrows to scroll the tab items only on desktop screens. In other screens the user has to scroll the tab items.
+Using Angular CDK layout, With the help of breakpoint observer we hide tab arrows for mobile landscape and tablet devices.
+
+When we pass scrollable input to true then scrollDistance and scrollSpeed inputs are shown in the controls section for the usecase
+
+### scrollDistance
+
+Defines the distance in pixels the tab items will scroll with each navigation action. Default is `200px`.
+
+### scrollSpeed
+
+Defines the speed of the scroll animation, Below is the various speed values which are applied with the help of dynamic classes when we select anyone from given list. where `faster` mean `0.2sec` and `slower` mean `1sec`. Default is `faster`.
+
+```ts
+faster: 0.2,
+fast: 0.4,
+medium: 0.5,
+moderate: 0.6,
+slow: 0.8,
+slower: 1,
+```
+
+### Arrows position
+
+You can customize the positions of the navigation arrows in the `TabsGroup` using CSS variables. Set these variables in your CSS to adjust the arrow positions:
+
+-   `--ds-carousel-arrow-position-left`: Sets the left position of the left arrow button. Default is `0px`.
+-   `--ds-carousel-arrow-position-right`: Sets the right position of the right arrow button. Default is `0px`.
+
+To adjust the arrow positions, add the following CSS to your styles:
+
+```html
+<ds-tabs-group class="tabs-group-container">
+    <ds-tab>...</ds-tab>
+</ds-tabs-group>
+```
+
+```css
+.tabs-group-container {
+    --ds-carousel-arrow-position-right: 5px;
+    --ds-carousel-arrow-position-left: 5px;
+}
+```
+
+### DS Placeholder Arrow Icon and Custom Scroll Arrows
+
+When we have more tab items then we can show arrow icons to scroll items to left and right side.
+Tabsgroup offers two types of scroll arrows, To use this feature we pass boolean value to `scrollable` input
+
+-   By default we show DS placeholder arrow icons if we dont pass custom arrow elements and `scrollable`
+    set to true. Also we need to add certain width to the parent wrapper class which says when total tab items exceeds width more than 350px then arrows are shown.
+
+```html
+<div class="tabgroup-wrapper" style="width: 350px;">
+    <ds-tabs-group
+        [activeTab]="1"
+        [size]="large"
+        [fullWidthTabs]="false"
+        [scrollable]="true"
+        variant="vertical"
+        [indicator]="underline"
+        [inverse]="false">
+        <ds-tab name="1" title="Tab1">
+            <div *dsTabContent>Tab content 1</div>
+        </ds-tab>
+    </ds-tabs-group>
+</div>
+```
+
+-   For custom arrows, developer can place their own icons using `ng-template`. Inside `ng-template`
+    we can pass left and right arrow custom icons
+
+```html
+<ds-tabs-group [activeTab]="1" [size]="large" [scrollable]="true">
+    <ds-tab name="1" title="Tab1">
+        <div *dsTabContent>Tab content 1</div>
+    </ds-tab>
+    <ng-template #dsTabsLeftArrow> < </ng-template>
+    <ng-template #dsTabsRightArrow> > </ng-template>
+</ds-tabs-group>
+```
+
+## Width Configuration
+
+The TabsGroup component allows you to configure its width to suit your layout. In the examples, a `style="width: <number>px;"` is added for `tabgroup-wrapper` class to better illustrate the differences between fullWidth and nonFullWidth configurations and to showcase the scroll functionality.
+
+Setting a width is optional. If no specific width is applied, the component will stretch to fit the width of its container.

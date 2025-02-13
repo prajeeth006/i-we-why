@@ -1,0 +1,17 @@
+{
+    "name": "VariableChecker",
+    "id": "1318866303732664663",
+    "api": "1.0.0",
+    "main": "code.js",
+    "capabilities": ["inspect", "vscode"],
+    "enableProposedApi": false,
+    "editorType": ["figma", "dev"],
+    "ui": "ui.html",
+    "networkAccess": {
+        "allowedDomains": [
+            "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
+            "https://html2canvas.hertzen.com/dist/html2canvas.js"
+        ]
+    },
+    "permissions": ["teamlibrary"]
+}

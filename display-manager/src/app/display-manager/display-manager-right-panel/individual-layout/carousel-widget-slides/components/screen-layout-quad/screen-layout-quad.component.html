@@ -1,0 +1,21 @@
+<div id="eventScreensWrapper" class="event-screens-wrapper">
+    @if (hasSubScreens) {
+        @for (screen of data; track $index) {
+            @for (item of screen?.ScreenDetails?.Single; track $index) {
+            <div id="quadScreen">
+                <app-screen-layout-single [data]="screen" [screenInfo]="item"
+                    (onRightClick)="singleLayoutRightClick($event)"></app-screen-layout-single>
+            </div>
+            }
+        }
+    } @else {
+        @for (screen of data; track $index) {
+            @for (item of screen?.ScreenDetails?.Quad; track $index) {
+            <div id="quadScreen">
+                <app-screen-layout-single [data]="screen" [screenInfo]="item"
+                    (onRightClick)="singleLayoutRightClick($event)"></app-screen-layout-single>
+            </div>
+            }
+        }
+    }
+</div>

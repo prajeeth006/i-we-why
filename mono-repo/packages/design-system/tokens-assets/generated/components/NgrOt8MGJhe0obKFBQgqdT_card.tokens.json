@@ -1,0 +1,219 @@
+{
+    "card": {
+        "shared": {
+            "color": {
+                "text-strong": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                },
+                "text-subtle": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                }
+            },
+            "space": {
+                "padding-0": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                }
+            }
+        },
+        "surface-high": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.high.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.high.base}"
+                },
+                "divider": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider}"
+                }
+            }
+        },
+        "surface-highest": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.highest.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.highest.base}"
+                },
+                "divider": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider}"
+                }
+            }
+        },
+        "surface-low": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.low.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.low.base}"
+                },
+                "divider": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider}"
+                }
+            }
+        },
+        "surface-lowest": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.lowest.base}"
+                },
+                "divider": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider}"
+                }
+            }
+        }
+    }
+}

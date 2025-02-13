@@ -1,0 +1,91 @@
+<gn-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-banner [leadTitle]="vm.greyhoundRacingContent?.contentParameters?.Title ?? ''" [title]="vm.eventTimePlusTypeName">
+            <div class="banner-sub-title" [ngClass]="!vm.areCurrentPricesPresent ? 'form-entry-sub-header ' : ''">
+                <div class="banner-sub-title-left">
+                    <div *ngIf="vm.racingContent" class="head-item-1 item-head">
+                        <span *ngIf="vm.racingContent.raceNo" id="Racenumber"
+                            >{{ vm.greyhoundRacingContent?.contentParameters?.Race ?? '' }} {{ vm.racingContent.raceNo }}</span
+                        >
+                        <span *ngIf="vm.racingContent.grade" id="Grade">{{ vm.racingContent.grade | uppercase }} </span>
+                        <span *ngIf="vm.racingContent.distance" id="RacingDistance">{{ vm.racingContent.distance | uppercase }} </span>
+                    </div>
+                </div>
+                <div *ngIf="!vm.isRaceOff" [ngClass]="vm.isFullScreenType && vm.isUKEvent ? 'banner-sub-title-right ' : 'banner-sub-title-right'">
+                    <div id="EarlyPrice" class="head-item-3 item-head arrow-down">
+                        <div>
+                            <span>
+                                {{
+                                    vm.gantryCommonContent?.contentParameters?.LiveShow
+                                        ? (vm.gantryCommonContent?.contentParameters?.LiveShow | uppercase)
+                                        : ''
+                                }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </gn-banner>
+    </ng-container>
+    <ng-container body-content>
+        <div [ngClass]="vm.isFullScreenType && vm.isUKEvent && 'screen'">
+            <div class="greyhound-table-body">
+                <ul class="greyhound-table" [ngClass]="vm.greyhoundRacingEntries?.length == 6 && 'runnersSix-table'">
+                    <li
+                        *ngFor="let greyhoundRacingEntry of vm.greyhoundRacingEntries"
+                        [ngClass]="vm.greyhoundRacingEntries?.length == 6 && 'runnersSix'"
+                        id="runnersSix">
+                        <div class="table-item-1 border-dark traps">
+                            <div
+                                class="selection-number"
+                                [ngClass]="[
+                                    'trap-' + greyhoundRacingEntry?.trapNumber,
+                                    vm?.isUKEvent || vm?.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus',
+                                ]">
+                                <span [id]="'silk'">{{ greyhoundRacingEntry?.trapNumber }}</span>
+                            </div>
+                        </div>
+                        <div class="table-item-3 items border-dark race-start">
+                            <div class="content-block greyhoundname-with-res">
+                                <span id="GreyHoundName">{{ greyhoundRacingEntry.greyhoundName | vacantCheckTransform | uppercase }}</span>
+                            </div>
+                            <div class="greyhoundname-with-res">
+                                <span id="Reserve" class="reserved" *ngIf="greyhoundRacingEntry.isReserved"
+                                    >{{ vm.greyhoundRacingContent?.contentParameters?.Reserve ?? '' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div
+                            class="table-item-7 items table-center price-border"
+                            [ngClass]="
+                                !greyhoundRacingEntry.isStartPrice && vm.favPrice && vm.favPrice === greyhoundRacingEntry.actualPrice
+                                    ? 'favorite-box'
+                                    : greyhoundRacingEntry.isVacant
+                                      ? ''
+                                      : 'early-price'
+                            ">
+                            <div id="RunnerPrice">{{ greyhoundRacingEntry.currentPrice | manualMarketPrice: greyhoundRacingEntry }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div *ngIf="vm.isRaceOff" class="off-event off-event-greyhound"><span id="offEvent">OFF</span></div>
+    </ng-container>
+
+    <ng-container footer-content>
+        <gn-greyhound-each-way
+            [runnerCount]="vm?.runnerCount | runnerCount"
+            [isEventResulted]="vm.isAnyEventResulted"
+            [marketEachWayString]="vm.marketEachWayString"
+            [hasAnyReservedRunner]="vm.hasAnyReservedRunner"
+            [isUKEvent]="vm.isUKEvent"
+            [isHalfScreenType]="vm.isHalfScreenType"
+            [isFullScreenType]="vm.isFullScreenType"
+            [Footer]="vm.greyhoundRacingContent?.contentParameters?.CoralFooter ?? ''"
+            [showFooter]="vm.isFullScreenType && vm?.marketSelectionPresent"
+            [isForm]="vm.racingContent.runners">
+        </gn-greyhound-each-way>
+    </ng-container>
+</gn-base-page>

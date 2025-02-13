@@ -1,0 +1,93 @@
+<gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [racingImage]="vm?.greyhoundRacingContent?.greyHoundRacingImage?.src"
+            [title]="vm?.eventTitle"
+            [eventTime]="vm?.eventTime">
+            <ng-container raceStage-content>
+                <div class="header__title--block-right">
+                    <div [ngClass]="{ 'filled-bg-white': !vm?.isRaceOff }" class="header-current-price header-current-price-manual tilted-card">
+                        <span id="EarlyPrice" class="tilted-text">
+                            {{
+                                vm?.isRaceOff
+                                    ? (vm?.gantryCommonContent?.contentParameters?.RaceOff ?? '')
+                                    : vm?.gantryCommonContent?.contentParameters?.LiveShow
+                                      ? (vm?.gantryCommonContent?.contentParameters?.LiveShow | uppercase)
+                                      : ''
+                            }}
+                        </span>
+                    </div>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+
+    <ng-container body-content>
+        <div class="greyhound-table-body">
+            <ul class="greyhound-table selection-table" [ngClass]="vm?.isUKEvent && 'runners__list--six'">
+                <li
+                    *ngFor="let greyhoundRacingEntry of vm?.greyhoundRacingEntries"
+                    [ngClass]="vm?.isUKEvent && 'runners__list--item'"
+                    id="runnersSix">
+                    <div
+                        class="selection-number traps"
+                        [ngClass]="[
+                            'trap-' + greyhoundRacingEntry?.trapNumber,
+                            vm?.isUKEvent || vm?.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus',
+                        ]">
+                        <span>{{ greyhoundRacingEntry?.trapNumber }}</span>
+                    </div>
+
+                    <div class="selection-name">
+                        <div class="greyhoundname-with-res">
+                            <span id="GreyHoundName">{{ greyhoundRacingEntry?.greyhoundName | vacantCheckTransform | titlecase }}</span>
+                            <span id="Reserve" class="reserved" *ngIf="greyhoundRacingEntry?.isReserved && !greyhoundRacingEntry?.nonRunner">
+                                {{ vm?.greyhoundRacingContent?.contentParameters?.Res ?? '' }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="selection-content" [ngClass]="greyhoundRacingEntry?.nonRunner ? 'vacant-trap-selection' : ''">
+                        <div
+                            *ngIf="!greyhoundRacingEntry?.isVacant"
+                            class="tilted-card selection-current-price"
+                            [ngClass]="
+                                !greyhoundRacingEntry?.isStartPrice && !!vm?.favPrice && vm?.favPrice === greyhoundRacingEntry?.actualPrice
+                                    ? 'favorite-box'
+                                    : ''
+                            "
+                            autoAdjustFont>
+                            <span id="RunnerPrice" class="tilted-text">
+                                <ng-container *ngIf="greyhoundRacingEntry?.currentPrice">
+                                    {{ greyhoundRacingEntry?.currentPrice | darkThemeManualMarketPrice: greyhoundRacingEntry }}
+                                </ng-container>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf="vm?.isRaceOff" class="off-event">
+            <div class="tilted-card">
+                <div id="offEvent" class="tilted-text">OFF</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container footer-content>
+        <gn-dark-theme-each-way
+            [runnerCount]="vm?.runnerCount | runnerCount"
+            [grade]="
+                vm?.isUKEvent && !!vm?.racingContent?.grade
+                    ? (vm?.greyhoundRacingContent?.contentParameters?.Grade ?? '') + ' ' + vm?.racingContent?.grade
+                    : ''
+            "
+            [isEventResulted]="vm?.isAnyEventResulted"
+            [racingDistance]="vm?.racingContent?.distance"
+            [marketEachWayString]="vm?.marketEachWayString"
+            [hasAnyReservedRunner]="vm?.hasAnyReservedRunner"
+            [isUKEvent]="vm?.isUKEvent">
+        </gn-dark-theme-each-way>
+    </ng-container>
+</gn-dark-theme-base-page>

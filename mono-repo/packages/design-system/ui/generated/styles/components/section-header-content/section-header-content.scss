@@ -1,0 +1,9 @@
+@mixin shared {
+    --ds-section-header-content-color-metadata: var(--semantic-color-on-surface-subtle);
+    --ds-section-header-content-color-title: var(--semantic-color-primary-base);
+    --ds-section-header-content-space-inline-elements: var(--semantic-spacing-inline-md);
+    --ds-section-header-content-space-inline-metadata: var(--semantic-spacing-inline-sm);
+    --ds-section-header-content-space-inline-title: var(--semantic-spacing-inline-md);
+    --ds-section-header-content-space-padding-top-elements: var(--semantic-spacing-container-padding-sm);
+    --ds-section-header-content-space-stack: var(--semantic-spacing-stack-sm);
+}

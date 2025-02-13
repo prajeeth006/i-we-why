@@ -1,0 +1,36 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsNumpadStories from '../numpad.component.stories';
+
+The Numpad component `<ds-numpad></ds-numpad>` displays a numpad.
+
+<Canvas of={DsNumpadStories.Default}></Canvas>
+
+## Usage
+
+Import `DsNumpad` in your component.
+
+```ts
+import { DsNumpad } from '@frontend/ui/numpad'; // 👈 add to file imports
+
+@Component({
+    imports: [DsNumpad], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+-   disabled: Specifies whether the numpad is in a disabled state.
+-   inverse: Specifies whether the numpad should be displayed with inverse colors.
+-   numberSeparator: Specifies the separator for numbers
+-   okText: The text for the ok button
+-   removeScreenReaderText: The text for the remove button for screen readers
+
+### Output
+
+-   ok: in case the ok button was pressed
+-   removed: in case the remove character button was pressed
+-   tap: in case any other button (0-9 or number separator) was pressed

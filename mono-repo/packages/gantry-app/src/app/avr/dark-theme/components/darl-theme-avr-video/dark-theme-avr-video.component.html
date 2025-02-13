@@ -1,0 +1,12 @@
+<ng-container>
+    <div *ngIf="vm$ | async as vm" class="eventcontainer">
+        <span *ngIf="!!vm.eventName && !!isVideoPlaying && vm.isOverlay && !isVideoHasError" class="eventcontainer__name">
+            {{ vm.eventName | uppercase }}
+        </span>
+        <img class="eventcontainer__brandimage" *ngIf="!!vm?.tvBrandImageUrl && !!isVideoPlaying && !isVideoHasError" [src]="vm?.tvBrandImageUrl" />
+        <!-- <img class="eventcontainer__brandimage" *ngIf="!!vm?.brandImageUrl && !!isVideoPlaying && !isVideoHasError" [src]="vm?.brandImageUrl" /> -->
+        <img class="avr-bg-image" *ngIf="!isVideoPlaying && !isVideoHasError" [retrySrc]="vm?.backgroundImageUrl" />
+    </div>
+</ng-container>
+
+<video ng-hide="!isVideoHasError" autoplay loop id="myVideo" class="avr-bg-video"></video>

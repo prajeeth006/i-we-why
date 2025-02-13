@@ -1,0 +1,1691 @@
+{
+    "checkbox": {
+        "indeterminate": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            }
+        },
+        "indeterminate-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            }
+        },
+        "large": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-20T01:36:43.111Z"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.small}"
+                },
+                "select-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "select-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "selected-indicator": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.small}"
+                },
+                "selection-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "selection-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.xs}"
+                }
+            }
+        },
+        "large-condensed": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "select-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "select-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "selected-indicator": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.small}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.xs}"
+                }
+            }
+        },
+        "medium": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-xs}"
+                }
+            },
+            "size": {
+                "select-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                },
+                "select-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                },
+                "selected-indicator": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.xsmall}"
+                }
+            },
+            "space": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.xs}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.none}"
+                }
+            }
+        },
+        "medium-condensed": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-xs}"
+                }
+            },
+            "size": {
+                "select-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                },
+                "select-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                },
+                "selected-indicator": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.xsmall}"
+                }
+            },
+            "space": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.xs}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.none}"
+                }
+            }
+        },
+        "selected": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            }
+        },
+        "selected-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-utility.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "size": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "min-tap-target": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                }
+            }
+        },
+        "small": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2025-01-07T13:56:23.883Z"
+                }
+            },
+            "radius": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2025-01-07T13:56:23.883Z"
+                    }
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-xs}"
+                }
+            },
+            "size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2025-01-07T13:56:23.883Z"
+                    }
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.xsmall}"
+                },
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-20T01:36:43.111Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-20T01:36:43.111Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "selection-min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                },
+                "selection-min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                }
+            },
+            "space": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2025-01-07T13:56:23.883Z"
+                    }
+                },
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "checkbox",
+                            "status": "deprecated",
+                            "status_changed_at": "2025-01-07T13:56:23.883Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                }
+            }
+        },
+        "unselected": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.hover}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            }
+        },
+        "unselected-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.hover-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "subtext": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "checkbox",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            }
+        }
+    }
+}

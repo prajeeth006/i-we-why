@@ -1,0 +1,69 @@
+
+<div class="slide gantry-screens-slide" #individualSlides>
+  <div class="slide-content">
+    @for (row of gantryScreenData?.rows; track row; let rowIndex=$index) {
+    <div class="screens-row">
+      @for (column of row?.columns; track column; let columnIndex = $index) {
+        <div class="screen-column">
+            @switch (readOnlyView && column?.screens[0]?.PreviewScreenType ? column?.screens[0]?.PreviewScreenType?.toLowerCase() : column?.screens![0]?.ScreenType?.toLowerCase() ) {
+              @case ("single") {
+                @if (column.hasSubScreens) {
+                  <app-screen-layout-quad [data]="column?.screens" [hasSubScreens]="column?.hasSubScreens" [onRightClickOpenMenu]="onRightClickOpenMenu" (onRightClick)="onRightClickOpenMenu($event)" > </app-screen-layout-quad>
+                }
+                @else {
+                  <app-screen-layout-single [layoutStyle]="column?.screens![0]?.Size" [data]="column?.screens![0]"
+                  (onRightClick)="onRightClickOpenMenu($event)" 
+                  [screenInfo]="column?.screens![0]?.ScreenDetails?.Single![0]"></app-screen-layout-single>
+                }
+              }
+              @case ("duo1") {
+                <app-screen-layout-duo-1 [data]="column?.screens![0]" [onRightClickOpenMenu]="onRightClickOpenMenu" (onRightClick)="onRightClickOpenMenu($event)" ></app-screen-layout-duo-1>
+              }
+              @case ("trio1") {
+                <app-screen-layout-trio [data]="column?.screens![0]" [onRightClickOpenMenu]="onRightClickOpenMenu" [readOnlyView]="readOnlyView" (onRightClick)="onRightClickOpenMenu($event)" ></app-screen-layout-trio>
+              }
+              @case ("trio2") {
+                <app-screen-layout-trio [data]="column?.screens![0]" [onRightClickOpenMenu]="onRightClickOpenMenu" [readOnlyView]="readOnlyView" (onRightClick)="onRightClickOpenMenu($event)" ></app-screen-layout-trio>
+              }
+              @case ("quad") {
+                <app-screen-layout-quad [data]="column?.screens" [hasSubScreens]="column?.hasSubScreens" [onRightClickOpenMenu]="onRightClickOpenMenu" (onRightClick)="onRightClickOpenMenu($event)" > </app-screen-layout-quad>
+              }
+            }
+            
+          @if (column?.haveLayoutChangeOption && !readOnlyView) {
+            <screen-layout-change-widget [screenData]="column?.screens![0]"
+              (onToggle)="updateGantryScreensModelData($event, column?.screens![0])"></screen-layout-change-widget>
+          }
+        </div>
+      }
+    </div>
+    }
+  </div>
+  
+
+</div>
+
+<div class="screen-context-menu-hidden" [style.left]="contextMenuPosition.x" 
+[style.top]="contextMenuPosition.y" [matMenuTriggerFor]="individualScreenContextMenu"></div>
+
+<mat-menu [hasBackdrop]="false" #individualScreenContextMenu="matMenu" class="screen-context-menu-open-dropdown" 
+>
+  <ng-container *ngFor="let menuItem of contextMenuItems" 
+    [ngTemplateOutlet]="menuItem.id === contextMenuOptions.preview ? previewBtn : menuItem.id === contextMenuOptions.editCarousel  ? editCarouselBtn : otherBtn" 
+    [ngTemplateOutletContext]="{menuItem:menuItem}"
+    >
+  </ng-container>
+  
+  <ng-template #previewBtn  let-menuItem='menuItem'>
+    <button id={{menuItem.id}}  [disabled]="!menuItem.isContentSaved" mat-menu-item (click)="onClickMenuOption($event, menuItem?.data)">{{ menuItem.itemName }}</button>
+  </ng-template>
+
+  <ng-template #editCarouselBtn  let-menuItem='menuItem'>
+    <button id={{menuItem.id}}  [disabled]="!menuItem.isCarouselExists" mat-menu-item (click)="onClickMenuOption($event, menuItem?.data)">{{ menuItem.itemName }}</button>
+  </ng-template>
+  
+  <ng-template #otherBtn  let-menuItem='menuItem'>
+    <button id={{menuItem.id}} mat-menu-item (click)="onClickMenuOption($event, menuItem?.data)">{{ menuItem.itemName }}</button>
+  </ng-template>
+
+</mat-menu>

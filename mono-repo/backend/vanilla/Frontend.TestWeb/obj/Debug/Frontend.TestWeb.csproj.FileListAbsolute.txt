@@ -1,0 +1,14 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.TestWeb\DataProtection\key-bc8627db-94b9-4067-ad9d-2da02d0cb7aa.xml
+C:\dev\monorepo\dist\backend\vanilla\Frontend.TestWeb\Frontend.TestWeb.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.TestWeb\Frontend.TestWeb.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.TestWeb\Frontend.TestWeb.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.3114E0AA.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.dll
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\refint\Frontend.TestWeb.dll
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\Frontend.TestWeb.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb\obj\Debug\ref\Frontend.TestWeb.dll

@@ -1,0 +1,11 @@
+{
+    "weeklyPoints": 50,
+    "currentTarget": 75,
+    "currentCashback": 100,
+    "targetCashback": 200,
+    "isOptin": "Y",
+    "currentSlabPoints": 55,
+    "currency": "$",
+    "nextSlabPoints": 125,
+    "awardType": "POKER_DOLLAR"
+}

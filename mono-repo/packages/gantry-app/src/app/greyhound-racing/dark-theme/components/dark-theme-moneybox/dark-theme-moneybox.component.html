@@ -1,0 +1,62 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page>
+            <ng-container header-content>
+                <gn-dark-theme-header-full [racingImage]="vm.greyhoundRacingContent?.greyHoundRacingImage?.src" [title]="vm.eventName">
+                </gn-dark-theme-header-full>
+            </ng-container>
+            <ng-container body-content>
+                <div class="moneybox-content">
+                    <div id="moneyboxText" class="name-title">
+                        {{
+                            vm.greyhoundRacingContent?.contentParameters?.HeaderMoneybox
+                                ? (vm.greyhoundRacingContent?.contentParameters?.HeaderMoneybox | capitalizeFirst)
+                                : ''
+                        }}
+                    </div>
+                    <ul id="selectionTableM" class="selection-table greyhound-table">
+                        <li *ngFor="let selection of vm.selections" id="mSelections">
+                            <div
+                                class="selection-number traps"
+                                [ngClass]="[
+                                    'trap-' + selection?.trapNumber,
+                                    vm?.isUKEvent || vm?.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus',
+                                ]">
+                                <span>{{ selection?.trapNumber }}</span>
+                            </div>
+                            <div class="selection-content">
+                                <div id="sPrice" class="selection-price" autoAdjustFont>
+                                    <span class="selection-price__tilted">
+                                        {{ selection?.price | marketPriceTransform: selection.hideEntry }}
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="rewardsconatiner">
+                        <span id="moneyboxPA1" class="rewardsconatiner__items">{{
+                            vm.greyhoundRacingContent?.contentParameters?.NewDesignMoneyboxPointsAwarded1 ?? ''
+                        }}</span>
+                        <span id="moneyboxPA2" class="rewardsconatiner__items">{{
+                            vm.greyhoundRacingContent?.contentParameters?.NewDesignMoneyboxPointsAwarded2 ?? ''
+                        }}</span>
+                        <span id="moneyboxPA3" class="rewardsconatiner__items">{{
+                            vm.greyhoundRacingContent?.contentParameters?.NewDesignMoneyboxPointsAwarded3 ?? ''
+                        }}</span>
+                        <span id="moneyboxPA4" class="rewardsconatiner__items">{{
+                            vm.greyhoundRacingContent?.contentParameters?.NewDesignMoneyboxPointsAwarded4 ?? ''
+                        }}</span>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <gn-dark-theme-footer
+                    [leftSideText]="vm.greyhoundRacingContent?.contentParameters?.NewDesignMoneyBoxAndWYTFooter ?? ''"
+                    [rightSideText]="vm.greyhoundRacingContent?.contentParameters?.NewDesignWinOnlyMoneybox ?? ''">
+                </gn-dark-theme-footer>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

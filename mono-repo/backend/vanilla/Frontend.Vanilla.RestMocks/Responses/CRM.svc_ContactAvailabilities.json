@@ -1,0 +1,9 @@
+{
+    "availabilities": [
+        {
+            "name": "Chat",
+            "isAgentAvailable": true,
+            "isWithinServiceHours": true
+        }
+    ]
+}

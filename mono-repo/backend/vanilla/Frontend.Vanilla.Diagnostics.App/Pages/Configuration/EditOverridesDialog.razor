@@ -1,0 +1,30 @@
+@inherits EditOverridesDialogComponent
+
+<BSModal @ref="Modal" DisableAnimations="true" Size="Size.ExtraLarge">
+    <Header>
+        Override @(KeyName != null
+                     ? $"{FeatureName} => {KeyName} => Value"
+                     : FeatureName
+                       ?? "All Features")
+    </Header>
+    <Content>
+        <BSLabel For="overridesInput">
+            Specify @(KeyName != null ? "JSON token of type of particular value"
+                    : FeatureName != null ? "JSON object in format of particular feature from DynaCon response"
+                    : "JSON object in format of entire DynaCon response").
+        </BSLabel>
+        <BSInput id="overridesInput" InputType="@InputType.TextArea" Name="text" Rows="20" IsDisabled="@IsSaving"
+                 Value="@JsonString" @oninput="e => JsonString = e.Value.ToString()"/>
+        @if (JsonError != null)
+        {
+            <div class="alert alert-danger">
+                <span class="multi-line">@JsonError</span>
+            </div>
+        }
+    </Content>
+    <Footer>
+        <button class="btn btn-primary" disabled="@(JsonError != null || IsSaving)" @onclick="OnSaveOverridesClicked">
+            @(IsSaving ? "Setting" : "Set") Overrides
+        </button>
+    </Footer>
+</BSModal>

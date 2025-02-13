@@ -1,0 +1,27 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ExpansionPanelStories from '../expansion-panel.component.stories';
+
+The Expansion Panel component combines a card and an accordion to provide a collapsible section with a header and content area.
+It can be used to organize information and improve the user experience by hiding non-essential content until needed.
+
+<Canvas of={ExpansionPanelStories.Default}></Canvas>
+
+## Usage
+
+By putting the ds-accordion inside the card, and marking the card as noOverflow, we can reach the desired look for an expansion panel.
+
+```html
+<ds-card noOverflow>
+    <ds-accordion>
+        <ds-accordion-header>
+            <div slot="start">
+                <div slot="title">Title</div>
+                <div slot="subtitle">Optional Subtitle</div>
+            </div>
+        </ds-accordion-header>
+        <ds-accordion-content> some content </ds-accordion-content>
+    </ds-accordion>
+</ds-card>
+```

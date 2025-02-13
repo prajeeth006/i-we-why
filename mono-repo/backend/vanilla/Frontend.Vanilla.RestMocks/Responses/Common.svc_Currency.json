@@ -1,0 +1,12 @@
+{
+    "Currencies": [
+        {
+            "id": "EUR",
+            "name": "Euro"
+        },
+        {
+            "id": "USD",
+            "name": "US Dollar"
+        }
+    ]
+}

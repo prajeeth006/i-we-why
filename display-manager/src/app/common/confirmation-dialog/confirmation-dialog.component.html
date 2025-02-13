@@ -1,0 +1,13 @@
+<div class="modern-dialog__wrapper">
+    <div class="modern-dialog__header">{{ data?.dialog_title }}</div>
+    <div class="modern-dialog__body">
+        <span>{{ data?.dialog_msg }}</span>
+    </div>
+    <div class="modern-dialog__footer">
+        <button class="modern-dialog__action-btn modern-dialog__action-btn--cancel" (click)="onCancel();">{{
+            data?.dialog_btn_cancel }}</button>
+        <button class="modern-dialog__action-btn modern-dialog__action-btn--save" (click)="onDelete();">
+            {{data?.dialog_btn_delete}}
+        </button>
+    </div>
+</div>

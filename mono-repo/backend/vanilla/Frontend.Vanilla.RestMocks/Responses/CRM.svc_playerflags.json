@@ -1,0 +1,15 @@
+{
+    "accountName": "AccountNamee19665f5-e843-45e5-95d5-81b663ff7575",
+    "flags": [
+        {
+            "name": "Bonus",
+            "value": "Offered",
+            "reasonCodes": ["R100", "R101"]
+        },
+        {
+            "name": "Promotion",
+            "value": "Disabled",
+            "reasonCodes": null
+        }
+    ]
+}

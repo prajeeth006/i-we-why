@@ -1,0 +1,31 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as DsSwitchStories from './switch.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './switch-tabs/overview.mdx';
+import MySecondTab from './switch-tabs/examples.mdx';
+import MyThirdTab from './switch-tabs/api.mdx';
+
+# Switch Component
+
+<Meta of={DsSwitchStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

@@ -1,0 +1,45 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as AlertComponentStories from '../alert.component.stories';
+
+The DsAlert component is designed to display Alerts with customizable content.
+It uses slots to allow you to insert specific elements into predefined areas of the alert.
+To use the `ds-alert` component, include the `<ds-alert></ds-alert>` selector in your template.
+
+<Canvas of={AlertComponentStories.Subtle} />
+
+## Usage
+
+Import `DsAlert` in your component.
+
+```ts
+import { DsAlert } from '@frontend/ui/alert'; // 👈 add to file imports
+
+@Component({
+    imports: [DsAlert], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+The content inside the alert is divided into different slots:
+
+-   **Header:** Use `slot="header"` to specify the content for the header of the alert for alert-input;
+-   **Content:** add content between the `ds-alert` tags to specify the content;
+-   **Footer Action Button:** Use `slot="footer"` attribute for the footer button slot. This is useful for adding a button to perform some action directly from the alert and can be aligned center and left by using `align` attribute;
+-   **Close Icon:** Use `slot=closeIcon` attribute to add the close icon.
+-   **Action Icon:** Use `slot="actionIcon"` attribute for the action icon. This is useful for adding a icon to perform some action directly from the alert ;
+
+### Type
+
+Alerts can be themed by using `type` input in `ds-alert` component
+
+-   success (default)
+-   caution
+-   info
+-   error
+
+### Inverse
+
+To add inverse state to alert use input `inverse` in `ds-alert` component

@@ -1,0 +1,123 @@
+<div class="carousel-container" [appDroppable]="carouselDrop" (onDroppableComplete)="addNewCarouselItem($event)">
+    <form [formGroup]="carouselForm" (ngSubmit)="onSubmit()" class="carousel-modal-form"
+        [ngClass]="{'carousel-modal-step-2':getCarouselActiveItems.length > 0}">
+        <div class="carousel-header">
+            <span *ngIf="!treeNode">NEW CAROUSEL</span>
+            <span *ngIf="treeNode">EDIT CAROUSEL</span>
+            <div class="folder-name-control">
+                <input id="folderNameInput" formControlName="name" placeholder="Create Carousel Name"
+                    class="folder-name-input" [ngClass]="{'red-border-class': carouselForm.get('name')?.invalid }">
+            </div>
+        </div>
+
+        <div class="carousel-step-2">
+            <div class="carousel-header-block">
+                <div></div>
+                <div>Category</div>
+                <div>Asset(s)</div>
+                <div>Duration</div>
+                <div></div>
+            </div>
+
+            <div id="carouselDrop" class="carousel-drop">
+                <div id="formArrayDrop" formArrayName="items" cdkDropList
+                    (cdkDropListDropped)="orderCarouselItems($event)" class="items-sections">
+
+                    <div [formGroupName]="i" class="add-or-remove-section row-item" cdkDrag cdkDragLockAxis="y"
+                        [cdkDragPreviewClass]="'preview-item-section'"
+                        *ngFor="let item of getCarousel.controls; let i = index">
+                        
+                        <ng-container *ngIf="!item.value.isDeleted">
+                            <div cdkDragHandle id="sortHolder" class="item sortHolder"><img
+                                    [src]="hamburgerIconPath" alt="">
+                            </div>
+                            <div class="item">
+                                <span class="asset-name-label" [style.background-color]="item.value.asset?.AssetColor">
+                                    {{item.value.asset?.TypeName}}
+                                </span>
+                            </div>
+                            <div class="item">
+                                <span [style.background-color]="item.value.asset?.AssetColor" class="asset-image"><img
+                                        [src]="item.value.asset?.AssetActiveIcon" />
+                                    <div class="asset-display-name" *ngIf="item.value?.racingEvent?.splitScreen?.displayAssetNameOnScreenWhenDragged">
+                                        {{item.value?.racingEvent?.splitScreen?.displayAssetNameOnScreenWhenDragged}}</div>
+                                </span>
+                                <span>{{ item.value.assetName | assetname }}</span>
+                            </div>
+                            <div id="durationRemoveSection" class="duration-remove-section item"
+                                [ngClass]="{'duration-remove-section-2':item.get('carouselDuration')?.errors?.min || item.get('carouselDuration')?.errors?.max || item.get('carouselDuration')?.invalid}">
+                                <div class="duration-and-remove">
+                                    <div class="duration-section">
+                                        <span class="seconds-section">
+                                            <input id="carouselDuration" type="number"
+                                                formControlName="carouselDuration" class="carosel-duration"
+                                                [ngClass]="{'red-border-class': item.get('carouselDuration')?.invalid || item.get('carouselDuration')?.errors?.min || item.get('carouselDuration')?.errors?.max }">
+                                        </span>
+                                        <span>(s)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item remove-button">
+                                <div id="removeButton" class="item-remove-button" mat-stroked-button
+                                    (click)="deleteCarouselItem(i)">X</div>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <div class="carousel-main-section" *ngIf="getCarouselActiveItems.length <= 1">
+                        <div class="carousel-drop carousel-drop-zero-margin" id="dragNDropCarousel">
+                            <div class="drag-drop-cls">
+                                <div>DRAG & DROP ASSET</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="errors-section"
+            *ngIf="getCarouselActiveItems.length > maxCarouselItems || totalErrors > 0 || getCarouselActiveItems.length < minCarouselItems">
+            <div id="maxCarouselItems" class="error-message" *ngIf="getCarouselActiveItems.length > maxCarouselItems">
+                <i class="info-icon-style">i</i>You have added max. amount of assets ({{maxCarouselItems}})
+            </div>
+            <div id="totalErrors" class="error-message" *ngIf="totalErrors > 0">
+                <i class="info-icon-style">i</i> You must correct errors ({{totalErrors}}) before you can save
+            </div>
+            <div id="carouselActiveItemError" class="error-message"
+                *ngIf="getCarouselActiveItems.length < minCarouselItems">
+                <i class="info-icon-style">i</i> Add min. {{minCarouselItems}} assets to create carousel
+            </div>
+            <div id="carouselActiveItemError" class="error-message" *ngIf="hasMinTimeErrors">
+                <i class="info-icon-style">i</i> Minimum display time must be 00:10
+            </div>
+            <div id="carouselActiveItemError" class="error-message" *ngIf="hasMaxTimeErrors">
+                <i class="info-icon-style">i</i> Maximum display time must be 02:00
+            </div>
+        </div>
+        <div mat-dialog-actions class="carousel-footer-btns">
+
+            <div id="footerBtns" class="footer-btns">
+                <div class="items-count-and-duration" id="itemsCountNDuration">
+                    <span class="item item-count" id="itemCount">Total Assets: <span class="item-value"
+                            id="itemValue">{{getCarouselActiveItems.length}}</span></span>
+                    <span class="item item-duration" id="totalDuration">Total Duration: <span class="item-value"
+                            id="totalDurationValue">{{ totalDuration * 1000 |
+                            date:'mm:ss':'UTC'
+                            }}</span></span>
+                </div>
+
+                <div class="footer-btn-block">
+                    <button mat-button [mat-dialog-close]="null" cdkFocusInitial (click)="closePopup()"
+                        id="cancel-button" class="carousel-cancel-btn" id="cancelBtn">CANCEL</button>
+                    <button mat-button cdkFocusInitial type="submit" id="saveBtn" class="carousel-save-btn"
+                        [ngClass]="{'carousel-save-disable':isSaveInProgress || getCarouselActiveItems.length < minCarouselItems || getCarouselActiveItems.length > maxCarouselItems || !carouselForm.valid}"
+                        [disabled]="isSaveInProgress || getCarouselActiveItems.length < minCarouselItems || getCarouselActiveItems.length > maxCarouselItems || !carouselForm.valid">SAVE</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

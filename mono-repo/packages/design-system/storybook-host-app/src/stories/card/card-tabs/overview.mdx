@@ -1,0 +1,64 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsCardComponentStories from '../card.component.stories';
+
+The Card component, identified by the `ds-card` selector, is a flexible container that can be used alone or together with other components like Card Header to make attractive sections in your app.
+If you are using as standalone component you have the option to customize elevation or variant, depending on users preferences. If you are using in combination with `ds-card-header` component,
+additional options such as title and subtitle become available and you can customize the content of the header to match user preferences.
+
+<Canvas of={DsCardComponentStories.Default} />
+
+## Usage
+
+Import `DsCard` in your component, and apply `ds-card` in your card component.
+
+```ts
+import { DsCard, DsCardContent } from '@frontend/ui/card'; // 👈 add to file imports
+import { DsCardFooter } from '@frontend/ui/card-footer'; // 👈 add to file imports if needed
+import { DsCardHeader } from '@frontend/ui/card-header'; // 👈 add to file imports if needed
+
+@Component({
+    imports: [DsCard, DsCardContent, DsCardFooter, DsCardHeader], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+#### elevated
+
+-   **Type**: `boolean`
+-   **Default**: `true`
+-   **Description**: Determines if the card should have elevation (shadow). When set to `true`, the card will have a shadow effect, giving it a raised appearance.
+
+#### variant
+
+-   **Type**: `string`
+-   **Options**: `'surface-lowest'`, `'surface-low'`, `'surface-high'`, `'surface-highest'`
+-   **Default**: `'surface-lowest'`
+-   **Description**: Specifies the visual variant of the expandable card. These variants control the background color and contrast of the card, allowing you to choose a style that fits your design needs.
+
+#### noOverflow
+
+-   **Type**: `boolean`
+-   **Default**: `false`
+-   **Description**: When set to true, it will apply css style `overflow: hidden` to the element.
+
+#### noBorder
+
+-   **Type**: `boolean`
+-   **Default**: `false`
+-   **Description**: When set to true, it will remove the border.
+
+#### noBorderRadius
+
+-   **Type**: `boolean`
+-   **Default**: `false`
+-   **Description**: When set to true, it will remove border radius.
+
+#### withHover
+
+-   **Type**: `boolean`
+-   **Description**: A boolean input that determines whether the card should have a hover effect. By default, this property is set to false. To enable the hover effect, add the `withHover` attribute to the component.

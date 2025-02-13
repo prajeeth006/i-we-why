@@ -1,0 +1,189 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page>
+            <ng-container header-content>
+                <gn-dark-theme-header-full
+                    [title]="
+                        vm?.eventName
+                            ? vm?.eventName + ' ' + (vm?.greyhoundStaticContent?.contentParameters?.Results ?? '')
+                            : (vm?.greyhoundStaticContent?.contentParameters?.Results ?? '')
+                    "
+                    [racingImage]="vm?.eventLogo">
+                </gn-dark-theme-header-full>
+            </ng-container>
+
+            <ng-container body-content>
+                <ng-container *ngIf="vm?.isMarketSettled">
+                    <div class="meeting-results-template" [ngClass]="vm?.isUKIrishCountry && 'uk-meeting-results-template'">
+                        <div id="meetingresult" class="meeting-results-table-header">
+                            <span id="Time"> </span>
+
+                            <span id="FirstPosition" class="position">
+                                {{
+                                    vm?.greyhoundStaticContent?.contentParameters?.FirstPosition
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.FirstPosition | titlecase)
+                                        : ''
+                                }}
+                            </span>
+
+                            <span id="SecondPosition" class="position">
+                                {{
+                                    vm?.greyhoundStaticContent?.contentParameters?.SecondPosition
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.SecondPosition | titlecase)
+                                        : ''
+                                }}
+                            </span>
+
+                            <span id="ThirdPosition" class="position">
+                                {{
+                                    vm?.greyhoundStaticContent?.contentParameters?.ThirdPosition
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.ThirdPosition | titlecase)
+                                        : ''
+                                }}
+                            </span>
+
+                            <span id="Vacant" class="vacant" *ngIf="vm.isUKIrishCountry">
+                                {{
+                                    vm?.greyhoundStaticContent?.contentParameters?.Vac
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.Vac | titlecase)
+                                        : ''
+                                }}
+                            </span>
+
+                            <span id="FirstSP" class="gap-plus">
+                                {{ vm?.greyhoundStaticContent?.contentParameters?.NewDesignFirstStartingPrice ?? '' }}
+                            </span>
+
+                            <span class="gap"> </span>
+
+                            <span id="SecondSP" class="gap-plus">
+                                {{ vm?.greyhoundStaticContent?.contentParameters?.NewDesignSecondStartingPrice ?? '' }}
+                            </span>
+
+                            <span class="gap"> </span>
+
+                            <span class="gap-plus" *ngIf="!vm?.isUKIrishCountry"
+                                >{{ vm?.greyhoundStaticContent?.contentParameters?.NewDesignThirdStartingPrice ?? '' }}
+                            </span>
+
+                            <span class="gap" *ngIf="!vm?.isUKIrishCountry"> </span>
+
+                            <span id="Forecast" class="cast-column"
+                                >{{
+                                    vm?.greyhoundStaticContent?.contentParameters?.Forecast
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.Forecast | titlecase)
+                                        : ''
+                                }}
+                            </span>
+
+                            <span id="Tricast" class="cast-column"
+                                >{{
+                                    vm?.greyhoundStaticContent?.contentParameters?.Tricast
+                                        ? (vm?.greyhoundStaticContent?.contentParameters?.Tricast | titlecase)
+                                        : ''
+                                }}
+                            </span>
+                        </div>
+
+                        <div
+                            id="resultTable"
+                            class="meeting-results-table-body"
+                            *ngFor="let meetingResult of vm?.greyhoundMeetingResultsTable | slice: pageDetails?.startIndex : pageDetails?.endIndex">
+                            <div id="meetingResult" class="meeting-results-table-item" *ngIf="meetingResult?.runnerList.length > 0">
+                                <span id="eventTime">{{ meetingResult?.eventDateTime | eventDatetimeChangeformat }} </span>
+
+                                <span id="RunnerOne" class="position">
+                                    <span
+                                        *ngIf="meetingResult?.runnerList[0]?.runnerNumber"
+                                        class="selection-number traps"
+                                        [ngClass]="[
+                                            'trap-' + meetingResult?.runnerList[0]?.runnerNumber,
+                                            vm?.isUKIrishCountry ? 'trap__country--uk' : 'trap__country--aus',
+                                        ]">
+                                        <span>{{ meetingResult?.runnerList[0]?.runnerNumber }}</span>
+                                    </span>
+                                </span>
+
+                                <span id="RunnerTwo" class="position">
+                                    <span
+                                        *ngIf="meetingResult?.runnerList[1]?.runnerNumber"
+                                        class="selection-number traps"
+                                        [ngClass]="[
+                                            'trap-' + meetingResult?.runnerList[1]?.runnerNumber,
+                                            vm?.isUKIrishCountry ? 'trap__country--uk' : 'trap__country--aus',
+                                        ]">
+                                        <span>{{ meetingResult?.runnerList[1]?.runnerNumber }}</span>
+                                    </span>
+                                </span>
+
+                                <span id="RunnerThree" class="position">
+                                    <span
+                                        *ngIf="meetingResult?.runnerList[2]?.runnerNumber"
+                                        class="selection-number traps"
+                                        [ngClass]="[
+                                            'trap-' + meetingResult?.runnerList[2]?.runnerNumber,
+                                            vm?.isUKIrishCountry ? 'trap__country--uk' : 'trap__country--aus',
+                                        ]">
+                                        <span>{{ meetingResult?.runnerList[2]?.runnerNumber }}</span>
+                                    </span>
+                                </span>
+
+                                <span id="VacantSelections" class="vacant" *ngIf="vm?.isUKIrishCountry">
+                                    <span>{{ meetingResult?.vacantTraps }}</span>
+                                </span>
+
+                                <span id="FirstSPPrice" class="highlight gap-plus">
+                                    {{ meetingResult?.runnerList[0]?.price ? (meetingResult?.runnerList[0]?.price | marketPriceTransform) : ' ' }}
+                                </span>
+
+                                <span id="ZeroFavorite" class="text-left gap">
+                                    {{
+                                        meetingResult?.runnerList[0]?.favourite == favouriteTags.favourite
+                                            ? (vm?.greyhoundStaticContent?.contentParameters?.Favorite ?? '')
+                                            : meetingResult?.runnerList[0]?.favourite
+                                              ? meetingResult?.runnerList[0]?.favourite
+                                              : ' '
+                                    }}
+                                </span>
+
+                                <span id="SecondSPPrice" class="highlight gap-plus">
+                                    {{ meetingResult?.runnerList[1]?.price ? (meetingResult?.runnerList[1]?.price | marketPriceTransform) : ' ' }}
+                                </span>
+
+                                <span id="OneFavorite" class="text-left gap">
+                                    {{
+                                        meetingResult?.runnerList[1]?.favourite == favouriteTags.favourite
+                                            ? (vm?.greyhoundStaticContent?.contentParameters?.Favorite ?? '')
+                                            : meetingResult?.runnerList[1]?.favourite
+                                              ? meetingResult?.runnerList[1]?.favourite
+                                              : ' '
+                                    }}
+                                </span>
+
+                                <span id="ThirdSPPrice" class="highlight gap-plus" *ngIf="!vm?.isUKIrishCountry">
+                                    {{ meetingResult?.runnerList[2]?.price ? (meetingResult?.runnerList[2]?.price | marketPriceTransform) : ' ' }}
+                                </span>
+
+                                <span id="TwoFavorite" class="text-left gap" *ngIf="!vm?.isUKIrishCountry">
+                                    {{ meetingResult?.runnerList[2]?.favourite ? meetingResult?.runnerList[2]?.favourite : ' ' }}
+                                </span>
+
+                                <span id="ForecastDividend" class="cast-column">{{ meetingResult?.foreCast }}</span>
+
+                                <span id="TricastDividend" class="cast-column">{{ meetingResult?.triCast }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <gn-dark-theme-filler-page [pageName]="'greyhound'" [fillerPageMessage$]="fillerPageMessage$"> </gn-dark-theme-filler-page>
+            </ng-container>
+
+            <ng-container footer-content *ngIf="vm?.isMarketSettled">
+                <gn-dark-theme-footer [rightSideText]="pageDetails?.paginationText"></gn-dark-theme-footer>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

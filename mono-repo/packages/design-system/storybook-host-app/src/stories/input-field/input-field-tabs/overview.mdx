@@ -1,0 +1,142 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as InputFieldStories from '../input-field.component.stories';
+
+The `DsInputModule` is an Angular module that encapsulates the `DsInputField` and `DsInputDirective`, providing a cohesive package for working with form controls in your application.
+
+## Usage
+
+Import the `DsInputModule` in your applications module, and then use `DsInputField` and `DsInputDirective` in your component template as shown below:
+
+```ts
+import { DsInputModule } from '@frontend/ui/input-field';
+
+@Component({
+    template: `
+        <ds-input-field labelText="Name">
+            <input dsInput />
+        </ds-input-field>
+
+        or
+
+        <ds-input-field labelText="Name">
+            <textarea dsInput></textarea>
+        </ds-input-field>
+    `,
+    imports: [DsInputModule],
+})
+export class AppComponent {}
+```
+
+The `DsInputField` component is designed to wrap form controls such as input and textarea, providing consistent styling, floating labels, validation, and accessibility features. It uses signals to manage state efficiently, handling focus, autofill, and value changes. The component works with the `DsInputDirective` to control form input behaviors.
+
+## Input Directive
+
+The `DsInputDirective` is used to provide input control behavior within `DsInputField`.
+
+### Usage
+
+You can integrate `DsInputField` into your Angular template by wrapping form controls.
+Apply the `dsInput` directive on native `input` or `textarea` elements inside a `ds-input-field`.
+
+### Input HTML element
+
+```html
+<ds-input-field labelText="Label" [value]="Text">
+    <input dsInput type="text" formControlName="name" />
+</ds-input-field>
+```
+
+<Canvas of={InputFieldStories.TextInput} />
+
+### Textarea HTML element
+
+```html
+<ds-scrollbar>
+    <ds-input-field labelText="Label" [value]="Text">
+        <textarea dsInput type="text" formControlName="name"></textarea>
+    </ds-input-field>
+</ds-scrollbar>
+```
+
+<Canvas of={InputFieldStories.TextArea} />
+
+**Note:** For TextArea, added scrollbar component to have a scroll on textarea. The scrollbar will only be visible when the textarea content is more than the specified min-height(100px).
+
+### Supported input types
+
+```ts
+export const DS_INPUT_TYPES_ARRAY = ['text', 'password', 'email', 'number', 'date'] as const;
+export type DsInputType = (typeof DS_INPUT_TYPES_ARRAY)[number];
+```
+
+This means that any element using the dsInput directive should accept one of the following input types:
+
+-   `text`
+-   `password`
+-   `email`
+-   `number`
+-   `date`
+
+### Inputs
+
+-   `labelText`: The text displayed as the label for the input field.
+-   `labelFor`: Associates the label with the input element's id. Automatically set from `DsInputDirective`.
+-   `inverse`: Boolean input to apply inverse colors for dark backgrounds.
+-   `value`: Two-way bound input value. Keeps track of the input’s current value.
+-   `size`: 'medium', 'small'.
+-   `isRightAlign`: Boolean value to change the alignment of the input (by default is left aligned).
+-   `maxCharCount`: The maximum character count allowed for textarea elements (default: 255).
+-   `floatingLabel`: Boolean value that determines whether the label for the input field should float.
+-   `isFieldRequired`: Boolean value to change presence of asterisk in the label.
+
+### Size
+
+```ts
+export const DS_INPUT_FIELDS_SIZE_ARRAY = ['small', 'medium'] as const;
+export type DsInputFieldsSize = (typeof DS_INPUT_FIELDS_SIZE_ARRAY)[number];
+```
+
+### Label
+
+The `DsInputField` component supports content projection for labels, allowing for more complex label structures like HTML elements and styling within the label. You can use either the `labelText` input or `slot="label"` for content projection.
+
+```html
+<ds-input-field>
+    <ng-container slot="label">
+        <span>Your custom label content here</span>
+    </ng-container>
+    <input dsInput />
+</ds-input-field>
+```
+
+or
+
+```html
+<ds-input-field labelText="Label">
+    <input dsInput />
+</ds-input-field>
+```
+
+### Slots
+
+Besides content projected labelss, the `DsInputField` component supports other content projection slots:
+
+-   `slot="start"`: for content visually positioned inside, at the start of the input area, typically for elements typically for elements like icons or input prefixes.
+-   `slot="end"`: for content visually positioned inside, at the end of the input area, commonly used for icons, buttons, or suffixes.
+-   `slot="bottom"`: for content positioned below the input field, such as help text, validation error messages, or additional instructions.
+
+## Accessibility
+
+The `DsInputField` component is designed with accessibility in mind, ensuring that all users, including those with disabilities, can effectively interact with form controls. Key features include:
+
+-   **Label Association**: The component supports proper label association through the `labelFor` input, linking the label element with the corresponding input field. This helps screen readers convey the correct information to users.
+
+-   **Focus Management**: The component tracks the focus state and provides visual cues, ensuring that users can easily see which form field is currently active. The `focusChange` event emitter allows developers to handle focus-related logic, improving overall usability.
+
+-   **ID Generation**: `DsInputDirective` ensures that each input element has a unique identifier, enhancing accessibility and providing label association automatically. The directive checks for the presence of an existing `id` attribute on the input element:
+
+    -   If an id is already present and not just whitespace, it will use this value for label association.
+
+    -   If the id attribute is missing or contains only whitespace, a new unique ID is generated. The ID follows the format 'ds-input-id-[unique identifier]', where the unique identifier is based on an incrementing counter specific to the component. The directive then sets this ID on the element to maintain consistency and accessibility.

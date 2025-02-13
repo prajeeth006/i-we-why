@@ -1,0 +1,105 @@
+<gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [racingImage]="vm?.greyhoundRacingContent?.greyHoundRacingImage?.src"
+            [title]="vm?.eventTitle"
+            [eventTime]="vm?.eventTime">
+            <ng-container raceStage-content>
+                <div class="header-race-stage-result tilted-card">
+                    <span class="tilted-text">{{ vm?.greyhoundRacingContent?.contentParameters?.Result ?? '' }}</span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+
+    <ng-container body-content>
+        <div class="body">
+            <ul id="gTable" class="greyhound-table selection-table" [ngClass]="vm?.isUKEvent || (vm?.isUKEvent == undefined && 'runners__list--six')">
+                <li *ngFor="let greyhoundRacingEntry of vm?.runners" id="runnerS">
+                    <div class="selection-position">
+                        <span id="RunnerPosition" *ngIf="greyhoundRacingEntry?.position">{{
+                            greyhoundRacingEntry.position | runnerPositionSuffix
+                        }}</span>
+                    </div>
+
+                    <div
+                        class="selection-number"
+                        [class]="[
+                            'trap-' + greyhoundRacingEntry?.trapNo,
+                            vm?.isUKEvent || vm?.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus',
+                        ]">
+                        <span>{{ greyhoundRacingEntry.trapNo }}</span>
+                    </div>
+
+                    <div class="selection-name">
+                        <div class="greyhoundname-with-res">
+                            <span id="GreyHoundName" *ngIf="greyhoundRacingEntry?.greyhoundName">
+                                {{ greyhoundRacingEntry.greyhoundName | vacantCheckTransform | titlecase }}
+                            </span>
+                            <span id="Reserve" class="reserved" *ngIf="greyhoundRacingEntry?.isReserved">
+                                {{ vm?.greyhoundRacingContent?.contentParameters?.Res ?? '' }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="selection-favourite" *ngIf="greyhoundRacingEntry?.isFavourite">
+                        <span class="fav" *ngIf="greyhoundRacingEntry?.favourite == favouriteTags.favourite" id="Favorite">
+                            {{ vm?.greyhoundRacingContent?.contentParameters?.Favorite ?? '' }}
+                        </span>
+                        <span class="joint-fav" *ngIf="greyhoundRacingEntry?.favourite != favouriteTags.favourite" id="Favorite">
+                            {{ greyhoundRacingEntry.favourite }}
+                        </span>
+                    </div>
+
+                    <div class="selection-content-result">
+                        <div *ngIf="greyhoundRacingEntry?.price" class="selection-result tilted-card" autoAdjustFont>
+                            <span id="RunnerPrice" class="text-center tilted-text">
+                                <ng-container *ngIf="greyhoundRacingEntry?.price">
+                                    {{ greyhoundRacingEntry.price | darkThemeManualMarketPrice: greyhoundRacingEntry }}
+                                </ng-container>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="castSec">
+                <div id="foreCast" class="cast" *ngIf="vm?.foreCast">
+                    <span id="ForecastTitle"
+                        >{{
+                            vm?.greyhoundRacingContent?.contentParameters?.Forecast
+                                ? (vm?.greyhoundRacingContent?.contentParameters?.Forecast | titlecase)
+                                : ''
+                        }}:</span
+                    >
+                    <span>{{ vm.foreCast }}</span>
+                </div>
+                <div id="triCast" class="cast" *ngIf="vm?.triCast">
+                    <span id="TricastTitle">
+                        {{
+                            vm?.greyhoundRacingContent?.contentParameters?.Tricast
+                                ? (vm?.greyhoundRacingContent?.contentParameters?.Tricast | titlecase)
+                                : ''
+                        }}:</span
+                    >
+                    <span>{{ vm.triCast }} </span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container footer-content>
+        <gn-dark-theme-each-way
+            [runnerCount]="vm?.runnerCount | runnerCount"
+            [isEventResulted]="vm?.isAnyEventResulted"
+            [marketEachWayString]="vm?.marketEachWayString"
+            [hasAnyReservedRunner]="vm?.hasAnyReservedRunner"
+            [isUKEvent]="vm?.isUKEvent"
+            [isHalfScreenType]="vm?.isHalfScreenType"
+            [isFullScreenType]="vm?.isFullScreenType"
+            [Footer]="vm?.greyhoundRacingContent?.contentParameters?.CoralFooter ?? ''"
+            [showFooter]="vm?.isFullScreenType && vm?.marketSelectionPresent"
+            [vacantRunners]="vm?.vacantRunners">
+        </gn-dark-theme-each-way>
+    </ng-container>
+</gn-dark-theme-base-page>

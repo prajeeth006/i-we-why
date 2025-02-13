@@ -1,0 +1,11 @@
+<!-- PAGE HERO -->
+<header>
+  <h1>{$ doc.name $}</h1>
+    {% if doc.stable %}<span class="badge is-stable">Stable</span>{% endif %}
+    {% if doc.beta %}<span class="badge is-beta">Beta</span>{% endif %}
+    {% if doc.deprecated %}<span class="badge is-deprecated">Deprecated</span>{% endif %}
+    {% if doc.experimental %}<span class="badge is-experimental">Experimental</span>{% endif %}
+  </div>
+  <h2>{$ doc.docType $}</h2>
+  <span class="version">{$ angular.version $}</span>
+</header>

@@ -1,0 +1,73 @@
+<div class="sports-main-header">
+  <div class="sports-match-details-wrapper">
+    <div id="sportsMatchDetails" class="sports-match-details-form">
+      <div class="controls-section" [formGroup]="form">
+        <div class="category-name form-control">
+          <div id="itemName" class="item-label">Sports*</div>
+          <mat-form-field appearance="fill" id="dropdownControl">
+            <mat-select disableOptionCentering panelClass="category-dropdown-control" id="mySelect"
+              class="mySelectClass" formControlName="category" (selectionChange)="onCategoryChange()">
+              <mat-option [value]="category" *ngFor="let category of categories" id="categoryName">{{ category.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="date-range form-control">
+          <div class="item-label">Date Range*</div>
+          <input type="date" class="date-range-control" formControlName="date" [min]='todayDate'
+            [class.dateInvalid]="form.get('date')?.invalid" (change)="onDateChange()" />
+        </div>
+        <div *ngIf="form.value.category" class="region-dropdown form-control">
+          <div class="item-label">Region*</div>
+          <mat-form-field appearance="fill">
+            <mat-select id="region" disableOptionCentering panelClass="region-dropdown-control" formControlName="region"
+              (openedChange)="regionChanged($event)" multiple>
+              <mat-select-trigger>
+                {{form.value.region && form.value.region.length > 0 ?
+                form.value.region[0].name : ''}}
+                <span *ngIf="form.value.region?.length > 1" class="additional-selection">
+                  (+{{form.value.region.length - 1}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let region of regions" [value]="region" id="regionName">{{region.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div *ngIf="form.value.category" class="competition-type form-control">
+          <div class="item-label">Competition*</div>
+          <mat-form-field appearance="fill">
+            <mat-select id="competition" disableOptionCentering panelClass="competition-dropdown-control"
+              formControlName="competition" multiple>
+              <mat-select-trigger>
+                {{form.value.competition && form.value.competition.length > 0 ?
+                form.value.competition[0].name : ''}}
+                <span *ngIf="form.value.competition?.length > 1" class="additional-selection">
+                  (+{{form.value.competition.length - 1}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let competition of competitions" [value]="competition"
+                id="competitionName">{{competition.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div *ngIf="form.value.category" class="market-type form-control">
+          <div class="item-label">Market*</div>
+          <mat-form-field appearance="fill">
+            <mat-select id="market" disableOptionCentering panelClass="market-dropdown-control" formControlName="market"
+              (selectionChange)="onMarketChange()">
+              <mat-option [value]="market" *ngFor="let market of marketTemplates" id="multiEventTemplateName">{{
+                market.MultieventTemplateName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="action-buttons form-control">
+        <button (click)="resetForm()" class="form-btn form-reset-btn" id="resetBtn">RESET</button>
+        <button class="submit-form-btn form-btn" (click)="submitForm()"
+          [disabled]="!(form.value.market && form.value.competition?.length > 0)" id="applyBtn">APPLY</button>
+      </div>
+    </div>
+  </div>
+</div>

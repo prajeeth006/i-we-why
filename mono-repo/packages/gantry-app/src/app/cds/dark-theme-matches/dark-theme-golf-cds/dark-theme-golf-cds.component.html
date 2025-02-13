@@ -1,0 +1,64 @@
+<div class="golf-page">
+    <ng-container *ngIf="golfCDSContent as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <ng-container *ngIf="vm?.golfData">
+                <gn-dark-theme-base-page>
+                    <ng-container header-content>
+                        <gn-dark-theme-header [title]="vm?.competitionName" [racingImage]="vm?.content?.golfImage?.src">
+                            <ng-container raceStage-content>
+                                <div class="header-status-box tilted-card">
+                                    <span id="eventDate" class="tilted-text" *ngIf="vm?.eventDateTimeInputValue">
+                                        {{ vm?.eventDateTimeInputValue }}
+                                    </span>
+                                </div>
+                            </ng-container>
+                        </gn-dark-theme-header>
+                    </ng-container>
+                    <ng-container body-content>
+                        <div class="golf-page__wrapper">
+                            <div
+                                id="eventList"
+                                *ngFor="let event of vm?.golfData?.gameDetails | slice: pageDetails.startIndex : pageDetails.endIndex">
+                                <div id="winningTitle" class="winning-title">
+                                    {{ event?.gameStartTime | date: 'h:mma' | lowercase }}
+                                </div>
+                                <ul class="selection-table">
+                                    <ng-container *ngFor="let selection of event?.runnerDetails">
+                                        <li id="eventSelections" *ngIf="selection?.betOdds && selection?.betName">
+                                            <div class="selection-name">
+                                                <span id="selectionName">
+                                                    {{ selection?.betName | trimSelectionNamePipe: nameLength }}
+                                                </span>
+                                            </div>
+                                            <div class="current-price__tilted" autoAdjustFont>
+                                                <span id="selectionPrice" class="current-price__tilted--text">
+                                                    {{ selection?.betOdds | prepareEvsPipe }}
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ng-container>
+                                </ul>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container footer-content>
+                        <gn-dark-theme-footer>
+                            <ng-container left-side-content
+                                ><span id="marketTitle">{{ vm?.title }}</span></ng-container
+                            >
+                            <ng-container right-side-content>
+                                <div class="footer-flex">
+                                    <span id="BetStationPricesFluctuation">{{
+                                        vm?.content?.contentParameters?.BetStationPricesFluctuation ?? ''
+                                    }}</span>
+                                    <span class="pagination-text" id="paginationText">{{ pageDetails.paginationText | sentenceCase }}</span>
+                                </div>
+                            </ng-container>
+                        </gn-dark-theme-footer>
+                    </ng-container>
+                </gn-dark-theme-base-page>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

@@ -1,0 +1,197 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsRippleStories from '../ripple.directive.stories';
+
+The Ripple directive adds a dynamic ripple effect to any component it's applied to, enhancing the user interaction experience. When applied, the Ripple
+directive will modify the `overflow` property of the target element and set its `position` to `relative`. It also injects a child element responsible for
+the ripple effect, which is automatically removed after the animation is complete.
+
+<Canvas of={DsRippleStories.Demo} />
+
+## Usage
+
+To use the Ripple directive in your component, start by importing the `DsRipple` directive and adding it to your component's imports.
+Then, apply the `dsRipple` directive to any HTML element where you want the ripple effect to appear.
+
+```ts
+import { DsRipple } from '@frontend/ui/ripple'; // 👈 add to file imports
+
+@Component({
+    // ...
+    imports: [DsRipple], // 👈 add to component imports
+})
+export class AppComponent {}
+```
+
+To apply the ripple effect, use the dsRipple directive in your HTML:
+
+```html
+<div dsRipple>Text with Ripple effect</div>
+```
+
+## Ripple Behaviour
+
+By default, the ripple effect is applied when the element is clicked, creating a circular wave that radiates from the click point within the element's bounds.
+
+<Canvas of={DsRippleStories.Default} />
+
+### Start from Center
+
+To trigger the ripple effect from the center of the element, rather than from the click position, set `dsRippleCentered` to `true`:
+
+```html
+<div [dsRipple]="{centered: true}">Ripple with centered effect</div>
+```
+
+<Canvas of={DsRippleStories.Centered} />
+
+You can also enable centered for all ripple effects in your application:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ centered: true } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalCentered} />
+
+### Ignore element bounds
+
+For cases where the ripple effect should extend beyond the element's boundaries, set `dsRippleUnbound` to `true`. This allows the ripple to overflow the element and be visible outside its bounds:
+
+<div style={{ backgroundColor: 'rgba(2, 156, 253, 0.1)', padding: '1rem', marginBottom: '1rem', borderRadius: '1rem', fontSize: '16px' }}>
+    The unbound ripple effect does not work when `content-visibility` is set to `auto`. This effect only functions correctly if CSS containment for
+    `paint` is **not** enabled. Ensure that `contain: paint` is not applied to the element if you want to use the unbound ripple effect.
+</div>
+
+```html
+<div dsRipple [dsRipple]="{unbound: true}">Ripple with unbound radius</div>
+```
+
+<Canvas of={DsRippleStories.Unbound} />
+
+You can also enable unbound for all ripple effects in your application:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ unbound: true } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalUnbound} />
+
+### Custom Radius
+
+You can customize the ripple effect's size by specifying a radius. You can set the `dsRippleRadius` to define a fixed radius for the ripple, overriding the default behavior that calculates the radius based on the distance from the click point to the element's edge:
+
+```html
+<div dsRipple [dsRipple]="{radius: 25}">Ripple with custom radius</div>
+```
+
+<Canvas of={DsRippleStories.WithRadius} />
+
+You can also set the radius globally for all ripple effects in your application:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ radius: 30 } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalRadius} />
+
+## Ripple Effect Style
+
+### Color
+
+The ripple effect can be customized with a specific color by setting the css custom property `--ds-ripple-background`.
+This allows you to set a color other than the element’s current color:
+
+```html
+<div dsRipple style="--ds-ripple-background: #00ffff">Ripple with custom color</div>
+```
+
+<Canvas of={DsRippleStories.WithColor} />
+
+### Opacity
+
+You can adjust the default opacity of 0.2 of the ripple effect setting the css custom property `--ds-ripple-opacity`.
+This is useful for creating more subtle or more prominent effects:
+
+```html
+<div dsRipple style="--ds-ripple-opacity: 0.5">Ripple with custom opacity</div>
+```
+
+<Canvas of={DsRippleStories.WithOpacity} />
+
+### Speed
+
+The duration of the ripple effect’s enter and exit animations can be customized using `dsRippleAnimation`. This allows for fine-tuning the timing of the effect.
+The default values are for `enterDuration` `225ms` and for `exitDuration` `150ms`.
+
+```html
+<div dsRipple [dsRipple]="{animation: {enterDuration: 1000, exitDuration: 2000}}">Ripple with custom animation speed</div>
+```
+
+<Canvas of={DsRippleStories.WithAnimationDuration} />
+
+You can also set the enter and exit animation durations globally for all ripple effects in your application:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ animation: { enterDuration: 2000, exitDuration: 1000 } } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalAnimation} />
+
+## Disabling Ripple
+
+The ripple effect can be disabled for specific elements by setting `dsRippleDisabled` to `true`:
+
+```html
+<div dsRipple [dsRipple]="{disabled: true}">Text with Ripple effect</div>
+```
+
+<Canvas of={DsRippleStories.Disabled} />
+
+To globally disable the ripple effect across all instances in your application, you can use the globally provided injection token:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ disabled: true } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalDisable} />
+
+To force disabled ripples (so you cannot override this locally), we provided an extra option for it:
+
+```ts
+import { DsRippleOptions, provideDsRippleOptions } from '@frontend/ui/ripple';
+
+//...
+providers: [
+    // your other providers ...
+    provideDsRippleOptions({ forcedDisabled: true } as DsRippleOptions),
+];
+```
+
+<Canvas of={DsRippleStories.GlobalForcedDisabled} />

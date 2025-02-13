@@ -1,0 +1,2133 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage.Tests\\Frontend.Vanilla.DomainSpecificLanguage.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\Frontend.Vanilla.Caching.Hekaton.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\Frontend.Vanilla.Caching.Hekaton.csproj",
+        "projectName": "Frontend.Vanilla.Caching.Hekaton",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\Frontend.Vanilla.Caching.Hekaton.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\Frontend.Vanilla.Configuration.DynaCon.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\Frontend.Vanilla.Configuration.DynaCon.csproj",
+        "projectName": "Frontend.Vanilla.Configuration.DynaCon",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\Frontend.Vanilla.Configuration.DynaCon.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Bwin.DynaCon.Api.Contracts": {
+              "target": "Package",
+              "version": "[1.21.0, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\Frontend.Vanilla.Content.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\Frontend.Vanilla.Content.csproj",
+        "projectName": "Frontend.Vanilla.Content",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\Frontend.Vanilla.Content.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.71, )",
+              "versionCentrallyManaged": true
+            },
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2024.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj",
+        "projectName": "Frontend.Vanilla.Core",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[4.11.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Caching.Hybrid": {
+              "target": "Package",
+              "version": "[9.0.0-preview.9.24556.5, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.FileProviders.Physical": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            },
+            "System.Linq.Async": {
+              "target": "Package",
+              "version": "[6.0.1, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj",
+        "projectName": "Frontend.Vanilla.Diagnostics.Contracts",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage.Tests\\Frontend.Vanilla.DomainSpecificLanguage.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage.Tests\\Frontend.Vanilla.DomainSpecificLanguage.Tests.csproj",
+        "projectName": "Frontend.Vanilla.DomainSpecificLanguage.Tests",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage.Tests\\Frontend.Vanilla.DomainSpecificLanguage.Tests.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\Frontend.Vanilla.Testing.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\Frontend.Vanilla.Testing.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "JunitXml.TestLogger": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.12.0, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )",
+              "versionCentrallyManaged": true
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "xunit.v3": {
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj",
+        "projectName": "Frontend.Vanilla.DomainSpecificLanguage",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\Frontend.Vanilla.Features.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\Frontend.Vanilla.Features.csproj",
+        "projectName": "Frontend.Vanilla.Features",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\Frontend.Vanilla.Features.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\Frontend.Vanilla.Caching.Hekaton.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Caching.Hekaton\\Frontend.Vanilla.Caching.Hekaton.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\Frontend.Vanilla.Configuration.DynaCon.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Configuration.DynaCon\\Frontend.Vanilla.Configuration.DynaCon.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\Frontend.Vanilla.Content.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Content\\Frontend.Vanilla.Content.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Diagnostics.Contracts\\Frontend.Vanilla.Diagnostics.Contracts.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\Frontend.Vanilla.ServiceClients.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\Frontend.Vanilla.ServiceClients.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Ardalis.SmartEnum": {
+              "target": "Package",
+              "version": "[8.1.0, )",
+              "versionCentrallyManaged": true
+            },
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[2.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "LaunchDarkly.ServerSdk": {
+              "target": "Package",
+              "version": "[8.6.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Http.Resilience": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Options.DataAnnotations": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "[1.10.0, )",
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": {
+              "target": "Package",
+              "version": "[1.10.0-beta.1, )",
+              "noWarn": [
+                "NU5104"
+              ],
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.10.0, )",
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Instrumentation.Process": {
+              "target": "Package",
+              "version": "[0.5.0-beta.7, )",
+              "noWarn": [
+                "NU5104"
+              ],
+              "versionCentrallyManaged": true
+            },
+            "OpenTelemetry.Instrumentation.Runtime": {
+              "target": "Package",
+              "version": "[1.9.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[6.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "System.Text.Encodings.Web": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\Frontend.Vanilla.ServiceClients.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\Frontend.Vanilla.ServiceClients.csproj",
+        "projectName": "Frontend.Vanilla.ServiceClients",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\Frontend.Vanilla.ServiceClients.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.ServiceClients\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Core\\Frontend.Vanilla.Core.csproj"
+              },
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.DomainSpecificLanguage\\Frontend.Vanilla.DomainSpecificLanguage.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2024.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[8.1.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\Frontend.Vanilla.Testing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\Frontend.Vanilla.Testing.csproj",
+        "projectName": "Frontend.Vanilla.Testing",
+        "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\Frontend.Vanilla.Testing.csproj",
+        "packagesPath": "C:\\Users\\prajeeth.alla\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Testing\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\dev\\monorepo\\NuGet.Config",
+          "C:\\Users\\prajeeth.alla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\Frontend.Vanilla.Features.csproj": {
+                "projectPath": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.Vanilla.Features\\Frontend.Vanilla.Features.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1901",
+            "NU1902",
+            "NU1903",
+            "NU1904"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.2, )",
+              "versionCentrallyManaged": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )",
+              "versionCentrallyManaged": true
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )",
+              "versionCentrallyManaged": true
+            },
+            "xunit.v3": {
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Anduin.HSharp": "8.0.1",
+            "Ardalis.SmartEnum": "8.1.0",
+            "AutoMapper": "13.0.1",
+            "BlazorStrap": "5.2.101",
+            "BlazorStrap.Extensions.TreeView": "5.1.100",
+            "BlazorStrap.V4": "5.2.101",
+            "Bwin.BettingPosApi.Contracts": "2.49.0.3614",
+            "Bwin.DynaCon.Api.Contracts": "1.21.0",
+            "Bwin.PosAPI.Modules.Account.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Authentication.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Casino.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Content.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.CRM.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.KYC.Contracts": "9.0.20251",
+            "Bwin.PosAPI.Modules.Notification.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Registration.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.ResponsibleGaming.Contracts": "9.0.20503",
+            "Bwin.PosAPI.Modules.Upload.Contracts": "8.0.18495",
+            "Bwin.PosAPI.Modules.Wallet.Contracts": "9.0.20251",
+            "Bwin.Sports.CDS.Api.Contracts": "1.94.6-beta",
+            "Bwin.Sports.TypeScripter": "1.11.0.153",
+            "Bwin.Sports.TypeScripter.Annotations": "1.11.0.153",
+            "Bwin.XPosAPI.V3.Contracts.Compliance": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Csm": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Poker": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Wallet": "4.49.224",
+            "Bwin.XPosAPI.V3.Contracts.Xcrm": "4.49.224",
+            "Confluent.Kafka": "2.6.0",
+            "ConsoleTables": "2.6.2",
+            "coverlet.collector": "6.0.2",
+            "Dapper": "2.1.35",
+            "DeviceAtlas": "3.1.7",
+            "ErrorOr": "2.0.1",
+            "FluentAssertions": "6.12.2",
+            "HtmlAgilityPack": "1.11.71",
+            "itext7": "8.0.5",
+            "itext7.bouncy-castle-fips-adapter": "8.0.5",
+            "itextsharp.netstandard": "5.5.13.2",
+            "JetBrains.Annotations": "2024.3.0",
+            "JunitXml.TestLogger": "4.1.0",
+            "JWT": "10.1.1",
+            "LaunchDarkly.ServerSdk": "8.6.0",
+            "libphonenumber-csharp": "8.13.49",
+            "McMaster.Extensions.CommandLineUtils": "4.1.1",
+            "Microsoft.AspNet.WebApi.Client": "6.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "9.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "9.0.0",
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.0",
+            "Microsoft.AspNetCore.WebUtilities": "9.0.0",
+            "Microsoft.CodeAnalysis.CSharp": "4.11.0",
+            "Microsoft.CSharp": "4.7.0",
+            "Microsoft.Data.SqlClient": "5.2.2",
+            "Microsoft.Extensions.Caching.Hybrid": "9.0.0-preview.9.24556.5",
+            "Microsoft.Extensions.Caching.Memory": "9.0.0",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.0",
+            "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.0",
+            "Microsoft.Extensions.FileProviders.Physical": "9.0.0",
+            "Microsoft.Extensions.Hosting": "9.0.0",
+            "Microsoft.Extensions.Http": "9.0.0",
+            "Microsoft.Extensions.Http.Resilience": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Options.DataAnnotations": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "MimeKit": "4.8.0",
+            "Moq": "4.20.72",
+            "Newtonsoft.Json": "13.0.3",
+            "NUnit": "4.3.2",
+            "NUnit.Analyzers": "4.6.0",
+            "NUnit3TestAdapter": "5.0.0-beta.5",
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.10.0",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.10.0-beta.1",
+            "OpenTelemetry.Extensions.Hosting": "1.10.0",
+            "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
+            "OpenTelemetry.Instrumentation.Http": "1.9.0",
+            "OpenTelemetry.Instrumentation.Process": "0.5.0-beta.7",
+            "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+            "Refit.HttpClientFactory": "8.0.0",
+            "Regula.DocumentReader.WebClient": "7.4.46",
+            "Scrutor": "4.2.2",
+            "Serilog": "4.1.0",
+            "Serilog.AspNetCore": "8.0.3",
+            "Serilog.Extensions.Logging": "8.0.0",
+            "Serilog.Sinks.Async": "2.1.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "6.0.0",
+            "SixLabors.ImageSharp": "3.1.5",
+            "StyleCop.Analyzers": "1.1.118",
+            "Swashbuckle.AspNetCore": "7.0.0",
+            "System.Linq.Async": "6.0.1",
+            "System.ServiceModel.Http": "8.1.0",
+            "System.ServiceModel.Primitives": "8.1.0",
+            "System.Text.Encodings.Web": "9.0.0",
+            "Vanilla.Extensions.Diagnostics": "9.0.0",
+            "Vanilla.SemanticLogging": "9.0.2",
+            "WebSocket4Net": "0.15.2",
+            "xunit.runner.visualstudio": "3.0.0",
+            "xunit.v3": "1.0.0",
+            "Yarp.ReverseProxy": "2.2.0"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

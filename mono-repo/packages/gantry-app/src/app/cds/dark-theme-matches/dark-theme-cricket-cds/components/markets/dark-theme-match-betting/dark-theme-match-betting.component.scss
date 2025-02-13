@@ -1,0 +1,17 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+.match-betting-details {
+    margin-top: 34px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 17px;
+    }
+}
+
+.draw-details {
+    margin-top: 22px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 11px;
+    }
+}

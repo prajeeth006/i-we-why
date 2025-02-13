@@ -1,0 +1,1649 @@
+{
+    "pill": {
+        "current": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.active}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.active}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.base}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.hover}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.selected}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.selected}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected}"
+                    }
+                }
+            }
+        },
+        "current-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.active-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.active-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.base-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.hover-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.background.selected-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.border.selected-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.current.on-background.selected-inverse}"
+                    }
+                }
+            }
+        },
+        "medium": {
+            "height": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.size.x8}"
+            },
+            "icon-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.size.x4}"
+            },
+            "medium-with-counter": {
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "pill",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                }
+            },
+            "padding-bottom": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-none}"
+            },
+            "padding-left": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-xl}"
+            },
+            "padding-right": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-xl}"
+            },
+            "padding-top": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-none}"
+            }
+        },
+        "shared": {
+            "inline": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.stack.sm}"
+            },
+            "radius": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.radius-l2.pill}"
+            },
+            "tap-target": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.size.x11}"
+            }
+        },
+        "small": {
+            "height": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.size.x6}"
+            },
+            "icon-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.size.x3}"
+            },
+            "padding-bottom": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-none}"
+            },
+            "padding-left": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            },
+            "padding-right": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            },
+            "padding-top": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "pill",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-none}"
+            },
+            "small-with-counter": {
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "pill",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                }
+            }
+        },
+        "strong": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.active}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.active}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.base}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.hover}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.selected}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.selected}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected}"
+                    }
+                }
+            }
+        },
+        "strong-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.active-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.active-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.base-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.hover-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.background.selected-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.border.selected-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.strong.on-background.selected-inverse}"
+                    }
+                }
+            }
+        },
+        "subtle": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.active}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.active}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.base}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.hover}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.selected}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.selected}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected}"
+                    }
+                }
+            }
+        },
+        "subtle-inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.active-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.active-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    }
+                }
+            },
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.outline-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.base-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.hover-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.background.selected-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.border.selected-inverse}"
+                    },
+                    "chevron": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "pill",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color-l2.pill.subtle.on-background.selected-inverse}"
+                    }
+                }
+            }
+        }
+    }
+}

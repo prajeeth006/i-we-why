@@ -1,0 +1,94 @@
+@mixin default {
+    --ds-list-item-active-color-background: var(--semantic-color-opacity-active);
+    --ds-list-item-active-color-icon: var(--semantic-color-tertiary-base);
+    --ds-list-item-active-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-active-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-active-color-title: var(--semantic-color-on-surface-base);
+    --ds-list-item-enabled-color-background: var(--semantic-color-opacity-transparent);
+    --ds-list-item-enabled-color-icon: var(--semantic-color-tertiary-base);
+    --ds-list-item-enabled-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-enabled-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-enabled-color-title: var(--semantic-color-on-surface-base);
+    --ds-list-item-hover-color-background: var(--semantic-color-opacity-hover);
+    --ds-list-item-hover-color-icon: var(--semantic-color-tertiary-base);
+    --ds-list-item-hover-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-hover-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-hover-color-title: var(--semantic-color-on-surface-base);
+    --ds-list-item-selected-color-background: var(--semantic-color-opacity-selected);
+    --ds-list-item-selected-color-icon: var(--semantic-color-tertiary-base);
+    --ds-list-item-selected-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-selected-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-list-item-selected-color-title: var(--semantic-color-on-surface-base);
+}
+
+@mixin inverse {
+    --ds-list-item-active-color-background: var(--semantic-color-opacity-active-inverse);
+    --ds-list-item-active-color-icon: var(--semantic-color-tertiary-base-inverse);
+    --ds-list-item-active-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-active-color-subtitle: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-active-color-title: var(--semantic-color-on-surface-base-inverse);
+    --ds-list-item-enabled-color-background: var(--semantic-color-opacity-transparent);
+    --ds-list-item-enabled-color-icon: var(--semantic-color-tertiary-base-inverse);
+    --ds-list-item-enabled-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-enabled-color-subtitle: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-enabled-color-title: var(--semantic-color-on-surface-base-inverse);
+    --ds-list-item-hover-color-background: var(--semantic-color-opacity-hover-inverse);
+    --ds-list-item-hover-color-icon: var(--semantic-color-tertiary-base-inverse);
+    --ds-list-item-hover-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-hover-color-subtitle: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-hover-color-title: var(--semantic-color-on-surface-base-inverse);
+    --ds-list-item-selected-color-background: var(--semantic-color-opacity-selected-inverse);
+    --ds-list-item-selected-color-icon: var(--semantic-color-tertiary-base-inverse);
+    --ds-list-item-selected-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-selected-color-subtitle: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-list-item-selected-color-title: var(--semantic-color-on-surface-base-inverse);
+}
+
+@mixin large {
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-list-item-space-stack: var(--semantic-spacing-stack-xs);
+}
+
+@mixin large-condensed {
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-stack: var(--semantic-spacing-stack-xs);
+}
+
+@mixin medium {
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-stack: var(--semantic-spacing-stack-none);
+}
+
+@mixin medium-condensed {
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-xs);
+    --ds-list-item-space-stack: var(--semantic-spacing-stack-none);
+}
+
+@mixin shared {
+    --ds-list-item-size-min-height: var(--semantic-size-x6);
+    --ds-list-item-space-inline: var(--semantic-spacing-inline-md);
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-list-item-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-padding-right: var(--semantic-spacing-container-padding-sm);
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-lg);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin small {
+    /** @deprecated This token is no longer available in Figma (2025-01-10T18:47:39.602Z) */
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    /** @deprecated This token is no longer available in Figma (2025-01-10T18:47:39.602Z) */
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-sm);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin small-condensed {
+    /** @deprecated This token is no longer available in Figma (2025-01-10T18:47:39.602Z) */
+    --ds-list-item-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    /** @deprecated This token is no longer available in Figma (2025-01-10T18:47:39.602Z) */
+    --ds-list-item-space-padding-top: var(--semantic-spacing-container-padding-xs);
+}

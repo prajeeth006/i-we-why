@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\host-app\Frontend.Host.App.Contracts\Frontend.Host.App.Contracts.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Yarp.ReverseProxy" />
+    </ItemGroup>
+
+</Project>

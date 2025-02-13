@@ -1,0 +1,14 @@
+{
+    "capabilities": [
+        {
+            "isAvailable": true,
+            "message": "Some extra chat message.",
+            "name": "chat"
+        },
+        {
+            "isAvailable": true,
+            "message": "Some extra chat message.",
+            "name": "pushChat"
+        }
+    ]
+}

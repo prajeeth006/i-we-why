@@ -1,0 +1,14 @@
+C:\dev\monorepo\dist\backend\gantry\Frontend.Gantry.Shared\DataProtection\key-bc8627db-94b9-4067-ad9d-2da02d0cb7aa.xml
+C:\dev\monorepo\dist\backend\gantry\Frontend.Gantry.Shared\Frontend.Gantry.Shared.deps.json
+C:\dev\monorepo\dist\backend\gantry\Frontend.Gantry.Shared\Frontend.Gantry.Shared.dll
+C:\dev\monorepo\dist\backend\gantry\Frontend.Gantry.Shared\Frontend.Gantry.Shared.pdb
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.AssemblyInfo.cs
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.B1A8AAB7.Up2Date
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.dll
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\refint\Frontend.Gantry.Shared.dll
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\Frontend.Gantry.Shared.pdb
+C:\dev\monorepo\backend\gantry\Frontend.Gantry.Shared\obj\Debug\ref\Frontend.Gantry.Shared.dll

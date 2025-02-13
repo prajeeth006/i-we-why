@@ -1,0 +1,100 @@
+@use '../../../../../ui/fonts/font-helper' as helper;
+
+.mb-xs {
+    margin-bottom: var(--semantic-spacing-stack-xs);
+}
+
+.mb-sm {
+    margin-bottom: var(--semantic-spacing-stack-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--semantic-spacing-stack-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--semantic-spacing-stack-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--semantic-spacing-stack-xl);
+}
+
+.mb-2xl {
+    margin-bottom: var(--semantic-spacing-stack-2xl);
+}
+
+.mb-3xl {
+    margin-bottom: var(--semantic-spacing-stack-3xl);
+}
+
+.mr-sm {
+    margin-right: var(--semantic-spacing-stack-sm);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.ds-modal-demo-layout {
+    width: 375px;
+}
+
+.ds-modal-content-demo-layout {
+    height: 600px;
+    overflow: auto;
+}
+
+.bg-surface-base {
+    background: var(--semantic-color-surface-base);
+}
+
+.ds-search-container {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.login-wrapper {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    margin: 0 12px;
+}
+
+.login-divider {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+
+    @include helper.set-font-variables('login-divider', 'label', 'sm');
+    @include helper.setup-font-style('login-divider');
+}
+
+.ds-remember-me {
+    @include helper.set-font-variables('remember-me', 'label', 'lg');
+    @include helper.setup-font-style('remember-me');
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-new-user {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+
+    @include helper.set-font-variables('login-new-user', 'label', 'sm');
+    @include helper.setup-font-style('login-new-user');
+}

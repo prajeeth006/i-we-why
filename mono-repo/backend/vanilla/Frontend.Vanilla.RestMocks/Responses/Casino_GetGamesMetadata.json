@@ -1,0 +1,68 @@
+[
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/winblackandyellowroulettemobile?forcedEmbeddedLaunch=true",
+        "title": "Black & Yellow Roulette",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/d1a4745f23494b58b5276f458ede5826.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "gameId": "winblackandyellowroulettemobile",
+        "internalGameName": "winblackandyellowroulettemobile"
+    },
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/wineuropeanrouletteclassicmini?forcedEmbeddedLaunch=true",
+        "title": "European Roulette Classic",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/846c74ad247f4752bd56fa263ce37142.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "gameId": "wineuropeanrouletteclassicmini",
+        "internalGameName": "wineuropeanrouletteclassicmini"
+    },
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/winblackjackcharlie7mini?forcedEmbeddedLaunch=true",
+        "title": "Blackjack Charlie 7",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/e8edc27482aa4d35ab95807622e8154a.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "gameId": "winblackjackcharlie7mini",
+        "internalGameName": "winblackjackcharlie7mini"
+    },
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/rglperfectpairsandblackjack?forcedEmbeddedLaunch=true",
+        "title": "Perfect Pairs� and 21+3� Blackjack",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/1a3f1e200d0d43628912d41fb91a32fa.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "gameId": "rglperfectpairsandblackjack",
+        "internalGameName": "rglperfectpairsandblackjack"
+    },
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/winperfectblackjackpromobile?forcedEmbeddedLaunch=true",
+        "title": "Perfect Blackjack Pro",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/d7091d3eb67946f080d6e114ee16f0b2.jpg",
+            "width": 500,
+            "height": 500
+        },
+        "gameId": "winperfectblackjackpromobile",
+        "internalGameName": "winperfectblackjackpromobile"
+    },
+    {
+        "launchUrl": "https://casino.m.bwin.com/en/games/launchEmbedded/winblackjackpromobile?forcedEmbeddedLaunch=true",
+        "title": "Blackjack Pro",
+        "icon": {
+            "src": "https://scmedia.bwin.com/$-$/1f1530bd1dbe4944ba6807560eca4668.png",
+            "width": 390,
+            "height": 390
+        },
+        "gameId": "winblackjackpromobile",
+        "internalGameName": "winblackjackpromobile"
+    }
+]

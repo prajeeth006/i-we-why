@@ -1,0 +1,106 @@
+@import '../../../../dark-theme-global-style/all-variables';
+$full: 100%;
+
+.header-status-box {
+    height: 130px;
+    @include flex-center;
+    font-size: $font-40;
+    padding: 0 14px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 65px;
+        font-size: $font-20;
+        border-width: 2.5px;
+        padding: 0 7px;
+    }
+}
+
+.bet-details-container {
+    .match-betting-details-header {
+        margin-top: 30px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 15px;
+        }
+
+        .bet-details-title {
+            color: $market-title-color;
+            font-size: $font-48;
+            font-weight: $fw-medium;
+            text-align: center;
+            height: 34px;
+            line-height: 34px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-24;
+                height: 17px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .match-betting-section {
+        display: flex;
+        align-items: center;
+        height: $fs-md-cricket-row-height;
+        font-size: $font-60;
+        font-weight: $fw-bold;
+        margin-top: 16px;
+
+        @include breakpoint(multidesktop) {
+            height: $fs-sm-cricket-row-height;
+            font-size: $font-30;
+            margin-top: 8px;
+        }
+
+        .bet-price {
+            color: $state-box-text;
+            background-color: $state-box-bg;
+            height: 96px;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                height: 48px;
+            }
+        }
+
+        .player-details-section {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            height: 100%;
+            margin: 0px 30px;
+            color: $color-white;
+            @include text-truncate;
+
+            @include breakpoint(multidesktop) {
+                margin: 0px 15px;
+            }
+
+            .full-market-1,
+            .full-market-2 {
+                width: 644px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 322px;
+                }
+            }
+
+            .full-market-2 {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.nfl-bet:first-child .bet-details-container .match-betting-details-header {
+    margin-top: 27.64px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 13.82px;
+    }
+}

@@ -1,0 +1,164 @@
+@import './src/global-style/_all-variables.scss';
+
+.base-body-wrapper {
+  background-color: $body-color-p2-lighter-bg;
+
+  .draw-away-header-block {
+    font-weight: bold;
+    padding: 10px 0;
+    display: flex;
+  }
+
+  .selection-table {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    column-count: 1;
+    column-gap: 20px;
+
+    li {
+      display: flex;
+      align-items: stretch;
+      color: $body-color-p2;
+      margin-bottom: 5px;
+
+      @include breakpoint(multidesktop) {
+        margin-bottom: 3px;
+      }
+
+      .items {
+        display: flex;
+        align-items: center;
+        font-size: $txt-lg-title-size;
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-lg-font1-size;
+        }
+
+        &.timelabel {
+          color: red;
+          justify-content: center;
+
+          @include breakpoint(multidesktop) {
+            font-size: $txt-lg-font-size;
+          }
+        }
+      }
+
+      .table-item-1 {
+        background-color: $color-p6;
+        min-width: 26%;
+        flex-basis: 26%;
+        flex: 1;
+
+        @include breakpoint(multidesktop) {
+          min-width: 27.5%;
+          flex-basis: 27.5%;
+        }
+
+        span {
+          padding: 0 15px;
+          display: block;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          @include breakpoint(multidesktop) {
+            padding: 0 10px;
+          }
+        }
+
+        &.timelabel {
+          min-width: 218px;
+          flex-basis: 218px;
+          flex: unset;
+
+          @include breakpoint(multidesktop) {
+            min-width: 108px;
+            flex-basis: 108px;
+          }
+        }
+      }
+
+      .table-item-2 {
+        flex-basis: 160px;
+        min-width: 160px;
+        background-color: $body-color-p2-light-bg;
+
+        &.items {
+          justify-content: center;
+
+          @include breakpoint(multidesktop) {
+            flex-basis: 78px;
+            min-width: 78px;
+          }
+        }
+      }
+
+      &.nonlist {
+        opacity: 0;
+      }
+    }
+  }
+
+  .time {
+    font-size: $h3-lg-font-size;
+    color: $color-p1-text;
+    @include flex-center;
+    flex-basis: 218px;
+    min-width: 218px;
+
+    @include breakpoint(multidesktop) {
+      font-size: $h2-font-size;
+      flex-basis: 108px;
+      min-width: 108px;
+    }
+  }
+
+  .space1 {
+    flex: 1;
+    display: flex;
+  }
+
+  .space2 {
+    flex: 1;
+    display: flex;
+  }
+
+  .price-header {
+    font-size: $h3-lg-font-size;
+    color: $color-p1-text;
+    flex-basis: 160px;
+    min-width: 160px;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+      font-size: $h2-font-size;
+      flex-basis: 78px;
+      min-width: 78px;
+    }
+  }
+
+  .awayselection {
+    justify-content: flex-end;
+  }
+}
+
+.base-page-wrapper {
+  .base-header-wrapper {
+    .banner {
+      .banner-sub-title {
+        .banner-sub-title-left {
+          min-width: auto !important;
+        }
+
+        .banner-sub-title-right {
+          min-width: auto !important;
+          flex: 1;
+        }
+      }
+    }
+  }
+}

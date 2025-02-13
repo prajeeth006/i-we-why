@@ -1,0 +1,41 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+        <gn-base-page>
+            <ng-container header-content>
+                <gn-banner [leadTitle]="vm.horseRacingContent?.contentParameters?.Title"
+                    [title]="isUkTemplate ? vm.horseRacingContent?.contentParameters?.TodaysNonRunnersUK : vm.horseRacingContent?.contentParameters?.TodaysNonRunnersNonUK">
+                    <div id="subTitle" class="subtitle-content">
+                        <div id="subContent1" class="subtitle-element-1">{{ vm.horseRacingContent?.contentParameters?.Meeting }}</div>
+                        <div id="subContent2" class="subtitle-element-2">{{ vm.horseRacingContent?.contentParameters?.No }}.</div>
+                        <div id="subContent3" class="subtitle-element-3">{{ vm.horseRacingContent?.contentParameters?.Runner }}</div>
+                    </div>
+                </gn-banner>
+            </ng-container>
+            <ng-container body-content>
+                <div class="non-runners-content">
+                    <ul class="non-runners-table">
+                        <li
+                            *ngFor="let nonRunnersEvent of vm.nonRunnersEvents | slice:pageDetails.startIndex:pageDetails.endIndex" id="nonRunnersEvents">
+                            <div id="dateTime" class="table-item-1">
+                                {{ nonRunnersEvent?.eventDateTime | eventDatetimeChangeformat }} {{
+                                nonRunnersEvent?.meetingName?.toLocaleUpperCase() }}
+                            </div>
+                            <div id="eventNumber" class="table-item-2">
+                                {{ nonRunnersEvent?.nonRunnerNumber }}
+                            </div>
+                            <div id="runnerName" class="table-item-3">
+                                {{ nonRunnersEvent?.nonRunnerName?.toLocaleUpperCase() }}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+            <ng-container footer-content>
+                <gn-footer [leftSideText]="" [rightSideText]="pageDetails.paginationText">
+                </gn-footer>
+            </ng-container>
+        </gn-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

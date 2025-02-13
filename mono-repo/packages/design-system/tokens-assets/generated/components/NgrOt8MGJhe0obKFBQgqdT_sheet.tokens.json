@@ -1,0 +1,64 @@
+{
+    "sheet": {
+        "shared": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.sheet.background.base}"
+                },
+                "drag-handle": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.sheet.on-background.subtle}"
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-2xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-2xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "sheet",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                }
+            }
+        }
+    }
+}

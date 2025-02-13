@@ -1,0 +1,7 @@
+<div #carouselItem class="carouselContainer">
+  <ng-container *ngFor="let carouselUrl of carouselUrls; let indexOfelement = index">
+    <div class="slide" [@modalState]="carouselUrl.state">
+      <iframe class="screenPartIframe" frameBorder="0" [src]="carouselUrl?.safeUrl" allowfullscreen #carouselIframe></iframe>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,2363 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.DomainSpecificLanguage</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1">
+            <summary>
+            Result of DSL expression for the client.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.FromValue(`0)">
+            <summary>Creates a result holding already final value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.FromClientExpression(System.String)">
+            <summary>Creates a result holding JavaScript expression to be evaluated on client to get final value.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.HasFinalValue">
+            <summary>
+            Indicates if the result hold final <see cref="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.Value" />.
+            If not then there is <see cref="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.ClientExpression" /> to be evaluated on client to get it.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.Value">
+            <summary>Gets the final value if the expression was already fully evaluated on the server.</summary>
+            <exception cref="T:System.InvalidOperationException">If <see cref="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.HasFinalValue" /> is <c>false</c>.</exception>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.ClientExpression">
+            <summary>Gets the JavaScript expression that needs to be evaluated on the client to get the final value.</summary>
+            <exception cref="T:System.InvalidOperationException">If <see cref="P:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.HasFinalValue" /> is <c>true</c>.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.Equals(System.Object)">
+            <summary>See <see cref="M:System.Object.Equals(System.Object)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.Equals(Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult{`0})">
+            <summary>See <see cref="M:System.IEquatable`1.Equals(`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ClientEvaluationResult`1.GetHashCode">
+            <summary>See <see cref="M:System.Object.GetHashCode" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Compilation.CachedDslCompiler">
+            <summary>
+            Caches DSL expressions because they are immutable and executed very often especially by Content API.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Compilation.CachedDslCompiler.#ctor(Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Caches DSL expressions because they are immutable and executed very often especially by Content API.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Compilation.DslAction">
+            <summary>
+            Delegates action execution to void <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Compilation.DslAction.#ctor(Frontend.Vanilla.DomainSpecificLanguage.IDslExpression{Frontend.Vanilla.DomainSpecificLanguage.Compilation.VoidDslResult})">
+            <summary>
+            Delegates action execution to void <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Compilation.DslExpression`1">
+            <summary>
+            Main implementation of DSL expression.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Compilation.DslExpressionBase`1">
+            <summary>
+            Base class which collapses sync + async methods to one with <see cref="T:Frontend.Vanilla.Core.System.ExecutionMode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Compilation.VoidDslResult">
+            <summary>
+            Dummy object used as a return value for DSL actions.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.DslEvaluationException">
+            <summary>
+            Marker exception to catch only error related to DSL evaluation has failed.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.DslEvaluationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Marker exception to catch only error related to DSL evaluation has failed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata">
+            <summary>
+            Encapsulates metadata of a DSL expression or action.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata.Volatility">
+            <summary>Gets the volatility of related DSL expression. It equals to the most volatile DSL provider which is used.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata.IsClientOnly">
+            <summary>Indicates that related DSL expression can be fully evaluated only on the client because it uses some provider member which is implemented only there.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata.IsAlreadyEvaluated">
+            <summary>Indicates that related DSL expression is already evalusted so calling any evaluate method just returns already final value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata.#ctor(Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility,System.Boolean,System.Boolean)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.DslExpressionMetadata.ToString">
+            <summary>Gets string representation of this object.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.IDslSyntaxValidator">
+            <summary>
+            Validates DSL expression.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslSyntaxValidator.Validate(Frontend.Vanilla.Core.System.Text.RequiredString,System.Type)">
+            <summary>Validates DSL expression and returns a message suitable for user.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.DslSyntaxResult">
+            <summary>
+            Result of syntax validation of some DSL expression.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.DslSyntaxResult.ErrorMessage">
+            <summary>Gets the actual error message if the expression is invalid.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.DslSyntaxResult.Warnings">
+            <summary>Gets additional warnings related to valid the expression.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.DslSyntaxResult.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,System.Collections.Generic.IEnumerable{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString})">
+            <summary>Creates a new instance. It's considered valid if no <paramref name="errorMessage" /> is provided.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslArgumentException">
+            <summary>
+            Semantic error in the expression which is handled during parsing and exposed to the consumer.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslArgumentException.#ctor(System.String)">
+            <summary>
+            Semantic error in the expression which is handled during parsing and exposed to the consumer.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslType">
+            <summary>
+            Defines types that can be used in Vanilla DSL.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.EvaluationContext">
+            <summary>
+            Context passed through whole DSL evaluation.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.EvaluationContext.#ctor(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslEvaluation,Frontend.Vanilla.Core.Diagnostics.IRecordingTrace)">
+            <summary>
+            Context passed through whole DSL evaluation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.ExpressionTreeBase`1">
+            <summary>
+            Logic common for all expression tree nodes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree">
+            <summary>
+            Actual expression represented as syntax tree.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Literal">
+            <summary>Constant value in the expression tree.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Literal.GetValue``1">
+            <summary>Extracts underlying value. It upcasts it if needed.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Literal.GetWildcard(System.Object)">
+            <summary>Use concrete literals instead if possible.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.BooleanLiteral">
+            <summary>Designed for the best performance as far as there are only 2 supported values and used very often.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.LocalVariables.LocalVariableAccess">
+            <summary>
+            Accesses value of local variable with particular name.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.LocalVariables.LocalVariableAccess.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslType,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString)">
+            <summary>
+            Accesses value of local variable with particular name.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.LocalVariables.LocalVariableAssignment">
+            <summary>
+            Evaluates value and then sets it to local variable with particular name.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.LocalVariables.LocalVariableDeclaration">
+            <summary>
+            At the beginning of the expression, declares all local variables and assigns default values.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation">
+            <summary>
+            Logical or comparison operation with left and right operand joined by <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IBinaryOperator" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IBinaryOperator,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree)">
+            <summary>
+            Logical or comparison operation with left and right operand joined by <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IBinaryOperator" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperationOperandComparers">
+            <summary>
+            Compares operands of <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation" /> in a way either depending on their order or not.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperationOperandComparers.InsignificantOperandOrderComparer.FlattenOperands(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation)">
+            <summary>Goes deeper: "xx * (yy * zz)" equals "zz * (xx * yy)".</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IBinaryOperationEvaluator">
+            <summary>Evaluates <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation" /> to final value if possible.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperationEvaluator">
+            <summary>Common case when both operands are needed for full evaluation.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperationEvaluator.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryEvaluationHandler)">
+            <summary>Common case when both operands are needed for full evaluation.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.LogicalCompositionEvaluator">
+            <summary>Optimized evaluation of logical composition when one final operand is enough.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.LogicalCompositionEvaluator.#ctor(System.Func{Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.BooleanLiteral,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.LogicalCompositionResult})">
+            <summary>Optimized evaluation of logical composition when one final operand is enough.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.NotEmptyOperandEvaluator`1">
+            <summary>Optimized to return the left-most non-empty operand.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.NotEmptyOperandEvaluator`1.#ctor(System.Func{`0,System.Boolean})">
+            <summary>Optimized to return the left-most non-empty operand.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IBinaryOperator">
+            <summary>Operator which defines specifics of <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperation" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.BinaryOperators">
+            <summary>List of binary operators known in Vanilla DSL.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IsInListCondition">
+            <summary>
+            Condition which check if left operand is container in the list on the right.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.TernaryConditionalOperation">
+            <summary>
+            Ternary condition operator which returns either consequent or alternative expression based on the condition result.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.TernaryConditionalOperation.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree)">
+            <summary>
+            Ternary condition operator which returns either consequent or alternative expression based on the condition result.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.UnaryOperation">
+            <summary>
+            Logical or string operation on a single operand defined by <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IUnaryOperator" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.UnaryOperation.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IUnaryOperator,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree)">
+            <summary>
+            Logical or string operation on a single operand defined by <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IUnaryOperator" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.IUnaryOperator">
+            <summary>Operator which defines specifics of <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.UnaryOperation" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Operations.UnaryOperators">
+            <summary>List of unary operators known in Vanilla DSL.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.ProviderAccess">
+            <summary>
+            Retrieves provider member to be used in expression.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Statements.IfElseStatement">
+            <summary>
+            If-else statement which executes either then or else statement based on the condition result.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Statements.IfElseStatement.#ctor(Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree)">
+            <summary>
+            If-else statement which executes either then or else statement based on the condition result.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.Statements.StatementBlock">
+            <summary>
+            Defines a block of consecutive void expressions.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.IDslAction">
+            <summary>
+            An action written in Vanilla domain specific language not specific to current context.
+            It's fully analyzed and prepared for evaluation according to current context.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.OriginalString">
+            <summary>Gets the original string used to construct the action.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.Metadata">
+            <summary>Gets the metadata.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.Execute">
+            <summary>Fully executes the action on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Fully executes the action on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.ExecuteAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Fully executes the action on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.ExecuteToClientScript">
+            <summary>Executes parts of the action that don't change during user session on the server and returns action script to be evaluated on client.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.ExecuteToClientScriptAsync(System.Threading.CancellationToken)">
+            <summary>Evaluates parts of the action that don't change during user session on the server and returns action script to be evaluated on client.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslAction.ExecuteToClientScriptAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Evaluates parts of the action that don't change during user session on the server and returns action script to be evaluated on client.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler">
+            <summary>
+            Central class for creation (compilation) of <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler.Compile``1(Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>Compiles raw string DSL expression to <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler.CompileAction(Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>Compiles raw string DSL code to <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslAction" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1">
+            <summary>
+            An expression written in Vanilla domain specific language.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.OriginalString">
+            <summary>Gets the original string used to construct the expression.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.Metadata">
+            <summary>Gets the metadata.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.Evaluate">
+            <summary>Fully evaluates the expression on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.EvaluateAsync(System.Threading.CancellationToken)">
+            <summary>Fully evaluates the expression on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.EvaluateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Fully evaluates the expression on server.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.EvaluateForClient">
+            <summary>Evaluates parts of the expression that don't change during user session on the server and returns client expression to be evaluated on client.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.EvaluateForClientAsync(System.Threading.CancellationToken)">
+            <summary>Evaluates parts of the expression that don't change during user session on the server and returns client expression to be evaluated on client.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1.EvaluateForClientAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Evaluates parts of the expression that don't change during user session on the server and returns client expression to be evaluated on client.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Json.DslExpressionDiagnosticJsonConverter">
+            <summary>
+            Converts <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" /> to diagnostic info to be used on respective page.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Json.DslExpressionJsonConverter">
+            <summary>
+            Converts a string to <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.
+            It's used for deserialization of configuration instances from DynaCon.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Json.DslExpressionJsonConverter.#ctor(System.Func{Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler})">
+            <summary>
+            Converts a string to <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" />.
+            It's used for deserialization of configuration instances from DynaCon.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Json.DslExpressionJsonConverterBase">
+            <summary>
+            Base converter for <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.IDslExpression`1" /> which handles generics.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.IExpressionTreeParser">
+            <summary>
+            Main logic for full parsing of DSL expression.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.ILegacySyntaxConverter">
+            <summary>
+            Converts some legacy unsupported C# syntax to valdi syntax so that consumers can easily transition from old DSL compiler.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.Keyword">
+            <summary>
+            Constant reserved word or sign in Vanilla DSL with a special meaning.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.ILexicalParser">
+            <summary>
+            Parses which does lexical analysis hence breaks the expression to tokens.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.Token">
+            <summary>
+            Defines a lexical token (word or combination of characters) in Vanilla DSL.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.Token.#ctor(System.Int32)">
+            <summary>
+            Defines a lexical token (word or combination of characters) in Vanilla DSL.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.ParseException">
+            <summary>
+            Exception which indicates where the error within parsed expression has occurred.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Parsing.ParseException.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+            Exception which indicates where the error within parsed expression has occurred.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Syntactical.ParsingContext">
+            <summary>
+            Current state of syntactical expression parsing.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Syntactical.ParsingContext.#ctor(Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.Token,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.IExpressionTree,System.Collections.Generic.LinkedList{Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.Token},Frontend.Vanilla.DomainSpecificLanguage.Parsing.Lexical.KeywordToken,System.Collections.Generic.ICollection{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString},System.Collections.Generic.IDictionary{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.DslType})">
+            <summary>
+            Current state of syntactical expression parsing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Parsing.Syntactical.IProviderAccessFactory">
+            <summary>
+            Creates <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.ExpressionTree.ProviderAccess" /> mapped to corresponding member.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.IPlaceholderCompiler">
+            <summary>
+            Logic for finding and replacing placeholders on string level.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.IPlaceholderCompiler.FindPlaceholders(Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>
+            Finds and compiles all placeholders in given string.
+            When evaluating DSL expressions, keep in mind that particular one can be used in multiple placeholders
+            e.g. because of white-spaces _|User.LoginName|_ vs. _| User.LoginName |_. So evaluate it only once.
+            </summary>
+            <exception cref="T:System.Exception">Invalid syntax within placeholders or placeholders not delimited correctly.</exception>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ClientSideOnlyAttribute">
+            <summary>
+            Indicates that DSL provider, property or method can be evaluated only on the client
+            because there is no server-side implementation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAffordabilityDslProvider">
+            <summary>
+            Provides information about the customer affordability.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAffordabilityDslProvider.LevelAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates the affordability level. LEVEL1 .. LEVEL6 = (1 .. 6), OTHER = 0.
+            Returns empty string for non-real money players.
+            </summary>
+            <returns>Affordability level as string (e.g. "2").</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAffordabilityDslProvider.EmploymentGroupAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates the employment group of the customer.
+            Returns empty string for non-real money players.
+            </summary>
+            <returns>Employment group (e.g. "employed").</returns>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider">
+            <summary>
+            Application level configuration values.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.Environment">
+            <summary>
+            Indicates the current environment.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.IsProduction">
+            <summary>
+            Indicates if the current environment is Production.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.Label">
+            <summary>
+            Indicates the current label.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.Product">
+            <summary>
+            Indicates the current product.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.DefaultCulture">
+            <summary>
+            Indicates the default culture.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.DefaultCultureToken">
+            <summary>
+            Indicates the default culture route token.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.Context">
+            <summary>
+            Whether the app is running in iframe context.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.Theme">
+            <summary>
+            Indicates current theme.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAppDslProvider.GetPlatformProductNameAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates platfrom product name.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAssemblyDslProvider">
+            <summary>
+            Provides referenced assembly information.
+            <example>
+            This sample shows how to use <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAssemblyDslProvider"/> dsl provider.
+            <code><![CDATA[
+            Assembly.HasVersion("Frontend.Vanilla.Core", ">=7.10.2");
+            bool result = Assembly.HasVersion("Frontend.Vanilla.Core", "= 7.10.2");
+            ]]> </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAssemblyDslProvider.HasVersion(System.String,System.String)">
+            <summary>
+            Use comparison operator to compare assembly with referenced assembly by version.
+            AssemblyName represent the name of assembly (e.g. Frontend.Vanilla.Core).
+            OperatorAndVersion represent string that consists of comparison operator and version to compare (e.g. ">=7.10.2").
+            Supported comparison operators are <![CDATA[ >, >=, =, <, <= ]]>.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IConnectedAccountsDslProvider">
+            <summary>
+            Values related to the user's connected accounts.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IConnectedAccountsDslProvider.GetCountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Determines if user has any associated accounts. Returns false for anonymous user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAuthenticationDslProvider">
+            <summary>
+            Provides authentication options.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IAuthenticationDslProvider.LogoutAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Performs logout.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider">
+            <summary>
+            Provides balance properties of authenticated user obtained from PosAPI service. Values are truncated integers and they are negative in case of anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetAccountBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The account balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPayPalBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The PayPal balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPayPalRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The PayPal restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPayPalCashoutableBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The PayPal cashoutable balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetAvailableBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The available balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetInPlayAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The in play amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetOwedAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The owed amout.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutableBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashoutable balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetDepositRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The deposit restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutableBalanceAtOnlineAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashoutable balance at online.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetReleaseRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The release restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutableBalanceAtRetailAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashoutable balance at retail.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutableBalanceRealAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashoutable balance real.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashout restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCashoutRestrictedCashBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The cashout restricted cash balance real.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPlayMoneyBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The play money balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPlayMoneyInPlayAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The play money in play amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCreditCardDepositBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The credit card winnings balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPokerWinningsRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The poker winnings restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetCreditCardWinningsBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The credit card winnings balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetBalanceForGameTypeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The balance for game type.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetBonusWinningsRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The bonus winnings restricted balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetTaxWithheldAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The tax withheld amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetDebitCardDepositBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The debit catrd deposit balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetUncollectedFundsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The uncollected funds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetMainRealBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSportsExclusiveBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSportsDepositBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetGamesDepositBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSportsWinningsBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPokerWinningsBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSlotsWinningsBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSportsRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPokerRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetSlotsRestrictedBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetAllWinningsBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetMaxLimitExceededBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.GetPrepaidCardDepositBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The main real balance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.IsLow(System.Decimal)">
+            <summary>
+            Indicates if specified balance is low according to the configuration <c>https://admin.dynacon.prod.env.works/goto?feature=VanillaFramework.Features.Balance&amp;key=LowThresholds</c>.
+            Example use: Balance.IsLow(Balance.AccountBalance).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBalanceDslProvider.Format(System.Decimal)">
+            <summary>Formats specified balance according to configuration <c>https://admin.dynacon.prod.env.works/goto?feature=VanillaFramework.Web.UI&amp;key=CurrencyDisplay</c>.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBettingStatusDslProvider">
+            <summary>
+            Provides betting properties of authenticated user obtained from BPOS service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBettingStatusDslProvider.UserHasBets(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>The account balance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusAbuserInformationDslProvider">
+            <summary>
+            Provides bonus abuser information.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusAbuserInformationDslProvider.GetIsBonusAbuserAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the user is bonus abuser.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusAwardDslProvider">
+            <summary>
+            Provides bonus award information.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusAwardDslProvider.IsBonusAwarded(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Indicates if the status of the specified event is 'Offered'.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusBalanceDslProvider">
+            <summary>
+            Provides bonus balance properties of authenticated user obtained from PosAPI service. Values are 0 in case of anonymous user or bonus not found for product.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusBalanceDslProvider.GetAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Gets the bonus balance for the specified product.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBonusBalanceDslProvider.GetBonusByTypeAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Gets the bonus balance for the specific bonus type.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBrowserDslProvider">
+            <summary>
+            Provides properties of the user's browser.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBrowserDslProvider.GetNameAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The name of the user's browser, if available. Examples: Chrome, InternetExplorer, Safari.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBrowserDslProvider.GetVersionAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The version of the user's browser, if available. Examples: 48.0, 9.0.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBrowserDslProvider.GetMajorVersionAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The major version of the user's browser, if available. Examples: 48, 9.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IBrowserDslProvider.IsStandaloneApp">
+            <summary>
+            Whether the app is running in standalone mode (e.g. launched from home screen).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IClaimsDslProvider">
+            <summary>
+            Provides generic access to user's claims.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IClaimsDslProvider.Get(System.String)">
+            <summary>
+            Gets the value of the user's claim of given claimType.
+            ClaimType is case-insensitive and it can represent full URL (e.g. http://api.bwin.com/v3/geoip/stateorprovince) or just the last part (e.g. StateOrProvince).
+            Gets empty string also if the user does not have a claim of given claimType.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider">
+            <summary>
+            Provides generic access to cookies.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.LabelDomain">
+            <summary>Label-specific cookie domain which makes the cookie accessible on all products of current label.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.FullDomain">
+            <summary>Full cookie domain which makes the cookie accessible only on this app (product).</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.Get(System.String)">
+            <summary>
+            Gets the value of the cookie with given name e.g. 'TrackerId'.
+            Name is case-insensitive.
+            Gets empty string if there is no cookie with given name.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.SetSession(System.String,System.String)">
+            <summary>
+            Sets session cookie with given name to given value.
+            It expires when browser is closed
+            and it's accessible by all product of current label.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.SetPersistent(System.String,System.String,System.Decimal)">
+            <summary>
+            Sets persistent cookie with given name to given value.
+            Its expiration can be relative seconds e.g. from 'Time' DSL provider or absolute unix time e.g. from 'DateTime' DSL provider.
+            The cookie will be accessible by all product of current label.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.Delete(System.String)">
+            <summary>Deletes cookie with given name.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICookiesDslProvider.Set(System.String,System.String,System.Decimal,System.Boolean,System.String,System.String)">
+            <summary>
+            Low-level function to set cookie with all its details. Use with care and prefer other functions.
+            If expiration is below 0 then cookie is deleted. If it's zero then it's session cookie. Otherwise it's permanent one.
+            Domain should be Cookies.LabelDomain or Cookies.FullDomain.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICounterDslProvider">
+            <summary>
+            Provides generic access to Counter cookies.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICounterDslProvider.Get(System.String)">
+            <summary>
+            Gets the value of the counter cookie with given name. Name is case-insensitive.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICounterDslProvider.Increment(System.String,System.Decimal)">
+            <summary>
+            Increments the value of the counter with given name. Name is case-insensitive.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider">
+            <summary>
+            Provides cultures and their details based on DynaCon configuration VanillaFramework.Web.Globalization.
+            NOTE: Values at /health/dsl don't reflect tested browser URL.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.Default">
+            <summary>Gets configured default .NET culture for current label e.g. en-US.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.GetAllowed">
+            <summary>Gets allowed .NET cultures configured for current label and user (hidden cultures) joined with comma e.g. en-US, de-AT.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.Current">
+            <summary>
+            Gets currently set (resolved) .NET culture corresponding to one selected in the language switcher e.g. de-AT.
+            The resolution details: <see href="https://docs.vanilla.intranet/articles/features/globalization.html" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.GetFromClaims">
+            <summary>
+            Gets .NET culture from allowed configured ones corresponding to http://api.bwin.com/v3/user/culture claim. Claims are issued by PosAPI.
+            For logged-in user usually it's the one from settings/registration. Returns empty string if the claim is missing or invalid.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.GetFromBrowser">
+            <summary>
+            Gets .NET culture from allowed configured ones corresponding to 'Accept-Language' HTTP request header sent by user's browser according to his language preferences.
+            Returns empty string if there is no corresponding culture.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.GetFromPreviousVisit">
+            <summary>
+            Gets .NET culture from allowed configured ones corresponding to 'UserSettings' cookie which is the culture used last time when the user visited this website using particular browser.
+            Returns empty string if it's first user's visit or culture in the cookie isn't allowed on the label anymore.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICultureDslProvider.GetUrlToken(System.String)">
+            <summary>Gets configured URL token (usually first path segment) for given .NET culture name. Examples: en-US -> en, es-419 -> ex-xl.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICurfewStatusDslProvider">
+            <summary>
+            Values related to the logged-on user's deposit curfew.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICurfewStatusDslProvider.GetIsDepositCurfewOnAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user's deposit curfew is on. Returns false for anonymous user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICurrencyDslProvider">
+            <summary>
+            Provides currency formatting
+            NOTE: Values at /health/dsl don't reflect tested browser URL.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICurrencyDslProvider.Symbol">
+            <summary>Gets currency symbol for user currency code.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ICurrencyDslProvider.Format(System.String)">
+             <summary>Formats specified amounts according to configuration <c>https://admin.dynacon.prod.env.works/goto?feature=VanillaFramework.Web.UI&amp;key=CurrencyDisplay</c>
+             Usages:
+             Currency.Format("EUR | 10, GBP | 10, USD | 15")   -----> $15 (when user currency is USD).
+             Currency.Format(10)  ----> £10 (when user currency is GPB).
+             Currency.Symbol     ----> € (when user currency is EUR).
+            
+             </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider">
+            <summary>
+            Provides properties and functions for retrieving current date and time in UNIX time format which allows comparisons using regular number operators <![CDATA[ =, <>, >, >=, <=, < ]]>.
+            Also it can be combined with 'Time' DSL provider. Example: DateTime.Today >= DateTime.Date(2018, 11, 5).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetNow">
+            <summary>Gets current date and time in user's time zone as a UNIX time. Precision is in minutes (seconds are always 0) for easier comparison with other members.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetUtcNow">
+            <summary>Gets current UTC date and time as a UNIX time. Precision is in minutes (seconds are always 0) for easier comparison with other members.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetToday">
+            <summary>Gets current date in user's time zone as a UNIX time. Time of the day is 00:00:00.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetUtcToday">
+            <summary>Gets current UTC date as a UNIX time. Time of the day is 00:00:00.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetTimeOfDay">
+            <summary>Gets current time of day in user's time zone in a format compatible with UNIX time. Precision is in minutes (seconds are always 0) for easier comparison with other members.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetUtcTimeOfDay">
+            <summary>Gets current time of day in UTC in a format compatible with UNIX time. Precision is in minutes (seconds are always 0) for easier comparison with other members.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetDayOfWeek">
+            <summary>Gets the name of the current day in user's time zone in English e.g Sunday, Monday.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.GetUtcDayOfWeek">
+            <summary>Gets the name of the current day in UTC in English e.g Sunday, Monday.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.Date(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates date from passed parameters. Parameters together must represent valid date.
+            Year represents year as integer number.
+            Month represents month as integer number (January = 1, February = 2 ...). Minimum value is 1, and maximum is 12.
+            Day represents day in month as integer number. Minimum value is 1, and maximum depends on month and year.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.UtcDate(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates date from passed parameters. Parameters together must represent valid date.
+            Year represents year as integer number.
+            Month represents month as integer number (January = 1, February = 2 ...). Minimum value is 1, and maximum is 12.
+            Day represents day in month as integer number. Minimum value is 1, and maximum depends on month and year.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.DateTime(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates date and time from passed parameters. Parameters together must represent valid date and time.
+            Year represents year as integer number.
+            Month represents month as integer number (January = 1, February = 2 ...). Minimum value is 1, and maximum 12.
+            Day represents day in month as integer number. Minimum value is 1, and maximum depends on month and year.
+            Hours represent hours as integer number. Minimum value is 0, and maximum is 23.
+            Minutes represent minutes as integer number. Minimum value is 0, and maximum is 60.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.UtcDateTime(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates date and time from passed parameters. Parameters together must represent valid date and time.
+            Year represents year as integer number.
+            Month represents month as integer number (January = 1, February = 2 ...). Minimum value is 1, and maximum 12.
+            Day represents day in month as integer number. Minimum value is 1, and maximum depends on month and year.
+            Hours represent hours as integer number. Minimum value is 0, and maximum is 23.
+            Minutes represent minutes as integer number. Minimum value is 0, and maximum is 60.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.UtcDateTime(System.String,System.String)">
+            <summary>
+            Creates date and time from passed parameters. Parameters together must represent valid date and time.
+            </summary>
+            <param name="dateString">Represents the whole date as string.</param>
+            <param name="exactFormat">Represents the exact format of the DateString. When empty string, a fallback will be used: yyyy-MM-dd HH:mm:ss.</param>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.Time(System.Decimal,System.Decimal)">
+            <summary>
+            Creates time from passed parameters. Parameters together must represent valid time.
+            Hours represent hours as integer number. Minimum value is 0, and maximum is 23.
+            Minutes represent minutes as integer number. Minimum value is 0, and maximum is 60.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDateTimeDslProvider.Format(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates time from passed parameters. Parameters together must represent valid time.
+            Hours represent hours as integer number. Minimum value is 0, and maximum is 23.
+            Minutes represent minutes as integer number. Minimum value is 0, and maximum is 60.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDepositLimitsDslProvider">
+            <summary>
+            Provides the deposit limits for the user. Values are negative in case of anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDepositLimitsDslProvider.GetAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Get player limits by limit type. Values are negative in case of anonymous user. Possible values for limitType param: DAILY, WEEKLY, MONTHLY.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDepositLimitsDslProvider.IsLow(System.String)">
+            <summary>
+            Indicates if specified limit is low according to the configuration <c>https://admin.dynacon.prod.env.works/goto?feature=VanillaFramework.Features.DepositLimits&amp;key=LowThresholds</c>.
+            Possible values for limitType param: DAILY, WEEKLY, MONTHLY.
+            Will return false if deposit type is not set.
+            Example use: DepositLimits.IsLow('WEEKLY').
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider">
+            <summary>
+            Provides user's device capabilities based on DeviceAtlas.
+            See currently available properties at /health/info/device of this website.
+            Ask DeviceAtlas support (not Vanilla team) for more details.
+            See https://deviceatlas.com/resources/available-properties.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsMobileAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            True if the device is meant for use on the move. Most likely includes mobile phones, tablets, convertible PCs etc.
+            It is 'mobileDevice' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsTouchAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the device has touch capabilities.
+            It is 'touchScreen' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsMobilePhoneAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the device is a mobile phone.
+            It is 'isMobilePhone' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsTabletAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the device is a tablet.
+            It is 'isTablet' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsRobotAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Identifies non-human traffic (robots, crawlers, checkers, download agents, spam harvesters and feed readers).
+            It is 'isRobot' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsIOSAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the device runs on Apple iOS operating system.
+            It is 'osiOs' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.IsAndroidAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the device runs on Google Android operating system.
+            It is 'osAndroid' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.OSNameAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The name of operating system of the device.
+            It is 'osName' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.OSVersionAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The version of operating system of the device.
+            It is 'osVersion' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.ModelAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The model name of the device.
+            It is 'model' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.VendorAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The vendor company name of the device.
+            It is 'vendor' DeviceAtlas property. Ask DeviceAtlas support (not Vanilla team) for more details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDeviceDslProvider.GetCapabilityAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Retrieves device capability of given name.
+            See currently available properties at /health/info/device of this website.
+            Ask DeviceAtlas support (not Vanilla team) for more details.
+            See https://deviceatlas.com/resources/available-properties.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDocumentUploadStatusDslProvider">
+            <summary>
+            Provides document upload status based on useCase for authenticated user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDocumentUploadStatusDslProvider.IsPendingAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Indicates if user has already uploaded document with pending status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IDocumentUploadStatusDslProvider.PendingWithAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Indicates uploaded document pending status.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IEpcotDslProvider">
+            <summary>
+            Provides information about Epcot features.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IEpcotDslProvider.IsEnabled(System.String)">
+            <summary>
+            Indicates if the Epcot feature is enabled.
+            FeatureName is case-insensitive. Possible values: Header or AccountMenu.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGamificationDslProvider">
+            <summary>
+            Provides the gamification coin balance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGamificationDslProvider.CoinsBalance">
+            <summary>
+            Get coins balance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeoIPDslProvider">
+            <summary>
+            Provides geographical location information resolved based on client's IP address.
+            This is based on claims coming from PosAPI. They should be always available for all users.
+            You can see current claims at /health/claims of this website.
+            For more details ask PosAPI team, not Vanilla team.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeoIPDslProvider.GetCountry">
+            <summary>The country code based on http://api.bwin.com/v3/geoip/country claim.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeoIPDslProvider.GetCountryName">
+            <summary>The country name based on the GetAllCountries posApi call.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeoIPDslProvider.GetCity">
+            <summary>The city name code based on http://api.bwin.com/v3/geoip/locality claim.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeoIPDslProvider.GetRegion">
+            <summary>The region code based on http://api.bwin.com/v3/geoip/stateorprovince claim.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.HasPosition">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Timestamp">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Latitude">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Longitude">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Altitude">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Accuracy">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.AltitudeAccuracy">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Heading">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Speed">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.LocationId">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.LocationName">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.City">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.State">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Zip">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.Country">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.LocationNameClient">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.CityClient">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.CountryClient">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.StateClient">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IGeolocationDslProvider.PostcodeClient">
+            <summary>See corresponding docs at /health/dsl.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider">
+            <summary>
+            Provides access to user's KYC status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetVerificationDaysLeftAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            "Indicates number of GraceDaysUnit left.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetGraceDaysUnitAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's grace days unit (days or hours).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetGraceDaysUnitDivisorAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's grace days unit (days or hours).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetVerificationTypeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's verification type.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.DocumentUploadStatusIsPendingAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has already uploaded document with pending status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetDocsPendingWithAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates uploaded document pending status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsKycStartedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has started the kyc process.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetEmailVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's email verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAgeVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's age verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.DepositSuppressedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user's deposit is suppressed.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetSsnVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's ssn verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetCustom3Async(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates SSN verification status for for non-NJ environment.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetCustom4Async(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates third-party verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetPersonalIdVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's id verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAccountStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's account status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetBankIdVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's bank verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetSecretPinVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's secret pin verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.BankAccountIsRegisteredAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user's bank account is registered.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.UserHasBonusesAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has bonuses.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAddressVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's address verification status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.AccountVerificationIsRequiredAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if account verification is required.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetDepositGraceDaysAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates number of user's deposit grace days.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.KycVerifiedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if KYC is verified.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetGraceDaysBeforeNextActionAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates number of GraceDaysBeforeNextAction left.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsBlackListAttemptedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if BlackListAttempted.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsTransitionPlayerAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user is transition player.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsCommVerifiedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has his contact information verified.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsMobileNumberVerifiedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has his mobile number verified.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsEmailVerifiedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user has his email verified.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.KycAuthenticationStatus(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates KYC authentication status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAdditionalKycInfoAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Gets a value from the user's KYC status additional info collection with the given key. The key is case-insensitive.
+            Returns an empty string if there is no value with the given key.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetRibbonStatusCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's ribbon status code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetRibbonStatusMessageAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's ribbon status message.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAdditionalRibbonInfoAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Gets a value from the user's ribbon additional info collection with the given key. The key is case-insensitive.
+            Returns an empty string if there is no value with the given key.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsPartiallyVerifiedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if the player is partially verified (German AML).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsF2FVerificationRequiredAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if F2F is required for the user (German AML).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetAmlVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            AML verification status of the player (NJ only).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetBlackListVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            If player is black listed or not.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetIdVerificationGraceDaysAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Verification grace days. Not used in US.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetIdVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            ID verification status of the player.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetKycAttemptsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Used attempts for online KYC verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetKycMaxAttemptsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Max attempts for online KYC verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsKycMaxAttemptsReachedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Whether max attempt reached or not for KYC verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetSsnVerificationAttemptsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Used attempts for SSN verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetSsnVerificationMaxAttemptsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Max attempts of SSN verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.IsSsnVerificationMaxAttemptsReachedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Whether max attempts reached for SSN verification.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IKycStatusDslProvider.GetThirdPartyVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            ThirdPartyVerificationStatus verification status.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILastKnownProductDslProvider">
+            <summary>
+            Last known product DSL provider.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILastKnownProductDslProvider.Name">
+            <summary>
+            Indicates last known product name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILastKnownProductDslProvider.Previous">
+            <summary>
+            Indicates previous product name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILastKnownProductDslProvider.PlatformProductId">
+            <summary>
+            Indicates the platform product id.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILastKnownProductDslProvider.Url">
+            <summary>
+            Indicates the current label.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILicenseInfoDslProvider">
+            <summary>
+            Provides access to user's license compliance info.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILicenseInfoDslProvider.GetAcceptanceNeededAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates if user needs to accept any licenses on current product.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IListDslProvider">
+            <summary>
+            Provides access to lists on PosAPI.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IListDslProvider.ContainsAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String,System.String)">
+            <summary>
+            Determines if specified named list on PosAPI contains given string value.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILoyalityProfileDslProvider">
+            <summary>
+            Provides Tier values from PosAPI.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILoyalityProfileDslProvider.GetMlifeNoAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets the user mlifeNo value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILoyalityProfileDslProvider.GetMlifeTierAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets the user tier value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILoyalityProfileDslProvider.GetMlifeTierDescAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets the user tier description value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ILoyalityProfileDslProvider.GetMlifetierCreditsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets the user tier credits value.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMediaDslProvider">
+            <summary>
+            Evaulates media queries on the device.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMediaDslProvider.IsActive(System.String)">
+            <summary>
+            Evaluates a media query against the current screen. See the list of possible queries (use the alias as the query parameter): https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMediaDslProvider.GetOrientation">
+            <summary>
+            The orientation of the device.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider">
+            <summary>
+            Provides access to user's MOH details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetCommentsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's comment.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetCountryCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's country code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetExclDaysAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's excl days.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetMohPrimaryProductCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's primary product code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetMohPrimaryReasonCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's primary reason code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetMohPrimaryRiskBandCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's primary risk band code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetMohPrimaryToolCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's primary tool code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetMohScoreAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's moh score.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetProcessedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's processed status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IMohDetailsDslProvider.GetVipUserAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's vip status.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider">
+            <summary>
+            Information about requests to Vanilla web app coming from the native application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsNative">
+            <summary>
+            Indicates whether web request has been made from a native application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsNativeApp">
+            <summary>
+            Indicates whether web request has been made from a native application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsNativeWrapper">
+            <summary>
+            Indicates whether web request has been made from a native wrapper application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsDownloadClient">
+            <summary>
+            Indicates whether web request has been made from a native download client application or download client wrapper application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsDownloadClientApp">
+            <summary>
+            Indicates whether web request has been made from a native download client application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsDownloadClientWrapper">
+            <summary>
+            Indicates whether web request has been made from a native download client wrapper application which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.IsTerminal">
+            <summary>
+            Indicates whether web request has been made from a terminal which embeds it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.GetProduct">
+            <summary>
+            The product name of the native application which made the request to this web app.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.INativeApplicationDslProvider.GetName">
+            <summary>
+            The name of the subchannel of the native application which made the request to this web app.
+            The subchannel is a sub-category of the product.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IOfferDslProvider">
+            <summary>
+            Provides offer information.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IOfferDslProvider.GetStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String,System.String)">
+            <summary>
+            Get offer status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IOfferDslProvider.IsOfferedAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String,System.String)">
+            <summary>
+            Indicates if the status of the specified event is 'Offered'.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPendingActionsDslProvider">
+            <summary>
+            Provides access to pending actions.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPendingActionsDslProvider.HasActionWithReactionNeeded">
+            <summary>
+            Indicates if user has at least one action where reaction is needed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayBreakDslProvider">
+            <summary>
+            Provides the play break status of the user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayBreakDslProvider.IsActive">
+            <summary>
+            Whether play break is active for the user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayBreakDslProvider.BreakType">
+            <summary>
+            Get play break type for the user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayBreakDslProvider.EndDate">
+            <summary>
+            Get play break end time.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayerAttributesDslProvider">
+            <summary>
+            Provides values for acknowledged and VIP player attributes. Values are string or empty string in case of anonymous user or if value is not returned by the API.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayerAttributesDslProvider.GetAcknowledgedAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Get attribute value for acknowledged player by key. The key is case-insensitive. Returns empty string if there is no value for the given key.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayerAttributesDslProvider.GetVipAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Get attribute value for VIP player by key. The key is case-insensitive. Returns empty string if there is no value for the given key.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayerLimitsDslProvider">
+            <summary>
+            Provides the deposit limits for the user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPlayerLimitsDslProvider.GetPlayerLimitsSumAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Get player limits sum by limit type IDs.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPostLoginValuesDslProvider">
+            <summary>
+            Provides access to user's post login values.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPostLoginValuesDslProvider.ShowKycDe">
+            <summary>
+            Indicates player's priority.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IPostLoginValuesDslProvider.ShowMcUpgrade">
+            <summary>
+            Indicates if MC upgrade should be shown to user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IQueryStringDslProvider">
+            <summary>
+            Provides generic access to query string parameters.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IQueryStringDslProvider.Get(System.String)">
+            <summary>Gets the value of query string parameter with specified name.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IQueryStringDslProvider.Set(System.String,System.String)">
+            <summary>Sets parameter with specified name and value to query string of the URL. It overwrites existing parameter with that name.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IQueryStringDslProvider.Remove(System.String)">
+            <summary>Removes parameter with specified name from query string of current URL.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IReferredFriendsDslProvider">
+            <summary>
+            Values related to the user's scrubbed status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IReferredFriendsDslProvider.GetInvitationUrlAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets invitation for referral URL. If user is not authenticated returns empty string.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRegistrationDslProvider">
+            <summary>
+            Values related to the user registration info.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRegistrationDslProvider.GetDateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The registration date of authenticated or workflow user. Empty string for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRegistrationDslProvider.GetDaysRegisteredAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The number of days elapsed from the registration date of authenticated or workflow user. Negative number for anonymous user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider">
+            <summary>
+            "Properties of the current request URI.
+             In single-page application (mobile webs) values correspond to the URI which user sees in the browser address bar.
+             Sample: https://www.bwin.com/catalog/shownew.html?date=today".
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.AbsoluteUri">
+            <summary>The absolute full URI. Example: https://www.bwin.com/catalog/shownew.html?date=today.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.AbsolutePath">
+            <summary>The absolute path of the URI. Example: /catalog/shownew.html.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.PathAndQuery">
+            <summary>The absolute path concatenated with query of the URI. Example: /catalog/shownew.htm?date=today.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.Query">
+            <summary>The query string of URI including leading question mark. Example: ?date=today.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.Host">
+            <summary>The host of the URI. Example: www.bwin.com.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.CultureToken">
+            <summary>
+            The 'culture' token in URL path according to current route pattern. May not correspond to 'Culture.GetUrlToken(Culture.Current)' - see culture resolution in docs.
+            May be empty if there is no 'culture' token in the route pattern. Example: en. NOTE: Value at /health/dsl doesn't reflect tested browser URL.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.IsInternal">
+            <summary>Indicates if the request is internal.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.IsPrerendered">
+            <summary>Indicates if the request comes from a crawler and the response is processed via Prerender.io service. It is based on existence of 'X-Prerender: 1' request header.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.ClientIP">
+            <summary>Client IP address resolved based on network routing rules.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.Redirect(System.String)">
+            <summary>Redirects user to specified absolute or relative URL. If executed server side then it's a temporary redirect.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestDslProvider.Redirect(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Redirects user to specified absolute or relative URL specifying all details.
+            PermanentRedirect makes sense only for initial document request and DSL executed server-side.
+            PreserveQuery copies query part of current URL to destination URL.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestHeadersDslProvider">
+            <summary>
+            Provides generic access to HTTP request headers.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestHeadersDslProvider.Get(System.String)">
+            <summary>
+            Gets the value of the HTTP request header with given name (e.g. User-Agent). Name is case-insensitive. Gets empty string if there is no header with given name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IRequestHeadersDslProvider.UserAgent">
+            <summary>The 'User-Agent' HTTP request header.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISelfExclusionDslProvider">
+            <summary>
+            Values related to the user self exclusion details.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISelfExclusionDslProvider.GetCategoryAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The exclusion category of authenticated user. Empty string in case of anonymous, workflow user or user does not fall under RGclose/Cool-off.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISelfExclusionDslProvider.GetStartDateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The start date of self exclusion. Empty string for other scenarios.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISelfExclusionDslProvider.GetEndDateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The end date of self exclusion. Empty string for other scenarios.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider">
+            <summary>
+            Provides session fund summary properties of authenticated user obtained from PosAPI service. Values are truncated integers and they are negative in case of anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider.GetLossAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's loss amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider.GetProfitAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Session fund profit amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider.GetTotalStakeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Session fund total stake amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider.GetCurrentBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Session fund current balance amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISessionFundSummaryDslProvider.GetInitialBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>Session fund initial balance amount.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider">
+            <summary>
+            Provides access to retail's shop info.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.ShopId">
+            <summary>
+            Indicates shop ID.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetBusinessUnitAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets business unit.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetRegionCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets region code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetRegionAreaCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets region area code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetSubRegionCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets sub-region code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetTimeZoneAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets time zone.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetLocaleAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets locale.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetCurrencyCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets currency code.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetCountryAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets country.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetDefaultGatewayAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets default gateway.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetShopTierAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets the shop tier.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetValidatedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets is validated.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IShopDslProvider.GetSitecoreShopGroupsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets Sitecore shop groups.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISitecoreDslProvider">
+            <summary>Provides content from Sitecore.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISitecoreDslProvider.GetLinkAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Get URL from a Link Template at given path in Sitecore. Fails if the content is not found, filtered, invalid, given contentPath is invalid or something else goes wrong.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISofStatusDetailsDslProvider">
+            <summary>Provides access to user's Sof details.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISofStatusDetailsDslProvider.GetSofStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's sof status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ISofStatusDetailsDslProvider.GetRedStatusDaysAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates user's red status days.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider">
+            <summary>
+            Provides access to retail's context info.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.TerminalId">
+            <summary>
+            Indicates terminal ID.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetResolutionAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates terminal resolution.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetIpAddressAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates terminal IP address.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetLockStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates terminal status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetMacIdAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates terminal MAC ID.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetTerminalStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Indicates terminal status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetTypeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets Terminal type.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetVolumeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets terminal volume.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetAccountNameAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets terminal account name.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITerminalDslProvider.GetCustomerIdAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Gets terminal customer ID.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider">
+            <summary>Provides functions that represents years, weeks, days, hours and minutes as seconds. This is compatible with UNIX time and can be easily combined with DateTime provider.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Seconds(System.Decimal)">
+            <summary>Time of seconds represented in seconds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Minutes(System.Decimal)">
+            <summary>Time of minutes represented in seconds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Hours(System.Decimal)">
+            <summary>Time of hours represented in seconds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Days(System.Decimal)">
+            <summary>Time of days represented in seconds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Weeks(System.Decimal)">
+            <summary>Time of weeks represented in seconds.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITimeDslProvider.Years(System.Decimal)">
+            <summary>Time of years represented in seconds. One year represents 365 days.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITourneyTokenBalanceDslProvider">
+            <summary>
+            Provides Tourney Token Balance properties of authenticated user obtained from PosAPI service. Values are truncated integers and they are negative in case of anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITourneyTokenBalanceDslProvider.GetBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's tourney token balance amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.ITourneyTokenBalanceDslProvider.GetCurrencyAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's tourney token currency.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider">
+            <summary>
+            Values related to the logged-on or anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetFirstLoginAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Determines whether it is a first login for the user based on last session info from PosAPI. Available also during workflow. False for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.HasTracker">
+            <summary>
+            True if there is trackerId stored in the session or trackerId cookie exists.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetTrackerId">
+            <summary>The trackerId either from query string (according to configured aliases) or from trackerId cookie.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.LoggedIn">
+            <summary>
+            Indicates if the user is authenticated. False for user in the workflow.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.IsKnown">
+            <summary>
+            Indicates if the user was logged in before from particular device (has 'lastVisitor' cookie).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.IsRealPlayer">
+            <summary>
+            Indicates if the user has a real player claim from PosAPI. False for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.IsAnonymous">
+            <summary>
+            Indicates if the user is anonymous i.e. bet-station shop user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetLoyaltyStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The loyalty category of authenticated user. Empty string in case of anonymous or workflow user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetLoyaltyPointsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The loyalty points of authenticated user. The value is truncated integer. Type of points is according to the configuration. Negative number in case of anonymous or workflow user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetCountry">
+            <summary>
+            ID of the country in claims that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetLanguage">
+            <summary>
+            The language code from the user's Language claim e.g. EN.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetCulture">
+            <summary>
+            The name of the current culture resolved for the request corresponding to one selected in the language switcher e.g. en-US.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetLoginName">
+            <summary>
+            The Name claim of the current user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetVisitCount">
+            <summary>
+            The number of visits of the user on the label. Value is increased on each new session. The value is counted also for non-registered visitors regardless of login. Initially starts with value 1 for the first visit.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetVisitAfterDays">
+            <summary>
+            The number of days since the last visit, independent if he was logged in or not. The value is tracked also for not-registered users. The numeric value is negative in case of first visit.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.IsInGroupAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Determines if authenticated or workflow user is a member of specified group. False for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetRegistrationDateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The registration date of authenticated or workflow user. Empty string for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetDaysRegisteredAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The number of days elapsed from the registration date of authenticated or workflow user. Negative number for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetTierCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The Tier Code of authenticated or workflow user obtained from PosAPI service. The value is truncated integer. Negative number for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetAffiliateInfo">
+            <summary>
+            The affiliate ID (usually tracker ID) corresponding to registration of authenticated or workflow user. Empty string for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetGroupAttributeAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String,System.String)">
+            <summary>
+            Returns the value of specified group's attribute for authenticated or workflow user. Empty string for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetLastLoginTimeFormattedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            The last login time of authenticated or workflow user based on last session info from PosAPI. It is converted to user time zone. Empty string for anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserDslProvider.GetAge">
+            <summary>
+            Age of the user calculate based on dateOfBirth claim. -1 for anonymous user or if value of dateOfBirth claim is empty.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserFlagsDslProvider">
+            <summary>
+            Provides user flags of authenticated user obtained from PosAPI service. Values are string or empty string in case of anonymous user or if value is not return from PosAPI.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserFlagsDslProvider.GetAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Gets the user flag value for the specified flag name.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserFlagsDslProvider.HasReasonCodeAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>Check if reason code(s) exists in the user flags.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserScrubDslProvider">
+            <summary>
+            Values related to the user's scrubbed status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserScrubDslProvider.IsScrubbedForAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String)">
+            <summary>
+            Determines whether user is scrubbed for product. If user is not authenticated returns false.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider">
+            <summary>
+            Provides activity and transaction properties of authenticated user obtained from PosAPI service. Values are truncated integers and they are negative in case of anonymous user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetNetProfitAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's net profit.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetNetLossAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's net loss.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetPokerTaxCollectedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's tax collected for poker game play.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetCasinoTaxCollectedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's tax collected for casino game play.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetSportsTaxCollectedAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's tax collected for sports game play.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetTotalDepositAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's total deposit amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetTotalWithdrawalAmountAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's total withdrawal amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetLossAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's loss amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.GetProfitAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User's profit amount.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.Contracts.IUserSummaryDslProvider.Format(System.Decimal)">
+            <summary>Formats specified summary value according to configuration <c>https://admin.dynacon.prod.env.works/goto?feature=VanillaFramework.Web.UI&amp;key=CurrencyDisplay</c>.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.DependencyInjectionExtensions">
+            <summary>
+            Convenience methods for easy registration of DSL providers.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.DependencyInjectionExtensions.AddDslValueProvider``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Frontend.Vanilla.Core.System.Text.Identifier)">
+            <summary>
+            Adds <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider" /> with name according to convetion (IFooDslProvider -> Foo)
+            and resolves instance of <typeparamref name="TProvider" /> as its instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider">
+            <summary>
+            Registers and describes provider of values to be used in Vanilla DSL to Autofac container.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.Name">
+            <summary>Gets the name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.ExposedType">
+            <summary>Gets the interface of <see cref="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.Instance" /> which should be exposed.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.Documentation">
+            <summary>Gets the documentation of the provider.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.Instance">
+            <summary>Gets the object with actual values - properties and methods.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.#ctor(Frontend.Vanilla.Core.System.Text.Identifier,System.Type,System.Object)">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.DslValueProvider.Create``1(``0,Frontend.Vanilla.Core.System.Text.Identifier)">
+            <summary>
+            Creates a new instance. Exposed type is determined based on factory delegate type.
+            If <paramref name="name" /> is not provided then it's derived from <typeparamref name="TProvider" />
+            according to convention: IFooBarDslProvider -> FooBar.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.FakeDslProviders">
+            <summary>
+            Fake DSL providers.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.FakeDslProviders.AddFakeVanillaDslProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds fake implementations of DSL providers.
+            Useful when you need to validate DSL syntax, but don't need to evaluate it.
+            This module is not run automatically in Vanilla app.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ProviderMember">
+            <summary>
+            Represents a member of a DSL provider.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ProviderMemberAccessor">
+            <summary>Unified delegate to access member value or execute member of DSL provider.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.IProviderMemberAccessorFactory">
+            <summary>Builds <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ProviderMemberAccessor" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ProviderMemberAccessorFactory">
+            <summary>Builds the accessor by compiling C# expressions to gain the best possible performance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.ProviderMemberAccessorFactory.BuildExtractResultExpression(System.Linq.Expressions.Expression,System.Reflection.MethodInfo)">
+            <summary>Converts result or the task or return null for void methods.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.IProviderMembers">
+            <summary>
+            Collects all members of DSL providers.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.SkipInitialValueGetOnDslPageAttribute">
+            <summary>
+            Indicates that DSL method is excluded from execution on the DSL page.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatilityAttribute">
+            <summary>
+            Indicates volatily of the value(s) returned by particular DSL provider member.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatilityAttribute.Volatility">
+            <summary>
+            Gets the volatily.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatilityAttribute.#ctor(Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility)">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility">
+            <summary>
+            Defines volatility of values provided by DSL providers.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility.Server">
+            <summary>
+            Value can change between full page requests but doesn't change during lifetime of the single page application.
+            This guarantees good performance e.g. content is already filtered on server and doesn't even get transferred to client browser.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility.Client">
+            <summary>
+            Value can change anytime thus should be evaluated on client browser in the single page application.
+            This introduced additional overhead but gives the best user experience.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.DomainSpecificLanguage.Providers.ValueVolatility.Static">
+            <summary>
+            Value doesn't ever change. It's evaluated already during compilation. Usually it's static configuration value of the app.
+            This has totally the best performance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslCompiler">
+            <summary>
+            Decorates DSL expression with <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslExpression`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslCompiler.#ctor(Frontend.Vanilla.DomainSpecificLanguage.IDslCompiler,Frontend.Vanilla.Core.Diagnostics.ITraceRecorder)">
+            <summary>
+            Decorates DSL expression with <see cref="T:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslExpression`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslExpression`1">
+            <summary>
+            Records all details of DSL expression execution for tracing purposes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.Tracing.TracedDslExpression`1.#ctor(Frontend.Vanilla.DomainSpecificLanguage.IDslExpression{`0},Frontend.Vanilla.Core.Diagnostics.ITraceRecorder)">
+            <summary>
+            Records all details of DSL expression execution for tracing purposes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.DomainSpecificLanguage.VanillaDslServices">
+            <summary>
+            Vanilla DSL infrastructure.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.DomainSpecificLanguage.VanillaDslServices.AddVanillaDomainSpecificLanguage(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds services related to Vanilla domain specific language.
+            Also adds dependency <see cref="M:Frontend.Vanilla.Core.VanillaCoreServices.AddVanillaCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,41 @@
+<div class="rugby-container">
+    <ng-container *ngIf="rugbyCDSContent as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <ng-container *ngIf="vm?.games">
+                <gn-dark-theme-base-page>
+                    <ng-container header-content>
+                        <gn-dark-theme-header [title]="vm?.title" [racingImage]="sportsTypeImage">
+                            <ng-container raceStage-content>
+                                <div class="header-status-box tilted-card">
+                                    <span id="DefaultPriceColumn" class="tilted-text" *ngIf="vm?.eventStartDate?.length > 1">
+                                        {{ (vm?.eventStartDate | darkThemeEventDatetime)?.date }}<br />{{
+                                            (vm?.eventStartDate | darkThemeEventDatetime)?.time
+                                        }}
+                                    </span>
+                                </div>
+                            </ng-container>
+                        </gn-dark-theme-header>
+                    </ng-container>
+
+                    <ng-container body-content>
+                        <gn-dark-theme-match-betting [matchData]="vm"></gn-dark-theme-match-betting>
+                        <gn-dark-theme-match-handicap [matchData]="vm"> </gn-dark-theme-match-handicap>
+                        <gn-dark-theme-total-points [matchData]="vm"> </gn-dark-theme-total-points>
+                        <gn-dark-theme-halftime-fulltime [market]="vm"></gn-dark-theme-halftime-fulltime>
+                    </ng-container>
+                    <ng-container footer-content>
+                        <gn-dark-theme-footer>
+                            <ng-container left-side-content>
+                                {{ vm?.competitionName }}
+                            </ng-container>
+                            <ng-container right-side-content>
+                                {{ vm?.content?.contentParameters?.BetStationPricesFluctuation ?? '' }}
+                            </ng-container>
+                        </gn-dark-theme-footer>
+                    </ng-container>
+                </gn-dark-theme-base-page>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

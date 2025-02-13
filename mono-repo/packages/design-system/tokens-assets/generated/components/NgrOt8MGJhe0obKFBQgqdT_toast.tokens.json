@@ -1,0 +1,147 @@
+{
+    "toast": {
+        "error": {
+            "color": {
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.base}"
+                }
+            }
+        },
+        "info": {
+            "color": {
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.utility.base}"
+                }
+            }
+        },
+        "shared": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                }
+            }
+        },
+        "success": {
+            "color": {
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.base}"
+                }
+            }
+        },
+        "warning": {
+            "color": {
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "toast",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.caution.base}"
+                }
+            }
+        }
+    }
+}

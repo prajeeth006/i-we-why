@@ -1,0 +1,353 @@
+@use '../../fonts/font-helper' as helper;
+@use '../../generated/styles/components/input-fields/input-fields' as ds-input-field;
+
+/* ************ General ********* */
+
+@mixin form-field-state($state) {
+    --background-color: var(--ds-input-fields-#{$state}-color-bg);
+    --border-color: var(--ds-input-fields-#{$state}-color-border);
+    --label-color: var(--ds-input-fields-#{$state}-color-label);
+    --required-text-color: var(--ds-input-fields-#{$state}-color-required-text);
+    --placeholder-color: var(--ds-input-fields-#{$state}-color-placeholder-text);
+    --input-text-color: var(--ds-input-fields-#{$state}-color-input-text);
+    --icon-color: var(--ds-input-fields-#{$state}-color-icon);
+    --counter-color: var(--ds-input-fields-#{$state}-color-counter);
+}
+
+.ds-input-field {
+    --ds-input-fields-reset-helper: 0;
+    --ds-input-fields-size-helper: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-input-fields-size-stack);
+
+    @include ds-input-field.shared;
+    @include ds-input-field.default;
+
+    &.ds-input-field-enabled {
+        @include form-field-state('enabled');
+
+        @media (hover: hover) {
+            .ds-input-field-wrapper:hover {
+                @include form-field-state('hover');
+            }
+        }
+    }
+
+    &.ds-input-field-disabled {
+        @include form-field-state('disabled');
+
+        input,
+        textarea {
+            cursor: not-allowed;
+        }
+    }
+
+    &.ds-input-field-locked {
+        @include form-field-state('locked');
+
+        &.ds-input-field-focused {
+            .ds-input-field-wrapper {
+                border-color: var(--ds-input-fields-focused-color-border);
+            }
+        }
+    }
+
+    &.ds-input-field-enabled.ds-input-field-invalid {
+        @include form-field-state('error');
+    }
+
+    &.ds-input-field-focused:not(.ds-input-field-locked) {
+        @include form-field-state('focused');
+    }
+
+    &.ds-input-field-inverse {
+        @include ds-input-field.inverse;
+    }
+
+    &.ds-input-field-floating-label {
+        textarea,
+        input {
+            &::placeholder {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.ds-input-field-wrapper {
+    background: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--label-color);
+    border: var(--ds-input-fields-size-border-width) solid var(--border-color);
+    border-radius: var(--ds-input-fields-size-border);
+    box-sizing: border-box;
+    transition:
+        border-color 0.1s,
+        box-shadow 0.1s;
+
+    textarea,
+    input {
+        background: none;
+        border-radius: var(--ds-input-fields-reset-helper);
+        border: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        caret-color: var(--ds-input-fields-focused-color-cursor);
+        color: inherit;
+        cursor: text;
+        font: inherit;
+        margin: var(--ds-input-fields-reset-helper);
+        outline: none;
+        padding: var(--ds-input-fields-reset-helper);
+        width: var(--ds-input-fields-size-helper);
+
+        &:focus {
+            outline: none;
+        }
+        /* stylelint-disable property-no-vendor-prefix */
+        &:-webkit-autofill {
+            align-self: center;
+            -webkit-box-shadow: 0 0 0 40rem var(--background-color) inset;
+            -webkit-text-fill-color: var(--input-text-color);
+            animation-name: autofill-start;
+            animation-duration: 0.1s;
+        }
+
+        &:not(:-webkit-autofill) {
+            animation-name: autofill-end;
+            animation-duration: 0.1s;
+        }
+
+        &::placeholder {
+            color: var(--placeholder-color);
+            opacity: 0;
+            transition:
+                opacity 0.1s ease-in,
+                transform 0.1s ease-in;
+        }
+    }
+
+    label {
+        --ds-input-fields-bg: transparent;
+
+        -webkit-font-smoothing: antialiased;
+        background-color: var(--ds-input-fields-bg);
+        color: var(--label-color);
+        display: inline-flex;
+        margin: var(--ds-input-fields-reset-helper);
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        text-overflow: ellipsis;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        will-change: transform;
+        width: var(--ds-input-fields-size-helper);
+    }
+}
+
+.ds-input-field-content {
+    box-sizing: border-box;
+    color: var(--input-text-color);
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+}
+
+.ds-input-field-required {
+    color: var(--required-text-color);
+}
+
+/* ************ Text Input only ********* */
+
+.ds-input-field-text-input {
+    .ds-input-field-wrapper {
+        @include ds-input-field.text-field-shared;
+
+        align-items: center;
+        display: flex;
+        gap: var(--ds-input-fields-space-inline);
+        height: var(--ds-input-fields-size-height);
+        padding: var(--ds-input-fields-space-padding-top) var(--ds-input-fields-space-padding-right) var(--ds-input-fields-space-padding-bottom)
+            var(--ds-input-fields-space-padding-left);
+        min-width: var(--ds-input-fields-size-min-width);
+    }
+
+    .ds-input-field-content {
+        --ds-input-fields-padding-top: calc(var(--ds-text-field-label-line-height) * var(--ds-input-text-floating-label-resize));
+
+        @include helper.setup-font-style('text-field-input');
+
+        padding-top: var(--ds-input-fields-padding-top);
+        align-items: center;
+    }
+
+    input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: var(--ds-input-fields-reset-helper);
+        }
+
+        &[type='number'] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    label {
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include helper.setup-font-style('text-field-label');
+    }
+
+    &.ds-input-field-floating-label {
+        label {
+            transform: translateY(calc(-100% + var(--ds-input-fields-space-padding-top))) scale(var(--ds-input-text-floating-label-resize));
+        }
+    }
+
+    &.ds-input-field-right-align {
+        input {
+            text-align: right;
+        }
+
+        label {
+            transform-origin: right;
+            justify-content: flex-end;
+        }
+    }
+
+    /* stylelint-disable selector-max-attribute */
+    [slot='start'],
+    [slot='end'] {
+        &:not(.ds-icon-button) svg {
+            align-self: center;
+            color: var(--icon-color);
+        }
+    }
+
+    [slot='bottom']:empty {
+        display: none;
+    }
+}
+
+.ds-input-field-medium {
+    --ds-input-text-floating-label-resize: 0.666; // to resize floating label from 24px to 16px
+
+    @include ds-input-field.text-field-md;
+    @include helper.set-font-variables('text-field-input', 'label', 'lg');
+    @include helper.set-font-variables('text-field-label', 'body', 'lg');
+
+    label {
+        transform-origin: center left;
+    }
+}
+
+.ds-input-field-small {
+    --ds-input-text-floating-label-resize: 0.8; // to resize floating label from 20px to 16px
+
+    @include ds-input-field.text-field-sm;
+    @include helper.set-font-variables('text-field-input', 'label', 'lg');
+    @include helper.set-font-variables('text-field-label', 'body', 'md');
+
+    label {
+        transform-origin: top left;
+    }
+
+    &.ds-input-field-right-align {
+        label {
+            transform-origin: top right;
+        }
+    }
+}
+
+/* ************ Textarea only ********* */
+
+.ds-input-field-textarea {
+    --ds-input-text-floating-label-resize: 0.666; // to resize floating label from 24px to 16px
+
+    @include ds-input-field.text-area;
+
+    display: flex;
+
+    .ds-input-field-wrapper {
+        --ds-input-fields-padding-space: 0;
+
+        @include helper.set-font-variables('text-area-input', 'label', 'lg');
+        @include helper.set-font-variables('text-area-label', 'body', 'lg');
+        @include helper.setup-font-style('text-area-input');
+
+        width: var(--ds-input-fields-size-helper);
+
+        label {
+            left: var(--ds-input-fields-space-padding-left);
+        }
+    }
+
+    textarea {
+        --ds-input-fields-margin-top: calc(var(--ds-text-area-label-line-height) * var(--ds-input-text-floating-label-resize));
+        --ds-input-fields-resize-space: 4px;
+        --ds-input-fields-padding-right: calc(var(--ds-input-fields-space-padding-right) - var(--ds-input-fields-resize-space));
+        --ds-input-fields-padding-bottom: calc(var(--ds-input-fields-space-padding-bottom) - var(--ds-input-fields-resize-space));
+
+        flex-grow: 1;
+        min-height: var(--ds-input-fields-size-min-height);
+        min-width: var(--ds-input-fields-size-min-width);
+        margin: var(--ds-input-fields-margin-top) var(--ds-input-fields-resize-space) var(--ds-input-fields-resize-space)
+            var(--ds-input-fields-reset-helper);
+        overflow: auto;
+        padding: var(--ds-input-fields-reset-helper) var(--ds-input-fields-padding-right) var(--ds-input-fields-padding-bottom)
+            var(--ds-input-fields-space-padding-left);
+    }
+
+    .ds-input-field-content {
+        padding: var(--ds-input-fields-space-padding-top) var(--ds-input-fields-padding-space) var(--ds-input-fields-padding-space)
+            var(--ds-input-fields-padding-space);
+    }
+
+    label {
+        transform-origin: top left;
+
+        @include helper.setup-font-style('text-area-label');
+    }
+
+    .ds-input-field-textarea-charcount {
+        @include helper.set-font-variables('text-area-counter', 'label', 'xs-strong');
+        @include helper.setup-font-style('text-area-counter');
+
+        color: var(--counter-color);
+        display: flex;
+        position: absolute;
+        right: var(--ds-input-fields-space-padding-right);
+        top: var(--ds-input-fields-space-padding-top);
+    }
+
+    &.ds-input-field-floating-label {
+        label {
+            transform: scale(var(--ds-input-text-floating-label-resize));
+        }
+    }
+}
+
+/* stylelint-disable block-no-empty */
+
+/* dummy keyframes to detect animation when autofill is applied (internal-input-suggested) */
+
+@keyframes autofill-start {
+    from {
+    }
+
+    to {
+    }
+}
+
+@keyframes autofill-end {
+    from {
+    }
+
+    to {
+    }
+}

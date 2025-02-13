@@ -1,0 +1,41 @@
+{
+    "name": "design-system-figma-export-feature",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/figma-export-feature/src",
+    "projectType": "library",
+    "tags": ["type:feature", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/build/packages/design-system/figma-export-feature",
+                "main": "packages/design-system/figma-export-feature/src/index.ts",
+                "tsConfig": "packages/design-system/figma-export-feature/tsconfig.lib.json",
+                "assets": ["packages/design-system/figma-export-feature/*.md"]
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/package.json"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/figma-export-feature/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/figma-export-feature/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

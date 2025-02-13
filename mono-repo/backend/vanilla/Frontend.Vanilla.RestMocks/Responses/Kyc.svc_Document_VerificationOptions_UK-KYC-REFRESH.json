@@ -1,0 +1,94 @@
+{
+    "currentStepName": "ADDRESS",
+    "statuscode": 200,
+    "verificationSteps": [
+        {
+            "allowedDocuments": [
+                {
+                    "documentType": "ID_CARD",
+                    "documentTypeDescription": "ID can be any id(National id)",
+                    "initiateMethod": "INITIATE_NETVERIFY"
+                },
+                {
+                    "documentType": "DRIVING_LICENSE",
+                    "documentTypeDescription": "Driving License",
+                    "initiateMethod": "INITIATE_NETVERIFY"
+                },
+                {
+                    "documentType": "PASSPORT",
+                    "documentTypeDescription": "Passport",
+                    "initiateMethod": "INITIATE_NETVERIFY"
+                }
+            ],
+            "documentTypeUsed": null,
+            "previousAttemptStatusCode": 0,
+            "stepName": "IDENTITY",
+            "stepStatus": "VERIFIED"
+        },
+        {
+            "allowedDocuments": [
+                {
+                    "documentType": "LAG",
+                    "documentTypeDescription": "Lease Agreement",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "LOAP",
+                    "documentTypeDescription": "Loan Application",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "MOAP",
+                    "documentTypeDescription": "Mortgage Application",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "PB",
+                    "documentTypeDescription": "Phone bill",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "SEL",
+                    "documentTypeDescription": "School Enrolment Letter",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "TR",
+                    "documentTypeDescription": "Tax Return",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "UB",
+                    "documentTypeDescription": "Utility bill",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "DRIVING_LICENSE",
+                    "documentTypeDescription": "Driving License",
+                    "initiateMethod": "INITIATE_NETVERIFY"
+                },
+                {
+                    "documentType": "CCS",
+                    "documentTypeDescription": "Credit Card Statement",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "BS",
+                    "documentTypeDescription": "Bank Statement",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                },
+                {
+                    "documentType": "CB",
+                    "documentTypeDescription": "Council Tax Bill",
+                    "initiateMethod": "INITIATE_MULTIDOC"
+                }
+            ],
+            "documentTypeUsed": null,
+            "previousAttemptStatusCode": 0,
+            "stepName": "ADDRESS",
+            "stepStatus": "PENDING"
+        }
+    ],
+    "verificationType": "MULTI_STEP",
+    "verificationVendor": "JUMIO"
+}

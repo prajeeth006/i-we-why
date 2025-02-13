@@ -1,0 +1,10 @@
+{
+    "amount": 1000,
+    "currency": "GBP",
+    "errorCode": "",
+    "errorDesc": "",
+    "status": "PAID_OUT",
+    "transactionDate": "/Date(1359694800000)/",
+    "valueTicketStatus": "PAID_OUT",
+    "wltRefId": 0
+}

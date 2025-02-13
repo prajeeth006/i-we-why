@@ -1,0 +1,28 @@
+@mixin shared {
+    --ds-expandable-card-color-text-strong: var(--semantic-color-on-surface-base);
+    --ds-expandable-card-color-text-subtle: var(--semantic-color-on-surface-subtle);
+    --ds-expandable-card-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-expandable-card-size-border: var(--semantic-size-xquarter);
+    --ds-expandable-card-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-expandable-card-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-expandable-card-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-expandable-card-space-padding-top: var(--semantic-spacing-container-padding-xl);
+}
+
+@mixin surface-high {
+    --ds-expandable-card-color-background: var(--semantic-color-surface-container-high-base);
+    --ds-expandable-card-color-border: var(--semantic-color-surface-outline-high-base);
+    --ds-expandable-card-color-divider: var(--semantic-color-on-surface-container-high-divider);
+}
+
+@mixin surface-low {
+    --ds-expandable-card-color-background: var(--semantic-color-surface-container-low-base);
+    --ds-expandable-card-color-border: var(--semantic-color-surface-outline-low-base);
+    --ds-expandable-card-color-divider: var(--semantic-color-on-surface-container-low-divider);
+}
+
+@mixin surface-lowest {
+    --ds-expandable-card-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-expandable-card-color-border: var(--semantic-color-surface-outline-lowest-base);
+    --ds-expandable-card-color-divider: var(--semantic-color-on-surface-container-lowest-divider);
+}

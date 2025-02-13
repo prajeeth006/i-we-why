@@ -1,0 +1,11 @@
+<article>
+    <header>
+        <h1>{$ doc.title $}</h1>
+    </header>
+    <div class="banner">
+        <p class="text-body">{$ doc.intro $}</p>
+    </div>
+    <section class="docs-content">
+        {$ doc.description | marked | prettyprint $}
+    </section>
+</article>

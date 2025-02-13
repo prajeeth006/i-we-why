@@ -1,0 +1,39 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as HelpGroupComponentStories from '../help-group.component.stories';
+
+The `DsHelpGroup` is designed to stack multiple small `DsHelpItem`s together.
+You can also use `DsHelpItem` individually for a single help text.
+
+<Canvas of={HelpGroupComponentStories.Default}></Canvas>
+
+## Usage
+
+Import `DsHelpGroup` and `DsHelpItem` in your component.
+
+```ts
+import { DsHelpGroup, DsHelpItem } from '@frontend/ui/help-group'; // 👈 add to file imports
+
+@Component({
+    imports: [DsHelpGroup, DsHelpItem], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+It's commonly used for password input fields to provide contextual guidance below the field, giving real-time feedback based on the user's input.
+To use the `DsHelpGroup` component, include the `<ds-help-group></ds-help-group>` selector in your template which contains `header` slot.
+
+-   **Header:** Use `slot="header"` to specify the content for the header of the help-group.
+
+    The content inside the help group is rendered defined by using `<ds-help-item></ds-help-item>` contains slots `icon` and `content` and an input of `type`:
+
+-   **inverse:** Use input `inverse=true` to set for using inverse theme coloring.
+
+To use the `DsHelpItem` component, include the `<ds-help-item></ds-help-item>` selector in your template which contains `icon` slot.
+
+-   **Text:** Use `slot="text"` attribute to specify the content;
+-   **type:** Use input `type="success"` | `type="error"` | `type="info"` | `type="caution"` to color the content by current theme that is applied (default: success);
+-   **isRightAligned:** Use input `isRightAligned="true"`` to align the help text for the corresponding input field (default: false);
+-   **inverse:** Use input `inverse=true` to set for using inverse theme coloring.

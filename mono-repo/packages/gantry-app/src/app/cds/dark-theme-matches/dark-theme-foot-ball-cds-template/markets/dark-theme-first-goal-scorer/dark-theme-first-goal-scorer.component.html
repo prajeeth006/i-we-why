@@ -1,0 +1,40 @@
+<div
+    id="firstGoalscorer"
+    *ngIf="multiMarket && multiMarket?.selections?.length > 0"
+    [ngClass]="isTwoMarkets ? 'first-goal-scrorecontainer two-markets__available' : 'first-goal-scrorecontainer'">
+    <div class="bet-details-header">
+        <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title | titlecase }}</div>
+    </div>
+    <div id="multiMarket" class="multimarket-container__main" *ngFor="let selection of multiMarket?.selections">
+        <div class="marketdata">
+            <div class="marketdata__left" *ngIf="selection?.homeSelectionTitle">
+                <div id="homePrice" class="betOdds tilted-card football--multimarket__price" autoAdjustFont>
+                    <span *ngIf="selection?.homePrice" class="tilted-text">{{ selection?.homePrice | prepareEvsPipe }} </span>
+                </div>
+                <div id="homeSelectionTitle" class="betName football--multimarket__name" *ngIf="!multiMarket?.trimValue">
+                    <span *ngIf="selection?.homeSelectionTitle">{{ selection?.homeSelectionTitle }} </span>
+                </div>
+                <div id="homeSelectionTrimTitle" class="betName football--multimarket__name" *ngIf="multiMarket?.trimValue">
+                    <span *ngIf="selection?.homeSelectionTitle">{{ selection?.homeSelectionTitle | trimSelectionNamePipe: nameLength }} </span>
+                </div>
+            </div>
+        </div>
+        <div class="marketdata">
+            <div class="marketdata__right" *ngIf="selection?.awaySelectionTitle">
+                <div id="awaySelectionTitle" class="betName football--multimarket__name" *ngIf="!multiMarket?.trimValue">
+                    <span *ngIf="selection?.awaySelectionTitle">{{
+                        selection?.awaySelectionTitle && !selection?.hideAwayTitle ? selection?.awaySelectionTitle : ''
+                    }}</span>
+                </div>
+                <div id="awaySelectionTrimTitle" class="betName football--multimarket__name" *ngIf="multiMarket?.trimValue">
+                    <span *ngIf="selection?.awaySelectionTitle">
+                        {{ selection?.awaySelectionTitle | trimSelectionNamePipe: nameLength }}
+                    </span>
+                </div>
+                <div id="awayPrice" class="betOdds tilted-card football--multimarket__price" autoAdjustFont>
+                    <span *ngIf="selection?.awayPrice" class="tilted-text">{{ selection?.awayPrice | prepareEvsPipe }} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

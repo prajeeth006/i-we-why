@@ -1,0 +1,77 @@
+@import './src/global-style/all-variables.scss';
+
+.base-body-wrapper {
+    background-color: $body-color-p2-lighter-bg;
+
+    .selection-table {
+        list-style: none;
+        padding: 0px;
+        margin-top: 26px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 15px;
+        }
+
+        li {
+            display: flex;
+            align-items: stretch;
+            color: $body-color-p2;
+            font-size: $font-list-lg-title;
+            margin-bottom: 6px;
+            box-sizing: border-box;
+            height: 117px;
+
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 3px;
+                font-size: $single-list-title;
+                height: 58px;
+            }
+
+            .items {
+                display: flex;
+                align-items: center;
+            }
+
+            .market-block{
+                flex: 1;
+                display: flex;
+                background-color: $color-p6;
+
+                .table-item-1 {
+                    box-sizing: border-box;
+                    padding: 0px 60px 0px 20px;
+
+                    @include breakpoint(multidesktop) {
+                        padding: 0px 30px 0px 10px;
+                    }
+
+                    img {
+                        width: 81px;
+                        height: 81px;
+
+                        @include breakpoint(multidesktop) {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+                }
+            }
+
+            .table-item-3 {
+                flex-basis: 244px;
+                box-sizing: border-box;
+                background-color: $body-color-p2-light-bg;
+
+                &.items {
+                    justify-content: center;
+                }
+
+                @include breakpoint(multidesktop) {
+                    flex-basis: 120px;
+                }
+            }
+        }
+    }
+}

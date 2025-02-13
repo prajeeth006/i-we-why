@@ -1,0 +1,291 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <gn-dark-theme-base-page>
+            <ng-container header-content>
+                <gn-dark-theme-header-full
+                    [title]="
+                        vm?.eventName
+                            ? vm?.eventName + ' ' + (vm?.horseRacingStaticContent?.contentParameters?.Results ?? '')
+                            : (vm?.horseRacingStaticContent?.contentParameters?.Results ?? '')
+                    "
+                    [isFrom]="'horse'"
+                    [racingImage]="
+                        vm?.isVirtualEvent
+                            ? vm?.horseRacingStaticContent?.racingVirtualImage?.src
+                            : vm?.horseRacingStaticContent?.horseRacingImage?.src
+                    ">
+                </gn-dark-theme-header-full>
+            </ng-container>
+            <ng-container body-content>
+                <div #meetingResultBlock id="meetingResultBlock" class="meetingResultBlock"></div>
+                <ng-container *ngIf="!!vm?.isResultAvailable">
+                    <ng-container *ngFor="let meetingResult of meetingTableResult.horseRacingMeetingResultsTable">
+                        <div *ngIf="meetingResult.page == pageDetails.currentPageNumber" id="block" class="table-block">
+                            <div class="stage-boxes">
+                                <div class="left-boxes">
+                                    <div class="event-date-time-box" id="eventDateTime">
+                                        {{ meetingResult?.eventDateTime ? (meetingResult.eventDateTime | eventDatetimeChangeformat) : '' }}
+                                    </div>
+                                    <div class="nonrunner-box" *ngIf="meetingResult?.isNonRunner && !meetingResult?.hideHeader">
+                                        <span>
+                                            {{ vm?.horseRacingStaticContent?.contentParameters?.NonRunner ?? '' }}
+                                            {{ meetingResult?.nonRunnerList | nonRunnerList }}</span
+                                        >
+                                    </div>
+                                </div>
+                                <ng-container
+                                    *ngIf="
+                                        meetingResult?.stewardsState?.toUpperCase() !=
+                                        vm?.horseRacingStaticContent?.contentParameters?.ResultComplete?.toUpperCase()
+                                    ">
+                                    <div
+                                        [ngClass]="
+                                            meetingResult?.isVoidRace ||
+                                            meetingResult?.stewardsState?.toUpperCase() ==
+                                                vm?.horseRacingStaticContent?.contentParameters?.RaceAbandoned?.toUpperCase()
+                                                ? 'void-race'
+                                                : 'right-box'
+                                        ">
+                                        <div class="state-box" *ngIf="meetingResult?.stewardsState">
+                                            <span>{{ meetingResult?.stewardsState | titlecase }}</span>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <table
+                                id="customers"
+                                class="meeting-results-table"
+                                *ngIf="
+                                    !!meetingResult?.isMarketSettled &&
+                                    !meetingResult?.isVoidRace &&
+                                    meetingResult?.stewardsState?.toUpperCase() !=
+                                        vm?.horseRacingStaticContent?.contentParameters?.RaceAbandoned?.toUpperCase()
+                                ">
+                                <tr id="meetingResultHeader" class="meeting-results-header">
+                                    <th class="head-eachway" colspan="2">
+                                        <span id="eachWay" class="eachway">{{
+                                            meetingResult?.eachWays ? (meetingResult?.eachWays | titleCaseExceptPipe) : ' '
+                                        }}</span>
+                                    </th>
+                                    <th id="raceStageHeader" class="head-ran race-stage-head">
+                                        <div id="header" class="ran">
+                                            <span id="RunnerCount" class="fav" *ngIf="meetingResult?.runnerCount"
+                                                >{{ meetingResult?.runnerCount }}
+                                                {{
+                                                    vm?.horseRacingStaticContent?.contentParameters?.RAN
+                                                        ? (vm?.horseRacingStaticContent?.contentParameters?.RAN | titlecase)
+                                                        : ''
+                                                }}</span
+                                            >
+                                        </div>
+                                    </th>
+                                    <th class="header-fc-tc">
+                                        <div id="header" class="fc-tc">
+                                            <span id="RunnerCount" class="fav">
+                                                {{ forecastTags?.forecast | titlecase }} / {{ forecastTags?.tricast | titlecase }}</span
+                                            >
+                                        </div>
+                                    </th>
+                                    <th id="Win" class="win">
+                                        <span id="staticWin">
+                                            {{
+                                                vm?.horseRacingStaticContent?.contentParameters?.Win
+                                                    ? (vm?.horseRacingStaticContent?.contentParameters?.Win | titlecase)
+                                                    : ''
+                                            }}
+                                        </span>
+                                    </th>
+                                    <th id="Place" class="place">
+                                        <span id="staticPlace">
+                                            {{
+                                                vm?.horseRacingStaticContent?.contentParameters?.Place
+                                                    ? (vm?.horseRacingStaticContent?.contentParameters?.Place | titlecase)
+                                                    : ''
+                                            }}
+                                        </span>
+                                    </th>
+                                    <th id="Tote" class="tote">
+                                        <span id="staticTote">
+                                            {{
+                                                meetingResult?.raceStage === RaceStage.VOIDRACE
+                                                    ? ''
+                                                    : vm?.horseRacingStaticContent?.contentParameters?.Tote
+                                                      ? (vm?.horseRacingStaticContent?.contentParameters?.Tote | titlecase)
+                                                      : ''
+                                            }}
+                                        </span>
+                                    </th>
+                                </tr>
+                                <tr id="meetingResultData" class="meeting-results-data" *ngIf="meetingResult?.runnerList?.length > 0">
+                                    <td id="runnerPosition" class="runner-position">
+                                        <ul id="listItems" class="list-items">
+                                            <li *ngFor="let runners of meetingResult?.runnerList" id="runnerList">
+                                                <div class="position-deadheat">
+                                                    <span *ngIf="runners?.isDeadHeat" id="deadHeat">
+                                                        {{ vm?.horseRacingStaticContent?.contentParameters?.DH ?? '' }}
+                                                    </span>
+                                                    <span *ngIf="runners?.position" id="Position">
+                                                        {{ runners?.position | runnerPositionSuffix }}
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="runner-number-name">
+                                        <div id="secondRow" class="second-row" *ngIf="meetingResult?.raceStage">
+                                            <ul id="listItems" class="list-items">
+                                                <li *ngFor="let runners of meetingResult?.runnerList" class="runner-details" id="runnerDetails">
+                                                    <div id="RunnerNumber" class="number">{{ runners?.horseRunnerNumber }}</div>
+                                                    <div id="HorseName" class="name">
+                                                        {{ runners?.horseName | titlecase }}
+                                                        <span id="Reserved" class="reserve-text" *ngIf="runners.isReserved">
+                                                            {{ '(' + (vm.horseRacingStaticContent?.contentParameters?.Res ?? '') + ')' | titlecase }}
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td class="runner-price-fav">
+                                        <div id="secondRow" class="second-row" *ngIf="meetingResult?.raceStage">
+                                            <ul id="listItems" class="list-items">
+                                                <li *ngFor="let runners of meetingResult?.runnerList" class="runner-details" id="runnerDetails">
+                                                    <div id="Price" class="horse-odds">{{ runners?.price | marketPriceTransform }}</div>
+                                                    <div id="favorite" class="fav">
+                                                        {{
+                                                            runners?.favourite
+                                                                ? runners?.favourite.toUpperCase() == favouriteReplaceChar
+                                                                    ? (vm?.horseRacingStaticContent?.contentParameters?.Favourite ?? '')
+                                                                    : runners?.favourite
+                                                                : ''
+                                                        }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td id="forecasTricast" class="foreCast-or-tricast">
+                                        <ul id="listItems" class="list-items">
+                                            <li *ngIf="meetingResult?.foreCast" id="Forecast" class="forecast">
+                                                <span id="foreCastName">
+                                                    {{
+                                                        vm?.horseRacingStaticContent?.contentParameters?.ForeCast
+                                                            ? (vm?.horseRacingStaticContent?.contentParameters?.ForeCast | titlecase)
+                                                            : ''
+                                                    }}
+                                                </span>
+                                                <div class="forecast-value" id="forecastValue">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4"
+                                                        [gnDividendsVScroll]="meetingResult?.isForecastVerticalScroll">
+                                                        <span *ngFor="let foreCast of slashSeperator(meetingResult?.foreCast)">{{ foreCast }}</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li *ngIf="meetingResult?.triCast" id="Tricast" class="tricast">
+                                                <span id="triCastName">
+                                                    {{
+                                                        vm?.horseRacingStaticContent?.contentParameters?.TriCast
+                                                            ? (vm?.horseRacingStaticContent?.contentParameters?.TriCast | titlecase)
+                                                            : ''
+                                                    }}
+                                                </span>
+                                                <div class="tricast-value" id="tricastValue">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4"
+                                                        [gnDividendsVScroll]="meetingResult?.isTricastVerticalScroll"
+                                                        *ngIf="meetingResult?.triCast">
+                                                        <span *ngFor="let triCast of slashSeperator(meetingResult?.triCast)">{{ triCast }}</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="win-column" id="winColumn">
+                                        <ul class="list-items" id="listItems" *ngIf="meetingResult?.win">
+                                            <li *ngFor="let win of slashSeperator(meetingResult?.win)" id="Dividends">
+                                                <div class="win-value" id="winValue">{{ win | fixedDecimal }}</div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td id="placecolumn" class="place-column">
+                                        <ul class="list-items" id="listItems">
+                                            <li *ngFor="let places of meetingResult?.placeDividends" id="Dividends">
+                                                <div class="place-value" id="placeValue">{{ places?.dividend | fixedDecimal }}</div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td id="exactaTrifecta" class="exacta-or-trifecta">
+                                        <ul id="listItems" class="list-items">
+                                            <li *ngIf="meetingResult?.totes?.exacta" id="Exacta" class="exacta">
+                                                <span id="exactaTitle">{{
+                                                    vm?.horseRacingStaticContent?.contentParameters?.Exacta
+                                                        ? (vm?.horseRacingStaticContent?.contentParameters?.Exacta | titlecase)
+                                                        : ''
+                                                }}</span>
+                                                <div class="exacta-value" id="exactaValue">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4"
+                                                        [gnDividendsVScroll]="meetingResult?.totes?.isToteExactaVerticalScroll">
+                                                        <span *ngFor="let exacta of slashSeperator(meetingResult?.totes?.exacta)" id="exactaNumber">
+                                                            {{
+                                                                (exacta | fixedDecimal) == DividendValue
+                                                                    ? (vm?.horseRacingStaticContent?.contentParameters?.NotWon ?? '')
+                                                                    : (exacta | fixedDecimal)
+                                                            }}</span
+                                                        >
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li *ngIf="meetingResult?.totes?.trifecta" id="Trifecta" class="trifecta">
+                                                <span id="trifectaTitle">
+                                                    {{
+                                                        !!meetingResult?.totes?.trifecta
+                                                            ? vm?.horseRacingStaticContent?.contentParameters?.Trifecta
+                                                                ? (vm?.horseRacingStaticContent?.contentParameters?.Trifecta | titlecase)
+                                                                : ''
+                                                            : ''
+                                                    }}
+                                                </span>
+                                                <div class="trifecta-value" id="trifectaValue">
+                                                    <span
+                                                        class="dividends-grid dividends-grid__col-4"
+                                                        [gnDividendsVScroll]="meetingResult?.totes?.isToteTrifectaVerticalScroll">
+                                                        <span
+                                                            *ngFor="let trifecta of slashSeperator(meetingResult?.totes?.trifecta)"
+                                                            id="trifectaNumber">
+                                                            {{
+                                                                (trifecta | fixedDecimal) == DividendValue
+                                                                    ? (vm?.horseRacingStaticContent?.contentParameters?.NotWon ?? '')
+                                                                    : (trifecta | fixedDecimal)
+                                                            }}</span
+                                                        >
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <gn-dark-theme-filler-page [pageName]="'horse-racing'" [fillerPageMessage$]="fillerPageMessage$"></gn-dark-theme-filler-page>
+            </ng-container>
+            <ng-container
+                footer-content
+                *ngIf="(fillerPageMessage$ | async) === false || (fillerPageMessage$ | async) === null || (fillerPageMessage$ | async) === undefined">
+                <gn-dark-theme-footer
+                    [extendedWidthToHalf]="'meeting-results-content__footer'"
+                    [jackPot]="vm?.jackPot"
+                    [placePot]="vm?.placePot"
+                    [quadPot]="vm?.quadPot"
+                    [contentParameter]="vm?.horseRacingStaticContent?.contentParameters ?? {}"
+                    [rightSideText]="pageDetails.paginationText">
+                </gn-dark-theme-footer>
+            </ng-container>
+        </gn-dark-theme-base-page>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

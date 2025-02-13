@@ -1,0 +1,133 @@
+@use '../../generated/styles/components/progress-bar/progress-bar' as ds-progress-bar;
+@use '../../fonts/font-helper' as helper;
+
+.ds-progress-bar {
+    .ds-progress-bar-container {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    &:not(.ds-progress-bar-with-counter) {
+        .ds-progress-bar-container {
+            background-color: var(--ds-progress-bar-color-background);
+            border-radius: var(--ds-progress-bar-radius-outside-border);
+            margin-bottom: var(--ds-progress-bar-spacing-bar-margins);
+            margin-top: var(--ds-progress-bar-spacing-bar-margins);
+            overflow: hidden;
+        }
+    }
+
+    @include ds-progress-bar.shared;
+
+    &.ds-progress-bar-primary {
+        @include ds-progress-bar.primary-default;
+    }
+
+    &.ds-progress-bar-secondary {
+        @include ds-progress-bar.secondary-default;
+    }
+
+    &.ds-progress-bar-positive {
+        @include ds-progress-bar.positive-default;
+    }
+
+    &.ds-progress-bar-negative {
+        @include ds-progress-bar.negative-default;
+    }
+
+    &.ds-progress-bar-inverse {
+        &.ds-progress-bar-primary {
+            @include ds-progress-bar.primary-inverse;
+        }
+
+        &.ds-progress-bar-secondary {
+            @include ds-progress-bar.secondary-inverse;
+        }
+
+        &.ds-progress-bar-positive {
+            @include ds-progress-bar.positive-inverse;
+        }
+
+        &.ds-progress-bar-negative {
+            @include ds-progress-bar.negative-inverse;
+        }
+
+        .ds-progress-bar-subtext {
+            color: var(--ds-progress-bar-color-text-inverse);
+        }
+    }
+}
+
+.ds-progress-bar-outer {
+    --ds-progress-bar-helper-width: calc(100% - var(--ds-progress-bar-value));
+
+    background-color: var(--ds-progress-bar-color-background);
+    border-radius: var(--ds-progress-bar-radius-inside-end-border) var(--ds-progress-bar-radius-outside-border)
+        var(--ds-progress-bar-radius-outside-border) var(--ds-progress-bar-radius-inside-end-border);
+    height: var(--ds-progress-bar-size-bar-height);
+    width: var(--ds-progress-bar-helper-width);
+}
+
+.ds-progress-bar-subtext {
+    color: var(--ds-progress-bar-color-text);
+    display: flex;
+    justify-content: space-between;
+
+    @include helper.set-font-variables('ds-progress-bar-subtext', 'body', 'sm');
+    @include helper.setup-font-style('ds-progress-bar-subtext');
+
+    &:empty {
+        display: none;
+    }
+}
+
+/* Progress Fill */
+.ds-progress-bar-inner {
+    border-radius: var(--ds-progress-bar-radius-inside-start-border) var(--ds-progress-bar-radius-inside-end-border)
+        var(--ds-progress-bar-radius-inside-end-border) var(--ds-progress-bar-radius-inside-start-border);
+    height: var(--ds-progress-bar-size-bar-height);
+    transition: width 0.3s ease-in-out;
+    width: var(--ds-progress-bar-value);
+}
+
+.ds-progress-bar-solid {
+    .ds-progress-bar-inner {
+        background: var(--ds-progress-bar-color-foreground);
+    }
+}
+
+.ds-progress-bar-pattern {
+    --ds-progress-bar-counter-step-1: 3px;
+    --ds-progress-bar-counter-step-2: 6px;
+    --ds-progress-bar-counter-pattern-size: 9px;
+
+    .ds-progress-bar-inner {
+        background-size: var(--ds-progress-bar-counter-pattern-size);
+        background-image: repeating-linear-gradient(
+            135deg,
+            var(--ds-progress-bar-color-foreground),
+            var(--ds-progress-bar-color-foreground) var(--ds-progress-bar-counter-step-1),
+            var(--ds-progress-bar-color-background) var(--ds-progress-bar-counter-step-1),
+            var(--ds-progress-bar-color-background) var(--ds-progress-bar-counter-step-2)
+        );
+    }
+}
+
+/* Counter */
+.ds-progress-bar-counter {
+    @include ds-progress-bar.counter;
+    @include helper.set-font-variables('ds-progress-bar-counter', 'label', 'sm');
+    @include helper.setup-font-style('ds-progress-bar-counter');
+
+    align-items: center;
+    background-color: var(--ds-progress-bar-color-background);
+    border-radius: var(--ds-progress-bar-radius-border);
+    border: var(--ds-progress-bar-border-border-width) solid var(--ds-progress-bar-color-counter-border);
+    box-sizing: border-box;
+    color: var(--ds-progress-bar-color-counter-text);
+    display: flex;
+    height: var(--ds-progress-bar-size-min-height);
+    padding-left: var(--ds-progress-bar-spacing-left-padding);
+    padding-right: var(--ds-progress-bar-spacing-right-padding);
+}

@@ -1,0 +1,177 @@
+@use 'helpers/mixins' as helper;
+@import 'variables.scss';
+
+.carousel-header-style {
+    @include helper.flex-container(flex-start, center);
+    cursor: move;
+    background-color: $background-grey-color;
+    @include helper.font-styles($txt-md-font-size, $fw-bold);
+    border-radius: 8px 8px 0 0;
+    height: 70px;
+    color: $color-black-light;
+}
+
+.carousel-header-title {
+    @include helper.font-styles($txt-sm-font-size, $fw-bold, 1.25px, 16.41px);
+    text-align: left;
+    color: $light-black-border;
+}
+
+.carousel-header-label {
+    @include helper.font-styles($txt-sm-font-size, $fw-bold, 1.25px, 14.06px);
+}
+
+.carousel-body-content-table {
+    align-content: center;
+    border-radius: 2px;
+    border: 1px dashed $text-black-color;
+    margin: 20px 0;
+    height: 521px;
+    background: $white;
+
+    .select-preset {
+        @include helper.center-content();
+        color: $text-black-color;
+        @include helper.font-styles($txt-sm-font-size, $fw-bold, 0.4px, 14.52px);
+    }
+}
+
+.footer-btn-style {
+    cursor: pointer;
+    @include helper.font-styles($txt-md-font-size, $fw-bold , 1.25px);
+    border-radius: 4px;
+    height: 35px;
+    padding: 0 30px;
+    background-color: $white;
+    border: .6px solid $label-light-black;
+    color: $label-light-black;
+    box-sizing: border-box;
+
+    .button-with-icon {
+        @include helper.button-with-icon()
+    }
+
+    &.reset-sequence-btn {
+        max-width: 219px;
+    }
+
+    &.back-btn {
+        max-width: 101px;
+    }
+
+    &.cancel-btn {
+        max-width: 120px;
+    }
+
+    &.success-sequence-btn {
+        background-color: $btn-success-bg;
+        color: $white;
+        border: none;
+        padding: 10px 30px;
+        min-height: 35px;
+    }
+
+    &.create-sequence-btn {
+        background-color: $btn-success-bg;
+        color: $white;
+        border: none;
+        padding: 10px 20px;
+        min-height: 35px;
+    }
+
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+.label-text {
+    margin-top: 2px;
+}
+
+.carousel-footer {
+    @include helper.flex-container(space-between, center);
+    height: 75px;
+    padding: 20px;
+    gap: 15px;
+    background-color: $background-grey-color;
+
+    &__right {
+        @include helper.flex-container(flex-end, center);
+        height: 35px;
+        flex-grow: 1;
+        column-gap: 15px;
+
+        .footer-btn {
+            @extend .footer-btn-style;
+        }
+    }
+
+}
+
+@mixin horse-racing-columns {
+
+    &.tb-row {
+        @include helper.flex-container(flex-start, center);
+        margin-bottom: 10px;
+        column-gap: 20px;
+    }
+
+    .number {
+        text-align: center;
+        flex: 0 0 42px;
+        width: 42px;
+    }
+
+    .drag-icon {
+        flex: 0 0 24px;
+        @include helper.flex-container(center, center);
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .icon {
+        font-size: 24px;
+        flex-basis: 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    input:read-only {
+        border: none;
+        background: transparent;
+        font-size: 12px;
+        font-family: 'Roboto';
+        color: $color-black-light;
+        padding: 0px;
+    }
+
+    .event {
+        flex: 0 0 140px;
+    }
+
+    .category {
+        flex: 0 0 100px;
+        max-width: 100px;
+
+    }
+
+    .preset-select {
+        flex: 0 0 171px;
+        margin: 3px 0;
+        @include helper.flex-container(flex-start, center);
+
+        .mat-mdc-form-field {
+            width: 171px;
+        }
+    }
+}

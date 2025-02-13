@@ -1,0 +1,440 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+$full: 100%;
+$half: 50%;
+
+@mixin min-max-width($width) {
+    min-width: $width;
+    max-width: $width;
+
+    @include breakpoint(multidesktop) {
+        min-width: calc($width / 2);
+        max-width: calc($width / 2);
+    }
+}
+
+@mixin width-height($width, $height) {
+    height: $height;
+    min-width: $width;
+    width: $width;
+
+    @include breakpoint(multidesktop) {
+        height: calc($height / 2);
+        min-width: calc($width / 2);
+        width: calc($width / 2);
+    }
+}
+
+.header-status-box {
+    border-radius: 25px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    font-size: $font-list-title;
+
+    @include width-height(240px, 130px);
+
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        border-radius: 12.5px;
+        border-width: 2.5px;
+        font-size: $txt-sm-font-size;
+    }
+
+    span {
+        font-size: 40px;
+        line-height: 35px;
+        padding: 0;
+        text-align: center;
+
+        @include breakpoint(multidesktop) {
+            font-size: 20px;
+            line-height: 17.5px;
+        }
+    }
+}
+
+.football--multimarket {
+    .bet-details-container {
+        margin-top: 21.64px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 10.82px;
+        }
+
+        .match-betting-section {
+            .player-details-section {
+                .full-market-1,
+                .full-market-2 {
+                    min-width: $half;
+                }
+
+                .draw-price {
+                    @include width-height(238px, 80px);
+
+                    margin: 0 30px;
+
+                    @include breakpoint(multidesktop) {
+                        margin: 0 15px;
+                    }
+                }
+
+                .market-1,
+                .market-2 {
+                    white-space: unset;
+
+                    @include min-max-width(472px);
+
+                    span {
+                        display: block;
+                        width: $full;
+                        @include text-truncate;
+                    }
+                }
+            }
+
+            .bet-price {
+                @include width-height(238px, 80px);
+            }
+        }
+    }
+
+    &__name {
+        border-bottom: solid 4px $color-white;
+        color: $color-white;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 900;
+        height: 80px;
+        line-height: normal;
+        text-transform: capitalize;
+        width: $full;
+
+        @include breakpoint(multidesktop) {
+            border-bottom-width: 2px;
+            font-size: 30px;
+            height: 40px;
+        }
+    }
+
+    &__price {
+        @include width-height(238px, 80px);
+
+        @include flex-center;
+
+        background-color: $color-white;
+        border-radius: 25px;
+        color: $early-price-text;
+        line-height: normal;
+        overflow: hidden;
+        font: {
+            size: 60px;
+            style: normal;
+            weight: 900;
+        }
+        text : {
+            align: center;
+            overflow: ellipsis;
+            transform: capitalize;
+        }
+
+        @include breakpoint(multidesktop) {
+            border-radius: 12.5px;
+            font-size: 30px;
+        }
+
+        &.correct-score__price {
+            @include width-height(220px, 74px);
+
+            & + .football--multimarket__name {
+                height: 100%;
+            }
+        }
+
+        span {
+            @include flex-center;
+        }
+    }
+}
+
+.correct-score-container {
+    margin: 28px 18px 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 14px 9px 0;
+    }
+
+    .correct-score-section {
+        height: 74px;
+
+        @include breakpoint(multidesktop) {
+            height: 37px;
+        }
+    }
+
+    &.two-markets__available {
+        margin-top: 24px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 12px;
+        }
+    }
+}
+
+.total-goals__wrap {
+    margin-top: 24px;
+    padding-bottom: 8.36px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 12px;
+        padding-bottom: 4.18px;
+    }
+
+    .bet-details-header {
+        margin-bottom: 14px;
+        color: $color-white;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 34px;
+        text-align: center;
+
+        @include breakpoint(multidesktop) {
+            font-size: 24px;
+            line-height: 17px;
+            margin-bottom: 7px;
+        }
+
+        .bet-price {
+            width: 238px;
+
+            @include breakpoint(multidesktop) {
+                width: 119px;
+            }
+        }
+
+        .bet-details-title {
+            color: $market-title-color;
+        }
+    }
+}
+
+.bet-details-container {
+    .match-betting-details-header {
+        .bet-details-title {
+            color: $market-title-color;
+            font-size: $font-48;
+            font-weight: $fw-medium;
+            text-align: center;
+            height: 34px;
+            line-height: 34px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-24;
+                height: 17px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .match-betting-section {
+        display: flex;
+        align-items: center;
+        height: $fs-md-cricket-row-height;
+        font-size: $font-60;
+        font-weight: $fw-bold;
+        margin-top: 10px;
+
+        @include breakpoint(multidesktop) {
+            height: $fs-sm-cricket-row-height;
+            font-size: $font-30;
+            margin-top: 5px;
+        }
+
+        .bet-price {
+            color: $state-box-text;
+            background-color: $state-box-bg;
+            height: 80px;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                height: 40px;
+            }
+        }
+
+        .player-details-section {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            height: 100%;
+            margin: 0px 30px;
+            color: $color-white;
+            @include text-truncate;
+
+            @include breakpoint(multidesktop) {
+                margin: 0px 15px;
+            }
+
+            .text-v {
+                text-align: center;
+                padding-left: 17px;
+                padding-right: 17px;
+                width: 76px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    padding-left: 8.5px;
+                    padding-right: 8.5px;
+                    width: 38px;
+                }
+            }
+
+            .draw-price {
+                text-align: center;
+                color: $state-box-text;
+                background-color: $color-white;
+                height: 80px;
+                @include flex-center;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                }
+            }
+
+            .market-1,
+            .market-2 {
+                width: 606px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 303px;
+                }
+            }
+
+            .full-market-1,
+            .full-market-2 {
+                width: 644px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 322px;
+                }
+            }
+
+            .market-2,
+            .full-market-2 {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.bet-details-item,
+.correct-score-section,
+.multimarket-container__main {
+    &:not(:last-child) {
+        margin-bottom: 6px;
+
+        @include breakpoint(multidesktop) {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+.flex-space-center {
+    @include flex-container(space-between, center);
+
+    gap: 30px;
+
+    @include breakpoint(multidesktop) {
+        gap: 15px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.border-bottom-none {
+    border-bottom: none;
+}
+
+html[data-domain='coral.co.uk'] {
+    .header {
+        .header__title--block {
+            .header__title--block-left {
+                .header__logo {
+                    @include width-height(124px, 124px);
+
+                    margin-right: 8px;
+                    margin-top: -7px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-right: 4px;
+                        margin-top: -3.5px;
+                    }
+
+                    img {
+                        @include width-height(108px, 108px);
+
+                        margin: 8px;
+                        object-fit: contain;
+
+                        @include breakpoint(multidesktop) {
+                            margin: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+html[data-domain='ladbrokes.com'] {
+    .header {
+        .header__title--block {
+            column-gap: 27.69px;
+
+            @include breakpoint(multidesktop) {
+                column-gap: 13.85px;
+            }
+        }
+    }
+
+    body {
+        .header .header__title--block .header__title--block-left .header__title:before {
+            @include breakpoint(multidesktop) {
+                width: calc(100% - 11px);
+            }
+        }
+    }
+
+    .header-status-box.tilted-card {
+        @include width-height(206px, 130px);
+    }
+
+    .football--multimarket__price {
+        @include width-height(216.57px, 80px);
+
+        &.correct-score__price {
+            @include width-height(200.17px, 74px);
+        }
+    }
+
+    .football--multimarket {
+        .bet-details-container {
+            .match-betting-section {
+                .player-details-section .draw-price,
+                .bet-price {
+                    @include width-height(216.57px, 80px);
+                }
+            }
+            .player-details-section {
+                .market-2,
+                .market-1 {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

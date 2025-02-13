@@ -1,0 +1,29 @@
+/** @deprecated This mixin is no longer available in Figma */
+@mixin error {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-toast-message-color-icon: var(--semantic-color-negative-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin info {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-toast-message-color-icon: var(--semantic-color-utility-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin shared {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-toast-message-color-text: var(--semantic-color-on-surface-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin success {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-toast-message-color-icon: var(--semantic-color-positive-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin warning {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-toast-message-color-icon: var(--semantic-color-caution-base);
+}

@@ -1,0 +1,50 @@
+namespace Frontend.Vanilla.Features.LazyFeatures;
+
+internal static class FeatureIds
+{
+    public const string ActivityPopup = "activity-popup";
+    public const string BottomNav = "bottom-nav";
+    public const string Clock = "clock";
+    public const string CookieConsent = "cookie-consent";
+    public const string DebounceButtons = "debounce-buttons";
+    public const string DepositLimitExceeded = "deposit-limit-exceeded";
+    public const string DepositPrompt = "deposit-prompt";
+    public const string DepositSession = "deposit-session";
+    public const string DropdownHeader = "dropdown-header";
+    public const string Footer = "header";
+    public const string Geolocation = "geolocation";
+    public const string Header = "header";
+    public const string Inactive = "inactive";
+    public const string InactivityScreen = "inactivity-screen";
+    public const string Inbox = "inbox";
+    public const string LabelSwitcher = "label-switcher";
+    public const string LanguageSwitcher = "language-switcher";
+    public const string LastSessionInfo = "last-session-info";
+    public const string LivePerson = "live-person";
+    public const string Login = "login-new";
+    public const string LoginDuration = "login-duration";
+    public const string LossLimits = "loss-limits";
+    public const string NativeApp = "native-app";
+    public const string OfferButton = "offer-button";
+    public const string Offers = "offers";
+    public const string Offline = "offline";
+    public const string OfflinePage = "offline-page";
+    public const string PlayBreak = "play-break";
+    public const string PlayerActiveWager = "player-active-wager";
+    public const string PlayerAttributes = "player-attributes";
+    public const string PlayerGamingDeclaration = "player-gaming-declaration";
+    public const string PlayerLimits = "player-limits";
+    public const string Prerender = "prerender";
+    public const string ProductSwitchCoolOff = "product-switch-cool-off";
+    public const string RangeDatepicker = "range-datepicker";
+    public const string RedirectMessage = "redirect-message";
+    public const string ReferredFriends = "referred-friends";
+    public const string RememberMeLogoutPrompt = "remember-me-logout-prompt";
+    public const string SessionInfo = "session-info";
+    public const string SessionLimits = "session-limits";
+    public const string SingleSignOn = "single-sign-on";
+    public const string SmartBanner = "smart-banner";
+    public const string TerminalSession = "terminal-session";
+    public const string UserFlags = "user-flags";
+    public const string UserSummary = "user-summary";
+}

@@ -1,0 +1,49 @@
+@import '../../../../../global-style/all-variables';
+
+.bet-details-item {
+    display: flex;
+    color: $body-color-txt;
+    font-size: $font-list-lg-title-avr;
+    margin-bottom: 4px;
+    height: 68px;
+    align-items: center;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        margin-bottom: 2px;
+        height: 34px;
+    }
+
+    .bet-price {
+        width: 160px;
+        text-align: center;
+        background-color: $body-color-p2-light;
+
+        @include breakpoint(multidesktop) {
+            width: 80px;
+        }
+    }
+
+    .bet-details {
+        flex: 1;
+        text-align: center;
+        background-color: $white;
+    }
+}
+
+.autoScroll {
+    max-height: 212px;
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    @include breakpoint(multidesktop) {
+        max-height: 106px;
+    }
+}
+.autoScroll::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,195 @@
+@import '../../../shared-css/variables.scss';
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.mat-tab-header-pagination-chevron {
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  height: 6px;
+  width: 6px;
+  border-color: rgba(253, 253, 253, 0.87);
+  transform: rotate(133deg);
+  display: flex;
+  position: relative;
+  top: -2px;
+}
+
+::ng-deep .mat-mdc-button {
+  letter-spacing: normal;  
+}
+
+.btn {
+  align-items: center;
+  display: inline-flex;
+  overflow-y: clip;
+  position: relative;
+
+  &--plus-new {
+    padding: 5px;
+    height: 26px;
+    margin-left: 16px;
+
+    &::before, &::after {
+      font-family: 'Material Icons';
+      line-height: 1;
+      width: 16px;
+      height: 16px;
+      color: $white;
+    }
+
+    &::before {
+      content: 'add_alt';
+      font-size: $txt-lg-font-size;
+      margin-right: 5px;
+    }
+
+    &::after {
+      content: 'arrow_drop_down';
+      font-size: 18px;
+      margin-left: 10px;
+    }    
+  }
+
+  &--state-active {
+    background-color: #004779; 
+  }
+
+  &__label {    
+    color: $white;    
+    font-size: $txt-sm-font-size;
+    letter-spacing: 1.25px;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+
+  &[disabled]{
+    opacity: 0.5;
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  &.new-header-main-dropdown {
+    background: #004779;
+    width: 208px;
+    margin-top: 1px;
+
+    &.in-ladbrokes {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AA0202;
+    }
+
+    .mat-mdc-menu-content:not(:empty) {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    .mat-mdc-menu-item {
+      color: #fff;
+      font-size: 14px;
+      height: 30px;
+      min-height: 30px;
+      line-height: 20px;
+      padding: 5px 10px;
+    }
+
+    .mat-mdc-menu-item:hover:not([disabled]) {
+      background-color: #037AFF;
+    }
+
+    &.action-open-dropdown {
+      width: 120px;
+      min-height: unset;
+      margin: -8px 0 0 -76px;
+      background-color: #fff;
+
+      .mat-mdc-menu-item {
+        color: $label-light-black;
+
+        &:hover:not([disabled]) {
+          background-color: rgba(227, 232, 235, 0.62);
+          ;
+        }
+      }
+    }
+  }
+
+  &.new-header-sub-dropdown {
+    background: #004779;
+    min-width: 102px;
+    max-width: 102px;
+    min-height: 0px;
+
+    .mat-mdc-menu-content:not(:empty) {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    .mat-mdc-menu-item {
+      color: #fff;
+      font-size: 14px;
+      height: 30px;
+      min-height: 30px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+      padding: 5px 10px;
+    }
+
+    .mat-mdc-menu-item:hover:not([disabled]) {
+      background-color: #037AFF;
+    }
+
+    &.action-open-subdropdown {
+      width: 120px;
+      min-height: unset;
+      margin: -8px 0 0 -76px;
+      background-color: #fff;
+
+      .mat-mdc-menu-item {
+        color: $label-light-black;
+
+        &:hover:not([disabled]) {
+          background-color: rgba(227, 232, 235, 0.62);
+          ;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .ladbrokes-background-colour {
+  ::ng-deep .mat-mdc-button {
+    &.with-icon {
+      &.active {
+        background-color: #AA0202;
+      }
+
+      &::before {
+        content: '';
+        background-color: #9D0303;
+      }
+    }
+  }
+
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  &.new-header-main-dropdown {
+    &.in-ladbrokes {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AA0202;
+    }
+  }
+
+  &.new-header-sub-dropdown {
+    &.in-ladbrokes {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AA0202;
+    }
+
+  }
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of menu that may no longer apply for the MDC version. */
+::ng-deep .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
+  --mat-menu-item-icon-color: $white;
+}
+::ng-deep .mat-mdc-menu-content, .mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
+  --mat-menu-item-label-text-size: 14px;
+}

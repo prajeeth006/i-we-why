@@ -1,0 +1,86 @@
+@using Newtonsoft.Json.Linq
+
+@code {
+
+    [Parameter]
+    public JToken Model { get; set; }
+
+    [Parameter]
+    public string JsonPath { get; set; }
+
+    [Parameter]
+    public string Class { get; set; }
+
+    [Parameter]
+    public bool IsCondensed { get; set; }
+
+    [Parameter]
+    public bool HideValues { get; set; }
+
+}
+
+<span class="@Class @(JsonPath == null ? "json-viewer" : null) @(IsCondensed ? "condensed" : null)" data-json-path="@JsonPath">
+    @if (HideValues)
+    {
+        <span class="value">
+            <em>Values are hidden due to security reasons</em>
+        </span>
+    }
+
+    @switch (Model)
+    {
+        case null:
+
+        case JValue { Type: JTokenType.Null }:
+            <span class="value">null</span>
+
+            break;
+
+        case JArray { Count: 0 }:
+
+        case JObject { Count: 0 }:
+            <span class="value" title="Empty array or object">&empty;</span>
+
+            break;
+
+        case JArray array:
+            <ol>
+                @for (var i = 0; i < array.Count; i++)
+                {
+                    <li>
+                        <JsonViewer Model="array[i]" JsonPath="@($"{JsonPath}[{i}]")"/>
+                    </li>
+                }
+            </ol>
+
+            break;
+
+        case JObject obj:
+            <ul>
+                @foreach (var property in obj.Properties().OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
+                {
+                    <li>
+                        <span class="property">@property.Name</span> =
+                        <JsonViewer Model="property.Value" JsonPath="@(JsonPath != null ? $"{JsonPath}.{property.Name}" : JsonPath)"/>
+                    </li>
+                }
+            </ul>
+
+            break;
+
+        case JValue { Type: JTokenType.Uri }:
+            <a href="@Model" target="_self" class="value">@Model</a>
+
+            break;
+
+        case JValue { Type: JTokenType.String }:
+            <span class="value">&quot;@Model&quot;</span>
+
+            break;
+
+        default:
+            <span class="value">@Model</span>
+
+            break;
+    }
+</span>

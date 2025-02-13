@@ -1,0 +1,11 @@
+<div class="base-page" [ngClass]="[screenType === isHalfscreenType ? 'halfScreen' : '', !!pageWrapperClass ? pageWrapperClass : '']">
+    <div class="base-page__header" [ngClass]="headerWrapperClass">
+        <ng-content select="[header-content]"></ng-content>
+    </div>
+    <div class="base-page__body" [ngClass]="bodyWrapperClass">
+        <ng-content select="[body-content]"></ng-content>
+    </div>
+    <div class="base-page__footer" [ngClass]="footerWrapperClass">
+        <ng-content select="[footer-content]"></ng-content>
+    </div>
+</div>

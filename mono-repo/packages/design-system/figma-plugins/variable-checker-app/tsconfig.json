@@ -1,0 +1,23 @@
+{
+    "extends": "../../../../tsconfig.base.json",
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        }
+    ],
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "target": "ES6",
+        "lib": ["ES6"],
+        "strict": true,
+        "typeRoots": ["../../../../node_modules/@types", "../../../../node_modules/@figma"],
+        "esModuleInterop": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true
+    }
+}

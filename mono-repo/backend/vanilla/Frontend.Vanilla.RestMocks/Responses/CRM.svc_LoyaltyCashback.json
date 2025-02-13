@@ -1,0 +1,12 @@
+{
+    "optinStatus": true,
+    "cashbackAmount": 50,
+    "cashbackCurrency": "EUR",
+    "eligibleForClaim": false,
+    "claimedAmount": 0,
+    "claimedAmountCurrency": "EUR",
+    "minEligibleAmount": 100,
+    "minEligibleAmountCurrency": "EUR",
+    "minPointsReqForRedeem": 100,
+    "currentPoints": 20
+}

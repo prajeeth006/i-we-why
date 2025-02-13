@@ -1,0 +1,125 @@
+@import './src/global-style/_all-variables.scss';
+
+.marketContent {
+    display: flex;
+    margin: 0;
+    color: $color-p1-text;
+
+    @include breakpoint(multidesktop) {
+        margin: 0;
+    }
+
+    &-right,
+    &-left {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+    }
+
+    .market {
+        flex: 0 0 auto;
+        width: 162px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(multidesktop) {
+            width: 80px;
+        }
+
+        .market-titel {
+            width: 100%;
+
+        }
+
+        .marketContent-center {
+            width: 100%;
+            height: 100%;
+        }
+
+        .betOdds {
+            width: 100%;
+        }
+    }
+
+    .item-lg {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &.away {
+            align-items: flex-end;
+
+            .betName {
+                text-align: right;
+                justify-content: flex-end;
+            }
+        }
+
+    }
+
+    .market-titel {
+        width: 162px;
+        display: flex;
+        padding: 6px 0;
+        justify-content: center;
+        font-size: $txt-lg-title-size;
+        color: $body-color-txt;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-lg-font-size;
+            width: 80px;
+        }
+    }
+
+    .betName {
+        @include text-truncate;
+        font-size: $font-list-lg-title-avr;
+        background-color: $white;
+        padding: 0px 20px;
+        flex: 1;
+        color: $body-color-txt;
+        height: 70px;
+        align-items: center;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-lg-font-size;
+            height: 34px;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    .betOdds {
+        font-size: $font-list-lg-title-avr;
+        background: $body-color-p2-light;
+        width: 160px;
+        @include flex-center;
+        height: 100%;
+        color: $body-color-txt;
+        height: 70px;
+        line-height: 60px;
+        align-items: center;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-lg-font-size;
+            height: 34px;
+            width: 80px;
+        }
+
+    }
+
+    &.rugbyPage {
+        align-items: flex-end;
+
+        @include breakpoint(multidesktop) {
+            padding: 10px 0px;
+            margin: 0px;
+        }
+    }
+
+}

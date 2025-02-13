@@ -1,0 +1,185 @@
+@import './src/global-style/_all-variables.scss';
+
+.banner {
+  //background-color: $color-p1-bg;
+  margin: 0 0;
+  font-weight: bold;
+
+  .banner-title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 132px;
+    box-sizing: border-box;
+    padding-top: 3px;
+    background-color: $color-p1-bg;
+
+
+    @include breakpoint(multidesktop) {
+      height: 66px;
+      padding-top: 2px;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding-left: 20px;
+
+      @include breakpoint(multidesktop) {
+        padding-left: 10px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 10px;
+
+      .ng-star-inserted {
+        display: flex;
+      }
+
+      .h-logo {
+        width: 332px;
+        height: 107px;
+
+        @include breakpoint(multidesktop) {
+          width: 172px;
+          height: 55px;
+        }
+      }
+    }
+
+    .rightText {
+      color: $white;
+      font-size: $h1-font-size;
+      padding-right: 10px;
+    }
+
+    .meeting-result-betting-market {
+      color: $white;
+      font-size: $txt-lg-font-size;
+      margin-right: 20px;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-md-font2-size;
+        margin-right: 10px;
+      }
+
+      .market-row {
+        display: flex;
+
+        .market-text {
+          text-align: right;
+          width: 150px;
+
+          @include breakpoint(multidesktop) {
+            width: 120px;
+          }
+        }
+
+        .market-value {
+          padding-left: 10px;
+
+          @include breakpoint(multidesktop) {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      span {
+        color: $body-color-p2-light;
+      }
+    }
+  }
+
+  .lead-title {
+    color: $white;
+    font-size: $h4-lg-font-size;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-md-font-size;
+    }
+  }
+
+  .main-title-row {
+    display: flex;
+
+    .main-title {
+      color: $white;
+      font-size: $h1-lg-font-size;
+      width: 1743px;
+      @include text-truncate;
+
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-xl-font-size;
+        min-height: 20px;
+        width: 850px;
+      }
+
+      @include breakpoint(multidesktophalf) {
+        font-size: $h3-lg-font-size;
+      }
+    }
+
+    &>div {
+      min-height: 40px;
+    }
+  }
+
+  .banner-sub-title {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    border: 2px solid $body-color-p2;
+    background: $white;
+    height: 60px;
+    font-size: $txt-sm-font1-size;
+    box-sizing: border-box;
+
+    @include breakpoint(multidesktop) {
+      border: 1px solid $body-color-p2;
+      font-size: $txt-md-font-size;
+      height: 30px;
+    }
+
+    .banner-sub-title-left {
+      min-width: 50%;
+      display: flex;
+      align-items: center;
+      color: $body-color-txt;
+      padding-left: 20px;
+      font-size: $font-list-lg1-title;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-md-font-size;
+        padding: 0 0 0 10px;
+      }
+    }
+
+    .banner-sub-title-right {
+      // flex-basis: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: $body-color-txt;
+      font-size: $font-list-lg1-title;
+      flex-grow: 1;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-md-font-size;
+      }
+
+      .subtitle-text {
+        padding-right: 20px;
+
+        @include breakpoint(multidesktop) {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

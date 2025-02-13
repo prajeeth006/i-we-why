@@ -1,0 +1,19 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+.header-current-price,
+.header-plus1-market {
+    width: 234px;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+    }
+}
+
+.header__title-block--right {
+    .header-plus1-market {
+        &.betting-bg {
+            background: $betting-bg;
+            border-color: $betting-bg;
+        }
+    }
+}

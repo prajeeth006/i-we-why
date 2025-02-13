@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: var(--figma-color-bg);
+                color: var(--figma-color-text);
+                padding: 2em;
+                font-family: Inter, sans-serif;
+            }
+
+            select {
+                padding: 0 0 0 7px;
+                height: 28px;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--figma-color-text-onbrand);
+                background-color: var(--figma-color-bg-brand);
+                flex-shrink: 0;
+                text-decoration: none;
+                outline: none;
+                border: 1px solid var(--figma-color-border-brand);
+                font-weight: 500;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 12px;
+                box-sizing: border-box;
+                border-radius: 6px;
+                margin-top: 1em;
+            }
+
+            button:hover {
+                background-color: var(--figma-color-bg-brand-hover);
+            }
+
+            button:active {
+                background-color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button:disabled {
+                opacity: 0.5;
+                background-color: var(--figma-color-bg-brand);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Variable Manager</h1>
+        <p>Do sophisticated variable management with ease.</p>
+
+        <div id="result"></div>
+        <script>
+            document.addEventListener('change', (event) => {
+                const form = event.target.closest('form');
+                if (form) {
+                    var formData = new FormData(form);
+                    parent.postMessage({ pluginMessage: { type: 'form-update', data: Object.fromEntries(formData) } }, '*');
+                }
+            });
+
+            document.addEventListener('submit', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                var formData = new FormData(event.target);
+                parent.postMessage({ pluginMessage: { type: 'form-submit', data: Object.fromEntries(formData) } }, '*');
+            });
+
+            window.onmessage = (event) => {
+                const message = event.data.pluginMessage;
+                document.getElementById('result').innerHTML = message.data;
+            };
+        </script>
+    </body>
+</html>

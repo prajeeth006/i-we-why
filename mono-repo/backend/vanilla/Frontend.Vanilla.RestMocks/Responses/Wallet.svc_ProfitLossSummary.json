@@ -1,0 +1,17 @@
+{
+    "currency": "GBP",
+    "summaryResults": [
+        {
+            "aggregationFilter": "filter",
+            "aggregationTime": "/Date(1620388932332)/",
+            "currency": "GBP",
+            "totalReturn": 1.23,
+            "totalStake": 2.34
+        }
+    ],
+    "weeklyAverage": 75,
+    "monthlyAverage": 300,
+    "yearlyAverage": 3600,
+    "totalReturn": 345,
+    "totalStake": 456
+}

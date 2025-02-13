@@ -1,0 +1,24 @@
+@mixin disabled {
+    --ds-switch-color-knob-off: var(--semantic-color-on-disabled-base);
+    --ds-switch-color-knob-on: var(--semantic-color-on-disabled-base);
+    --ds-switch-color-label: var(--semantic-color-on-disabled-base);
+    --ds-switch-color-track-off: var(--semantic-color-disabled-base);
+    --ds-switch-color-track-on: var(--semantic-color-disabled-base);
+}
+
+@mixin enabled {
+    --ds-switch-color-knob-off: var(--semantic-color-surface-base);
+    --ds-switch-color-knob-on: var(--semantic-color-surface-base);
+    --ds-switch-color-label: var(--semantic-color-on-surface-base);
+    --ds-switch-color-track-off: var(--semantic-color-opacity-base);
+    --ds-switch-color-track-on: var(--semantic-color-utility-base);
+}
+
+@mixin shared {
+    --ds-switch-radius-track-border: var(--semantic-radius-max);
+    --ds-switch-size-knob-height: var(--semantic-size-x5);
+    --ds-switch-size-knob-width: var(--semantic-size-x5);
+    --ds-switch-size-track-height: var(--semantic-size-x6);
+    --ds-switch-size-track-width: var(--semantic-size-x11);
+    --ds-switch-space-inline: var(--semantic-size-x3);
+}

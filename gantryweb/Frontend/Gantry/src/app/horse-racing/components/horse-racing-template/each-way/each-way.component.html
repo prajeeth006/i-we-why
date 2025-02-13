@@ -1,0 +1,16 @@
+<div class="info-row">
+   <gn-footer [rightSideText]="'showRight'">
+        <ng-container left-side-content>
+            <span id="RunCount" class="run-count">{{ !!runnerCount ? runnerCount : '' }} {{ !!runnerCount ?
+                isEventResulted ?
+                horseRacingContent?.contentParameters?.RAN : horseRacingContent?.contentParameters?.RUN : '' }}</span>
+            <span id="marketEachWay">{{ marketEachWayString }}</span>
+        </ng-container>
+
+        <ng-container right-side-content *ngIf="!isHalfScreenType && racingPostTipHorseName">
+            <img class="c-logo" [retrySrc]="horseRacingContent?.racingPostImage?.src" id="logo" height="15vh">
+            <span id="TipName" [ngClass]="isNonRunner ? 'tip-nonrunnername' : 'tip-name'">{{ racingPostTipHorseName |
+                uppercase}}</span>
+        </ng-container>
+    </gn-footer>
+</div>

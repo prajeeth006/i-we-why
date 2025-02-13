@@ -1,0 +1,281 @@
+{
+    "issuedBonus": {
+        "bonusIssueId": 77,
+        "bonusOfferId": 47,
+        "accountName": "AccountNameef95efcd-da92-4e8f-8e59-fe14d33476b5",
+        "bonusId": 6,
+        "bonusCode": "BonusCodefa58336f-5733-4c86-a5ab-56ab572f8444",
+        "bonusType": 22,
+        "trackerId": 227,
+        "depositTransactionId": 74,
+        "bonusOfferedDate": "/Date(...)/",
+        "bonusAcceptedDate": "/Date(...)/",
+        "bonusExpiryDate": "/Date(...)/",
+        "bonusReleaseDate": "/Date(...)/",
+        "bonusDroppedDate": "/Date(...)/",
+        "bonusRestrictionType": 11,
+        "gamesValid": 38,
+        "gamesConditionType": 83,
+        "depositAmount": 1.93,
+        "restrictedDepositAmount": 1.17,
+        "bonusAmount": 0.78,
+        "releaseBonusAmount": 2.39,
+        "currentRestrictedAmount": 1.47,
+        "bonusStatus": 21,
+        "gamingActivityKey": "GamingActivityKeyc339069b-1c0c-47a5-93b7-fe4a978c174b",
+        "issuedBonusReleaseConditions": [
+            {
+                "pendingRelease": 4556,
+                "totalRelease": 4556,
+                "status": 1,
+                "slabNmbr": 0,
+                "bonusAmount": 34,
+                "bonusTxnId": 641821060,
+                "gamingActivityKey": "PARTY_ARA_BLM_ACTIVITYTYPE_WAGERNONE",
+                "gamingActivityType": 2,
+                "productId": "CASINO",
+                "brandId": "BWINCOM"
+            }
+        ],
+        "paymodesList": ["Mode1", "Mode2"],
+        "playedBonusGames": [
+            {
+                "gameType": 23423423423423422000,
+                "gameCountType": 123,
+                "gameCountRequiredValue": 124234234234234240000,
+                "gameCountCurrentValue": 325345345345345360000
+            }
+        ],
+        "releaseRequirement": "ReleaseRequirementd49eac0d-c362-4098-94e2-0dafa8a96e5c",
+        "statusDescription": "StatusDescriptiond903da5b-a614-477d-bd9a-2cd9cd342740",
+        "depositRestrictionType": 61,
+        "winningsRestrictionType": 31,
+        "expiryRecoveryType": 148,
+        "offerBonusValueType": 204,
+        "offerBonusValue": 1.55,
+        "offerMaxBonusAmount": 0.48,
+        "offerExpiryDays": 51,
+        "optInType": 80,
+        "bonusOfferUrl": "BonusOfferUrl4b59ae65-3206-443b-a020-c0cfe8c88448",
+        "reason": "Reason7b5533ae-2e5b-4141-ad36-2793d642682e",
+        "updatedAgentName": "UpdatedAgentName6b205f88-18c9-4de6-963e-fbde2a1fd962",
+        "updatedDate": "/Date(...)/",
+        "acType": "ACType2aaaffe5-2330-4f56-b39a-fda32a2c34b3",
+        "acSymbol": "ACSymbol92dcc5b6-4c6a-4789-9716-c0134a15ba11",
+        "linkedBonus": 40,
+        "brandIdArray": ["BWINCOM"],
+        "brandsCondType": "BrandsCondType0dd06179-84dd-47bd-8b87-8e83f23767fc",
+        "pointsFlag": 250,
+        "showStatusBar": 41,
+        "totalValue": 1.37,
+        "currentValue": 0.98,
+        "pendingValue": 0.08,
+        "showButtonFlag": 234,
+        "playerPrefOrder": 56,
+        "noOfSlabsReleased": 20,
+        "noOfSlabs": 59,
+        "isPartialIssuedBonus": 221,
+        "sDepositTranId": "SDepositTranId0c17de36-073d-424c-ae39-4dabcc8d0136",
+        "bonusFreeRoll": 7,
+        "tdValue": 1.42,
+        "tdCurrency": "EUR",
+        "disconnectExhaust": "DisconnectExhaust1946516b-102e-4a13-9583-92e0b3c65e87",
+        "disconnectWithdrawal": "DisconnectWithdrawale767546d-1d75-4521-b869-484d57df9315",
+        "disconnectDrop": "DisconnectDrop07216bcf-64bf-4010-9fbe-555c5bf7dbe3",
+        "disconnectExpires": "DisconnectExpires55d9bbfc-3575-447a-8715-9c34d7514ccd",
+        "campaignType": "CampaignTypec5708fbd-c308-4c60-b4e3-c30133feb049",
+        "agentName": "AgentNamec3ff55d0-c178-4886-b846-e80f7538fe6a",
+        "campaignName": "CampaignName3b80e3c9-0ef2-4969-bda1-a2cd0f773262",
+        "brpcType": "BrpcType1cf5f052-05cb-49ad-b6f5-dfd31ce23694",
+        "gameVariantInfo": "GameVariantInfo72c0388b-cdcc-4f27-b6c7-da5beeb7a0df",
+        "applicablePayModes": [
+            "3313492b-36df-4d90-8fc1-1a3347224a0a",
+            "16f0bef8-6219-4b14-bd2b-945e0650d565",
+            "c4f2b82f-edb0-4619-b24a-b786228ac06d"
+        ],
+        "countryList": ["AT"],
+        "minOdds": "MinOdds3dd27448-02db-4d7a-81ff-f51393d5a571",
+        "casinoGames": {
+            "games": [
+                {
+                    "gameType": "GameTypebc24ff73-0ac4-45f4-954d-ecf5b8a55a8f",
+                    "gameTypeId": "GameTypeId22e0cd75-6bee-4452-aedb-793113e3f2f1",
+                    "gameTypeKey": "GameTypeKeyc2a0d03e-752b-4e70-988d-5f9c9e71d052",
+                    "gameTableTypeInfo": [
+                        {
+                            "gameDisplayName": "GameDisplayNamec7ad5cc1-c7c3-4bb2-866f-0fff1efa4003",
+                            "gameTableTypeId": "GameTableTypeId70b605ae-8ad3-4ce9-a724-bef2ecbb645a",
+                            "gameVariantName": "GameVariantNamee4ae6834-47a3-44b6-b952-99721b8366d0",
+                            "launcherName": "LauncherNamed4631fe8-ef5e-4045-920f-6c02a1c01b7a"
+                        }
+                    ]
+                }
+            ],
+            "gameSpecificData": true
+        },
+        "bingoGames": {
+            "games": [
+                {
+                    "gameType": "GameTypeaac8374a-e825-48b0-91ed-f3f43f369b1e",
+                    "gameTypeId": "GameTypeIdf9232e1d-df62-42d8-ac8f-503ca6702ae1",
+                    "gameTypeKey": "GameTypeKey558be7df-bacd-4eb1-899f-84d4ad883f36",
+                    "gameTableTypeInfo": [
+                        {
+                            "gameDisplayName": "GameDisplayName37a0287e-a461-45bd-bc02-e2afd528d00d",
+                            "gameTableTypeId": "GameTableTypeId9e4b4450-89d4-45c5-a102-d9cc33682a30",
+                            "gameVariantName": "GameVariantNamec53e5832-eda2-4ef2-962b-39f678a3cc36",
+                            "launcherName": "LauncherNamef4f5ee8d-750f-4a46-b744-3c587b413bbb"
+                        }
+                    ]
+                }
+            ],
+            "gameSpecificData": false,
+            "gamesExcluded": true
+        },
+        "sportsGames": {
+            "slipType": "SlipType57a2101f-76da-428c-b373-1a9e3a6f5d8b",
+            "betType": "BetTypefee97f5f-9d61-43a6-a1cb-a7e0bc2fed2e",
+            "bettingOdds": 3,
+            "overAllOdds": 255,
+            "oddsUsageFlag": "OddsUsageFlsge4ff29e1-a506-4335-9d98-45d51daac4a8",
+            "noOfSelections": 175,
+            "minNoOfBets": 112,
+            "minBetAmt": 24,
+            "includeBetType": "IncludeBetType5e3e3d98-348f-43b2-ae6c-35c038c9165f",
+            "includeBetTypeIds": "IncludeBetTypeIds68e8b205-c5bd-4faf-b0ee-46cdc81497fd",
+            "excludeBetTypeIds": "ExcludeBetTypeIdsb4748b14-844e-41d6-afac-d716f39e7be0",
+            "encodeFormat": "EncodeFormat52fa6d03-4260-41d8-a2e5-907799152a3c",
+            "includeSportsIds": "IncludeSportsIds8da3962c-a259-47ac-874e-772bea3cd821",
+            "excludeSportsIds": "ExcludeSportsIds6ed16225-6c8d-42bc-8f72-89b4a40c8837",
+            "sportsIds": "SportsIds2a374966-ddff-4e69-a2e8-8144844b5aaf",
+            "isExcludeSportsIds": "IsExcludeSportsIdsb98cec4d-6574-442b-9c9a-8967c60f7c81",
+            "contentId": "ContentId3cc6773a-dd50-4f72-aa5a-2dee8d89064f",
+            "gameSpecificData": true,
+            "formatType": [
+                {
+                    "typeName": "minOdds",
+                    "valueList": [
+                        {
+                            "type": "EU",
+                            "value": "6"
+                        },
+                        {
+                            "type": "UK",
+                            "value": "5/1"
+                        }
+                    ]
+                },
+                {
+                    "typeName": "selectionOdds",
+                    "valueList": [
+                        {
+                            "type": "EU",
+                            "value": "3"
+                        },
+                        {
+                            "type": "UK",
+                            "value": "2/1"
+                        }
+                    ]
+                }
+            ],
+            "sportsTranslation": [
+                {
+                    "key": "1",
+                    "value": "My sport"
+                }
+            ],
+            "sportId": ["sport0", "sport1"],
+            "sportNames": ["sportNames0", "sportNames1"],
+            "leaguesTranslation": [
+                {
+                    "key": "1",
+                    "value": "My league"
+                }
+            ],
+            "leagueIds": ["leagues0", "leagues1"],
+            "leagueNames": ["leagueNames0", "leagueNames1"],
+            "eventsTranslation": [
+                {
+                    "key": "1",
+                    "value": "My event"
+                }
+            ],
+            "eventIds": ["events0", "events1"],
+            "eventNames": ["eventNames0", "eventNames1"],
+            "v1MarketTemplateIds": ["v1MarketTemplateIds0", "v1MarketTemplateIds1"],
+            "v1MarketTemplateNames": ["v1MarketTemplateNames0", "v1MarketTemplateNames1"],
+            "v2MarketTemplateList": [
+                {
+                    "period": "period",
+                    "happening": "happening",
+                    "marketType": "marketType"
+                },
+                {
+                    "period": "period",
+                    "happening": "happening",
+                    "marketType": "marketType"
+                }
+            ],
+            "marketTemplatesExcluded": "marketTemplatesExcluded",
+            "excludeGamesWagerFlag": "excludeGamesWagerFlag"
+        },
+        "pokerGames": {
+            "pokerGames": {
+                "gameType": "GameType8809d6dc-f564-4064-94de-c01b427f1f55",
+                "gameTypeId": "GameTypeId98448c29-15c2-4194-9678-e3673f2d25a4",
+                "gameTypeKey": "GameTypeKeyd489d103-ad09-419f-a023-658758141f95",
+                "pokerStakes": "PokerStakes8869468f-ccab-4551-bee0-3bd1ff580294",
+                "noOfSeats": "NoOfSeatse80744cc-ba8b-4fb2-9c78-7acd9f7a4140",
+                "gameVariantName": "GameVariantName45ac5a02-2a45-448c-80c9-8ee8f85ef354"
+            },
+            "gameSpecificData": false
+        },
+        "pointsMinOdds": "PointsMinOdds43b129ff-a919-40a2-827d-690c402edcf6",
+        "playerKycStatus": "PlayerKycStatus2c3063be-7575-419d-8c61-0d81ac35ea23",
+        "lockedBonusAmount": 1.72,
+        "channelInfoList": [
+            {
+                "channel": "Channelb3dc0d20-b806-4467-9719-7e10de8b5113",
+                "category": "Category86089265-9989-4e81-8a61-996206ee1eb3"
+            }
+        ],
+        "bonusRuleId": 123,
+        "customParams": [
+            {
+                "Key": "keyb279e6d0-c36e-4ff7-ac1d-9768debb4ddc",
+                "Value": "value8c200e6c-8c5a-40e0-89d9-e86b77a5a946"
+            }
+        ],
+        "bingoGvbRule": 154,
+        "winningCapAmount": 0.58,
+        "currentBonusWinnings": 1.74,
+        "tncTemplateId": "POST_TNC_CASINO_RR_FB_WG",
+        "miscTemplateId": "SOME_ID",
+        "customVariables": [
+            {
+                "Key": "key06cc02e9-5d2d-4e5f-94b8-a1bc6cbcf7ec",
+                "Value": "value41aa56c7-9cac-4c0c-9e0e-93540b92f6c3"
+            }
+        ],
+        "lastInCampaign": true,
+        "validToCoefficient": false,
+        "maxBetApplicable": true,
+        "feLevelKycConfigured": false,
+        "kycBonus": true,
+        "maxBetToShow": false,
+        "applicableChannels": "ALL",
+        "applicableProducts": "SportsBook",
+        "isWinningcapBonus": "NO",
+        "dropOnWithDraw": false,
+        "winningClaimbackAmount": 23,
+        "bonusClaimbackAmount": 24,
+        "adjustedDeposit": 123,
+        "totalRecoverAmount": 324,
+        "active": false,
+        "winningCapType": "FIXED",
+        "directAward": true
+    },
+    "crmServiceSubType": "CrmServiceSubType6c40a231-21fb-4672-a885-a089429a408f",
+    "cmsTemplateId": "CmsTemplateIdb3d8eb18-3aa1-481e-8081-8f72b06d8ae6"
+}

@@ -1,0 +1,1 @@
+export const IndividualGantryTypes: string[] = ["21", "3x3", "4x4", "5", "5x1", "5x5", "6x6", "DIGI-HUB"]

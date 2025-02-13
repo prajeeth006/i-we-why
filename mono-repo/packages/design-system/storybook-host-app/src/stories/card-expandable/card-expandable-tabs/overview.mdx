@@ -1,0 +1,87 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as CardExpandableStories from '../card-expandable.component.stories';
+
+The Expandable Card Header component, identified by the `ds-card-expandable`, provides a flexible way to add expandable headers to cards in your application. This header component allows you to showcase a title and subtitle, and it supports expandable functionality to reveal additional card body content.
+
+<Canvas of={CardExpandableStories.Default} />
+
+## Usage
+
+Import `DsCardExpandable` in your component, and apply `ds-card-expandable` in your card component.
+
+```ts
+import { DsCardExpandable } from '@frontend/ui/card-expandable'; // 👈 add to file imports
+
+@Component({
+    imports: [DsCardExpandable], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+#### title
+
+-   **Type**: `string`
+-   **Description**: Specifies the main title text to display in the card header. This is a required property, and it sets the primary title for the card header.
+
+#### subtitle
+
+-   **Type**: `string`
+-   **Description**: Specifies an optional subtitle text to display in the card header. This property allows you to add additional descriptive text beneath the main title.
+
+#### variant
+
+-   **Type**: `string`
+-   **Options**: `'surface-lowest'`, `'surface-low'`, `'surface-high'`,
+-   **Default**: `'surface-lowest'`
+-   **Description**: Specifies the visual variant of the expandable card. These variants control the background color and contrast of the header, allowing you to choose a style that fits your design needs.
+
+#### headerVariant
+
+-   **Type**: `string`
+-   **Options**: `'surface-lowest'`, `'surface-low'`, `'surface-high'`, `'surface-highest'`
+-   **Default**: Same as `variant` of the card
+-   **Description**: Specifies a different visual variant for the header if needed. This property is useful if you want the header to have a different style compared to the rest of the card. By default, `headerVariant` is the same as `variant`, meaning the header will inherit the card's visual style unless a different value is specified.
+
+#### elevated
+
+-   **Type**: `boolean`
+-   **Default**: `true`
+-   **Description**: Determines if the card should have elevation (shadow). When set to `true`, the card will have a shadow effect, giving it a raised appearance.
+
+#### expanded
+
+-   **Type**: `boolean`
+-   **Default**: `false`
+-   **Description**: Controls the initial expanded state of the card header. Setting this to `true` will render the card header in an expanded state by default.
+
+### Slots
+
+Slots provide flexible ways to insert custom content into different parts of the `ds-card-expandable` component. Below are the descriptions and uses for each available slot.
+
+#### slot="start"
+
+-   Description: Slot for custom content to be placed at the start of the header. Typically used for icons, images, or other visual indicators.
+
+#### slot="title"
+
+-   Description: Slot for custom content to be placed at the end of the title. This can be used for badges, icons, or any element that complements the title.
+
+#### slot="end"
+
+-   Description: Slot for custom content to be placed at the end of the header. Useful for additional buttons, dividers or any other elements that should appear at the far right of the header.
+
+```
+
+```
+
+## Click Functionality
+
+The `ds-card-expandable` component supports click functionality on both the header and the toggle icon button. When either the header or the toggle icon button is clicked, the expanded state of the card is toggled. The following methods and events are involved:
+
+-   **onHeaderClick**: This method toggles the expanded state of the card when the header is clicked.
+-   **toggleExpand**: This method in the DsCardHeader component handles toggling the expand/collapse state of the card body content when the toggle icon button is clicked.

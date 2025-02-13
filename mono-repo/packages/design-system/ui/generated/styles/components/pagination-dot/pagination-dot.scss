@@ -1,0 +1,44 @@
+@mixin active {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-active);
+}
+
+@mixin active-inverse {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-active-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin default {
+    /** @deprecated This token is no longer available in Figma (2024-11-25T22:51:18.324Z) */
+    --ds-pagination-dot-color-bg: var(--semantic-color-opacity-skrim-strong);
+}
+
+@mixin default-inverse {
+    --ds-pagination-dot-color-bg: var(--semantic-color-opacity-base-inverse);
+}
+
+@mixin enabled {
+    --ds-pagination-dot-color-bg: var(--semantic-color-opacity-skrim-strong);
+}
+
+@mixin enabled-inverse {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-base-inverse);
+}
+
+@mixin hover {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-hover);
+}
+
+@mixin hover-inverse {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-hover-inverse);
+}
+
+@mixin selected {
+    --ds-pagination-dot-color-bg: var(--semantic-color-primary-base);
+}
+
+@mixin share {
+    --ds-pagination-dot-size-height: var(--semantic-size-x2);
+    --ds-pagination-dot-size-use-height: var(--semantic-size-x3);
+    --ds-pagination-dot-size-use-width: var(--semantic-size-x3);
+    --ds-pagination-dot-size-width: var(--semantic-size-x2);
+}

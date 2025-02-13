@@ -1,0 +1,22 @@
+  <div class="correct-score-container" *ngIf=" multiMarket.selections &&  multiMarket.selections.length > 0">
+    <div id="Staticroundvalues" class="correct-score-section" *ngFor=" let roundValue of multiMarket.selections">
+      <div class="home-team-col score-and-price-col" >
+        <!-- Transforming price to show based on hideEntry and hideOdds key values -->
+        <div id="homePrice" class="price-block">{{roundValue?.homePrice | hideEntry : roundValue?.hideHomePrice : roundValue?.hideHomeTitle}}</div> 
+        <div id="homeScore" class="final-score">{{roundValue?.homeSelectionTitle }}</div>
+      </div>
+
+      <div class="draw-details-col score-and-price-col"*ngIf="roundValue?.drawTitle">
+        <div id= "drawScore" class="final-score" >{{roundValue?.drawTitle }} </div>
+        <div id= "drawPrice" class="price-block"> {{roundValue?.drawPrice | hideEntry : roundValue?.hideDrawPrice  : roundValue?.hideDrawTitle}}</div>
+      </div>
+
+      <div class="away-team-col score-and-price-col" >
+        <div id="AwayScore" class="final-score">{{ roundValue?.awaySelectionTitle}}</div>
+        <div id="AwayPrice" class="price-block">{{ roundValue?.awayPrice | hideEntry : roundValue?.hideAwayPrice  : roundValue?.hideAwayTitle}}</div>  
+        
+      </div>
+    </div>
+  </div>
+
+

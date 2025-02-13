@@ -1,0 +1,10 @@
+{
+    "documentVerificationStatus": [
+        {
+            "documentDetails": null,
+            "isVerified": false,
+            "useCase": "SOF",
+            "verifiedTime": null
+        }
+    ]
+}

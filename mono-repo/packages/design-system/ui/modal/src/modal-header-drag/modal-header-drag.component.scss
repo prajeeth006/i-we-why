@@ -1,0 +1,22 @@
+@use '../../../generated/styles/components/modal-header/modal-header' as ds-modal-header;
+
+.ds-modal-header-drag {
+    @include ds-modal-header.dragger;
+
+    --ds-modal-header-border-dragger-rectangle: 25px;
+    --ds-modal-header-height-dragger-rectangle: 4px;
+    --ds-modal-header-width-dragger-rectangle: 44px;
+
+    align-items: center;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+
+    .ds-modal-header-drag-rectangle {
+        display: block;
+        background-color: var(--ds-modal-header-color-dragger);
+        border-radius: var(--ds-modal-header-border-dragger-rectangle);
+        height: var(--ds-modal-header-height-dragger-rectangle);
+        width: var(--ds-modal-header-width-dragger-rectangle);
+    }
+}

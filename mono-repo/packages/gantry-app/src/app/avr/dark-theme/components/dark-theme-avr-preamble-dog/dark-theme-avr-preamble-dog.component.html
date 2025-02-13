@@ -1,0 +1,21 @@
+<ul class="avr-preamble-table selection-table greyhound-table">
+    <li *ngFor="let runner of avrRunnersList">
+        <div class="selection-number traps trap__country--uk" [ngClass]="['trap-' + runner?.runnerNumber]">
+            <span>{{ runner.runnerNumber }}</span>
+        </div>
+
+        <div class="selection-name">
+            <span *ngIf="!!runner.runnerName">
+                {{ runner.runnerName | titlecase }}
+            </span>
+        </div>
+
+        <div class="selection-content">
+            <div *ngIf="!!runner.price" class="selection-price tilted-card" [ngClass]="runner.isFavourite && 'favorite-box'" autoAdjustFont>
+                <span class="tilted-text">
+                    {{ runner.price | marketPriceTransform: false }}
+                </span>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,20 @@
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+    --mdc-tab-indicator-active-indicator-color: #343c46de;
+    --mat-tab-header-disabled-ripple-color: none;
+    --mat-tab-header-pagination-icon-color: #343c46de;
+    --mat-tab-header-inactive-label-text-color: #343c46de;
+    --mat-tab-header-active-label-text-color: #343c46de;
+    --mat-tab-header-active-ripple-color: #343c46de;
+    --mat-tab-header-inactive-ripple-color: #343c46de;
+    --mat-tab-header-inactive-focus-label-text-color: #343c46de;
+    --mat-tab-header-inactive-hover-label-text-color: #343c46de;
+    --mat-tab-header-active-focus-label-text-color: #343c46de;
+    --mat-tab-header-active-hover-label-text-color: #343c46de;
+    --mat-tab-header-active-focus-indicator-color: #343c46de;
+    --mat-tab-header-active-hover-indicator-color: #343c46de;
+}

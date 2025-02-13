@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "Hash": "NHeVfWkQ4PV6iM8I95q17Uj4T+XeBzB7ubWcbToWHVs=",
+  "Source": "Frontend.TestWeb.Host",
+  "BasePath": "_content/Frontend.TestWeb.Host",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Frontend.TestWeb.Host\\wwwroot",
+      "Source": "Frontend.TestWeb.Host",
+      "ContentRoot": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\",
+      "BasePath": "_content/Frontend.TestWeb.Host",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\zoqa4zeehh-jrv623uafb.gz",
+      "SourceId": "Frontend.TestWeb.Host",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\",
+      "BasePath": "_content/Frontend.TestWeb.Host",
+      "RelativePath": "files/test#[.{fingerprint=jrv623uafb}]?.txt.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "k803wip2d3",
+      "Integrity": "9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt"
+    },
+    {
+      "Identity": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt",
+      "SourceId": "Frontend.TestWeb.Host",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\",
+      "BasePath": "_content/Frontend.TestWeb.Host",
+      "RelativePath": "files/test#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jrv623uafb",
+      "Integrity": "T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\test.txt"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "files/test.jrv623uafb.txt",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\zoqa4zeehh-jrv623uafb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.025641025641"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jrv623uafb"
+        },
+        {
+          "Name": "label",
+          "Value": "files/test.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="
+        }
+      ]
+    },
+    {
+      "Route": "files/test.jrv623uafb.txt",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jrv623uafb"
+        },
+        {
+          "Name": "label",
+          "Value": "files/test.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="
+        }
+      ]
+    },
+    {
+      "Route": "files/test.jrv623uafb.txt.gz",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\zoqa4zeehh-jrv623uafb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jrv623uafb"
+        },
+        {
+          "Name": "label",
+          "Value": "files/test.txt.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU="
+        }
+      ]
+    },
+    {
+      "Route": "files/test.txt",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\zoqa4zeehh-jrv623uafb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.025641025641"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="
+        }
+      ]
+    },
+    {
+      "Route": "files/test.txt",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="
+        }
+      ]
+    },
+    {
+      "Route": "files/test.txt.gz",
+      "AssetFile": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\obj\\Debug\\compressed\\zoqa4zeehh-jrv623uafb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 Nov 2024 05:09:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9NujmPe/Kcs296MP6QS+9sFPwYqmsFY8yv1mhT/4gTU="
+        }
+      ]
+    }
+  ]
+}

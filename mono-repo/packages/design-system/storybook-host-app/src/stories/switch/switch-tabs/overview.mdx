@@ -1,0 +1,37 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsSwitchStories from '../switch.component.stories';
+
+The Ds Switch Component is a customizable UI element designed to facilitate binary toggles within an application.
+It can be used to represent and manage states such as on/off, active/inactive, or any other dual-state logic.
+This component is typically styled as a slider that users can interact with by clicking.
+
+<Canvas of={DsSwitchStories.WithLabel} />
+
+## Usage
+
+Import `DsSwitch` in your component, and apply `ds-switch` in your component.
+
+```ts
+import { DsSwitch } from '@frontend/ui/switch'; // 👈 add to file imports
+
+@Component({
+    imports: [DsSwitch], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+There are two slots available `labelOff` and `labelOn` usually for labels, but it can be used for any other element.
+
+### Inputs
+
+-   checked: **boolean** -> It supports 2 way data binding.
+-   disabled: **boolean** -> Specifies whether the switch is in a disabled state.
+-   **all inputs are optional**.
+
+### Outputs
+
+-   checkedChange : **booelan**
+-   touched : **null**

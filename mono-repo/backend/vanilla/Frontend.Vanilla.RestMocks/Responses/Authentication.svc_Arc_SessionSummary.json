@@ -1,0 +1,53 @@
+{
+    "aggregationType": "WEEKLY",
+    "sessionSummary": {
+        "currentAverage": 55,
+        "pastAverage": 30,
+        "productCumulative": {
+            "active": {
+                "sportsbook": 30,
+                "poker": 10,
+                "casino": 20,
+                "bingo": 0
+            },
+            "passive": {
+                "sportsbook": 10,
+                "poker": 10,
+                "casino": 10,
+                "bingo": 10
+            }
+        },
+        "segregation": [
+            {
+                "index": "monday",
+                "active": {
+                    "sportsbook": 1,
+                    "poker": 1,
+                    "casino": 5,
+                    "bingo": 0
+                },
+                "passive": {
+                    "sportsbook": 1,
+                    "poker": 1,
+                    "casino": 5,
+                    "bingo": 0
+                }
+            },
+            {
+                "index": "sunday",
+                "active": {
+                    "sportsbook": 1,
+                    "poker": 0,
+                    "casino": 1,
+                    "bingo": 0
+                },
+                "passive": {
+                    "sportsbook": 1,
+                    "poker": 0,
+                    "casino": 0,
+                    "bingo": 0
+                }
+            }
+        ]
+    }
+}

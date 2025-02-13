@@ -1,0 +1,19 @@
+{
+    "limits": [
+        {
+            "currentLimit": 200,
+            "type": "DAILY",
+            "limitSet": true
+        },
+        {
+            "currentLimit": 500,
+            "type": "WEEKLY",
+            "limitSet": true
+        },
+        {
+            "currentLimit": null,
+            "type": "MONTHLY",
+            "limitSet": false
+        }
+    ]
+}

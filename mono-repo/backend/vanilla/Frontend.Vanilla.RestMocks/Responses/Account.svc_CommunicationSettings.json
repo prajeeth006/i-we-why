@@ -1,0 +1,32 @@
+{
+    "CommunicationTypes": [
+        {
+            "id": 1,
+            "name": "Email",
+            "selected": true
+        },
+        {
+            "id": 2,
+            "name": "Phone",
+            "selected": false
+        }
+    ],
+    "CommunicationProducts": [
+        {
+            "id": 123,
+            "name": "Sports",
+            "CommunicationTypes": [
+                {
+                    "id": 1,
+                    "name": "Newsletter",
+                    "selected": true
+                },
+                {
+                    "id": 2,
+                    "name": "Special offers",
+                    "selected": true
+                }
+            ]
+        }
+    ]
+}

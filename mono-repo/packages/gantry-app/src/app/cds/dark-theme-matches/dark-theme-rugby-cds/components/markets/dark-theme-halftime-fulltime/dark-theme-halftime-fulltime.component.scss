@@ -1,0 +1,79 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+@mixin text-styles {
+    flex: 1;
+    text-align: center;
+    @include text-truncate;
+}
+
+.half-full-container {
+    margin-top: 60px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 30px;
+    }
+
+    .half-full-header {
+        .half-full-title {
+            color: $market-title-color;
+            font-size: $font-48;
+            font-weight: $fw-medium;
+            height: 34px;
+            line-height: 34px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-24;
+                height: 17px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .match-betting-section {
+        display: flex;
+        align-items: center;
+        height: $fs-md-cricket-row-height;
+        font-size: $font-60;
+        font-weight: $fw-bold;
+        margin-top: 10px;
+
+        @include breakpoint(multidesktop) {
+            height: $fs-sm-cricket-row-height;
+            font-size: $font-30;
+            margin-top: 5px;
+        }
+
+        .betOdds {
+            color: $state-box-text;
+            background-color: $state-box-bg;
+            height: 80px;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                height: 40px;
+            }
+        }
+
+        .player-details-section {
+            display: flex;
+            flex: 1;
+            height: 100%;
+            @include bottom-border-weight;
+            @include text-styles;
+            margin-right: 30px;
+
+            @include breakpoint(multidesktop) {
+                margin-right: 15px;
+            }
+
+            .slash-symbol {
+                width: 70px;
+                text-align: center;
+
+                @include breakpoint(multidesktop) {
+                    width: 35px;
+                }
+            }
+        }
+    }
+}

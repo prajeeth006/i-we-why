@@ -1,0 +1,153 @@
+@use '../../generated/styles/components/button-social/button-social' as ds-button-social;
+@use '../../fonts/font-helper' as helper;
+
+.ds-social-button {
+    @include ds-button-social.shared;
+    @include helper.set-font-variables('button', 'label', 'lg-strong');
+    @include helper.setup-font-style('button');
+
+    --ds-button-social-border-width-local: 1px;
+    --ds-button-social-bg: var(--ds-button-social-enabled-bg);
+    --ds-button-social-border: var(--ds-button-social-enabled-border);
+    --ds-button-social-color-text: var(--ds-button-social-enabled-text);
+    --ds-button-social-icon-color: var(--ds-button-social-enabled-icon);
+
+    align-items: center;
+    background: var(--ds-button-social-bg);
+    border: var(--ds-button-social-border-width-local) solid var(--ds-button-social-border);
+    border-radius: var(--ds-button-social-radius-border);
+    box-sizing: border-box;
+    color: var(--ds-button-social-color-text);
+    content-visibility: auto;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--ds-button-social-space-inline);
+    height: var(--ds-button-social-size-height);
+    justify-content: center;
+    padding: var(--ds-button-social-space-padding-top, 0) var(--ds-button-social-space-padding-right, 0)
+        var(--ds-button-social-space-padding-bottom, 0) var(--ds-button-social-space-padding-left, 0);
+
+    // Social button variants
+    &.ds-btn-social-filled-apple {
+        @include ds-button-social.apple-filled;
+    }
+
+    &.ds-btn-social-outline-apple {
+        @include ds-button-social.apple-outline;
+    }
+
+    &.ds-btn-social-filled-entain {
+        @include ds-button-social.entain-filled;
+    }
+
+    &.ds-btn-social-outline-entain {
+        @include ds-button-social.entain-outline;
+    }
+
+    &.ds-btn-social-filled-facebook {
+        @include ds-button-social.facebook-filled;
+    }
+
+    &.ds-btn-social-outline-facebook {
+        @include ds-button-social.facebook-outline;
+    }
+
+    &.ds-btn-social-filled-google {
+        @include ds-button-social.google-filled;
+    }
+
+    &.ds-btn-social-outline-google {
+        @include ds-button-social.google-outline;
+    }
+
+    &.ds-btn-social-filled-mlife {
+        @include ds-button-social.mlife-filled;
+    }
+
+    &.ds-btn-social-outline-mlife {
+        @include ds-button-social.mlife-outline;
+    }
+
+    &.ds-btn-social-filled-paypal {
+        @include ds-button-social.paypal-filled;
+    }
+
+    &.ds-btn-social-outline-paypal {
+        @include ds-button-social.paypal-outline;
+    }
+
+    &.ds-btn-social-filled-yahoo {
+        @include ds-button-social.yahoo-filled;
+    }
+
+    &.ds-btn-social-outline-yahoo {
+        @include ds-button-social.yahoo-outline;
+    }
+
+    &.ds-btn-social-large {
+        @include ds-button-social.large;
+    }
+
+    &.ds-btn-social-medium {
+        @include ds-button-social.medium;
+    }
+
+    &.ds-btn-social-small {
+        @include ds-button-social.small;
+        @include helper.set-font-variables('button', 'label', 'sm-strong');
+    }
+
+    // .ds-social-start-slot:not(:empty) {
+    //     color: var(--ds-button-social-icon-color);
+    //     height: var(--ds-button-social-size-icon);
+    //     width: var(--ds-button-social-size-icon);
+    // }
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-button-social-bg: var(--ds-button-social-hover-bg);
+            --ds-button-social-border: var(--ds-button-social-hover-border);
+            --ds-button-social-icon-color: var(--ds-button-social-hover-icon);
+
+            // --ds-button-social-color-text: var(--ds-button-social-hover-text);
+
+            color: var(--ds-button-social-hover-text);
+
+            /* added this temperory fix to overcome the anchor tag styles which are overriding from themepark file reboot.scss  which will be removed 
+        eventually once we are more stable with DS and more teams have adopted wide range of components from DS */
+        }
+    }
+
+    &:active {
+        --ds-button-social-bg: var(--ds-button-social-active-bg);
+        --ds-button-social-border: var(--ds-button-social-active-border);
+        --ds-button-social-color-text: var(--ds-button-social-active-text);
+        --ds-button-social-icon-color: var(--ds-button-social-active-icon);
+    }
+
+    &.ds-btn-social-disabled {
+        --ds-button-social-bg: var(--ds-button-social-disabled-bg);
+        --ds-button-social-border: var(--ds-button-social-disabled-border);
+        --ds-button-social-color-text: var(--ds-button-social-disabled-text);
+        --ds-button-social-icon-color: var(--ds-button-social-disabled-icon);
+
+        pointer-events: none;
+
+        /* stylelint-disable selector-max-attribute */
+        [iconname='google'] svg,
+        [iconname='paypal'] svg {
+            opacity: 0.4;
+        }
+    }
+
+    // to fix vn-icon sizing added deep nesting to be more specific with the scoping
+    svg {
+        color: var(--ds-button-social-icon-color);
+        fill: var(--ds-button-social-icon-color);
+        height: var(--ds-button-social-size-icon);
+        width: var(--ds-button-social-size-icon);
+        display: flex;
+        align-items: center;
+    }
+}

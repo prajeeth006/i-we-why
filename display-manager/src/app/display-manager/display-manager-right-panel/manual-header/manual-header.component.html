@@ -1,0 +1,81 @@
+<div class="form-main-wrapper" [formGroup]="form">
+  <div class="form-control category-name">
+    <div class="form-field-label">Event Type*</div>
+    <div class="form-field-control" [ngClass]="{'dropdown-disabled': isSaved }">
+      <mat-form-field appearance="fill" class="form-field event-type-field"
+        [ngClass]="{ 'is-invalid': ((form.controls['category'].invalid) && isSubmit) }">
+        <mat-select disableOptionCentering panelClass="category-dropdown-control" id="selectCategory" class="select-category" 
+          formControlName="category"  (selectionChange)="onCategoryChange('Change', $event.value)" [disabled]="isSaved"
+          [ngClass]="{'reset-disable': isSaved }">
+          <mat-option [value]="categoryname" *ngFor="let categoryname of categories" id="categoryName">{{ categoryname }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="isSaved" class="dropdown-disabled__overlay"></div>
+    </div>
+  </div>
+  <div class="form-control time-interval-field">
+    <div class="form-field-label">Time (24hr time)*</div>
+    <div class="form-field-control time-section-controls">
+      <div class="hour-section">
+        <mat-form-field appearance="fill" class="form-field time-interval"
+          [ngClass]="{ 'is-invalid': ((form.controls['timehrs'].invalid) && isSubmit) }">
+          <input matInput id="hrs" [OnlyNumber]="true" [maxlength]="2" (change)="maxAllowedHours()" placeholder="HH"
+            formControlName="timehrs" autocomplete="off" />
+        </mat-form-field>
+      </div>
+      <div class="column-symbol">:</div>
+      <div class="minutes-section">
+        <mat-form-field appearance="fill" class="form-field time-interval"
+          [ngClass]="{ 'is-invalid': ((form.controls['timemins'].invalid) && isSubmit) }">
+          <input matInput id="mins" [OnlyNumber]="true" [maxlength]="2" (change)="maxAllowedMins()" placeholder="MM"
+            formControlName="timemins" autocomplete="off" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="form-control meeting-name-section">
+    <div class="form-field-label">Meeting Name*</div>
+    <mat-form-field appearance="fill" class="form-field meeting-name"
+      [ngClass]="{ 'is-invalid': ((form.controls['meetingName'].invalid) && isSubmit) }">
+      <input matInput type="text" id="meetingName" formControlName="meetingName" autocomplete="off" />
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="categoryName === manualConstants.event_types.greyhounds; then greyHoundsTemplate else defaultTemplate">
+  </div>
+
+  <ng-template #greyHoundsTemplate>
+    <div class="form-control race-name-section">
+      <div class="form-field-label">Race*</div>
+      <mat-form-field appearance="fill" class="form-field race"
+        [ngClass]="{ 'is-invalid': ((form.controls['race'].invalid) && isSubmit) }">
+        <input matInput id="race" [OnlyNumber]="true" [maxlength]="2" formControlName="race" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="form-control country-section">
+      <div class="form-field-label">Country*</div>
+      <div class="form-field-control" [ngClass]="{'dropdown-disabled': isSaved }">
+        <mat-form-field appearance="fill" class="form-field country-field"
+          [ngClass]="{ 'is-invalid': ((form.controls['country'].invalid) && isSubmit), 'isPanelOpened': isPanelOpened }">
+          <mat-select (openedChange)="panelOpened($event)" disableOptionCentering panelClass="country-dropdown-control"
+            class="select-country" id="country" formControlName="country"
+            (selectionChange)="onCountryChange('Change', $event.value)"  [disabled]="isSaved"
+            [ngClass]="{'reset-disable': isSaved }">
+            <mat-option class="row-border" id="countryname" [value]="countryName" *ngFor="let countryName of countries">{{ countryName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>        
+        <div *ngIf="isSaved" class="dropdown-disabled__overlay"></div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #defaultTemplate>
+    <div class="form-control race-name-section">
+      <div class="form-field-label">Race</div>
+      <mat-form-field appearance="fill" class="form-field race">
+        <input matInput id="race" [OnlyNumber]="true" [maxlength]="2" formControlName="race" autocomplete="off" />
+      </mat-form-field>
+    </div>
+  </ng-template>
+</div>

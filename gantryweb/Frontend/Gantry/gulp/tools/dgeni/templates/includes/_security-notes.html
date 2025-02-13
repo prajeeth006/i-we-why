@@ -1,0 +1,8 @@
+{% if doc.security %}
+<section class="security-notes">
+    <h2>Security Risk</h2>
+    <div class="description">
+      {$ doc.security | marked | prettyprint $}
+    </div>
+</section>
+{% endif %}

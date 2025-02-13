@@ -1,0 +1,67 @@
+<div>
+    <ng-container *ngIf="homeDrawAwayResult$ | async as vm">
+        <ng-container *ngIf="!(errorMessage$ | async)">
+
+            <gn-base-page>
+              <ng-container header-content>
+                <gn-banner
+                  [leadTitle]="vm?.categoryName"
+                  [title]="vm?.content?.contentParameters?.WeekendCoupon"
+                  [subtitleLeft]="vm?.marketName"
+                  [subtitleRight]="vm?.eventDateTimeInputValue">
+                </gn-banner>
+            </ng-container>
+        
+            <ng-container body-content>
+              <div class="draw-away-header-block">
+                <span id="Time" class="time">{{ vm?.content?.contentParameters?.Time }}</span>
+                <span id="home" class="price-header home">{{ vm?.content?.contentParameters?.Home }}</span>
+                <div class="space1"></div>
+                <span id="draw" class="price-header draw">{{ vm?.content?.contentParameters?.Draw }}</span>
+                <div class="space2"></div>
+                <span id="away" class="price-header away">{{ vm?.content?.contentParameters?.Away }}</span>
+              </div>
+              <ul id="selectionTable" class="selection-table">
+                <ng-container *ngFor="let event of vm?.homeDrawAwayEvent | slice: pageDetails.startIndex:pageDetails.endIndex">
+                <li  id="events">
+                  <div id="tabletime" class="table-item-1 items timelabel">
+                    {{ event?.eventDateTime | sportEventDateFormat: vm.gantryCommonContent:{ weekday: 'short', timeStyle: 'short' } }}
+                  </div>
+                  <div id="homenumber" class="table-item-2 items">
+                    <ng-container *ngIf="event?.homeSelection?.price">
+                      {{ event?.homeSelection?.price  | marketPriceTransform : event?.homeSelection?.hidePrice }}
+                    </ng-container>
+                  </div>
+                  <div id="tablehomename" class="table-item-1 items">
+                    <span>{{ event?.homeSelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                  </div>
+                  <div id="drawnumber" class="table-item-2 items">
+                    <ng-container *ngIf="event?.drawSelection?.price">
+                      {{ event?.drawSelection?.price  | marketPriceTransform : event?.drawSelection?.hidePrice }}
+                    </ng-container>
+                  </div>
+                  <div id="tableawayname" class="table-item-1 items awayselection">
+                    <span>{{ event?.awaySelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                  </div>
+                  <div id="awaynumber" class="table-item-2 items">
+                    <ng-container *ngIf="event?.awaySelection?.price">
+                      {{ event?.awaySelection?.price | marketPriceTransform : event?.awaySelection?.hidePrice }}
+                    </ng-container>
+                  </div>
+                </li>
+              </ng-container>
+              </ul>
+       
+            </ng-container>
+            <ng-container footer-content>
+              <gn-footer [leftSideText]="vm?.content?.contentParameters?.LeftStipulatedLine"
+              [rightSideText]="pageDetails.paginationText"> </gn-footer>
+          
+            </ng-container>
+          </gn-base-page>
+        </ng-container>
+
+      </ng-container>
+      
+      <gn-error [errorMessage$]="errorMessage$"></gn-error>
+      </div>

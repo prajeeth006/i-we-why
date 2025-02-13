@@ -1,0 +1,30 @@
+<div class="ds-input-field-wrapper" (click)="focusInputField()">
+    <!-- Slot for content visually positioned inside, at the start of the input area -->
+    @if (isInput) {
+        <ng-content select="[slot=start]" />
+    }
+    <!-- Input or Textarea -->
+    <div class="ds-input-field-content">
+        <!-- Label -->
+        <label [for]="labelFor" class="ds-input-field-label">
+            <ng-content select="[slot=label]" />
+            {{ labelText }}
+            @if (isRequired) {
+                <span class="ds-input-field-required" aria-hidden="true">*</span>
+            }
+        </label>
+        <!-- Character Count for Textarea -->
+        @if (isTextarea && isFocusedAndHasContent()) {
+            <span class="ds-input-field-textarea-charcount">{{ dsInput?.charCount() }}/{{ dsInput?.maxCharCount }}</span>
+        }
+        <!-- Textarea or Input content -->
+        <ng-content />
+    </div>
+
+    <!-- Slot for content visually positioned inside, at the end of the input area -->
+    @if (isInput) {
+        <ng-content select="[slot=end]" />
+    }
+</div>
+<!-- Slot for content positioned below the input area, typically for help text or additional info -->
+<ng-content select="[slot=bottom]" />

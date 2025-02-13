@@ -1,0 +1,28 @@
+<ng-container *ngIf="result">
+    <ul class="avr-preamble-table">
+        <li *ngFor="let runner of result?.resultsTable">
+            <ng-template *ngTemplateOutlet="tplResultsTable; context: {$implicit: runner, vm: result}">
+            </ng-template>
+        </li>
+    </ul>
+    <ng-template #tplResultsTable let-runner let-vm="vm">
+        <div class="table-item-1 items border-dark">
+            <img *ngIf="!!runner?.imageSourceUrl" [retrySrc]="runner?.imageSourceUrl" height="80px" />
+        </div>
+        <div class="table-item-3 items border-dark">
+            <span *ngIf="!!runner.runnerName">
+                {{ runner.runnerName | uppercase }}
+            </span>
+        </div>
+        <div class="table-item-4 items border-dark table-left">
+            <span *ngIf="!!runner.price" class="badge"
+                [ngClass]="runner.isFavourite? 'favourite-class': 'regular-class'">
+                {{ runner.price | marketPriceTransform }}
+            </span>
+        </div>
+    </ng-template>
+    <div *ngIf="!(result.counterValue$ | async) && result.isResultedOrOff" class="off-event">
+        <span id="offEvent">OFF</span>
+    </div>
+
+</ng-container>

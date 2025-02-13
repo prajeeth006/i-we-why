@@ -1,0 +1,85 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.individual-footer {
+  @include helper.flex-container(space-between, center);
+  height: 55px;
+  padding: 20px;
+  background-color: $background-grey-color;
+  column-gap: 15px;  
+
+  .apply-sequence-btn {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    width: 70px;
+    height: 55px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color : $white;
+
+    img {
+      border-radius: 4px;
+    }
+
+    &:hover, &.active {
+      background-color:$primary-color-2;
+       img {
+        filter: brightness(0) invert(1);
+       }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &-right {
+    @include helper.flex-container(flex-end, center);
+    flex-grow: 1;
+    column-gap: 15px;
+
+    .divider {
+      width: 1px;
+      height: 35px;
+      background-color: $border-grey-1;
+    }
+  }
+
+  .footer-btn {
+    cursor: pointer;
+    @include helper.font-styles( $txt-md-font-size, $fw-bold ,1.25px);
+    border-radius: 4px;
+    height: 35px;
+    padding: 0 30px;
+
+    .button-with-icon {
+      @include helper.button-with-icon()
+    }
+
+    &.cancel-btn {
+      background-color: $color-black-light;
+      color: $white;
+    }
+
+    &.publish-btn,
+    &.continue-sequence-btn {
+      background-color: $btn-success-bg;
+      color: $white;
+    }
+
+    &.reset-btn.mdc-button,
+    &.start-over-btn.mdc-button {
+      border: .6px solid $text-black-color;
+    }
+
+    &.reset-btn:hover,
+    &.start-over-btn:hover {
+      background: $white;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as DsBadgeStories from './badge.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './badge-tabs/overview.mdx';
+import MySecondTab from './badge-tabs/examples.mdx';
+
+<Meta of={DsBadgeStories} />
+
+<div className="variant-info-container">
+    <h1>Badge Component</h1>
+    <Story of={DsBadgeStories.ComplexityLevel}></Story>
+</div>
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

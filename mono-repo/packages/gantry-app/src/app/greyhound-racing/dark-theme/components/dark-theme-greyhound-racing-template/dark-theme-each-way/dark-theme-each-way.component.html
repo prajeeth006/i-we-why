@@ -1,0 +1,38 @@
+<div class="greyhound-footer">
+    <div class="info-row">
+        <gn-dark-theme-footer class="footer__sec">
+            <ng-container left-side-content>
+                <span id="runCount" class="run-count">{{ runnerCount ? runnerCount : ' ' }} {{ isEventResulted ? 'Ran' : 'Run' }}</span>
+                <span *ngIf="vacantRunners && isEventResulted" class="vacant-runners">{{ vacantRunners | titlecase }}</span>
+                <span *ngIf="grade" id="Grade">{{ grade | titlecase }} </span>
+                <span *ngIf="racingDistance" id="RacingDistance">{{ racingDistance | racingDistanceTransform | titlecase }}</span>
+            </ng-container>
+
+            <ng-container center-side-content>
+                <div
+                    class="racing-post-pick-section"
+                    *ngIf="isUKEvent && !hasAnyReservedRunner && racingPostTipOrder?.length && currentItem == flipStages?.RacingPostPic">
+                    <div class="post-pic-logo">
+                        <img id="Postpic-logo" class="c-logo" [retrySrc]="racingPostTipImage" />
+                    </div>
+                    <div class="tip-order">
+                        <span id="tipOrder">{{ racingPostTipOrder | racingPostTipPipe: napOrNb }}</span>
+                    </div>
+                </div>
+                <span class="fc-tc-section" id="FcTcValue" *ngIf="foreCastTriCastValue && currentItem == flipStages?.FcTcValue"
+                    >{{ foreCastTriCastValue }}
+                </span>
+                <span *ngIf="raceOffTime" class="race-off-time">{{ raceOffTime | titlecase }}</span>
+            </ng-container>
+
+            <ng-container right-side-content>
+                <span *ngIf="vacantRunners && !isEventResulted" class="vacant-runners">{{ vacantRunners | titlecase }}</span>
+                <span class="market-each-way" *ngIf="marketEachWayString" id="MarketEachWay">
+                    {{ (marketEachWayString ? marketEachWayString : '') | titlecase }}
+                </span>
+            </ng-container>
+
+            <ng-content></ng-content>
+        </gn-dark-theme-footer>
+    </div>
+</div>

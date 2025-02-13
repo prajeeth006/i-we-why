@@ -1,0 +1,8 @@
+@mixin shared {
+    --ds-dialog-header-color-bg: var(--semantic-color-surface-container-low-base);
+    --ds-dialog-header-color-text: var(--semantic-color-on-surface-base);
+    --ds-dialog-header-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-dialog-header-size-height: var(--semantic-size-x11);
+    --ds-dialog-header-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-dialog-header-space-padding-right: var(--semantic-spacing-container-padding-lg);
+}

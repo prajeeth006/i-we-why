@@ -1,0 +1,21 @@
+@page "/info"
+@inherits InfoOverviewPageComponent
+
+<PageLayout Title="Info Pages" LoadChildContent="LoadAsync" ReloadDisabled="true">
+    <p>Choose which type of diagnostic info you want to see.</p>
+    <div class="card-columns">
+        @foreach (var infoPage in Model)
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="info/@infoPage.UrlPath">@infoPage.Name</a>
+                    </h5>
+                    <p class="card-text">
+                        @infoPage.ShortDescription
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</PageLayout>

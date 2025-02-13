@@ -1,0 +1,70 @@
+@use '../../generated/styles/components/card-footer/card-footer' as ds-card-footer;
+@use '../../fonts/font-helper' as helper;
+
+.ds-card-footer {
+    @include ds-card-footer.shared;
+
+    // fonts
+    @include helper.set-font-variables('card-footer', 'headline', 'sm-strong');
+    @include helper.setup-font-style('card-footer');
+
+    --ds-card-footer-width: 100%;
+    --ds-card-footer-height: auto;
+    --ds-card-footer-bg: var(--ds-card-footer-enabled-color-background);
+
+    align-items: center;
+    background: var(--ds-card-footer-bg);
+    border-radius: var(--ds-card-footer-radius-top-left-border) var(--ds-card-footer-radius-top-right-border)
+        var(--ds-card-footer-radius-bottom-right-border) var(--ds-card-footer-radius-bottom-left-border);
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+
+    &:empty {
+        display: none;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-card-footer-bg: var(--ds-card-footer-hover-color-background);
+
+            cursor: pointer;
+        }
+    }
+
+    &:active {
+        --ds-card-footer-bg: var(--ds-card-footer-active-color-background);
+    }
+
+    [slot='divider'] {
+        --ds-card-footer-ds-divider-width: 100%;
+
+        top: 0;
+        position: absolute;
+        width: var(--ds-card-footer-ds-divider-width);
+    }
+
+    .ds-card-footer-container {
+        gap: var(--ds-card-footer-space-inline);
+        min-height: var(--ds-card-footer-size-min-height);
+        padding: var(--ds-card-footer-space-padding-top) var(--ds-card-footer-space-padding-right) var(--ds-card-footer-space-padding-bottom)
+            var(--ds-card-footer-space-padding-left);
+        width: var(--ds-card-footer-width);
+    }
+
+    &.ds-card-footer-surface-lowest {
+        @include ds-card-footer.surface-lowest;
+    }
+
+    &.ds-card-footer-surface-low {
+        @include ds-card-footer.surface-low;
+    }
+
+    &.ds-card-footer-surface-high {
+        @include ds-card-footer.surface-high;
+    }
+
+    &.ds-card-footer-surface-highest {
+        @include ds-card-footer.surface-highest;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="bet-details-container"
+    *ngIf="market && (market.leftBetList?.length > 0 && !market.leftBetList[0]?.hideEntry|| market.rightBetList?.length > 0 && !market.rightBetList[0]?.hideEntry)">
+    <div class="bet-details-header">
+        <div id="homeTitle" class="bet-price"></div>
+        <div id="betdetailsTitle" class="bet-details-title">{{market?.marketDisplayTitle}}</div>
+        <div id="awayTitle" class="bet-price"></div>
+    </div>
+    <div id="firstEntry" class="match-betting-section" *ngIf="market.leftBetList?.length > 0 && !market.leftBetList[0]?.hideEntry">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength}}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength}}</div>
+        </div>
+        <div id="betPrice" class="bet-price">{{market.leftBetList[0]?.betOdds  | marketPriceTransform : market.leftBetList[0]?.hideOdds}} </div>
+    </div>
+    <div id="secondEntry" class="match-betting-section" *ngIf="market.rightBetList?.length > 0 && !market.rightBetList[0]?.hideEntry">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{market.rightBetList[0]?.betName | trimSelectionNamePipe : nameLength}}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{market.rightBetList[0]?.betName | trimSelectionNamePipe : nameLength }}</div>
+        </div>
+        <div id="betPrice" class="bet-price">{{market.rightBetList[0]?.betOdds  | marketPriceTransform :market.rightBetList[0]?.hideOdds}}</div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as ButtonStories from '../bonus-button.component.stories';
+
+The _bonus button_ it is a button with `ds-bonus-button` selector, and it works in a way that you can put your text inside
+and in a `[slot=value]` the value part and it will project the content for you.
+
+<Canvas of={ButtonStories.Default} />
+
+## Usage
+
+Import `DsBonusButton` in your component, and apply `ds-bonus-button` in your buttons or anchor elements.
+
+```ts
+import { DsBonusButton } from '@frontend/ui/bonus-button'; // 👈 add to file imports
+
+@Component({
+    imports: [DsBonusButton], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```

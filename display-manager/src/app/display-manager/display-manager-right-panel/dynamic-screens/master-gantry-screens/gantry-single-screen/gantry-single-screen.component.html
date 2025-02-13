@@ -1,0 +1,49 @@
+
+<div id="screenWrapper" class="screens-wrapper">
+  <div id="tvScreenSection" class="tv-screen-section"
+    [ngClass]="{
+      'large-screen': data?.ScreenCoordinate.Size === 'L',
+      'half-screen': data?.ScreenCoordinate.IsHalf,
+      'half-screen-center' : data?.ScreenCoordinate?.IsHalf && data?.ScreenDesign?.ScreenBackgroundColor == (data?.DisplayScreen?.IsSkyTv || data?.DisplayScreen?.IsTv || !data?.NowPlaying ? '' :  data?.ScreenDesign?.AssetColor)}">
+    <div id="screenBody" class="screen-body" [ngStyle]="{
+        'background-color':  data?.ScreenDesign?.ScreenBackgroundColor,
+        'border-color':  !data?.DisplayScreen?.IsTv && data?.NowPlaying ? data?.ScreenDesign?.ScreenBackgroundColor : data?.ScreenDesign?.ScreenBorderColor
+      }"
+      [ngClass]="{'running-event': data?.NowPlaying && data?.ScreenCoordinate.Size !== 'L', 'half-screen-inner-box': data?.ScreenCoordinate.IsHalf}">
+      <div id="screenNameAndIcon" class="screen-name-and-icon" [ngClass]="{
+        'sky-tv': !(data?.NowPlaying && !data?.DisplayScreen?.IsSkyTv),
+        'isDiffAssetDropped': data?.ScreenDesign?.AssetColor !== data?.ScreenDesign?.ScreenBackgroundColor,
+        'isSameAssetDropped': data?.ScreenDesign?.AssetColor === data?.ScreenDesign?.ScreenBackgroundColor}
+        ">
+
+        <!-- Icon section will be for TV Screens and Screens which have Content -->
+        <div id="assetIconSection" class="asset-icon-section" *ngIf="data?.DisplayScreen?.IsTv || data?.NowPlaying"
+          [ngClass]="{
+            'half-screen-asset-icon-section': data?.ScreenCoordinate.IsHalf && data?.ScreenDesign?.AssetColor !== data?.ScreenDesign?.ScreenBackgroundColor,
+          'full-screen-icon-section': data?.ScreenCoordinate.Size === 'L' &&  data?.ScreenDesign?.AssetColor !== data?.ScreenDesign?.ScreenBackgroundColor}"
+          [ngStyle]="{'background-color':  data?.DisplayScreen?.IsTv || !data?.NowPlaying ? '' :  data?.ScreenDesign?.AssetColor}">
+
+          <img id="assetIcon" class="asset-icon"
+            [ngClass]="{'tv-large-brand-icon': data?.DisplayScreen?.IsTv && data?.ScreenCoordinate.Size === 'L', 'tv-small-brand-icon': data?.DisplayScreen?.IsTv && data?.ScreenCoordinate.Size !== 'L'}"
+            [src]="data?.ScreenDesign?.Image" [alt]="data.Name" draggable="false">
+        </div>
+        <!-- Screen Name for All Screens and SKY Screens When no Content. Screen Name no need for TV Screens-->
+        <div id="assetName" class="asset-name"
+          *ngIf="!((data?.DisplayScreen?.IsSkyTv && data?.NowPlaying) || (data?.DisplayScreen?.IsTv))"
+          [ngStyle]="{'color': data?.ScreenDesign?.TextColor }"
+          [ngClass]="{'longer-tv-txt-name': data.Name.length > 13}">
+          {{data.Name}}
+        </div>
+      </div>
+      <div class="asset-display-name"
+        *ngIf="data?.NowPlaying?.Asset?.event?.splitScreen?.displayAssetNameOnScreenWhenDragged">
+        {{data?.NowPlaying?.Asset?.event?.splitScreen?.displayAssetNameOnScreenWhenDragged}}
+      </div>
+    </div>
+    <div id="screenNumber"  class="screen-number" [ngClass]="{'large-screen-tag': data?.ScreenCoordinate.Size === 'L'}">
+      <div id="numbers" >{{data?.DisplayScreen?.IsTVChannel ? data.Name : (data?.ScreenCoordinate?.Name ?
+        data?.ScreenCoordinate?.Name:data?.ScreenNumber )}}</div>
+    </div>
+  </div>
+  <div id="eventNameAndTime" class="event-name-and-time" [matTooltip]="data?.NowPlaying?.Name?.length > 32 ? data?.NowPlaying?.Name : ''" matTooltipPosition="below" matTooltipClass='gantry-tooltip'>{{data?.NowPlaying | assetname}}</div>
+</div>

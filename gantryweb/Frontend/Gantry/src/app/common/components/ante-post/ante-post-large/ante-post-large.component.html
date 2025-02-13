@@ -1,0 +1,31 @@
+<gn-base-page>
+    <ng-container header-content>
+        <gn-banner [leadTitle]="result.outRightTitle" [title]="result.event.eventName"
+            [subtitleLeft]="result.market?.marketName" [subtitleRight]="result.event?.eventDateTime  ?
+            (result.event?.eventDateTime |date:'d  MMMM y h:mm a'| uppercase)
+            : result.racingContent?.contentParameters?.AntePostOptionalAdditionalInfo | uppercase">
+        </gn-banner>
+    </ng-container>
+    <ng-container body-content>
+        <div class="ante-post-large-content">
+            <ul class="selection-table">
+                <li *ngFor="let selection of result.selections" id="resultSelections">
+                    <div id="selectionName" class="table-item-1 items">
+                        {{ selection.selectionName | trimSelectionNamePipe : selectionLength}}
+                    </div>
+                    <div id="selectionPrice" class="table-item-2 items">
+                        <ng-container *ngIf="selection?.prices?.price[0]">
+                            {{selection?.price | marketPriceTransform : selection?.hidePrice}}
+                        </ng-container>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-footer [leftSideText]="result.marketEachWay"
+            [centerSideText]="result.racingContent?.contentParameters?.OthersOnRequest"
+            [rightSideText]="pageSize ? pageDetails.paginationText : ''">
+        </gn-footer>
+    </ng-container>
+</gn-base-page>

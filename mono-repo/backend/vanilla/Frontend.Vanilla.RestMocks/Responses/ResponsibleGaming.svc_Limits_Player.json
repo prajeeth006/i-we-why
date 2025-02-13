@@ -1,0 +1,83 @@
+{
+    "limits": [
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 200,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "SYSTEM_SET_AFFORDABILITY_LTM_LIMIT",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        },
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 100,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "SYSTEM_SET_AFFORDABILITY_MONTHLY_LIMIT",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        },
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 500,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "AUTOPAYOUT_LIMIT_ON_WINNING",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        },
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 180,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "LOGIN_TIME_PER_DAY_IN_MINUTES",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        },
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 240,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "LOGIN_TIME_PER_MONTH_IN_MINUTES",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        },
+        {
+            "approvalDate": null,
+            "approvalNeeded": false,
+            "currentLimit": 240,
+            "currentUnit": "EUR",
+            "limitEffectiveDate": null,
+            "limitType": "LOGIN_TIME_PER_WEEK_IN_MINUTES",
+            "optedIn": true,
+            "removalRequested": false,
+            "requestedDate": null,
+            "requestedLimit": null,
+            "requestedUnit": null
+        }
+    ],
+    "waitingPeriodInDays": 1
+}

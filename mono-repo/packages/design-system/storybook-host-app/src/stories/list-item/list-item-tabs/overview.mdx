@@ -1,0 +1,37 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsListItemStories from '../list-item.component.stories';
+
+**List item** is a dynamic component that is often used for selection patterns, but can also be leveraged for scanning content more efficiently.
+
+<Canvas of={DsListItemStories.Default} />
+
+## Usage
+
+Import `DsListItem` in your component.
+
+```ts
+import { DsListItem } from '@frontend/ui/list-item'; // 👈 add to file imports
+
+@Component({
+    imports: [DsListItem], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+The **List item** component, identified by the `ds-list-item`, provides a simple and flexible way to add different elements to List item in your application.
+This List item component offers the flexibility to showcase a `title`, `subtitle`, `subtext`.
+You can customize the content of the List item to match user preferences.
+
+**Slots**: There are 3 slots for this component with names 'start', 'center', 'end'. These slots uses ng-content to inject flexible component inside to it
+
+-   slot **`start`** can have icon, notification bubble, checkbox, radio button or an image into it.
+
+-   slot **`center`** and **`end`** can have button, badge, checkbox, notification bubble, radio button, switch (toggle) or an image.
+
+**Bold and Slot Display Control**:
+
+-   Bold Title Control: The list item now includes a control to toggle the title between bold and non-bold states using the boldTitle input property.
+-   Slot Display Control: You can now control the visibility of the start, center, and end slots via showStartSlot, showCenterSlot, and showEndSlot properties, making the component highly customizable.

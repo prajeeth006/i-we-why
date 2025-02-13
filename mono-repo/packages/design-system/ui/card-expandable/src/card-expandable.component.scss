@@ -1,0 +1,37 @@
+@use '../../generated/styles/components/expandable-card/expandable-card' as ds-card-expandable;
+
+.ds-card-expandable {
+    @include ds-card-expandable.shared;
+
+    --ds-expandable-card-box-shadow: var(--semantic-elevation-raised-2-box-shadow); // assigned to semantic until no component layer tokens supported
+    --ds-expandable-card-body-width: 100%;
+
+    background: var(--ds-expandable-card-color-background);
+    border-radius: var(--ds-expandable-card-radius-border);
+    border: var(--ds-expandable-card-size-border) solid var(--ds-expandable-card-color-border);
+    box-shadow: var(--ds-expandable-card-box-shadow);
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+
+    &.ds-card-expandable-no-elevation {
+        --ds-expandable-card-box-shadow: none;
+    }
+
+    .ds-card-expandable-body {
+        box-sizing: border-box;
+        width: var(--ds-expandable-card-body-width);
+    }
+
+    &.ds-card-expandable-surface-lowest {
+        @include ds-card-expandable.surface-lowest;
+    }
+
+    &.ds-card-expandable-surface-low {
+        @include ds-card-expandable.surface-low;
+    }
+
+    &.ds-card-expandable-surface-high {
+        @include ds-card-expandable.surface-high;
+    }
+}

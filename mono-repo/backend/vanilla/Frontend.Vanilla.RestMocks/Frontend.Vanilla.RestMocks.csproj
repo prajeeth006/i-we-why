@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Responses\**\*.json" />
+        <EmbeddedResource Include="Responses\**\*.txt" />
+    </ItemGroup> 
+
+</Project>

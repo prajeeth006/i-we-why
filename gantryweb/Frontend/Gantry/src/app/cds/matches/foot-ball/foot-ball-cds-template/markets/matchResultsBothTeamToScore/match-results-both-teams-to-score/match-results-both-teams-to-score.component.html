@@ -1,0 +1,28 @@
+
+<div id="firstGoalscorer" class="first-goal-scrorecontainer" *ngFor="let selection of multiMarket?.selections">
+  <div class="bet-details-header">
+    <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title }}</div>
+  </div>
+  <div id="multiMarket" class="multimarket-container__main" *ngFor="let selection of multiMarket?.selections">
+    <div class="marketdata">
+      <div class="marketdata__left">
+        <span id="homePrice" class="betOdds"
+          >{{ selection?.homePrice  | prepareEvsPipe }}
+        </span>
+        <span id="homeSelectionTrimTitle" class="betName" >
+          {{(selection?.homeSelectionTitle ) | trimSelectionNamePipe: nameLength}}
+        </span>
+      </div>
+    </div>
+    <div class="marketdata">
+      <div class="marketdata__right">
+        <span id="awaySelectionTrimTitle" class="betName">
+          {{(selection?.awaySelectionTitle )  | trimSelectionNamePipe: nameLength }}
+        </span>
+        <span id="awayPrice" class="betOdds"
+          >{{ selection?.awayPrice | prepareEvsPipe }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

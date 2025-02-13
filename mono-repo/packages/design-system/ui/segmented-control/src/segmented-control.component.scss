@@ -1,0 +1,192 @@
+@use '../../generated/styles/components/segement-item/segement-item' as ds-segment-item;
+@use '../../generated/styles/components/segment-control/segment-control' as ds-segment-control;
+@use '../../fonts/font-helper' as helper;
+
+.ds-segmented-control {
+    --ds-segment-item-text-max-width: auto;
+
+    .ds-segmented-control-container {
+        @include ds-segment-control.shared;
+        @include ds-segment-control.default;
+        @include ds-segment-item.shared;
+        @include ds-segment-item.default;
+
+        --ds-sc-highlight-width: auto;
+        --ds-sc-highlight-x-pos: 0;
+        --ds-sc-transition-time: 0.3s;
+
+        .ds-segmented-controls {
+            display: inline-flex;
+            gap: var(--ds-segment-control-space-inline);
+            justify-content: space-between;
+            background-color: var(--ds-segment-control-color-bg);
+            border-color: var(--ds-segment-control-color-border);
+            border-radius: var(--ds-segment-control-radius-border);
+            padding: var(--ds-segment-control-space-padding-top, 0) var(--ds-segment-control-space-padding-right, 2px)
+                var(--ds-segment-control-space-padding-bottom, 0) var(--ds-segment-control-space-padding-left, 2px);
+            overflow: hidden;
+            position: relative;
+
+            &.ds-segment-full-width {
+                --ds-segment-control-width: 100%;
+
+                width: var(--ds-segment-control-width);
+
+                .ds-segment-item {
+                    flex: 1;
+                }
+            }
+
+            &.ds-segment-inverse {
+                @include ds-segment-control.inverse;
+                @include ds-segment-item.inverse;
+            }
+
+            .ds-segment-item {
+                @include helper.set-font-variables('segmented-control', 'label', 'md');
+                @include helper.setup-font-style('segmented-control');
+
+                --segement-item-icon-bg-color: none;
+                --ds-item-bg-color: var(--ds-segement-item-enabled-color-bg);
+                --ds-item-text-color: var(--ds-segement-item-enabled-color-label);
+                --ds-item-icon-fill-color: var(--segement-item-icon-bg-color);
+                --ds-item-icon-stroke-color: var(--ds-segement-item-enabled-color-icon);
+                --ds-item-margin-bottom: 0;
+                --ds-truncation-lines: 1;
+
+                align-items: center;
+                background-color: var(--ds-item-bg-color);
+                border-radius: var(--ds-segement-item-radius-border);
+                color: var(--ds-item-text-color);
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                margin-bottom: var(--ds-item-margin-bottom);
+                max-width: var(--ds-segment-item-text-max-width);
+                min-width: var(--ds-segement-item-size-min-width);
+                padding: var(--ds-segement-item-space-padding-top, 0) var(--ds-segement-item-space-padding-right, 0)
+                    var(--ds-segement-item-space-padding-bottom, 0) var(--ds-segement-item-space-padding-left, 0);
+                position: relative;
+                text-align: center;
+                z-index: 1;
+
+                .ds-segment-item-label {
+                    --ds-label-margin: 0;
+
+                    cursor: pointer;
+                    margin: var(--ds-label-margin);
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: var(--ds-truncation-lines);
+                    transition: color var(--ds-sc-transition-time) ease;
+                    text-overflow: ellipsis;
+                    word-break: break-word;
+                    white-space: normal;
+
+                    &.ds-segmented-item-two-line-text {
+                        --ds-truncation-lines: 2;
+                    }
+
+                    &.ds-segment-item-custom-template {
+                        display: inline-flex;
+                    }
+                }
+
+                svg {
+                    path {
+                        fill: var(--ds-item-icon-fill-color);
+                        stroke: var(--ds-item-icon-stroke-color);
+                    }
+                }
+
+                &:focus-visible {
+                    border-radius: var(--ds-segement-item-radius-border);
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        --ds-item-bg-color: var(--ds-segement-item-hover-color-bg);
+                        --ds-item-text-color: var(--ds-segement-item-hover-color-label);
+
+                        svg {
+                            path {
+                                --ds-item-icon-fill-color: var(--segement-item-icon-bg-color);
+                                --ds-item-icon-stroke-color: var(--ds-segement-item-hover-color-icon);
+                            }
+                        }
+                    }
+                }
+
+                &:active {
+                    --ds-item-bg-color: var(--ds-segement-item-active-color-bg);
+                    --ds-item-text-color: var(--ds-segement-item-active-color-label);
+
+                    svg {
+                        path {
+                            --ds-item-icon-stroke-color: var(--ds-segement-item-active-color-icon);
+                            --ds-item-icon-fill-color: var(--segement-item-icon-bg-color);
+                        }
+                    }
+                }
+
+                &.ds-segment-selected {
+                    @include helper.set-font-variables('segmented-control', 'label', 'md-strong');
+
+                    --ds-item-bg-color: var(--ds-segement-item-selected-color-bg);
+                    --ds-item-text-color: var(--ds-segement-item-selected-color-label);
+
+                    svg {
+                        path {
+                            --ds-item-icon-fill-color: var(--ds-segement-item-selected-color-icon);
+                        }
+                    }
+                }
+
+                .ds-segmented-control-hidden-input,
+                .ds-segmented-touch-target {
+                    position: absolute;
+                    cursor: pointer;
+                }
+
+                .ds-segmented-control-hidden-input {
+                    --hidden-input-size: 100%;
+
+                    opacity: 0;
+                    visibility: hidden;
+                    inset: 0;
+                    height: var(--hidden-input-size);
+                    width: var(--hidden-input-size);
+                }
+
+                .ds-segmented-touch-target {
+                    display: block;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: var(--ds-segment-control-size-tap-target);
+                }
+            }
+
+            &::before {
+                content: '';
+                background: var(--ds-segement-item-selected-color-bg);
+                border-radius: var(--ds-segment-control-radius-border);
+                width: var(--ds-sc-highlight-width);
+                transform: translateX(var(--ds-sc-highlight-x-pos));
+                position: absolute;
+                inset: 2px 0;
+                z-index: 0;
+            }
+
+            /* Only allow transitions once component is ready */
+            &.ds-sc-ready::before {
+                transition:
+                    transform var(--ds-sc-transition-time) ease,
+                    width var(--ds-sc-transition-time) ease,
+                    background var(--ds-sc-transition-time) ease;
+            }
+        }
+    }
+}

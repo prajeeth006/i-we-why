@@ -1,0 +1,14 @@
+{
+    "extends": ["../../../.eslintrc.base.json"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "extends": ["../../eslint-utils/jest", "../../eslint-utils/typescript"],
+            "files": ["*.ts"],
+            "parserOptions": {
+                "project": ["packages/design-system/token-path-config-utils/tsconfig.*?.json"]
+            },
+            "rules": {}
+        }
+    ]
+}

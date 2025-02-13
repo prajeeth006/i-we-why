@@ -1,0 +1,15 @@
+<div class="settings-header">
+  <div id="back" class="settings-header-back-btn" (click)="goBack($event)">
+    <mat-icon aria-hidden="false" aria-label="chevron left icon">
+      chevron_left</mat-icon>
+  </div>
+
+  <div class="settings-header-info">
+    <img class="settings-header-icon" *ngIf="settingsInfo?.imageUrl" id="settingTabIcons" [src]="settingsInfo.imageUrl">
+
+    <!-- Display tab name if available -->
+    <span class="settings-header-name" *ngIf="settingsInfo?.name" id="settingTabNames">
+      {{ settingsInfo.name }}
+    </span>
+  </div>
+</div>

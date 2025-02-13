@@ -1,0 +1,15 @@
+{
+    "classificationDate": null,
+    "comments": "some comment",
+    "countryCode": "GB",
+    "exclDays": 2,
+    "exclExpiryDate": null,
+    "exclStartDate": null,
+    "mohPrimaryProductCode": 4,
+    "mohPrimaryReasonCode": 1,
+    "mohPrimaryRiskBandCode": 4,
+    "mohPrimaryToolCode": 6,
+    "mohScore": 7,
+    "processed": "true",
+    "vipUser": "false"
+}

@@ -1,0 +1,38 @@
+@using Newtonsoft.Json.Linq
+
+@code {
+
+    [Parameter]
+    public string Class { get; set; }
+
+    [Parameter]
+    public string Label { get; set; }
+
+    [Parameter]
+    public JToken Value { get; set; }
+
+}
+
+<BSTreeItem Class="@Class">
+    <Label>@Label</Label>
+    <ChildContent>
+        <BSTreeNode>
+            @switch (Value)
+            {
+                case JObject obj:
+                    @foreach (var property in obj.Properties().OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
+                    {
+                        <TreeItem Label="@property.Name" Value="@obj[property.Name]"></TreeItem>
+                    }
+
+                    break;
+                default:
+                    <BSTreeItem>
+                        <Label>@Value.ToString()</Label>
+                    </BSTreeItem>
+
+                    break;
+            }
+        </BSTreeNode>
+    </ChildContent>
+</BSTreeItem>

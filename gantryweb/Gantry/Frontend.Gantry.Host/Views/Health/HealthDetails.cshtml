@@ -1,0 +1,92 @@
+﻿@using Frontend.Gantry.Shared.Core.Models
+@using Frontend.Gantry.Shared.Core.Models.Services.Kafka
+@model Frontend.Gantry.Shared.Core.Models.ViewModels.Hosts
+@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            margin-left: -5px;
+            margin-right: -10px;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 5px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+            letter-spacing: normal;
+            padding: 10px;
+            width: 95%;
+            font-size: 20px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .table-margin {
+            margin-left: 15%;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+    <div class="row">
+        <div class="column">
+            <h2>SiteCore Kafka servers connection</h2>
+            <table>
+                <tr>
+                    <th>Server</th>
+                    <th>Status</th>
+                </tr>
+                @foreach (var siteCoreKapka in Model.sitecoreHostConnections)
+                {
+                    <tr class="green">
+                        <td>@siteCoreKapka.ConnectionName</td>
+                        <td>@siteCoreKapka.Connection</td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+        <div class="column table-margin">
+            <h2>Rtms Kafka servers connection</h2>
+            <table>
+                <tr>
+                    <th>Server</th>
+                    <th>Status</th>
+                </tr>
+                @foreach (var rtmsKapka in Model.rtmsHostConnections)
+                {
+                    <tr class="green">
+                        <td>@rtmsKapka.ConnectionName</td>
+                        <td>@rtmsKapka.Connection</td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

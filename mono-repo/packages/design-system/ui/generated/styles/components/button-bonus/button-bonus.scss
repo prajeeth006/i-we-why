@@ -1,0 +1,48 @@
+@mixin default {
+    --ds-button-bonus-active-color-bg: var(--semantic-color-secondary-container-active);
+    --ds-button-bonus-active-color-border: var(--semantic-color-secondary-outline-active);
+    --ds-button-bonus-active-color-label: var(--semantic-color-on-secondary-outline);
+    --ds-button-bonus-active-color-text: var(--semantic-color-on-secondary-outline);
+    --ds-button-bonus-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-bonus-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-button-bonus-disabled-color-label: var(--semantic-color-on-disabled-outline);
+    --ds-button-bonus-disabled-color-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-bonus-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-bonus-enabled-color-border: var(--semantic-color-secondary-outline-base);
+    --ds-button-bonus-enabled-color-label: var(--semantic-color-on-secondary-outline);
+    --ds-button-bonus-enabled-color-text: var(--semantic-color-on-secondary-outline);
+    --ds-button-bonus-hover-color-bg: var(--semantic-color-secondary-container-hover);
+    --ds-button-bonus-hover-color-border: var(--semantic-color-secondary-outline-hover);
+    --ds-button-bonus-hover-color-label: var(--semantic-color-on-secondary-outline);
+    --ds-button-bonus-hover-color-text: var(--semantic-color-on-secondary-outline);
+}
+
+@mixin inverse {
+    --ds-button-bonus-active-color-bg: var(--semantic-color-secondary-container-active-inverse);
+    --ds-button-bonus-active-color-border: var(--semantic-color-secondary-outline-active-inverse);
+    --ds-button-bonus-active-color-label: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-bonus-active-color-text: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-bonus-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-bonus-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    --ds-button-bonus-disabled-color-label: var(--semantic-color-on-disabled-outline-inverse);
+    --ds-button-bonus-disabled-color-text: var(--semantic-color-on-disabled-outline-inverse);
+    --ds-button-bonus-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-bonus-enabled-color-border: var(--semantic-color-secondary-outline-base-inverse);
+    --ds-button-bonus-enabled-color-label: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-bonus-enabled-color-text: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-bonus-hover-color-bg: var(--semantic-color-secondary-container-hover-inverse);
+    --ds-button-bonus-hover-color-border: var(--semantic-color-secondary-outline-hover-inverse);
+    --ds-button-bonus-hover-color-label: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-bonus-hover-color-text: var(--semantic-color-on-secondary-outline-inverse);
+}
+
+@mixin shared {
+    --ds-button-bonus-radius-border: var(--semantic-radius-l2-button-large);
+    --ds-button-bonus-size-height: var(--semantic-size-x8);
+    --ds-button-bonus-size-tap-target: var(--semantic-size-x11);
+    --ds-button-bonus-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-button-bonus-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-button-bonus-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-button-bonus-space-padding-top: var(--semantic-spacing-container-padding-none);
+    --ds-button-bonus-space-stack: var(--semantic-spacing-inline-none);
+}

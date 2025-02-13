@@ -1,0 +1,61 @@
+{
+    "name": "design-system-figma-plugin-reference-default-var-creation-app",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/figma-plugins/reference-default-var-creation-app/src",
+    "projectType": "application",
+    "tags": ["type:app", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "platform": "node",
+                "outputPath": "dist/build/packages/design-system/figma-plugins/reference-default-var-creation-app",
+                "format": ["cjs"],
+                "bundle": true,
+                "thirdParty": true,
+                "target": "ES6",
+                "main": "packages/design-system/figma-plugins/reference-default-var-creation-app/src/code.ts",
+                "tsConfig": "packages/design-system/figma-plugins/reference-default-var-creation-app/tsconfig.app.json",
+                "assets": [
+                    "packages/design-system/figma-plugins/reference-default-var-creation-app/ui.html",
+                    "packages/design-system/figma-plugins/reference-default-var-creation-app/manifest.json"
+                ],
+                "generatePackageJson": false,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "configurations": {
+                "development": {},
+                "production": {
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/figma-plugins/reference-default-var-creation-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

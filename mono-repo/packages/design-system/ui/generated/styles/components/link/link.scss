@@ -1,0 +1,31 @@
+@mixin active {
+    --ds-link-default-color-text: var(--semantic-color-utility-active);
+    --ds-link-inverse-color-text: var(--semantic-color-utility-active-inverse);
+}
+
+@mixin disabled {
+    --ds-link-default-color-text: var(--semantic-color-on-disabled-base);
+    --ds-link-inverse-color-text: var(--semantic-color-on-disabled-base-inverse);
+}
+
+@mixin enabled {
+    --ds-link-default-color-text: var(--semantic-color-utility-base);
+    --ds-link-inverse-color-text: var(--semantic-color-utility-base-inverse);
+}
+
+@mixin hover {
+    --ds-link-default-color-text: var(--semantic-color-utility-hover);
+    --ds-link-inverse-color-text: var(--semantic-color-utility-hover-inverse);
+}
+
+@mixin shared {
+    --ds-link-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-link-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-link-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-link-space-padding-top: var(--semantic-spacing-container-padding-lg);
+}
+
+@mixin utility {
+    --ds-link-default-color-text: var(--semantic-color-utility-base);
+    --ds-link-inverse-color-text: var(--semantic-color-utility-base-inverse);
+}

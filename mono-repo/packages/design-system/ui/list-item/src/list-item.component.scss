@@ -1,0 +1,136 @@
+@use '../../generated/styles/components/list-item/list-item' as ds-list-item;
+@use '../../fonts/font-helper' as helper;
+
+.ds-list-item {
+    @include ds-list-item.shared;
+    @include ds-list-item.default;
+
+    --ds-list-item-width: 100%;
+    --ds-list-item-bg: var(--ds-list-item-enabled-color-background);
+    --ds-list-item-color: var(--ds-list-item-enabled-color-title);
+    --ds-list-item-subtitle-color: var(--ds-list-item-enabled-color-subtitle);
+    --ds-list-item-subtext-color: var(--ds-list-item-enabled-color-subtext);
+
+    align-items: center;
+    background: var(--ds-list-item-bg);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    gap: var(--ds-list-item-space-inline);
+    min-height: var(--ds-list-item-size-min-height);
+    padding: var(--ds-list-item-space-padding-top, 0) var(--ds-list-item-space-padding-right, 0) var(--ds-list-item-space-padding-bottom, 0)
+        var(--ds-list-item-space-padding-left, 0);
+    width: var(--ds-list-item-width);
+
+    &:hover {
+        --ds-list-item-bg: var(--ds-list-item-hover-color-background);
+        --ds-list-item-color: var(--ds-list-item-hover-color-title);
+        --ds-list-item-subtitle-color: var(--ds-list-item-hover-color-subtitle);
+        --ds-list-item-subtext-color: var(--ds-list-item-hover-color-subtext);
+    }
+
+    &.ds-list-item-selected {
+        --ds-list-item-bg: var(--ds-list-item-selected-color-background);
+        --ds-list-item-color: var(--ds-list-item-selected-color-title);
+        --ds-list-item-subtitle-color: var(--ds-list-item-selected-color-subtitle);
+        --ds-list-item-subtext-color: var(--ds-list-item-selected-color-subtext);
+    }
+
+    &:active {
+        --ds-list-item-bg: var(--ds-list-item-active-color-background);
+        --ds-list-item-color: var(--ds-list-item-active-color-title);
+        --ds-list-item-subtitle-color: var(--ds-list-item-active-color-subtitle);
+        --ds-list-item-subtext-color: var(--ds-list-item-active-color-subtext);
+    }
+
+    &.ds-list-item-inverse {
+        @include ds-list-item.inverse;
+
+        --ds-list-item-bg: var(--ds-list-item-enabled-color-background);
+        --ds-list-item-color: var(--ds-list-item-enabled-color-title);
+        --ds-list-item-subtitle-color: var(--ds-list-item-enabled-color-subtitle);
+        --ds-list-item-subtext-color: var(--ds-list-item-enabled-color-subtext);
+
+        @media (hover: hover) {
+            &:hover {
+                --ds-list-item-bg: var(--ds-list-item-hover-color-background);
+                --ds-list-item-color: var(--ds-list-item-hover-color-title);
+                --ds-list-item-subtitle-color: var(--ds-list-item-hover-color-subtitle);
+                --ds-list-item-subtext-color: var(--ds-list-item-hover-color-subtext);
+            }
+        }
+
+        &.ds-list-item-selected {
+            --ds-list-item-bg: var(--ds-list-item-selected-color-background);
+            --ds-list-item-color: var(--ds-list-item-selected-color-title);
+            --ds-list-item-subtitle-color: var(--ds-list-item-selected-color-subtitle);
+            --ds-list-item-subtext-color: var(--ds-list-item-selected-color-subtext);
+        }
+
+        &:active {
+            --ds-list-item-bg: var(--ds-list-item-active-color-background);
+            --ds-list-item-color: var(--ds-list-item-active-color-title);
+            --ds-list-item-subtitle-color: var(--ds-list-item-active-color-subtitle);
+            --ds-list-item-subtext-color: var(--ds-list-item-active-color-subtext);
+        }
+    }
+
+    .ds-list-end-slot {
+        --ds-list-item-end-slot-margin-left: auto;
+
+        align-items: center;
+        display: inline-flex;
+        gap: var(--ds-list-item-space-inline);
+        margin-left: var(--ds-list-item-end-slot-margin-left);
+    }
+}
+
+.ds-list-tile-text {
+    align-items: stretch;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.ds-list-tile-title {
+    @include helper.set-font-variables('list-item', 'label', 'lg');
+    @include helper.setup-font-style('list-item');
+
+    --ds-list-item-title-text-padding-bottom: 2px;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--ds-list-item-color);
+    display: -webkit-box;
+    overflow: hidden;
+    padding-bottom: var(--ds-list-item-title-text-padding-bottom);
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    &.ds-list-title-strong {
+        @include helper.set-font-variables('list-item', 'label', 'lg-strong');
+    }
+}
+
+.ds-list-tile-sub-title {
+    @include helper.set-font-variables('list-item', 'label', 'md');
+    @include helper.setup-font-style('list-item');
+
+    color: var(--ds-list-item-subtitle-color);
+}
+
+.ds-list-tile-sub-text {
+    @include helper.set-font-variables('list-item', 'label', 'sm');
+    @include helper.setup-font-style('list-item');
+
+    color: var(--ds-list-item-subtext-color);
+}
+
+.ds-list-tile-sub-title,
+.ds-list-tile-sub-text {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}

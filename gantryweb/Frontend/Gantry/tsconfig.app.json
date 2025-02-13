@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "target": "es2015",
+    "module": "esnext",
+    "stripInternal": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom", "es2018"],
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+    "paths": {
+      "./src/*": [ "./*" ],
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": true,
+    "enableIvy": true
+  }
+}

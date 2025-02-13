@@ -1,0 +1,34 @@
+<gn-base-page>
+    <ng-container header-content>
+        <gn-banner [leadTitle]="result?.sportName" [title]="result?.title"
+            [subtitleRight]="result?.eventStartDate | date:'d  MMMM y h:mm a'| uppercase"
+            [subtitleLeft]="result?.finalResult?.gameName">
+
+            <div class="banner-sub-title-left">
+            </div>
+
+        </gn-banner>
+    </ng-container>
+    <ng-container body-content>
+        <div [ngClass]="mainClassWrapper">
+            <ul class="selection-table">
+                <li *ngFor="let selection of result?.finalResult?.selections | slice:pageDetails.startIndex:pageDetails.endIndex"
+                    id="manualResultSelections">
+                    <div id="selectionName" class="table-item-1 items">
+                        {{ selection?.selectionName | trimSelectionNamePipe : selectionLength}}
+                    </div>
+                    <div id="selectionPrice" class="table-item-2 items">
+                        <ng-container *ngIf="selection?.selectionPrice">
+                            {{selection?.selectionPrice | prepareEvsPipe}}
+                        </ng-container>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-footer [leftSideText]="result?.content?.contentParameters?.LeftStipulatedLine"
+            [rightSideText]="pageSize && result?.finalResult?.selections?.length > 20 ? pageDetails?.paginationText : ''">
+        </gn-footer>
+    </ng-container>
+</gn-base-page>

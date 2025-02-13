@@ -1,0 +1,40 @@
+@import 'shared-css/variables.scss';
+
+:root {
+  font-family: $default-font-condensed;
+  font-size: $txt-sm-font-size;
+}
+
+.ghost-container {
+  background-color: $primary-color-2;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3px;
+
+  button {
+    display: none;
+  }
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $white;
+  opacity: 0.1;
+  filter: alpha(opacity=10);
+}
+
+.scope-to-right-pannel{
+  top: 48px;
+  left: 380px;
+  background-color: rgb(33 33 33 / 0.6);
+
+  + .cdk-global-overlay-wrapper{
+    left: auto;
+    right: 0;
+    width: calc(100vw - 380px);
+  }
+}

@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: var(--figma-color-bg);
+                color: var(--figma-color-text);
+                padding: 2em;
+                font-family: Inter, sans-serif;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--figma-color-text-onbrand);
+                background-color: var(--figma-color-bg-brand);
+                flex-shrink: 0;
+                text-decoration: none;
+                outline: none;
+                border: 1px solid var(--figma-color-border-brand);
+                font-weight: 500;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 12px;
+                box-sizing: border-box;
+                border-radius: 6px;
+                margin-top: 1em;
+            }
+
+            button:hover {
+                background-color: var(--figma-color-bg-brand-hover);
+            }
+
+            button:active {
+                background-color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button:disabled {
+                opacity: 0.5;
+                background-color: var(--figma-color-bg-brand);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Reference Variable Creator</h2>
+
+        <p>
+            <label><input type="checkbox" id="overrideVariables" />Override variables that already exist</label>
+        </p>
+
+        <h3>Variable Selection</h3>
+        <ul style="list-style: none; gap: 10px; display: flex; flex-direction: column; margin: 0; padding: 0">
+            <li>
+                <label><input type="checkbox" id="createSizeVariables" checked />Create Space Variables</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="createRadiusVariables" checked />Create Radius Variables</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="createSpaceVariables" checked />Create Size Variables</label>
+            </li>
+            <li>
+                <label><input type="checkbox" id="createTypographyVariables" checked />Create Typography Variables</label>
+            </li>
+        </ul>
+
+        <button class="button button--primary" id="create">Create Variables</button>
+        <p id="messages"></p>
+        <script>
+            document.getElementById('create').onclick = () => {
+                const isOverrideVariablesChecked = document.getElementById('overrideVariables').checked;
+                const isCreateSizeVariablesChecked = document.getElementById('createSizeVariables').checked;
+                const isCreateRadiusVariablesChecked = document.getElementById('createRadiusVariables').checked;
+                const isCreateSpaceVariablesChecked = document.getElementById('createSpaceVariables').checked;
+                const isCreateTypographyVariablesChecked = document.getElementById('createTypographyVariables').checked;
+
+                document.getElementById('create').disabled = true;
+                document.getElementById('overrideVariables').disabled = true;
+                document.getElementById('createSizeVariables').disabled = true;
+                document.getElementById('createRadiusVariables').disabled = true;
+                document.getElementById('createSpaceVariables').disabled = true;
+                document.getElementById('createTypographyVariables').disabled = true;
+                document.getElementById('messages').innerHTML = '';
+                parent.postMessage(
+                    {
+                        pluginMessage: {
+                            type: 'create-variables',
+                            createVarData: {
+                                force: isOverrideVariablesChecked,
+                                createSizeVariables: isCreateSizeVariablesChecked,
+                                createRadiusVariables: isCreateRadiusVariablesChecked,
+                                createSpaceVariables: isCreateSpaceVariablesChecked,
+                                createTypographyVariables: isCreateTypographyVariablesChecked,
+                            },
+                        },
+                    },
+                    '*',
+                );
+            };
+
+            onmessage = (event) => {
+                if (event.data.pluginMessage.type === 'create-variables-result') {
+                    document.getElementById('messages').innerHTML = event.data.pluginMessage.message;
+                    document.getElementById('create').disabled = false;
+                    document.getElementById('overrideVariables').disabled = false;
+                    document.getElementById('createSizeVariables').disabled = false;
+                    document.getElementById('createRadiusVariables').disabled = false;
+                    document.getElementById('createSpaceVariables').disabled = false;
+                    document.getElementById('createTypographyVariables').disabled = false;
+                }
+            };
+        </script>
+    </body>
+</html>

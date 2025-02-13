@@ -1,0 +1,47 @@
+<div class="sequence-preset-carousel" cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+    <div class="carousel-header" mat-dialog-title cdkDragHandle>
+        @if (stage == presetStage.create){
+            <mat-icon id="add" class="add-icon" aria-hidden="false" aria-label="add icon">add_alt</mat-icon>
+        } @else if(stage == presetStage.edit){
+            <mat-icon id="edit" class="edit-icon" aria-hidden="false" aria-label="edit icon">edit_alt</mat-icon>
+        } @else if(stage == presetStage.clone){
+                        <img [src]="copyIcon" class="copy" id="copy" alt="copy">
+        }
+        <div class="header-title">
+            <div class="label-text" id="dialogHeaderTitle">{{dialogHeaderTitle}}</div>
+        </div>
+    </div>
+    <mat-dialog-content class="carousel-content">
+        <form [formGroup]="newPresetForm">
+            <div class="preset-content">
+                <div class="preset-content__left">
+                    <div class="item-label">PRESET NAME*:<span class="item-label__error" *ngIf="getPresetNameError() as errorMessage">{{ errorMessage }}</span></div>
+                    <mat-form-field appearance="fill" class="preset-name-input">
+                        <input matInput id="present-name" formControlName="presetName" type="text" placeholder="Preset Name" autocomplete="off" />                        
+                    </mat-form-field>
+                </div>
+            </div>
+            <app-preset-assets-table id="sequence-preset-carousel-setting" [parentFormgroup]="newPresetForm" [messageTitle]="messageTitle"></app-preset-assets-table>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions class="carousel-footer">
+        <!-- Right Side -->
+        <div class="carousel-footer__right">
+            <button id="reset-changes-btn" mat-stroked-button class="footer-btn reset-sequence-btn"
+                (click)="resetSequence()" [disabled]="newPresetForm.pristine">
+                <div class="button-with-icon">
+                    <img class="left-icon" [src]="resetIconPath">
+                    <div class="label-text">RESET CHANGES</div>
+                </div>
+            </button>
+            <div class="divider"></div>
+            <button id="cancel-btn" class="footer-btn cancel-btn" (click)="cancelSequence()" mat-dialog-close>
+                <div class="label-text">CANCEL</div>
+            </button>
+            <button [disabled]="!isCreatePresetEnabled || newPresetForm.invalid" id="success-sequence-btn"
+                class="footer-btn create-sequence-btn border-none" (click)="createPreset()">
+                <div class="label-text">{{createSaveActionButton}}</div>
+            </button>
+        </div>
+    </mat-dialog-actions>
+</div>

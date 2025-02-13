@@ -1,0 +1,96 @@
+<!-- eslint-disable @angular-eslint/template/no-inline-styles -->
+<!-- eslint-disable @nx/workspace-css-color-token-usage -->
+<ng-container *ngTemplateOutlet="typographyPage ? typographyTemplate : tokenListTemplate" />
+
+<ng-template #typographyTemplate>
+    <div class="ds-grid-table">
+        <div class="ds-grid-cell ds-grid-header"></div>
+        @for (size of fontSizes; track size) {
+            <div class="ds-grid-cell ds-grid-header">
+                <div>{{ size }}/</div>
+                <div>{{ size }} strong</div>
+            </div>
+        }
+
+        @for (type of fontTypes; track type) {
+            <div class="ds-grid-cell ds-grid-header">{{ type }}</div>
+            @for (size of fontSizes; track size) {
+                <div class="ds-grid-cell">
+                    @if (checkFontSize(type, size)) {
+                        <div [attr.class]="'typography-page-' + type.toLowerCase() + '-' + size">Text</div>
+                        <div [attr.class]="'typography-page-' + type.toLowerCase() + '-' + size + '-strong'">Text</div>
+                    } @else {
+                        -
+                    }
+                </div>
+            }
+        }
+    </div>
+</ng-template>
+
+<ng-template #tokenListTemplate>
+    <table class="ds-tokens-view-layout">
+        <tr class="ds-tokens-table-row">
+            <td colspan="2" align="center" class="ds-tokens-table-item">
+                <div class="ds-pie-chart-wrapper">
+                    <div class="ds-pie-chart" [style.--percentage]="getPieChartDegree()"></div>
+                    <div class="ds-pie-chart__text">{{ filteredTokensCount }} of {{ semanticTokensCount }}</div>
+                </div>
+            </td>
+        </tr>
+        @if (typographyPage) {
+            <tr class="ds-tokens-table-row">
+                <td class="ds-tokens-table-item"></td>
+            </tr>
+        } @else {
+            @for (token of filteredTokens; track token) {
+                <tr class="ds-tokens-table-row">
+                    <td class="ds-tokens-table-item">
+                        <div class="ds-preview-container" [ngStyle]="getPreviewContainerStyle(token)">
+                            @switch (token.type) {
+                                @case ('fontSize') {
+                                    <span class="ds-typography-cell" [ngStyle]="getCellStyle(token)">Lorem ipsum</span>
+                                }
+                                @case ('fontFamily') {
+                                    <span class="ds-typography-cell" [ngStyle]="getCellStyle(token)">Lorem ipsum</span>
+                                }
+                                @case ('fontWeight') {
+                                    <span class="ds-font-weight-cell" [ngStyle]="getCellStyle(token)">Lorem ipsum</span>
+                                }
+                                @case ('color') {
+                                    <div class="ds-color-cell">
+                                        <div class="ds-opacity-cell"></div>
+                                    </div>
+                                }
+                                @case ('spacing') {
+                                    @if (token.subtype === 'inline' || token.subtype === 'stack') {
+                                        <div class="ds-spacing-cell" [ngStyle]="getCellStyle(token)"></div>
+                                    }
+                                }
+                                @case ('size') {
+                                    <div class="ds-size-cell" [ngStyle]="getCellStyle(token)"></div>
+                                }
+                                @case ('borderRadius') {
+                                    <div class="ds-bd-radius-cell" [ngStyle]="getCellStyle(token)"></div>
+                                }
+                                @case ('elevation') {
+                                    <div class="ds-elevation-cell" [ngStyle]="getCellStyle(token)"></div>
+                                }
+                                @case ('lineHeight') {
+                                    <div class="ds-line-height-cell" [ngStyle]="getCellStyle(token)">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam veniam eum dicta.
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </td>
+                    <td class="ds-tokens-table-item">
+                        <div class="ds-value-cell">--{{ token.name }}</div>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</ng-template>
+
+<!-- eslint-enable @angular-eslint/template/no-inline-styles -->

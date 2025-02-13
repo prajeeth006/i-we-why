@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj"/>
+        <ProjectReference Include="..\Frontend.Vanilla.RestMocks\Frontend.Vanilla.RestMocks.csproj"/>
+    </ItemGroup>
+
+</Project>

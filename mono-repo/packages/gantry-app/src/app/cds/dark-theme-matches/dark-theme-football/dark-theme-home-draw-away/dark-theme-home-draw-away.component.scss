@@ -1,0 +1,278 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+$full: 100%;
+
+@mixin min-max-width($width) {
+    min-width: $width;
+    max-width: $width;
+
+    @include breakpoint(multidesktop) {
+        min-width: calc($width / 2);
+        max-width: calc($width / 2);
+    }
+}
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+
+    @include breakpoint(multidesktop) {
+        width: calc($width / 2);
+        height: calc($height / 2);
+    }
+}
+.header-status-box {
+    border-radius: 25px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    font-size: $font-list-title;
+
+    @include width-height(240px, 130px);
+
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        border-radius: 12.5px;
+        border-width: 2.5px;
+        font-size: $txt-sm-font-size;
+    }
+    span {
+        font-size: 39px;
+        letter-spacing: -1px;
+        line-height: 35px;
+        padding: 0;
+        text-align: center;
+
+        @include breakpoint(multidesktop) {
+            font-size: 19.5px;
+            line-height: 17.5px;
+            letter-spacing: -0.5px;
+        }
+    }
+}
+
+.football-coupon {
+    &__header {
+        margin: 20px 0px;
+
+        @include flex-container(flex-start, center);
+
+        @include breakpoint(multidesktop) {
+            margin: 10px 0;
+        }
+    }
+    &__heading {
+        color: $theme-yellow;
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+        text-transform: capitalize;
+
+        @include breakpoint(multidesktop) {
+            font-size: 18px;
+            line-height: 13px;
+        }
+
+        &--home {
+            margin-left: 160px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 80px;
+            }
+        }
+
+        &--draw {
+            margin-left: 651px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 325.5px;
+            }
+        }
+
+        &--away {
+            margin-left: 650px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 325px;
+            }
+        }
+    }
+    &__list {
+        display: grid;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        grid-row-gap: 14px;
+        grid-template-columns: repeat(1, 1fr);
+        @include breakpoint(multidesktop) {
+            grid-row-gap: 7px;
+        }
+    }
+    &__item {
+        color: $color-white;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: capitalize;
+
+        @include flex-container(flex-start, center);
+        @include breakpoint(multidesktop) {
+            font-size: 28px;
+        }
+    }
+    &__price,
+    &__selection {
+        margin-right: 20px;
+        @include breakpoint(multidesktop) {
+            margin-right: 10px;
+        }
+    }
+    &__time {
+        color: $color-white;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 36px;
+        margin-right: 14px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        @include min-max-width(105px);
+
+        @include breakpoint(multidesktop) {
+            font-size: 20px;
+            line-height: 18px;
+            margin-right: 7px;
+        }
+    }
+    &__selection {
+        border-bottom: solid 4px $color-white;
+        height: $full;
+
+        @include min-max-width(504px);
+
+        @include breakpoint(multidesktop) {
+            border-bottom-width: 2px;
+        }
+
+        span {
+            width: $full;
+            display: block;
+            white-space: pre;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &--away {
+            text-align: right;
+        }
+    }
+    &__price {
+        background-color: $color-white;
+        color: $early-price-text;
+
+        @include flex-container(center, center);
+
+        @include width-height(192px, 80px);
+
+        span {
+            font-size: 56px;
+            @include breakpoint(multidesktop) {
+                font-size: 28px;
+            }
+        }
+        &--away {
+            margin-right: 0px;
+        }
+
+        &.selection-result {
+            font-size: 56px;
+            @include breakpoint(multidesktop) {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+html[data-domain='coral.co.uk'] {
+    .header {
+        .header__title--block {
+            column-gap: 26px;
+            @include breakpoint(multidesktop) {
+                column-gap: 13px;
+            }
+            .header__title--block-left {
+                .header__logo {
+                    @include width-height(124px, 124px);
+
+                    margin-right: 8px;
+                    margin-top: -7px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-right: 4px;
+                        margin-top: -3.5px;
+                    }
+                    img {
+                        @include width-height(108px, 108px);
+
+                        margin: 8px;
+                        object-fit: contain;
+
+                        @include breakpoint(multidesktop) {
+                            margin: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+html[data-domain='ladbrokes.com'] {
+    .header {
+        .header__title--block {
+            column-gap: 27.69px;
+            @include breakpoint(multidesktop) {
+                column-gap: 13.85px;
+            }
+        }
+    }
+    body {
+        .header .header__title--block .header__title--block-left .header__title:before {
+            @include breakpoint(multidesktop) {
+                width: calc(100% - 11px);
+            }
+        }
+    }
+    .header-status-box.tilted-card {
+        width: 206px;
+
+        @include breakpoint(multidesktop) {
+            width: 103px;
+        }
+    }
+    .football-coupon__header {
+        margin-bottom: 18px;
+
+        @include breakpoint(multidesktop) {
+            margin-bottom: 9px;
+        }
+    }
+    .football-coupon__heading {
+        color: $color-white;
+    }
+    .football-coupon__time {
+        margin-right: 10px;
+
+        @include breakpoint(multidesktop) {
+            margin-right: 5px;
+        }
+    }
+    .football-coupon__price {
+        @include width-height(174.57px, 80px);
+    }
+    .football-coupon__selection {
+        @include min-max-width(528px);
+    }
+}

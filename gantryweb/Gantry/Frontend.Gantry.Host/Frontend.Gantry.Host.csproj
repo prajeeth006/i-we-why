@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Views\BoxingApi\**" />
+	  <Compile Remove="Views\Carousel\**" />
+	  <Compile Remove="Views\Gantry\**" />
+	  <Compile Remove="Views\MultiView\**" />
+	  <Content Remove="Views\BoxingApi\**" />
+	  <Content Remove="Views\Carousel\**" />
+	  <Content Remove="Views\Gantry\**" />
+	  <Content Remove="Views\MultiView\**" />
+	  <EmbeddedResource Remove="Views\BoxingApi\**" />
+	  <EmbeddedResource Remove="Views\Carousel\**" />
+	  <EmbeddedResource Remove="Views\Gantry\**" />
+	  <EmbeddedResource Remove="Views\MultiView\**" />
+	  <None Remove="Views\BoxingApi\**" />
+	  <None Remove="Views\Carousel\**" />
+	  <None Remove="Views\Gantry\**" />
+	  <None Remove="Views\MultiView\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Frontend.Host" Version="14.16.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Frontend.Gantry\Frontend.Gantry.csproj" />
+	</ItemGroup>
+	<!--<ItemGroup>
+    <Content Update="Views\**">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>-->
+	<ItemGroup>
+		<Content Include="Configuration\DynaConOverrides.json.sample" />
+		<!--<None Include="packages.config" />-->
+		<!--<Content Include="Views\_ViewStart.cshtml" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>-->
+		<!--<Content Include="Views\Shared\MobileLayout.cshtml" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Views\Shared\ClientBootstrap.cshtml" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>-->
+		<!--<Content Include="template.web.config" />
+		<None Include="transform.web.fvt.config" />
+		<None Include="transform.web.prod.config" />
+		<None Include="transform.web.qa.config" />
+		<Content Include="Views\StaticPromotion\StaticPromotion.cshtml" />
+		<None Include="Web.Debug.config">
+			<DependentUpon>Web.config</DependentUpon>
+		</None>
+		<None Include="Web.Release.config">
+			<DependentUpon>Web.config</DependentUpon>
+		</None>-->
+	</ItemGroup>
+</Project>

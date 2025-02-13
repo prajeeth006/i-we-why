@@ -1,0 +1,37 @@
+
+
+git clone --branch <branchname> <remote-repo-url>
+
+git clone --branch DTP-29480-RacingTemplate-HorseRacing-UI https://vie.git.bwinparty.com/cms/gantryweb.git
+
+git config --list
+
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+cherry-pick
+------------------
+git cherry-pick <commit-id>
+
+git cherry-pick 
+
+Continue the Cherry-Pick
+---------------------------
+git cherry-pick --continue
+
+Abort the Cherry-Pick
+------------------------
+git cherry-pick --abort
+
+Git rebase
+---------------
+git rebase origin/main
+git push -f
+[remainder]: Never do it in main or master
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<div> {{serverConnection}} </div>
+<table *ngIf="hosts && hosts.hostConnections">
+    <tr>
+        <th>Server</th>
+        <th>Status</th>
+    </tr>
+    
+    <tr *ngFor="let host of hosts.hostConnections"  
+    [ngClass]="(host.Connection== true) ? tdBackgroundGreen : tdBackgroundRed" >
+
+        <td> {{host.ConnectionName}}</td>
+        <td> {{host.Connection}}</td>        
+    </tr>    
+</table>
+

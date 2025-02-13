@@ -1,0 +1,136 @@
+import { InternalVariable } from './internal-variable';
+
+export const varListSize: InternalVariable[] = [
+    {
+        name: 'size/no size',
+        type: 'FLOAT',
+        value: 0,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/xquarter',
+        type: 'FLOAT',
+        value: 1,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/xhalf',
+        type: 'FLOAT',
+        value: 2,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x1',
+        type: 'FLOAT',
+        value: 4,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x2',
+        type: 'FLOAT',
+        value: 8,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x3',
+        type: 'FLOAT',
+        value: 12,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x4',
+        type: 'FLOAT',
+        value: 16,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x5',
+        type: 'FLOAT',
+        value: 20,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x6',
+        type: 'FLOAT',
+        value: 24,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x8',
+        type: 'FLOAT',
+        value: 32,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x9',
+        type: 'FLOAT',
+        value: 36,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x10',
+        type: 'FLOAT',
+        value: 40,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x11',
+        type: 'FLOAT',
+        value: 44,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x12',
+        type: 'FLOAT',
+        value: 48,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x13',
+        type: 'FLOAT',
+        value: 52,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x14',
+        type: 'FLOAT',
+        value: 56,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x16',
+        type: 'FLOAT',
+        value: 64,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x18',
+        type: 'FLOAT',
+        value: 72,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x20',
+        type: 'FLOAT',
+        value: 80,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x22',
+        type: 'FLOAT',
+        value: 88,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x24',
+        type: 'FLOAT',
+        value: 96,
+        category: 'SIZE',
+    },
+    {
+        name: 'size/x25',
+        type: 'FLOAT',
+        value: 100,
+        category: 'SIZE',
+    },
+];

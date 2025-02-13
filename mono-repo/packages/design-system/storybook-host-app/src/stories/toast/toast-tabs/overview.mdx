@@ -1,0 +1,30 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ToastComponentStories from '../toast.component.stories';
+
+The DsToast component is designed to display toast notifications with customizable content.
+It uses slots to allow you to insert specific elements into predefined areas of the toast.
+
+<Canvas of={ToastComponentStories.withAllElements} />
+
+## Usage
+
+Import `DsToast` in your component.
+
+```ts
+import { DsToast } from '@frontend/ui/toast'; // 👈 add to file imports
+
+@Component({
+    imports: [DsToast],
+    template: `...`, // 👈 add to component imports
+})
+export class AppComponent {}
+```
+
+To use the ds-toast component, include the `<ds-toast></ds-toast>` selector in your template. The content inside the toast is divided into different slots:
+
+-   **Description:** This is the default slot. You do not need to specify a slot for the description content; just place your description directly inside the <ds-toast /> tags;
+-   **Status Icon:** Use the slot="statusIcon" attribute to specify the content for the status icon slot. This is typically used for an icon indicating the status of the toast (e.g., success, error);
+-   **Action Button:** Use the slot="action" attribute for the action button slot. This is useful for adding a button to perform some action directly from the toast notification;
+-   **Close Icon:** Use the slot="close" attribute to customize the close button. The default implementation uses a ds-icon-button, but this slot allows you to override it with your own close button design if needed.

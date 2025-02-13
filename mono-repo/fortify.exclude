@@ -1,0 +1,4 @@
+-exclude "**/*.spec.ts"
+-exclude "**/translations/**/*.*"
+-exclude "**/node_modules/**/*.*"
+-exclude "**/assets/adobe/**/*.*"

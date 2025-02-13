@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Bpty_Build">
+  <PropertyGroup>
+    <Solution>$(MSBuildProjectDirectory)\backend\Frontend.sln</Solution>
+    <Configuration Condition=" '$(Configuration)' == '' ">Publish</Configuration>
+    <OutputPath>.</OutputPath>
+    <SkipAspNetCompiler>True</SkipAspNetCompiler>
+    <DotNetCoreNugetWorkaround>True</DotNetCoreNugetWorkaround>
+    <SolutionFolder Condition="'$(SolutionFolder)'==''">$([System.IO.Path]::GetDirectoryName($(Solution)))</SolutionFolder>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <FortifyProjectName>vanilla.monorepo_branch</FortifyProjectName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CustomProperties Include="vanilla\Frontend.SharedFeatures.Api\Frontend.SharedFeatures.Api.csproj">
+      <PackageName>Frontend.SharedFeatures.Api</PackageName>
+      <ForceFortifyScan>True</ForceFortifyScan>
+    </CustomProperties>
+  </ItemGroup>
+
+  <Import Project="$(BPTY_BUILD_ROOT)\MSBuild40\Bpty.Build.targets" />
+</Project>

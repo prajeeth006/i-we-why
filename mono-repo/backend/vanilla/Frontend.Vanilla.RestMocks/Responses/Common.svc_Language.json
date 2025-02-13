@@ -1,0 +1,172 @@
+{
+    "Languages": [
+        {
+            "cultureName": "bg-BG",
+            "id": "BG",
+            "name": "Български",
+            "platformId": "bg_BG",
+            "translatedName": "Bulgarian"
+        },
+        {
+            "cultureName": "ca-ES",
+            "id": "CA",
+            "name": "Català",
+            "platformId": "ca_ES",
+            "translatedName": "Catalan"
+        },
+        {
+            "cultureName": "da-DK",
+            "id": "DA",
+            "name": "Dansk",
+            "platformId": "da_DK",
+            "translatedName": "Danish"
+        },
+        {
+            "cultureName": "de-DE",
+            "id": "DE",
+            "name": "Deutsch",
+            "platformId": "de_DE",
+            "translatedName": "German"
+        },
+        {
+            "cultureName": "el-GR",
+            "id": "EL",
+            "name": "Ελληνικά",
+            "platformId": "el_GR",
+            "translatedName": "Greek"
+        },
+        {
+            "cultureName": "en-US",
+            "id": "EN",
+            "name": "English",
+            "platformId": "en_US",
+            "translatedName": "English"
+        },
+        {
+            "cultureName": "es-ES",
+            "id": "ES",
+            "name": "Español",
+            "platformId": "es_ES",
+            "translatedName": "Spanish"
+        },
+        {
+            "cultureName": "es-419",
+            "id": "es-419",
+            "name": "Español",
+            "platformId": "es_XL",
+            "translatedName": "Spanish"
+        },
+        {
+            "cultureName": "fi-FI",
+            "id": "FI",
+            "name": "suomi",
+            "platformId": "fi_FI",
+            "translatedName": "Finnish"
+        },
+        {
+            "cultureName": "fr-FR",
+            "id": "FR",
+            "name": "français",
+            "platformId": "fr_FR",
+            "translatedName": "French"
+        },
+        {
+            "cultureName": "hr-HR",
+            "id": "HR",
+            "name": "Hrvatski",
+            "platformId": "hr_HR",
+            "translatedName": "Croatian"
+        },
+        {
+            "cultureName": "hu-HU",
+            "id": "HU",
+            "name": "Magyar",
+            "platformId": "hu_HU",
+            "translatedName": "Hungarian"
+        },
+        {
+            "cultureName": "it-IT",
+            "id": "IT",
+            "name": "Italiano",
+            "platformId": "it_IT",
+            "translatedName": "Italian"
+        },
+        {
+            "cultureName": "nb-NO",
+            "id": "NB",
+            "name": "Norsk",
+            "platformId": "nb_NO",
+            "translatedName": "Norwegian"
+        },
+        {
+            "cultureName": "nl-NL",
+            "id": "NL",
+            "name": "Nederlands",
+            "platformId": "nl_NL",
+            "translatedName": "Nederlands"
+        },
+        {
+            "cultureName": "pl-PL",
+            "id": "PL",
+            "name": "polski",
+            "platformId": "pl_PL",
+            "translatedName": "Polish"
+        },
+        {
+            "cultureName": "pt-BR",
+            "id": "PT",
+            "name": "Português",
+            "platformId": "pt_BR",
+            "translatedName": "Portuguese"
+        },
+        {
+            "cultureName": "ro-RO",
+            "id": "RO",
+            "name": "RomÃ¢nÄƒ",
+            "platformId": "ro_RO",
+            "translatedName": "Romanian"
+        },
+        {
+            "cultureName": "ru-RU",
+            "id": "RU",
+            "name": "Русский",
+            "platformId": "ru_RU",
+            "translatedName": "Russian"
+        },
+        {
+            "cultureName": "sk-SK",
+            "id": "SK",
+            "name": "slovenčina",
+            "platformId": "sk_SK",
+            "translatedName": "Slovak"
+        },
+        {
+            "cultureName": "sl-SI",
+            "id": "SL",
+            "name": "Slovaški",
+            "platformId": "sl_SI",
+            "translatedName": "Slovenian"
+        },
+        {
+            "cultureName": "sv-SE",
+            "id": "SV",
+            "name": "Svenska",
+            "platformId": "sv_SE",
+            "translatedName": "Swedish"
+        },
+        {
+            "cultureName": "cs-CZ",
+            "id": "CZ",
+            "name": "Čeština",
+            "platformId": "cs_CY",
+            "translatedName": "Czech"
+        },
+        {
+            "cultureName": "tr-TR",
+            "id": "TR",
+            "name": "Türkçe",
+            "platformId": "tr_TR",
+            "translatedName": "Turkish"
+        }
+    ]
+}

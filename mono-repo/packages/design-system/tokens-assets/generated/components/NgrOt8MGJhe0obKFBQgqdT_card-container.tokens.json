@@ -1,0 +1,86 @@
+{
+    "card-container": {
+        "shared": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.lowest.base}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xhalf}"
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-2xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-2xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "card-container",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                }
+            }
+        }
+    }
+}

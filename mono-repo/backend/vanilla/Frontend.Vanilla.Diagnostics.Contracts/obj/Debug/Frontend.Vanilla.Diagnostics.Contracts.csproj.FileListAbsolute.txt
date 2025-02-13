@@ -1,0 +1,12 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\Frontend.Vanilla.Diagnostics.Contracts.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\Frontend.Vanilla.Diagnostics.Contracts.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\Frontend.Vanilla.Diagnostics.Contracts.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\refint\Frontend.Vanilla.Diagnostics.Contracts.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\Frontend.Vanilla.Diagnostics.Contracts.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.Contracts\obj\Debug\ref\Frontend.Vanilla.Diagnostics.Contracts.dll

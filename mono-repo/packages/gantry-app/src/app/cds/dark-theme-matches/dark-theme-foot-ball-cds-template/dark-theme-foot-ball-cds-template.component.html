@@ -1,0 +1,44 @@
+<div class="football--multimarket">
+    <ng-container *ngIf="footBallCDSContent as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-dark-theme-base-page>
+                <ng-container header-content>
+                    <gn-dark-theme-header [title]="vm.marketResult?.eventName" [racingImage]="vm?.content?.footballImage?.src">
+                        <ng-container raceStage-content>
+                            <div class="header-status-box tilted-card">
+                                <span id="DefaultPriceColumn" class="tilted-text" *ngIf="vm?.marketResult?.eventStartDate.length > 1">
+                                    {{ (vm?.marketResult?.eventStartDate | darkThemeEventDatetime).date }}<br />{{
+                                        (vm?.marketResult?.eventStartDate | darkThemeEventDatetime).time
+                                    }}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </gn-dark-theme-header>
+                </ng-container>
+
+                <ng-container body-content>
+                    <div>
+                        <gn-dark-theme-match-results [matchData]="vm"></gn-dark-theme-match-results>
+                        <gn-dark-theme-total-goals [matchData]="vm"></gn-dark-theme-total-goals>
+                        <gn-dark-theme-both-teams-to-score [matchData]="vm"> </gn-dark-theme-both-teams-to-score>
+                        <gn-dark-theme-match-results-both [matchData]="vm"></gn-dark-theme-match-results-both>
+                        <gn-dark-theme-correct-score [matchData]="vm"></gn-dark-theme-correct-score>
+                        <gn-dark-theme-first-goal-scorer [matchData]="vm"></gn-dark-theme-first-goal-scorer>
+                    </div>
+                </ng-container>
+
+                <ng-container footer-content>
+                    <gn-dark-theme-footer>
+                        <ng-container left-side-content>
+                            {{ vm?.marketResult?.competition }}
+                        </ng-container>
+                        <ng-container right-side-content>
+                            {{ vm.content?.contentParameters?.DarkFooterLeft ?? '' }}
+                        </ng-container>
+                    </gn-dark-theme-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+</div>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

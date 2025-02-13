@@ -1,0 +1,8 @@
+<div id="eventScreensWrapper" class="event-screens-wrapper">
+    @for (screen of data?.ScreenDetails?.Duo1; track $index) {
+    <div id="halfScreen">
+        <app-screen-layout-single [layoutStyle]="'H'" [data]="data" [screenInfo]="screen"
+        (onRightClick)="singleLayoutRightClick($event)" ></app-screen-layout-single>
+    </div>
+    }
+</div>

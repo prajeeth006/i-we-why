@@ -1,0 +1,184 @@
+{
+    "link": {
+        "active": {
+            "default": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active}"
+                    }
+                }
+            },
+            "inverse": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.active-inverse}"
+                    }
+                }
+            }
+        },
+        "disabled": {
+            "default": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    }
+                }
+            },
+            "inverse": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    }
+                }
+            }
+        },
+        "enabled": {
+            "default": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    }
+                }
+            },
+            "inverse": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    }
+                }
+            }
+        },
+        "hover": {
+            "default": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover}"
+                    }
+                }
+            },
+            "inverse": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.hover-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "link",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "link",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "link",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "link",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                }
+            }
+        },
+        "utility": {
+            "default": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    }
+                }
+            },
+            "inverse": {
+                "color": {
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "link",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    }
+                }
+            }
+        }
+    }
+}

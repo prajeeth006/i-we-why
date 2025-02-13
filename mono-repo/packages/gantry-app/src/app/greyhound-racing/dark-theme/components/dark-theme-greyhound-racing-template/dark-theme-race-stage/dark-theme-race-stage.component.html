@@ -1,0 +1,61 @@
+<div class="header__title--block-right">
+    <ng-container *ngIf="greyhoundRacingRunnersResult?.isVirtualEvent">
+        <div [ngClass]="{ 'filled-bg-white': !greyhoundRacingRunnersResult?.isRaceOff }" class="header-current-price tilted-card" autoAdjustFont>
+            <ng-container *ngIf="greyhoundRacingRunnersResult?.isRaceOff; then raceOffStage; else livePriceStage"></ng-container>
+            <ng-template #raceOffStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{ currentStage | titlecase }}
+                </span>
+            </ng-template>
+            <ng-template #livePriceStage>
+                <span id="DefaultPriceColumn" class="tilted-text">
+                    {{
+                        greyhoundRacingRunnersResult?.greyHoundImageData?.contentParameters?.LivePrice
+                            ? (greyhoundRacingRunnersResult?.greyHoundImageData?.contentParameters?.LivePrice | titlecase)
+                            : ''
+                    }}
+                </span>
+            </ng-template>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!greyhoundRacingRunnersResult?.isVirtualEvent && greyhoundRacingRunnersResult?.showRaceStage">
+        <div
+            *ngIf="!!greyhoundRacingRunnersResult?.defaultPriceColumn"
+            [class.head-item-2-secondary]="
+                (greyhoundRacingRunnersResult?.raceStage && greyhoundRacingRunnersResult?.raceStage[0] === 'O') ||
+                greyhoundRacingRunnersResult?.isRaceOff
+            "
+            [ngClass]="greyhoundRacingRunnersResult?.defaultPriceColumn?.includes('||||') && 'finish'">
+            <ng-container *ngIf="!greyhoundRacingRunnersResult?.defaultPriceColumn?.includes('||||')">
+                <div
+                    [ngClass]="{ 'race-it-off': greyhoundRacingRunnersResult?.isRaceOff, 'filled-bg-white': isEarlyOrLivePrice }"
+                    class="header-current-price tilted-card"
+                    autoAdjustFont>
+                    <span id="DefaultPriceColumn" [ngClass]="!greyhoundRacingRunnersResult?.raceStage ? 'unset-width' : ''" class="tilted-text">
+                        {{ currentStage }}
+                    </span>
+                </div>
+            </ng-container>
+        </div>
+
+        <div
+            *ngIf="
+                greyhoundRacingRunnersResult?.arePlus1MarketPricesPresent &&
+                (greyhoundRacingRunnersResult?.isRaceOff ||
+                    (!greyhoundRacingRunnersResult?.isRaceOff && greyhoundRacingRunnersResult?.markets[1]?.marketStatus != suspendedMarketStatus))
+            "
+            class="tilted-card header-plus1-market"
+            autoAdjustFont>
+            <span id="MarketName" class="tilted-text">{{ greyhoundRacingRunnersResult?.markets[1]?.marketName | marketName }}</span>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!greyhoundRacingRunnersResult?.isVirtualEvent && !greyhoundRacingRunnersResult?.showRaceStage">
+        <div *ngIf="!greyhoundRacingRunnersResult?.areCurrentPricesPresent" class="header-current-price tilted-card filled-bg-white" autoAdjustFont>
+            <span id="AwaitingPriceColumn" class="tilted-text">
+                {{ greyhoundRacingRunnersResult?.greyHoundImageData?.contentParameters?.AwaitingPrice ?? '' }}
+            </span>
+        </div>
+    </ng-container>
+</div>

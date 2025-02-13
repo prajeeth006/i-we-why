@@ -1,0 +1,95 @@
+﻿@using Bwin.Vanilla.Features.Assets
+﻿@using Frontend.Vanilla.DotNetCore.Host
+@using Bwin.Vanilla.Features.HtmlInjection
+
+@inject ILayoutViewDataProvider VanillaDataProvider
+@{
+    Layout = null;//"../Shared/MobileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html data-domain="@ViewBag.domain" server-name="@ViewBag.serverName">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GantryClientBootstrap</title>
+    <base href="/" />
+
+    <script>
+        window.label = "@ViewBag.domain";
+        window.script_load = (function () {
+            var that = this;
+            that.mapping = {};
+            that.startTime = Date.now();
+            return {
+                timings: {},
+                start: function (id) {
+                    that.mapping[id] = Date.now();
+                },
+                onEnd: function (script) {
+                    var startTime = that.mapping[script.id];
+                    if (startTime) {
+                        this.timings[script.src] = Date.now() - startTime;
+                        delete that.mapping[script.id];
+                    }
+                }
+            }
+        })();
+
+        var scriptsArray = new Array();
+
+        window.addEventListener('error',
+            ((event) => {
+                if (event.target.nodeName === "SCRIPT" && !scriptsArray?.some(src => src === event.target.src)) {
+                    scriptsArray.push(event.target.src);
+                    createScript(event.target.src);
+                }
+            }),
+            true);
+
+        function createScript(script) {
+            retryScripts(script)
+                .then(() => {
+                })
+                .catch((e) => {
+                    setTimeout(() => {
+                        createScript(script);
+                        unloadJS(script);
+                    }, 30000);
+                });
+        }
+
+        function retryScripts(targetUrl) {
+            return new Promise(function (res, rej) {
+                var retryScript = document.createElement('script');
+                retryScript.src = targetUrl;
+                retryScript.type = 'text/javascript';
+                retryScript.onerror = rej;
+                retryScript.async = true;
+                retryScript.onload = res;
+                retryScript.addEventListener('error', rej);
+                retryScript.addEventListener('load', res);
+                var getPreviousScript = document.querySelector("script[src^='" + targetUrl + "']");
+                if (getPreviousScript != null) {
+                    document.head.removeChild(getPreviousScript);
+                }
+                document.head.appendChild(retryScript);
+            });
+        }
+
+        function unloadJS(targetUrl) {
+            var scripts = document.head.querySelector("script[src^='" + targetUrl + "']");
+            if (scripts != null) {
+                document.head.removeChild(scripts);
+            }
+        }
+    
+    </script>
+
+    @VanillaDataProvider.RenderBootstrapAssets(BootstrapAssetSection.Head)
+</head>
+<body>
+    @VanillaDataProvider.RenderBootstrapAssets(BootstrapAssetSection.Body)
+
+    <root></root>
+</body>
+</html>

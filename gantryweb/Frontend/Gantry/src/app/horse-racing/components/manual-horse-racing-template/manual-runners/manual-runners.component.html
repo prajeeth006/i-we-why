@@ -1,0 +1,120 @@
+<div class="racing-runners">
+  <gn-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+      <gn-banner [leadTitle]="vm.categoryName" [title]="vm.eventTimePlusTypeName">
+        <div class="runners-custom-banner">
+          <div class="banner-sub-title">
+            <div class="banner-sub-title-left">
+              <div *ngIf="vm.racingContent" class="head-item-1 item-head">
+                <span id="RaceNumber" *ngIf="vm.racingContent.raceNo">
+                  {{ vm.horseRacingContent?.contentParameters?.RACE }} {{ vm.racingContent.raceNo }}
+                </span>
+                <span id="Distance" *ngIf="vm.racingContent.distance">
+                  {{ vm.racingContent?.distance | uppercase }}
+                </span>
+                <span id="Going" *ngIf="vm.racingContent.going">
+                  {{ vm.horseRacingContent?.contentParameters?.GOING }}: {{ vm.racingContent?.going | uppercase }}
+                </span>
+              </div>
+            </div>
+            <div class="banner-sub-title-right">
+              <div class="item-head head-item-3 arrow-down" *ngIf="!vm.isRaceOff">
+                <div>
+                <span id="LivePrice">
+                  {{ vm.horseRacingContent?.contentParameters?.LivePrice | uppercase }}
+                </span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </gn-banner>
+    </ng-container>
+
+    <ng-container body-content>
+      <ul id="horseTable" class="horse-table">
+        <div *ngIf="scrollAtTop" (wheel)="$event.preventDefault()">
+          <div class="autoScroll 1">
+            <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }"
+              (@autoScroll.done)="onEnd($event)">
+              <li #scrollItem class="1" *ngFor="let horseRacingEntry of horseRacingAutoScrollRunners"
+                [class.non-runner]="horseRacingEntry.nonRunner">
+                <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }">
+                </ng-template>
+              </li>
+            </div>
+          </div>
+          <li class="2" *ngFor="let horseRacingEntry of horseRacingFixedRunnersResult"
+            [class.non-runner]="horseRacingEntry.nonRunner">
+            <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }">
+            </ng-template>
+          </li>
+        </div>
+
+        <div *ngIf="!scrollAtTop" (wheel)="$event.preventDefault()">
+          <li id="sRunners" class="runnersSevenplus"
+            [ngClass]="vm.horseRacingEntries?.length >= 7 && 'runnersSevenplus'"
+            *ngFor="let horseRacingEntry of horseRacingFixedRunnersResult"
+            [class.non-runner]="horseRacingEntry.nonRunner">
+            <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }">
+            </ng-template>
+          </li>
+
+          <div class="autoScroll">
+            <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }"
+              (@autoScroll.done)="onEnd($event)">
+              <li #scrollItem class="runnersSevenplus" *ngFor="let horseRacingEntry of horseRacingAutoScrollRunners"
+                [class.non-runner]="horseRacingEntry.nonRunner">
+                <ng-template *ngTemplateOutlet="tplHorseRacing; context: { $implicit: horseRacingEntry, vm: vm }">
+                </ng-template>
+              </li>
+            </div>
+          </div>
+        </div>
+      </ul>
+
+      <ng-template #tplHorseRacing let-horseRacingEntry let-vm="vm">
+        <div class="table-item-1 items table-center border-dark">
+          <img id="Images" class="brand-logo" [retrySrc]="horseRacingEntry.jockeySilkImage" alt="icon" />
+        </div>
+
+        <div id="HorseNumber" class="table-item-2 items table-center border-dark" [ngClass]="horseRacingEntry.jockeyName ? '' : 'non-jocky'">
+          {{ horseRacingEntry.horseNumber }}
+        </div>
+
+        <div class="table-item-3 items border-dark race-start">
+          <div class="horse-name-res">
+            <span id="HorseName">{{ horseRacingEntry.horseName | uppercase}}</span>
+            <span class="reserved" *ngIf="horseRacingEntry?.isReserved">
+              {{ vm.horseRacingContent?.contentParameters?.Res}}
+            </span>
+          </div>
+
+          <span *ngIf="isHalfScreenType" id="JockeyName" class="text-overflow badge-label" >
+            {{ horseRacingEntry.jockeyName | uppercase}}
+          </span>
+
+        </div>
+
+        <div class="table-item-4 items border-dark badge-label" *ngIf="!isHalfScreenType">
+          <span id="JockeyName" *ngIf="horseRacingEntry.jockeyName" class="text-overflow">
+            {{ horseRacingEntry.jockeyName | uppercase}}
+          </span>
+        </div>
+
+        <div class="table-item-7 items table-center price-border" [ngClass]="vm.bettingFavouritePrice && vm.bettingFavouritePrice === horseRacingEntry.currentPrice ? 'favorite-box' : 'early-price' ">
+          <div id="RunnerPrice" class="item-7-price">{{ horseRacingEntry?.currentPrice | manualMarketPrice : horseRacingEntry}}</div>
+        </div>
+      </ng-template>
+
+      <div *ngIf="vm.isRaceOff" class="off-event"><span>OFF</span></div>
+    </ng-container>
+
+
+    <ng-container footer-content>
+      <gn-each-way [runnerCount]="vm?.runnerCount | runnerCount" [marketEachWayString]="vm.marketEachWayString"
+        [horseRacingContent]="vm.horseRacingContent" [isHalfScreenType]="vm.isHalfScreenType">
+      </gn-each-way>
+    </ng-container>
+
+  </gn-base-page>
+</div>

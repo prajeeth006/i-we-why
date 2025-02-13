@@ -1,0 +1,44 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsPillStories from '../pill.component.stories';
+
+Pill component is a button with `ds-pill` selector.
+
+## Usage
+
+Import `DsPill` in your component.
+
+```ts
+import { DsPill } from '@frontend/ui/pill'; // 👈 add to file imports
+
+@Component({
+    imports: [DsPill], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+Your text just place inside the element. <br />
+`[slot=start]` usually used to place an icon. <br />
+`[slot=end]` usually used to place an arrow icon.
+
+```html
+<button ds-pill [selected]="false" [variant]="'current'" [size]="'medium'" [disabled]="false" [inverse]="false">Hello world!</button>
+```
+
+**Note**: While using conditions like ngIf, ngFor or ngSwitch to slots `start` and `end`, We recommend to use only one level statement `i.e, if else`.
+Do not use nested statements to slots. Nested conditional statements may break actual pill structure and slot content can fall into
+default `ng-content`.
+
+below is the example how to add one level condition to slots
+
+```html
+<button app-pill>
+    <span>this is pill text</span>
+    @if(isStartSlotIconExist){
+    <ds-demo-icon slot="start" />
+    } @else { no icon }
+    <ds-notification-bubble slot="end" variant="primary" size="large">60</ds-notification-bubble>
+</button>
+```

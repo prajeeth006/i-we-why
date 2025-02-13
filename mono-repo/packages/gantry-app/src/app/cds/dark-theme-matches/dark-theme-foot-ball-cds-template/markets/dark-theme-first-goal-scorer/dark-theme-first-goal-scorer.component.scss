@@ -1,0 +1,52 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+.first-goal-scrorecontainer {
+    .bet-details-header {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        @include breakpoint(multidesktop) {
+            margin-top: 4px;
+            margin-bottom: 5px;
+        }
+        .bet-details-title {
+            color: $market-title-color;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 34px;
+            text-align: center;
+            @include breakpoint(multidesktop) {
+                font-size: 24px;
+                line-height: 17px;
+            }
+        }
+    }
+    &.two-markets__available {
+        .bet-details-header {
+            margin-top: 4px;
+            @include breakpoint(multidesktop) {
+                margin-top: 2px;
+            }
+        }
+    }
+}
+
+.multimarket-container__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .marketdata {
+        &__left,
+        &__right {
+            @include flex-container(center, center);
+            gap: 30px;
+            @include breakpoint(multidesktop) {
+                gap: 15px;
+            }
+        }
+        &__right {
+            .betName {
+                text-align: right;
+            }
+        }
+    }
+}

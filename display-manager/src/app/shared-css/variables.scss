@@ -1,0 +1,98 @@
+/* font family */
+$default-font: 'Roboto';
+$default-font-condensed: "Roboto Condensed";
+
+$border-invalid-color:  #f01e25;
+/* colors */
+$primary-color-coral: #084d8d;
+$primary-color-ladbrokes: #f01e25;
+
+$black: #000;
+$white: #FFF;
+
+$primary-color-2: #037aff;
+$primary-color-3: #03c3ff;
+
+$border-grey-1: #979797;
+$border-grey-2: #D1D1D1;
+$background-grey-1: #878e99;
+$body-color-p2-light-bg: #e3e8eb;
+$body-color-p2-lighter-bg: #E5E5E5;
+$light-grey-bg-1: #c1c4ca;
+$light-grey-bg-2: #c1c4ca;
+$light-grey-bg-3: #d1d3d8;
+$light-grey-bg-4: #bcbcbc;
+$light-grey-bg-5: #f0f0f0;
+$light-grey-bg-6: #f9f9f9;
+$light-grey-bg-7: #d8d8d8;
+
+$background-grey-color: #F5F5F5;
+
+$table-header-bg: rgb(250 251 252);
+
+$color-black-dark-1: rgba(0, 0, 0, 0.12);
+$color-black-dark-2: rgba(33, 33, 33, 0.08);
+$text-black-color: #212121;
+$color-black-1: #2c2c2c;
+$color-black-2: #2e2e2e;
+$color-black-3: #3a3a38;
+$color-black-4: rgba(52, 60, 70, 0.74);
+$color-black-5: #6e7681;
+$color-black-6: #999da3;
+$light-black-border: #343c46;
+$label-light-black: rgba(52, 60, 70, 0.87);
+$color-black-light: #485362;
+$label-color-grey :#343C46BD;
+
+$btn-success-bg: #72BE44;
+$invalid-border: #d20000;
+
+$active-profile-bg: #72BE44;
+
+$scroll-bar-box-shadow: rgba(0, 0, 0, 0.25);
+$box-shadow: rgba(0, 0, 0, 0.25);
+
+$horse-racing-bg : #4D92DF;
+
+$dropdown-item-hover-bg: rgba(94, 170, 255, 0.1);
+$dropdown-item-hover-bg-1 :rgba(227, 232, 235, 0.62);
+
+$addbtn-arrow: rgba(227, 232, 235, 0.62);
+
+$main-background-color: rgba(0, 71, 121, 0.02);
+
+$border-background-color: #9E9E9E;
+
+$border-line-color: #878E99;
+
+$search-icon: #5F6368;
+$faded-black: rgba(52, 60, 70, 0.871);
+$asset-grey-background-color: rgb(232, 235, 240); // #E8EBF0
+$purple-bg: #8D4BF6;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+/* Typography */
+$txt-xs-font-size: 10px !default;
+$txt-small-11: 11px !default;
+$txt-sm-font-size: 12px !default;
+$txt-md-font-size: 14px !default;
+$txt-lg-font-size: 16px !default;
+$txt-heading-20: 20px !default;
+
+/* Padding, Gaps and Margins */
+$space-20: 20px;
+$space-30: 30px;
+
+$half-opacity: 0.5 !default;
+
+.border-none {
+    border: none;
+}
+
+.divider {
+    width: 1px;
+    height: 35px;
+    background-color: $border-line-color;
+}

@@ -1,0 +1,17 @@
+
+<div [ngClass]="carouselUrls?.length >0 ?'container':''">
+  <ng-container *ngIf="vm$ | async">
+     <ng-container *ngIf="!(errorMessage$ | async)">
+      <ng-container *ngIf="carouselUrls?.length >1">
+        <gn-slider class="carousel-slider" [carouselUrls]="carouselUrls"></gn-slider>
+      </ng-container>
+       <ng-container *ngIf="carouselUrls?.length == 1">
+          <ng-container *ngFor="let carouselUrl of carouselUrls;">
+              <iframe class="screenPartIframe carousel-slider" frameBorder="0" [src]="carouselUrl?.safeUrl" allowfullscreen #carouselIframe></iframe>
+          </ng-container>
+       </ng-container>
+      
+     </ng-container>
+ </ng-container>
+</div>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

@@ -1,0 +1,15 @@
+<div *ngIf='market' class="marketContent">
+    <div class="home item-lg">
+        <div class="marketContent-left" *ngFor="let betDetails of market?.leftBetList">
+            <span class="betOdds">{{ betDetails?.betOdds  |  marketPriceTransform : betDetails?.hideOdds}} </span>
+            <span class="betName">{{betDetails?.betName | trimSelectionNamePipe : nameLength }}</span>
+        </div>
+    </div>
+    <div class="team-vs"> {{market?.marketDisplayTitle}} </div>
+    <div class="away  item-lg">
+        <div class="marketContent-right" *ngFor="let betDetails of market?.rightBetList">
+            <span class="betName">{{ betDetails?.betName | trimSelectionNamePipe : nameLength }}</span>
+            <span class="betOdds">{{ betDetails?.betOdds  | marketPriceTransform : betDetails?.hideOdds}} </span>
+        </div>
+    </div>
+</div>

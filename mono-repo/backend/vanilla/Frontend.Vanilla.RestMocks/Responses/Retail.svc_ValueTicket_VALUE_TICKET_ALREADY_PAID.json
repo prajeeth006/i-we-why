@@ -1,0 +1,54 @@
+{
+    "valueTicketId": "VALUE_TICKET_ALREADY_PAID_EXCEPTION",
+    "valueTicketStatus": "PRINTED",
+    "currency": "GBP",
+    "amount": 1000,
+    "shopId": "8453",
+    "terminalId": "01",
+    "terminalIdPaidOut": null,
+    "printedDate": "/Date(1359694800000)/",
+    "paidOutDate": null,
+    "agentName": "Anonymous Developer",
+    "comments": null,
+    "amlDecisionHistoryDetails": [
+        {
+            "isManualTicketLocking": true,
+            "lockingReasonAML": " Responsible Gambling Issue",
+            "shopAgentName": "Anonymous Developer",
+            "changeValueTicketDate": "/Date(1359694800000)/",
+            "amlAgentName": null,
+            "amlPreviousStatus": null,
+            "amlCurrentStatus": "BLOCKED",
+            "comments": null,
+            "amlDecisionDate": null
+        },
+        {
+            "isManualTicketLocking": null,
+            "lockingReasonAML": null,
+            "shopAgentName": "Anonymous Developer",
+            "changeValueTicketDate": "/Date(1359694800000)/",
+            "amlAgentName": "Anonymous Developer",
+            "amlPreviousStatus": "BLOCKED",
+            "amlCurrentStatus": "CLEARED",
+            "comments": null,
+            "amlDecisionDate": "/Date(1359694800000)/"
+        }
+    ],
+    "lockingDetail": {
+        "status": "BLOCKED",
+        "lockingReason": " Responsible Gambling Issue",
+        "lockingUser": "Anonymous Developer",
+        "lockingTime": "/Date(1359694800000)/",
+        "manualLock": true
+    },
+    "unlockingDetail": {
+        "status": "CLEARED",
+        "unlockingReason": null,
+        "unlockingUser": "Anonymous Developer",
+        "unlockingTime": "/Date(1359694800000)/"
+    },
+    "status": "SUCCESS",
+    "errorCode": null,
+    "errorMsg": null,
+    "amlCurrentStatus": "CLEARED"
+}

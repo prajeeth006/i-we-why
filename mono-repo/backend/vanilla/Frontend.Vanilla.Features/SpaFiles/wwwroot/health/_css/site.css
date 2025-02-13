@@ -1,0 +1,122 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+p {
+    margin-bottom: .5rem;
+}
+
+.expandable {
+    cursor: pointer;
+}
+
+h1 .oi, h2 .oi, h3 .oi, h4 .oi, h5 .oi, h6 .oi {
+    font-size: medium;
+}
+
+.card-body, .list-group-item {
+    padding: .75rem;
+}
+
+.nav-tabs {
+    margin-bottom: .75rem;
+}
+
+.custom-checkbox {
+    margin-right: 1rem;
+}
+
+.multi-line {
+    white-space: pre-wrap;
+}
+
+/* JSON viewer ***********************************************************************************/
+.json-viewer .value {
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+
+.json-viewer.condensed {
+    font-size: small;
+}
+
+.json-viewer.condensed ol, .json-viewer.condensed ul {
+    padding-left: 1rem;
+}
+
+/* DynaCon JSON **********************************************************************************/
+.json-viewer.dynacon {
+    color: gray;
+}
+
+.json-viewer.dynacon .property {
+    font-weight: normal;
+}
+
+.json-viewer.dynacon > ul > li > .property,
+.json-viewer.dynacon [data-json-path$=".Value"] {
+    color: black;
+    font-weight: bold;
+}
+
+/* DSL *******************************************************************************************/
+.obsolete-warning {
+    margin-bottom: 0;
+}
+
+.provider-assembly {
+    font-size: 12px;
+}
+
+.dsl-expression {
+    white-space: pre-wrap;
+    font-weight: bold;
+}
+
+.dsl-syntax ul {
+    padding-left: 20px;
+}
+
+.dsl-syntax li {
+    white-space: nowrap;
+}
+
+/* Log & Tracing *********************************************************************************/
+.log-container .list-group-item {
+    padding: .25rem .75em;
+}
+/* BS Tree View */
+﻿.bs-tree a {
+    cursor: pointer;
+}
+
+.bs-tree > ul.nav ul.nav {
+    margin: 0 0 0 2.5rem;
+}
+
+.bs-tree > ul.nav ul {
+    display: none;
+}
+
+.bs-tree > ul.nav ul.show {
+    display: flex;
+}
+
+.tree-toggle {
+    transform: rotate(-90deg);
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.tree-spacer {
+    display: inline-block;
+    margin-left: .855em;
+}
+
+.tree-toggle.open {
+    transform: rotate(0deg);
+}

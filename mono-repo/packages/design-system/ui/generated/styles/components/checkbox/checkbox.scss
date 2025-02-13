@@ -1,0 +1,217 @@
+@mixin indeterminate {
+    --ds-checkbox-active-color-bg: var(--semantic-color-utility-active);
+    --ds-checkbox-active-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-utility-base);
+    --ds-checkbox-enabled-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-utility-hover);
+    --ds-checkbox-hover-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle);
+}
+
+@mixin indeterminate-inverse {
+    --ds-checkbox-active-color-bg: var(--semantic-color-utility-active-inverse);
+    --ds-checkbox-active-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-utility-base-inverse);
+    --ds-checkbox-enabled-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-utility-hover-inverse);
+    --ds-checkbox-hover-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+}
+
+@mixin large {
+    --ds-checkbox-radius-border: var(--semantic-radius-semi-rounded-sm);
+    /** @deprecated This token is no longer available in Figma (2024-12-20T01:36:43.111Z) */
+    --ds-checkbox-size-border-width: var(--semantic-size-xquarter);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-icon: var(--semantic-size-icon-small);
+    --ds-checkbox-size-select-min-height: var(--semantic-size-x6);
+    --ds-checkbox-size-select-min-width: var(--semantic-size-x6);
+    --ds-checkbox-size-selected-indicator: var(--semantic-size-icon-small);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-selection-min-height: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-selection-min-width: var(--semantic-size-x6);
+    --ds-checkbox-space-inline: var(--semantic-spacing-inline-md);
+    --ds-checkbox-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-checkbox-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-checkbox-space-stack: var(--semantic-spacing-stack-xs);
+}
+
+@mixin large-condensed {
+    --ds-checkbox-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-checkbox-size-select-min-height: var(--semantic-size-x6);
+    --ds-checkbox-size-select-min-width: var(--semantic-size-x6);
+    --ds-checkbox-size-selected-indicator: var(--semantic-size-icon-small);
+    --ds-checkbox-space-inline: var(--semantic-spacing-inline-md);
+    --ds-checkbox-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-checkbox-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-top: var(--semantic-spacing-container-padding-sm);
+    --ds-checkbox-space-stack: var(--semantic-spacing-stack-xs);
+}
+
+@mixin medium {
+    --ds-checkbox-radius-border: var(--semantic-radius-semi-rounded-xs);
+    --ds-checkbox-size-select-min-height: var(--semantic-size-x4);
+    --ds-checkbox-size-select-min-width: var(--semantic-size-x4);
+    --ds-checkbox-size-selected-indicator: var(--semantic-size-icon-xsmall);
+    --ds-checkbox-space-border-width: var(--semantic-size-xquarter);
+    --ds-checkbox-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-checkbox-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-checkbox-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-top: var(--semantic-spacing-container-padding-sm);
+    --ds-checkbox-space-stack: var(--semantic-spacing-stack-none);
+}
+
+@mixin medium-condensed {
+    --ds-checkbox-radius-border: var(--semantic-radius-semi-rounded-xs);
+    --ds-checkbox-size-select-min-height: var(--semantic-size-x4);
+    --ds-checkbox-size-select-min-width: var(--semantic-size-x4);
+    --ds-checkbox-size-selected-indicator: var(--semantic-size-icon-xsmall);
+    --ds-checkbox-space-border-width: var(--semantic-size-xquarter);
+    --ds-checkbox-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-checkbox-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-padding-top: var(--semantic-spacing-container-padding-xs);
+    --ds-checkbox-space-stack: var(--semantic-spacing-stack-none);
+}
+
+@mixin selected {
+    --ds-checkbox-active-color-bg: var(--semantic-color-utility-active);
+    --ds-checkbox-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-active-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-utility-base);
+    --ds-checkbox-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-enabled-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-utility-hover);
+    --ds-checkbox-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-hover-color-icon: var(--semantic-color-on-utility-base);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle);
+}
+
+@mixin selected-inverse {
+    --ds-checkbox-active-color-bg: var(--semantic-color-utility-active-inverse);
+    --ds-checkbox-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-active-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-utility-base-inverse);
+    --ds-checkbox-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-enabled-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-utility-hover-inverse);
+    --ds-checkbox-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-hover-color-icon: var(--semantic-color-on-utility-base-inverse);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+}
+
+@mixin shared {
+    --ds-checkbox-size-border-width: var(--semantic-size-xquarter);
+    --ds-checkbox-size-min-tap-target: var(--semantic-size-x6);
+    --ds-checkbox-space-inline: var(--semantic-spacing-inline-md);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin small {
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-radius-border: var(--semantic-radius-semi-rounded-xs);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-icon: var(--semantic-size-icon-xsmall);
+    /** @deprecated This token is no longer available in Figma (2024-12-20T01:36:43.111Z) */
+    --ds-checkbox-size-min-height: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2024-12-20T01:36:43.111Z) */
+    --ds-checkbox-size-min-width: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-selection-min-height: var(--semantic-size-x4);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-size-selection-min-width: var(--semantic-size-x4);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-space-border-width: var(--semantic-size-xquarter);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    /** @deprecated This token is no longer available in Figma (2025-01-07T13:56:23.883Z) */
+    --ds-checkbox-space-padding-top: var(--semantic-spacing-container-padding-sm);
+}
+
+@mixin unselected {
+    --ds-checkbox-active-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-active-color-border: var(--semantic-color-utility-active);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-disabled-color-border: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-enabled-color-border: var(--semantic-color-utility-outline-base);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-hover-color-border: var(--semantic-color-utility-outline-hover);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle);
+}
+
+@mixin unselected-inverse {
+    --ds-checkbox-active-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-active-color-border: var(--semantic-color-utility-active-inverse);
+    --ds-checkbox-active-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-active-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-disabled-color-border: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-checkbox-disabled-color-label: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-disabled-color-subtext: var(--semantic-color-disabled-base-inverse);
+    --ds-checkbox-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-enabled-color-border: var(--semantic-color-utility-outline-base-inverse);
+    --ds-checkbox-enabled-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-enabled-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-checkbox-hover-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-checkbox-hover-color-border: var(--semantic-color-utility-outline-hover-inverse);
+    --ds-checkbox-hover-color-label: var(--semantic-color-on-surface-base-inverse);
+    --ds-checkbox-hover-color-subtext: var(--semantic-color-on-surface-subtle-inverse);
+}

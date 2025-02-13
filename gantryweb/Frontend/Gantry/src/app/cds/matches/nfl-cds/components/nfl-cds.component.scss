@@ -1,0 +1,79 @@
+@import './src/global-style/_all-variables.scss';
+
+.marketContent {
+  display: flex;
+  color: $body-color-txt;
+  flex-wrap: wrap;
+
+  h2 {
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    font-size: $font-list-lg-title-nfl;
+    margin: 0px;
+    line-height: 66px;
+    text-transform: uppercase;
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font-size;
+      line-height: 34px;
+    }
+  }
+
+  .market-left-content,
+  .market-right-content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: $font-list-lg-title-avr;
+    width: 50%;
+    height: 68px;
+    text-transform: uppercase;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font1-size;
+      height: 34px;
+    }
+  }
+  .market-right-content {
+    margin-left: 4px;
+    justify-content: flex-end;
+  }
+
+  .betting-team {
+    background-color: $white;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+
+    @include breakpoint(multidesktop) {
+      padding: 5px 10px;
+    }
+  }
+
+  .betting-price {
+    min-width: 161px;
+    background: $body-color-p2-light;
+    padding: 10px 17px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+      padding: 5px 10px;
+      min-width: 80px;
+    }
+  }
+
+  .market-right-content {
+    justify-content: flex-end;
+
+    .betting-team {
+      justify-content: flex-end;
+    }
+  }
+
+}

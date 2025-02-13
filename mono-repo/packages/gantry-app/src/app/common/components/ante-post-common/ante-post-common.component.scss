@@ -1,0 +1,247 @@
+@import './../../../../global-style/all-variables';
+
+.base-body-wrapper {
+    background-color: $body-color-p2-lighter-bg;
+
+    .ante-post-pagination-content,
+    .ante-post-large-content,
+    .ante-post-medium-content {
+        font-weight: bold;
+
+        .selection-table {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            column-count: 2;
+            column-gap: 20px;
+            li {
+                display: flex;
+                align-items: stretch;
+                color: $body-color-p2;
+                page-break-inside: avoid;
+                break-inside: avoid;
+
+                .items {
+                    display: flex;
+                    align-items: center;
+                }
+                .table-item-1 {
+                    background-color: $white;
+                }
+                .table-item-2 {
+                    background-color: $body-color-p2-light-bg;
+
+                    &.items {
+                        justify-content: center;
+                    }
+                }
+                &.nonlist {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .ante-post-pagination-content,
+    .ante-post-large-content {
+        padding: 8px 0 4px;
+
+        .selection-table {
+            li {
+                padding-bottom: 4px;
+                height: 72px;
+
+                @include breakpoint(multidesktop) {
+                    height: 36px;
+                    padding-bottom: 2px;
+                }
+
+                .table-item-1 {
+                    font-size: $font-list-lg-title-avr;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-lg-font1-size;
+                    }
+                }
+                .table-item-2 {
+                    font-size: $font-list-lg-title-avr;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-lg-font1-size;
+                    }
+                }
+            }
+        }
+    }
+
+    // Pagination content
+    .ante-post-pagination-content {
+        @include breakpoint(multidesktop) {
+            padding: 10px 0;
+        }
+
+        .selection-table {
+            li {
+                font-size: $font-list-title;
+
+                .table-item-1 {
+                    flex-grow: 1;
+                    padding: 0 15px;
+
+                    @include breakpoint(multidesktop) {
+                        padding: 0 7px;
+                    }
+                }
+
+                .table-item-2 {
+                    width: 182px;
+                    @include breakpoint(multidesktop) {
+                        width: 90px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Large content
+    .ante-post-large-content {
+        .selection-table {
+            @include breakpoint(multidesktop) {
+                margin: 0;
+            }
+
+            li {
+                @include breakpoint(multidesktop) {
+                    height: 36px;
+                    padding-bottom: 2px;
+                }
+
+                .table-item-1 {
+                    flex-basis: 85%;
+                    padding: 0 0 0 12px;
+
+                    @include breakpoint(multidesktop) {
+                        padding: 3.5px 0 3.5px 10px;
+                    }
+                }
+
+                .table-item-2 {
+                    flex-basis: 15%;
+                    padding: 0 8px;
+
+                    @include breakpoint(multidesktop) {
+                        padding: 3.5px 4px;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Medium content
+    .ante-post-medium-content {
+        padding: 60px 0 0 0;
+        margin: 0;
+
+        @include breakpoint(multidesktop) {
+            padding: 35px 0;
+        }
+
+        .selection-table {
+            li {
+                padding-bottom: 8px;
+                @include breakpoint(multidesktop) {
+                    padding-bottom: 4px;
+                }
+
+                .table-item-1 {
+                    flex: 1;
+                    font-size: $font-list-md2-title;
+                    padding: 10px 20px 12px 20px;
+                    line-height: 79px;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $font-list-title;
+                        line-height: 39px;
+                        padding: 5px 10px 6px 10px;
+                        flex-basis: unset;
+                        flex: 1;
+                    }
+                }
+
+                .table-item-2 {
+                    width: 182px;
+                    font-size: $font-list-md2-title;
+                    line-height: 79px;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $font-list-title;
+                        line-height: 39px;
+                        width: 90px;
+                        flex-basis: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    // Small content
+    .ante-post-small-content {
+        .selection-table {
+            list-style: none;
+            padding: 60px 0 0 0;
+            margin: 0;
+            @include breakpoint(multidesktop) {
+                padding: 35px 0;
+                margin: 0;
+            }
+            li {
+                display: flex;
+                align-items: stretch;
+                color: $body-color-p2;
+                padding-bottom: 8px;
+                @include breakpoint(multidesktop) {
+                    padding-bottom: 4px;
+                }
+                .items {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .table-item-1 {
+                    background-color: $white;
+                    font-size: $font-list-md2-title;
+                    padding: 10px 20px 12px 20px;
+                    flex: 1;
+                    line-height: 79px;
+                    @include breakpoint(multidesktop) {
+                        font-size: $font-list-title;
+                        line-height: 39px;
+                        padding: 5px 10px 6px 10px;
+                        flex-basis: unset;
+                        flex: 1;
+                    }
+                }
+
+                .table-item-2 {
+                    font-size: $font-list-md2-title;
+                    width: 182px;
+                    line-height: 79px;
+                    background-color: $body-color-p2-light;
+                    padding: 5px 0;
+                    &.items {
+                        justify-content: center;
+                    }
+                    @include breakpoint(multidesktop) {
+                        font-size: $font-list-title;
+                        line-height: 39px;
+                        padding: 5px 10px 6px 10px;
+                        width: 70px;
+                        flex-basis: unset;
+                    }
+                }
+            }
+        }
+    }
+}

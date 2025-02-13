@@ -1,0 +1,50 @@
+.font-selector-wrapper {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+
+    .font-one {
+        background-color: lightblue;
+        font-family: var(--font-family-one);
+        font-size: var(--font-size);
+        line-height: var(--line-height);
+        position: relative;
+    }
+
+    .font-two {
+        background-color: lightblue;
+        font-family: var(--font-family-two);
+        font-size: var(--font-size);
+        line-height: var(--line-height);
+        position: relative;
+    }
+
+    /* Overlap styling for second paragrapgh */
+    .overlap {
+        background: transparent;
+        color: #ff0000;
+        left: 0;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+        z-index: 1;
+    }
+}
+
+/* Adding baseline line */
+.font-one::after {
+    /* Adjust to align with the baseline */
+    background-color: rgb(255 0 0 / 70%);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 300%;
+    z-index: 1;
+}

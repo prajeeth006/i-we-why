@@ -1,0 +1,28 @@
+<div *ngIf="matchData && (leftBetList.size > 0 || rightBetList.size > 0)">
+  <div class="bet-details-header">
+    <div id="DisplayTitle" class="bet-details-title">{{ multiMarket?.title }}</div>
+  </div>
+  <div id="betDetails" class="bet-details-item" *ngFor="let roundValue of staticRoundValues">
+    <div id="LeftBetList" class="bet-price">
+      {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform}}
+    </div>
+    <div id="betDetails" class="bet-details">{{ roundValue }}</div>
+    <div id="RightBetList" class="bet-price">
+      {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+    </div>
+  </div>
+  <div id="autoScroll" class="autoScroll">
+    <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }"
+      (@autoScroll.done)="onEnd($event)">
+      <div #scrollItem class="bet-details-item" *ngFor="let roundValue of autoScrollRounds" id="autoSitems">
+        <div id="LeftBetList" class="bet-price">
+          {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+        </div>
+        <div id="BetDetails" class="bet-details">{{ roundValue }}</div>
+        <div id="RightBetList" class="bet-price">
+          {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

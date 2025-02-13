@@ -1,0 +1,193 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+.ds-tokens-table-item {
+    border-bottom: 1px solid rgba(130 130 130 / 35%);
+    min-width: 250px;
+    padding: 20px 10px;
+}
+
+.ds-preview-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    min-height: 40px;
+    width: auto;
+}
+
+.ds-color-cell {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.ds-opacity-cell {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect fill="%23e4e4e4" x="1" width="1" height="1"/><rect fill="%23e4e4e4" y="1" width="1"  height="1"/></svg>');
+    background-position: top;
+    background-size: 14px;
+    border-radius: 0 3px 3px 0;
+    flex-basis: 49%;
+    z-index: -1;
+}
+
+.ds-size-cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.ds-spacing-cell {
+    align-self: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.ds-line-height-cell {
+    max-width: 200px;
+}
+
+.ds-value-cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ds-bd-radius-cell {
+    aspect-ratio: 1;
+    height: 30px;
+    margin: 15px;
+    width: 90%;
+}
+
+.ds-elevation-cell {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+.ds-pie-chart-wrapper {
+    --percentage: 0deg;
+
+    $w: 90; //width
+    $t: 15; //thickness
+    position: relative;
+    margin-bottom: 30px;
+
+    .ds-pie-chart {
+        aspect-ratio: 1;
+        background: conic-gradient(
+            var(--semantic-color-primary-active) 0deg var(--percentage),
+            color-mix(in srgb, var(--semantic-color-primary-base) 20%, transparent) var(--percentage) 360deg
+        );
+        clip-path: path(
+            'M 0, #{$w*0.5} A #{$w*0.5} #{$w*0.5} 0 0 1 #{$w} #{$w*0.5} L #{$w - $t} #{$w*0.5} A #{($w - $t*2) *.5} #{($w - $t*2) *.5} 0 0 0 #{$t} #{$w*0.5} A #{($w - $t*2) *.5} #{($w - $t*2) *.5} 0 0 0 #{$w - $t} #{$w*0.5} L #{$w} #{$w*0.5} A #{$w*0.5} #{$w*0.5} 0 0 1 0 #{$w*0.5} Z'
+        );
+        width: #{$w}px;
+    }
+
+    .ds-pie-chart__text {
+        font-size: 12px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(#{$w}px - #{$t}px * 2 - 10px);
+    }
+}
+
+$label-size-map: (
+    'label': (
+        'xs',
+        'xs-strong',
+        'sm',
+        'sm-strong',
+        'md',
+        'md-strong',
+        'lg',
+        'lg-strong',
+    ),
+    'body': (
+        'sm',
+        'sm-strong',
+        'md',
+        'md-strong',
+        'lg',
+        'lg-strong',
+    ),
+    'title': (
+        'sm',
+        'sm-strong',
+        'md',
+        'md-strong',
+        'lg',
+        'lg-strong',
+    ),
+    'headline': (
+        'sm',
+        'sm-strong',
+        'md',
+        'md-strong',
+        'lg',
+        'lg-strong',
+        'xl',
+        'xl-strong',
+    ),
+    'display': (
+        'sm',
+        'sm-strong',
+        'md',
+        'md-strong',
+        'lg',
+        'lg-strong',
+    ),
+);
+
+@mixin set-font-variables($label, $size) {
+    font-family: var(--semantic-typography-#{$label}-font-family), sans-serif;
+    font-size: var(--semantic-typography-#{$label}-#{$size}-font-size);
+    font-weight: var(--semantic-typography-#{$label}-#{$size}-font-weight);
+    line-height: var(--semantic-typography-#{$label}-#{$size}-line-height);
+}
+
+@each $label, $sizes in $label-size-map {
+    @each $size in $sizes {
+        .typography-page-#{$label}-#{$size} {
+            @include set-font-variables($label, $size);
+        }
+    }
+}
+
+.ds-grid-table {
+    border-radius: 15px;
+    border: 1px dashed var(--semantic-color-primary-container-active);
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(6, minmax(70px, auto));
+    overflow: hidden;
+}
+
+.ds-grid-cell {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 40px;
+
+    &:not(:last-child) {
+        border-bottom: 1px dashed var(--semantic-color-primary-container-active);
+    }
+}
+
+.ds-grid-header {
+    background-color: var(--semantic-color-primary-container-active);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* stylelint-enable scale-unlimited/declaration-strict-value */

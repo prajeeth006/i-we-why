@@ -1,0 +1,2807 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.ServiceClients</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.ClaimsParser">
+            <summary>
+            Generic class for parsing user claim values.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.GenericUserExtensions">
+            <summary>
+            Generic extensions methods of <see cref="T:System.Security.Claims.ClaimsPrincipal" /> user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Claims.GenericUserExtensions.FindValue(System.Security.Claims.ClaimsPrincipal,System.String)">
+            <summary>Retrieves the value of the first claim with the specified claim type. Returns null if claim is not found.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes">
+            <summary>
+            Constants for claims issued by PosAPI.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Name">
+            <summary>
+            Primary user name used on web layer. Most likely used also for login.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.AccountName">
+            <summary>
+            Unique string identifier of the user's account in general.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.AccountCategoryId">
+            <summary>
+            ID of the user's account category.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.BwinAccountId">
+            <summary>
+            Unique numeric identifier of the user's account on BWIN labels.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.PGAccountId">
+            <summary>
+            Unique identifier of the user's account on Party Gaming labels.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.GvcAccountId">
+            <summary>
+            Unique identifier of the user's account on GVC labels.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.UserToken">
+            <summary>
+            Unique token to identify the user on the backend during his session.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.SessionToken">
+            <summary>
+            Unique token to identify the user’s session on the backend.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.SsoToken">
+            <summary>
+            Single sign-on token usable especially for transferring authentication state from native app to related website which it embeds.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.UtcOffsetMinutes">
+            <summary>
+            Time offset from UTC expressed in minutes according to <see cref="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.TimeZoneId" />.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.TimeZoneId">
+            <summary>
+            ID of the timezone that user has chosen in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.CurrencyId">
+            <summary>
+            ID of the currency that user has chosen in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.CultureName">
+            <summary>
+            .NET name of the culture that user has chosen in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.NationalityId">
+            <summary>
+            ID of nationality that user has chosen in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.WorkflowTypeId">
+            <summary>
+            ID of pending workflow type that user must complete to be fully authenticated.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.ScreenName">
+            <summary>
+            The screen name to be shown in some games that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Email">
+            <summary>
+            The email that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.IsRealMoneyPlayer">
+            <summary>
+            Indicates whether the user is playing with real money.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.IsMigratedFromExternalPlatform">
+            <summary>
+            Indicates whether the user was migrated from external platform.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.JurisdictionId">
+            <summary>
+            ID of the jurisdiction that applies for the user according to the label, hist country etc.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.LegalDocumentId">
+            <summary>
+            Unique identifier of the user according to document issued for the user by state authorities.
+            It varies by label and country e.g. social security number, documento nacional de identidad, tax number...
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Title">
+            <summary>
+            User's title that he has specified in the settings/registration e.g. Mr, Prof, Princess...
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.FirstName">
+            <summary>
+            First name of the user that he has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.LastName">
+            <summary>
+            Last name of the user that he has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.SecondLastName">
+            <summary>
+            Second last name of the user that he has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.IsPartiallyRegistered">
+            <summary>
+            Indicates if user is partially registered.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.IsUkGcPlayer">
+            <summary>
+            Indicates if user complies under UK gambling rules.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.VipLevel">
+            <summary>
+            Indicates user's vip level.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.TierCode">
+            <summary>
+            Indicates user's tier code.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.AccBusinessPhase">
+            <summary>
+            Indicates user's tier code.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.RegistrationCompleted">
+            <summary>
+            Indicates if user's registration completed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address">
+            <summary>
+            Claims related to user's address.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.CountryId">
+            <summary>
+            ID of the country that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.Region">
+            <summary>
+            Name of the region that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.City">
+            <summary>
+            Name of the city that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.Street">
+            <summary>
+            Street address that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.Additional">
+            <summary>
+            Additional part of the address that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Address.PostalCode">
+            <summary>
+            Postal code of the address that user has specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.GeoIP">
+            <summary>
+            Claims related to location resolved by GeoIP service.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.GeoIP.CountryId">
+            <summary>
+            ID of the country determined using GeoIP service e.g. 'US'.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.GeoIP.Region">
+            <summary>
+            Name of the region determined using GeoIP service e.g. 'New Jersey'.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.GeoIP.City">
+            <summary>
+            Name of the city determined using GeoIP service e.g. 'West Orange'.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Birth">
+            <summary>
+            Claims related to the birth of the user.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Birth.Date">
+            <summary>
+            Date when the user was born in format 'yyyy-MM-dd' e.g. '1940-03-02'.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Birth.CountryId">
+            <summary>
+            ID of the country where the user was born. Specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Birth.RegionId">
+            <summary>
+            ID of the region when the user was born. Specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Birth.CityId">
+            <summary>
+            ID of the city when the user was born. Specified in the settings/registration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone">
+            <summary>
+            Claims related to user's phone numbers.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Home">
+            <summary>
+            Claims related to user's home phone.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Home.Number">
+            <summary>
+            Number of home phone that user has specified in the settings/registration e.g. '9878998789'.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Home.CountryPredial">
+            <summary>
+            Country predial of home phone that user has specified in the settings/registration. It's without without leading '+' e.g. '44'.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Mobile">
+            <summary>
+            Claims related to user's mobile phone.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Mobile.Number">
+            <summary>
+            Number of mobile phone that user has specified in the settings/registration e.g. '9878998789'.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.Phone.Mobile.CountryPredial">
+            <summary>
+            Country predial of mobile phone that user has specified in the settings/registration. It's without without leading '+' e.g. '44'.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Claims.PosApiUserExtensions">
+            <summary>
+            Extensions of <see cref="T:System.Security.Claims.ClaimsPrincipal" /> for easier retrieval of claim values.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Claims.PosApiUserExtensions.IsRealMoneyPlayer(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Determines if given user is real-money player based on his claim <see cref="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.IsRealMoneyPlayer" />.
+            Returns false for anonymous user. Throws if the claim value is invalid or missing for authenticated user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Claims.PosApiUserExtensions.GetWorkflowTypeId(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Gets <see cref="T:System.Int32" /> value of <see cref="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.WorkflowTypeId" /> claim if it exists.
+            Returns zero if claim doesn't exist. Throws if the claim value is invalid.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Claims.PosApiUserExtensions.GetTimeZone(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Gets user's time zone according to his <see cref="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.TimeZoneId" /> claim.
+            Throws if the claim value is invalid or missing.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Claims.PosApiUserExtensions.ToUserLocalTime(Frontend.Vanilla.Core.System.UtcDateTime,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Converts given time into the user's time zone according to his <see cref="F:Frontend.Vanilla.ServiceClients.Claims.PosApiClaimTypes.TimeZoneId" /> claim.
+            Throws if the claim value is invalid or missing or the conversion goes wrong.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.BettingApiRestRequest">
+            <summary>
+            Defines a REST request made to Betting API using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.BettingApiRestRequest.#ctor(Frontend.Vanilla.Core.System.Uris.PathRelativeUri,System.Net.Http.HttpMethod)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.BettingApiRestRequestBase">
+            <summary>
+            A base class for REST requests made to Betting API using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.BettingApiRestRequestBase.#ctor(Frontend.Vanilla.Core.System.Uris.PathRelativeUri,System.Net.Http.HttpMethod)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.InterceptedCacheCalls">
+            <summary>
+            Thread-safe performance-optimized collection of intercepted cache requests.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IPosApiCacheDiagnostics">
+            <summary>
+            Gets info used for cache diagnostics.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCache">
+            <summary>
+            Actual implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCache.#ctor(Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration,Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IStaticDataCache,Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IUserDataCache,Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor,Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRequestSemaphores,Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCache})">
+            <summary>
+            Actual implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheBase">
+            <summary>
+            Base class which collapses sync + async methods to one with <see cref="T:Frontend.Vanilla.Core.System.ExecutionMode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheCallsInterceptor">
+            <summary>
+            Intercepts calls to underlying <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache" /> by storing them to <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.InterceptedCacheCalls" /> for later usage in <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.PosApiCachedDataDiagnosticProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheCallsInterceptor.#ctor(Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache,Frontend.Vanilla.ServiceClients.Infrastructure.Caching.InterceptedCacheCalls)">
+            <summary>
+            Intercepts calls to underlying <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache" /> by storing them to <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.InterceptedCacheCalls" /> for later usage in <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.PosApiCachedDataDiagnosticProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheIsolation">
+            <summary>
+            Decorates <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheBase" />. Cache keys are automatically extended
+            to include <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfiguration.Headers" /> because the return data from PosAPI vary depending on them.
+            However <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfiguration.AccessId" /> isn't included because it's unique for each product
+            hence no data would be shared across products of the label which improves the performance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheIsolation.#ctor(Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache,Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration)">
+            <summary>
+            Decorates <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.PosApiDataCacheBase" />. Cache keys are automatically extended
+            to include <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfiguration.Headers" /> because the return data from PosAPI vary depending on them.
+            However <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfiguration.AccessId" /> isn't included because it's unique for each product
+            hence no data would be shared across products of the label which improves the performance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IStaticDataCache">
+            <summary>
+            Stores <see cref="F:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType.Static" /> data in <see cref="T:Microsoft.Extensions.Caching.Memory.IMemoryCache" /> and <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" />.
+            Stores data in IMemoryCache and IDistributedCache to decrease number of requests to PosApi. When a server caches some information in local memory, it also caches it in distributed cache.
+            Then another server that don't have a local copy in memory can re-use data from distributed cache, and don't have to send request to PosApi.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IUserDataCache">
+            <summary>
+            Stores <see cref="F:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType.User" /> data all in a single <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.UserDataContainer" /> using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IUserDataContainerManager" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Caching.IUserDataContainerManager">
+            <summary>
+            Manages container with user data according to app context (e.g. HttpContext)
+            - Loads them from distributed cache lazily when needed, then stored in the context.
+            - Saves them back to distributed cache at the end of the context.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.PosApiHealthCheck">
+            <summary>
+            Checks that Pos API is up and running.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.PosApiHealthCheck.#ctor(Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.ITrafficHealthState,Frontend.Vanilla.ServiceClients.Services.Common.IPosApiCommonServiceInternal)">
+            <summary>
+            Checks that Pos API is up and running.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.ITrafficHealthState">
+            <summary>
+            Stores health state of HTTP traffic to PosAPI.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.PosApiRestClient">
+            <summary>
+            Actual implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.PosApiRestClient.#ctor(Frontend.Vanilla.Core.Rest.IRestClient,Frontend.Vanilla.ServiceClients.Infrastructure.Execution.IPosApiRestRequestFactory,Frontend.Vanilla.ServiceClients.Infrastructure.Diagnostics.ITrafficHealthState)">
+            <summary>
+            Actual implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.PosApiRestClientBase">
+            <summary>
+            Base class which collapses sync + async methods to one with <see cref="T:Frontend.Vanilla.Core.System.ExecutionMode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.PosApiRestRequestBuilder">
+            <summary>
+            Main Vanilla implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestRequestBuilder" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.PosApiRestRequestBuilder.#ctor(Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration,Frontend.Vanilla.Core.Net.IClientIPResolver,Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor)">
+            <summary>
+            Main Vanilla implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestRequestBuilder" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.Execution.IPosApiRestRequestFactory">
+            <summary>
+            Creates <see cref="T:Frontend.Vanilla.Core.Rest.RestRequest" /> from <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest" /> by executing all <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestRequestBuilder" />-s.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.ExtendedApiRestRequest">
+            <summary>
+            Defines a REST request made to Extended API aka xPOS using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.ExtendedApiRestRequest.#ctor(Frontend.Vanilla.Core.System.Uris.PathRelativeUri,System.Net.Http.HttpMethod)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.GenericServiceClients.ICachedUserDataServiceClient`1">
+            <summary>
+            Base (to be inherited, not included) service client for handling single user data retrieved without parameters.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.GenericServiceClients.IFreshUserDataServiceClient`1">
+            <summary>
+            Generic service client for handling data retrieved without parameters and cache.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.GenericServiceClients.IGetDataServiceClient">
+            <summary>
+            Generic service client which just GETs data from given URL and caches them based on this URL.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache">
+            <summary>
+            Cache for data retrieved from PosAPI handling expiration according to config.
+            Also it's <see cref="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetOrCreate``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Func{``0},System.Boolean,System.Nullable{System.TimeSpan})" /> method guarantees single execution for particular key + dataType at the same time.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.Get``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>Gets wrapped cached value for given key and data type. Returns <see langword="null" /> if cached one isn't found.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetAsync``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Threading.CancellationToken)">
+            <summary>Gets wrapped cached value for given key and data type. Returns <see langword="null" /> if cached one isn't found.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetAsync``1(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>Gets wrapped cached value for given key and data type. Returns <see langword="null" /> if cached one isn't found.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.Set(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Object,System.Nullable{System.TimeSpan})">
+            <summary>
+            Inserts a cache entry with given value into the cache for specified key and data type.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.SetAsync(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Object,System.Threading.CancellationToken,System.Nullable{System.TimeSpan})">
+            <summary>
+            Inserts a cache entry with given value into the cache for specified key and data type.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.SetAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Object,System.Nullable{System.TimeSpan})">
+            <summary>
+            Inserts a cache entry with given value into the cache for specified key and data type.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.Remove(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>
+            Removes cached value for given key and data type.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.RemoveAsync(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Threading.CancellationToken)">
+            <summary>
+            Removes cached value for given key and data type.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.RemoveAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>
+            Removes cached value for given key and data type.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetOrCreate``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Func{``0},System.Boolean,System.Nullable{System.TimeSpan})">
+            <summary>
+            Gets cached value for given key and data type or creates new one using given delegate and adds it into the cache.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            The execution of factory method is locked so that only single thread can create the value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetOrCreateAsync``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean,System.Nullable{System.TimeSpan})">
+            <summary>
+            Gets cached value for given key and data type or creates new one using given delegate and adds it into the cache.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            The execution of factory method is locked so that only single thread can create the value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiDataCache.GetOrCreateAsync``1(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType,Frontend.Vanilla.Core.System.Text.RequiredString,System.Func{System.Threading.Tasks.Task{``0}},System.Boolean,System.Nullable{System.TimeSpan})">
+            <summary>
+            Gets cached value for given key and data type or creates new one using given delegate and adds it into the cache.
+            If expiration is not provided then it's calculated according to data type and <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsConfiguration" />.
+            The execution of factory method is locked so that only single thread can create the value.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType">
+            <summary>
+            Determines type of cached PosAPI data.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType.Static">
+            <summary>Static data that can be cached regardless of the user.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiDataType.User">
+            <summary>User-specific data that have to be cached per user.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient">
+            <summary>
+            Central point that all PosAPI requests are supposed to pass through, the closest to REST infrastructure.
+            It executes high-level <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest" /> as HTTP request accordingly
+            and deserializes the result using Newtonsoft JSON to an object of given result type.
+            If there is an error reported by PosAPI then it's deserialized to <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.Execute(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest)">
+            <summary>Executes given PosAPI request.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.ExecuteAsync(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest,System.Threading.CancellationToken)">
+            <summary>Executes given PosAPI request.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.ExecuteAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest)">
+            <summary>Executes given PosAPI request.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.Execute``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest)">
+            <summary>Executes given PosAPI request and deserializes specified type from the response.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.ExecuteAsync``1(Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest,System.Threading.CancellationToken)">
+            <summary>Executes given PosAPI request and deserializes specified type from the response.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient.ExecuteAsync``1(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest)">
+            <summary>Executes given PosAPI request and deserializes specified type from the response.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestRequestBuilder">
+            <summary>
+            Central extensible point for building all <see cref="T:Frontend.Vanilla.Core.Rest.RestRequest" />-s based on <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest" />-s.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestRequestBuilder.PrepareRestRequest(Frontend.Vanilla.Core.Rest.RestRequest,Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest)">
+            <summary>Prepares the request.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiErrorCodes">
+            <summary>
+            List of common PosAPI error codes returned in <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.PosApiCode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException">
+            <summary>
+            Exception with parsed details from PosAPI.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.HttpCode">
+            <summary>Gets the HTTP status code of the response returned by PosAPI.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.PosApiCode">
+            <summary>Gets the error code returned in the body by PosAPI.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.PosApiMessage">
+            <summary>Gets the message returned in the body by PosAPI that describes the error.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.PosApiValues">
+            <summary>Gets optional additional error values in the body by PosAPI.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException.#ctor(System.String,System.Exception,System.Net.HttpStatusCode,System.Int32,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>Wrapping another <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiException" /> will copy all custom properties.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiHeaders">
+            <summary>
+            Provides typed access to all headers related to service clients.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRequestSemaphores">
+            <summary>
+            Use semaphores to allow only one retrieval (mostly HTTP request) for particular data at time,
+            first call makes the request, subsequent calls wait and will get cached value
+            e.g. one req for currencies, one req for segmentation groups of current user.
+            Because lock() isn't async so we use semaphores.
+            Store semaphores in cache -> they expire -> avoids memory leak if keys don't ever reoccur b/c of their uniqueness e.g. session token.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest">
+            <summary>
+            Defines a REST request made to Pos API using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.#ctor(Frontend.Vanilla.Core.System.Uris.PathRelativeUri,System.Net.Http.HttpMethod)">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.Url">
+            <summary>Gets or sets the URL. It has to be relative from configured PosAPI host and version.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.Method">
+            <summary>Gets or sets HTTP method.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.Authenticate">
+            <summary>
+            Indicates if the request should be authenticated thus posting security tokens.
+            In that case user must be authenticated with PosAPI (full authentication or be in workflow).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.Content">
+            <summary>Gets or sets the object which should be serialized and posted.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.PosApiRestRequest.Headers">
+            <summary>Gets HTTP request headers.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsBaseConfiguration">
+            <summary>Exposes some generic service clients configuration consumed also by products to access backend services especially Sports Bet Content Distribution service.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsBaseConfiguration.AccessId">
+            <summary>
+            Criticality: Security
+            See <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.AccessId" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.IServiceClientsBaseConfiguration.TimeoutRules">
+            <summary>
+            Criticality: Technical
+            See <see cref="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.TimeoutRules" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder">
+            <summary>
+            Builder of service clients configuration.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.Host">
+            <summary>
+            Gets or sets the PosAPI service host.
+            Default: https://api.bwin.com/.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.Version">
+            <summary>
+            Gets or sets the version of the PosAPI Service to use.
+            Default: V3.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.AccessId">
+            <summary>
+            Gets or sets the PosAPI Service access ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.StaticDataCacheTime">
+            <summary>
+            Gets or sets the caching time for static data like languages, countries, currencies etc.
+            Default: 1 hour.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.UserDataCacheTime">
+            <summary>
+            Gets or sets the caching time for user data like balance, bets history etc.
+            Default: 5 minutes.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.HealthInfoExpiration">
+            <summary>
+            Time span that defines the expiration of PosApi health state coming from the PosApi health check
+            or from operations that call PosApi. When this state expires the new PosApi health
+            check request will be issued. The expiration timer is reset every time the health state is updated.
+            Default: 15 seconds.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.Headers">
+            <summary>
+            Gets or sets headers to append to PosAPI requests.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.TimeoutRules">
+            <summary>
+            Specifies timeout for PosAPI calls. Multiple rules can be specified with regular expressions evaluated against the request URL and the first one that matches will be used.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.QueryParametersRules">
+            <summary>
+            Specifies additional query parameters for PosAPI calls. Multiple rules can be specified with regular expressions evaluated against the request URL and the first one that matches will be used.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.IsApiCacheUsageStatsLoggingEnabled">
+            <summary>
+            Specifies whether the Api cache usage statistics are logged or not.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.EndpointsV2">
+            <summary>
+            Gets or sets the PosAPI endpoint.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientsConfigurationBuilder.CacheTimeEndpoints">
+            <summary>
+            Gets or sets the cache time by endpoints.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientQueryParametersRule">
+            <summary>
+            Service clients query parameters rule.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientQueryParametersRule.Enabled">
+            <summary>
+            DSL enabled value.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientQueryParametersRule.Parameters">
+            <summary>
+            Parameters.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientTimeoutRule">
+            <summary>
+            Service clients timeout rule.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientTimeoutRule.UrlRegex">
+            <summary>
+            The pattern to match to the request URL.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientTimeoutRule.Timeout">
+            <summary>
+            The timeout to be used.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientTimeoutRule.Methods">
+            <summary>
+            Optional array of methods to be matched (default is to all methods).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Infrastructure.ServiceClientTimeoutRule.#ctor(System.String,System.TimeSpan,System.Collections.Generic.IEnumerable{System.Net.Http.HttpMethod})">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Infrastructure.EndpointConfig">
+            <summary>
+            Service clients endpoint config.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.EndpointConfig.Version">
+            <summary>
+            Overrides global default PPOS version.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.EndpointConfig.Disabled">
+            <summary>
+            Disables call to PPOS if true.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Infrastructure.EndpointConfig.DefaultValue">
+            <summary>
+            Default values for disabled endpoint.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.IClaimsCache">
+            <summary>
+            Cache for user claims. Shared within the label -> distributed cache.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.IClaimsCacheTime">
+            <summary>
+            Defines how long should be claims cache. It should be in sync with user authentication expiration e.g. on web layer.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.IGlobalClaimInfos">
+            <summary>
+            Collects all info regarding global (on all products) claims known to Vanilla.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimInfo">
+            <summary>
+            Info about a claim to be issued by <see cref="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimInfo.Type">
+            <summary>
+            Gets claim type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimInfo.Description">
+            <summary>
+            Gets claims description usable for documentation.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimInfo.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString)">
+            <summary>
+            Createsa a new instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider">
+            <summary>
+            Extensibility point to allow users of the framework to add custom claim providers which add claims specific to their application.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.Issuer">
+            <summary>
+            Gets the name used in <see cref="P:System.Security.Claims.Claim.Issuer" /> to identity this provider.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.DeclaredClaims">
+            <summary>
+            Gets information about claims issued by this provider.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,System.Collections.Generic.IEnumerable{Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimInfo})">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.GetClaimsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Issue claims.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.ResolveClaims">
+            <summary>
+            Issue claims.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider.ResolveClaimsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>
+            Issue claims.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsProviders">
+            <summary>
+            Resolves and validates all <see cref="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.LocalClaimsProvider" /> registered in this app.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsResolver">
+            <summary>
+            Resolves all local claims from <see cref="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsProvider" />-s.
+            There are also PosAPI claims, see <see cref="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiClaimsServiceClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsResolver.ResolveAsync(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},Frontend.Vanilla.Core.System.ExecutionMode)">
+            <param name="existingClaims">Claims from PosAPI or from other product app within the label.</param>
+            <param name="mode"></param>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor">
+            <summary>
+            Provides access to user in the current context specific to the application type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor.User">
+            <summary>Gets or sets the current user.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.SingleThreadedCurrentUserAccessor">
+            <summary>
+            Simple implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor" /> for non-web apps assuming they are single-threaded.
+            If app is meant to be multi-threaded then it should implement its own accessor accordingly.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.SingleThreadedCurrentUserAccessor.#ctor(Frontend.Vanilla.Core.Abstractions.IThread)">
+            <summary>
+            Simple implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Security.ICurrentUserAccessor" /> for non-web apps assuming they are single-threaded.
+            If app is meant to be multi-threaded then it should implement its own accessor accordingly.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.NotAuthenticatedWithPosApiException">
+            <summary>
+            Indicates an error related to <see cref="T:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens" /> of the current user.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.NotAuthenticatedWithPosApiException.#ctor(System.String,System.Exception)">
+            <summary>
+            Indicates an error related to <see cref="T:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens" /> of the current user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens">
+            <summary>
+            Holds PosAPI authentication tokens together so that they can be validated and passed easily.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens.UserToken">
+            <summary>Gets user token.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens.SessionToken">
+            <summary>Gets session token.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens.#ctor(System.String,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens.ToString">
+            <summary>Returns debug string with tokens.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens.TryCreate(System.String,System.String)">
+            <summary>
+            Creates a new instance if both tokens are provided.
+            Returns null if both tokens are null.
+            Otherwise throws because such state is an error.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Security.PosApiAuthUserExtensions">
+            <summary>
+            Extensions for obtaining user's <see cref="T:Frontend.Vanilla.ServiceClients.Security.PosApiAuthTokens" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthUserExtensions.GetPosApiAuthTokens(System.Security.Claims.ClaimsPrincipal)">
+            <summary>Gets PosAPI auth tokens of given user if he is authenticated. Otherwsise returns null.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthUserExtensions.GetRequiredPosApiAuthTokens(System.Security.Claims.ClaimsPrincipal)">
+            <summary>Gets PosAPI auth tokens of given user if he is authenticated. Otherwise throws an exception.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthUserExtensions.IsAuthenticatedOrHasWorkflow(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Determines if given user is authenticated with PosAPI which means he is either fully authenticated or has a workflow to complete.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Security.PosApiAuthUserExtensions.IsAnonymous(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Determines if given user is anonymous user i.e. bet-station user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService">
+            <summary>
+            Represents Account.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetAssociatedAccounts">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetAssociatedAccountsAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetSegmentationGroups">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetSegmentationGroupsAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetRegistrationDate">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetRegistrationDateAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetCashierStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetProductLicenceInfosAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetSegmentationGroupsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetRegistrationDateAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetMohDetailsAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetDnaAbuserInformationAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetSofStatusDetailsAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountServiceInternal.GetConnectedAccountsAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Account.SegmentationGroups.SegmentationGroupsResponse">
+            <summary>
+            List of accounts associated with account which was migrated from other label(s).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Account.SegmentationGroups.ISegmentationGroupsServiceClient">
+            <summary>
+            Implementation of <see cref="M:Frontend.Vanilla.ServiceClients.Services.Account.IPosApiAccountService.GetSegmentationGroups" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.ClaimsResponse">
+            <summary>
+            ClaimsResponse.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.ClaimsResponse.ClaimValues">
+            <summary>
+            ClaimValues.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IClaimsServiceClient">
+            <summary>
+            Loads last/fresh claims user corresponding to the given/current auth tokens and sets them to current thread.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IClaimsUserFactory">
+            <summary>
+            Creates claims user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IClaimsUserManager">
+            <summary>
+            Sets current claims user with all associated logic.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService">
+            <summary>
+            Represents Authentication.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.RefreshClaims">
+            <summary>Valid both for authenticated and anonymous user.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.RefreshClaimsAsync(System.Threading.CancellationToken)">
+            <summary>Valid both for authenticated and anonymous user.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetLastSession(System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetLastSessionAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetCurrentSession">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetCurrentSessionAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetPendingActions">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetPendingActionsAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetCommVerificationStatusAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetCommVerificationStatus(System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationService.GetSessionSummaryAsync(System.Threading.CancellationToken,Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime,System.String,System.String,System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationServiceInternal.GetLastSessionAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationServiceInternal.GetCommVerificationStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated or in a workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiAuthenticationServiceInternal.SaveUserPopupSelection(System.Threading.CancellationToken,Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData)">
+            <summary>User must be authenticated and limits set.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters">
+            <summary>
+            Specifies parameters for the auto-login.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.SsoToken">
+            <summary>Gets or sets the SSO token.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.InvokersProductId">
+            <summary>Gets or sets the invoker's product ID.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.InvokersSessionToken">
+            <summary>Gets or sets the invoker's session token.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.IsEmbeddedSession">
+            <summary>Indicates if the session shall be marked as embedded (e.g. originated from download client).</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters.LoginType">
+            <summary>Gets or sets flag indicating type of username and password e.g. 'online' username with password or 'connect card' with pin code.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Execution.ILoginExecutor">
+            <summary>
+            Common logic for login based on specific given request.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Execution.ILoginServiceClient">
+            <summary>
+            All service client methods which end up with successful login.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Filters.ILoginFilter">
+            <summary>
+            Enables hooking into BeforeLogin and AfterLogin events.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Filters.ILoginFilter.BeforeLoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Filters.BeforeLoginContext)">
+            <summary>
+            Enables execution before actual posapi login call.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Filters.ILoginFilter.AfterLoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.Filters.AfterLoginContext)">
+            <summary>
+            Enables execution after actual posapi login call.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters">
+            <summary>
+            Specifies parameters for the login by username and password. Password can be empty when login type is USERNAME_SUBMIT.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.#ctor(System.String,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.Username">
+            <summary>Gets or sets the user name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.Password">
+            <summary>Gets or sets the user name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.DateOfBirth">
+            <summary>Gets or sets user's date of birth.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.HandshakeSessionKey">
+            <summary>Gets or sets handshake session key for login with previous 3rd party handshake.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.LoginType">
+            <summary>Gets or sets flag indicating type of username and password e.g. 'online' username with password or 'connect card' with pin code.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters.RememberMe">
+            <summary>Indicates if remember-me token should be issued if the feature is enabled.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParametersBase">
+            <summary>Common properties used for all ways of login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParametersBase.Language">
+            <summary>Gets the current language used during the login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParametersBase.Ucid">
+            <summary>Gets or sets UCID.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters">
+            <summary>Common properties for most of the ways of login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters.ChannelId">
+            <summary>Gets or sets the channel ID.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters.ProductId">
+            <summary>Gets or sets the product ID.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters.BrandId">
+            <summary>Gets or sets the brand ID.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters.DeviceId">
+            <summary>Gets or sets the device ID.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.CommonLoginParameters.Fingerprint">
+            <summary>Gets or sets device fingerprint for two-factor authentication.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OptionalUsernameLoginParameters">
+            <summary>Optional username and password properties for login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OptionalUsernameLoginParameters.Username">
+            <summary>Gets or sets the user name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OptionalUsernameLoginParameters.Password">
+            <summary>Gets or sets user password.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.DeviceFingerprint">
+            <summary>Device fingerprint for two-factor authentication.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.DeviceFingerprint.SuperCookie">
+            <summary>Gets or sets super cookie.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.DeviceFingerprint.DeviceDetails">
+            <summary>Gets or sets device details.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult">
+            <summary>
+            The data response from login call.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult.PostLoginValues">
+            <summary>
+            Gets the post login values.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult.PendingActions">
+            <summary>
+            Gets pending actions.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult.WorkflowKeys">
+            <summary>
+            Keys that should be submitted to AddWorkflowData before FinalizeWorkflow is called.
+            Null if no such data should be set.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult.SuperCookie">
+            <summary>
+            Gets super cookie.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult.RememberMeToken">
+            <summary>
+            Gets super cookie.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters">
+            <summary>
+            Same as <see cref="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters" /> with additional oauth ID parameters.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.#ctor(System.String,System.String,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.AuthorizationCode">
+            <summary>Gets or sets authorisation code used for the login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.OAuthProvider">
+            <summary>Gets or sets authorisation code used for the login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.OAuthUserId">
+            <summary>Gets or sets authorisation code used for the login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.NewReq">
+            <summary>Indicates fresh login.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters.NewUser">
+            <summary>Indicates first login after registration.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.PidLoginParameters">
+            <summary>
+            Specifies parameters for the login by username and password.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.PidLoginParameters.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.PidLoginParameters.Pid">
+            <summary>
+            Gets or sets the PID.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters">
+            <summary>
+            Parameters for automatic background login using corresponding token if user has checked remember-me during regular login.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters.RememberMeToken">
+            <summary>Gets or sets the token.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters.TokenType">
+            <summary>Gets or sets the token type e.g. "legacy". Null is default.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters">
+            <summary>
+            Specifies parameters for the workflow methods (finalize, skip).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters.LoginType">
+            <summary>Gets or sets the SSO token.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.Logout.ILogoutServiceClient">
+            <summary>
+            Logout logic.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiClaimsDeserializer">
+            <summary>
+            Deserializes claims from PosAPI response.
+            There are also local claims, see <see cref="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsResolver" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IPosApiClaimsServiceClient">
+            <summary>
+            Gets PosAPI claims according to given auth tokens.
+            There are also local claims, see <see cref="T:Frontend.Vanilla.ServiceClients.Security.Claims.Local.ILocalClaimsResolver" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.IRefreshTokenServiceClient">
+            <summary>
+            Refreshes (prolongs expiration of) authentication token on PosAPI and the platform without executing any other operation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData.ActionTaken">
+            <summary>ActionTaken.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData.LimitTypes">
+            <summary>Creates a Limit type string.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData.EncodedSsoKey">
+            <summary>Sso of the user.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData.#ctor(System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.ServiceClients.Services.Authentication.SessionLimits.SessionLimitsData"/> class.
+            </summary>
+            <param name="actionTaken"></param>
+            <param name="limitTypes"></param>
+            <param name="encodedSsoKey"></param>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Authentication.ValidateTokens.IValidateTokensServiceClient">
+            <summary>
+            Checks validity of current user and session tokens on PosAPI side without executing any heavier operation.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Common.Currencies.Currency.FormatMoney(System.Decimal)">
+            <summary>
+            Formats money amount according to given currency and current culture.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse">
+            <summary>
+            Shop details response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.ShopId">
+            <summary>
+            Shop ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.BusinessUnit">
+            <summary>
+            Business unit.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.RegionCode">
+            <summary>
+            Region code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.RegionAreaCode">
+            <summary>
+            Region area code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.SubRegionCode">
+            <summary>
+            Sub region code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.TimeZone">
+            <summary>
+            Time zone.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.Locale">
+            <summary>
+            Locale.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.CurrencyCode">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.DefaultGateway">
+            <summary>
+            Default gateway.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.Validated">
+            <summary>
+            Is validated.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.ShopTier">
+            <summary>
+            Shop tier.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.SitecoreShopGroups">
+            <summary>
+            Sitecore shop groups.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Shop.ShopDetailsResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.Collections.Generic.IReadOnlyCollection{System.String})">
+            <summary>
+            ShopDetailsResponse.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsRequest">
+            <summary>
+            Terminal details request.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsRequest.ShopId">
+            <summary>
+            Shop ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsRequest.TerminalId">
+            <summary>
+            Terminal ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsRequest.Cached">
+            <summary>
+            Is value from cache.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsResponse">
+            <summary>
+            Terminal details response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsResponse.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsResponse.Data">
+            <summary>
+            Terminal details data <see cref="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData"/>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsResponse.#ctor(System.String,Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData)">
+            <summary>
+            TerminalDetailsResponse.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData">
+            <summary>
+            Terminal details data.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.TerminalType">
+            <summary>
+            Terminal type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.IpAddress">
+            <summary>
+            IP address.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.MacId">
+            <summary>
+            MAC ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.Volume">
+            <summary>
+            Volume.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.TerminalStatus">
+            <summary>
+            Terminal status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.Resolution">
+            <summary>
+            Resolution.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.LockStatus">
+            <summary>
+            Lock status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.CustomerAccount">
+            <summary>
+            Terminal customer account <see cref="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount"/>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalDetailsData.#ctor(System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount)">
+            <summary>
+            TerminalDetailsData.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount">
+            <summary>
+            Terminal customer account.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount.CustomerId">
+            <summary>
+            Customer ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount.AccountName">
+            <summary>
+            Account name.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Common.Inventory.Terminal.TerminalCustomerAccount.#ctor(System.String,System.String)">
+            <summary>
+            TerminalCustomerAccount.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Common.IPosApiCommonService">
+            <summary>
+            Represents Common.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.BonusTncAcceptance">
+            <summary>
+            Bonus TNC Acceptance Model.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.BonusTncAcceptance.OfferId">
+            <summary>
+            Offer Id.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.BonusTncAcceptance.OfferArc">
+            <summary>
+            Offer Arc.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.BonusTncAcceptance.IsCampaignBonus">
+            <summary>
+            Is Campaign bonus.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.BonusTncAcceptance.TncAcceptanceFlag">
+            <summary>
+            Tnc Acceptance Flag.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.DropBonusOffer">
+            <summary>
+            Drop Bonus Offer Model.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.DropBonusOffer.BonusId">
+            <summary>
+            Bonus Id.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.DropBonusOffer.AgentName">
+            <summary>
+            Agent Name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm2.Models.DropBonusOffer.Reason">
+            <summary>
+            Reason.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService">
+            <summary>
+            Represents CRM.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetLoyaltyProfile(System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetLoyaltyProfileAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetBasicLoyaltyProfile(System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetBasicLoyaltyProfileAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetValueSegment(System.Boolean)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetValueSegmentAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmService.GetUserFlagsAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmServiceInternal.GetCampaignsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmServiceInternal.GetBasicLoyaltyProfileAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.IPosApiCrmServiceInternal.GetValueSegmentAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm.LoyaltyPoint.ILoyaltyConfiguration">
+            <summary>
+            Configures loyalty profile handling.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm.LoyaltyPoint.ILoyaltyConfiguration.Points">
+            <summary>
+            Configures what type of balance of loyalty points should be displayed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm.LoyaltyPoint.ILoyaltyPointsServiceClient">
+            <summary>
+            Gets proper type of loyalty points according to the configuration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Crm.PlayerGamingDeclaration.GamingDeclarationRequest">
+            <summary>
+            Gaming declaration request.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Crm.PlayerGamingDeclaration.GamingDeclarationRequest.#ctor(System.String)">
+            <summary>
+            Gaming declaration request.
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Crm.PlayerGamingDeclaration.GamingDeclarationRequest.Status">
+            <summary>
+            Status of the user.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.GeoLocation.IPosApiGeoLocationService">
+            <summary>
+            IPosApiGeoLocationService.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.GeoLocation.IPosApiGeoLocationService.GetMappedLocationAsync(Frontend.Vanilla.ServiceClients.Services.GeoLocation.MappedLocations.GeolocationCoordinates,System.Threading.CancellationToken)">
+            <summary>
+            GetMappedLocationAsync.
+            </summary>
+            <param name="coordinates"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.GeoLocation.MappedLocations.GeolocationCoordinates">
+            <summary>Position coordinates resolved by Geolocation browser API.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.GeoLocation.MappedLocations.MappedGeolocation">
+            <summary>Location mapped by platform (via PosAPI) from a position resolved by Geolocation browser API.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.GeoLocation.MappedLocations.MappedGeolocation.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Location mapped by platform (via PosAPI) from a position resolved by Geolocation browser API.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.IClaimsService">
+            <summary>
+            <see cref="N:System.Security.Claims" /> based authentication service. Handles any authentication related communication with PosApi and sets the correct principal on the current thread.
+            All exposed principals implement <see cref="T:System.Security.Claims.ClaimsPrincipal" />. The anonymous user has a limited set of claims based on his IP address.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters)">
+            <summary>
+            Authenticates the user in the system.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.LoginParameters,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates the user in the system.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters)">
+            <summary>
+            Authenticates with the given SSO Token. (AutoLogin).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.AutoLoginParameters,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates with the given SSO Token. (AutoLogin).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(System.String,System.String,System.String)">
+            <summary>
+            Authenticates the user with given tokens.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates the user with given tokens.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.PidLoginParameters)">
+            <summary>
+            Authenticates with the given PID. (Login/PID).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters)">
+            <summary>
+            Authenticates on OAuthLogin endpoint.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.OAuthIdLoginParameters,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates on OAuthLogin endpoint.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.PidLoginParameters,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates with the given PID. (Login/PID).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.FinalizeWorkflow(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters,System.String)">
+            <summary>
+            Finalizes the current workflow, and logs the user in.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.FinalizeWorkflowAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finalizes the current workflow, and logs the user in.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.SkipWorkflow(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters,System.String)">
+            <summary>
+            Skips the current workflow and logs the user in.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.SkipWorkflowAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.WorkflowParameters,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Skips the current workflow and logs the user in.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.GetPostLoginValues">
+            <summary>
+            Gets the post login values.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.GetPostLoginValuesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the post login values.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.Login(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters)">
+            <summary>
+            Authenticates with remember-me token.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.IClaimsService.LoginAsync(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.RememberMeLoginParameters,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates with remember-me token.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse">
+            <summary>
+            Document verification options response.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.#ctor(System.String,System.Collections.Generic.IReadOnlyList{Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse},System.String,System.Int32,System.String)">
+            <summary>
+            Document verification options response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.VerificationType">
+            <summary>
+            Document verification type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.VerificationSteps">
+            <summary>
+            Document verification steps.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.CurrentStepName">
+            <summary>
+            Current step name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.StatusCode">
+            <summary>
+            Document status code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.DocumentVerificationOptionsResponse.VerificationVendor">
+            <summary>
+            Verification vendor.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse">
+            <summary>
+            Document verification step response.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.#ctor(System.String,System.String,System.Nullable{System.Int32},System.String,System.Collections.Generic.IReadOnlyList{Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse})">
+            <summary>
+            Document verification step response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.StepName">
+            <summary>
+            Verification step name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.StepStatus">
+            <summary>
+            Verification step status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.PreviousAttemptStatusCode">
+            <summary>
+            Verification previous attempt status code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.DocumentTypeUsed">
+            <summary>
+            Verification document type used.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.VerificationStepResponse.AllowedDocuments">
+            <summary>
+            Allowed verification documents.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse">
+            <summary>
+            Allowed document info response.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Allowed document info response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse.DocumentType">
+            <summary>
+            Allowed document type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse.DocumentTypeDescription">
+            <summary>
+            Allowed document description.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Kyc.Document.AllowedDocumentInfoResponse.InitiateMethod">
+            <summary>
+            Allowed document initiate method.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.MailConfigurationBuilder">
+            <summary>
+            The implementation of <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.IMailConfiguration" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.MailConfigurationBuilder.EndpointAddress">
+            <summary>
+            Gets or sets the endpoint of the Mail Service.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.MailConfigurationBuilder.SmtpFarm">
+            <summary>
+            Gets or sets the SMTP farm.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.MailConfigurationBuilder.Frontend#Vanilla#Core#Configuration#IConfigurationBuilder{Frontend#Vanilla#ServiceClients#Services#Mail#IMailConfiguration}#Build">
+            <summary>
+            Builds the configuration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.IMailConfiguration">
+            <summary>
+            Mail service configuration model.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.IMailConfiguration.EndpointAddress">
+            <summary>
+            Gets the endpoint of the Mail Service.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.IMailConfiguration.SmtpFarm">
+            <summary>
+            Gets the SMTP farm.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.IMailService">
+            <summary>
+            Implements minimalistic email capability configurable using <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.IMailConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.IMailService.SendEmail(System.Net.Mail.MailMessage)">
+            <summary>
+            Sends an email. Returns <see langword="true"/> if sending was successfully, otherwise <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.MailService`1.SendEmail(System.Net.Mail.MailMessage)">
+            <summary>
+            Sends an email.
+            </summary>
+            <param name="emailMessage">The email message to send.</param>
+            <returns><see langword="true"/> if sending was successfully, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.MailService`1.CreateRequestFrom(System.Net.Mail.MailMessage)">
+            <summary>
+            Creates the email request from a standard System.Net.Mail.<see cref="T:System.Net.Mail.MailMessage"/>.
+            </summary>
+            <param name="emailMessage">A filled out System.Net.Mail.<see cref="T:System.Net.Mail.MailMessage"/>.</param>
+            <returns>A <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType"/> to be send as an email.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.MailService`1.ConvertAlternateView(System.Net.Mail.AlternateView)">
+            <summary>
+            Converts a System.Net.Mail.<see cref="T:System.Net.Mail.AlternateView"/> to the code-generated <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.AlternateView"/>.
+            </summary>
+            <param name="alternateView">A System.Net.Mail.<see cref="T:System.Net.Mail.AlternateView"/>.</param>
+            <returns>A .<see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.AlternateView"/>.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Mail.MailService`1.ConvertAttachment(System.Net.Mail.Attachment)">
+            <summary>
+            Converts a <see cref="T:System.Net.Mail.Attachment"/> to the code-generated <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.Attachment"/>.
+            </summary>
+            <param name="attachment">A System.Net.Mail.<see cref="T:System.Net.Mail.Attachment"/>.</param>
+            <returns>A <see cref="T:Frontend.Vanilla.ServiceClients.Services.Mail.Attachment"/>.</returns>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestHeaderType">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestHeaderType.PreferredSmtpFarm">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestHeaderType.NotificationRecipients">
+            <remarks/>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailResponseType">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailResponseType.MessageId">
+            <remarks/>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.AlternateView">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.AlternateView.Content">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.AlternateView.MediaType">
+            <remarks/>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.Attachment">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.Attachment.FileName">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.Attachment.Data">
+            <remarks/>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.MessageId">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.From">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.To">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.ReplyTo">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Cc">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Bcc">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Subject">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.IsBodyHtml">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Priority">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Body">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.Attachments">
+            <remarks/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Mail.SendEmailRequestType.AlternateViews">
+            <remarks/>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Manager.IPostLoginValuesManager">
+            <summary>
+            Stores PostLogin values for later usage because there is no other way how to retrieve them from PosAPI.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Manager.PostLoginValuesManager.ConvertPostLoginValues(Frontend.Vanilla.ServiceClients.Services.Authentication.Login.ILoginResult)">
+            <summary>
+            Normalize keys that are comming from HYD (e.g. NO_OF_HOURS_LEFT), to avoid having identificators in js that look like "nO_OF_HOURS_LEFT"
+            After normalized keys look like "NoOfHoursLeft" in .NET and "noOfHoursLeft" in Javascript
+            Values are converted to bool if "true" or "false", left as string otherwise.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.MyBets.IPosApiMyBetsService">
+            <summary>
+            Represents MyBets BPOS service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.MyBets.IPosApiMyBetsService.GetAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated or in workflow.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Notification.EdsGroup.EdsGroupOptInRequest">
+            <summary>
+            EdsGroupOptInRequest request.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.EdsGroup.EdsGroupOptInRequest.EventId">
+            <summary>
+            Event ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.EdsGroup.EdsGroupOptInRequest.Optin">
+            <summary>
+            Optin status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.EdsGroup.EdsGroupOptInRequest.Source">
+            <summary>
+            Source.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter">
+            <summary>
+            filter criteria for INotificationService.GetInboxMessages.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.Status">
+            <summary>
+            Only show messages with this status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.MessageSource">
+            <summary>
+            Only show messages from this source.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.StartDate">
+            <summary>
+            Only show messages younger than this.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.EndDate">
+            <summary>
+            Only show messages older than this.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.PageSize">
+            <summary>
+            Paging: number of messages per page.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Notification.InboxMessages.InboxMessageFilter.PageIndex">
+            <summary>
+            Paging: page to show.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Notification.IPosApiNotificationService">
+            <summary>
+            Represents Notification.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Notification.OfferStatuses.OfferStatus">
+            <summary>
+            Constants with known offer statuses.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Registration.MobileAvailability.IMobileAvailabilityServiceClient">
+            <summary>
+            Checks validity of current user and session tokens on PosAPI side without executing any heavier operation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsRequest">
+            <summary>
+            Request for the Affordability/SnapshotDetailsV2 endpoint.
+            <see href="https://test.api.bwin.com/v3/#responsibe-gaming-player-affordability-snapshot-details-v2"/>.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsRequest.DnaId">
+            <summary>
+            DNA ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsRequest.AdditionalParams">
+            <summary>
+            Additional Params (e.g. limit types).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsResponse">
+            <summary>
+            Response for Affordability/SnapshotDetailsV2 endpoint.
+            <see href="https://test.api.bwin.com/v3/#responsibe-gaming-player-affordability-snapshot-details-v2"/>.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsResponse.AffordabilityStatus">
+            <summary>
+            Affordability Status with LEVEL1 .. LEVEL6 or OTHER values.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.Affordability.AffordabilitySnapshotDetailsResponse.EmploymentGroup">
+            <summary>
+            Employment group.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest">
+            <summary>
+            The ArcPlayBreakActionRequest is sent when the player sets, rejects to set a break duration and break start.
+            </summary>
+            <see href="http://qa2.api.bwin.com/v3/#responsibe-gaming-acknowledgeplaybreakaction"/>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest.ActionName">
+            <summary>
+            The CTA action name taken in the play break dialog.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest.PlayBreakDuration">
+            <summary>
+            The play break duration time chosen by the player.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest.AfterXMinutes">
+            <summary>
+            The play break activation after X minutes value chosen by the player.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest.CstEventId">
+            <summary>
+            Event id received by Frontend via RTMS.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponse">
+            <summary>
+            The API response for ArcPlayBreakActionRequest.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponse.ResponseCode">
+            <summary>
+            The response code of the operation, if 0 success otherwise failure.The response code and messages are listed in Table 7.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponse.ResponseMessage">
+            <summary>
+            The response message of the operation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponseCode">
+            <summary>
+            Play Break Action Acknowledgement Response Codes.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponseCode.Failure">
+            <summary>
+            Failure.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponseCode.TechnicalError">
+            <summary>
+            Technical Error.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponseCode.ServiceUnavailable">
+            <summary>
+            Service Unavailable.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionResponseCode.UnexpectedError">
+            <summary>
+            Unexpected Error.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingService">
+            <summary>
+            Represents ResponsibleGaming.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingService.GetPlayBreakStatus(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingServiceInternal.GetSelfExclusionDetailsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingServiceInternal.GetDepositLimitsAsync(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingServiceInternal.AcknowledgePlayBreakAction(Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ArcPlayBreaks.ArcPlayBreakActionRequest,Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingServiceInternal.SaveScreenTimeAsync(Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ScreenTime.ScreenTimeSaveRequest,Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.IPosApiResponsibleGamingServiceInternal.SetPlayerAreaAsync(Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.PlayerArea.SetPlayerAreaRequest,Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.PlayerArea.SetPlayerAreaRequest">
+            <summary>
+            Contains infomation to save the Screen Time information.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.PlayerArea.SetPlayerAreaRequest.NewArea">
+            <summary>Gets new area.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.PlayerArea.SetPlayerAreaRequest.OldArea">
+            <summary>Gets old area.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.PlayerArea.SetPlayerAreaRequest.EventTime">
+            <summary>Gets date and time of event.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse">
+            <summary>
+            RCPU Status Response from the RCPU status endpoint.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse.#ctor(System.Double,System.Int64,System.Int64,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse.Balance">
+            <summary>Player balance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse.ElapsedTime">
+            <summary>Elapsed time.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse.TotalWagerAmt">
+            <summary>Total wager amount.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.RealityCheck.RcpuStatusResponse.PlayerState">
+            <summary>Player state.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.ResponsibleGaming.ScreenTime.ScreenTimeSaveRequest">
+            <summary>
+            Contains infomation to save the Screen Time information.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest">
+            <summary>
+            PayoutValueTicket request.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.Id">
+            <summary>
+            Value ticket ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.AgentName">
+            <summary>
+            Agent name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.ShopId">
+            <summary>
+            Shop ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.Source">
+            <summary>
+            Source.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketRequest.TerminalId">
+            <summary>
+            Terminal ID.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse">
+            <summary>
+            PayoutValueTicketResponse response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.Amount">
+            <summary>
+            Amount.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.ErrorCode">
+            <summary>
+            Error code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.ErrorDesc">
+            <summary>
+            Error description.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.TransactionDate">
+            <summary>
+            Transaction date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.ValueTicketStatus">
+            <summary>
+            Value ticket status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.WltRefId">
+            <summary>
+            Wlt reference ID.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Retail.PayoutValueTicket.PayoutValueTicketResponse.#ctor(System.Int64,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Int64)">
+            <summary>
+            PayoutValueTicketResponse.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketRequest">
+            <summary>
+            Value ticket request.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketRequest.Id">
+            <summary>
+            Ticket ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketRequest.Source">
+            <summary>
+            Source - e.g. Terminal.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketRequest.ShopId">
+            <summary>
+            Shop ID - Required if the source is terminal.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketRequest.TerminalId">
+            <summary>
+            Terminal ID - Required if the source is terminal.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse">
+            <summary>
+            Value ticket response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.ValueTicketId">
+            <summary>
+            Value ticket ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.ValueTicketStatus">
+            <summary>
+            Value ticket status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.Amount">
+            <summary>
+            Amount.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.ShopId">
+            <summary>
+            Shop ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.TerminalId">
+            <summary>
+            Terminal ID.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.TerminalIdPaidOut">
+            <summary>
+            Terminal ID Paid-out.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.PrintedDate">
+            <summary>
+            Printed date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.PaidOutDate">
+            <summary>
+            Paid-out date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.AgentName">
+            <summary>
+            Agent name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.Comments">
+            <summary>
+            Comments.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.AmlDecisionHistoryDetails">
+            <summary>
+            AML decision history details.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.LockingDetail">
+            <summary>
+            Locking detail.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.UnlockingDetail">
+            <summary>
+            Unlocking detail.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.ErrorCode">
+            <summary>
+            Error code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.ErrorMsg">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.AmlCurrentStatus">
+            <summary>
+            Aml current status.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.ValueTicketResponse.#ctor(System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.DateTime,System.Nullable{System.DateTime},System.String,System.String,System.Collections.Generic.IReadOnlyList{Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails},Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail,Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail,System.String,System.String,System.String,System.String)">
+            <summary>
+            ValueTicketResponse.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails">
+            <summary>
+            DecisionHistoryDetails response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.IsManualTicketLocking">
+            <summary>
+            Is manual ticket locking.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.LockingReasonAML">
+            <summary>
+            Locking reason AML.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.ShopAgentName">
+            <summary>
+            Shop agent name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.ChangeValueTicketDate">
+            <summary>
+            Change value ticket date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.AmlAgentName">
+            <summary>
+            AML agent name.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.AmlPreviousStatus">
+            <summary>
+            ValueTicketResponse.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.AmlCurrentStatus">
+            <summary>
+            AML current status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.Comments">
+            <summary>
+            Comments.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.AmlDecisionDate">
+            <summary>
+            AML decision date.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.DecisionHistoryDetails.#ctor(System.Nullable{System.Boolean},System.String,System.String,System.Nullable{System.DateTime},System.String,System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            DecisionHistoryDetails.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail">
+            <summary>
+            LockingDetail response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.LockingReason">
+            <summary>
+            Locking reason.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.LockingUser">
+            <summary>
+            Locking user.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.LockingTime">
+            <summary>
+            Locking time.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.ManualLock">
+            <summary>
+            Manual lock.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.LockingDetail.#ctor(System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean})">
+            <summary>
+            LockingDetail.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail">
+            <summary>
+            UnlockingDetail response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail.Status">
+            <summary>
+            Status.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail.UnlockingReason">
+            <summary>
+            Unlocking reason.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail.UnlockingUser">
+            <summary>
+            Unlocking user.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail.UnlockingTime">
+            <summary>
+            Unlocking time.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Retail.ValueTicket.UnlockingDetail.#ctor(System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            UnlockingDetail.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.CustomerDocDetailsResponse">
+            <summary>
+            Customer document details response.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.CustomerDocDetailsResponse.#ctor(System.Collections.Generic.List{Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentVerificationStatus})">
+            <summary>
+            Customer document details response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.CustomerDocDetailsResponse.DocumentVerificationStatus">
+            <summary>
+            Document verification status list.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentVerificationStatus.DocumentDetails">
+            <summary>
+            Document details list.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentVerificationStatus.IsVerified">
+            <summary>
+            Is verified.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentVerificationStatus.UseCase">
+            <summary>
+            Use case: TWO-PLUS-TWO; KYC; UK-KYC-REFRESH, etc.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentVerificationStatus.VerifiedTime">
+            <summary>
+            Verified time.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.DocumentStatus">
+            <summary>
+            Document status.
+            Mutate according to `KycConfiguration.DocumentVerificationStatus` mappings.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.DocumentType">
+            <summary>
+            Document type: PASSPORT, etc.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.DocumentStatusLastUpdated">
+            <summary>
+            Document status last updated date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.UploadedDate">
+            <summary>
+            Uploaded date.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.UploadedReason">
+            <summary>
+            Uploaded reason: ACCOUNT-ON-HOLD, ACCOUNT-VERIFICATION, etc.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.CustomerDocDetails.DocumentDetails.DocumentsCount">
+            <summary>
+            Internal property. Used to indicate the failed documents count.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Upload.DocumentUploadStatus.DocumentUploadStatusResponse">
+            <summary>
+            Document upload status response.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Upload.DocumentUploadStatus.DocumentUploadStatusResponse.#ctor(System.Boolean,System.String)">
+            <summary>
+            Document upload status response.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.DocumentUploadStatus.DocumentUploadStatusResponse.IsPending">
+            <summary>
+            Is pending.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Upload.DocumentUploadStatus.DocumentUploadStatusResponse.DocsPendingWith">
+            <summary>
+            Document pending with.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Upload.IPosApiUploadServiceInternal">
+            <summary>
+            Represents Upload.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Upload.IPosApiUploadServiceInternal.GetCustomerDocDetailsAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.String,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Upload.IPosApiUploadServiceInternal.GetDocumentUploadStatusAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean,System.String)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.CrossProductBalanceCachedDto">
+            <summary>
+            Part of <see cref="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.Balance" /> which is same for all product apps so it's cached accordingly.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.CrossProductBalanceCachedDto.#ctor(System.Decimal,Frontend.Vanilla.ServiceClients.Services.Common.Currencies.Currency,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Part of <see cref="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.Balance" /> which is same for all product apps so it's cached accordingly.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.ProductSpecificBalanceCachedDto">
+            <summary>
+            Part of <see cref="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.Balance" /> which is specific for a product app so it's cached accordingly.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.ProductSpecificBalanceCachedDto.#ctor(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Part of <see cref="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.Balance" /> which is specific for a product app so it's cached accordingly.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.TransferBalance">
+            <summary>
+            Tranfer Balance Model.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.TransferBalance.Amount">
+            <summary>
+            Amount to be transferred.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.TransferBalance.FromBalanceType">
+            <summary>
+            Source Balance type.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.ServiceClients.Services.Wallet.Balances.TransferBalance.ToBalanceType">
+            <summary>
+            Destination balance type.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletService">
+            <summary>
+            Represents Wallet.svc PosAPI service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletService.GetBalance(System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletService.GetBalanceAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetBalanceAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.IsQuickDepositAllowedAsync(System.Threading.CancellationToken)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.IsBankAccountRegisteredAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetPlayerActivitySummaryAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetTransactionHistoryAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetUserTransactionSummaryAsync(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetCustomerNetDeposit(System.Threading.CancellationToken,System.String,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetAverageDeposit(System.Threading.CancellationToken,System.Int32,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetNetLossInfoAsync(System.Threading.CancellationToken,System.String,System.Int32,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetNetLossInfoV2Async(System.Threading.CancellationToken,System.String,Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetCurfewStatusAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetProfitLossSummaryAsync(System.Threading.CancellationToken,Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime,System.String,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetSessionFundSummary(Frontend.Vanilla.Core.System.ExecutionMode,System.Boolean)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetTourneyTokenBalance(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.Services.Wallet.IPosApiWalletServiceInternal.GetActiveWagerDetails(System.Threading.CancellationToken)">
+            <summary>User must be authenticated.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.ServiceClients.VanillaServiceClientsServices">
+            <summary>
+            Vanilla service clients.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.ServiceClients.VanillaServiceClientsServices.AddVanillaServiceClients(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds services related to Vanilla service clients.
+            Also adds dependency <see cref="M:Frontend.Vanilla.Core.VanillaCoreServices.AddVanillaCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />.
+            </summary>
+        </member>
+    </members>
+</doc>

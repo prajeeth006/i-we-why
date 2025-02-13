@@ -1,0 +1,127 @@
+@import './src/global-style/_all-variables.scss';
+
+.marketContent {
+  display: flex;
+  color: $body-color-txt;
+  flex-wrap: wrap;
+  margin-top: 48px;
+
+  @include breakpoint(multidesktop) {
+    margin-top: 18px;
+  }
+
+  h2 {
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    font-size: $font-list-lg-title-avr;
+    margin: 0px;
+    line-height: 74px;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font1-size;
+      line-height: 37px;
+    }
+  }
+
+  .market-left-content,
+  .market-right-content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: $font-list-md2-title;
+    width: 50%;
+    height: 100px;
+
+    @include breakpoint(multidesktop) {
+      font-size: $font-list-title;
+      height: 50px;
+    }
+  }
+
+  .betting-team {
+    background-color: $white;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+
+    @include breakpoint(multidesktop) {
+      padding: 5px 10px;
+    }
+  }
+
+  .betting-price {
+    min-width: 200px;
+    background: $body-color-p2-light;
+    padding: 10px 17px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+      padding: 5px 10px;
+      min-width: 100px;
+    }
+  }
+
+  .market-right-content {
+    justify-content: flex-end;
+
+    .betting-team {
+      justify-content: flex-end;
+    }
+  }
+
+  .team-vs {
+    font-size: $font-list-md2-title;
+    background: $white;
+    min-width: 76px;
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font1-size;
+      min-width: 38px;
+    }
+  }
+
+  &.set-betting {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 0px;
+    font-size: $font-list-md2-title;
+
+    @include breakpoint(multidesktop) {
+      font-size: $font-list-title;
+      margin: 20px auto 0px;
+    }
+
+    .game-list {
+      display: flex;
+      min-width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+      height: 100px;
+
+      @include breakpoint(multidesktop) {
+        margin-bottom: 10px;
+        height: 50px;
+      }
+
+      .game-point {
+        min-width: 912px;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        background-color: $white;
+        @include flex-center;
+
+        @include breakpoint(multidesktop) {
+          padding: 5px;
+          min-width: 452px;
+        }
+      }
+    }
+  }
+}

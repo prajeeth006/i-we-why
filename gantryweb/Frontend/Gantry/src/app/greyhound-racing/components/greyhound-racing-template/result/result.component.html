@@ -1,0 +1,69 @@
+<ng-container>
+    <gn-base-page *ngIf="vm$ | async as vm">
+        <ng-container header-content>
+            <div class="result-custom-banner">
+                <div id ="banner" class="banner-title-block">
+                    <div id ="leadTitle" class="lead-title">{{vm.isVirtualEvent ? vm.greyhoundStaticContent?.contentParameters?.VirtualRacing :
+                        vm.greyhoundStaticContent?.contentParameters?.Title}}</div>
+                    <div class="main-title-row">
+                        <div id="MainTitle" class="main-title">{{(vm.eventDateTime | eventDatetimeChangeformat) + " " + (vm.eventName |
+                            uppercase) + " - " + (vm.greyhoundStaticContent?.contentParameters?.Result)}}</div>
+                    </div>
+                </div>
+                <div class="banner-sub-title">
+                    <div class="banner-sub-title-left">
+                        <div class="item-head">
+                            <span id="raceNumber" *ngIf="vm.raceNumber">{{ vm.raceNumber }}</span>
+                            <span id="Grade">{{vm.grade}}</span>
+                            <span id="Distance" *ngIf="vm.distance">{{ vm.distance | racingDistanceTransform }}</span>
+                        </div>
+                    </div>
+                    <div class="banner-sub-title-right">
+                        <div *ngIf="vm.raceOff" class="head-item-2 head-item-2-secondary">
+                            <span id="raceOff">{{ vm.raceOff }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container body-content>
+            <div class="body">
+                <ul id="gTable" class="greyhound-table">
+                    <li *ngFor="let runner of vm.runners" id="runnerS">
+                        <div class="table-item-2 items border-dark ">
+                            <span id = "RunnerPosition" *ngIf="runner.position">{{ runner.position | runnerPositionSuffix }}</span>
+                        </div>
+                        <div class="table-item-1 items table-center border-dark traps">
+                            <img id="Images" [retrySrc]="runner.trapImage" height="32vh" />
+                        </div>
+                        <div class="table-item-3 items border-dark">
+                            <span id="GreyHoundName" *ngIf="runner.greyhoundName"> {{ runner.greyhoundName }} </span>
+                            <div class="reserve-tag" *ngIf="runner.isReserved">{{
+                                vm.greyhoundStaticContent?.contentParameters?.Reserve }}</div>
+                        </div>
+                        <div class="table-item-5 items border-dark ">
+                            <span id="RunnerPrice" class="text-center" *ngIf="runner.price"> {{ runner.price | marketPriceTransform }}
+                            </span>
+                        </div>
+                        <div class="table-item-7 items border-dark"
+                        [ngClass]="{'betting-favourite' : runner.isJointFavourite}">
+                            <span *ngIf="!!runner.jointFavourite"> {{ runner.jointFavourite }} </span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="castSec">
+                    <div id= "Cast" class="cast" *ngIf="vm.forecast"> <span id="ForecastTitle">{{ vm.forecastTitle }}:</span> {{ vm.forecast }} </div>
+                    <div class="cast" *ngIf="vm.tricast"><span id="TricastTitle"> {{ vm.tricastTitle }}:</span> {{ vm.tricast}} </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container footer-content>
+            <gn-greyhound-each-way [runnerCount]="vm.runnerCount" [isEventResulted]=true
+                [marketEachWayString]="vm.eachWay" [isUKEvent]=false>
+            </gn-greyhound-each-way>
+        </ng-container>
+
+    </gn-base-page>
+</ng-container>

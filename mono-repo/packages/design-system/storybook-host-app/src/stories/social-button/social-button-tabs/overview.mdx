@@ -1,0 +1,24 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from '../social-button.component.stories';
+
+The _social button_ it is a button with `ds-social-button` selector.
+With the input `socialApp` you choose what style will be used. Slot `start` is usually used for icon.
+Place your text (label) inside the button, and it will be projected.
+
+<Canvas of={ButtonStories.LeftIcon} />
+
+## Usage
+
+Import `DsSocialButton` in your component, and apply `ds-social-button` in your buttons or anchor elements.
+
+```ts
+import { DsSocialButton } from '@frontend/ui/social-button'; // 👈 add to file imports
+
+@Component({
+    imports: [DsSocialButton], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```

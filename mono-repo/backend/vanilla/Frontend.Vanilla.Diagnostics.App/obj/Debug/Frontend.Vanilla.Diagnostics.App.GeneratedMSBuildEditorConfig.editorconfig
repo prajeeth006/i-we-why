@@ -1,0 +1,149 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Frontend.Vanilla.Diagnostics.App
+build_property.RootNamespace = Frontend.Vanilla.Diagnostics.App
+build_property.ProjectDir = C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.App\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Diagnostics.App
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/dev/monorepo/backend/vanilla/stylecop.json]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Cache/CachePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FjaGVcQ2FjaGVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Configuration/ConfigurationPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZmlndXJhdGlvblxDb25maWd1cmF0aW9uUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Configuration/CurrentConfigurationTab.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZmlndXJhdGlvblxDdXJyZW50Q29uZmlndXJhdGlvblRhYi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Configuration/EditOverridesDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZmlndXJhdGlvblxFZGl0T3ZlcnJpZGVzRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Configuration/OverrideButton.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZmlndXJhdGlvblxPdmVycmlkZUJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Content/ContentPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFxDb250ZW50UGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Dsl/DslExpressionTester.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHNsXERzbEV4cHJlc3Npb25UZXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Dsl/DslPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHNsXERzbFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Dsl/DslProvidersDocumentation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHNsXERzbFByb3ZpZGVyc0RvY3VtZW50YXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Dsl/DslProvidersShortcuts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHNsXERzbFByb3ZpZGVyc1Nob3J0Y3V0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Dsl/DslSyntaxDocumentation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRHNsXERzbFN5bnRheERvY3VtZW50YXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/HealthReport/HealthReportPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVhbHRoUmVwb3J0XEhlYWx0aFJlcG9ydFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/HttpTester/HttpTesterPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHR0cFRlc3RlclxIdHRwVGVzdGVyUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Info/InfoDetailsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5mb1xJbmZvRGV0YWlsc1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/Info/InfoOverviewPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5mb1xJbmZvT3ZlcnZpZXdQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/LogAndTracing/LogAndTracingPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nQW5kVHJhY2luZ1xMb2dBbmRUcmFjaW5nUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Pages/LogAndTracing/LogEntryDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nQW5kVHJhY2luZ1xMb2dFbnRyeURldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/CheckBox.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENoZWNrQm94LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/ExpandableChevron.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEV4cGFuZGFibGVDaGV2cm9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/JsonViewer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEpzb25WaWV3ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/MenuItem.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1lbnVJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/NotFoundPage.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5vdEZvdW5kUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/PageLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2VMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/ScrollToFragmentOnLoad.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNjcm9sbFRvRnJhZ21lbnRPbkxvYWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/ScrollToIdLink.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNjcm9sbFRvSWRMaW5rLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/SelectList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNlbGVjdExpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/TreeItem.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRyZWVJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/Shared/TreeView.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRyZWVWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dev/monorepo/backend/vanilla/Frontend.Vanilla.Diagnostics.App/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

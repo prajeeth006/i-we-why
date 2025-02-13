@@ -1,0 +1,35 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from './button.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './button-tabs/overview.mdx';
+import MySecondTab from './button-tabs/examples.mdx';
+import MyThirdTab from './button-tabs/api.mdx';
+
+<Meta of={ButtonStories} />
+
+<div className="variant-info-container">
+    <h1>Button Component</h1>
+    <Story of={ButtonStories.ComplexityLevel}></Story>
+</div>
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

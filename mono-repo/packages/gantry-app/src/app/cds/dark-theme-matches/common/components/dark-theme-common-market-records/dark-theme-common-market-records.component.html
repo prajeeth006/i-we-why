@@ -1,0 +1,33 @@
+<div id="marketRecords" class="market-records-container" *ngIf="multiMarket && multiMarket?.selections?.length > 0">
+    <div class="market-record-details-header">
+        <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title | titlecase }}</div>
+    </div>
+    <div id="multiMarket" class="multimarket-container__main" *ngFor="let selection of multiMarket?.selections">
+        <div [ngClass]="!!selection?.homeSelectionTitle ? 'marketdata' : ''">
+            <div class="marketdata__left">
+                <ng-container *ngIf="selection?.homeSelectionTitle">
+                    <div id="homePrice" class="betOdds tilted-card" autoAdjustFont>
+                        <span class="tilted-text" *ngIf="selection?.homePrice"> {{ selection?.homePrice | prepareEvsPipe }} </span>
+                    </div>
+                    <div id="homeSelectionTrimTitle" class="betName-left">
+                        <span *ngIf="selection?.homeSelectionTitle"> {{ selection?.homeSelectionTitle | trimSelectionNamePipe: nameLength }}</span>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div [ngClass]="!!selection?.awaySelectionTitle ? 'marketdata' : ''">
+            <div class="marketdata__right">
+                <ng-container *ngIf="selection?.awaySelectionTitle">
+                    <div id="awaySelectionTrimTitle" class="betName-right">
+                        <span *ngIf="selection?.awaySelectionTitle">
+                            {{ selection?.awaySelectionTitle | trimSelectionNamePipe: nameLength }}
+                        </span>
+                    </div>
+                    <div id="awayPrice" class="betOdds tilted-card" autoAdjustFont>
+                        <span class="tilted-text" *ngIf="selection?.awayPrice">{{ selection?.awayPrice | prepareEvsPipe }} </span>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

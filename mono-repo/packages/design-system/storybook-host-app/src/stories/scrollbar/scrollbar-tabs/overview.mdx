@@ -1,0 +1,24 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ScrollbarComponentStories from '../scrollbar.component.stories';
+
+<div style={{ backgroundColor: 'rgba(2, 156, 253, 0.1)', padding: '1rem', borderRadius: '1rem', fontSize: '16px' }}>
+    Simple adding `ds-scrollbar` css class to the html will apply the styles
+</div>
+
+<Canvas sourceState="none" of={ScrollbarComponentStories.Ngx} />
+
+## Usage
+
+Import `DsScrollbar` in your component.
+
+```ts
+import { DsScrollbar } from '@frontend/ui/scrollbar'; // 👈 add to file imports
+
+@Component({
+    imports: [DsScrollbar], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```

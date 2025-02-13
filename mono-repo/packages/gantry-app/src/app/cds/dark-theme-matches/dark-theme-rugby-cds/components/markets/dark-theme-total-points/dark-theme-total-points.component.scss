@@ -1,0 +1,9 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+.total-points {
+    margin-top: 60px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 30px;
+    }
+}

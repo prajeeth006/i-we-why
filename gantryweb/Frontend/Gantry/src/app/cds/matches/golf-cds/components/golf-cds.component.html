@@ -1,0 +1,45 @@
+<div class="tennis-results">
+  <ng-container *ngIf="golfCDSContent as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+      <ng-container *ngIf="vm?.golfData">
+        <gn-base-page>
+          <ng-container header-content>
+            <gn-banner [leadTitle]="vm?.sportName" [title]="vm?.competitionName" [subtitleLeft]="vm?.title"
+              [subtitleRight]="vm?.eventDateTimeInputValue">
+            </gn-banner>
+          </ng-container>
+
+          <ng-container body-content>
+            <div class="winning-distance-page" id="eventList"
+              *ngFor="let event of vm?.golfData?.gameDetails | slice:pageDetails.startIndex:pageDetails.endIndex">
+              <div id="winning-Title" class="wining-title">
+                  {{ event?.gameStartTime |
+                    sportEventDateFormat: vm?.result?.gantryCommonContent:{ weekday: 'short',
+                    timeStyle: 'short' } }}
+              </div>
+              <ul class="selection-table">
+                  <li *ngFor="let selection of event?.runnerDetails" id="eventSelections">
+                    <div id="selectionName" class="table-item-1 items">
+                      {{ selection?.betName | trimSelectionNamePipe: nameLength }}
+                    </div>
+                    <div id="selectionPrice" class="table-item-2 items">
+                      <ng-container>
+                        {{ selection?.betOdds | prepareEvsPipe }}
+                      </ng-container>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+
+          </ng-container>
+          <ng-container footer-content>
+            <gn-footer [leftSideText]="vm?.content?.contentParameters?.LeftStipulatedLine" [rightSideText]="pageDetails?.paginationText">
+            </gn-footer>
+        </ng-container>
+        </gn-base-page>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

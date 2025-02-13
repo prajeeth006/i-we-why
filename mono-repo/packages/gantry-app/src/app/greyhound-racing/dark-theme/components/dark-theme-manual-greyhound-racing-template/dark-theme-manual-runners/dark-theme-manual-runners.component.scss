@@ -1,0 +1,147 @@
+@import '../../../../../../global-style/all-variables';
+@import '../../../../../../dark-theme-global-style/mixins/traps';
+
+.header-current-price {
+    width: 240px;
+
+    @include breakpoint(multidesktop) {
+        width: 120px;
+    }
+}
+
+.greyhound-table {
+    margin: 18px 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 8px 0 0;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin: 52px 0 0;
+    }
+
+    &.runners__list--six {
+        margin: 28px 0 0;
+
+        @include breakpoint(multidesktop) {
+            margin: 14px 0 0;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            margin: 52px 0 0;
+        }
+    }
+
+    li {
+        height: 96px;
+        margin-bottom: 4px;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            margin-bottom: 2px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            height: 61px;
+            margin-bottom: 50px;
+        }
+
+        &.runners__list--item {
+            margin-bottom: 40px;
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 20px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-bottom: 90px;
+            }
+        }
+
+        @include trap-box-styles(120px, 90px);
+
+        @include breakpoint(multidesktophalf) {
+            @include trap-box-styles(80px, 60px);
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+            padding-left: 38px;
+            font-size: $font-70;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 19px;
+                font-size: $font-35;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-40;
+            }
+        }
+
+        .vacant-trap-selection {
+            &::before {
+                content: none;
+            }
+        }
+
+        .selection-past-price {
+            @include flex-center;
+            width: 160px;
+            height: 56px;
+            background-color: $color-white;
+            margin-right: 20px;
+            font-size: $font-40;
+            font-weight: $fw-normal;
+            color: $early-price-text;
+
+            @include breakpoint(multidesktop) {
+                width: 80px;
+                height: 28px;
+                font-size: $font-20;
+                margin-right: 10px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-right: 15px;
+            }
+        }
+
+        .selection-current-price,
+        .selection-plus1-market {
+            @include flex-center;
+            height: 84px;
+            font-size: $font-70;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                height: 42px;
+                font-size: $font-35;
+            }
+        }
+
+        .selection-current-price {
+            background-color: $color-white;
+            color: $early-price-text;
+        }
+
+        .selection-plus1-market {
+            margin-left: 20px;
+            color: $color-white;
+            background-color: $top-2-finish-bg;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 10px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-left: 12px;
+            }
+        }
+
+        .favorite-box {
+            background-color: $theme-yellow;
+        }
+    }
+}

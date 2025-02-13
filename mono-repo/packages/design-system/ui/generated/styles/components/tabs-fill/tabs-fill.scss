@@ -1,0 +1,73 @@
+@mixin default {
+    --ds-tabs-fill-active-color-bg: var(--semantic-color-l2-tabs-background-active);
+    --ds-tabs-fill-active-color-icon: var(--semantic-color-l2-tabs-filled-on-background-active);
+    --ds-tabs-fill-active-color-text: var(--semantic-color-l2-tabs-filled-on-background-active);
+    --ds-tabs-fill-disabled-color-bg: var(--semantic-color-l2-tabs-background-base);
+    --ds-tabs-fill-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-tabs-fill-disabled-color-text: var(--semantic-color-on-disabled-base);
+    --ds-tabs-fill-enabled-color-bg: var(--semantic-color-l2-tabs-background-base);
+    --ds-tabs-fill-enabled-color-icon: var(--semantic-color-l2-tabs-filled-on-background-base);
+    --ds-tabs-fill-enabled-color-text: var(--semantic-color-l2-tabs-filled-on-background-base);
+    --ds-tabs-fill-hover-color-bg: var(--semantic-color-l2-tabs-background-hover);
+    --ds-tabs-fill-hover-color-icon: var(--semantic-color-l2-tabs-filled-on-background-hover);
+    --ds-tabs-fill-hover-color-text: var(--semantic-color-l2-tabs-filled-on-background-hover);
+    --ds-tabs-fill-selected-color-bg: var(--semantic-color-l2-tabs-background-selected);
+    --ds-tabs-fill-selected-color-icon: var(--semantic-color-l2-tabs-filled-on-background-selected);
+    --ds-tabs-fill-selected-color-text: var(--semantic-color-l2-tabs-filled-on-background-selected);
+}
+
+@mixin full-width {
+    --ds-tabs-fill-space-margin-left: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-fill-space-margin-right: var(--semantic-spacing-container-padding-xl);
+}
+
+@mixin inverse {
+    --ds-tabs-fill-active-color-bg: var(--semantic-color-l2-tabs-background-active-inverse);
+    --ds-tabs-fill-active-color-icon: var(--semantic-color-l2-tabs-filled-on-background-active-inverse);
+    --ds-tabs-fill-active-color-text: var(--semantic-color-l2-tabs-filled-on-background-active-inverse);
+    --ds-tabs-fill-disabled-color-bg: var(--semantic-color-l2-tabs-background-base-inverse);
+    --ds-tabs-fill-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-tabs-fill-disabled-color-text: var(--semantic-color-on-disabled-base-inverse);
+    --ds-tabs-fill-enabled-color-bg: var(--semantic-color-l2-tabs-background-base-inverse);
+    --ds-tabs-fill-enabled-color-icon: var(--semantic-color-l2-tabs-filled-on-background-base-inverse);
+    --ds-tabs-fill-enabled-color-text: var(--semantic-color-l2-tabs-filled-on-background-base-inverse);
+    --ds-tabs-fill-hover-color-bg: var(--semantic-color-l2-tabs-background-hover-inverse);
+    --ds-tabs-fill-hover-color-icon: var(--semantic-color-l2-tabs-filled-on-background-hover-inverse);
+    --ds-tabs-fill-hover-color-text: var(--semantic-color-l2-tabs-filled-on-background-hover-inverse);
+    --ds-tabs-fill-selected-color-bg: var(--semantic-color-l2-tabs-background-selected-inverse);
+    --ds-tabs-fill-selected-color-icon: var(--semantic-color-l2-tabs-filled-on-background-selected-inverse);
+    --ds-tabs-fill-selected-color-text: var(--semantic-color-l2-tabs-filled-on-background-selected-inverse);
+}
+
+@mixin large {
+    --ds-tabs-fill-size-border-height: var(--semantic-size-xhalf);
+    --ds-tabs-fill-size-icon: var(--semantic-size-icon-xlarge);
+    --ds-tabs-fill-size-max-height: var(--semantic-size-x35);
+    --ds-tabs-fill-space-inline: var(--semantic-spacing-inline-md);
+    --ds-tabs-fill-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-fill-space-padding-left: var(--semantic-spacing-container-padding-2xl);
+    --ds-tabs-fill-space-padding-right: var(--semantic-spacing-container-padding-2xl);
+    --ds-tabs-fill-space-padding-top: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-fill-space-stack: var(--semantic-spacing-inline-md);
+}
+
+@mixin non-full-width {
+    --ds-tabs-fill-space-margin-left: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-fill-space-margin-right: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin shared {
+    --ds-tabs-fill-radius-border: var(--semantic-radius-semi-rounded-md);
+}
+
+@mixin small {
+    --ds-tabs-fill-size-border-height: var(--semantic-size-xhalf);
+    --ds-tabs-fill-size-icon: var(--semantic-size-icon-large);
+    --ds-tabs-fill-size-max-height: var(--semantic-size-x25);
+    --ds-tabs-fill-space-inline: var(--semantic-spacing-inline-sm);
+    --ds-tabs-fill-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-fill-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-fill-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-fill-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-fill-space-stack: var(--semantic-spacing-inline-sm);
+}

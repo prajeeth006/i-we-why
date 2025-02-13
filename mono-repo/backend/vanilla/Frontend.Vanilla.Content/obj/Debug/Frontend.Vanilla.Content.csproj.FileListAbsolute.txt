@@ -1,0 +1,15 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content\Frontend.Vanilla.Content.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content\Frontend.Vanilla.Content.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content\Frontend.Vanilla.Content.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Content\Frontend.Vanilla.Content.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.ED403CE6.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\refint\Frontend.Vanilla.Content.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\Frontend.Vanilla.Content.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Content\obj\Debug\ref\Frontend.Vanilla.Content.dll

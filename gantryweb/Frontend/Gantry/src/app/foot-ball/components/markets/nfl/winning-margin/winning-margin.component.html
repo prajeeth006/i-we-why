@@ -1,0 +1,39 @@
+<div *ngIf="market && !isRugbyPage" class="marketContent">
+    <div class="home item-lg">
+        <div class="marketContent-left" *ngFor="let betDetails of market?.leftBetList">
+            <span class="betName">{{betDetails?.betName}}</span>
+            <span class="betOdds">{{ betDetails?.betOdds  | marketPriceTransform : betDetails?.hideOdds}} </span>
+        </div>
+    </div>
+    <div class="market item-sm">
+        <div class="marketContent-center">
+            <div class="marketTitle">{{market?.marketDisplayTitle}}</div>
+        </div>
+    </div>
+    <div class="away item-lg">
+        <div class="marketContent-right" *ngFor="let betDetails of market?.rightBetList">
+            <span class="betName">{{betDetails?.betName}}</span>
+            <span class="betOdds">{{ betDetails?.betOdds  | marketPriceTransform : betDetails?.hideOdds}} </span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="market && isRugbyPage" class="marketContent rugby-bluck">
+    <div class="home item-lg">
+        <div class="marketContent-left" *ngFor="let betDetails of market?.rightBetList">
+            <span class="betName">{{betDetails?.betName}}</span>
+            <span class="betOdds">{{ betDetails?.betOdds  | marketPriceTransform : betDetails?.hideOdds}} </span>
+        </div>
+    </div>
+    <div class="market item-sm">
+        <div class="marketContent-center">
+            <div class="marketTitle">{{market?.marketDisplayTitle}}</div>
+        </div>
+    </div>
+    <div class="away item-lg">
+        <div class="marketContent-left" *ngFor="let betDetails of market?.leftBetList">
+            <span class="betName">{{betDetails?.betName}}</span>
+            <span class="betOdds">{{betDetails?.betOdds  | marketPriceTransform : betDetails?.hideOdds}} </span>
+        </div>
+    </div>
+</div>

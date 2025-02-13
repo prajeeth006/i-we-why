@@ -1,0 +1,183 @@
+@use '../variables.scss' as *;
+
+@mixin center-content() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* To update positions of flex elements horizontally and vertically */
+@mixin flex-container($xPosition, $yPosition: stretch) {
+    display: flex;
+    justify-content: $xPosition;
+    align-items: $yPosition;
+}
+
+@mixin grid-container($xPosition, $gap: 0) {
+    display: grid;
+    justify-content: $xPosition;
+    gap: $gap;
+}
+
+@mixin border-radius-fifty-percent() {
+    border-radius: 50%;
+}
+
+@mixin button-with-icon {
+    @include center-content();
+    text-align: center;
+
+    .left-icon {
+        margin-right: 14px;
+    }
+
+    .right-icon {
+        margin-left: 14px;
+    }
+}
+
+@mixin mat-dropdown-control {
+    .mat-mdc-option {
+        padding: 0 10px;
+        height: 2.142857142857143em;
+        line-height: 2.142857142857143em;
+
+        &:hover {
+            background-color: $dropdown-item-hover-bg;
+        }
+
+        .profile-icon-border {
+            width: 8px;
+            height: 8px;
+            @include border-radius-fifty-percent();
+            display: inline-block;
+            border: 1px solid $color-black-light;
+            content: '';
+            margin-right: 10px;
+
+            &.isActivated {
+                background-color: $btn-success-bg;
+                border: none;
+            }
+        }
+    }
+}
+
+@mixin customScrollBar() {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $background-grey-1;
+        border-radius: 5px;
+    }
+}
+
+
+@mixin table-row-cols($columnsList, $screen-name, $row-height, $margin-bottom-space) {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: $margin-bottom-space;
+    height: $row-height;
+
+    @each $name,
+    $value in $columnsList {
+        .#{$name} {
+            width: $value;
+
+            @if $screen-name =='manual-horse-racing-event' {
+
+                // manual horse racing event type
+                @if $name=="hamburger" {
+                    .hamburger-img {
+                        width: 18px;
+                        height: 14px;
+                    }
+                }
+
+                @else if $name=="selection-name-col" {
+                    .selection-name {
+                        width: 100%;
+                    }
+                }
+
+                @else if $name=="table-close" {
+                    cursor: pointer;
+
+                    .close-icon {
+                        width: 16px;
+                        height: 16px;
+                        font-size: $txt-lg-font-size;
+                    }
+                }
+            }
+
+            // manual greyhound event type
+            @else if $name=="greyhound-name" {
+                .selection-name {
+                    width: 100%;
+                }
+            }
+
+            @else if $name =='greyhound-trap-number' {
+                text-align: center;
+                justify-content: center;
+            }
+
+        }
+    }
+}
+
+
+@mixin addMoreRow() {
+    .button-addrow {
+        background: $addbtn-arrow;
+        width: 100%;
+        height: 30px;
+        align-items: center;
+        text-align: center;
+        border: 0px;
+        cursor: pointer;
+
+        .addrow-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .add-row-button {
+                margin-left: 7px;
+                letter-spacing: 1.25px;
+                font-weight: 500;
+                font-size: $txt-sm-font-size;
+                color: $label-light-black;
+            }
+
+        }
+    }
+}
+
+@mixin font-styles($size: $txt-md-font-size, $weight: $fw-bold, $letter-spacing: 1.25px, $line-height: 1) {
+    font-family: $default-font;
+    font-size: $size;
+    font-weight: $weight;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+}
+
+// * [Pre-requisites] : Parent element should have position property
+@mixin overlay-parent($z-index: 1) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-index;
+}

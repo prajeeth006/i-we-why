@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\dev\\monorepo\\backend\\vanilla\\Frontend.TestWeb.Host\\wwwroot\\files\\test.txt",
+      "PackagePath": "staticwebassets\\files\\test.txt"
+    },
+    {
+      "Id": "obj\\Debug\\staticwebassets\\msbuild.Frontend.TestWeb.Host.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\staticwebassets\\msbuild.Frontend.TestWeb.Host.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\staticwebassets\\msbuild.build.Frontend.TestWeb.Host.props",
+      "PackagePath": "build\\Frontend.TestWeb.Host.props"
+    },
+    {
+      "Id": "obj\\Debug\\staticwebassets\\msbuild.buildMultiTargeting.Frontend.TestWeb.Host.props",
+      "PackagePath": "buildMultiTargeting\\Frontend.TestWeb.Host.props"
+    },
+    {
+      "Id": "obj\\Debug\\staticwebassets\\msbuild.buildTransitive.Frontend.TestWeb.Host.props",
+      "PackagePath": "buildTransitive\\Frontend.TestWeb.Host.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

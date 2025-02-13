@@ -1,0 +1,27 @@
+<ul class="avr-preamble-table selection-table horse-table" [ngClass]="layoutClass">
+    <li *ngFor="let runner of avrRunnersList">
+        <div class="selection-number">
+            <span *ngIf="!!runner.runnerNumber">
+                {{ runner.runnerNumber }}
+            </span>
+        </div>
+
+        <div class="selection-image">
+            <img *ngIf="!!runner?.imageSourceUrl" hasFallback="true" [retrySrc]="runner?.imageSourceUrl" height="50px" />
+        </div>
+
+        <div class="selection-name">
+            <span *ngIf="!!runner.runnerName">
+                {{ runner.runnerName | titlecase }}
+            </span>
+        </div>
+
+        <div class="selection-content" [ngClass]="avrRunnersList.length > 8 && 'selection-content--unstyled'">
+            <div class="selection-price tilted-card" [ngClass]="runner.isFavourite && 'favorite-box'" autoAdjustFont>
+                <span *ngIf="!!runner.price" class="tilted-text">
+                    {{ runner.price | marketPriceTransform: false }}
+                </span>
+            </div>
+        </div>
+    </li>
+</ul>

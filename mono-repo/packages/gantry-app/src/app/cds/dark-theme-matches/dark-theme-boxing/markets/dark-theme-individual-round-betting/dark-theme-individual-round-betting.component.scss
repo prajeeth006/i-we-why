@@ -1,0 +1,117 @@
+@import '../../../../../../../src/dark-theme-global-style/all-variables';
+
+.individual-round__betting {
+    margin-top: 20px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 10px;
+    }
+}
+
+.bet-details-item {
+    display: flex;
+    margin: auto;
+    margin-bottom: 6px;
+    align-items: center;
+    justify-content: center;
+    height: 74px;
+    font-size: $font-56;
+    font-weight: $fw-bold;
+    width: 1744px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 3px;
+        height: 37px;
+        font-size: $font-28;
+        width: 872px;
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .betOdds {
+        height: 74px;
+        color: $state-box-text;
+        background-color: $state-box-bg;
+        @include flex-center;
+
+        @include breakpoint(multidesktop) {
+            height: 37px;
+        }
+
+        .price__morethan--sixchar {
+            font-size: $font-52;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-27;
+            }
+        }
+    }
+
+    .bet-details {
+        flex: 1;
+        text-align: center;
+        height: 80px;
+        align-items: center;
+        margin: 0px 30px;
+        @include bottom-border-weight;
+
+        @include breakpoint(multidesktop) {
+            height: 40px;
+            margin: 0px 15px;
+        }
+    }
+}
+
+.bet-details-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .bet-details-item {
+        width: 1244px;
+
+        @include breakpoint(multidesktop) {
+            width: 622px;
+        }
+    }
+}
+
+.correct-score-header {
+    margin-bottom: 10px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 5px;
+    }
+
+    .bet-details-title {
+        color: $market-title-color;
+        font-size: $font-48;
+        font-weight: $fw-medium;
+        text-align: center;
+        height: 34px;
+        line-height: 34px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $font-24;
+            height: 17px;
+            line-height: 17px;
+        }
+    }
+}
+
+.autoScroll {
+    max-height: 160px;
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    @include breakpoint(multidesktop) {
+        max-height: 80px;
+    }
+}
+
+.autoScroll::-webkit-scrollbar {
+    display: none;
+}

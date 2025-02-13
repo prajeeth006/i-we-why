@@ -1,0 +1,15 @@
+{
+    "shopId": "9941",
+    "businessUnit": "Test",
+    "regionCode": "LN",
+    "regionAreaCode": "LN28",
+    "subRegionCode": "LNB",
+    "timeZone": "GMT",
+    "locale": "en-gb",
+    "currencyCode": "GBP",
+    "country": "England",
+    "defaultGateway": "string",
+    "validated": true,
+    "shopTier": 1,
+    "sitecoreShopGroups": ["CRICKET", "FOOTBALL"]
+}

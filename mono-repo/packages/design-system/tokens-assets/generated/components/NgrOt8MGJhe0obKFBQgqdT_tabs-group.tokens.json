@@ -1,0 +1,30 @@
+{
+    "tabs-group": {
+        "default": {
+            "color": {
+                "border-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tabs-group",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider}"
+                }
+            }
+        },
+        "inverse": {
+            "color": {
+                "border-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "tabs-group",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.divider-inverse}"
+                }
+            }
+        }
+    }
+}

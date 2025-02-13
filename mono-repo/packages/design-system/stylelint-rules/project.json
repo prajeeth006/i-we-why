@@ -1,0 +1,57 @@
+{
+    "name": "design-system-stylelint-rules",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/stylelint-rules/src",
+    "projectType": "library",
+    "tags": ["type:utils", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "main": "packages/design-system/stylelint-rules/src/index.ts",
+                "outputPath": "dist/build/packages/design-system/stylelint-rules",
+                "outputFileName": "src/index.js",
+                "tsConfig": "packages/design-system/stylelint-rules/tsconfig.lib.json",
+                "assets": [
+                    {
+                        "glob": "packages/design-system/stylelint-rules/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ],
+                "bundle": true,
+                "format": ["cjs"],
+                "platform": "node"
+            },
+            "configurations": {
+                "development": {
+                    "minify": false
+                },
+                "production": {
+                    "minify": false
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/stylelint-rules/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/stylelint-rules/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

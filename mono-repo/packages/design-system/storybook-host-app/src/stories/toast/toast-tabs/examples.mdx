@@ -1,0 +1,20 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ToastComponentStories from '../toast.component.stories';
+
+### A toast without action button
+
+<Canvas of={ToastComponentStories.NoAction} />
+
+### A toast without Close icon
+
+<Canvas of={ToastComponentStories.NoCloseIcon} />
+
+### A toast without any CTA
+
+<Canvas of={ToastComponentStories.NoAllActions} />
+
+### A toast with all the elements
+
+<Canvas of={ToastComponentStories.withAllElements} />

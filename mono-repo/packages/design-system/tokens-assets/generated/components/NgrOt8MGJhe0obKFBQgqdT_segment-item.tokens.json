@@ -1,0 +1,318 @@
+{
+    "segment-item": {
+        "default": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "inverse": {
+            "active": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "segment-item",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius-l2.segment-item}"
+                }
+            },
+            "size": {
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-md}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "segment-item",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-md}"
+                }
+            }
+        }
+    }
+}

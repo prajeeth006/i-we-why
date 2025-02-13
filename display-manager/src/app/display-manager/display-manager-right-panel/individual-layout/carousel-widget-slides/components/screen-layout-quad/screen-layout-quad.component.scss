@@ -1,0 +1,15 @@
+@use '../../../../../../shared-css/helpers' as helper;
+@use '../../../../../../shared-css/abstracts' as abstract;
+@import '../../../../../../shared-css/variables.scss';
+
+.event-screens-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 114px);
+    font-size: $txt-md-font-size;
+    line-height: 20px;
+    row-gap: 5px;
+
+    @include abstract.breakpoint-2 {
+        width: 90px;
+    }
+}

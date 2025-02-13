@@ -1,0 +1,45 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as HelpGroupComponentStories from '../help-group.component.stories';
+
+## Testing
+
+In order to easily test `DsHelpGroup` the Design System Team exports test harnesses which are utilities that query for the help group inside your application templates.
+
+The following test harnesses are defined for DsHelpGroup:
+
+-   DsHelpGroupHarness - a harness for retrieving `ds-help-group`
+-   DsHelpItemHarness - a harness for retrieving `ds-help-item`
+
+**DsHelpGroupHarness**:
+
+This harness provides option to search for help groups by following options:
+
+-   inverse
+-   headerText
+
+It provides following utilities:
+
+-   `getHeaderText()`: to get the text of the header slot
+-   `getContent()`: to get the text of the default sot
+-   `getHelpItems()`: returns an array of `DsHelpItemHarness` of all child components that are of type `DsHelpItem`
+-   `isInverse()`: to check if inverse is true
+
+**DsHelpItemHarness**:
+
+This harness provides option to search for help items by following options:
+
+-   type
+-   inputType
+-   inverse
+-   text
+
+It provides following utilities:
+
+-   `getTextContent()`: to get text of help item
+-   `hasIcon()`: returns true if icon slot is provided
+-   `getType()`: returns the type of the component
+-   `hasType()`: check if component is of given type
+-   `hasInputType()`: check if component is of given input type
+-   `isInverse()`: to check if inverse is true

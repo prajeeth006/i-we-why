@@ -1,0 +1,130 @@
+@import '../../../../../dark-theme-global-style/_all-variables.scss';
+@import '../../../../../dark-theme-global-style/mixins/_traps.scss';
+
+.avr-bg-image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    @media (orientation: portrait) {
+        min-height: 100vh;
+    }
+}
+
+.avr-result-table {
+    margin: 32px 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 16px 0 0;
+    }
+
+    li {
+        height: 96px;
+        margin-bottom: 20px;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            margin-bottom: 10px;
+        }
+
+        @include trap-box-styles(120px, 90px);
+
+        .motor-avr {
+            @include motor-avr-selections();
+        }
+
+        .selection-number {
+            font-size: $font-70;
+            margin-left: 30px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-35;
+                margin-left: 15px;
+            }
+        }
+
+        .selection-image {
+            img {
+                width: 90px;
+                height: 68px;
+                margin-left: 27px;
+
+                @include breakpoint(multidesktop) {
+                    width: 45px;
+                    height: 34px;
+                    margin-left: 13.5px;
+                }
+            }
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+            padding-left: 25px;
+            font-size: $font-70;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 12.5px;
+                font-size: $font-35;
+            }
+        }
+
+        .selection-favourite {
+            width: 118px;
+            height: 56px;
+            margin-left: 24px;
+            font-weight: $fw-semibold;
+
+            @include breakpoint(multidesktop) {
+                width: 59px;
+                height: 28px;
+                margin-left: 12px;
+            }
+        }
+
+        .selection-result {
+            @include flex-center;
+            font-size: $font-70;
+            font-style: normal;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-35;
+            }
+        }
+    }
+}
+
+.cast-section {
+    margin-top: 62px;
+    font-style: normal;
+    font-weight: $fw-medium;
+    line-height: normal;
+    text-transform: capitalize;
+    display: inline-grid;
+    grid-row-gap: 26px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 31px;
+        grid-row-gap: 13px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin-top: 50px;
+    }
+
+    .castcontainer {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: 200px auto;
+        font-size: $font-48;
+
+        @include breakpoint(multidesktop) {
+            grid-column-gap: 10px;
+            grid-template-columns: 100px auto;
+            font-size: $font-24;
+        }
+    }
+}

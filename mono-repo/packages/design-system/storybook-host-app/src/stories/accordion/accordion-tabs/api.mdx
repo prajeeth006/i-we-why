@@ -1,0 +1,58 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as DsAccordionStories from '../accordion.component.stories';
+
+## Testing
+
+In order to easily test `DsAccordion` the Design System Team exports test harnesses which are utilities that query for the accordion inside your application templates.
+
+The following test harnesses are defined for DsAccordion:
+
+-   DsAccordionHarness - - a harness for retrieving `ds-accordion`
+-   DsAccordionHeaderHarness - a harness for retrieving `ds-accordion-header`
+-   DsAccordionContentHarness - a harness for retrieving `ds-accordion-content`
+
+**DsAccordionHarness**:
+
+This harness provides option to search for accordions by following options:
+
+-   size
+-   variant
+-   inverse
+-   open
+-   headerTitle
+-   headerSubtitle
+
+It provides following utilities:
+
+-   `isOpen`: to check if accordion is open
+-   `isInverse`: to check if accordion has inverse state
+-   `getHeaderTitleText`: to get title text
+-   `getHeaderSubtitleText`: to get subtitle text
+-   `hasSize(size)`: to check if it is of the given size
+-   `hasVariant(variant)`: to check if is of the given variant
+-   `getAccordionHeaderHarness`: to get the content child harness `DsAccordionHeaderHarness`
+-   `getAccordionContentHarness`: to get the content child harness `DsAccordionContentHarness`
+-   `getDividerHarness`: to get the divider content if `withDivider` is `true`, otherwise you get `null`
+
+**DsAccordionHeaderHarness**:
+
+This harness provides option to search for accordion headers by following options:
+
+-   title
+-   subtitle
+
+It provides following utilities:
+
+-   `getTitleText`: to get title text
+-   `getSubtitleText`: to get subtitle text
+-   `getStartSlotElement`: to get the dom element with the class `ds-accordion-header-start`
+-   `getEndSlotElement`: to get the dom element with the class `ds-accordion-header-end`
+-   `getTriggerElement`: to get the dom element with the class `ds-accordion-header-trigger`
+-   `click`: to click on the accordion header (trigger toggle)
+
+**DsAccordionContentHarness**:
+
+This accordion does not provide any search options and contains the following utility functions:
+
+-   `getContentText`: to get the text of the full content

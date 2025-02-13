@@ -1,0 +1,14 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.RestMocks\DataProtection\key-bc8627db-94b9-4067-ad9d-2da02d0cb7aa.xml
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.RestMocks\Frontend.Vanilla.RestMocks.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.RestMocks\Frontend.Vanilla.RestMocks.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.RestMocks\Frontend.Vanilla.RestMocks.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.B853A6FC.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\refint\Frontend.Vanilla.RestMocks.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\Frontend.Vanilla.RestMocks.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.RestMocks\obj\Debug\ref\Frontend.Vanilla.RestMocks.dll

@@ -1,0 +1,125 @@
+@import '../../../../../../../src/dark-theme-global-style/all-variables';
+
+.multimarket-container {
+    &__main {
+        gap: 0px;
+        columns: 2;
+        display: column;
+        height: $fs-md-cricket-row-height;
+        font-size: $font-60;
+        font-weight: $fw-bold;
+
+        @include breakpoint(multidesktop) {
+            margin: 0;
+            gap: 0px;
+            height: $fs-sm-cricket-row-height;
+            font-size: $font-30;
+        }
+
+        .marketdata {
+            flex: 0 0 50%;
+
+            &__left {
+                @include flex-center;
+                height: 80px;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                }
+
+                .betName-left {
+                    justify-content: flex-start;
+                }
+            }
+
+            &__right {
+                display: flex;
+                height: 80px;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                }
+
+                .betName-right {
+                    justify-content: flex-end;
+                }
+            }
+
+            .betName-left,
+            .betName-right {
+                @include text-truncate;
+                width: 622px;
+                flex: 1;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 311px;
+                    height: 40px;
+                }
+            }
+
+            .betName-left {
+                @include text-truncate;
+                margin-left: 30px;
+
+                @include breakpoint(multidesktop) {
+                    margin-left: 15px;
+                }
+            }
+
+            .betName-right {
+                @include text-truncate;
+                margin-right: 30px;
+
+                @include breakpoint(multidesktop) {
+                    margin-right: 15px;
+                }
+            }
+
+            .betOdds {
+                height: 80px;
+                color: $state-box-text;
+                background-color: $state-box-bg;
+                @include flex-center;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.multimarket-container__main {
+    margin-bottom: 6px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 3px;
+    }
+}
+
+.market-record-details-header {
+    margin-bottom: 10px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 5px;
+    }
+
+    .bet-details-title {
+        color: $market-title-color;
+        font-size: $font-48;
+        font-weight: $fw-medium;
+        text-align: center;
+        height: 34px;
+        line-height: 34px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $font-24;
+            height: 17px;
+            line-height: 17px;
+        }
+    }
+}

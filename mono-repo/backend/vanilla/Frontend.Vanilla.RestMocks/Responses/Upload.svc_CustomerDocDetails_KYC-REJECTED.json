@@ -1,0 +1,25 @@
+{
+    "documentVerificationStatus": [
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1651819690000)/",
+                    "documentType": "UTILITY_BILL",
+                    "uploadedDate": "/Date(1651819537000)/",
+                    "uploadedReason": null
+                },
+                {
+                    "documentStatus": "RejectedIrrelevant",
+                    "documentStatusLastUpdated": "/Date(1651819320000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1651819164000)/",
+                    "uploadedReason": null
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": null
+        }
+    ]
+}

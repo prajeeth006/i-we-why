@@ -1,0 +1,228 @@
+stages:
+  - .pre
+  - trigger
+  - report
+
+variables:
+  PIPELINE_NAME: 'Monorepo Pipeline'
+  AFFECTED_ALL: 'false'
+  NX_TASKS_RUNNER: 'default'
+  GENERATED_ARTIFACTS_DEST: 'dist/tools/ci/artifacts'
+  FF_USE_FASTZIP: 'true'
+  ARTIFACT_COMPRESSION_LEVEL: 'fast'
+  CACHE_COMPRESSION_LEVEL: 'fast'
+  TEAMS_FAILURE_REPORTING_URL: 'https://coralracing.webhook.office.com/webhookb2/49ed12bd-3eae-4715-bef9-ed21808ce988@60c43c0a-64ac-4050-bf3e-31e1cdfffdeb/IncomingWebhook/e1c0951b1f48434dbd88c9c462aecc65/c6bcbc68-ea74-4df2-b215-4da54cc7995c'
+  TEAMS_RELEASE_NOTIFICATION_URL: 'https://coralracing.webhook.office.com/webhookb2/49ed12bd-3eae-4715-bef9-ed21808ce988@60c43c0a-64ac-4050-bf3e-31e1cdfffdeb/IncomingWebhook/c8411b04d5c8489f8f9bec652719d83c/b03d4f11-028a-468b-9e6e-39441f4ed16c'
+
+workflow:
+  name: '$PIPELINE_NAME'
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"'
+      variables:
+        PIPELINE_NAME: '[🌳 MAIN] $CI_COMMIT_TITLE' # that name is used in tools/ci/scripts/last-successful-sha.util.ts
+    - if: '$CI_COMMIT_REF_NAME =~ /^release/ && $CI_PIPELINE_SOURCE != "schedule"'
+      variables:
+        PIPELINE_NAME: '[📦 RELEASE] $CI_COMMIT_TITLE'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      variables:
+        PIPELINE_NAME: '[📥 MR] $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME'
+    - if: '$SCHEDULED_PIPELINE_TYPE == "auto-disme-deploy"'
+      variables:
+        PIPELINE_NAME: '[🌐 AUTO DISME DEPLOY]'
+    - if: '$SCHEDULED_PIPELINE_TYPE == "quality"'
+      variables:
+        PIPELINE_NAME: '[🔍 QUALITY]'
+    - if: '$SCHEDULED_PIPELINE_TYPE == "housekeeping"'
+      variables:
+        PIPELINE_NAME: '[🏠 HOUSEKEEPING]'
+    - if: '$SCHEDULED_PIPELINE_TYPE == "workspace-validation"'
+      variables:
+        PIPELINE_NAME: '[✅ WORKSPACE VALIDATION]'
+    - if: '$SCHEDULED_PIPELINE_TYPE == "playwright"'
+      variables:
+        PIPELINE_NAME: '[👾 PLAYWRIGHT E2E TESTS]'
+  auto_cancel:
+    on_new_commit: interruptible
+
+include:
+  - tools/ci/common/node-module-cache.tpl.yml
+  - tools/ci/common/rules.yml
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: cdn
+      uses: cdn
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: e2e
+      uses: e2e
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: release
+      uses: release
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: disme
+      uses: disme
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: fortify
+      uses: fortify
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: review
+      uses: review
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: review-eks
+      uses: review
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: load
+      uses: load
+      when: manual
+      if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: playwright
+      uses: playwright
+      when: always
+      if: $SCHEDULED_PIPELINE_TYPE == "playwright" && $CI_PIPELINE_SOURCE == "schedule"
+  - local: tools/ci/common/child-pipeline.yml
+    inputs:
+      type: auto-disme-deploy
+      uses: auto-disme-deploy
+      when: always
+      if: $SCHEDULED_PIPELINE_TYPE == "auto-disme-deploy" && $CI_PIPELINE_SOURCE == "schedule"
+  - local: tools/ci/common/schedule-pipeline.yml
+    inputs:
+      type: quality
+  - local: tools/ci/common/schedule-pipeline.yml
+    inputs:
+      type: housekeeping
+  - local: tools/ci/common/schedule-pipeline.yml
+    inputs:
+      type: workspace-validation
+
+# Affected
+
+.affected-pipeline-rules:
+  rules:
+      # Don't run for scheduled pipeline
+    - if: $SCHEDULED_PIPELINE_TYPE || $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+      # Don't run for branches without MR except main
+    - if: ($CI_MERGE_REQUEST_ID == null && $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH)
+      when: never
+
+affected-backend:
+  stage: trigger
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  extends:
+    - .affected-pipeline-rules
+    - .rules-only-mr
+  interruptible: true
+  rules:
+    - if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+      changes:
+        - backend/**/*
+  script:
+    - cd backend
+    - dotnet build Frontend.sln -c Release
+    - 'dotnet test Frontend.sln -c Release --no-build --logger "junit;LogFilePath=../../../dist/backend/test/junit/{assembly}.xml;MethodFormat=Class;FailureBodyFormat=Verbose"'
+  artifacts:
+    reports:
+      junit: dist/backend/test/junit/*.xml
+
+.affected:
+  stage: trigger
+  extends: .affected-pipeline-rules
+  variables:
+    PARENT_PIPELINE_ID: $CI_PIPELINE_ID
+  trigger:
+    include: tools/ci/affected/.gitlab-ci.yml
+    strategy: depend
+
+affected-pipeline:
+  extends: .affected
+  interruptible: true
+  rules:
+    # Run only for merge requests and release branches
+    - if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+      changes:
+        - packages/**/*
+        - backend/**/*
+        - tools/**/*
+        - '*'
+
+main-affected-pipeline:
+  extends: .affected
+  interruptible: false
+  rules:
+    # Run only for main branch
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"
+      changes:
+        - packages/**/*
+        - backend/**/*
+        - tools/**/*
+        - '*'
+
+# Other
+
+.refresh-node-modules-base:
+  stage: .pre
+  extends:
+    - .rules-mr-main-release-no-schedule
+    - .node_modules-cache
+  tags:
+    - linux-docker-runner
+  script:
+    # yarn install only if node_modules was not restored from cache
+    - if [ ! -d "node_modules" ]; then
+        yarn install;
+      fi
+  cache:
+    policy: pull-push
+  rules:
+    - if: ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+      changes:
+        - yarn.lock
+    - if: $FORCE_REFRESH_NODE_MODULES == "true" && ($CI_MERGE_REQUEST_ID || $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH || $CI_COMMIT_REF_NAME =~ /^release/) && $CI_PIPELINE_SOURCE != "schedule"
+
+refresh-node-modules:
+  extends:
+    - .refresh-node-modules-base
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+
+refresh-node-modules-automation:
+  extends:
+    - .refresh-node-modules-base
+  image: docker-public.dev.docker.env.works/b2d-frontend-automation:1.0
+
+add-tags-to-mr:
+  stage: trigger
+  extends:
+    - .node_modules-cache
+    - .rules-only-mr
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-alpine-frontend:1.0
+  tags:
+    - linux-docker-runner
+  variables:
+    GIT_DEPTH: 1
+  script:
+    - yarn ts-node --project ./tools/tsconfig.json ./tools/ci/scripts/add-labels-to-mr.ts

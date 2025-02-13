@@ -1,0 +1,26 @@
+<div class="tennis-results">
+  <ng-container *ngIf="boxingCDSContent as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+      <ng-container *ngIf="vm?.games">
+        <gn-base-page>
+          <ng-container header-content>
+            <gn-banner [leadTitle]="vm?.sportName" [title]="vm?.title"
+              [subtitleLeft]="vm?.eventStartDate | sportEventDateFormat: vm.content"
+              [subtitleRight]="vm?.competitionName">
+            </gn-banner>
+          </ng-container>
+          <ng-container body-content>
+            <gn-fight-result [matchData]="vm"></gn-fight-result>
+            <gn-round-group-betting [matchData]="vm"></gn-round-group-betting>
+            <gn-method-of-victory [matchData]="vm"></gn-method-of-victory>
+            <gn-individual-round-betting [matchData]="vm"></gn-individual-round-betting>
+          </ng-container>
+          <ng-container footer-content>
+            <gn-footer [leftSideText]="vm?.content?.contentParameters?.LeftStipulatedLine"> </gn-footer>
+          </ng-container>
+        </gn-base-page>
+      </ng-container>
+    </ng-container>
+    <gn-error [errorMessage$]="errorMessage$"></gn-error>
+  </ng-container>
+</div>

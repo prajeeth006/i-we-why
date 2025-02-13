@@ -1,0 +1,38 @@
+@page "/cache"
+@inherits CachePageComponent
+
+<PageLayout Title="Cache" ReloadDisabled="true" LoadChildContent="LoadAsync">
+    <div class="alert alert-info">
+        Lists useful information and actions related to distributed cache and memory cache.
+    </div>
+
+    <h3>Clear memory cache</h3>
+    <hr/>
+    <div>To clear memory cache on non-production environments, click <a href="/health/_api/memorycache/clear?returnUrl=/health/info/cache" target="_self">here</a>.</div>
+    <br/>
+
+    <h3>Diagnostics info</h3>
+    <hr/>
+    <JsonViewer Model="InfoModel"></JsonViewer>
+    <br/>
+
+    <h3>Distributed cache item value lookup</h3>
+    <hr/>
+    <BSForm Model="ViewModel" OnValidSubmit="@ViewAsync">
+        <DataAnnotationsValidator/>
+        <div class="form-group">
+            <label for="key">Cache Key:</label>
+            <BSInput @bind-Value="ViewModel.Key" InputType="InputType.Text" ValidateOnChange="true" id="key" placeholder="Enter cache key here..."/>
+            <BSFeedback For="@(() => ViewModel.Key)"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                View Value
+            </button>
+        </div>
+    </BSForm>
+    @if (Result != null)
+    {
+        <textarea style="width: 100%; height: 200px;">@Result.Value</textarea>
+    }
+</PageLayout>

@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Primary Label Colors
+----------------------- */
+
+
+html[data-domain*='ladbrokes.com']{
+    --white:                                  rgba(255, 255, 255);      //#ffffff;
+    --black:                                  rgba(0, 0, 0);            //#000000;
+    --theme-yellow:                           rgba(255, 242, 0, 1);     //#FFF200;
+    --theme-white-bg-text:                    rgba(0, 0, 0);            //#000000;
+    --template-gradient-background:            linear-gradient(90deg, #480C08 0%, #A1090E 25.21%, #D20613 48.96%, #A6090E 71.61%, #400C08 100%);
+    
+    //Header Section
+    --lead-title-text:                        rgba(255, 255, 255);      //#ffffff;
+    --early-price-bg:                         rgba(255, 255, 255);      //#ffffff; 
+    --early-price-text:                       rgba(0, 0, 0);            //#000000;
+   
+    
+    --top-3-finish-bg:                        rgba(0, 128, 5, 1);       //#008005  
+    --top-3-finish-text:                      rgba(255, 255, 255);      //#ffffff;   
+
+    --betting-bg:                             rgba(0, 0, 0);           //#000000 
+    --betting-text:                           rgba(255, 255, 255);     //#ffffff 
+
+    //Selection Section
+    --seletion-count-text:                    rgba(255, 255, 255);      //#ffffff;
+    --selection-name-text:                    rgba(255, 255, 255);      //#ffffff;
+    
+    //Footer Section
+    --footer-seperator-color:                 rgba(255, 255, 255);      //#ffffff;
+    --footer-white-text:                      rgba(255, 255, 255);      //#ffffff;
+    --footer-yellow-text:                       rgba(255, 242, 0, 1);     //#FFF200;
+    --racing-post-bg:                         rgba(0, 0, 0);            //#000000;
+    --racing-post-text:                       rgba(255, 255, 255);      //#ffffff;
+
+    //Font Size
+    --fs-leead-title: 60px;
+    --fs-lg-early-price: 40px;
+    --fs-md-early-price: 20px;
+
+    --fs-quad-selection-name: 22px;
+    --fs-full-selection-name: 32px;
+    --fs-price-odds: 20px;
+}
+  

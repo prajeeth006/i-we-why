@@ -1,0 +1,11 @@
+<ng-container>
+    <div *ngIf="vm$ | async as vm" class="eventcontainer">
+        <span *ngIf="(!!vm.eventName && !!isVideoPlaying) && !isVideoHasError" class="eventcontainer__name">
+            {{ vm.eventName | uppercase}}
+        </span>
+        <img class="avr-bg-image" *ngIf="!isVideoPlaying && !isVideoHasError" [retrySrc]="vm?.backgroundImageUrl">
+    </div>
+</ng-container>
+
+<video ng-hide='!isVideoHasError' autoplay loop id="myVideo" class="avr-bg-video"></video>
+

@@ -1,0 +1,15 @@
+@mixin shared {
+    --ds-modal-dialog-color-background: var(--semantic-color-surface-container-low-base);
+    --ds-modal-dialog-color-border: var(--semantic-color-surface-outline-lowest-base);
+    --ds-modal-dialog-color-header: var(--semantic-color-on-surface-base);
+    --ds-modal-dialog-color-skrim: var(--semantic-color-opacity-skrim-strong);
+    --ds-modal-dialog-color-text: var(--semantic-color-on-surface-subtle);
+    --ds-modal-dialog-radius-border: var(--semantic-radius-semi-rounded-md);
+    --ds-modal-dialog-size-border: var(--semantic-size-xquarter);
+    --ds-modal-dialog-size-max-height: 400px;
+    --ds-modal-dialog-size-min-width: 374px;
+    --ds-modal-dialog-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-dialog-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-dialog-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-dialog-space-padding-top: var(--semantic-spacing-container-padding-xl);
+}

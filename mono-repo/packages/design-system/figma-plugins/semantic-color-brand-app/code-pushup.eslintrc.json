@@ -1,0 +1,22 @@
+{
+    "extends": ["../../../../.eslintrc.base.json", "plugin:@figma/figma-plugins/recommended"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "files": ["*.js", "*.jsx"],
+            "rules": {}
+        },
+        {
+            "extends": ["../../../eslint-utils/jest", "../../../eslint-utils/node", "../../../eslint-utils/typescript"],
+            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "rules": {}
+        },
+        {
+            "files": ["*.ts", "*.tsx"],
+            "parserOptions": {
+                "project": ["packages/design-system/figma-plugins/semantic-color-brand-app/tsconfig.*?.json"]
+            },
+            "rules": {}
+        }
+    ]
+}

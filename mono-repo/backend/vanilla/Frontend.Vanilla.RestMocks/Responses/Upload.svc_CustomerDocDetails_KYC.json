@@ -1,0 +1,354 @@
+{
+    "documentVerificationStatus": [
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1655381027000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1655381027000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1655381027000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1655381027000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1647925867000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1647925867000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1647925865000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1647925865000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1655381973000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1655381973000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1655381875000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1655381875000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1648642587000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1648642587000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1648642018000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1648642018000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1655381973000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1655381973000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1655381875000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1655381875000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658813615000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658813615000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658816154000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658816154000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658816131000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658816131000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1658384878000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658384878000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658384866000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658384866000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1658816154000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658816154000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1658816131000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658816131000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1658816154000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658816154000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658816131000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658816131000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1658816154000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658816154000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1658816131000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658816131000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1658816154000)/",
+                    "documentType": "UB",
+                    "uploadedDate": "/Date(1658816154000)/",
+                    "uploadedReason": "null"
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1658816131000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1658816131000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": true,
+            "useCase": "KYC",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1658815057000)/",
+                    "documentType": "HSAF",
+                    "uploadedDate": "/Date(1658815057000)/",
+                    "uploadedReason": ""
+                }
+            ],
+            "isVerified": false,
+            "useCase": "SOF",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1647854587000)/",
+                    "documentType": "HSAF",
+                    "uploadedDate": "/Date(1647854587000)/",
+                    "uploadedReason": ""
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1647854562000)/",
+                    "documentType": "SOF_ANNUAL_TAX_RETURN",
+                    "uploadedDate": "/Date(1647854562000)/",
+                    "uploadedReason": ""
+                }
+            ],
+            "isVerified": false,
+            "useCase": "SOF",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658388059000)/",
+                    "documentType": "SOF_PAYSLIP",
+                    "uploadedDate": "/Date(1658388059000)/",
+                    "uploadedReason": ""
+                }
+            ],
+            "isVerified": false,
+            "useCase": "SOF",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1658391747000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1658391747000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "TWO-PLUS-TWO",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1653042015000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1653042015000)/",
+                    "uploadedReason": ""
+                },
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1643103349000)/",
+                    "documentType": "DRIVING_LICENSE",
+                    "uploadedDate": "/Date(1643103349000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "TWO-PLUS-TWO",
+            "verifiedTime": ""
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1657108350000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1657108350000)/",
+                    "uploadedReason": "null"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "TWO-PLUS-TWO",
+            "verifiedTime": ""
+        }
+    ]
+}

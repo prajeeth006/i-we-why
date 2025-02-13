@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <IncludeSharedVanillaAppSettings>true</IncludeSharedVanillaAppSettings>  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\vanilla\Frontend.Host\Frontend.Host.csproj" />
+    <ProjectReference Include="..\Frontend.Gantry\Frontend.Gantry.csproj" />
+  </ItemGroup>
+</Project>

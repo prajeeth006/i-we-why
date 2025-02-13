@@ -1,0 +1,53 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+gn-dark-theme-footer {
+    .market-each-way {
+        color: $footer-yellow-text;
+        min-width: 234px;
+        text-align: right;
+
+        @include breakpoint(multidesktop) {
+            min-width: 117px;
+        }
+    }
+
+    .racingpost-image-section {
+        display: flex;
+        align-items: center;
+
+        .racingpost-image {
+            display: flex;
+            align-items: center;
+            height: 42.42px;
+            width: 228px;
+            justify-content: center;
+            background-color: $color-black;
+            border-radius: 44px;
+            margin-right: calc($spacing-20 / 2);
+
+            @include breakpoint(multidesktop) {
+                height: 21.21px;
+                width: 114px;
+            }
+
+            img {
+                height: auto;
+                width: 194px;
+
+                @include breakpoint(multidesktop) {
+                    width: 98.39px;
+                }
+            }
+        }
+    }
+
+    .distance-race-type {
+        &__empty {
+            width: 284px;
+
+            @include breakpoint(multidesktop) {
+                width: 142px;
+            }
+        }
+    }
+}

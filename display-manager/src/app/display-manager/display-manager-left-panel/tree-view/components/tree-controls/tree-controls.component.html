@@ -1,0 +1,13 @@
+<div id="navigateSection" class="navigate-section">
+  <div id="navigationItems" class="navigation-items" *ngIf="(breadCrumbArray$ | async) as bredcrumb">
+    <span id="leftNavigation" class="left-navigation"><img (click)="getPreviousNode()" class="nav-icon-item"
+        [src]="leftNavigationInActive" alt="left-arrow"
+        *ngIf="bredcrumb.length <= 1"></span>
+    <span id="leftNavGreaterOne" class="left-navigation"><img (click)="getPreviousNode()" class="nav-icon-item"
+        [src]="leftNavigationActive" alt="left-arrow"
+        *ngIf="bredcrumb.length > 1"></span>
+
+    <span id="rightNavigation" class="right-navigation"><img class="nav-icon-item"
+        [src]="rightNavigation" alt="right-arrow"></span>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div *ngIf="matchData && (leftBetList.size > 0 || rightBetList.size > 0)" class="individual-round__betting">
+    <div id="betDetails" class="bet-details-item" *ngFor="let roundValue of staticRoundValues">
+        <div id="LeftBetList" class="betOdds tilted-card price-box__shrinked" autoAdjustFont>
+            <span class="tilted-text" *ngIf="leftBetList.get(roundValue)?.betOdds">
+                {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+            </span>
+        </div>
+        <div id="betDetails" class="bet-details">{{ roundValue | titlecase }}</div>
+        <div id="RightBetList" class="betOdds tilted-card price-box__shrinked" autoAdjustFont>
+            <span class="tilted-text" *ngIf="rightBetList.get(roundValue)?.betOdds">
+                {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+            </span>
+        </div>
+    </div>
+    <div id="autoScroll" class="autoScroll">
+        <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }" (@autoScroll.done)="onEnd($event)">
+            <div #scrollItem class="bet-details-item" *ngFor="let roundValue of autoScrollRounds" id="autoSitems">
+                <div id="LeftBetList" class="betOdds tilted-card price-box__shrinked" autoAdjustFont>
+                    <span class="tilted-text" *ngIf="leftBetList.get(roundValue)?.betOdds">
+                        {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+                    </span>
+                </div>
+                <div id="BetDetails" class="bet-details">{{ roundValue | titlecase }}</div>
+                <div id="RightBetList" class="betOdds tilted-card price-box__shrinked" autoAdjustFont>
+                    <span class="tilted-text" *ngIf="rightBetList.get(roundValue)?.betOdds">
+                        {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

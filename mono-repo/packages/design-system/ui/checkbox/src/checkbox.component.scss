@@ -1,0 +1,189 @@
+@use '../../generated/styles/components/checkbox/checkbox.scss' as ds-checkbox;
+@use '../../fonts/font-helper' as helper;
+
+.ds-checkbox {
+    @include ds-checkbox.shared;
+    @include helper.set-font-variables('checkbox', 'label', 'lg');
+    @include helper.setup-font-style('checkbox');
+
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    @include ds-checkbox.large;
+
+    .ds-checkbox-label-text {
+        @include helper.set-font-variables('checkbox', 'label', 'lg');
+        @include ds-checkbox.unselected;
+
+        user-select: none;
+        color: var(--ds-checkbox-enabled-color-label);
+
+        &:hover {
+            color: var(--ds-checkbox-hover-color-label);
+        }
+
+        &:active {
+            color: var(--ds-checkbox-active-color-label);
+        }
+    }
+
+    &.ds-checkbox-checked {
+        .ds-checkbox-label-text {
+            @include ds-checkbox.selected;
+        }
+    }
+
+    &.ds-checkbox-inverse {
+        @include ds-checkbox.indeterminate-inverse;
+
+        .ds-checkbox-label-text {
+            @include ds-checkbox.unselected-inverse;
+        }
+
+        &.ds-checkbox-checked {
+            .ds-checkbox-label-text {
+                @include ds-checkbox.selected-inverse;
+            }
+        }
+    }
+
+    &.ds-checkbox-small {
+        @include ds-checkbox.small;
+
+        .ds-checkbox-checkmark {
+            --ds-checkbox-checkmark-height-small: 16px;
+            --ds-checkbox-checkmark-width-small: 16px;
+
+            height: var(--ds-checkbox-checkmark-height-small);
+            width: var(--ds-checkbox-checkmark-width-small);
+        }
+
+        .ds-checkbox-label-text {
+            @include helper.set-font-variables('checkbox', 'label', 'md');
+        }
+    }
+
+    .ds-checkbox-checkmark {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        position: relative;
+        margin-right: var(--ds-checkbox-space-inline);
+
+        @include ds-checkbox.unselected;
+
+        --ds-checkbox-checkmark-bg-color: var(--ds-checkbox-enabled-color-bg);
+        --ds-checkbox-checkmark-border-color: var(--ds-checkbox-enabled-color-border);
+        --ds-checkbox-checkmark-icon-color: var(--ds-checkbox-enabled-color-icon);
+        --ds-checkbox-checkmark-label-color: var(--ds-checkbox-enabled-color-label);
+        --ds-checkbox-checkmark-height-large: 24px;
+        --ds-checkbox-checkmark-width-large: 24px;
+
+        background-color: var(--ds-checkbox-checkmark-bg-color);
+        border: var(--ds-checkbox-size-border-width) solid var(--ds-checkbox-checkmark-border-color);
+        height: var(--ds-checkbox-checkmark-height-large);
+        width: var(--ds-checkbox-checkmark-width-large);
+        padding: var(--ds-checkbox-space-padding-top) var(--ds-checkbox-space-padding-right) var(--ds-checkbox-space-padding-bottom)
+            var(--ds-checkbox-space-padding-left);
+        border-radius: var(--ds-checkbox-radius-border);
+        cursor: pointer;
+
+        @media (hover: hover) {
+            &:hover {
+                --ds-checkbox-checkmark-bg-color: var(--ds-checkbox-hover-color-bg);
+                --ds-checkbox-checkmark-border-color: var(--ds-checkbox-hover-color-border);
+                --ds-checkbox-checkmark-label-color: var(--ds-checkbox-hover-color-label);
+            }
+        }
+
+        &:active {
+            --ds-checkbox-checkmark-bg-color: var(--ds-checkbox-active-color-bg);
+            --ds-checkbox-checkmark-border-color: var(--ds-checkbox-active-color-border);
+            --ds-checkbox-checkmark-label-color: var(--ds-checkbox-active-color-label);
+        }
+
+        .ds-checkbox-checkmark-icon {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: var(--ds-checkbox-size-icon);
+            width: var(--ds-checkbox-size-icon);
+            color: var(--ds-checkbox-checkmark-icon-color);
+        }
+    }
+
+    input[type='checkbox'] {
+        --ds-checkbox-input-width: 0;
+        --ds-checkbox-input-height: 0;
+        --ds-checkbox-input-margin: 0;
+        --ds-checkbox-input-padding: 0;
+
+        opacity: 0;
+        width: var(--ds-checkbox-input-width);
+        height: var(--ds-checkbox-input-height);
+        margin: var(--ds-checkbox-input-margin);
+        padding: var(--ds-checkbox-input-padding);
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &.is-checked {
+            + .ds-checkbox-checkmark {
+                @include ds-checkbox.selected;
+
+                border: none;
+
+                .ds-checkbox-checkmark-icon.ds-checkbox-checked {
+                    display: block;
+                }
+            }
+        }
+
+        &:indeterminate {
+            + .ds-checkbox-checkmark {
+                @include ds-checkbox.indeterminate;
+
+                --ds-checkbox-checkmark-border-color: transparent;
+
+                .ds-checkbox-checkmark-icon.ds-checkbox-indeterminate {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.ds-checkbox-disabled {
+        .ds-checkbox-checkmark {
+            --ds-checkbox-checkmark-bg-color: var(--ds-checkbox-disabled-color-bg);
+            --ds-checkbox-checkmark-border-color: var(--ds-checkbox-disabled-color-border);
+            --ds-checkbox-checkmark-icon-color: var(--ds-checkbox-disabled-color-icon);
+            --ds-checkbox-checkmark-label-color: var(--ds-checkbox-disabled-color-label);
+
+            cursor: not-allowed;
+        }
+
+        .ds-checkbox-label-text {
+            color: var(--ds-checkbox-disabled-color-label);
+        }
+    }
+
+    .ds-checkbox-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .ds-checkbox-label {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}

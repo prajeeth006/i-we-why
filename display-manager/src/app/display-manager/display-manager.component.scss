@@ -1,0 +1,61 @@
+@use '../../app/shared-css/abstracts' as abstract;
+@use '../../app/shared-css/helpers' as helper;
+@import '../shared-css/label-background-colour';
+@import '../../app/shared-css/variables.scss';
+
+.display-manager-main-layout {
+  overflow: hidden;
+  height: 100%;
+  background-color: $body-color-p2-lighter-bg;
+  display: grid;
+  grid-template-rows: 48px minmax(700px, 1022px);
+  row-gap: 10px;
+  grid-template-columns: 380px 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header header header"
+    "left-panel right-panel right-panel right-panel right-panel";
+
+  @include abstract.breakpoint-2 {
+    grid-template-columns: 275px 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto minmax(700px, 1022px);
+
+  }
+}
+
+.header-display-wrapper {
+  grid-area: header;
+}
+
+.left-panel-wrapper {
+  grid-area: left-panel;
+  overflow: hidden;
+  padding-bottom: 5px;
+  font-size: $txt-md-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+  position: relative;
+}
+
+.right-panel-wrapper {
+  grid-area: right-panel;
+  background-color: $white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-left: 20px;
+
+  @include abstract.breakpoint-2 {
+    margin-left: 10px;
+  }
+}
+
+.carousel-modal-overlay {
+  pointer-events: none;
+}
+
+.in-active::before {
+    @include helper.overlay-parent(5);
+    background-color: $body-color-p2-lighter-bg;
+    opacity: 0.5;
+    user-select: none;
+}

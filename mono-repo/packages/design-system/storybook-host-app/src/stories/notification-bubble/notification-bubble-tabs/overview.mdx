@@ -1,0 +1,33 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsNotificationBubbleStories from '../notification-bubble.component.stories';
+
+The notification-bubble component `<ds-notification-bubble></ds-notification-bubble>` is flexible and can be used in various scenarios to alert users of important information. You can use various options
+to customize the appearance and functionality of the component. Customize its size and variant to fit the context of your application, and use the disabled and inverse attributes (which default to false) to control its behavior and appearance.
+
+<Canvas of={DsNotificationBubbleStories.Default} />
+
+## Usage
+
+Import `DsNotificationBubble` in your component, and apply `ds-notification-bubble` in your component.
+
+```ts
+import { DsNotificationBubble } from '@frontend/ui/notification-bubble'; // 👈 add to file imports
+
+@Component({
+    imports: [DsNotificationBubble], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+-   size: 'small', 'medium', 'large'.
+-   variant: 'primary', 'utility', 'live', 'neutral', 'live-dot', 'utility-dot'.
+    <br />
+    👉 <strong>When the variant is 'live-dot' or 'utility-dot', only a dot is displayed instead of a number or other content.</strong>
+    <br />
+-   disabled: Specifies whether the notification bubble is in a disabled state.
+-   inverse: Specifies whether the notification bubble should be displayed in an inverse style.

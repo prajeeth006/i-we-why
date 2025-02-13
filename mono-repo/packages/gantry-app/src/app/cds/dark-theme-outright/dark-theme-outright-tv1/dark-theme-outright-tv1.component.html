@@ -1,0 +1,26 @@
+<div class="ante-post-page">
+    <ng-container *ngIf="outRightCDSContent$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 0 && vm?.finalResult?.selections?.length <= 6">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="6" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 6 && vm?.finalResult?.selections?.length <= 8">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="8" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 8 && vm?.finalResult?.selections?.length <= 12">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="12" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 12 && vm?.finalResult?.selections?.length <= 16">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="16" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 16 && vm?.finalResult?.selections?.length <= 20">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="20" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 20">
+                <gn-dark-theme-outright-market [result]="vm" [pageSize]="20" [selectionLength]="nameLength"></gn-dark-theme-outright-market>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

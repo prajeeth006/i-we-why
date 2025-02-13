@@ -1,0 +1,33 @@
+<div
+    class="half-full-container"
+    *ngIf="market && (market?.leftBetList?.length > 0 || market?.rightBetList?.length > 0) && isHalfTimeFullTimeAvaiable">
+    <div class="half-full-header">
+        <div id="betdetailsTitle" class="half-full-title" *ngIf="market.leftBetList[0]?.betOdds || market.rightBetList[0]?.betOdds">
+            {{ market?.content?.contentParameters?.HalfTImeFullTime ? (market?.content?.contentParameters?.HalfTImeFullTime | titlecase) : '' }}
+        </div>
+    </div>
+    <div id="firstEntry" class="match-betting-section" *ngIf="market?.leftBetList?.length > 0 && market?.leftBetList[0]?.betOdds">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{ market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength }}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{ market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength }}</div>
+        </div>
+        <div id="betPrice" class="betOdds tilted-card" autoAdjustFont>
+            <span class="tilted-text" *ngIf="market.leftBetList[0]?.betOdds">
+                {{ market.leftBetList[0]?.betOdds | prepareEvsPipe }}
+            </span>
+        </div>
+    </div>
+    <div id="secondEntry" class="match-betting-section" *ngIf="market?.rightBetList?.length > 0 && market?.rightBetList[0]?.betOdds">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{ market.rightBetList[0]?.betName | trimSelectionNamePipe: nameLength }}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{ market.rightBetList[0]?.betName | trimSelectionNamePipe: nameLength }}</div>
+        </div>
+        <div id="betPrice" class="betOdds tilted-card" autoAdjustFont>
+            <span class="tilted-text" *ngIf="market.rightBetList[0]?.betOdds">
+                {{ market.rightBetList[0]?.betOdds | prepareEvsPipe }}
+            </span>
+        </div>
+    </div>
+</div>

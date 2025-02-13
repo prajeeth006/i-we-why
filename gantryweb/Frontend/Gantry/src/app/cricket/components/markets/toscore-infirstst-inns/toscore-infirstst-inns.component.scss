@@ -1,0 +1,19 @@
+@import './src/global-style/_all-variables.scss';
+.gn-toscore-infirstst-inns {
+  ::ng-deep .multimarket-container {
+    &__main {
+      .marketdata {
+        &__left {
+          .betName {
+            justify-content: center !important;
+          }
+        }
+        &__right {
+          .betName {
+            justify-content: center !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="footer-wrapper">
+  <div id="footerListItems" class="footer-list-item" *ngFor="let footer of footerData">
+    <div class="activate-profile-info" *ngIf="footer.type === 'information'">
+      <img *ngIf="!!footer?.imageUrl" class="info-icon" [src]="footer?.imageUrl">
+      <span id="footerText" class="profile-text">{{footer.title}}</span>
+    </div>
+    <div id="footerActionBtns" class="footer-action-btns" *ngIf="footer.type !== 'information'">
+      <button [style]="footer.style" mat-stroked-button color="primary" class="btn"
+      [ngClass]="{'isEnable': footer?.isEnable ,'pointer-events': !footer?.isEnable}"
+      (click)="onFooterClick(footer)" id="footerPrimary">
+      <div class="button-text-center">
+        <img id="actionBtnImg" class="action-btn-image" *ngIf="!!footer?.imageUrl" [src]="footer?.imageUrl">
+        <span id="footerTitle">{{footer.title}}</span>
+      </div>
+      </button>
+    </div>
+  </div>
+</div>

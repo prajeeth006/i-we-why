@@ -1,0 +1,20 @@
+﻿﻿@using Frontend.Vanilla.DotNetCore.Host
+@using Bwin.Vanilla.Features.HtmlInjection
+
+@inject ILayoutViewDataProvider VanillaDataProvider
+
+
+@section PageHead {
+    <meta http-equiv="cleartype" content="on" />
+    <base href="/" />
+
+    <title>@VanillaDataProvider.GetPageTitle(Context)</title>
+}
+
+@VanillaDataProvider.RenderDataLayer()
+@VanillaDataProvider.RenderTagManagers()
+
+<vn-app>
+</vn-app>
+
+<noscript>@VanillaDataProvider.GetRequiredJavaScriptMessage()</noscript>

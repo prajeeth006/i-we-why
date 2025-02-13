@@ -1,0 +1,82 @@
+<gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [title]="vm?.eventName"
+            [eventDateTime]="vm?.eventDateTime"
+            [racingImage]="
+                vm?.isVirtualEvent ? vm?.greyhoundStaticContent?.racingVirtualImage?.src : vm?.greyhoundStaticContent?.greyHoundRacingImage?.src
+            ">
+            <!-- virtualEvents conditions -->
+            <ng-container raceStage-content>
+                <div *ngIf="vm?.addendumMessage" class="header-race-stage-result tilted-card">
+                    <span class="tilted-text">{{ vm?.addendumMessage }}</span>
+                </div>
+                <div *ngIf="!vm?.addendumMessage" class="header-race-stage-result tilted-card">
+                    <span class="tilted-text">{{ vm.greyhoundStaticContent?.contentParameters?.Result ?? '' }}</span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+
+    <ng-container body-content>
+        <ul id="gTable" class="greyhound-table selection-table">
+            <li id="runnerS" *ngFor="let runner of vm.runners">
+                <div class="selection-position">
+                    <span id="RunnerPosition" *ngIf="runner?.position">{{ runner.position | runnerPositionSuffix }}</span>
+                </div>
+
+                <div
+                    class="selection-number"
+                    [class]="['trap-' + runner.runnerNumber, vm.isUKEvent || vm.isUKEvent == undefined ? 'trap__country--uk' : 'trap__country--aus']">
+                    <span>{{ runner.runnerNumber }}</span>
+                </div>
+
+                <div class="selection-name">
+                    <div class="greyhoundname-with-res">
+                        <span id="GreyHoundName" *ngIf="runner.greyhoundName"> {{ runner.greyhoundName | titlecase }} </span>
+                        <span id="Reserve" class="reserved" *ngIf="runner.isReserved">
+                            {{ vm.greyhoundStaticContent?.contentParameters?.Res ?? '' }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="selection-favourite" *ngIf="!!runner.jointFavourite">
+                    <span class="fav" *ngIf="runner?.jointFavourite == 'F'" id="Favorite">
+                        {{ vm.greyhoundStaticContent?.contentParameters?.Favorite ?? '' }}</span
+                    >
+                    <span class="joint-fav" *ngIf="runner?.jointFavourite != 'F'" id="Favorite">{{ runner?.jointFavourite }}</span>
+                </div>
+
+                <div class="selection-content-result">
+                    <div class="selection-result tilted-card" autoAdjustFont>
+                        <span id="RunnerPrice" class="text-center tilted-text" *ngIf="runner.price">
+                            {{ runner.price | marketPriceTransform }}
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="castSec">
+            <div id="Cast" class="cast" *ngIf="vm.forecast">
+                <span id="ForecastTitle">{{ vm.forecastTitle | titlecase }}:</span>
+                <span>{{ vm.forecast }}</span>
+            </div>
+            <div class="cast" *ngIf="vm.tricast">
+                <span id="TricastTitle"> {{ vm.tricastTitle | titlecase }}:</span>
+                <span>{{ vm.tricast }} </span>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container footer-content>
+        <gn-dark-theme-each-way
+            [greyhoundStaticContent]="vm?.greyhoundStaticContent"
+            [runnerCount]="vm?.runnerCount | runnerCount"
+            [isEventResulted]="true"
+            [marketEachWayString]="vm?.eachWay"
+            [raceOffTime]="vm?.raceOff"
+            [vacantRunners]="vm?.vacantRunners">
+        </gn-dark-theme-each-way>
+    </ng-container>
+</gn-dark-theme-base-page>

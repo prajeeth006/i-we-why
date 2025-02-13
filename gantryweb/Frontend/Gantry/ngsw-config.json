@@ -1,0 +1,58 @@
+{
+    "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+    "index": "/",
+    "assetGroups": [
+        {
+            "name": "app",
+            "installMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/*.js"
+                ]
+            }
+        },
+        {
+            "name": "assets",
+            "installMode": "lazy",
+            "updateMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)",
+                    "/locales/**/*.js",
+                    "/themes/**/*.css"
+                ],
+                "urls": [
+                    "https://scmedia.bwin.com/*",
+                    "https://fonts.googleapis.com/*"
+                ]
+            }
+        }
+    ],
+    "dataGroups": [
+        {
+            "name": "bypass api caching",
+            "urls": [
+                "/**/api/**"
+            ],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 20,
+                "maxAge": "1h",
+                "timeout": "2s"
+            }
+        }
+    ],
+    "navigationUrls": [
+        "/**",
+        "!/**/*.*",
+        "!/mocks",
+        "!/mocks/**",
+        "!/health",
+        "!/health/**",
+        "!/site/**",
+        "!/pokerapp/**",
+        "!/sportsapp/**",
+        "!/casinoapp/**",
+        "!/cocoscasinowapp/**"
+    ]
+}

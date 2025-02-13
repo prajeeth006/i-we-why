@@ -1,0 +1,480 @@
+@use '../../generated/styles/components/tabs-fill/tabs-fill' as ds-tabs-fill;
+@use '../../generated/styles/components/tabs-underline/tabs-underline' as ds-tabs-underline;
+@use '../../generated/styles/components/carousel-arrow/carousel-arrow' as ds-carousel-arrow;
+@use '../../fonts/font-helper' as helper;
+
+@mixin ds-tab-arrow {
+    @include ds-carousel-arrow.shared;
+    @include ds-carousel-arrow.enabled;
+
+    --ds-carousel-arrow-border-width: 1px;
+    --ds-carousel-arrow-border-radius: 50%;
+
+    align-items: center;
+    background-color: var(--ds-carousel-arrow-color-bg);
+    border-radius: var(--ds-carousel-arrow-border-radius);
+    border: var(--ds-carousel-arrow-border-width) solid var(--ds-carousel-arrow-color-border);
+    cursor: pointer;
+    display: flex;
+    height: var(--ds-carousel-arrow-size-height);
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--ds-carousel-arrow-size-width);
+
+    svg {
+        height: var(--ds-carousel-arrow-size-icon);
+        width: var(--ds-carousel-arrow-size-icon);
+
+        path {
+            fill: var(--ds-carousel-arrow-color-icon);
+        }
+    }
+
+    &.ds-arrow-inverse {
+        @include ds-carousel-arrow.enabled-inverse;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            @include ds-carousel-arrow.hover;
+
+            &.ds-arrow-inverse {
+                @include ds-carousel-arrow.hover-inverse;
+            }
+        }
+    }
+
+    &:active {
+        @include ds-carousel-arrow.active;
+
+        &.ds-arrow-inverse {
+            @include ds-carousel-arrow.active-inverse;
+        }
+    }
+}
+
+.ds-tabs-group {
+    --ds-carousel-arrow-position-right: 0;
+    --ds-carousel-arrow-position-left: 0;
+
+    .ds-tab-header {
+        position: relative;
+
+        // will come from ng-content
+        .ds-divider {
+            --ds-tabs-group-ds-divider-width: 100%;
+
+            position: absolute;
+            bottom: 0;
+            width: var(--ds-tabs-group-ds-divider-width);
+        }
+    }
+
+    .ds-tab-header-container {
+        display: flex;
+        position: relative;
+
+        &.ds-tab-nav-enabled {
+            cursor: move;
+            position: relative;
+            overflow: hidden;
+
+            &.ds-tab-nav-mobile-scrolling {
+                overflow-x: scroll;
+                /* stylelint-disable scale-unlimited/declaration-strict-value */
+                scrollbar-width: none;
+                user-select: none;
+                -ms-overflow-style: none;
+                -webkit-overflow-scrolling: touch;
+                -webkit-touch-callout: none;
+                /* stylelint-disable property-no-vendor-prefix */
+                -webkit-user-select: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .ds-tab-header-items {
+        --tab-list-padding: 0;
+        --tab-list-margin: 0;
+
+        align-items: center;
+        cursor: pointer;
+        display: inline-flex;
+        flex-shrink: 0;
+        list-style: none;
+        margin: var(--tab-list-margin);
+        padding: var(--tab-list-padding);
+
+        &.ds-tab-items-scroll-speed-faster {
+            transition: all 0.2s ease-in-out;
+        }
+
+        &.ds-tab-items-scroll-speed-fast {
+            transition: all 0.4s ease-in-out;
+        }
+
+        &.ds-tab-items-scroll-speed-medium {
+            transition: all 0.5s ease-in-out;
+        }
+
+        &.ds-tab-items-scroll-speed-moderate {
+            transition: all 0.6s ease-in-out;
+        }
+
+        &.ds-tab-items-scroll-speed-slow {
+            transition: all 0.8s ease-in-out;
+        }
+
+        &.ds-tab-items-scroll-speed-slower {
+            transition: all 1s ease-in-out;
+        }
+
+        .ds-tab-item {
+            --ds-tab-button-bg-color: transparent;
+            --ds-tab-button-padding: 0;
+            --ds-tab-button-width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            text-wrap: nowrap;
+            background-color: var(--ds-tab-button-bg-color);
+            padding: var(--ds-tab-button-padding);
+            width: var(--ds-tab-button-width);
+            cursor: pointer;
+        }
+
+        .ds-tab-content {
+            --tab-content-padding: 1rem;
+
+            background: var(--tab-content-background);
+            padding: var(--tab-content-padding);
+        }
+
+        .ds-tab-header-item {
+            @include helper.set-font-variables('tab', 'title', 'md');
+            @include helper.setup-font-style('tab');
+
+            position: relative;
+            border-bottom: var(--ds-tabs-underline-size-indictor-height) solid transparent;
+        }
+    }
+
+    &.ds-tabs-small {
+        @include ds-carousel-arrow.small;
+
+        .ds-tab-header-item {
+            @include ds-tabs-underline.small;
+            @include ds-tabs-fill.small;
+            @include helper.set-font-variables('tab', 'label', 'lg');
+            @include helper.setup-font-style('tab');
+
+            &:not(.ds-tab-disabled) {
+                &.ds-tab-selected {
+                    @include helper.set-font-variables('tab', 'label', 'lg-strong');
+                    @include helper.setup-font-style('tab');
+                }
+            }
+        }
+    }
+
+    &.ds-tabs-large {
+        @include ds-carousel-arrow.small;
+    }
+
+    .ds-tab-content-hidden {
+        display: none;
+    }
+}
+
+.ds-tab-start-arrow,
+.ds-tab-end-arrow {
+    position: absolute;
+
+    @include ds-tab-arrow;
+}
+
+.ds-tab-start-arrow {
+    left: var(--ds-carousel-arrow-position-left);
+}
+
+.ds-tab-end-arrow {
+    right: var(--ds-carousel-arrow-position-right);
+}
+
+.ds-tab-hidden-arrow {
+    display: none;
+}
+
+.ds-tab-horizontal .ds-tab-item {
+    flex-direction: row;
+}
+
+.ds-tab-vertical .ds-tab-item {
+    flex-direction: column;
+}
+
+.ds-tab-full-width {
+    --ds-tab-full-width: 100%;
+
+    width: var(--ds-tab-full-width);
+
+    .ds-tab-header-item {
+        flex: 1;
+    }
+}
+
+.ds-tab-fill {
+    @include ds-tabs-fill.default;
+    @include ds-tabs-fill.shared;
+    @include ds-tabs-fill.large;
+
+    &.ds-tabs-inverse {
+        @include ds-tabs-fill.inverse;
+    }
+
+    .ds-header-full-width {
+        @include ds-tabs-fill.full-width;
+
+        --ds-tabs-fill-space-top-bottom: 0;
+
+        margin: var(--ds-tabs-fill-space-top-bottom) var(--ds-tabs-fill-space-margin-right) var(--ds-tabs-fill-space-top-bottom)
+            var(--ds-tabs-fill-space-margin-left);
+    }
+
+    .ds-header-non-full-width {
+        @include ds-tabs-fill.non-full-width;
+
+        --ds-tabs-fill-space-top-bottom: 0;
+
+        margin: var(--ds-tabs-fill-space-top-bottom) var(--ds-tabs-fill-space-margin-right) var(--ds-tabs-fill-space-top-bottom)
+            var(--ds-tabs-fill-space-margin-left);
+    }
+
+    .ds-tab-header-item {
+        --ds-tabs-fill-bg: var(--ds-tabs-fill-enabled-color-bg);
+        --ds-tabs-fill-color: var(--ds-tabs-fill-enabled-color-text);
+
+        background: var(--ds-tabs-fill-bg);
+        color: var(--ds-tabs-fill-color);
+        border-radius: var(--ds-tabs-fill-radius-border) var(--ds-tabs-fill-radius-border) 0 0;
+        max-height: var(--ds-tabs-fill-size-max-height);
+        padding: var(--ds-tabs-fill-space-padding-top, 0) var(--ds-tabs-fill-space-padding-right, 0) var(--ds-tabs-fill-space-padding-bottom, 0)
+            var(--ds-tabs-fill-space-padding-left, 0);
+
+        .ds-tab-item {
+            gap: var(--ds-tabs-fill-space-inline);
+        }
+
+        &.ds-tab-disabled {
+            --ds-tabs-fill-bg: var(--ds-tabs-fill-disabled-color-bg);
+            --ds-tabs-fill-color: var(--ds-tabs-fill-disabled-color-text);
+
+            border-bottom: none;
+            cursor: not-allowed;
+
+            svg {
+                path {
+                    --ds-tabs-disabled-fill-color: none;
+
+                    fill: var(--ds-tabs-disabled-fill-color);
+                    stroke: var(--ds-tabs-fill-disabled-color-icon);
+                }
+            }
+
+            .ds-tab-item {
+                cursor: not-allowed;
+            }
+        }
+
+        svg {
+            width: var(--ds-tabs-fill-size-icon);
+            height: var(--ds-tabs-fill-size-icon);
+
+            path {
+                --tab-icon-bg-color: none;
+
+                fill: var(--tab-icon-bg-color);
+                stroke: var(--ds-tabs-fill-enabled-color-icon);
+            }
+        }
+
+        &:not(.ds-tab-disabled) {
+            @media (hover: hover) {
+                &:hover {
+                    --ds-tabs-fill-bg: var(--ds-tabs-fill-hover-color-bg);
+                    --ds-tabs-fill-color: var(--ds-tabs-fill-hover-color-text);
+
+                    cursor: pointer;
+
+                    svg {
+                        path {
+                            --ds-tabs-hover-fill-color: none;
+
+                            fill: var(--ds-tabs-hover-fill-color);
+                            stroke: var(--ds-tabs-fill-hover-color-icon);
+                        }
+                    }
+                }
+            }
+
+            &.ds-tab-selected {
+                @include helper.set-font-variables('tab', 'title', 'md-strong');
+                @include helper.setup-font-style('tab');
+
+                --ds-tabs-fill-bg: var(--ds-tabs-fill-selected-color-bg);
+                --ds-tabs-fill-color: var(--ds-tabs-fill-selected-color-text);
+
+                svg {
+                    path {
+                        --ds-tabs-selected-fill-color: none;
+
+                        fill: var(--ds-tabs-fill-selected-color-icon);
+                        stroke: var(--ds-tabs-selected-fill-color);
+                    }
+                }
+            }
+
+            &:active {
+                --ds-tabs-fill-bg: var(--ds-tabs-fill-active-color-bg);
+                --ds-tabs-fill-color: var(--ds-tabs-fill-active-color-text);
+
+                svg {
+                    path {
+                        --ds-tabs-active-fill-color: none;
+
+                        fill: var(--ds-tabs-fill-active-color-icon);
+                        stroke: var(--ds-tabs-active-fill-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ds-tab-underline {
+    @include ds-tabs-underline.default;
+    @include ds-tabs-underline.large;
+    @include ds-tabs-underline.shared;
+
+    &.ds-tabs-inverse {
+        @include ds-tabs-underline.inverse;
+    }
+
+    .ds-header-full-width {
+        @include ds-tabs-underline.full-width;
+
+        --ds-tabs-underline-space-top-bottom: 0;
+
+        margin: var(--ds-tabs-underline-space-top-bottom) var(--ds-tabs-underline-space-margin-right) var(--ds-tabs-underline-space-top-bottom)
+            var(--ds-tabs-underline-space-margin-left);
+    }
+
+    .ds-header-non-full-width {
+        @include ds-tabs-underline.non-full-width;
+
+        --ds-tabs-underline-space-top-bottom: 0;
+
+        margin: var(--ds-tabs-underline-space-top-bottom) var(--ds-tabs-underline-space-margin-right) var(--ds-tabs-underline-space-top-bottom)
+            var(--ds-tabs-underline-space-margin-left);
+    }
+
+    .ds-tab-header-item {
+        --ds-tabs-underline-color: var(--ds-tabs-underline-enabled-color-text);
+        --ds-tabs-underline-bg: transparent;
+        --ds-tabs-underline-border-color: transparent;
+
+        color: var(--ds-tabs-underline-color);
+        background: var(--ds-tabs-underline-bg);
+        border-radius: var(--ds-tabs-underline-radius-border);
+        max-height: var(--ds-tabs-underline-size-max-height);
+        padding: var(--ds-tabs-underline-space-padding-top, 0) var(--ds-tabs-underline-space-padding-right, 0)
+            var(--ds-tabs-underline-space-padding-bottom, 0) var(--ds-tabs-underline-space-padding-left, 0);
+
+        .ds-tab-item {
+            gap: var(--ds-tabs-underline-space-inline);
+
+            .ds-tab-two-title-container {
+                gap: 0;
+            }
+        }
+
+        &.ds-tab-disabled {
+            --ds-tabs-underline-color: var(--ds-tabs-underline-disabled-color-text);
+            --ds-tabs-underline-bg: var(--ds-tabs-underline-disabled-color-bg);
+            --ds-tabs-underline-border-color: var(--ds-tab-underline-border-bottom-color);
+
+            cursor: not-allowed;
+
+            svg {
+                path {
+                    --tab-group-disabled-bg-color: transparent;
+
+                    fill: var(--tab-group-disabled-bg-color);
+                    stroke: var(--ds-tabs-underline-disabled-color-icon);
+                }
+            }
+
+            .ds-tab-item {
+                cursor: not-allowed;
+            }
+        }
+
+        svg {
+            path {
+                --tab-icon-bg-color: transparent;
+                --tab-icon-outline-color: currentColor;
+
+                fill: var(--tab-icon-bg-color);
+                stroke: var(--tab-icon-outline-color);
+            }
+        }
+
+        &:not(.ds-tab-disabled) {
+            @media (hover: hover) {
+                &:hover {
+                    --ds-tabs-underline-bg: var(--ds-tabs-underline-hover-color-bg);
+                    --ds-tabs-underline-color: var(--ds-tabs-underline-hover-color-text);
+
+                    cursor: pointer;
+                }
+            }
+
+            &.ds-tab-selected {
+                @include ds-tabs-underline.shared;
+                @include helper.set-font-variables('tab', 'title', 'md-strong');
+                @include helper.setup-font-style('tab');
+
+                --ds-tabs-underline-color: var(--ds-tabs-underline-selected-color-text);
+                --ds-tabs-underline-border-color: var(--ds-tabs-underline-selected-color-indicator);
+
+                border-bottom: var(--ds-tabs-underline-size-indictor-height) solid var(--ds-tabs-underline-border-color);
+                padding-bottom: var(--ds-tabs-underline-space-selected-padding-bottom, 0);
+                z-index: 1;
+
+                svg {
+                    path {
+                        stroke: var(--ds-tabs-underline-selected-color-icon);
+                    }
+                }
+            }
+
+            &:active {
+                --ds-tabs-underline-bg: var(--ds-tabs-underline-active-color-bg);
+                --ds-tabs-underline-color: var(--ds-tabs-underline-active-color-text);
+
+                svg {
+                    path {
+                        stroke: var(--ds-tabs-underline-active-color-icon);
+                    }
+                }
+            }
+        }
+    }
+}

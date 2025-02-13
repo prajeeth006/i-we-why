@@ -1,0 +1,203 @@
+<div class="left-panel-section" [ngClass]="{
+     'library-treeview-section': !panelOpenState && isLibraryFlag,
+     'library-with-modal-open-section': panelOpenState && isLibraryFlag,
+     'manual-treeview-section': !panelOpenState && !isLibraryFlag,
+     'manual-with-modal-open-section': panelOpenState && !isLibraryFlag,
+     'left-panel-section-3': droppedItem?.nodeProperties?.isCarousleNode && panelOpenState
+    }">
+    <ng-container *ngIf="tabName && tabName?.toLowerCase() != manualConstants?.manual?.toLowerCase()">
+        <tree-controls 
+            (getPreviousCrumbNode)="breadCrumb.getPreviousCrumbNode()">
+        </tree-controls>
+        <ul class="filter-timewise-selection-list"
+            *ngIf=' this.tabName?.toLowerCase()=== this.tabNamesEnum?.racing?.toLowerCase()'>
+            <li id="racingContent" class="item" [ngClass]="{'item-active':  this.filters.selectedFilterIndex === i}"
+                *ngFor='let category of onloadCategories; let i = index' appDebounceClick
+                (debounceClick)='onRacingCategoryFilter(category,i)'>
+                {{category}}</li>
+        </ul>
+        <tree-bread-crumb #breadCrumb></tree-bread-crumb>
+    </ng-container>
+
+    <ul class="timewise-selection-list"
+        *ngIf=' this.tabName?.toLowerCase() === this.tabNamesEnum?.racing?.toLowerCase()'>
+        <li id="itemValue" class="item" [ngClass]="{'item-active':  this.filters.selectedRacingFilterIndex === i}"
+            *ngFor='let event of filterEvents  | keyvalue ; let i = index' appDebounceClick
+            (debounceClick)='onRacingSelectionFilter(event.value, i)'>
+            {{event.value}} </li>
+    </ul>
+    <ul class="sports-filter-btns" *ngIf=' this.tabName?.toLowerCase() === this.tabNamesEnum?.sports?.toLowerCase()'>
+        <li class="item" [ngClass]="{'item-active':  this.filters.selectedRacingFilterIndex === i}"
+            *ngFor='let event of filterSports  | keyvalue ; let i = index' appDebounceClick
+            (debounceClick)='onSportsSelectionOutRightFilter(event.value, i)'>
+            {{event.value}} </li>
+    </ul>
+
+    <div class="tab-btns-group"
+        *ngIf="manualTabs && manualTabs.length > 0 && tabName?.toLowerCase() === manualConstants.manual_tab.toLowerCase()">
+        <ng-container *ngFor="let manual of manualTabs">
+            <button class="tab-item"
+                [ngClass]="selectedTabName === manual.ItemName ? 'is-tab-active' : 'is-tab-inActive'"
+                (click)="changeTab(manual)">{{manual.ItemName}}
+            </button>
+        </ng-container>
+    </div>
+    <div class="separator-class" *ngIf="tabName?.toLowerCase() === manualConstants.manual_tab.toLowerCase()"></div>
+    <!-- need to add ng class "tree-view-container-2" class when breadcrumb is shown -->
+    <div class="tree-view-container" #treeViewContainer id="treeViewContainer" [ngClass]="{'breadcrumb-with-preview-collapse': !panelOpenState && ((breadCrumbArray$ | async)?.length != 0),
+         'tree-with-breadcrumb': ((breadCrumbArray$ | async)?.length != 0) && panelOpenState}">
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+            <mat-tree-node id="mainTreeNode" class="main-tree-node" (dblclick)="doubleClick(node)"
+                *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="10"
+                (mouseenter)="mouseClick(node)">
+                <div *ngIf="!node?.nodeProperties?.isFolder"
+                    matTooltip="EventId: {{node?.event?.id}}, TypeId: {{node?.event?.typeId}}, TypeName: {{node?.event?.typeName}}"
+                    [matTooltipDisabled]="toolTip != true"
+                    [appDraggable]="(node && !node?.nodeProperties?.isCarousleNode) ? node : undefined"
+                    class="child-nodes">
+                    <img id="imgDragNDrop" class="sub-node-img" [src]="getSubNodeImage()">
+                    <span class="asset-type-alias-name" id="assetTypeAliasName" *ngIf="node?.nodeProperties?.assetTypeAliasName">{{node?.nodeProperties?.assetTypeAliasName}}</span>
+                    <span class="node-asset-name" id="nodeAssetName">{{node?.nodeProperties?.name}}</span>
+
+                </div>
+                <ng-container *ngIf="node?.nodeProperties?.isFolder" id="treeviewItemText" class="treeview-item-text">
+                    <button mat-icon-button [disabled]="node?.nodeProperties?.isLoading"
+                        [attr.aria-label]="'Toggle ' + node?.nodeProperties?.name" matTreeNodeToggle
+                        [disableRipple]="true" id="manualConfigBtn" class="manual-config-btn">
+                        <mat-icon aria-hidden="false">
+                            {{ treeControl.isExpanded(node) ? 'arrow_drop_down' :
+                            'arrow_right' }}
+                        </mat-icon>
+                    </button>
+
+                    <img [src]="getMainNodeImage()" class="manual-config-img">
+                    {{node?.nodeProperties?.name}}
+                </ng-container>
+                <button mat-button [matMenuTriggerFor]="eyeMenu" class="more-horizontal-icon"
+                    *ngIf="node?.nodeOptions?.needDeleteIcon || node?.nodeOptions?.needOverrideIcon || node?.nodeOptions?.needEditIcon"
+                    [ngClass]="{'isVisible': node?.nodeProperties?.isVisible}" (click)="nodeClick(node)">
+                    <img [src]="assetImageUrl" id="eyeMenu" alt="preview-img">
+                </button>
+
+                <mat-menu #eyeMenu="matMenu" xPosition="before" class="open-dropdown action-open-dropdown">
+                    <button id="deleteBtn" class="excluded-icon" mat-menu-item *ngIf="node?.nodeOptions?.needDeleteIcon"
+                        (click)="deleteNode(node)">Delete</button>
+                    <button id="editBtn" class="excluded-icon" mat-menu-item *ngIf="node?.nodeOptions?.needEditIcon"
+                        (click)="editNode(node)">Edit</button>
+                    <button mat-menu-item *ngIf="node?.nodeOptions?.needOverrideIcon" (click)="overrideNode(node)"
+                        id="deleteBtn">Override</button>
+                </mat-menu>
+            </mat-tree-node>
+            <mat-tree-node id="treeNode" class="main-tree-node" *matTreeNodeDef="let node; when: commonService.hasChild"
+                matTreeNodePadding matTreeNodePaddingIndent="10"
+                [appDraggable]="(node && node?.nodeProperties?.isCarousleNode) ? node : undefined"
+                (mouseenter)="mouseClick(node)">
+
+                <button (click)="toggleArrow()" mat-icon-button [disabled]="node?.nodeProperties?.isLoading"
+                    [attr.aria-label]="'Toggle ' + node?.nodeProperties?.name" matTreeNodeToggle [disableRipple]="true"
+                    id="productArrowBtn" class="toggle-arrow-btn">
+                    <mat-icon id="arrow-right" aria-hidden="false">
+                        {{ treeControl.isExpanded(node) ? 'arrow_drop_down' :
+                        'arrow_right' }}
+                    </mat-icon>
+                </button>
+
+
+                <img [src]="getMainNodeImage()" id="mainImgNode" class="main-node-img"
+                    [class.is-excluded]="node?.nodeOptions?.isExcluded">
+
+                <div (dblclick)="doubleClick(node)" id="treeviewText" class="treeview-item-text"
+                    [class.is-excluded]="node?.nodeOptions?.isExcluded">
+                    {{ node?.nodeProperties?.name }}
+                </div>
+                <mat-progress-bar *ngIf="node?.nodeProperties?.isLoading" mode="indeterminate"
+                    class="tree-progress-bar">
+                </mat-progress-bar>
+                <button mat-button [matMenuTriggerFor]="eyeMenu" class="more-horizontal-icon"
+                    *ngIf="node?.nodeOptions?.needExcludeIcon || node?.nodeOptions?.needDeleteIcon || node?.nodeOptions?.needOverrideIcon || node?.nodeOptions?.needEditIcon"
+                    [ngClass]="{'isVisible': node?.nodeProperties?.isVisible}" (click)="nodeClick(node)">
+                    <img [src]="assetImageUrl" id="eyeMenu" alt="preview-img">
+
+                </button>
+                <mat-menu #eyeMenu="matMenu" xPosition="before" class="open-dropdown action-open-dropdown">
+                    <button mat-menu-item *ngIf="node?.nodeOptions?.needExcludeIcon && !node?.nodeOptions?.isExcluded"
+                        (click)="toggleExclude(node)" id="hideBtn">Hide</button>
+                    <button mat-menu-item *ngIf="node?.nodeOptions?.needExcludeIcon && node?.nodeOptions?.isExcluded"
+                        (click)="toggleExclude(node)" id="showBtn">Show</button>
+                    <button mat-menu-item *ngIf="node?.nodeOptions?.needDeleteIcon" (click)="deleteNode(node)"
+                        id="deleteBtn">Delete</button>
+                    <button id="editBtn" class="excluded-icon" mat-menu-item *ngIf="node?.nodeOptions?.needEditIcon"
+                        (click)="editNode(node)">Edit</button>
+                    <button mat-menu-item *ngIf="node?.nodeOptions?.needOverrideIcon" (click)="overrideNode(node)"
+                        id="deleteBtn">Override</button>
+                </mat-menu>
+            </mat-tree-node>
+        </mat-tree>
+    </div>
+</div>
+
+<div class="asset-preview-accordion" [appDroppable]="previewDroppable" (onDroppableComplete)="carouselDropped($event)"
+    [ngClass]="{'accordion-closed': !panelOpenState}">
+    <mat-accordion>
+        <mat-expansion-panel [expanded]="panelOpenState" (opened)="toggleAccordion(true)"
+            (closed)="toggleAccordion(false)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    ASSET PREVIEW
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>
+                <!-- default msg
+                    <div class="no-preview">
+                    Select asset to preview
+                </div> -->
+                <div class="panel-description">
+                    <div class="asset-name" [matTooltip]="ellipsisName ? ellipsisName : ''" matTooltipPosition="below"
+                        matTooltipClass='asset-tooltip'>{{ droppableItemName!.length>32 ?
+                        (droppableItemName | slice:0:29) + "..." : droppableItemName }}</div>
+                    <div class="preview-img-section">
+                        <img id="asset-drop-area" class="carousel-main-img"
+                            [src]="assetDropAreaIconPath"
+                            alt="preview-img">
+
+                        <div class="preview-controls">
+                            <a id="new-tab" target="_blank">
+                                <img id={{assetPreviewServerTypes.previewProduction}} matTooltip="Preview - Production"
+                                    matTooltipClass='asset-tooltip' class="new-tab-icon" *ngIf="droppedItem"
+                                    (click)="previewAssetForDroppedItem($event)" [src]="greenIconPath" alt="green-icon">
+                            </a>
+                            <a id="new-tab" target="_blank">
+                                <img id={{assetPreviewServerTypes.mainProduction}} matTooltip="Main Production"
+                                    matTooltipClass='asset-tooltip' class="new-tab-icon" *ngIf="droppedItem"
+                                    (click)="previewAssetForDroppedItem($event)" [src]="blueIconPath" alt="blue-icon">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="carousel-nav-icons-list">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/8c9c4f3d59c94b5c9b21c38da6a1171e.svg" alt="">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/c47d4d1dcbf74107809f8c097e8ac69b.svg" alt="">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/4cff423afbd74e1bb67e95ae6d03bcfa.svg" alt="">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/4cff423afbd74e1bb67e95ae6d03bcfa.svg" alt="">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/4cff423afbd74e1bb67e95ae6d03bcfa.svg" alt="">
+                        <img class="list-item"
+                            src="http://scmedia.cms.dev.env.works/$-$/5b853167d7cc4b1194cc3ec26d2207cc.svg" alt="">
+                    </div> -->
+
+                    <div id="edit-carousel" class="carousel-btns-section"
+                        *ngIf="droppedItem?.nodeProperties?.isCarousleNode">
+                        <button (click)="editCarousle()" mat-button class="edit-carousel-btn"><img
+                                [src]="editIconPath" alt="">
+                            EDIT</button>
+                    </div>
+                </div>
+
+            </mat-panel-description>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

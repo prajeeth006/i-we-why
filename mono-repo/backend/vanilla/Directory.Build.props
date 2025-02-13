@@ -1,0 +1,33 @@
+<Project>
+
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+    <PropertyGroup>
+        <AssemblyProduct>Vanilla</AssemblyProduct>
+        <Authors>Vanilla Team</Authors>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <PackageId>$(AssemblyName)</PackageId>
+        <PackageReleaseNotes>https://vie.git.bwinparty.com/vanilla/monorepo/blob/main/packages/vanilla/CHANGELOG.md</PackageReleaseNotes>
+        <PackageProjectUrl>https://vie.git.bwinparty.com/vanilla/monorepo/backend/vanilla</PackageProjectUrl>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="..\Shared\GlobalAssemblyInfo.cs" Link="Properties\GlobalAssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Update="Microsoft.Net.Compilers">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <!-- StyleCop Analyzers configuration -->
+    <PropertyGroup>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)\Frontend.Vanilla.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers" PrivateAssets="all"/>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" Link="stylecop.json"/>
+        <None Include="$(CodeAnalysisRuleSet)" Condition="'$(CodeAnalysisRuleSet)' != ''" Link="%(Filename)%(Extension)"/>
+    </ItemGroup>
+</Project>

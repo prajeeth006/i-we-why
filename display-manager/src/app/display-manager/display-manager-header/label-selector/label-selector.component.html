@@ -1,0 +1,11 @@
+<div id="labelDropdown" class="label-selector-container">
+  <ng-container *ngIf="labelSelectorService.labels$ | async as labels">
+    <mat-select (selectionChange)="labelSelectorService.updateCurrentLabel($event.value)"
+                panelClass="option-panel label-selector">
+      <mat-option *ngFor="let label of labels" [value]="label"
+            [ngClass]="(selectedVal== label) ? labelSelectorService.labelCssClass : ''" id="brand">
+        {{label}}
+      </mat-option>
+    </mat-select>
+  </ng-container>
+</div>

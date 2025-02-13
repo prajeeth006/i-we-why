@@ -1,0 +1,75 @@
+{
+    "name": "design-system-ui",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/ui/src",
+    "prefix": "ds",
+    "projectType": "library",
+    "tags": ["type:ui", "scope:shared"],
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "outputs": ["{workspaceRoot}/dist/build/{projectRoot}"],
+            "options": {
+                "project": "packages/design-system/ui/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "packages/design-system/ui/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "packages/design-system/ui/tsconfig.lib.json"
+                }
+            },
+            "defaultConfiguration": "production",
+            "dependsOn": ["design-system-tokens-to-css-app:generate-css-tokens", "usage-reports-utils:build"]
+        },
+        "publish": {
+            "executor": "@frontend/nx-plugin:publish",
+            "configurations": {
+                "artifactory": {},
+                "verdaccio": {
+                    "ver": "0.0.1",
+                    "dest": "http://localhost:4873/"
+                }
+            },
+            "defaultConfiguration": "verdaccio"
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/ui/jest.config.ts"
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/**/*.html", "{projectRoot}/package.json"]
+            }
+        },
+        "lint-styles": {
+            "executor": "nx:run-commands",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "command": "stylelint packages/design-system/ui/**/*.scss"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/ui/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        },
+        "code-pushup-ds-report": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/ui/code-pushup.ds-analysis-report.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "cancelledPoints": 0,
+    "category": "G",
+    "expiredMarketPoints": 0,
+    "extraPoints": 0,
+    "isOptInEnabled": true,
+    "monthlyPoints": 0,
+    "monthlyPointsSetDate": "/Date(1359694800000)/",
+    "nextDowngradeTime": "/Date(1362114000000)/",
+    "otherDeductedPoints": 0,
+    "points": 123,
+    "pointsToRequalify": 0,
+    "pointsToUpgrade": 400,
+    "productwiseMarketPoints": [],
+    "usedMarketPoints": 0
+}

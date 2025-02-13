@@ -1,0 +1,166 @@
+/** @deprecated This mixin is no longer available in Figma */
+@mixin shared {
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-color-bg: var(--semantic-color-surface-container-low-base);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-radius-border: var(--semantic-radius-max);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin with-background {
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-height: var(--semantic-size-x12);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-icon: var(--semantic-size-x8);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-width: var(--semantic-size-x12);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-height: var(--semantic-size-x9);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-icon: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-width: var(--semantic-size-x9);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-height: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-icon: var(--semantic-size-x4);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-width: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-height: var(--semantic-size-x4);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-icon: var(--semantic-size-x3);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-width: var(--semantic-size-x4);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin without-background {
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-height: var(--semantic-size-x12);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-icon: var(--semantic-size-x12);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-large-size-width: var(--semantic-size-x12);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-height: var(--semantic-size-x9);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-icon: var(--semantic-size-x9);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-medium-size-width: var(--semantic-size-x9);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-height: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-icon: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-small-size-width: var(--semantic-size-x6);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-height: var(--semantic-size-x4);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-icon: var(--semantic-size-x4);
+
+    /** @deprecated This token is no longer available in Figma (2024-11-03T08:39:50.051Z) */
+    --ds-entity-logo-xsmall-size-width: var(--semantic-size-x4);
+}
+
+:host {
+    @include shared;
+    @include with-background;
+    @include without-background;
+
+    align-items: center;
+    background: var(--ds-entity-logo-color-background);
+    border-radius: var(--ds-entity-logo-radius-border);
+    box-sizing: border-box;
+    display: inline-flex;
+    height: var(--ds-entity-logo-size-height);
+    justify-content: center;
+    padding: var(--ds-entity-logo-padding, 0);
+    width: var(--ds-entity-logo-size-width);
+
+    &.without-background {
+        --ds-entity-logo-color-background: transparent;
+        --ds-entity-logo-border-radius: 0;
+    }
+
+    &.with-background {
+        --ds-entity-logo-color-background: var(--ds-entity-logo-color-bg);
+        --ds-entity-logo-background-radius: var(--ds-entity-logo-border-radius);
+    }
+
+    &.large {
+        --ds-entity-logo-size-height: var(--ds-entity-logo-large-size-height, 48px);
+        --ds-entity-logo-size-width: var(--ds-entity-logo-large-size-width, 48px);
+        --ds-entity-logo-icon-size: var(--ds-entity-logo-large-size-icon);
+        --ds-entity-logo-padding: 8px;
+    }
+
+    &.medium {
+        --ds-entity-logo-size-height: var(--ds-entity-logo-medium-size-height);
+        --ds-entity-logo-size-width: var(--ds-entity-logo-medium-size-width);
+        --ds-entity-logo-icon-size: var(--ds-entity-logo-medium-size-icon);
+        --ds-entity-logo-padding: 6px;
+    }
+
+    &.small {
+        --ds-entity-logo-size-height: var(--ds-entity-logo-small-size-height, 32px);
+        --ds-entity-logo-size-width: var(--ds-entity-logo-small-size-width, 32px);
+        --ds-entity-logo-icon-size: var(--ds-entity-logo-small-size-icon);
+        --ds-entity-logo-padding: 4px;
+    }
+
+    &.x-small {
+        --ds-entity-logo-size-height: var(--ds-entity-logo-xsmall-size-height);
+        --ds-entity-logo-size-width: var(--ds-entity-logo-xsmall-size-width);
+        --ds-entity-logo-icon-size: var(--ds-entity-logo-xsmall-size-icon);
+        --ds-entity-logo-padding: 2px;
+    }
+
+    &.favorite {
+        --ds-entity-logo-favorite-border-radius-local: 100%;
+        --ds-entity-logo-favorite-padding-local: 2px;
+
+        align-items: center;
+        background: var(--shared-color-bg, #f3f4f5);
+        border-radius: var(--ds-entity-logo-favorite-border-radius-local);
+        display: flex;
+
+        /* This is semantic token, replace as well */
+        height: var(--semantic-size-icon-small);
+        justify-content: center;
+        padding: var(--ds-entity-logo-favorite-padding-local);
+        position: absolute;
+        right: 0;
+        top: -2px;
+
+        /* This is semantic token, replace as well */
+        width: var(--semantic-size-icon-small);
+
+        &.small {
+            right: -5px;
+            top: -5px;
+        }
+    }
+}

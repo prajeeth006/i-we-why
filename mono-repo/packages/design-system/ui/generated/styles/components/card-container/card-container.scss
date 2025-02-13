@@ -1,0 +1,10 @@
+@mixin shared {
+    --ds-card-container-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-card-container-color-border: var(--semantic-color-surface-outline-lowest-base);
+    --ds-card-container-radius-border: var(--semantic-radius-semi-rounded-md);
+    --ds-card-container-size-border: var(--semantic-size-xhalf);
+    --ds-card-container-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-card-container-space-padding-left: var(--semantic-spacing-container-padding-2xl);
+    --ds-card-container-space-padding-right: var(--semantic-spacing-container-padding-2xl);
+    --ds-card-container-space-padding-top: var(--semantic-spacing-container-padding-xl);
+}

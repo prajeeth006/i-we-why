@@ -1,0 +1,133 @@
+{
+    "modal-dialog": {
+        "shared": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.low.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.lowest.base}"
+                },
+                "header": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                },
+                "skrim": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.skrim.strong}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "max-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$type": "number",
+                    "$value": 400
+                },
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$type": "number",
+                    "$value": 374
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-dialog",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                }
+            }
+        }
+    }
+}

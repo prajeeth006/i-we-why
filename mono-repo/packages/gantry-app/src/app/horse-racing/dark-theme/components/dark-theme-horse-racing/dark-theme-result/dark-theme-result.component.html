@@ -1,0 +1,183 @@
+<gn-dark-theme-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [title]="vm?.eventName"
+            [eventDateTime]="vm?.eventDateTime"
+            [isFrom]="'horse'"
+            [racingImage]="vm?.isVirtualEvent ? vm?.horseRacingContent?.racingVirtualImage?.src : vm?.horseRacingContent?.horseRacingImage?.src">
+            <ng-container raceStage-content>
+                <div *ngIf="vm?.addendumMessage" class="header-race-stage-result tilted-card">
+                    <span class="tilted-text">{{ vm?.addendumMessage }}</span>
+                </div>
+                <div *ngIf="!vm?.addendumMessage" class="header-race-stage-result tilted-card">
+                    <span class="tilted-text">{{ vm.horseRacingContent?.contentParameters?.Result ?? '' }}</span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+    <ng-container body-content>
+        <ul id="horseTable" class="horse-table selection-table result-table table">
+            <li *ngFor="let runners of vm.runners" id="hRunners">
+                <div id="Position" class="selection-position">
+                    <span *ngIf="runners?.position">{{ runners?.position | runnerPositionSuffix }}</span>
+                </div>
+
+                <div id="RunnerNumber" class="selection-number">
+                    {{ runners?.horseRunnerNumber }}
+                </div>
+
+                <div class="selection-image">
+                    <img
+                        [retrySrc]="runners.jockeySilkImage"
+                        hasFallback="true"
+                        fallbackImage="{{ vm?.horseRacingContent?.fallbackImage?.src }}"
+                        height="32vh"
+                        id="runnerImg" />
+                </div>
+
+                <div class="selection-name">
+                    <span id="HorseName">{{ runners?.horseName | titlecase }}</span>
+                    <span class="" *ngIf="runners?.isReserved">{{
+                        vm?.horseRacingContent?.contentParameters?.NewDesignReserve
+                            ? (vm?.horseRacingContent?.contentParameters?.NewDesignReserve | titlecase)
+                            : ''
+                    }}</span>
+                </div>
+
+                <div *ngIf="runners?.favourite" class="selection-favourite">
+                    <span *ngIf="runners?.favourite == 'F'" id="Favorite"> {{ vm?.horseRacingContent?.contentParameters?.Favourite ?? '' }}</span>
+                    <span *ngIf="runners?.favourite != 'F'" id="Favorite">{{ runners?.favourite }}</span>
+                </div>
+
+                <div class="selection-content-result">
+                    <div *ngIf="runners?.price" class="selection-result tilted-card" autoAdjustFont>
+                        <span id="RunnerPrice" class="item-5-price tilted-text">
+                            {{ runners?.price | darkThemeMarketPriceTransform: runners?.horseName : vm.runners : true }}
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="resultcast" [ngClass]="vm?.runners?.length > 4 ? 'more-runners' : 'less-runners'">
+            <div class="rightforeCast" *ngIf="vm?.foreCast || vm?.triCast">
+                <ul class="list-items">
+                    <li *ngIf="vm?.foreCast" id="forecastvalue">
+                        <span class="foreCast-title" id="Forecast"
+                            >{{
+                                vm?.horseRacingContent?.contentParameters?.ForeCast
+                                    ? (vm?.horseRacingContent?.contentParameters?.ForeCast | titlecase)
+                                    : ''
+                            }}:</span
+                        >
+                        <span
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsSeparator]="vm.foreCast"
+                            [gnDividendsVScroll]="isForecastVerticalScroll"></span>
+                    </li>
+                    <li *ngIf="vm?.triCast" id="TricastValue">
+                        <span class="foreCast-title" id="Tricast"
+                            >{{
+                                vm?.horseRacingContent?.contentParameters?.TriCast
+                                    ? (vm?.horseRacingContent?.contentParameters?.TriCast | titlecase)
+                                    : ''
+                            }}:</span
+                        >
+                        <span
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsVScroll]="isTricastVerticalScroll"
+                            [gnDividendsSeparator]="vm.triCast"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="leftforeCast">
+                <ul class="list-items">
+                    <li *ngIf="vm?.win && vm.runners?.length < runnersLimit" id="Winvalue">
+                        <span class="foreCast-title" id="Win"
+                            >{{
+                                vm?.horseRacingContent?.contentParameters?.Win ? (vm?.horseRacingContent?.contentParameters?.Win | titlecase) : ''
+                            }}:</span
+                        >
+                        <span
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsVScroll]="isWinVerticalScroll"
+                            [gnDividendsSeparator]="vm.win"></span>
+                    </li>
+                    <li *ngIf="vm?.totePlaceDividends && vm.runners?.length < runnersLimit">
+                        <span class="foreCast-title" id="Place"
+                            >{{
+                                vm?.horseRacingContent?.contentParameters?.Place
+                                    ? (vm?.horseRacingContent?.contentParameters?.Place | titlecase)
+                                    : ''
+                            }}:</span
+                        >
+                        <span
+                            id="PlaceDividends"
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsVScroll]="isTotePlaceVerticalScroll"
+                            [gnDividendsSeparator]="vm?.totePlaceDividends"></span>
+                    </li>
+
+                    <li *ngIf="vm.totes?.exacta">
+                        <span class="foreCast-title" id="Exacta">
+                            {{
+                                vm?.horseRacingContent?.contentParameters?.Exacta
+                                    ? (vm?.horseRacingContent?.contentParameters?.Exacta | titlecase)
+                                    : ''
+                            }}:
+                        </span>
+                        <span
+                            id="Exactavalue"
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsVScroll]="isToteExactaVerticalScroll"
+                            [gnDividendsSeparator]="vm.totes?.exacta"></span>
+                    </li>
+                    <li *ngIf="vm.totes?.trifecta">
+                        <span class="foreCast-title" id="Trifecta"
+                            >{{
+                                vm?.horseRacingContent?.contentParameters?.Trifecta
+                                    ? (vm?.horseRacingContent?.contentParameters?.Trifecta | titlecase)
+                                    : ''
+                            }}:</span
+                        >
+                        <span
+                            id="trifectaTotes"
+                            class="dividends-grid dividends-grid__col-4"
+                            [gnDividendsVScroll]="isToteTrifectaVerticalScroll"
+                            [gnDividendsSeparator]="vm.totes?.trifecta"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-dark-theme-footer>
+            <ng-container right-side-content>
+                <span *ngIf="!!vm?.eachWayResult" id="EachwayResult" class="market-each-way">
+                    {{ vm.eachWayResult | titlecase }}
+                </span>
+                <span *ngIf="!!vm?.addendumMessage" id="addendumMessage">
+                    {{ vm.horseRacingContent?.contentParameters?.ToteBetting ?? '' }}
+                </span>
+            </ng-container>
+            <ng-container center-side-content>
+                <span id="RaceOff" class="head-item-2 item-head head-item-2-secondary">
+                    {{ vm.raceOffTime | titlecase }}
+                </span>
+            </ng-container>
+            <ng-container left-side-content>
+                <span id="RunnerCount" class="run-count" *ngIf="vm?.runnerCount"
+                    >{{ vm?.runnerCount | runnerCount }}
+                    {{ vm.horseRacingContent?.contentParameters?.RAN ? (vm.horseRacingContent?.contentParameters?.RAN | titlecase) : '' }}
+                </span>
+
+                <span *ngIf="vm.racingContent.evrRaceType && !isVirtualRace" id="RaceType"> {{ vm.racingContent.evrRaceType | titlecase }}</span>
+
+                <span *ngIf="vm?.horseRaceNonRunnerList"
+                    >{{ vm.horseRacingContent?.contentParameters?.NonRunner ?? '' }}:
+                    {{ vm.horseRaceNonRunnerList }}
+                </span>
+            </ng-container>
+        </gn-dark-theme-footer>
+    </ng-container>
+</gn-dark-theme-base-page>

@@ -1,0 +1,5 @@
+<h2 mat-dialog-title>{{data.title ? data.title : 'Error Details'}}</h2>
+<mat-dialog-content  id="mdcTypography" class="mdc-typography" [innerHtml]="data.message"></mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,102 @@
+@import './src/global-style/_all-variables.scss';
+.name-title{
+    font-size: $txt-lg-title-size;
+    color: $body-color-txt;
+    padding: 35px 0px;
+
+    @include breakpoint(multidesktop){
+        font-size: $txt-lg-font-size;
+        padding: 19px 0px 17px;
+    }
+}
+
+.selection-table{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    column-count: 2;
+    column-gap: 135px;
+    
+    @include breakpoint(multidesktop){
+        column-gap: 65px;
+    }
+    
+    li{
+        display: flex;
+        background-color: $white;
+        margin-bottom: 22px;
+        height: 150px;
+        min-width: 50%;
+
+        @include breakpoint(multidesktop){
+            height: 74px;
+            margin-bottom: 11px;
+            min-width: 50%;
+        }
+
+        .table-item-1{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            flex: 1;
+            box-sizing: border-box;
+
+            @include breakpoint(multidesktop){
+                min-width: 290px;
+                padding: 10px;
+            }
+
+            img{
+                height: 107px;
+                width: 107px;
+
+                @include breakpoint(multidesktop){
+                   height: 53px;
+                   width: 53px;
+                }
+            }
+        }
+
+        .table-item-2{
+            background-color: $body-color-p2-light-bg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $body-color-txt;
+            font-size: $h1-lg-font-size;
+            min-width: 236px;
+            box-sizing: border-box;
+            padding: 20px;
+
+            @include breakpoint(multidesktop){
+                font-size: $txt-xl-font-size;     
+                min-width: 117px;  
+                padding: 10px;
+            }
+            
+        }
+    }
+}
+.rewardsconatiner{
+    display: flex;
+    margin-top: 22px;
+
+    @include breakpoint(multidesktop){
+        margin-top: 11px;
+    }
+    
+    &__items{
+        color: $body-color-txt;
+        font-size: $txt-lg-title-size;
+        padding-right: 50px;
+
+        @include breakpoint(multidesktop){
+            font-size: $txt-lg-font-size;     
+            padding-right: 25px;
+        }
+
+        &:last-child{
+            padding-right: 0;
+        }
+    }    
+}

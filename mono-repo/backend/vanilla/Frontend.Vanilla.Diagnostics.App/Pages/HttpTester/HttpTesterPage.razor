@@ -1,0 +1,64 @@
+@page "/httpTester"
+@using System.Net
+@inherits HttpTesterPageComponent
+
+<PageLayout Title="Http Tester" ReloadDisabled="true">
+    <div class="alert alert-info">
+        Makes HTTP GET request to specified URL from server and displays response information.
+    </div>
+    <BSForm Model="Model" OnValidSubmit="@Test">
+        <DataAnnotationsValidator/>
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <BSInput @bind-Value="Model.Url" InputType="InputType.Text" ValidateOnChange="true" id="url" placeholder="https://www.bwin.com"/>
+            <BSFeedback For="@(() => Model.Url)"/>
+        </div>
+        <div class="form-group">
+            <label for="headers">Headers:</label>
+            <BSInput @bind-Value="Model.Headers" InputType="InputType.TextArea" ValidateOnChange="true" id="headers" placeholder="Comma separated list i.e. x-bwin-product=sports,x-bwin-channel=aw"/>
+            <BSFeedback For="@(() => Model.Headers)"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Test
+            </button>
+        </div>
+    </BSForm>
+    @if (Result != null)
+    {
+        <ul class="list-group list-group-horizontal mb-1">
+            <li class=@(Result.StatusCode == HttpStatusCode.OK ? "list-group-item bg-success text-white" : "list-group-item bg-danger text-white")>
+                Status: @((int)Result.StatusCode) @Result.StatusDescription
+            </li>
+            <li class="list-group-item">Length: <b>@(((float)Result.Length / 1024).ToString("###0.000")) Kb</b></li>
+            <li class="list-group-item">Duration: @Result.ExecutionDuration.TotalSeconds.ToString("#0.000") sec</li>
+        </ul>
+        <h5 class="mb-1">Content</h5>
+        <textarea style="width: 100%; height: 200px;">@Result.Content</textarea>
+
+        @if (Result.Headers.Count > 0)
+        {
+            <h5 class="mb-1">Headers (Count: @Result.Headers.Count)</h5>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Value</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                @{
+                    foreach (var header in Result.Headers)
+                    {
+                        <tr>
+                            <td>@header.Key</td>
+                            <td>@header.Value</td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        }
+    }
+</PageLayout>

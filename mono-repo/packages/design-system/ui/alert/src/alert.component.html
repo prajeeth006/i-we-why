@@ -1,0 +1,8 @@
+<div class="ds-alert-icon" [innerHTML]="svg"></div>
+<div class="ds-alert-content-container">
+    <ng-content select="[slot=header]" />
+    <ng-content />
+</div>
+<ng-content select="[slot=actionIcon]" />
+<ng-content select="[slot=closeIcon]" />
+<ng-content select="[slot=footer]" />

@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, ColorItem, ColorPalette, Meta, Source } from '@storybook/blocks';
+
+import * as DsListItemStories from './list-item.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './list-item-tabs/overview.mdx';
+import MySecondTab from './list-item-tabs/examples.mdx';
+
+# List Item Component
+
+<Meta of={DsListItemStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

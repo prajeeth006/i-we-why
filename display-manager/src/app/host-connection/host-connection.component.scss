@@ -1,0 +1,15 @@
+@import '../../app/shared-css/variables.scss';
+
+table,
+th,
+td {
+    border: 1px solid $black;
+}
+
+.green {
+    background-color: $btn-success-bg;
+}
+
+.red {
+    background-color: $primary-color-ladbrokes;
+}

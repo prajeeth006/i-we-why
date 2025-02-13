@@ -1,0 +1,48 @@
+{
+    "ClaimValues": [
+        {
+            "Key": "http://api.bwin.com/v3/user/realplayer",
+            "Value": "False"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/currency",
+            "Value": "USD"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/language",
+            "Value": "EN"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/culture",
+            "Value": "en-US"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country",
+            "Value": "US"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/utcoffset",
+            "Value": "60"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/timezone",
+            "Value": "Central Europe Standard Time"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/country",
+            "Value": "US"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/locality",
+            "Value": "Wayne"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/stateorprovince",
+            "Value": "New Jersey"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/vipLevel",
+            "Value": "Test"
+        }
+    ]
+}

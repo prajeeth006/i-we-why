@@ -1,0 +1,99 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <ng-container
+            *ngIf="(fillerPageMessage$ | async) === false || (fillerPageMessage$ | async) === null || (fillerPageMessage$ | async) === undefined">
+            <img class="avr-bg-image" [retrySrc]="vm.backgroundImageUrl" />
+
+            <gn-dark-theme-base-page [pageWrapperClass]="pageWrapperClass">
+                <ng-container header-content>
+                    <gn-dark-theme-avr-banner
+                        [racingImage]="vm.staticContent?.racingVirtualImage?.src"
+                        [title]="vm?.eventName"
+                        [imageRight]="vm?.brandImageUrl">
+                    </gn-dark-theme-avr-banner>
+                </ng-container>
+
+                <ng-container body-content>
+                    <ul class="avr-result-table selection-table" [ngClass]="tableWrapperClass">
+                        <li *ngFor="let runner of vm.resultsTable">
+                            <div class="selection-position">
+                                <span *ngIf="!!runner.position">
+                                    {{ runner.position | runnerPositionSuffix }}
+                                </span>
+                            </div>
+
+                            <div class="selection-number" *ngIf="vm.avrEventType == isHorseRace">
+                                <span *ngIf="!!runner.runnerNumber">
+                                    {{ runner.runnerNumber }}
+                                </span>
+                            </div>
+
+                            <div
+                                class="selection-number traps trap__country--uk"
+                                *ngIf="vm.avrEventType == isDogRace"
+                                [ngClass]="['trap-' + runner.runnerNumber]">
+                                <span>{{ runner.runnerNumber }}</span>
+                            </div>
+
+                            <div
+                                class="selection-number motor-avr"
+                                *ngIf="vm.avrEventType == isMotorRace"
+                                [ngClass]="['motor-avr--' + runner.runnerNumber]">
+                                <span>{{ runner.runnerNumber }}</span>
+                            </div>
+
+                            <div class="selection-image" *ngIf="vm.avrEventType == isHorseRace">
+                                <img *ngIf="!!runner?.imageSourceUrl" hasFallback="true" [retrySrc]="runner?.imageSourceUrl" />
+                            </div>
+
+                            <div class="selection-name">
+                                <span *ngIf="!!runner.runnerName">
+                                    {{ runner.runnerName | titlecase }}
+                                </span>
+                            </div>
+
+                            <div class="selection-favourite" *ngIf="!!runner.favourite">
+                                <span class="fav" *ngIf="runner.favourite == favouriteTags.favourite" id="Favorite">
+                                    {{ vm.staticContent?.contentParameters?.Favorite ?? '' }}
+                                </span>
+                                <span class="joint-fav" *ngIf="runner.favourite != favouriteTags.favourite" id="Favorite">
+                                    {{ runner.favourite }}
+                                </span>
+                            </div>
+
+                            <div class="selection-content-result">
+                                <div class="selection-result tilted-card" autoAdjustFont>
+                                    <span id="RunnerPrice" class="tilted-text" *ngIf="!!runner.price">
+                                        {{ runner.price | marketPriceTransform }}
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="cast-section">
+                        <div class="castcontainer" *ngIf="!!vm.forecast">
+                            <span id="ForecastTitle" *ngIf="vm.staticContent?.contentParameters?.Forecast"
+                                >{{ vm.staticContent?.contentParameters?.Forecast | titlecase }}:</span
+                            >
+                            <span id="ForecastValue">{{ vm.forecast }}</span>
+                        </div>
+                        <div class="castcontainer" *ngIf="!!vm.tricast">
+                            <span id="TricastTitle" *ngIf="vm.staticContent?.contentParameters?.Tricast">
+                                {{ vm.staticContent?.contentParameters?.Tricast | titlecase }}:</span
+                            >
+                            <span id="TricastValue">{{ vm.tricast }} </span>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <ng-container footer-content>
+                    <gn-dark-theme-avr-footer
+                        [isEventResulted]="true"
+                        [runnerCount]="vm.runnerCount ? vm.runnerCount : ''"
+                        [marketEachWayString]="!!vm.eachWayOnTemplate ? vm.eachWayOnTemplate : ''">
+                    </gn-dark-theme-avr-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+</ng-container>

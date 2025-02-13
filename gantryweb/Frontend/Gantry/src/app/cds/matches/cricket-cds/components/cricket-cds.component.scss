@@ -1,0 +1,11 @@
+@import './src/global-style/_all-variables.scss';
+
+::ng-deep .banner {
+    .banner-sub-title{
+        border: 2px solid $body-color-p2 !important;
+
+        @include breakpoint(multidesktop) {
+            border: 1px solid $body-color-p2 !important;
+        }
+    }
+}

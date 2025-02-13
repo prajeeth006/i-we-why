@@ -1,0 +1,30 @@
+<div class="correct-score-container" *ngIf=" multiMarket.selections &&  multiMarket.selections.length > 0">
+  <div id="Staticroundvalues" class="correct-score-section" *ngFor=" let roundValue of multiMarket?.selections">
+    <div *ngIf="roundValue?.homeSelectionTitle || roundValue?.homePrice; then homeSelection else noHomeSelection"></div>
+    <ng-template #homeSelection>
+      <div class="home-team-col score-and-price-col">
+        <div id="homePrice" class="price-block">{{ roundValue?.homePrice | prepareEvsPipe }}</div>
+        <div id="homeScore" class="final-score">{{ roundValue?.homeSelectionTitle }}</div>
+      </div>
+    </ng-template>
+    <ng-template #noHomeSelection>
+      <div></div>
+    </ng-template>
+    <div class="draw-details-col score-and-price-col" *ngIf="roundValue?.drawSelectionTitle">
+      <div id="drawScore" class="final-score">{{ roundValue?.drawSelectionTitle }} </div>
+      <div id="drawPrice" class="price-block"> {{ roundValue?.drawPrice | prepareEvsPipe }}</div>
+    </div>
+    <div *ngIf="roundValue?.awaySelectionTitle || roundValue?.awayPrice; then awaySelection else noAwaySelection"></div>
+    <ng-template #awaySelection>
+      <div class="away-team-col score-and-price-col">
+        <div id="AwayScore" class="final-score">{{ roundValue?.awaySelectionTitle }}</div>
+        <div id="AwayPrice" class="price-block">{{ roundValue?.awayPrice | prepareEvsPipe }}</div>
+      </div>
+    </ng-template>
+    <ng-template #noAwaySelection>
+      <div></div>
+    </ng-template>
+  </div>
+</div>
+
+

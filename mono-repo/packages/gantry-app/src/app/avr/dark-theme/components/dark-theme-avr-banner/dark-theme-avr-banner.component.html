@@ -1,0 +1,28 @@
+<div class="header">
+    <div id="banner" class="header__title--block">
+        <div class="header__title--block-left">
+            <div class="header__logo">
+                <img id="racingImageId" [src]="racingImage" alt="Logo" />
+            </div>
+
+            <div id="leadTitle" class="header__title">
+                <div class="header__title--content">
+                    <div class="event-title" id="titleId" *ngIf="title" [ngClass]="{ 'is-race-off': isRaceOff }">
+                        {{ title }}
+                    </div>
+                </div>
+                <ng-container *ngIf="countDownValue$ | async as countDownValue">
+                    <div id="countdowntimer" class="header__countdowntimer">
+                        <div class="countdowntimer_value">{{ countDownValue }}</div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="header__title--block-right">
+            <div *ngIf="!!imageRight" class="header__image">
+                <img [src]="imageRight" alt="img" />
+            </div>
+        </div>
+    </div>
+</div>

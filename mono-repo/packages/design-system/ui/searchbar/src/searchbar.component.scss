@@ -1,0 +1,141 @@
+@use '../../generated/styles/components/search/search' as ds-search-bar;
+@use '../../fonts/font-helper' as helper;
+
+.ds-search-bar {
+    @include ds-search-bar.shared;
+    @include ds-search-bar.default;
+    @include helper.set-font-variables('search', 'label', 'lg');
+    @include helper.setup-font-style('search');
+
+    --ds-searh-bar-padding: 0;
+    --ds-search-icon-margin-right: 8px;
+    --ds-search-bar-width: 100%;
+
+    align-items: center;
+    background-color: var(--ds-search-enabled-color-bg);
+    border: var(--ds-search-size-border) solid var(--ds-search-enabled-color-border);
+    border-radius: var(--ds-search-radius-border);
+    box-shadow: 0 0 var(--ds-box-shadow-blur-radius) rgb(0 0 0 / 10%);
+    display: inline-flex;
+    height: var(--ds-search-size-height);
+    padding: var(--ds-searh-bar-padding) var(--ds-search-space-padding-right) var(--ds-searh-bar-padding) var(--ds-search-space-padding-left);
+    width: var(--ds-search-bar-width);
+
+    &:active {
+        border: var(--ds-search-size-border) solid var(--ds-search-active-color-border);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--ds-search-hover-color-bg);
+            border: var(--ds-search-size-border) solid var(--ds-search-hover-color-border);
+            color: var(--ds-search-hover-color-text);
+
+            .ds-search-bar-icon {
+                color: var(--ds-search-hover-color-icon);
+            }
+        }
+    }
+
+    .ds-search-bar-close {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        visibility: hidden;
+    }
+
+    &:focus-within {
+        background-color: var(--ds-search-focused-color-bg);
+        border: var(--ds-search-size-border) solid var(--ds-search-focused-color-border);
+        color: var(--ds-search-focused-color-text);
+
+        .ds-search-bar-close {
+            visibility: visible;
+        }
+    }
+
+    /* stylelint-disable selector-max-attribute */
+    [dsSearchInput] {
+        @include helper.setup-font-style('search');
+        @include helper.set-font-variables('search', 'label', 'lg');
+
+        background: inherit;
+        border: none;
+        color: var(--ds-search-active-color-text);
+        outline: none;
+        width: inherit;
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--ds-search-hover-color-text);
+            }
+        }
+
+        &:focus {
+            color: var(--ds-search-focused-color-text);
+
+            &::placeholder {
+                color: var(--ds-search-focused-color-text);
+            }
+        }
+
+        &::placeholder {
+            color: var(--ds-search-active-color-text);
+
+            @media (hover: hover) {
+                &:hover {
+                    color: var(--ds-search-hover-color-text);
+                }
+            }
+        }
+
+        &:disabled::placeholder {
+            @include helper.set-font-variables('search', 'label', 'lg');
+
+            color: var(--ds-search-disabled-color-text);
+        }
+    }
+}
+
+.ds-search-bar-inverse {
+    .ds-search-bar {
+        @include ds-search-bar.inverse;
+    }
+}
+
+.ds-search-bar-disabled {
+    pointer-events: none;
+
+    .ds-search-bar {
+        background: var(--ds-search-disabled-color-bg);
+        border: var(--ds-search-size-border) solid var(--ds-search-disabled-color-border);
+
+        [dsSearchInput]::placeholder {
+            color: var(--ds-search-disabled-color-text);
+        }
+    }
+
+    .ds-search-bar-icon {
+        color: var(--ds-search-disabled-color-icon);
+    }
+}
+
+.ds-search-bar-icon {
+    align-items: center;
+    color: var(--ds-search-enabled-color-icon);
+    display: flex;
+    justify-content: center;
+    margin-right: var(--ds-search-icon-margin-right);
+}
+
+.ds-search-bar-large {
+    @include ds-search-bar.large;
+
+    display: flex;
+}
+
+.ds-search-bar-small {
+    @include ds-search-bar.small;
+
+    display: flex;
+}

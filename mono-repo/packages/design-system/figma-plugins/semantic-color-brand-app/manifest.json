@@ -1,0 +1,15 @@
+{
+    "name": "Semantic Color Brand",
+    "id": "1353989609708715095",
+    "api": "1.0.0",
+    "main": "code.js",
+    "capabilities": [],
+    "enableProposedApi": false,
+    "editorType": ["figma"],
+    "ui": "ui.html",
+    "networkAccess": {
+        "allowedDomains": ["none"]
+    },
+    "permissions": ["teamlibrary"],
+    "documentAccess": "dynamic-page"
+}

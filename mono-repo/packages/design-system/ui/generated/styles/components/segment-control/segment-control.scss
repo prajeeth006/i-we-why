@@ -1,0 +1,19 @@
+@mixin default {
+    --ds-segment-control-color-bg: var(--semantic-color-opacity-base);
+    --ds-segment-control-color-border: var(--semantic-color-opacity-transparent);
+}
+
+@mixin inverse {
+    --ds-segment-control-color-bg: var(--semantic-color-opacity-base-inverse);
+    --ds-segment-control-color-border: var(--semantic-color-opacity-transparent);
+}
+
+@mixin shared {
+    --ds-segment-control-radius-border: var(--semantic-radius-l2-segmented-control);
+    --ds-segment-control-size-tap-target: var(--semantic-size-x8);
+    --ds-segment-control-space-inline: var(--semantic-spacing-container-padding-xs);
+    --ds-segment-control-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    --ds-segment-control-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-segment-control-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-segment-control-space-padding-top: var(--semantic-spacing-container-padding-xs);
+}

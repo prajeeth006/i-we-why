@@ -1,0 +1,39 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as CardFooterStories from '../card-footer.component.stories';
+
+The Card Footer component, identified by the `ds-card-footer`, provides a simple and flexible way to add optional footers to cards in your application.
+This footer component offers the flexibility to customize the content inside it.
+Buy design, footer may have divider inside, which should be provided in relevant slot.
+
+<Canvas of={CardFooterStories.Default} />
+
+## Usage
+
+Import `DsCardFooter` in your component, and apply `ds-card-footer` in your card component.
+
+```ts
+import { DsCardFooter } from '@frontend/ui/card-footer'; // 👈 add to file imports
+
+@Component({
+    imports: [DsCardFooter], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+#### variant
+
+-   Type: `string`
+-   Options: `'surface-lowest'`, `'surface-low'`, `'surface-high'`, `'surface-highest'`
+-   Default: `'surface-lowest'`
+-   Description: Specifies the stronger color/contrast of the card footer.
+
+### Slots
+
+#### slot="divider"
+
+-   Description: Slot for `divider` to be placed on very top of the footer.

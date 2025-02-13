@@ -1,0 +1,73 @@
+{
+    "bottom-nav": {
+        "shared": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.background.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.md}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.sm}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.none}"
+                }
+            }
+        }
+    }
+}

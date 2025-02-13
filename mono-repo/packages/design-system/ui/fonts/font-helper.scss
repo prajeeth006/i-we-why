@@ -1,0 +1,37 @@
+@use 'sass:list';
+
+// @example
+// @use '../../../fonts/font-helper' as helper;
+// @include helper.set-font-variables('button', 'label', 'md-strong');
+// @include helper.setup-font-style('button');
+
+// @description
+// it will re-set css properties to new ones
+// --ds-button-font-family: var(--semantic-label-lg-strong-font-family), sans-serif;
+// --ds-button-font-size: var(--semantic-label-lg-strong-font-size);
+// --ds-button-font-weight: var(--semantic-label-lg-strong-font-weight);
+// --ds-button-line-height: var(--semantic-label-lg-strong-line-height-px);
+// **************************************
+
+@mixin set-font-variables($component, $label, $style, $font-family-override: null) {
+    $local-font-family: if($font-family-override, $font-family-override, var(--semantic-typography-#{$label}-font-family, sans-serif));
+
+    --ds-#{$component}-font-family: #{$local-font-family};
+    --ds-#{$component}-font-size: var(--semantic-typography-#{$label}-#{$style}-font-size);
+    --ds-#{$component}-font-weight: var(--semantic-typography-#{$label}-#{$style}-font-weight);
+    --ds-#{$component}-line-height: var(--semantic-typography-#{$label}-#{$style}-line-height);
+}
+
+// @description
+// font-family: var(--ds-button-font-family);
+// font-size: var(--ds-button-font-size);
+// font-weight: var(--ds-button-font-weight);
+// line-height: var(--ds-button-line-height);
+// ***************************************
+
+@mixin setup-font-style($component) {
+    font-family: var(--ds-#{$component}-font-family);
+    font-size: var(--ds-#{$component}-font-size);
+    font-weight: var(--ds-#{$component}-font-weight);
+    line-height: var(--ds-#{$component}-line-height);
+}

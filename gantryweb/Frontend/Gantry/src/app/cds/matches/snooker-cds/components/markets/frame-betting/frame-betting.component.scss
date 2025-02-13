@@ -1,0 +1,54 @@
+@import './src/global-style/_all-variables.scss';
+
+.bet-details-item {
+  display: flex;
+  color: $body-color-txt;
+  font-size: $font-list-lg-title-avr;
+  margin-bottom: 4px;
+  height: 68px;
+  align-items: center;
+  justify-content: center;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  @include breakpoint(multidesktop) {
+    font-size: $txt-lg-font1-size;
+    margin-bottom: 2px;
+    height: 34px;
+  }
+
+  .bet-price {
+    width: 160px;
+    height: inherit;
+    text-align: center;
+    background-color: $body-color-p2-light;
+    min-height: 100%;
+
+    @include breakpoint(multidesktop) {
+      width: 80px;
+    }
+  }
+
+  .bet-details {
+    flex: 1;
+    text-align: center;
+    background-color: $white;
+  }
+}
+
+.bet-details-item-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .bet-details-item {
+    width: 1250px;
+
+    @include breakpoint(multidesktop) {
+      width: 620px;
+    }
+  }
+}

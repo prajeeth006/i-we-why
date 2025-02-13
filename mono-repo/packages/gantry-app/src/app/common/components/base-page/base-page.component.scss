@@ -1,0 +1,485 @@
+@import '../../../../global-style/all-variables';
+@import '../../../../shared-styles/utilities';
+
+.base-page-wrapper {
+    background-color: $bg-body;
+    font-family: 'Roboto Condensed', Roboto, Verdana, Arial;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 70px 0 70px;
+    min-height: 100vh !important;
+
+    @include breakpoint(multidesktop) {
+        padding: 0 39px 0px;
+        min-height: 100vh !important;
+    }
+    @include breakpoint(multidesktophalf) {
+        padding: 0 35px 0px;
+        min-height: 100vh !important;
+    }
+    // .head-item-1,
+    // .table-item-4 {
+    //   flex-grow: 1;
+    // }
+
+    .base-header-wrapper {
+        background-color: $color-p1-bg;
+    }
+
+    .horse-table {
+        list-style: none;
+        padding: 30px 0px 0 0px;
+        margin: 0;
+        @include breakpoint(multidesktophalf) {
+            padding: 14px 0px 0 0px;
+        }
+        li {
+            display: flex;
+            align-items: stretch;
+            color: $body-color-txt;
+            @include breakpoint(multidesktophalf) {
+                height: 70px;
+            }
+            div:last-child {
+                margin: 0;
+            }
+
+            .items {
+                display: flex;
+                align-items: center;
+            }
+
+            .table-item-1 {
+                background-color: $color-p6;
+                flex-basis: 90px;
+                min-height: 50px;
+                padding: 9px 0;
+
+                @include breakpoint(multidesktop) {
+                    min-height: 20px;
+                    padding: 4px;
+                    flex-basis: 50px;
+                }
+                @include breakpoint(multidesktophalf) {
+                    min-height: 20px;
+                    padding: 4px;
+                    flex-basis: 82px;
+                }
+
+                img {
+                    height: 50px;
+
+                    @include breakpoint(multidesktop) {
+                        height: 26px;
+                    }
+                    @include breakpoint(multidesktophalf) {
+                        height: 50px;
+                        width: 68px;
+                    }
+                }
+            }
+
+            .table-item-2 {
+                font-size: $h3-lg-font-size;
+                flex-basis: 8%;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $antipost-font-list-title;
+                }
+                @include breakpoint(multidesktophalf) {
+                    flex-basis: 8%;
+                    align-items: flex-start;
+                }
+            }
+
+            .table-item-3 {
+                font-size: $h3-lg-font-size;
+                padding: 5px 0px;
+                flex-basis: 30%;
+                min-width: 23%;
+
+                @include breakpoint(multidesktop) {
+                    padding: 4px 0;
+                    flex-basis: 34%;
+                }
+
+                &.race-start {
+                    flex: 1;
+                    min-width: 42%;
+                    @include breakpoint(multidesktophalf) {
+                        padding: 4px 0;
+                    }
+                    + .table-item-4 {
+                        flex-basis: 45%;
+                    }
+                }
+            }
+
+            .table-item-4 {
+                font-size: $h5-lg-font-size;
+                background-color: $color-p6;
+                flex-basis: 35%;
+                min-width: 15%;
+
+                @include breakpoint(multidesktop) {
+                    flex-basis: 33%;
+                    font-size: $txt-md-font2-size;
+                }
+
+                span {
+                    padding-left: 20px;
+                }
+            }
+
+            .table-item-5,
+            .table-item-6 {
+                font-size: $font-list-title;
+                flex-basis: 8%;
+                min-width: 8%;
+                font-weight: normal;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $txt-sm-font-size;
+                }
+            }
+
+            .table-item-7,
+            .table-item-8,
+            .table-item-9 {
+                font-size: $h3-lg-font-size;
+                min-width: 124px;
+                max-width: 124px;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 70px;
+                    min-width: 70px;
+                    font-size: $txt-md-font1-size;
+                }
+                @include breakpoint(multidesktophalf) {
+                    min-width: 102px;
+                    max-width: 102px;
+                    font-size: $avr-count-txt-32;
+                }
+            }
+
+            .table-item-7 {
+                margin-right: 10px;
+                background-color: $body-color-p2-light-bg;
+
+                @include breakpoint(multidesktop) {
+                    margin-right: 5px;
+                }
+            }
+
+            .bg-yellow {
+                background-color: $color-p5;
+            }
+
+            .bg-gray {
+                background-color: $body-color-p2-light-bg;
+            }
+            .early-price {
+                background-color: $early-price-bg-color;
+                color: $market-price-text;
+            }
+            .betting-wo {
+                background-color: $betting-wo-bg-color;
+                color: $market-price-text;
+            }
+            .top-finish {
+                background-color: $top-finish-bg-color;
+                color: $market-price-text;
+            }
+            .favorite-box {
+                background-color: $favorite-box;
+                color: $color-p1-text;
+                //border:2px solid $favorite-border-color !important;
+            }
+
+            .table-item-8 {
+                background-color: $betting-wo-bg-color;
+                color: $market-price-text;
+                margin: 0 10px;
+            }
+
+            .table-item-9 {
+                background-color: $top-finish-bg-color;
+                color: $market-price-text;
+                margin-left: 10px;
+
+                @include breakpoint(multidesktop) {
+                    margin-left: 5px;
+                }
+
+                + .table-item-9 {
+                    margin-left: 20px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .border-dark {
+                border-bottom: 2px solid $border-color-drak;
+                box-sizing: border-box;
+                @include breakpoint(multidesktop) {
+                    border-bottom: 1px solid $border-color-drak;
+                }
+            }
+            .price-border {
+                border-bottom: 2px solid $market-price-text;
+                box-sizing: border-box;
+                @include breakpoint(multidesktop) {
+                    border-bottom: 1px solid $market-price-text;
+                }
+            }
+            .border-red {
+                border-bottom: solid $color-p2 1px;
+            }
+
+            .border-green {
+                border-bottom: solid $color-p4 1px;
+            }
+
+            .table-center {
+                justify-content: center;
+            }
+
+            .betting-favourite {
+                background-color: $color-p5;
+            }
+        }
+
+        .autoScroll {
+            max-height: 210px;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 1px;
+
+            @include breakpoint(multidesktop) {
+                max-height: 106px;
+            }
+            @include breakpoint(multidesktophalf) {
+                max-height: 208px;
+            }
+            .ng-trigger-autoScroll {
+                overflow: hidden;
+                -webkit-perspective: 1000;
+                backface-visibility: hidden;
+                will-change: transform, opacity;
+            }
+        }
+
+        .autoScroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .non-runner {
+            .items {
+                border-bottom: solid $body-color-p2-light-bg-dark 2px;
+                background-color: $bg-body;
+                color: $body-color-p2-light-bg-dark;
+                @include breakpoint(multidesktop) {
+                    border-bottom: solid 1px;
+                }
+            }
+
+            .table-item-1 {
+                background-color: $body-color-p2-light-bg-dark;
+            }
+
+            color: $body-color-p2-light-bg-dark;
+        }
+
+        &.result-table {
+            @include breakpoint(multidesktop) {
+                padding: 10px 0 0;
+            }
+            li {
+                .table-item-3 {
+                    flex-basis: 12%;
+                    min-width: 12%;
+                    font-size: $single-list-title;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-lg-font-size;
+                    }
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $h5-lg-font-size;
+                    }
+                }
+
+                .table-item-2 {
+                    flex-basis: 8%;
+                    min-width: 8%;
+                    justify-content: center;
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $h5-lg-font-size;
+                        align-items: center;
+                        flex-basis: 10%;
+                        min-width: 10%;
+                    }
+                }
+
+                .table-item-4 {
+                    background-color: transparent;
+                    font-size: $h3-lg-font-size;
+                    flex: 1;
+                    span {
+                        padding: 0;
+                    }
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-lg-font-size;
+                    }
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $h5-lg-font-size;
+                    }
+                }
+
+                .table-item-5 {
+                    font-size: $single-list-title !important;
+                    font-weight: bold;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-lg-font-size !important;
+                        font-weight: bold;
+                    }
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $h5-lg-font-size !important;
+                        font-weight: bold;
+                    }
+                }
+
+                .table-item-6 {
+                    flex-basis: 5%;
+                    min-width: 5%;
+                }
+            }
+        }
+    }
+
+    .info-total {
+        display: flex;
+        justify-content: flex-end;
+        font-size: $txt-md-font-size;
+        margin-top: 2px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-xs-font1-size;
+        }
+        @include breakpoint(multidesktophalf) {
+            font-size: $txt-sm-font-size;
+        }
+
+        .places {
+            flex-basis: 124px;
+            color: $color-p2;
+            text-align: center;
+            margin-left: 10px;
+            @include breakpoint(multidesktop) {
+                flex-basis: 70px;
+            }
+            @include breakpoint(multidesktophalf) {
+                flex-basis: 104px;
+            }
+        }
+
+        .places.standardPlus1 {
+            color: $color-p4;
+        }
+
+        .wins {
+            flex-basis: 124px;
+            color: $wins-text-color;
+            text-align: center;
+            margin-left: 20px;
+            font-size: $txt-md-font1-size;
+
+            @include breakpoint(multidesktop) {
+                flex-basis: 70px;
+                font-size: $txt-xs-font1-size;
+                margin-left: 10px;
+            }
+            @include breakpoint(multidesktophalf) {
+                margin-left: 10px;
+                flex-basis: 102px;
+                font-size: $txt-sm-font-size;
+            }
+        }
+
+        .wins.standardPlus2 {
+            color: $color-p2;
+        }
+    }
+
+    .info-row {
+        color: $body-color-txt;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.base-header-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.off-event {
+    position: absolute;
+    top: 0 !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include flex-center;
+    font-size: 840px;
+    background: rgba(0, 0, 0, 0.3);
+
+    @include breakpoint(multidesktop) {
+        font-size: 390px;
+    }
+    @include breakpoint(multidesktophalf) {
+        font-size: 420px;
+    }
+
+    span {
+        display: flex;
+        position: relative;
+        bottom: -20px;
+        color: rgba(0, 0, 0, 0.25);
+        @include breakpoint(multidesktophalf) {
+            bottom: 90px;
+        }
+    }
+    &.off-event-greyhound {
+        span {
+            @include breakpoint(multidesktophalf) {
+                bottom: 75px;
+            }
+        }
+    }
+}
+
+.base-footer-wrapper {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: 45px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 20px;
+    }
+}
+
+html[data-domain*='ladbrokes.com'] {
+    .base-page-wrapper {
+        .head-item-3 {
+            span {
+                &.race-it-off {
+                    width: inherit !important;
+                }
+            }
+        }
+    }
+}

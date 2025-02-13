@@ -1,0 +1,426 @@
+{
+    "reference": {
+        "$extensions": {
+            "com.entaingroup.ext-figma": {
+                "status": "deprecated",
+                "status_changed_at": "2024-09-18T09:05:12.518Z"
+            }
+        },
+        "lg": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 20
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "400"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 28
+            }
+        },
+        "lg strong": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 20
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "700"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 28
+            }
+        },
+        "md": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 17
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "400"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 24
+            }
+        },
+        "md strong": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 17
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "700"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 24
+            }
+        },
+        "sm": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 16
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "400"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 20
+            }
+        },
+        "sm strong": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 16
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "700"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 20
+            }
+        },
+        "xl": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 36
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "500"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 52
+            }
+        },
+        "xl strong": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-09-18T09:05:12.518Z"
+                }
+            },
+            "font-family": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontFamily",
+                "$value": "Open Sans"
+            },
+            "font-size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 36
+            },
+            "font-weight": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "fontWeight",
+                "$value": "700"
+            },
+            "line-height-px": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "reference",
+                        "status": "deprecated",
+                        "status_changed_at": "2024-09-18T09:05:12.518Z"
+                    }
+                },
+                "$type": "number",
+                "$value": 52
+            }
+        }
+    }
+}

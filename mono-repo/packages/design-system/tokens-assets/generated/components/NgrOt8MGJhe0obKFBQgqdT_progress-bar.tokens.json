@@ -1,0 +1,676 @@
+{
+    "progress-bar": {
+        "counter": {
+            "border": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-sm}"
+                }
+            },
+            "size": {
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x4}"
+                }
+            },
+            "spacing": {
+                "left-padding": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                },
+                "right-padding": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xs}"
+                }
+            }
+        },
+        "error": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-11-25T22:51:18.324Z"
+                }
+            },
+            "color": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-11-25T22:51:18.324Z"
+                    }
+                },
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-negative.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.base}"
+                }
+            }
+        },
+        "negative-default": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-negative.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.base}"
+                }
+            }
+        },
+        "negative-inverse": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.container.base-inverse}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.outline.base-inverse}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-negative.container-inverse}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.negative.base-inverse}"
+                }
+            }
+        },
+        "positive-default": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-positive.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.base}"
+                }
+            }
+        },
+        "positive-inverse": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.container.base-inverse}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.outline.base-inverse}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-positive.container-inverse}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.base-inverse}"
+                }
+            }
+        },
+        "primary": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-11-25T22:51:18.324Z"
+                }
+            },
+            "color": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-11-25T22:51:18.324Z"
+                    }
+                },
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-primary.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.base}"
+                }
+            }
+        },
+        "primary-default": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-primary.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.base}"
+                }
+            }
+        },
+        "primary-inverse": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.container.base-inverse}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.outline.base-inverse}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-primary.container-inverse}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.base-inverse}"
+                }
+            }
+        },
+        "secondary": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-11-25T22:51:18.324Z"
+                }
+            },
+            "color": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-11-25T22:51:18.324Z"
+                    }
+                },
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-secondary.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.base}"
+                }
+            }
+        },
+        "secondary-default": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-secondary.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.base}"
+                }
+            }
+        },
+        "secondary-inverse": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.container.base-inverse}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.outline.base-inverse}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-secondary.container-inverse}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.secondary.base-inverse}"
+                }
+            }
+        },
+        "shared": {
+            "color": {
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                },
+                "text-inverse": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base-inverse}"
+                }
+            },
+            "radius": {
+                "inside-end-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.squared}"
+                },
+                "inside-start-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.max}"
+                },
+                "outside-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.max}"
+                }
+            },
+            "size": {
+                "bar-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x1}"
+                }
+            },
+            "spacing": {
+                "bar-margins": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-md}"
+                }
+            }
+        },
+        "success": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-11-25T22:51:18.324Z"
+                }
+            },
+            "color": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-11-25T22:51:18.324Z"
+                    }
+                },
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.container.base}"
+                },
+                "counter-border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.outline.base}"
+                },
+                "counter-text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.on-positive.container}"
+                },
+                "foreground": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "progress-bar",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-11-25T22:51:18.324Z"
+                        }
+                    },
+                    "$value": "{semantic.color.positive.base}"
+                }
+            }
+        }
+    }
+}

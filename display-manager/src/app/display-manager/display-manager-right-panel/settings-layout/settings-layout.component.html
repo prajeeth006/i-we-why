@@ -1,0 +1,22 @@
+<div class="settings-section" *ngIf="!isTabSelected">
+    <div class="settings-display-tabs" *ngFor="let tab of childTabs">
+        <div class="settings-tab-section" (click)="settingsChange(tab)">
+            <!-- Display image icon if available -->
+            <img *ngIf="tab?.imageUrl" width="70" height="70" id="settingTabIcons" [src]="tab?.imageUrl">
+            <!-- Display tab name if available -->
+            <span *ngIf="tab?.name" id="settingTabNames">
+                {{ tab?.name }}
+            </span>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="isTabSelected">
+    <div class="setting-container" [ngSwitch]="activeTabName">
+        <app-settings-header [settingsInfo]="settingsInfo" (back)="backToSettings()"></app-settings-header>
+        <!-- another components with switchcase comes here -->
+        <preset-sequence-settings *ngSwitchCase="settingsNames?.sequencepresets"
+            [screenData]="settingsInfo"></preset-sequence-settings>
+        <screen-settings *ngSwitchCase="settingsNames?.screensettings" [screenData]="settingsInfo"></screen-settings>
+    </div>
+</ng-container>

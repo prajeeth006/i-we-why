@@ -1,0 +1,66 @@
+<div class="tennis-results">
+  <ng-container *ngIf="tennisCDSContent as vm">
+    <ng-container *ngIf="vm?.games">
+      <gn-base-page>
+        <ng-container header-content>
+          <gn-banner [leadTitle]="vm?.sportName" [title]="vm?.title"
+            [subtitleLeft]="vm?.eventStartDate | sportEventDateFormat: vm?.content"
+            [subtitleRight]="vm?.competitionName">
+          </gn-banner>
+        </ng-container>
+        <ng-container body-content>
+          <div id="tMarkets" class="tennis-bet" *ngFor="let market of vm?.games">
+            <div class="marketContent match-betting" *ngIf="market?.isMatchBetting">
+              <h2 id="matchBetting">{{ market?.gameName }}</h2>
+              <ng-container class="market-left">
+                <div class="market-left-content">
+                  <span id="homeBettingPrice" class="betting-price">
+                    {{ market?.matchBetting?.homeBettingPrice | prepareEvsPipe }}
+                  </span>
+                  <span id="homePlayer" class="betting-team">
+                    {{ market?.matchBetting?.homePlayer | trimSelectionNamePipe: nameLength}}
+                  </span>
+                </div>
+              </ng-container>
+              <div id="Versus" class="team-vs">{{ vm?.content?.contentParameters?.V }}</div>
+              <ng-container class="market-right">
+                <div class="market-right-content">
+                  <span id="awayPlayer" class="betting-team">
+                    {{ market?.matchBetting?.awayPlayer | trimSelectionNamePipe: nameLength }}
+                  </span>
+                  <span id="awayBettingPrice" class="betting-price">
+                    {{ market?.matchBetting?.awayBettingPrice | prepareEvsPipe }}
+                  </span>
+                </div>
+              </ng-container>
+            </div>
+
+            <div class="marketContent set-betting" *ngIf="market.isSetBetting">
+              <h2 id="SetBetting">{{ market?.gameName }}</h2>
+              <div *ngFor="let set of market?.setBetting" id="sets">
+                <ng-container>
+                  <div class="game-list">
+                    <span id="homeBettingPrice" class="betting-price">
+                      {{ set?.homeBettingPrice | prepareEvsPipe}}
+                    </span>
+                    <span id="scorePoint" class="game-point">
+                      {{ set?.scorePoint }}
+                    </span>
+                    <span id="awayBettingPrice" class="betting-price">
+                      {{ set?.awayBettingPrice | prepareEvsPipe}}
+                    </span>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container footer-content>
+          <gn-footer [leftSideText]="vm?.content?.contentParameters?.LeftStipulatedLine"> </gn-footer>
+        </ng-container>
+      </gn-base-page>
+    </ng-container>
+  </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

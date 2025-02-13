@@ -1,0 +1,52 @@
+<ng-container *ngIf="homeAndAwayResult as vm">
+  <ng-container *ngIf="!(errorMessage$ | async)">
+    <ng-container *ngIf="vm?.result">
+      <gn-base-page>
+        <ng-container header-content>
+          <gn-banner [leadTitle]="vm?.sportName" [title]="vm?.tournamentName"
+            [subtitleLeft]="vm?.contentParameters?.MatchBetting" [subtitleRight]="vm?.eventDateTimeInputValue">
+          </gn-banner>
+        </ng-container>
+        <ng-container body-content>
+          <div class="base-body-wrapper">
+            <ul id="selectionTable" class="selection-table">
+              <ng-container
+                *ngFor="let event of vm?.result?.homeAwayEvent | slice: pageDetails.startIndex:pageDetails.endIndex">
+                <li id="events">
+                  <div id="tabletime" class="table-item-1 items timelabel">
+                    {{ event?.eventDateTime | sportEventDateFormat: vm?.result?.gantryCommonContent:{ weekday: 'short',
+                    timeStyle: 'short' } }}
+                  </div>
+                  <div id="homenumber" class="table-item-2 items">
+                    <ng-container *ngIf="event?.homeSelection?.price">
+                      {{ event?.homeSelection?.price | marketPriceTransform }}
+                    </ng-container>
+                  </div>
+                  <div id="tablehomename" class="table-item-1 items">
+                    <span>{{ event?.homeSelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                  </div>
+                  <div>
+                    <div id="Versus" class="team-vs table-item-1">{{ vm?.contentParameters?.V }}</div>
+                  </div>
+                  <div id="tableawayname" class="table-item-1 items awayselection">
+                    <span>{{ event?.awaySelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                  </div>
+                  <div id="awaynumber" class="table-item-2 items">
+                    <ng-container *ngIf="event?.awaySelection?.price">
+                      {{ event?.awaySelection?.price | marketPriceTransform }}
+                    </ng-container>
+                  </div>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </ng-container>
+        <ng-container footer-content>
+          <gn-footer [leftSideText]="vm?.contentParameters?.LeftStipulatedLine"
+            [rightSideText]="pageDetails.paginationText"> </gn-footer>
+        </ng-container>
+      </gn-base-page>
+    </ng-container>
+  </ng-container>
+  <gn-error [errorMessage$]="errorMessage$"></gn-error>
+</ng-container>

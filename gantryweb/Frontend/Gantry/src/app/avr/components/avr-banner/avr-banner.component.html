@@ -1,0 +1,32 @@
+<div class="avr-custom-banner">
+    <div class="banner-row-1">
+        <div class="banner-left" [ngClass]="{'banner-left-1': (countDownValue$ | async )}">
+            <div class="lead-title">{{ leadTitle | uppercase }} </div>
+            <div class="main-title-row">
+                <div class="main-title">{{ title | uppercase }} </div>
+            </div>
+        </div>
+
+        <div class="banner-right">
+            <ng-container *ngIf="countDownValue$ | async as countDownValue">
+                <div class="countdowntimer">
+                    <div class="countdowntimer_text">{{ countDownTitle }}</div>
+                    <div class="countdowntimer_value">{{ countDownValue }}</div>
+                </div>
+            </ng-container>
+            <div *ngIf="!!imageRight" class="banner-img">
+                <img [retrySrc]="imageRight" height="40vh" />
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-sub-title">
+        <div class="banner-sub-title-left">
+            <div class="head-item-1 item-head">
+                <span *ngIf="!!runnerCount"> {{ runnerCount }} </span>
+                <span *ngIf="!!distance">{{ distance }}</span>
+                <span *ngIf="!!eachWay"> {{ eachWay }} </span>
+            </div>
+        </div>
+    </div>
+</div>

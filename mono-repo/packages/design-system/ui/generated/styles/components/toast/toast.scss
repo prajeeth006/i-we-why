@@ -1,0 +1,27 @@
+@mixin error {
+    --ds-toast-color-icon: var(--semantic-color-negative-base);
+}
+
+@mixin info {
+    --ds-toast-color-icon: var(--semantic-color-utility-base);
+}
+
+@mixin shared {
+    --ds-toast-color-bg: var(--semantic-color-surface-base);
+    --ds-toast-color-text: var(--semantic-color-on-surface-base);
+    --ds-toast-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-toast-size-min-height: var(--semantic-size-x11);
+    --ds-toast-space-inline: var(--semantic-spacing-inline-md);
+    --ds-toast-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-toast-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-toast-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-toast-space-padding-top: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin success {
+    --ds-toast-color-icon: var(--semantic-color-positive-base);
+}
+
+@mixin warning {
+    --ds-toast-color-icon: var(--semantic-color-caution-base);
+}

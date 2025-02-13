@@ -1,0 +1,42 @@
+/* this mixin is to truncate the text when the  text lenth exceeds given width*/
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* this mixin is to adjust the any element in the center both harozontally and vertically*/
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin breakpoint($point) {
+    @if $point==lgdesktop {
+        @media (min-width:1919px) {
+            @content ;
+        }
+    }
+
+    @else if $point==multidesktop {
+        @media (max-width: 960px) {
+            @content ;
+        }
+    }
+
+    @else if $point==multidesktophalf {
+        @media screen and (max-width: 960px) and (min-height: 1080px) {
+            @content ;
+        }
+    }
+
+}
+
+
+/* To update positions of flex elements horizontally and vertically */
+@mixin flex-container($xPosition, $yPosition: stretch) {
+    display: flex;
+    justify-content: $xPosition;
+    align-items: $yPosition;
+}

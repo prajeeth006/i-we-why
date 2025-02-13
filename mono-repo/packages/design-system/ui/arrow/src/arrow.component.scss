@@ -1,0 +1,104 @@
+@use '../../generated/styles/components/carousel-arrow/carousel-arrow' as ds-arrow;
+
+@mixin arrow-styles {
+    --ds-carousel-arrow-bg: var(--ds-carousel-arrow-enabled-color-bg);
+    --ds-carousel-arrow-border-color: var(--ds-carousel-arrow-enabled-color-border);
+    --ds-carousel-arrow-color-icon: var(--ds-carousel-arrow-enabled-color-icon);
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-carousel-arrow-bg: var(--ds-carousel-arrow-hover-color-bg);
+            --ds-carousel-arrow-border-color: var(--ds-carousel-arrow-hover-color-border);
+
+            svg {
+                color: var(--ds-carousel-arrow-hover-color-icon);
+            }
+        }
+    }
+
+    &:active {
+        --ds-carousel-arrow-bg: var(--ds-carousel-arrow-active-color-bg);
+        --ds-carousel-arrow-border-color: var(--ds-carousel-arrow-active-color-border);
+
+        svg {
+            color: var(--ds-carousel-arrow-active-color-icon);
+        }
+    }
+}
+
+.ds-arrow {
+    @include ds-arrow.shared;
+
+    --ds-carousel-arrow-bg: transparent;
+    --ds-carousel-arrow-border-color: transparent;
+    --ds-carousel-arrow-border-radius: var(--ds-carousel-arrow-radius-border);
+    --ds-carousel-arrow-color-icon: transparent;
+    --ds-carousel-arrow-height: var(--ds-carousel-arrow-size-height);
+    --ds-carousel-arrow-width: var(--ds-carousel-arrow-size-width);
+
+    align-items: center;
+    background-color: var(--ds-carousel-arrow-bg);
+    border-color: var(--ds-carousel-arrow-border-color);
+    border-radius: var(--ds-carousel-arrow-border-radius);
+    box-shadow: var(--semantic-elevation-raised-2-box-shadow);
+    box-sizing: border-box;
+    display: inline-flex;
+    height: var(--ds-carousel-arrow-height);
+    justify-content: center;
+    user-select: none;
+    width: var(--ds-carousel-arrow-width);
+
+    svg {
+        --ds-carousel-arrow-icon-size: auto;
+
+        color: var(--ds-carousel-arrow-color-icon);
+        height: var(--ds-carousel-arrow-icon-size);
+        width: var(--ds-carousel-arrow-icon-size);
+    }
+
+    &.ds-strong-arrow {
+        @include ds-arrow.strong;
+
+        &.ds-arrow-inverse {
+            @include ds-arrow.strong-inverse;
+        }
+
+        @include arrow-styles;
+    }
+
+    &.ds-subtle-arrow {
+        @include ds-arrow.subtle;
+
+        &.ds-arrow-inverse {
+            @include ds-arrow.subtle-inverse;
+        }
+
+        @include arrow-styles;
+    }
+
+    &.ds-right-arrow {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.ds-arrow-large {
+        @include ds-arrow.large;
+    }
+
+    &.ds-arrow-medium {
+        @include ds-arrow.medium;
+    }
+
+    &.ds-arrow-small {
+        @include ds-arrow.small;
+    }
+
+    &.ds-arrow-large,
+    &.ds-arrow-medium,
+    &.ds-arrow-small {
+        svg {
+            --ds-carousel-arrow-icon-size: var(--ds-carousel-arrow-size-icon);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../dist/out-tsc",
+        "declaration": true,
+        "types": ["node"]
+    },
+    "include": ["code-pushup.config.ts"],
+    "exclude": ["src/**/*.ts", ".storybook/**/*"]
+}

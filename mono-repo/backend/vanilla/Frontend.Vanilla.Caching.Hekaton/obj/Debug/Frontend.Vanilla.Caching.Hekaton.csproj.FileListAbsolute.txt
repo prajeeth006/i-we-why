@@ -1,0 +1,15 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\Frontend.Vanilla.Caching.Hekaton.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\Frontend.Vanilla.Caching.Hekaton.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\Frontend.Vanilla.Caching.Hekaton.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\Frontend.Vanilla.Caching.Hekaton.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.EF8C2C9E.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\refint\Frontend.Vanilla.Caching.Hekaton.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\Frontend.Vanilla.Caching.Hekaton.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Caching.Hekaton\obj\Debug\ref\Frontend.Vanilla.Caching.Hekaton.dll

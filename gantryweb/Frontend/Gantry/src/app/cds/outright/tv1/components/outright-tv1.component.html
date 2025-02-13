@@ -1,0 +1,20 @@
+<div class=ante-post-page>
+    <ng-container *ngIf="outRightCDSContent$ | async as vm">
+        <ng-container *ngIf="!(errorMessage$ | async)">
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 0 && vm?.finalResult?.selections?.length <= 6">
+                <gn-outright-market [result]="vm" [pageSize]='6' [selectionLength]=nameLength></gn-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 6 && vm?.finalResult?.selections?.length <= 12">
+                <gn-outright-market [result]="vm" [pageSize]='12' [selectionLength]=nameLength></gn-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 12 && vm?.finalResult?.selections?.length <= 20">
+                <gn-outright-market [result]="vm" [pageSize]='20' [selectionLength]=nameLength></gn-outright-market>
+            </ng-container>
+            <ng-container *ngIf="vm?.finalResult?.selections?.length > 20">
+                <gn-outright-market [result]="vm" [pageSize]='20' [selectionLength]=nameLength></gn-outright-market>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

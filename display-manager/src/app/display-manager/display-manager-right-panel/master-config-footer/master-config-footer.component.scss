@@ -1,0 +1,183 @@
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 75px;
+    background: $background-grey-color;
+
+    @include abstract.breakpoint-2 {
+        padding: 0 10px;
+        height: 50px;
+    }
+
+    .footer-list-item {
+        display: flex;
+
+        &:nth-child(1) {
+            margin-right: auto;
+        }
+
+        &:nth-child(2) {
+            .footer-action-btns {
+                cursor: pointer;
+
+                .btn {
+                    width: 220px;
+
+                    @include abstract.breakpoint-2 {
+                        width: 150px;
+                    }
+
+                    &.isEnable {
+                        opacity: 1;
+                    }
+
+                    &.pointer-events {
+                        pointer-events: none
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .footer-action-btns {
+                cursor: pointer;
+
+                .btn {
+                    width: 177px;
+
+                    @include abstract.breakpoint-2 {
+                        width: 120px;
+                    }
+
+                    &.isEnable {
+                        opacity: 1;
+                    }
+
+                    &.pointer-events {
+                        pointer-events: none
+                    }
+                }
+            }
+        }
+
+        &:nth-child(4) {
+
+            .footer-action-btns {
+                margin-left: 0px;
+                cursor: pointer;
+
+                .btn {
+                    width: 202px;
+
+                    @include abstract.breakpoint-2 {
+                        width: 130px;
+                    }
+
+                    &.isEnable {
+                        opacity: 1;
+                    }
+
+                    &.pointer-events {
+                        pointer-events: none
+                    }
+                }
+            }
+
+            &::before {
+                width: 35px;
+                height: 0px;
+                border: 1px solid $border-grey-2;
+                transform: rotate(90deg);
+                display: inline-block;
+                content: '';
+                position: relative;
+                top: 15px;
+
+                @include abstract.breakpoint-2 {
+                    width: 25px;
+                }
+            }
+        }
+
+        .activate-profile-info {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            font-size: $txt-sm-font-size;
+            line-height: 14px;
+            letter-spacing: 0.6px;
+
+            @include abstract.breakpoint-2 {
+                font-size: $txt-sm-font-size;
+                letter-spacing: 0.5px;
+            }
+
+            .info-icon {
+                height: 14px;
+                width: 14px;
+            }
+
+            .profile-text {
+                color: $text-black-color;
+                margin-left: 6px;
+
+                @include abstract.breakpoint-2 {
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+}
+
+.button-text-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    .reset-image {
+        margin-right: 14px;
+    }
+}
+
+.footer-action-btns {
+    display: flex;
+    font-size: $txt-md-font-size;
+    letter-spacing: 1.25px;
+    line-height: normal;
+
+    &:not(:nth-child(2n)) {
+        margin-left: 15px;
+
+        @include abstract.breakpoint-2 {
+            margin-left: 7px;
+        }
+    }
+
+    .btn {
+        font-weight: 700;
+        font-size: $txt-md-font-size;
+        height: 35px;
+        line-height: 35px;
+        opacity: $half-opacity;
+        border-radius: 4px;
+        letter-spacing: 1.25px;
+        box-sizing: border-box;
+
+        @include abstract.breakpoint-2 {
+            font-size: $txt-xs-font-size;
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+        ::ng-deep .action-btn-image {
+            margin-right: 14px;
+
+            @include abstract.breakpoint-2 {
+                margin-right: 7px
+            }
+        }
+    }
+}

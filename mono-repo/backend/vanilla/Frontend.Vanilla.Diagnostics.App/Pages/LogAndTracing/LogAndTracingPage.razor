@@ -1,0 +1,102 @@
+@page "/log"
+@using Frontend.Vanilla.Diagnostics.Contracts
+@using Frontend.Vanilla.Diagnostics.Contracts.LogAndTracing
+@inherits LogAndTracingPageComponent
+
+<PageLayout Title="Log & Tracing" LoadChildContent="LoadAsync">
+    <p data-testid="description">
+        This is listing of several recent log entries. It's not supposed to replace Kibana rather help with quick diagnostics.
+        All entries are traced using <em>correlationId</em> which is based on Guid in long-term cookie.
+        Then there is <em>requestId</em> unique for each HTTP request.
+        These values are propagated to other systems e.g. PosAPI.
+        For deeper insight you can enable extensive recording of all low-level details like ASP.NET requests, REST requests, memory/distributed cache reads/writes etc.
+        Alternatively you can <a href="/@DiagnosticApiUrls.LogAndTracing.Log.GetUrl(onlyMyEntries: false)" target="_blank">view raw JSON</a>.
+    </p>
+    <div>
+        <div class="alert alert-success" data-testid="correlationId">
+            Your correlation ID is
+            <code>@TracingStatus.CorrelationId</code>.
+            See corresponding entries in <a href="@TracingStatus.KibanaUrl" target="_blank">Kibana</a>.
+        </div>
+        <div class="alert alert-@(TracingStatus.RecordingExpiration != null ? "danger" : "secondary")" data-testid="tracingControls">
+            Low-level tracing details
+            @if (TracingStatus.RecordingExpiration != null)
+            {
+                <text>are being recorded until: <code>@TracingStatus.RecordingExpiration</code></text>
+                <button @onclick="ProlongTracing" class="btn btn-sm btn-primary">Prolong</button>
+                <button @onclick="StopTracing" class="btn btn-sm btn-secondary">Stop recording</button>
+            }
+            else
+            {
+                <text>aren't being recorded.</text>
+                <button @onclick="StartTracing" class="btn btn-sm btn-danger">Start recording</button>
+            }
+        </div>
+    </div>
+    <p data-testid="displayOptions">
+        <CheckBox Checked="@OnlyMyEntries" CheckedChanged="ReloadLogEntriesAsync" Text="Show only my entries" Disabled="IsEntriesReloadInProgress" />
+        <CheckBox @bind-Checked="GroupByRequest" Text="Group entries by HTTP request" Disabled="IsEntriesReloadInProgress" />
+        <div class="col-12 col-md-6 col-lg-3">
+            <SelectList @bind-SelectedValue="SelectedLogLevel" Items="LogLevelsItems" id="log-level-filter" />
+        </div>
+    </p>
+
+    @if (IsEntriesReloadInProgress)
+    {
+        <div class="loading-indicator"></div>
+    }
+    else if (LogEntries.Count > 0)
+    {
+        <ul class="list-group log-container">
+            @if (GroupByRequest)
+            {
+                var requests = LogEntries
+                .Where(e => SelectedLogLevel == null || e.Level.ToString().Equals(SelectedLogLevel))
+                .GroupBy(e => e.RequestId)
+                .Select(g => g.OrderBy(x => x.Timestamp).ToList())
+                .Select(g => new { Entries = g, Id = g[0].RequestId, g[0].HttpMethod, g[0].RequestUrl, g[0].Timestamp })
+                .OrderByDescending(r => r.Timestamp);
+
+                @foreach (var request in requests)
+                {
+                    var isExpanded = ExpandedRequests.Contains(request.Id);
+                    <li class="list-group-item" data-testid="log-request-entries">
+                        <ExpandableChevron IsExpanded="isExpanded" OnClick="() => ExpandedRequests.Toggle(request.Id)">
+                            @request.Timestamp.ToString("O")
+                            <code>
+                                @(request.HttpMethod ?? "startup")
+                                @request.RequestUrl
+                            </code>
+                        </ExpandableChevron>
+                        @if (isExpanded)
+                        {
+                            <ul class="list-group">
+                                @foreach (var entry in request.Entries)
+                                {
+                                    <LogEntryDetail Entry="entry" />
+                                }
+                            </ul>
+                        }
+                    </li>
+                }
+            }
+            else
+            {
+                var entriesToDisplay = LogEntries
+                .Where(e => SelectedLogLevel == null || e.Level.ToString().Equals(SelectedLogLevel))
+                .OrderByDescending(e => e.Timestamp);
+
+                @foreach (var entry in entriesToDisplay)
+                {
+                    <LogEntryDetail Entry="entry" />
+                }
+            }
+        </ul>
+    }
+    else
+    {
+        <div class="alert alert-secondary" data-testid="log-empty">
+            No entries corresponding to current filters.
+        </div>
+    }
+    </PageLayout>

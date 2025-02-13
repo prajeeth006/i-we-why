@@ -1,0 +1,21 @@
+<div class="tab-btns-group" *ngIf="heirarchies?.length && selectedTabName">
+  <ng-container *ngFor="let item of heirarchies">
+    <button id="tabItem" class="tab-item"
+      [ngClass]="selectedTabName.toLowerCase() == item.ItemName.toLowerCase() ? 'is-tab-active' : 'is-tab-inActive'"
+      (click)="changeTab(item)">{{item.ItemName.toUpperCase()}}
+    </button>
+  </ng-container>
+</div>
+<mat-tab-group [ngClass]="{'ladbrokes-tab-group': currentLabel === 'ladbrokes'}"
+  *ngIf="!!gantryTabs && selectedTabName.toLowerCase() == manualConstants.library_tab.toLowerCase()"
+  (selectedTabChange)="tabChanged($event)" [selectedIndex]="selectedTabIndex.value" id="selectedIndex">
+  <mat-tab *ngFor="let tab of gantryTabs" label="{{tab.ItemName}}" id="itemTabs"
+    [disabled]="(this.tabNamesEnum.carousel == tab.ItemName || this.tabNamesEnum.channels == tab.ItemName) && (isCarouselPopupOpened$ | async)"
+    id="itemTabNames">
+    <ng-template mat-tab-label>
+      <img *ngIf="!!tab.imageUrl" [src]="tab.imageUrl" class="tab-icon" id="leftPanelTabLogo" />
+      <span id="leftPanelTabTitleText">{{tab.Title}}</span>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+<tree-view [tabName]="currentTab" id="currentTab" [currentTabData]="currentItemData"></tree-view>

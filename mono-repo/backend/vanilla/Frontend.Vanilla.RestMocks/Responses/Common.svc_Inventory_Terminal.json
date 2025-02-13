@@ -1,0 +1,16 @@
+{
+    "data": {
+        "terminalType": "TerminalType076c7b76-8f1a-470f-8adf-277e3d9a10cc",
+        "ipAddress": "IpAddress4a462af9-1914-4504-b5fc-2a9b34e4e493",
+        "macId": "MacId5aaf9a23-97ec-46b8-b1a5-8140f051a8b4",
+        "volume": 149,
+        "terminalStatus": "TerminalStatus69362ced-5415-4b9a-b3a7-02fba47c06bc",
+        "resolution": "Resolution3b4c1329-7031-45ae-97bc-5033cdb1a248",
+        "lockStatus": "LockStatus83c9ac52-8e2b-4857-b0ab-dea453c62015",
+        "customerAccount": {
+            "customerId": "CustomerIdb80d2a30-16ff-40c6-adeb-227715acb04a",
+            "accountName": "AccountNamedd4c31fb-d2d4-4fb6-95ea-d6a93a6cfe1d"
+        }
+    },
+    "status": "Statuse8893889-da28-4b86-a678-8fd0ea06a159"
+}

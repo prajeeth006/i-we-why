@@ -1,0 +1,25 @@
+@mixin shared {
+    --ds-modal-bottom-sheet-color-skrim: var(--semantic-color-opacity-skrim-subtle);
+    --ds-modal-bottom-sheet-color-text: var(--semantic-color-on-surface-base);
+    --ds-modal-bottom-sheet-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-modal-bottom-sheet-size-border: var(--semantic-size-xquarter);
+    --ds-modal-bottom-sheet-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-bottom-sheet-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-bottom-sheet-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-bottom-sheet-space-padding-top: var(--semantic-spacing-container-padding-xl);
+}
+
+@mixin surface {
+    --ds-modal-bottom-sheet-color-background: var(--semantic-color-surface-base);
+    --ds-modal-bottom-sheet-color-divider: var(--semantic-color-on-surface-divider);
+}
+
+@mixin surface-low {
+    --ds-modal-bottom-sheet-color-background: var(--semantic-color-surface-container-low-base);
+    --ds-modal-bottom-sheet-color-divider: var(--semantic-color-on-surface-container-low-divider);
+}
+
+@mixin surface-lowest {
+    --ds-modal-bottom-sheet-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-modal-bottom-sheet-color-divider: var(--semantic-color-on-surface-container-lowest-divider);
+}

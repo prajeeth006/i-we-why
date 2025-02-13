@@ -1,0 +1,66 @@
+<div class="main-container">
+  <div class="profile-selection-container">
+    <div class="profile-selection-section">
+      <div class="profile-text">PROFILE</div>
+      <div id="profileDropdown" class="profile-dropdown">
+        <mat-form-field appearance="fill">
+          <mat-select [(value)]="selectedProfileValue" disableOptionCentering panelClass="profile-settings-dropdown"
+            class="mySelectClass" (selectionChange)="selectProfile($event.value)">
+            <mat-select-trigger class="mat-custom-trigger">
+              <span id="selectedProfile" class="custom-selected-value" [ngClass]="{'isActivated': selectedProfileValue === activeProfile}">
+              </span>{{ selectedProfileValue }}
+            </mat-select-trigger>
+            <mat-option *ngFor="let category of listOfProfiles" [value]="category"
+              [ngStyle]="{ display : category === selectedProfileValue ? 'none' : 'block' }" id="profileName">
+              <span [ngClass]="{'isActivated': category === activeProfile}" class="profile-icon-border" id="profileCategory"></span>
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div id="masterConfigMain" class="master-config-container" (scroll)="scrollHandler($event)">
+    <div id="masterConfigSub" class="master-configuration-wrapper" *ngFor="let asset of screenData?.AssetTypes">
+      <div id="eventNameSection" class="event-name-section">
+        <div id="eventText" class="event-txt" [style.background]="asset?.AssetDesign?.ScreenBorderColor">{{asset.Name}}</div>
+      </div>
+
+      <div id="screenWrapper" class="screens-wrapper">
+        <app-single-screen *ngFor="let screens of asset?.Screens" [data]="screens" 
+        [isActiveScreensReset]="isActiveScreensReset"
+        [currentActiveScreen]="currentActiveScreen"
+        (onRightClick)="onRightClickOpenMenu($event)" 
+        [selectedProfileValue]="selectedProfileValue" id="assetScreens">
+        </app-single-screen>
+      </div>
+    </div>
+  </div>
+  
+  <div class="screen-context-menu-hidden" [style.left]="contextMenuPosition.x" 
+  [style.top]="contextMenuPosition.y" [matMenuTriggerFor]="screenContextMenu"></div>
+
+  <mat-menu [hasBackdrop]="false" #screenContextMenu="matMenu" class="screen-context-menu-open-dropdown" 
+  >
+    <ng-container *ngFor="let menuItem of contextMenuItems" 
+      [ngTemplateOutlet]="menuItem.id === contextMenuOptions.preview ? previewBtn : menuItem.id === contextMenuOptions.editCarousel  ? editCarouselBtn : otherBtn" 
+      [ngTemplateOutletContext]="{menuItem:menuItem}"
+      >
+    </ng-container>
+    
+    <ng-template #previewBtn  let-menuItem='menuItem'>
+      <button id={{menuItem.id}}  [disabled]="!menuItem.isContentSaved" mat-menu-item (click)="onClickMenuOption($event)">{{ menuItem.itemName }}</button>
+    </ng-template>
+
+    <ng-template #editCarouselBtn  let-menuItem='menuItem'>
+      <button id={{menuItem.id}}  [disabled]="!menuItem.isCarouselExists" mat-menu-item (click)="onClickMenuOption($event)">{{ menuItem.itemName }}</button>
+    </ng-template>
+    
+    <ng-template #otherBtn  let-menuItem='menuItem'>
+      <button id={{menuItem.id}} mat-menu-item (click)="onClickMenuOption($event)">{{ menuItem.itemName }}</button>
+    </ng-template>
+
+  </mat-menu>
+  <app-master-config-footer [footerData]="footerData"></app-master-config-footer>
+</div>

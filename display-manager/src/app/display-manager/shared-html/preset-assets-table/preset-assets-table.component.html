@@ -1,0 +1,84 @@
+<div class="carousel-content__grid" 
+(onDroppableComplete)="addNewPresetItem($event)" [appDroppable]="presetListItemDrop">
+    @if (presetListRow.length > 0) {
+        <form  [formGroup]="newPresetForm">
+            <div class="table-wrapper">
+                <div class="search-container">
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>search</mat-icon>
+                        <input id="eventSearch" matInput placeholder="Search for event" (keyup)="onSearchKeyChange()"
+                                    [disabled]="isSearchDisabled()" [(ngModel)]="searchControl" [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                </div>
+                <div class="tb-header th-row">
+                    <div class="number"></div>
+                    <div class="icon drag-icon"></div>
+                    <div class="event">Event</div>
+                    <div class="category">Category</div>
+                    <div class="preset-select">Market</div>
+                    <div class="preset-select">Template Half</div>
+                    <div class="preset-select">Template Quad</div>
+                    <div class="icon"></div>
+                </div>
+                <div class="tb-body" #tableBody cdkDropList (cdkDropListDropped)="drop($event)">
+                    @for (item of !searchControl ? presetListRow.controls : filteredAssetList; track item; let i = $index) {
+                        <div formArrayName="presetListRow" class="add-or-remove-section tb-row" [ngClass]="item.value.isResulted ? 'resulted-row' : ''" cdkDrag cdkDragLockAxis="y"
+                            [cdkDragPreviewClass]="'preview-item-section'">
+                            <ng-container [formGroupName]="i">
+                                <div class="number" id="number_{{i}}">{{item.value.displayOrder}}</div>
+                                <div cdkDragHandle id="sortHolder_{{i}}" class="drag-icon sortHolder" [cdkDragHandleDisabled]="item.value.isResulted || !!searchControl">
+                                    <img [src]="hamburgerIconPath" alt="">
+                                </div>
+                                <input class="event" id="event_{{i}}" [value]="item.value.eventName" readonly />
+                                <input class="category" id="category_{{i}}" [value]="item.value.categoryCode" readonly />
+                                <div class="preset-select">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select formControlName="marketSelectedOption" id="marketSelectedOption_{{i}}">
+                                            @for (market of item.value.markets; track market; let j = $index) {
+                                            <mat-option [value]="market.name">{{ market.name | marketNameFormat }}</mat-option>
+                                            }
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="preset-select">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select  formControlName="templateHalfType" id="templateHalfType_{{i}}">
+                                            @for (tempType of templateTypesList; track tempType; let k = $index) {
+                                            <mat-option [value]="tempType">{{ tempType }} </mat-option>
+                                            }
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="preset-select">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select formControlName="templateQuadType" id="templateQuadType_{{i}}">
+                                            @for (tempType of templateTypesList; track tempType; let k = $index) {
+                                            <mat-option [value]="tempType">{{ tempType }} </mat-option>
+                                            }
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="icon">
+                                    <mat-icon id="close_{{i}}" aria-hidden="false" aria-label="close icon" class="close" [class.disabled]="item.value.isResulted"
+                                        (click)="!item.value.isResulted && deletePresetItem(item.value.displayOrder)">
+                                        close</mat-icon>
+                                </div>
+                            </ng-container>
+                        </div>
+                        }
+
+                </div>
+                <div class="message">
+                    Total Assets: <span>{{presetListRow.length}}</span>
+                </div>
+            </div>
+        </form>
+    }
+    @else{
+        <div class="carousel-content__empty">
+            <div class="select-preset">
+                <span class="select-preset-style">{{messageTitle}}</span>
+            </div>
+        </div>
+    }
+</div>

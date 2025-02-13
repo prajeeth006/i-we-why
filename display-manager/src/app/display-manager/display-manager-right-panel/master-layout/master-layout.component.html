@@ -1,0 +1,28 @@
+<div class="tabs-and-profile-section">
+    <div>
+        <div class="active-profile">
+            <div id="activeProfileText" class="active-profile-txt">Active Profile:</div>
+            <div id="activeProfileValue">{{activeProfileValue}}</div>
+        </div>
+        <div class="config-display-tabs">
+            <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
+                <mat-tab label={{tab?.name?.toLowerCase()?.trim()}} *ngFor="let tab of childTabs">
+                    <ng-template mat-tab-label>
+                        <div class="master-tab-section">
+                            <img id="masterTabIcons" class="tab-item-icon" *ngIf="!!tab?.imageUrl" [src]="tab?.imageUrl">
+                            <span id="masterTabNames" class="main-tab-text" *ngIf="!!tab?.name">{{tab?.name}}</span>
+                        </div>
+                    </ng-template>
+                    <div [ngSwitch]="tab?.name?.toLowerCase()?.trim()">
+                        <ng-container *ngSwitchCase="'config'">
+                            <app-master-configuration></app-master-configuration>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'gantry'">
+                            <app-master-gantry-configuration></app-master-gantry-configuration>
+                        </ng-container>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

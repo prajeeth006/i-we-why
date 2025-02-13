@@ -1,0 +1,25 @@
+{
+    "name": "design-system-storybook-demo-cmp-lib",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/storybook-demo-cmp-lib/src",
+    "prefix": "lib",
+    "tags": ["scope:design-system", "type:utils"],
+    "projectType": "library",
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/storybook-demo-cmp-lib/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/storybook-demo-cmp-lib/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

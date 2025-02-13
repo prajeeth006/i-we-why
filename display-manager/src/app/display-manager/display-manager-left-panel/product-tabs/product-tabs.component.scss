@@ -1,0 +1,101 @@
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.mat-mdc-tab-group {
+    ::ng-deep .mat-mdc-tab-header {
+        border-bottom: none;
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+        .mat-mdc-tab-labels {  
+            padding: 0px;          
+            .mdc-tab {
+                min-width: 80px;
+                height: 48px;
+                padding: 0 10px;
+                opacity: 0.6;
+                .mdc-tab__content {
+                    height: 40px;
+                }
+            }
+            .mdc-tab--active {
+                opacity: 1;
+            }            
+
+            @include abstract.breakpoint-2 {
+                height: 48px;
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+            &.mdc-tab-indicator--active {
+                background-color: $white;
+                border-radius: 8px 8px 0px 0px;
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+            .mat-mdc-tab-label-content, .mdc-tab__text-label {
+                flex-direction: column;
+                line-height: 20px;
+                letter-spacing: normal;
+
+                .tab-icon {
+                    display: flex;
+                    height: 20px;
+                    width: 20px;
+                }
+
+            }
+        }
+
+        .mat-mdc-ink-bar {
+            background-color: $primary-color-coral;
+        }
+
+    }
+}
+
+.tree-progress-bar {
+    margin-left: 30px;
+}
+
+.ladbrokes-tab-group {
+    ::ng-deep .mat-mdc-tab-header .mat-mdc-ink-bar {
+        background-color: $primary-color-ladbrokes;
+    }
+}
+
+.tab-btns-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 19px;
+    margin-top: 10px;
+
+    @include abstract.breakpoint-2 {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .tab-item {
+        border: 1px;
+        width: 180px;
+        height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: $txt-sm-font-size;
+        line-height: 16px;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+
+        @include abstract.breakpoint-2 {
+            width: 132px;
+        }
+
+        &.is-tab-active {
+            background: $color-black-light;
+            color: $white;
+        }
+
+        &.is-tab-inActive {
+            background: $white;
+            color: $color-black-4;
+        }
+    }
+}

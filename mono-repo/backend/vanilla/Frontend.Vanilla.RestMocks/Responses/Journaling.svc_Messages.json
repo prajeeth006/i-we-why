@@ -1,0 +1,24 @@
+{
+    "Messages": [
+        {
+            "MessageId": {
+                "id": "123",
+                "sourceSystem": "BWIN"
+            },
+            "MessageBody": "<JsMessage id=\"123\" name=\"test message\">this is a test message</JsMessage>",
+            "BetInformation": null,
+            "MessageInfos": [
+                {
+                    "label": "MaxStakeLimit_Type",
+                    "dataType": "string",
+                    "value": "PokerSevenDaysStakeLimit",
+                    "valueNeedsTranslation": false
+                }
+            ],
+            "code": "PREFCPTE",
+            "date": "2018-04-27T08:27:01.089Z",
+            "messageType": "Account",
+            "name": "UserLimitsChangedMessageBodyV2"
+        }
+    ]
+}

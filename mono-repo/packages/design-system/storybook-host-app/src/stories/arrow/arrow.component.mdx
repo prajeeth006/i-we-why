@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as ArrowStories from './arrow.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './arrow-tabs/overview.mdx';
+import MySecondTab from './arrow-tabs/examples.mdx';
+
+# Arrow Component
+
+<Meta of={ArrowStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

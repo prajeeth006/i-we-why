@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework support for content access (e.g. Sitecore).</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Core\Frontend.Vanilla.Core.csproj"/>
+        <ProjectReference Include="..\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="HtmlAgilityPack" />
+        <PackageReference Include="Microsoft.CSharp"/>
+        <PackageReference Include="JetBrains.Annotations" />
+    </ItemGroup>
+</Project>

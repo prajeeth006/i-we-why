@@ -1,0 +1,26 @@
+<div class='gantry-types-selections-group' *ngIf="gantryShops">
+  <button id="gantryTypeBtn" class="gantry-type-btn" [ngClass]="{'active-type': i === selectedIndex}"
+    *ngFor="let shop of gantryShops; let i=index" (click)="selectGantryType(shop,i)">
+    {{shop}}
+  </button>
+</div>
+
+<div id='screensRow' class='screens-row' [ngClass]="{'special-screens-row': i === 2}"
+  *ngFor="let row of sortedMasterGantryScreensData?.rows; let i=index">
+  <div *ngFor="let column of row?.columns" id="screenColumn" class="screen-column">
+    <div class="switch-case" [ngSwitch]="column?.screens?.length">
+      <ng-container *ngSwitchCase="1">
+        <app-gantry-single-screen [data]="column?.screens![0]"></app-gantry-single-screen>
+      </ng-container>
+      <ng-container *ngSwitchCase="2">
+        <app-half-view [data]="column?.screens"></app-half-view>
+      </ng-container>
+      <ng-container *ngSwitchCase="3">
+        <app-tertiary-screen [data]="column?.screens"></app-tertiary-screen>
+      </ng-container>
+      <ng-container *ngSwitchCase="4">
+        <app-multiview-screen [data]="column?.screens"></app-multiview-screen>
+      </ng-container>
+    </div>
+  </div>
+</div>

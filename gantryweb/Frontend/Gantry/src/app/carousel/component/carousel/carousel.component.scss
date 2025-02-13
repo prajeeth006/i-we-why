@@ -1,0 +1,14 @@
+@import './src/global-style/_all-variables.scss';
+.container {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.carousel-slider {
+    width: 100%;
+    height:100%;
+}

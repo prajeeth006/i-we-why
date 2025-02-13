@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Frontend.Gantry.Shared\Frontend.Gantry.Shared.csproj" />
+  </ItemGroup>
+</Project>

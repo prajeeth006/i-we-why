@@ -1,0 +1,62 @@
+@mixin default {
+    --ds-stake-field-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-stake-field-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-stake-field-disabled-color-input-text: var(--semantic-color-on-disabled-base);
+    --ds-stake-field-disabled-color-label: var(--semantic-color-on-disabled-base);
+    --ds-stake-field-enabled-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-stake-field-enabled-color-border: var(--semantic-color-surface-outline-low-base);
+    --ds-stake-field-enabled-color-input-text: var(--semantic-color-on-surface-base);
+    --ds-stake-field-enabled-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-stake-field-error-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-stake-field-error-color-border: var(--semantic-color-negative-outline-base);
+    --ds-stake-field-error-color-input-text: var(--semantic-color-on-surface-base);
+    --ds-stake-field-error-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-stake-field-focused-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-stake-field-focused-color-border: var(--semantic-color-utility-outline-active);
+    --ds-stake-field-focused-color-cursor: var(--semantic-color-utility-base);
+    --ds-stake-field-focused-color-input-text: var(--semantic-color-on-surface-base);
+    --ds-stake-field-focused-color-label: var(--semantic-color-on-surface-subtle);
+    --ds-stake-field-focused-color-placeholder-text: var(--semantic-color-on-surface-subtle);
+    --ds-stake-field-hover-color-bg: var(--semantic-color-surface-container-lowest-hover);
+    --ds-stake-field-hover-color-border: var(--semantic-color-surface-outline-low-hover);
+    --ds-stake-field-hover-color-input-text: var(--semantic-color-on-surface-base);
+    --ds-stake-field-hover-color-label: var(--semantic-color-on-surface-subtle);
+}
+
+@mixin inverse {
+    --ds-stake-field-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-stake-field-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    --ds-stake-field-disabled-color-input-text: var(--semantic-color-on-disabled-base-inverse);
+    --ds-stake-field-disabled-color-label: var(--semantic-color-on-disabled-base-inverse);
+    --ds-stake-field-enabled-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-stake-field-enabled-color-border: var(--semantic-color-surface-outline-low-base-inverse);
+    --ds-stake-field-enabled-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-stake-field-enabled-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-stake-field-error-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-stake-field-error-color-border: var(--semantic-color-negative-outline-base-inverse);
+    --ds-stake-field-error-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-stake-field-error-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-stake-field-focused-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-stake-field-focused-color-border: var(--semantic-color-utility-outline-active-inverse);
+    --ds-stake-field-focused-color-cursor: var(--semantic-color-utility-base-inverse);
+    --ds-stake-field-focused-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-stake-field-focused-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-stake-field-focused-color-placeholder-text: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-stake-field-hover-color-bg: var(--semantic-color-surface-container-lowest-hover-inverse);
+    --ds-stake-field-hover-color-border: var(--semantic-color-surface-outline-low-hover-inverse);
+    --ds-stake-field-hover-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-stake-field-hover-color-label: var(--semantic-color-on-surface-subtle-inverse);
+}
+
+@mixin shared {
+    --ds-stake-field-radius-border: var(--semantic-radius-semi-rounded-md);
+    --ds-stake-field-size-border-width: var(--semantic-size-xquarter);
+    --ds-stake-field-size-height: var(--semantic-size-x11);
+    --ds-stake-field-size-min-width: var(--semantic-size-x25);
+    --ds-stake-field-space-inline: var(--semantic-spacing-inline-md);
+    --ds-stake-field-space-padding-bottom: var(--semantic-spacing-container-padding-md);
+    --ds-stake-field-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-stake-field-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-stake-field-space-padding-top: var(--semantic-spacing-container-padding-md);
+    --ds-stake-field-space-stack: var(--semantic-spacing-stack-sm);
+}

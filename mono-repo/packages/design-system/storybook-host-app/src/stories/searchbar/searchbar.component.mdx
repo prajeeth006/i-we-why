@@ -1,0 +1,31 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as DsSearchBarStories from './searchbar.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './searchbar-tabs/overview.mdx';
+import MySecondTab from './searchbar-tabs/examples.mdx';
+import MyThirdTab from './searchbar-tabs/api.mdx';
+
+# SearchBar Component
+
+<Meta of={DsSearchBarStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

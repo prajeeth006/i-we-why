@@ -1,0 +1,63 @@
+@import './src/global-style/_all-variables.scss';
+
+.avr-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
+    z-index: 1;
+  }
+.eventcontainer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &__name{
+      background-color: $color-p1;
+      color: #fff;
+      font-weight: 600;
+      font-size: 75px;
+      font-family: "Roboto Condensed", Roboto, Verdana, Arial;    
+      padding: 5px 15px;
+      text-align: left;
+      position: absolute;
+      z-index: 2;   
+      top: 36px;
+      left: 84px; 
+      @include breakpoint(multidesktop) {      
+        padding: 5px 50px 5px 10px;
+        font-size: $txt-xl-font-size;
+        top: 17px;
+        left: 49px;     
+        margin: 0;
+        width: auto;
+        line-height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    }
+    &__brandimage{
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        margin: 20px 15px 0 0;
+      }
+}
+
+.avr-bg-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+
+  @media (orientation: portrait) {
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,56 @@
+<ng-container *ngIf="formula1CDSContent as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <ng-container *ngIf="vm?.racerList">
+            <gn-dark-theme-base-page>
+                <ng-container header-content>
+                    <gn-dark-theme-header [title]="vm?.title" [racingImage]="vm?.content?.formulaRacingImage?.src">
+                        <ng-container raceStage-content>
+                            <div class="header-status-box tilted-card">
+                                <span id="DefaultPriceColumn" class="tilted-text" *ngIf="vm?.eventStartDate?.length > 1">
+                                    {{ (vm?.eventStartDate | darkThemeEventDatetime).date }}<br />{{
+                                        (vm?.eventStartDate | darkThemeEventDatetime).time
+                                    }}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </gn-dark-theme-header>
+                </ng-container>
+                <ng-container body-content>
+                    <div class="race-wrap">
+                        <div id="raceBet" class="race-bet">
+                            <div id="raceBetName" class="race-bet__name" *ngFor="let raceBet of vm?.racerBetNameList | slice: 0 : 4">
+                                {{ raceBet?.betName | titlecase }}
+                            </div>
+                        </div>
+                        <div id="racerList" class="racer-list" *ngIf="vm.racerList">
+                            <div id="racerInfo" class="racer-info" *ngFor="let racer of vm.racerList | slice: 0 : 6">
+                                <span id="racerName" class="racer-info__name">{{ racer.driverName | trimSelectionNamePipe: nameLength }}</span>
+                                <div class="racer-info__details">
+                                    <div
+                                        id="rSelectionDetails"
+                                        class="betOdds racer-info__odds selection-result tilted-card"
+                                        *ngFor="let bet of racer.selectionDetails"
+                                        autoAdjustFont>
+                                        <span id="betOdds" class="tilted-text">{{ bet?.betOdds | prepareEvsPipe }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-dark-theme-footer>
+                        <ng-container left-side-content>
+                            <span>{{ vm?.content?.contentParameters?.AllDisplayedMarketsWinOnly ?? '' }}</span></ng-container
+                        >
+                        <ng-container right-side-content>
+                            <span>{{ vm?.content?.contentParameters?.BetStationPricesFluctuation ?? '' }}</span></ng-container
+                        >
+                    </gn-dark-theme-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

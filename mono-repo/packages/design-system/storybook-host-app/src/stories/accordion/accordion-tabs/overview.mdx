@@ -1,0 +1,52 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as DsAccordionStories from '../accordion.component.stories';
+
+The **Accordion**, identified by `ds-accordion`, allows to toggle dynamically shown content.
+It provides an accordion header, identified by `ds-accordion-header`, that opens and closes the content and provides summary information.
+It provides an accordion content, identified by `ds-accordion-content`, for the actual content that should be displayed.
+
+<Canvas of={DsAccordionStories.Default}></Canvas>
+
+## Usage
+
+Import `DsAccordionModule` in your component.
+
+```ts
+import { DsAccordionModule } from '@frontend/ui/accordion'; // 👈 add to file imports
+
+@Component({
+    imports: [DsAccordionModule], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+The **AccordionHeader** provides two different slots (`start` and `end`), a class `ds-accordion-text` (for title and subtitle identified by slots -- see above) and a custom slot for overriding the toggle button.
+
+The directive **DsAccordionTrigger** provides a directive to provide a custom toggle button.
+As an implicit argument, it provides the open state of the component and can be used as `*dsAccordionTrigger="let isOpen"`
+
+### Inputs / Outputs
+
+The Accordion provides the following inputs and outputs:
+
+-   `size`: small, large
+-   `variant`: transparent, surface-lowest, surface-low, surface-high, surface-highest
+-   `inverse`: true/false - Specifies if the inverse style should be applied
+-   `open`: true/false - Specifies whether the accordion is open or not.
+-   `openAccordionLabel`: string, default "Open Accordion" - (Accessibility) Specifies for default trigger the aria label for the button to open the accordion
+-   `closeAccordionLabel`: string, default "Close Accordion" - (Accessibility) Specifies for default trigger the aria label for the button to close the accordion
+-   `(openedChange)`: boolean - Event indicating if accordion has been opened/closed.
+
+### Content lazy initialization
+
+If you don't want the content to be rendered if the accordion is not opened, you can use the following pattern:
+
+```html
+<ds-accordion>
+    <ds-accordion-header> Lazy content </ds-accordion-header>
+
+    <ng-template #content> This content will be lazily initialized only when the accordion is opened. </ng-template>
+</ds-accordion>
+```

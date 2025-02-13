@@ -1,0 +1,11 @@
+{% if doc.deprecated %}
+<section class="deprication-notes">
+    <h2>Deprecation Notes</h2>
+    <div class="description">
+      {%- if doc.deprecated.length > 2 %}{$ doc.deprecated | marked | prettyprint $}
+      {% else %}<em>Not yet documented</em>{% endif %}
+    </div>
+</section>
+{% endif %}
+
+

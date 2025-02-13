@@ -1,0 +1,75 @@
+@import './src/global-style/_all-variables.scss';
+
+.base-body-wrapper {
+  background-color: $body-color-p2-lighter-bg;
+
+  .ante-post-large-content {
+    font-weight: bold;
+    padding: 8px 0 4px;
+
+    @include breakpoint(multidesktop) {
+      padding: 10px 0;
+    }
+  }
+
+  .selection-table {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    column-count: 2;
+    column-gap: 20px;
+
+    li {
+      display: flex;
+      align-items: stretch;
+      color: $body-color-p2;
+      font-size: $font-list-title;
+      padding-bottom: 4px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      height: 72px;
+
+      @include breakpoint(multidesktop) {
+        height: 36px;
+        padding-bottom: 2px;
+      }
+
+      .items {
+        display: flex;
+        align-items: center;
+      }
+
+      .table-item-1 {
+        background-color: $white;
+        flex-grow: 1;
+        font-size: $font-list-lg-title-avr;
+        padding: 0 15px;
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-lg-font1-size;
+          padding: 0 7px;
+        }
+      }
+
+      .table-item-2 {
+        font-size: $font-list-lg-title-avr;
+        width: 182px;
+        background-color: $body-color-p2-light-bg;
+
+        &.items {
+          justify-content: center;
+        }
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-lg-font1-size;
+          width: 90px;
+        }
+      }
+
+      &.nonlist {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+    "Friends": [
+        {
+            "emailContact": {
+                "emailId": "friendtest1@yopmail.com",
+                "firstName": "mj_FRIEND",
+                "lastName": "TESTONE"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "QUALIFIED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "friendtest5@yopmail.com",
+                "firstName": "mj_FRIEND",
+                "lastName": "FIVE"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "QUALIFIED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "betmgmnjuser01@yopmail.com",
+                "firstName": "mj_BETMGMNJ",
+                "lastName": "USERONE"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "REGISTERED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "sravaniraf@yopmail.com",
+                "firstName": "mj_SRAVANI",
+                "lastName": "TEST"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "REGISTERED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "friendtest4@yopmail.com",
+                "firstName": "mj_FRIENDT",
+                "lastName": "TESTHREE"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "REGISTERED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "friendtest2@yopmail.com",
+                "firstName": "mj_FRIEND",
+                "lastName": "TESTTWO"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "QUALIFIED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "raftestnj01@yopmail.com",
+                "firstName": "mj_NJTEST",
+                "lastName": "RAF"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "REGISTERED",
+            "isDisqualified": false,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "7500",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        },
+        {
+            "emailContact": {
+                "emailId": "testingraf01@yopmail.com",
+                "firstName": "mj_RAFTEST",
+                "lastName": "TEST"
+            },
+            "referredChannel": "SOCIAL",
+            "status": "DEPOSITED",
+            "isDisqualified": true,
+            "rewards": [
+                {
+                    "awardType": "CASH",
+                    "awardValue": "1100",
+                    "currencyCode": "USD",
+                    "currencySymbol": "$",
+                    "bonusType": null,
+                    "bonusAmount": 0,
+                    "maxBonusAmount": 0,
+                    "bonusAutoOptIn": false,
+                    "bonusNoOfDaysToClaim": 0,
+                    "bingoRoomDescription": null,
+                    "bingoExpiryDate": "2024-09-03T12:08:42.07+01:00",
+                    "bingoExpiryDays": 0
+                }
+            ]
+        }
+    ]
+}

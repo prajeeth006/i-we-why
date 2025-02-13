@@ -1,0 +1,57 @@
+@mixin default {
+    --ds-help-text-caution-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-caution-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-caution-icon: var(--semantic-color-caution-base);
+    --ds-help-text-caution-text: var(--semantic-color-on-surface-base);
+    --ds-help-text-error-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-error-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-error-icon: var(--semantic-color-negative-base);
+    --ds-help-text-error-text: var(--semantic-color-on-surface-base);
+    --ds-help-text-group-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-group-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-group-text: var(--semantic-color-on-surface-base);
+    --ds-help-text-info-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-info-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-info-icon: var(--semantic-color-utility-base);
+    --ds-help-text-info-text: var(--semantic-color-on-surface-base);
+    --ds-help-text-success-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-success-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-success-icon: var(--semantic-color-positive-base);
+    --ds-help-text-success-text: var(--semantic-color-on-surface-base);
+}
+
+@mixin inverse {
+    --ds-help-text-caution-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-caution-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-caution-icon: var(--semantic-color-caution-base-inverse);
+    --ds-help-text-caution-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-help-text-error-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-error-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-error-icon: var(--semantic-color-negative-base-inverse);
+    --ds-help-text-error-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-help-text-group-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-group-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-group-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-help-text-info-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-info-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-info-icon: var(--semantic-color-utility-base-inverse);
+    --ds-help-text-info-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-help-text-success-bg: var(--semantic-color-opacity-transparent);
+    --ds-help-text-success-border: var(--semantic-color-opacity-transparent);
+    --ds-help-text-success-icon: var(--semantic-color-positive-base-inverse);
+    --ds-help-text-success-text: var(--semantic-color-on-surface-base-inverse);
+}
+
+@mixin shared {
+    --ds-help-text-radius-radius: var(--semantic-radius-squared);
+    --ds-help-text-size-icon-container-height: var(--semantic-size-icon-medium);
+    --ds-help-text-size-icon-container-width: var(--semantic-size-icon-medium);
+    --ds-help-text-size-icon-height: var(--semantic-size-icon-small);
+    --ds-help-text-size-icon-width: var(--semantic-size-icon-small);
+    --ds-help-text-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-help-text-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    --ds-help-text-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-help-text-space-padding-right: var(--semantic-spacing-container-padding-xs);
+    --ds-help-text-space-padding-top: var(--semantic-spacing-container-padding-xs);
+    --ds-help-text-space-stack: var(--semantic-spacing-stack-sm);
+}

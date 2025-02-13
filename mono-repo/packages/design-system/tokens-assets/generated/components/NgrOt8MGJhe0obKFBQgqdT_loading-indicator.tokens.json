@@ -1,0 +1,46 @@
+{
+    "loading-indicator": {
+        "shared": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "loading-indicator",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "loading-indicator",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                }
+            },
+            "size": {
+                "height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "loading-indicator",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x8}"
+                },
+                "width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "loading-indicator",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x8}"
+                }
+            }
+        }
+    }
+}

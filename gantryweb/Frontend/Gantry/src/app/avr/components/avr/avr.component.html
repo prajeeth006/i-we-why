@@ -1,0 +1,12 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <div *ngIf="avrState$ | async as avrState">
+        <div [ngSwitch]="avrState">
+            <gn-avr-preamble *ngSwitchCase="avrStates.ShowAvrPreamble"></gn-avr-preamble>
+            <gn-avr-video *ngSwitchCase="avrStates.ShowAvrVideo"></gn-avr-video>
+            <gn-avr-result *ngSwitchCase="avrStates.ShowAvrResult"></gn-avr-result>
+        </div>
+    </div>
+    <gn-filler-page [pageName]="'avr'" [fillerPageMessage$]="fillerPageMessage$"></gn-filler-page>
+
+</ng-container>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

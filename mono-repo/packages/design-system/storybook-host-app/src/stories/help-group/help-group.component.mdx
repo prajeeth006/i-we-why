@@ -1,0 +1,31 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/addon-docs';
+
+import * as HelpGroupComponentStories from './help-group.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './help-group-tabs/overview.mdx';
+import MySecondTab from './help-group-tabs/examples.mdx';
+import MyThirdTab from './help-group-tabs/api.mdx';
+
+# Help Group Component
+
+<Meta of={HelpGroupComponentStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+        <Tab>API</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+        <TabPanel>
+            <MyThirdTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

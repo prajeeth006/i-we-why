@@ -1,0 +1,17 @@
+@import './src/global-style/_all-variables.scss';
+
+.rugby-container {
+  .bet-details-header {
+    padding-top: 6px !important;
+  }
+}
+
+.banner {
+  .banner-sub-title {
+    border: 2px solid $body-color-p2 !important;
+
+    @include breakpoint(multidesktop) {
+      border: 1px solid $body-color-p2 !important;
+    }
+  }
+}

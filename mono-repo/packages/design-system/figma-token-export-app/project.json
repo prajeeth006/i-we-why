@@ -1,0 +1,85 @@
+{
+    "name": "design-system-figma-token-export-app",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/figma-token-export-app/src",
+    "projectType": "application",
+    "tags": ["type:app", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "platform": "node",
+                "outputPath": "dist/build/packages/design-system/figma-token-export-app",
+                "format": ["cjs"],
+                "bundle": false,
+                "main": "packages/design-system/figma-token-export-app/src/main.ts",
+                "tsConfig": "packages/design-system/figma-token-export-app/tsconfig.app.json",
+                "assets": ["packages/design-system/figma-token-export-app/src/assets"],
+                "generatePackageJson": true,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "configurations": {
+                "development": {},
+                "production": {
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
+            }
+        },
+        "run": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "node dist/build/packages/design-system/figma-token-export-app/main.js"
+            },
+            "dependsOn": ["build"]
+        },
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "design-system-figma-token-export-app:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "design-system-figma-token-export-app:build:development"
+                },
+                "production": {
+                    "buildTarget": "design-system-figma-token-export-app:build:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/figma-token-export-app/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/figma-token-export-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

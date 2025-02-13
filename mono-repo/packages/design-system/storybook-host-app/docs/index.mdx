@@ -1,0 +1,325 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Intro" />
+
+<style>
+    {`
+    .sb-intro-brands {
+        align-items: center;
+        border: 2px solid #9453AD;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding-top: 50px;
+        position: relative;
+        width: 100%;
+    }
+    .sb-intro-brands__container {
+        --s: 130px;
+        --m: 4px;
+        --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+
+        display: flex;
+        margin: auto;
+        padding-bottom: var(--s);
+        width: 90%;
+    }
+    .sb-intro-brands__hexagon-grid {
+        font-size: 0;
+        margin-bottom: 5rem;
+
+        &::before {
+            content: '';
+            float: left;
+            height: 120%;
+            shape-outside: repeating-linear-gradient(rgb(0 0 0 / 0%) 0 calc(var(--f) - 3px), #000000 0 var(--f));
+            width: calc(var(--s) / 2 + var(--m));
+        }
+    }
+    .sb-intro-brands__logo {
+        --brand-logo-bg: #000;
+        background-color: var(--brand-logo-bg);
+        clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+        display: inline-block;
+        font-size: initial;
+        height: calc(var(--s) * 1.1547);
+        margin: var(--m);
+        margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+        position: relative;
+        width: var(--s);
+
+        &::after {
+            background-color: red;
+            clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+            content: '';
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+    .sb-intro-brands__logo p {
+      display: contents;
+    }
+    .sb-intro-brands__logo img {
+        aspect-ratio: 1;
+        left: 50%;
+        object-fit: contain;
+        position: absolute;
+        top: 50%;
+        translate: -50% -50%;
+        width: 80%;
+        z-index: 1;
+    }
+    .betmgm-logo {
+      --brand-logo-bg: #050505;
+    }
+    .betboo-logo {
+      --brand-logo-bg: #ef4923;
+    }
+    .betcity-logo {
+      --brand-logo-bg: #060322;
+    }
+    .borgata-logo {
+      --brand-logo-bg: #000;
+    }
+    .bwin-logo {
+      --brand-logo-bg: #000;
+    }
+    .coral-logo {
+      --brand-logo-bg: #084d8d;
+    }
+    .danskespil-logo {
+      --brand-logo-bg: #564523;
+    }
+    .foxybingo-logo {
+      --brand-logo-bg: #430061;
+    }
+    .foxygames-logo {
+      --brand-logo-bg: #55007b;
+    }
+    .galabingo-logo {
+      --brand-logo-bg: #082ba6;
+    }
+    .galacasino-logo {
+      --brand-logo-bg: #222222;
+    }
+    .gamebookers-logo {
+      --brand-logo-bg: #343236;
+    }
+    .giocodigitale-logo {
+      --brand-logo-bg: #f4f4f4;
+    }
+    .ladbrokes-logo {
+      --brand-logo-bg: #f01e28;
+    }
+    .oddset-logo {
+      --brand-logo-bg: #f2f2f2;
+    }
+    .optibet-logo {
+      --brand-logo-bg: #0f202d;
+    }
+    .partycasino-logo {
+      --brand-logo-bg: #211551;
+    }
+    .partycasino-one-logo {
+      --brand-logo-bg: #171717;
+    }
+    .partypoker-logo {
+      --brand-logo-bg: #0f0f10;
+    }
+    .partypoker-one-logo {
+      --brand-logo-bg: #171717;
+    }
+    .partysports-logo {
+      --brand-logo-bg: #171717;
+    }
+    .partyslots-logo {
+      --brand-logo-bg: #211551;
+    }
+    .pmu-logo {
+      --brand-logo-bg: #fff;
+    }
+    .premium-logo {
+      --brand-logo-bg: #000;
+    }
+    .slotclub-logo {
+      --brand-logo-bg: #5d0102;
+    }
+    .sportingbet-logo {
+      --brand-logo-bg: #035c8e;
+    }
+    .sportsinteraction-logo {
+      --brand-logo-bg: #07153d;
+    }
+    .vistabet-logo {
+      --brand-logo-bg: #161616;
+    }
+    .wheeloffortunecasino-logo {
+      --brand-logo-bg: #020312;
+    }
+    `}
+</style>
+
+# Welcome to Dice 
+
+The global Design System of Entain and BetMGM, called Dice, is a reusable component library that helps contributors build UIs faster. The goal is to make building durable UIs more productive and satisfying.
+
+![Entain](docs-assets/entain-logo.svg "Entain")
+
+![BetMGM](docs-assets/betmgm-logo.svg "BetMGM")
+
+### **Resources**
+
+<ul>
+  <li><a href="https://jira.corp.entaingroup.com/browse/INI-5745" target="_blank" rel="noopener noreferrer">Jira Initiative INI-5745</a></li>
+  <li><a href="https://confluence.corp.entaingroup.com/display/INIUE/Initiatives+User+Experience" target="_blank" rel="noopener noreferrer">Confluence</a></li>
+  <li><a href="https://vie.git.bwinparty.com/vanilla/monorepo/-/tree/main/packages/design-system" target="_blank" rel="noopener noreferrer">Git</a></li>
+  <li><a href="https://www.figma.com/design/NgrOt8MGJhe0obKFBQgqdT/Component-Tokens?node-id=2650-33784&t=44hNvhDk5Yc4aGje-0" target="_blank" rel="noopener noreferrer">Figma</a></li>
+</ul>
+
+### Component Status
+
+<ul>
+  <li><a href="https://jira.corp.entaingroup.com/secure/Dashboard.jspa?selectPageId=18515" target="_blank">Jira Dashboard</a></li>
+  <li><a href="https://confluence.corp.entaingroup.com/display/INIUE/All+Teams+Component+Status" target="_blank">Confluence All Team Component Status</a></li>
+</ul>
+
+We show the current state of readiness for each component:
+
+![Component Status Badges](docs-assets/component-status-badge.png "Component Status Badges")
+
+* **Jira**: Link to the Jira Epic
+* **Draft**: In development, it is not yet finished and may go through additional changes and testing
+* **UX Review** The component is ready, but it requires sign of by UX
+* **Experimental**: Can be integrated. UX updates and code change are likely to happen
+* **Integration Ready**: The component can be picked by the teams and is ready for integration. UX updates and code changes can still happen
+* **Stable**: The component is in use on production
+* **A11y**: Accessibility is implemented and available in a component
+
+## Our brands
+
+<div class="sb-intro-brands">
+<div class="sb-intro-brands__container">
+<div class="sb-intro-brands__hexagon-grid">
+
+<div class="sb-intro-brands__logo betmgm-logo">
+![BetMGM-grid](docs-assets/betmgm-logo.svg "BetMGM-grid")
+</div>
+
+<div class="sb-intro-brands__logo betboo-logo">
+![betboo](docs-assets/betboo-logo.svg "betboo")
+</div>
+
+<div class="sb-intro-brands__logo betcity-logo">
+![betcity](docs-assets/betcity-logo.svg "betcity")
+</div>
+
+<div class="sb-intro-brands__logo borgata-logo">
+![borgata](docs-assets/borgata-logo.svg "borgata")
+</div>
+
+<div class="sb-intro-brands__logo bwin-logo">
+![bwin](docs-assets/bwin-logo.svg "bwin")
+</div>
+
+<div class="sb-intro-brands__logo coral-logo">
+![coral](docs-assets/coral-logo.svg "coral")
+</div>
+
+<div class="sb-intro-brands__logo danskespil-logo">
+![danskespil](docs-assets/danskespil-logo.svg "danskespil")
+</div>
+
+<div class="sb-intro-brands__logo foxybingo-logo">
+![foxybingo](docs-assets/foxybingo-logo.svg "foxybingo")
+</div>
+
+<div class="sb-intro-brands__logo foxygames-logo">
+![foxygames](docs-assets/foxygames-logo.svg "foxygames")
+</div>
+
+<div class="sb-intro-brands__logo galabingo-logo">
+![galabingo](docs-assets/galabingo-logo.svg "galabingo")
+</div>
+
+<div class="sb-intro-brands__logo galacasino-logo">
+![galacasino](docs-assets/galacasino-logo.svg "galacasino")
+</div>
+
+<div class="sb-intro-brands__logo gamebookers-logo">
+![gamebookers](docs-assets/gamebookers-logo.svg "gamebookers")
+</div>
+
+<div class="sb-intro-brands__logo giocodigitale-logo">
+![giocodigitale](docs-assets/giocodigitale-logo.svg "giocodigitale")
+</div>
+
+<div class="sb-intro-brands__logo ladbrokes-logo">
+![ladbrokes](docs-assets/ladbrokes-logo.svg "ladbrokes")
+</div>
+
+<div class="sb-intro-brands__logo oddset-logo">
+![oddset](docs-assets/oddset-logo.svg "oddset")
+</div>
+
+<div class="sb-intro-brands__logo optibet-logo">
+![optibet](docs-assets/optibet-logo.svg "optibet")
+</div>
+
+<div class="sb-intro-brands__logo partycasino-logo">
+![partycasino](docs-assets/partycasino-logo.svg "partycasino")
+</div>
+
+<div class="sb-intro-brands__logo partycasino-one-logo">
+![partycasino-one](docs-assets/partycasino-one-logo.svg "partycas ino-one")
+</div>
+
+<div class="sb-intro-brands__logo partypoker-logo">
+![partypoker](docs-assets/partypoker-logo.svg "partypoker")
+</div>
+
+<div class="sb-intro-brands__logo partypoker-one-logo">
+![partypoker-one](docs-assets/partypoker-one-logo.svg "partypoker-one")
+</div>
+
+<div class="sb-intro-brands__logo partysports-logo">
+![partysports](docs-assets/partysports-logo.svg "partysports")
+</div>
+
+<div class="sb-intro-brands__logo partyslots-logo">
+![partyslots](docs-assets/partyslots-logo.svg "papartyslots")
+</div>
+
+<div class="sb-intro-brands__logo pmu-logo">
+![pmu](docs-assets/pmu-logo.svg "pmu")
+</div>
+
+<div class="sb-intro-brands__logo premium-logo">
+![premium](docs-assets/premium-logo.svg "premium")
+</div>
+
+<div class="sb-intro-brands__logo slotclub-logo">
+![slotclub](docs-assets/slotclub-logo.svg "slotclub")
+</div>
+
+<div class="sb-intro-brands__logo sportingbet-logo">
+![sportingbet](docs-assets/sportingbet-logo.svg "sportingbet")
+</div>
+
+<div class="sb-intro-brands__logo sportsinteraction-logo">
+![sportsinteraction](docs-assets/sportsinteraction-logo.svg "sportsinteraction")
+</div>
+
+<div class="sb-intro-brands__logo vistabet-logo">
+![vistabet](docs-assets/vistabet-logo.svg "vistabet")
+</div>
+
+<div class="sb-intro-brands__logo wheeloffortunecasino-logo">
+![wheeloffortunecasino](docs-assets/wheeloffortunecasino-logo.svg "wheeloffortunecasino")
+</div>
+
+</div>
+</div>
+</div>

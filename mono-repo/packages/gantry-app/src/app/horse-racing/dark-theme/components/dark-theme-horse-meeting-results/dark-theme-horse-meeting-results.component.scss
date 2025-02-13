@@ -1,0 +1,507 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.table-block {
+    margin: 20px 0 40px;
+    min-height: 366px;
+
+    @include breakpoint(multidesktop) {
+        margin: 10px 0 20px;
+        min-height: 183px;
+    }
+
+    .stage-boxes {
+        display: flex;
+
+        .left-boxes {
+            display: flex;
+            font-weight: $fw-header-meeting-result;
+        }
+
+        .right-box {
+            display: flex;
+            position: absolute;
+            right: 60px;
+            font-weight: $fw-header-meeting-result;
+
+            .state-box {
+                background-color: $state-box-bg;
+                color: $state-box-text;
+                width: 344px;
+                height: 56px;
+                border-radius: 100px;
+                border: 4px solid $color-white;
+                text-align: center;
+                font-size: $fs-md-row-header-meeting-result;
+                white-space: nowrap;
+
+                @include breakpoint(multidesktop) {
+                    width: 172px;
+                    height: 28px;
+                    border-radius: 50px;
+                    font-size: $fs-xs-row-header-meeting-result;
+                }
+            }
+
+            @include breakpoint(multidesktop) {
+                right: 30px;
+            }
+        }
+
+        .void-race {
+            display: flex;
+            font-weight: $fw-header-meeting-result;
+
+            .state-box {
+                background-color: $state-box-bg;
+                color: $state-box-text;
+                width: 344px;
+                height: 56px;
+                border-radius: 100px;
+                border: 4px solid $color-white;
+                text-align: center;
+                font-size: $fs-md-row-header-meeting-result;
+                white-space: nowrap;
+
+                @include breakpoint(multidesktop) {
+                    width: 172px;
+                    height: 28px;
+                    border-radius: 50px;
+                    font-size: $fs-xs-row-header-meeting-result;
+                }
+            }
+        }
+
+        .event-date-time-box {
+            width: 190px;
+            height: 56px;
+            line-height: normal;
+            flex-shrink: 0;
+            border-radius: 25px;
+            background-color: $time-box-bg;
+            text-align: center;
+            font-size: $fs-md-row-header-meeting-result;
+            font-weight: $fw-header-meeting-result;
+            margin-right: $fs-xs-row-header-meeting-result;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                width: 90px;
+                height: 28px;
+                border-radius: 12.5px;
+                font-size: $fs-xs-row-header-meeting-result;
+            }
+        }
+
+        .nonrunner-box {
+            min-width: 238px;
+            height: 56px;
+            line-height: normal;
+            border-radius: 100px;
+            border: 4px solid $color-white;
+            text-align: center;
+            color: $color-white;
+            font-size: $fs-md-row-header-meeting-result;
+            font-weight: $fw-header-meeting-result;
+            column-gap: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include breakpoint(multidesktop) {
+                min-width: 119px;
+                height: 28px;
+                border-radius: 50px;
+                border: 2px solid #fff;
+                font-size: $fs-xs-row-header-meeting-result;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.meeting-results-table {
+    position: static;
+    border-collapse: collapse;
+    margin-top: 24px;
+    color: $color-white;
+    width: 100%;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 12px;
+    }
+
+    .meeting-results-header {
+        height: 48px;
+        max-height: 48px;
+
+        @include breakpoint(multidesktop) {
+            height: 24px;
+            max-height: 24px;
+        }
+
+        th {
+            box-sizing: border-box;
+            text-align: left;
+            color: $color-white;
+            padding: 0;
+            font-size: $fs-md-row-header-meeting-result;
+            font-weight: $fw-subheader-meeting-result;
+            @include bottom-border-weight;
+
+            @include breakpoint(multidesktop) {
+                font-size: $fs-xs-row-header-meeting-result;
+            }
+
+            &.head-eachway {
+                max-width: 628px;
+                width: 628px;
+                font-size: $fs-md-row-header-meeting-result;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 314px;
+                    width: 314px;
+                    font-size: $fs-xs-row-header-meeting-result;
+                }
+            }
+
+            &.head-ran {
+                max-width: 364px;
+                width: 364px;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 182px;
+                    width: 182px;
+                }
+
+                .ran {
+                    width: 240px;
+                    max-width: 240px;
+                    text-align: center;
+
+                    @include breakpoint(multidesktop) {
+                        min-width: 120px;
+                        max-width: 120px;
+                    }
+                }
+            }
+
+            &.header-fc-tc {
+                min-width: 292px;
+                max-width: 292px;
+                white-space: nowrap;
+                text-align: center;
+
+                @include breakpoint(multidesktop) {
+                    min-width: 146px;
+                    max-width: 146px;
+                }
+            }
+
+            &.win {
+                min-width: 126px;
+                max-width: 126px;
+                text-align: center;
+
+                @include breakpoint(multidesktop) {
+                    min-width: 63px;
+                    max-width: 63px;
+                }
+            }
+
+            &.place {
+                min-width: 200px;
+                max-width: 200px;
+                text-align: center;
+
+                @include breakpoint(multidesktop) {
+                    min-width: 100px;
+                    max-width: 100px;
+                }
+            }
+
+            &.tote {
+                min-width: 194px;
+                max-width: 194px;
+                text-align: center;
+
+                @include breakpoint(multidesktop) {
+                    min-width: 97px;
+                    max-width: 97px;
+                }
+            }
+        }
+    }
+
+    .meeting-results-data {
+        td {
+            text-align: left;
+            vertical-align: top;
+            font-size: $fs-md-row-data-meeting-result;
+            font-weight: $fw-row-meeting-result;
+
+            ul {
+                li {
+                    margin-top: 26px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-top: 13px;
+                    }
+
+                    &:first-child {
+                        margin-top: 20px;
+
+                        @include breakpoint(multidesktop) {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $fs-xs-row-data-meeting-result;
+            }
+
+            .list-items {
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+                white-space: nowrap;
+
+                .position-deadheat,
+                .runner-details,
+                .forecast,
+                .forecast-value,
+                .tricast,
+                .tricast-value,
+                .win-value,
+                .place-value,
+                .exacta-value,
+                .trifecta-value {
+                    line-height: $fs-md-row-height-meeting-result;
+
+                    @include breakpoint(multidesktop) {
+                        line-height: $fs-xs-row-height-meeting-result;
+                    }
+                }
+            }
+
+            &.foreCast-or-tricast {
+                ul {
+                    li {
+                        width: 292px;
+                        max-width: 292px;
+                        white-space: nowrap;
+                        text-align: center;
+
+                        .forecast-value,
+                        .tricast-value {
+                            margin-top: 26px;
+                            width: 292px;
+                            max-width: 292px;
+                            align-items: center;
+                            text-align: center;
+                            height: $fs-md-row-height-meeting-result;
+
+                            @include breakpoint(multidesktop) {
+                                margin-top: 13px;
+                                width: 146px;
+                                max-width: 146px;
+                                height: $fs-xs-row-height-meeting-result;
+                            }
+                        }
+
+                        @include breakpoint(multidesktop) {
+                            width: 146px;
+                            max-width: 146px;
+                        }
+                    }
+                }
+            }
+
+            &.exacta-or-trifecta {
+                ul {
+                    li {
+                        width: 194px;
+                        max-width: 194px;
+                        white-space: nowrap;
+                        text-align: center;
+                        line-height: $fs-md-row-height-meeting-result;
+
+                        .exacta-value,
+                        .trifecta-value {
+                            height: $fs-md-row-height-meeting-result;
+                            margin-top: 26px;
+                            width: 194px;
+                            max-width: 194px;
+                            text-align: center;
+
+                            @include breakpoint(multidesktop) {
+                                height: $fs-xs-row-height-meeting-result;
+                                margin-top: 13px;
+                                width: 97px;
+                                max-width: 97px;
+                            }
+                        }
+
+                        @include breakpoint(multidesktop) {
+                            width: 97px;
+                            max-width: 97px;
+                            line-height: $fs-xs-row-height-meeting-result;
+                        }
+                    }
+                }
+            }
+
+            &.non-Runner-list {
+                color: $color-white;
+            }
+
+            .runner-details {
+                display: flex;
+                align-items: baseline;
+                line-height: $fs-md-row-height-meeting-result;
+
+                @include breakpoint(multidesktop) {
+                    line-height: $fs-xs-row-height-meeting-result;
+                }
+
+                .number {
+                    width: 116px;
+                    max-width: 116px;
+                    text-align: center;
+
+                    @include breakpoint(multidesktop) {
+                        width: 58px;
+                        max-width: 58px;
+                    }
+                }
+
+                .name {
+                    text-align: left;
+                    width: 430px;
+                    max-width: 430px;
+                    padding-left: 8px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 215px;
+                        max-width: 215px;
+                        padding-left: 4px;
+                    }
+
+                    .reserve-text {
+                        margin-left: 6px;
+
+                        @include breakpoint(multidesktop) {
+                            margin-left: 3px;
+                        }
+                    }
+                }
+
+                .horse-odds {
+                    min-width: 240px;
+                    max-width: 240px;
+                    text-align: center;
+
+                    @include breakpoint(multidesktop) {
+                        min-width: 120px;
+                        max-width: 120px;
+                    }
+                }
+
+                .fav {
+                    width: 96px;
+                    max-width: 96px;
+                    text-align: left;
+
+                    @include breakpoint(multidesktop) {
+                        width: 48px;
+                        max-width: 48px;
+                    }
+                }
+            }
+        }
+
+        .runner-position {
+            color: $color-white;
+            width: 82px;
+            max-width: 82px;
+            line-height: $fs-md-row-height-meeting-result;
+
+            @include breakpoint(multidesktop) {
+                width: 41px;
+                max-width: 41px;
+                line-height: $fs-xs-row-height-meeting-result;
+            }
+
+            ul {
+                text-align: left;
+            }
+        }
+
+        .runner-number-name {
+            width: 546px;
+            max-width: 546px;
+        }
+
+        .runner-price-fav {
+            width: 336px;
+            max-width: 336px;
+        }
+
+        .win-column {
+            width: 126px;
+            max-width: 126px;
+
+            @include breakpoint(multidesktop) {
+                width: 63px;
+                max-width: 63px;
+            }
+
+            ul {
+                text-align: center;
+            }
+        }
+
+        .place-column {
+            width: 200px;
+            max-width: 200px;
+
+            @include breakpoint(multidesktop) {
+                width: 100px;
+                max-width: 100px;
+            }
+
+            ul {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.base-body-wrapper {
+    min-height: calc(100vh - 280px);
+    max-height: calc(100vh - 280px);
+
+    @include breakpoint(multidesktop) {
+        min-height: calc(100vh - 140px);
+        max-height: calc(100vh - 140px);
+    }
+}
+
+.dividends-grid {
+    display: grid;
+    line-height: 38px;
+    height: 38px;
+    width: 100%;
+    overflow: hidden;
+    place-items: center;
+
+    &__col-4 {
+        position: relative;
+    }
+
+    @include breakpoint(multidesktop) {
+        line-height: 19px;
+        height: 19px;
+    }
+}

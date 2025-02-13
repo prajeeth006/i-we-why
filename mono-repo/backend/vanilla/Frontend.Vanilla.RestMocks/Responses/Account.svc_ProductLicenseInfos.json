@@ -1,0 +1,10 @@
+[
+    {
+        "licenseCode": "A_PLUS",
+        "licenseAccepted": true
+    },
+    {
+        "licenseCode": "B_PLUS",
+        "licenseAccepted": false
+    }
+]

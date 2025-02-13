@@ -1,0 +1,83 @@
+@use '../../shared-css/helpers' as helper;
+@import '../../shared-css/variables.scss';
+
+.modern-dialog {
+    &__wrapper {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    &__header {
+        background: $color-black-light;
+        border-radius: 5px 5px 0px 0px;
+        color: $white;
+
+        @include helper.font-styles($txt-sm-font-size, $fw-bold, 1.25px, normal);
+
+        padding: 10px $space-20;
+        text-transform: uppercase;
+    }
+
+    &__body {
+        @include helper.flex-container(flex-start, center);
+
+        padding: $space-20;
+        gap: $space-30;
+        background-color: $white;
+
+        span {
+            color: $text-black-color;
+            @include helper.font-styles($txt-sm-font-size, $fw-regular, 0.25px, 16px);
+
+        }
+    }
+
+    &__footer {
+        @include helper.flex-container(flex-end, center);
+
+        border-radius: 0px 0px 5px 5px;
+        background: $background-grey-color;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    &__action-btn {
+        @include helper.center-content();
+
+        @include helper.font-styles($txt-md-font-size, $fw-bold, 1.25px, normal);
+
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        gap: 10px;
+        height: 35px;
+        padding: 0px $space-30;
+        text-transform: uppercase;
+
+        &--cancel {
+            background-color: $white;
+            box-shadow: 0 0px 0px 0.6px $text-black-color;
+            color: $text-black-color;
+        }
+
+        &--save {
+            background: $btn-success-bg;
+            color: $white;
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}
+
+::ng-deep {
+    .cdk-overlay-dark-backdrop {
+        background: rgba(33, 33, 33, 0.50);
+    }
+
+    .cdk-overlay-pane.mat-mdc-dialog-panel {
+        max-width: 500px !important;
+    }
+}

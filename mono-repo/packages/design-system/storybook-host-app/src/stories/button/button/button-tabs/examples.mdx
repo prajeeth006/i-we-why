@@ -1,0 +1,40 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from '../button.component.stories';
+
+### Size
+
+<Canvas of={ButtonStories.AllButtonSizes} />
+
+### Variants
+
+<Canvas of={ButtonStories.AllButtonVariants} />
+
+### Ripple Effect
+
+<Canvas of={ButtonStories.RightIconSubTextRipple} />
+
+### Loading button
+
+<Canvas of={ButtonStories.ProcessingButton} />
+
+### Custom Loading button
+
+<Canvas of={ButtonStories.ProcessingButtonWithTemplate} />
+
+### Truncating
+
+<Canvas of={ButtonStories.TruncateTextButton} />
+
+### Wrap the text in the button
+
+<Canvas of={ButtonStories.WrapText} />
+
+### Disabled buttons
+
+<Canvas of={ButtonStories.DisabledButtons} />
+
+### All Variants
+
+<Canvas of={ButtonStories.AllButtons} />

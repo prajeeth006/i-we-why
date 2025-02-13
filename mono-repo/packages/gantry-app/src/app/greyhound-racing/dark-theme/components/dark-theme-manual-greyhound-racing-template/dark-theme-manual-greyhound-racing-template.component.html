@@ -1,0 +1,12 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <ng-container *ngIf="vm.isAnyEventResulted">
+            <gn-dark-theme-manual-results></gn-dark-theme-manual-results>
+        </ng-container>
+        <ng-container *ngIf="!vm.isAnyEventResulted">
+            <gn-dark-theme-manual-runners></gn-dark-theme-manual-runners>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

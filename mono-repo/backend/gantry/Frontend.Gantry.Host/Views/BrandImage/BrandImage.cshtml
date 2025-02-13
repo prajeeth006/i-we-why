@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;//"../Shared/MobileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html data-domain="@ViewBag.domain" server-name="@ViewBag.serverName">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>BrandImage</title>
+        <base href="/" />
+        <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+        <style type="text/css">
+            body {
+                margin: 0 !important;
+            }
+
+            .brand-image {
+                max-width: 75%;
+            }
+
+            .alert-danger h2 {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                word-wrap: break-word;
+            }
+
+            .alert-danger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .coral {
+                background-color: rgba(0, 71, 121)
+            }
+
+            .ladbrokes {
+                background-color: rgba(240, 30, 40)
+            }
+        </style>
+</head>
+<body>
+    
+    <div class="@(ViewBag.domain == "coral.co.uk" ?"alert alert-danger coral":"alert alert-danger ladbrokes")">
+        <img class="brand-image" src="@(ViewBag.domain == "coral.co.uk" 
+                                          ? 
+                                          "file:///opt/rdisp-frontend-helper/util/assets/Coral_logo.svg" : 
+                                          "file:///opt/rdisp-frontend-helper/util/assets/Ladbrokes_logo.svg")" [alt]="brandLabel" />
+    </div>
+</body>
+</html>
+
+
+    
+

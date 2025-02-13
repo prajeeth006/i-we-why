@@ -1,0 +1,27 @@
+@mixin neutral {
+    --ds-tooltip-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-tooltip-color-text: var(--semantic-color-on-surface-subtle);
+    --ds-tooltip-color-title: var(--semantic-color-on-surface-base);
+}
+
+@mixin shared {
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-tooltip-color-background: var(--semantic-color-surface-container-lowest-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-tooltip-color-text: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-16T17:13:16.553Z) */
+    --ds-tooltip-color-title: var(--semantic-color-on-surface-base);
+    --ds-tooltip-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-tooltip-size-max-width: 300px;
+    --ds-tooltip-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-tooltip-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-tooltip-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-tooltip-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-tooltip-space-stack: var(--semantic-spacing-stack-sm);
+}
+
+@mixin utility {
+    --ds-tooltip-color-background: var(--semantic-color-utility-base);
+    --ds-tooltip-color-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-tooltip-color-title: var(--semantic-color-on-surface-base-inverse);
+}

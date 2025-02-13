@@ -1,0 +1,223 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+@import '../../../../../../dark-theme-global-style/mixins/_utils.scss';
+
+.header-race-stage-result {
+    border: solid 5px $color-white;
+    color: $color-white;
+    font-size: $fs-full-result-stage;
+    height: 129px;
+    padding: 0 12px;
+    text-align: center;
+    width: 234px;
+
+    @include flex-center;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+        height: 64px;
+        font-size: $fs-quad-result-stage;
+        border-width: 2.5px;
+    }
+}
+
+.horse-table {
+    margin: $spacing-20 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: calc($spacing-20 / 2) 0 0;
+    }
+
+    li {
+        .selection-number {
+            font-size: $font-64;
+            font-style: normal;
+            font-weight: $fw-bold;
+            margin-left: 28px;
+            width: 82px;
+
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-32;
+                margin-left: 14px;
+                width: 41px;
+            }
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-40;
+                margin-left: 14px;
+                width: 41px;
+            }
+        }
+
+        .selection-image {
+            @include flex-center;
+
+            margin-left: 28px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 14px;
+            }
+
+            img {
+                height: 68px;
+                object-fit: contain;
+                width: 80px;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+
+        .selection-name {
+            font-size: $font-64;
+            font-weight: $fw-bold;
+            padding-left: 28px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-32;
+                padding-left: 14px;
+            }
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-40;
+                padding-left: 14px;
+            }
+        }
+
+        .selection-position {
+            span {
+                @include breakpoint(multidesktophalf) {
+                    width: 100px;
+                    height: 40px;
+                    border-radius: 57px;
+                    font-size: $font-26;
+                    border-width: 2px;
+                }
+            }
+        }
+
+        .selection-favourite {
+            font-size: $font-40;
+            height: 56px;
+            margin-left: 28px;
+            width: 116px;
+            font-weight: $fw-semibold;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-20;
+                height: 28px;
+                margin-left: 14px;
+                width: 58px;
+            }
+        }
+
+        .selection-result {
+            @include flex-center;
+
+            font-size: $font-64;
+            font-style: normal;
+            font-weight: $fw-bold;
+            height: 84px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-32;
+                height: 42px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-35;
+                height: 42px;
+            }
+        }
+    }
+}
+
+.resultcast {
+    display: flex;
+    font-weight: $fw-medium;
+    padding: 90px 0 0;
+
+    &.more-runners {
+        padding: $spacing-20 0 0;
+        @include breakpoint(multidesktop) {
+            padding: calc($spacing-20 / 2) 0;
+        }
+    }
+
+    &.less-runners {
+        padding: 90px 0 0;
+
+        @include breakpoint(multidesktop) {
+            padding: 45px 0 0;
+        }
+    }
+
+    .rightforeCast,
+    .leftforeCast {
+        flex-basis: 50%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        row-gap: 28px;
+
+        @include breakpoint(multidesktop) {
+            row-gap: 14px;
+        }
+
+        li {
+            color: $color-white;
+            display: flex;
+            font-size: $fs-full-result-forecast;
+            line-height: $fs-full-result-forecast;
+
+            @include breakpoint(multidesktop) {
+                font-size: $fs-quad-result-forecast;
+                line-height: $fs-quad-result-forecast;
+            }
+
+            .foreCast-title {
+                font-weight: $fw-medium;
+                margin-right: $spacing-20;
+                min-width: 200px;
+
+                @include breakpoint(multidesktop) {
+                    margin-right: 10px;
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+.base-page-wrapper {
+    .base-body-wrapper {
+        .selection-content-result {
+            margin-left: 24px;
+        }
+    }
+}
+
+.align-center {
+    align-items: center;
+    display: flex;
+}
+
+.dividends-grid {
+    display: grid;
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+
+    &__col-4 {
+        position: relative;
+    }
+    @include breakpoint(multidesktop) {
+        height: 24px;
+    }
+}

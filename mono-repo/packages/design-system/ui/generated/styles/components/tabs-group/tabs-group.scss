@@ -1,0 +1,7 @@
+@mixin default {
+    --ds-tabs-group-color-border-bottom: var(--semantic-color-on-surface-divider);
+}
+
+@mixin inverse {
+    --ds-tabs-group-color-border-bottom: var(--semantic-color-on-surface-divider-inverse);
+}

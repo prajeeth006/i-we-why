@@ -1,0 +1,11 @@
+@import './src/global-style/_all-variables.scss';
+
+.snooker-container {
+  ::ng-deep gn-multimarket-match-betting .bet-details-header {
+    padding-top: 10px !important;
+
+    @include breakpoint(multidesktop) {
+      padding-top: 7px !important;
+    }
+  }
+}

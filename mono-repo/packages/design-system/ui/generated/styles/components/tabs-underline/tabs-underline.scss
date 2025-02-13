@@ -1,0 +1,72 @@
+@mixin default {
+    --ds-tabs-underline-active-color-bg: var(--semantic-color-l2-tabs-background-active);
+    --ds-tabs-underline-active-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-active);
+    --ds-tabs-underline-active-color-text: var(--semantic-color-l2-tabs-underlined-on-background-active);
+    --ds-tabs-underline-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-tabs-underline-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-tabs-underline-disabled-color-text: var(--semantic-color-on-disabled-base);
+    --ds-tabs-underline-enabled-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-base);
+    --ds-tabs-underline-enabled-color-text: var(--semantic-color-l2-tabs-underlined-on-background-base);
+    --ds-tabs-underline-hover-color-bg: var(--semantic-color-l2-tabs-background-hover);
+    --ds-tabs-underline-hover-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-hover);
+    --ds-tabs-underline-hover-color-text: var(--semantic-color-l2-tabs-underlined-on-background-hover);
+    --ds-tabs-underline-selected-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-selected);
+    --ds-tabs-underline-selected-color-indicator: var(--semantic-color-l2-tabs-underlined-indicator-selected);
+    --ds-tabs-underline-selected-color-text: var(--semantic-color-l2-tabs-underlined-on-background-selected);
+}
+
+@mixin full-width {
+    --ds-tabs-underline-space-margin-left: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-underline-space-margin-right: var(--semantic-spacing-container-padding-xl);
+}
+
+@mixin inverse {
+    --ds-tabs-underline-active-color-bg: var(--semantic-color-l2-tabs-background-active-inverse);
+    --ds-tabs-underline-active-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-active-inverse);
+    --ds-tabs-underline-active-color-text: var(--semantic-color-l2-tabs-underlined-on-background-active-inverse);
+    --ds-tabs-underline-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-tabs-underline-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-tabs-underline-disabled-color-text: var(--semantic-color-on-disabled-base-inverse);
+    --ds-tabs-underline-enabled-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-base-inverse);
+    --ds-tabs-underline-enabled-color-text: var(--semantic-color-l2-tabs-underlined-on-background-base-inverse);
+    --ds-tabs-underline-hover-color-bg: var(--semantic-color-l2-tabs-background-hover-inverse);
+    --ds-tabs-underline-hover-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-hover-inverse);
+    --ds-tabs-underline-hover-color-text: var(--semantic-color-l2-tabs-underlined-on-background-hover-inverse);
+    --ds-tabs-underline-selected-color-icon: var(--semantic-color-l2-tabs-underlined-on-background-selected-inverse);
+    --ds-tabs-underline-selected-color-indicator: var(--semantic-color-l2-tabs-underlined-indicator-selected-inverse);
+    --ds-tabs-underline-selected-color-text: var(--semantic-color-l2-tabs-underlined-on-background-selected-inverse);
+}
+
+@mixin large {
+    --ds-tabs-underline-size-icon: var(--semantic-size-icon-xlarge);
+    --ds-tabs-underline-size-max-height: var(--semantic-size-x35);
+    --ds-tabs-underline-space-inline: var(--semantic-spacing-inline-md);
+    --ds-tabs-underline-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-underline-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-underline-space-stack: var(--semantic-spacing-stack-md);
+}
+
+@mixin non-full-width {
+    --ds-tabs-underline-space-margin-left: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-underline-space-margin-right: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin shared {
+    --ds-tabs-underline-radius-border: var(--semantic-radius-squared);
+    --ds-tabs-underline-radius-incidator-border-bottom: var(--semantic-radius-squared);
+    --ds-tabs-underline-radius-incidator-border-top: var(--semantic-radius-max);
+    --ds-tabs-underline-size-indictor-height: var(--semantic-size-xhalf);
+    --ds-tabs-underline-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-underline-space-padding-top: var(--semantic-spacing-container-padding-xl);
+    --ds-tabs-underline-space-selected-padding-bottom: var(--semantic-spacing-container-padding-lg);
+}
+
+@mixin small {
+    --ds-tabs-underline-number: 0;
+    --ds-tabs-underline-size-icon: var(--semantic-size-icon-medium);
+    --ds-tabs-underline-size-max-height: var(--semantic-size-x25);
+    --ds-tabs-underline-space-inline: var(--semantic-spacing-inline-sm);
+    --ds-tabs-underline-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-underline-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-tabs-underline-space-stack: var(--semantic-spacing-stack-sm);
+}

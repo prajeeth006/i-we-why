@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "target": "es2020",
+    "module": "esnext",
+    "stripInternal": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom", "es2021"],
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "outDir": "../../Gantry/Frontend.Gantry.Host/ClientDist",
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "ignoreDeprecations": "5.0",
+    "baseUrl": ".",
+    "paths": {
+
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+  },
+  // "files": ["src/main.ts","src/polyfills.ts"],
+  "include": ["src/**/*","src/**/*.d.ts"],
+  "exclude": ["**/*.spec.ts","**/environments/*","**/test.ts", "**/mocks/**", "**/mock/**"],
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": true,
+    "enableIvy": true
+  }
+}

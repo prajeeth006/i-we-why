@@ -1,0 +1,223 @@
+@use '../../../../../shared-css/helpers' as helper;
+@use '../../../../../shared-css/abstracts' as abstract;
+@import '../../../../../shared-css/variables.scss';
+
+.screens-wrapper {
+
+    .tv-screen-section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: $white;
+        border: 0.5px solid $background-grey-1;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 5px 5px 0;
+        width: 114px;
+        height: 69px;
+        font-size: $txt-md-font-size;
+        line-height: 20px;
+
+        &.large-screen {
+            width: 228px;
+            height: 185px;
+
+            .screen-body {
+                height: 162px
+            }
+        }
+
+        &.half-screen {
+            height: 185px;
+        }
+
+        &.disabled {
+            opacity: $half-opacity;
+        }
+
+        .screen-body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 45px;
+            border-radius: 2px;
+            border-width: 1px;
+            border-style: solid;
+            box-sizing: border-box;
+            padding: 2px;
+            position: relative;
+
+            &.running-event {
+                align-items: flex-start;
+            }
+
+            &.longer-tv-txt-name {
+                padding: 0 2.5px;
+            }
+
+            &.half-screen-inner-box {
+                height: 161px;
+            }
+
+            .event-image {
+                height: 28px;
+                width: 28px;
+            }
+
+            .asset-name {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 12px;
+                text-align: center;
+                letter-spacing: 0.6px;
+            }
+
+            .screen-name-and-icon {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 5px;
+
+                &.sky-tv {
+                    height: 100%;
+                }
+
+                &.isDiffAssetDropped {
+                    row-gap: 3px;
+                }
+
+                &.isSameAssetDropped {
+                    height: 100%;
+                }
+
+                .asset-icon-section {
+                    height: 24px;
+                    width: 98px;
+                    border-radius: 2px 2px 0px 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $txt-md-font-size;
+                    line-height: 20px;
+
+                    .asset-icon {
+                        width: 20px;
+                        height: 20px;
+
+                        &.tv-large-brand-icon {
+                            width: 37px;
+                            height: 28px;
+                            object-fit: contain;
+                        }
+
+                        &.tv-small-brand-icon {
+                            width: 28px;
+                            height: 22px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    &.half-screen-asset-icon-section {
+                        height: 138px;
+                    }
+
+                    &.full-screen-icon-section {
+                        width: 210px;
+                        height: 138px;
+                    }
+                }
+            }
+
+            .asset-display-name {
+                position: absolute;
+                right: 2px;
+                top: 2px;
+                font-size: $txt-sm-font-size;
+                font-weight: 500;
+                line-height: 14px;
+                letter-spacing: 0.6px;
+                text-align: center;
+                padding: 0 2px;
+                color: $white;
+            }
+        }
+
+        .screen-number {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            box-sizing: border-box;
+            align-self: center;
+            width: auto;
+            font-weight: 500;
+            text-align: center;
+            padding: 0px 4px;
+            height: 14px;
+            line-height: 14px;
+            box-sizing: border-box;
+            background-color: $color-black-light;
+            border: 1px solid $color-black-light;
+            border-radius: 3px;
+            color: $white;
+            letter-spacing: 0.6px;
+            font-size: $txt-sm-font-size;
+            white-space: nowrap;
+
+            @include abstract.breakpoint-2 {
+                font-size: $txt-xs-font-size;
+            }
+
+            &.large-screen-tag {
+                height: 18px;
+                line-height: 18px;
+            }
+
+            .screen-number-img {
+                margin-right: 5px;
+
+                img {
+                    width: 12px;
+                    height: 10px
+                }
+            }
+
+        }
+    }
+
+    .event-name-and-time {
+        display: flex;
+        justify-content: center;
+        font-size: $txt-sm-font-size;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.4px;
+        width: 100%;
+        height: 32px;
+        line-height: 20px;
+        color: $text-black-color;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        word-break: break-all;
+
+        @include abstract.breakpoint-2 {
+            width: 90px;
+        }
+    }
+
+
+}
+
+::ng-deep .gantry-tooltip {
+    background-color: $text-black-color;
+    width: 122px;
+    border-radius: 2px;
+    padding: 2px, 4px, 2px, 4px;
+    gap: 5px;
+    position: relative;
+    bottom: 40%;
+    font-size: 12px;
+    word-wrap: break-word;
+}

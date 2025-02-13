@@ -1,0 +1,167 @@
+@use '../../../../../../shared-css/helpers' as helper;
+@import '../../../../../../shared-css/variables.scss';
+
+/**
+* @description: this mixin helps in creating the layout widgets
+* @params $widgetStyle : (default | active | inactive)
+*   default: default style widgets when user click on screen layout change toggle button
+*   active: active style widgets when screen layout change toggle is closed
+*   inactive: inactive style widgets when screens restricted to change layout
+*/
+@mixin screen-layout($widgetStyle : default) {
+    .screen-layout {
+        box-sizing: border-box;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        border: 1px solid $color-black-5;
+        background-color: $white;
+        display: grid;
+        gap: 2px;
+        padding: 2px;
+
+        @if $widgetStyle ==active {
+            border-color: $color-black-light;
+            background-color: $color-black-light;
+        }
+
+        @else if $widgetStyle ==inactive {
+            border-color: $color-black-5;
+            background-color: $color-black-light;
+            opacity: 0.5;
+        }
+
+        .screen-widget {
+            background-color: $color-black-6;
+
+            @if $widgetStyle ==active {
+                background-color: $white;
+            }
+
+            @else if $widgetStyle ==inactive {
+                background-color: $white;
+            }
+        }
+
+        &.screen-layout-duo-1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.screen-layout-trio-1 {
+            grid-template-columns: repeat(2, 1fr);
+
+            .screen-widget:first-child {
+                grid-area: 1 / 1 / 3 / 2;
+            }
+        }
+
+        &.screen-layout-trio-2 {
+            grid-template-columns: repeat(2, 1fr);
+
+            .screen-widget:last-child {
+                grid-area: 1 / 2 / 3 / 3
+            }
+        }
+
+        &.screen-layout-quad {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.active {
+            border-color: $primary-color-2;
+            background-color: $primary-color-2;
+
+            .screen-widget {
+                background-color: $white;
+            }
+        }
+    }
+
+}
+
+
+.screen-toggle-widget {
+    position: absolute;
+    left: 102px;
+    bottom: 81px;
+
+
+    &.screen-layout-single {
+        bottom: 58px;
+    }
+
+    .screen-toggle {
+        box-sizing: border-box;
+        position: relative;
+        @include helper.center-content();
+        flex-direction: column;
+        gap: 5px;
+        padding: 3px;
+        border-radius: 5px;
+        background: $white;
+        box-shadow: 0px 0px 2px 0px $box-shadow;
+
+        &.active {
+            border-radius: 0px 0px 5px 5px;
+            padding-top: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 17px;
+                left: 0;
+                background-color: $white;
+                z-index: 1;
+                width: 22px;
+                height: 4px;
+                user-select: none;
+            }
+        }
+
+
+
+        &-layout-options {
+            @include helper.center-content();
+            position: absolute;
+            bottom: 19px;
+            padding: 3px;
+            column-gap: 5px;
+            border-radius: 5px;
+            background: $white;
+            box-shadow: 0px 0px 2px 0px $box-shadow;
+
+            @include screen-layout();
+        }
+
+        &-active-layout-option {
+            @include screen-layout(active);
+
+            &.inactive {
+                @include screen-layout(inactive);
+            }
+        }
+
+        &-button {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: transparent;
+            @include helper.center-content();
+
+            &.active {
+                transform: rotate(180deg);
+            }
+
+            &.inactive {
+                opacity: 0.5;
+                user-select: none;
+            }
+        }
+    }
+
+    &.disabled{
+        button, .screen-layout{
+            opacity: .5;
+        }
+    }
+}

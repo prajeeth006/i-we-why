@@ -1,0 +1,81 @@
+@use '../../generated/styles/components/numpad/numpad' as ds-numpad;
+@use '../../fonts/font-helper' as helper;
+
+.ds-numpad {
+    @include ds-numpad.shared;
+
+    --ds-numpad-grid-width: 100%;
+
+    box-sizing: border-box;
+    content-visibility: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    .ds-numpad-grid {
+        display: grid;
+        gap: var(--ds-numpad-space-inline);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: var(--ds-numpad-grid-width);
+    }
+
+    .ds-numpad-ok {
+        grid-row: span 3;
+    }
+
+    .ds-numpad-zero {
+        grid-column: span 2;
+    }
+
+    .ds-numpad-btn {
+        @include ds-numpad.num-button;
+        @include helper.set-font-variables('numpad', 'label', 'lg-strong');
+        @include helper.setup-font-style('numpad');
+        @include ds-numpad.default;
+
+        /* Coloring */
+        --ds-numpad-btn-bg: var(--ds-numpad-enabled-color-bg);
+        --ds-numpad-btn-color-icon: var(--ds-numpad-enabled-color-icon);
+        --ds-numpad-btn-color-text: var(--ds-numpad-enabled-color-text);
+
+        background: var(--ds-numpad-btn-bg);
+        border: none;
+        border-radius: var(--ds-numpad-radius-border);
+        color: var(--ds-numpad-btn-color-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        min-height: var(--ds-numpad-size-height);
+        min-width: var(--ds-numpad-size-min-width);
+        padding: var(--ds-numpad-space-padding-top, 0) var(--ds-numpad-space-padding-right, 0) var(--ds-numpad-space-padding-bottom, 0)
+            var(--ds-numpad-space-padding-left, 0);
+
+        .ds-numpad-icon {
+            color: var(--ds-numpad-btn-color-icon);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                --ds-numpad-btn-bg: var(--ds-numpad-hover-color-bg);
+                --ds-numpad-btn-color-icon: var(--ds-numpad-hover-color-icon);
+                --ds-numpad-btn-color-text: var(--ds-numpad-hover-color-text);
+
+                /* added this temporary fix to overcome the anchor tag styles which are overriding from themepark file reboot.scss  which will be removed
+       eventually once we are more stable with DS and more teams have adopted wide range of components from DS */
+                color: var(--ds-numpad-hover-color-text);
+            }
+        }
+
+        &:active {
+            --ds-numpad-btn-bg: var(--ds-numpad-active-color-bg);
+            --ds-numpad-btn-color-icon: var(--ds-numpad-active-color-icon);
+            --ds-numpad-btn-color-text: var(--ds-numpad-active-color-text);
+        }
+    }
+
+    &.ds-numpad-inverse .ds-numpad-btn {
+        @include ds-numpad.inverse;
+    }
+}

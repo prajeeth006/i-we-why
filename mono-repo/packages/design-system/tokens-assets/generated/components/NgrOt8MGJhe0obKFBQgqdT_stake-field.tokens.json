@@ -1,0 +1,542 @@
+{
+    "stake-field": {
+        "default": {
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "error": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.outline.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "focused": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.active}"
+                    },
+                    "cursor": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "placeholder-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.hover}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    }
+                }
+            }
+        },
+        "inverse": {
+            "disabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "error": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.outline.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "focused": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.active-inverse}"
+                    },
+                    "cursor": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "placeholder-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "bg": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.hover-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "stake-field",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                },
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x25}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-md}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-lg}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-md}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "stake-field",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.sm}"
+                }
+            }
+        }
+    }
+}

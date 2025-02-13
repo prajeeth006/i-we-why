@@ -1,0 +1,41 @@
+@using Newtonsoft.Json.Linq
+
+@code {
+
+    [Parameter]
+    public JObject DynaConFeatureJson { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string IconClass { get; set; }
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+}
+
+<BSButtonGroup>
+    @ChildContent
+    <BSDropdown Class="dropdown-menu-right">
+        <Toggler>
+            <BSButton Color="BSColor.Success" Size="Size.Small" IsDisabled="IsDisabled" OnClick="() => OnClick.InvokeAsync(null)">
+                <span class="oi @IconClass"></span> @Text
+            </BSButton>
+            <BSToggle IsButton="true" Color="BSColor.Success" Size="Size.Small" IsDisabled="@IsDisabled"></BSToggle>
+        </Toggler>
+        <Content>
+            @foreach (var keyName in DynaConFeatureJson.Properties().Select(p => p.Name))
+            {
+                <BSLink IsButton="true" Class="w-100 text-left" OnClick="() => OnClick.InvokeAsync(keyName)">@keyName</BSLink>
+            }
+        </Content>
+    </BSDropdown>
+</BSButtonGroup>

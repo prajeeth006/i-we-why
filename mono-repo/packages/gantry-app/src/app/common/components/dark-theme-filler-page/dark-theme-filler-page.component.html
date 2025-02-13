@@ -1,0 +1,7 @@
+<ng-container *ngIf="fillerPageMessage$ | async as fillerPageMessage">
+    <div class="filler-page" [ngClass]="{ 'avr-class': pageName === 'avr' }">
+        <div class="filler-page-message">
+            {{ fillerPageMessage }}
+        </div>
+    </div>
+</ng-container>

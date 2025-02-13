@@ -1,0 +1,14 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Host\DataProtection\key-bc8627db-94b9-4067-ad9d-2da02d0cb7aa.xml
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Host\Frontend.Host.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Host\Frontend.Host.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Host\Frontend.Host.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.D4AECE57.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\refint\Frontend.Host.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\Frontend.Host.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Host\obj\Debug\ref\Frontend.Host.dll

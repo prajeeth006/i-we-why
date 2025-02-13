@@ -1,0 +1,6 @@
+@mixin shared {
+    --ds-loading-indicator-color-bg: var(--semantic-color-primary-base);
+    --ds-loading-indicator-color-border: var(--semantic-color-opacity-transparent);
+    --ds-loading-indicator-size-height: var(--semantic-size-x8);
+    --ds-loading-indicator-size-width: var(--semantic-size-x8);
+}

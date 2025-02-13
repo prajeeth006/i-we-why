@@ -1,0 +1,45 @@
+<div class="ds-search-bar" role="search" aria-label="Search bar" aria-flowto="">
+    <div class="ds-search-bar-icon" aria-hidden="true">
+        <ng-container *ngTemplateOutlet="searchIcon || defaultSearchIcon" />
+        <ng-template #defaultSearchIcon>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.81578 14.5895C11.5568 14.5895 14.5895 11.5568 14.5895 7.81578C14.5895 4.07478 11.5568 1.0421 7.81578 1.0421C4.07478 1.0421 1.0421 4.07478 1.0421 7.81578C1.0421 11.5568 4.07478 14.5895 7.81578 14.5895ZM7.81578 15.6316C12.1323 15.6316 15.6316 12.1323 15.6316 7.81578C15.6316 3.49924 12.1323 0 7.81578 0C3.49924 0 0 3.49924 0 7.81578C0 12.1323 3.49924 15.6316 7.81578 15.6316Z"
+                    fill="currentColor" />
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.2632 16L12.6579 13.3948L13.3948 12.6579L16 15.2632L15.2632 16Z"
+                    fill="currentColor" />
+            </svg>
+        </ng-template>
+    </div>
+    <ng-content select="[dsSearchInput]" />
+    <span
+        class="ds-search-bar-close"
+        (mousedown)="clearIconMouseDownEventHandler()"
+        (mouseup)="clearIconMouseUpEventHandler()"
+        role="button"
+        aria-label="cleared search field"
+        [tabindex]="clearIconTabIndex">
+        <ng-container *ngTemplateOutlet="closeIcon || defaultCloseIcon" />
+        <ng-template #defaultCloseIcon>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="clear search field">
+                <g clip-path="url(#clip0_23576_2613)">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM4.83051 4.83051C5.10822 4.55281 5.55847 4.55281 5.83618 4.83051L8.00001 6.99435L10.1638 4.83051C10.4416 4.55281 10.8918 4.55281 11.1695 4.83051C11.4472 5.10822 11.4472 5.55847 11.1695 5.83618L9.00567 8.00001L11.1695 10.1638C11.4472 10.4416 11.4472 10.8918 11.1695 11.1695C10.8918 11.4472 10.4416 11.4472 10.1638 11.1695L8.00001 9.00567L5.83618 11.1695C5.55847 11.4472 5.10822 11.4472 4.83051 11.1695C4.55281 10.8918 4.55281 10.4416 4.83051 10.1638L6.99435 8.00001L4.83051 5.83618C4.55281 5.55847 4.55281 5.10822 4.83051 4.83051Z"
+                        fill="currentColor" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_23576_2613">
+                        <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </ng-template>
+    </span>
+</div>

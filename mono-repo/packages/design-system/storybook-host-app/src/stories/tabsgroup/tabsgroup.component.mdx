@@ -1,0 +1,26 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as TabsGroupStories from './tabsgroup.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './tabsgroup-tabs/overview.mdx';
+import MySecondTab from './tabsgroup-tabs/examples.mdx';
+
+# TabsGroup Component
+
+<Meta of={TabsGroupStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

@@ -1,0 +1,65 @@
+@use '../../generated/styles/components/divider/divider' as ds-divider;
+
+.ds-divider {
+    @include ds-divider.default;
+    @include ds-divider.shared;
+
+    --divider-height: var(--ds-divider-size-border);
+    --divider-width: 100%;
+
+    box-sizing: border-box;
+    display: flex;
+    height: var(--divider-height);
+    width: var(--divider-width);
+
+    &.on-surface {
+        border-top: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-color-border);
+    }
+
+    &.on-surface-lowest {
+        border-top: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-lowest-color-border);
+    }
+
+    &.on-surface-high {
+        border-top: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-high-color-border);
+    }
+
+    &.on-surface-low {
+        border-top: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-low-color-border);
+    }
+
+    &.on-surface-highest {
+        border-top: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-highest-color-border);
+    }
+
+    &.ds-divider-vertical {
+        --divider-height: 100%;
+        --divider-width: var(--ds-divider-size-border);
+
+        border-top: none;
+
+        &.on-surface {
+            border-left: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-color-border);
+        }
+
+        &.on-surface-lowest {
+            border-left: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-lowest-color-border);
+        }
+
+        &.on-surface-high {
+            border-left: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-high-color-border);
+        }
+
+        &.on-surface-low {
+            border-left: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-low-color-border);
+        }
+
+        &.on-surface-highest {
+            border-left: var(--ds-divider-size-border) solid var(--ds-divider-on-surface-highest-color-border);
+        }
+    }
+
+    &.ds-divider-inverse {
+        @include ds-divider.inverse;
+    }
+}

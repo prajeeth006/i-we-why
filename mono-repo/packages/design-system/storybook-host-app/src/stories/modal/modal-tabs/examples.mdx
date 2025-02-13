@@ -1,0 +1,30 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ModalComponentStories from '../modal.component.stories';
+
+## **DsModal**
+
+<Canvas of={ModalComponentStories.Default} />
+
+## **DsModalHeader**
+
+<Canvas of={ModalComponentStories.WithTitleAndClose} />
+
+## Usage with CdkDialog
+
+<Canvas of={ModalComponentStories.WithCdkDialog} />
+
+## Usage with MatDialog
+
+<Canvas of={ModalComponentStories.WithMatDialog} />
+
+### Other examples:
+
+<Canvas of={ModalComponentStories.BolderSubtitleThanTitle}></Canvas>
+
+<Canvas of={ModalComponentStories.CloseTitleLabelAction} />
+
+<Canvas of={ModalComponentStories.ActionsAndCenteredTitle} />
+
+<Canvas of={ModalComponentStories.BackBtnTitleLabelAction} />

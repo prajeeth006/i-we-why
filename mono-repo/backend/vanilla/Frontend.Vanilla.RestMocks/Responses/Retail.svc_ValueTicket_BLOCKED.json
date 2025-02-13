@@ -1,0 +1,38 @@
+{
+    "agentName": "",
+    "amlCurrentStatus": "BLOCKED",
+    "amlDecisionHistoryDetails": [
+        {
+            "amlAgentName": "",
+            "amlCurrentStatus": "BLOCKED",
+            "amlDecisionDate": "",
+            "amlPreviousStatus": "",
+            "changeValueTicketDate": "/Date(1634042373000)/",
+            "comments": "value ticket amount is greater than 100",
+            "isManualTicketLocking": false,
+            "lockingReasonAML": "",
+            "shopAgentName": "System"
+        }
+    ],
+    "amount": 10000,
+    "comments": "value ticket amount is greater than 100",
+    "currency": "GBP",
+    "errorCode": "",
+    "errorMsg": "",
+    "lockingDetail": {
+        "lockingReason": "",
+        "lockingTime": "/Date(1634042373000)/",
+        "lockingUser": "System",
+        "manualLock": false,
+        "status": "BLOCKED"
+    },
+    "paidOutDate": "",
+    "printedDate": "/Date(1634042373000)/",
+    "shopId": 2901,
+    "status": "SUCCESS",
+    "terminalId": 1,
+    "terminalIdPaidOut": "",
+    "unlockingDetail": "",
+    "valueTicketId": "V-120839KPX27MC8ZN",
+    "valueTicketStatus": "PRINTED"
+}

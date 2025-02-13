@@ -1,0 +1,6 @@
+<div *ngIf="accountInformation?.User?.Profile" class="login-area">
+  <a href="" (click)="onLogout()" id="logOut">Log out</a>
+  <span class="pipe-divider">|</span>
+  <span class="user-wrapper">{{ accountInformation?.User?.Profile?.FullName }}</span>
+  <img class="user-info-icon" [src]="accountInformation?.User?.Profile?.Portrait" />
+</div>

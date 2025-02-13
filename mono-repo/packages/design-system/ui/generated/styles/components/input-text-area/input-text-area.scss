@@ -1,0 +1,235 @@
+/** @deprecated This mixin is no longer available in Figma */
+@mixin default {
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-background: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-border: var(--semantic-color-disabled-outline);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-counter: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-grabber: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-icon-left: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-input-text: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-label: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-required-text: var(--semantic-color-negative-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-background: var(--semantic-color-surface-container-lowest-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-border: var(--semantic-color-surface-outline-low-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-counter: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-grabber: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-icon-left: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-input-text: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-required-text: var(--semantic-color-negative-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-background: var(--semantic-color-surface-container-lowest-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-border: var(--semantic-color-negative-outline-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-counter: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-grabber: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-icon-left: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-input-text: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-required-text: var(--semantic-color-negative-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-background: var(--semantic-color-surface-container-lowest-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-border: var(--semantic-color-utility-outline-active);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-counter: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-cursor: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-grabber: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-icon-left: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-input-text: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-placeholder-text: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-required-text: var(--semantic-color-negative-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-background: var(--semantic-color-surface-container-lowest-hover);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-border: var(--semantic-color-surface-outline-low-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-counter: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-grabber: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-icon-left: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-input-text: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-required-text: var(--semantic-color-negative-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-background: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-border: var(--semantic-color-disabled-outline);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-counter: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-grabber: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-icon-left: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-input-text: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-label: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-required-text: var(--semantic-color-negative-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin inverse {
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-background: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-counter: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-grabber: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-icon-left: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-input-text: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-label: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-disabled-color-required-text: var(--semantic-color-negative-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-background: var(--semantic-color-surface-container-lowest-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-border: var(--semantic-color-surface-outline-low-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-counter: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-grabber: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-icon-left: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-enabled-color-required-text: var(--semantic-color-negative-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-background: var(--semantic-color-surface-container-lowest-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-border: var(--semantic-color-negative-outline-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-counter: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-grabber: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-icon-left: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-error-color-required-text: var(--semantic-color-negative-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-background: var(--semantic-color-surface-container-lowest-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-border: var(--semantic-color-utility-outline-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-counter: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-cursor: var(--semantic-color-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-grabber: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-icon-left: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-placeholder-text: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-focused-color-required-text: var(--semantic-color-negative-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-background: var(--semantic-color-surface-container-lowest-hover-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-border: var(--semantic-color-surface-outline-low-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-counter: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-grabber: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-icon-left: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-hover-color-required-text: var(--semantic-color-negative-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-background: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-border: var(--semantic-color-disabled-outline-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-counter: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-grabber: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-icon-left: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-input-text: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-label: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-locked-color-required-text: var(--semantic-color-negative-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin shared {
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-radius-border: var(--semantic-radius-semi-rounded-md);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-size-border-width: var(--semantic-size-xquarter);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-size-grabber: var(--semantic-size-icon-xsmall);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-size-icon-left: var(--semantic-size-icon-medium);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-size-min-height: var(--semantic-size-x25);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-size-min-width: var(--semantic-size-x35);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-inline: var(--semantic-spacing-stack-md);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-padding-left: var(--semantic-spacing-container-padding-2xl);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-padding-right: var(--semantic-spacing-container-padding-2xl);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-padding-top: var(--semantic-spacing-container-padding-xl);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-input-text-area-space-stack: var(--semantic-spacing-stack-sm);
+}

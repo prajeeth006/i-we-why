@@ -1,0 +1,75 @@
+<gn-base-page *ngIf="vm$ | async as vm">
+    <ng-container header-content>
+
+        <div class="result-custom-banner">
+            <div class="banner-title-block">
+                <div id="leadTitle" class="lead-title">
+                    {{vm.greyhoundRacingContent?.contentParameters?.Title}}
+                </div>
+                <div class="main-title-row" *ngIf="vm.eventTimePlusTypeName">
+                    <div id="mainTitle" class="main-title">
+                       {{vm.eventTimePlusTypeName | uppercase}}
+                    </div>
+                </div>
+            </div>
+            <div class="banner-sub-title">
+                <div class="banner-sub-title-left">
+                    <div *ngIf="vm.racingContent" class="head-item-1 item-head">
+                        <span *ngIf="vm.racingContent.raceNo" id="Racenumber">{{
+                            vm.greyhoundRacingContent?.contentParameters?.Race }} {{
+                            vm.racingContent.raceNo }}</span>
+                        <span *ngIf="vm.racingContent.grade" id="Grade">{{vm.racingContent.grade | uppercase}} </span>
+                        <span *ngIf="vm.racingContent.distance" id="RacingDistance">{{ vm.racingContent.distance | uppercase }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container body-content>
+        <div class="body">
+            <ul id="gTable" class="greyhound-table">
+                <li *ngFor="let greyhoundRacingEntry of vm.runners" id="runnerS">
+                    <div class="table-item-2 items border-dark ">
+                        <span id="RunnerPosition" *ngIf="greyhoundRacingEntry.position">{{ greyhoundRacingEntry.position
+                            | runnerPositionSuffix }}</span>
+                    </div>
+                    <div class="table-item-1 items table-center border-dark traps">
+                        <img id="Images" [retrySrc]="greyhoundRacingEntry.jockeySilkImage" height="32vh" />
+                    </div>
+                    <div class="table-item-3 items border-dark">
+                        <span id="GreyHoundName" *ngIf="greyhoundRacingEntry.greyhoundName"> {{
+                            greyhoundRacingEntry.greyhoundName | vacantCheckTransform | uppercase }} </span>
+                        <div class="reserve-tag" *ngIf="greyhoundRacingEntry.isReserved">{{
+                            vm.greyhoundRacingContent?.contentParameters?.Reserve }}</div>
+                    </div>
+                    <div class="table-item-5 items border-dark ">
+                        <span id="RunnerPrice" class="text-center" *ngIf="greyhoundRacingEntry.price"> {{
+                            greyhoundRacingEntry.price | manualMarketPrice : greyhoundRacingEntry }}
+                        </span>
+                    </div>
+                    <div class="table-item-7 items border-dark"
+                        [ngClass]="{'betting-favourite' : greyhoundRacingEntry.isFavourite}">
+                        <span *ngIf="!!greyhoundRacingEntry.favourite"> {{ greyhoundRacingEntry.favourite }} </span>
+                    </div>
+                </li>
+            </ul>
+            <div class="castSec">
+                <div id="Cast" class="cast" *ngIf="vm.foreCast"> <span id="ForecastTitle">{{
+                        vm.greyhoundRacingContent?.contentParameters?.Forecast }}:</span> {{ vm.foreCast }} </div>
+                <div class="cast" *ngIf="vm.triCast"><span id="TricastTitle"> {{
+                        vm.greyhoundRacingContent?.contentParameters?.Tricast }}:</span> {{ vm.triCast}} </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container footer-content>
+        <gn-greyhound-each-way [runnerCount]="vm?.runnerCount | runnerCount" [isEventResulted]="vm.isAnyEventResulted"
+            [marketEachWayString]="vm.marketEachWayString" [hasAnyReservedRunner]="vm.hasAnyReservedRunner"
+            [isUKEvent]="vm.isUKEvent" [isHalfScreenType]="vm.isHalfScreenType" [isFullScreenType]="vm.isFullScreenType"
+            [Footer]="vm.greyhoundRacingContent?.contentParameters?.CoralFooter"
+            [showFooter]="vm.isFullScreenType && vm?.marketSelectionPresent" [isForm]="vm.racingContent.runners">
+        </gn-greyhound-each-way>
+    </ng-container>
+</gn-base-page>

@@ -1,0 +1,26 @@
+{
+    "name": "design-system-token-path-config-utils",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/token-path-config-utils/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/build/packages/design-system/token-path-config-utils",
+                "main": "packages/design-system/token-path-config-utils/src/index.ts",
+                "tsConfig": "packages/design-system/token-path-config-utils/tsconfig.lib.json"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/token-path-config-utils/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    },
+    "tags": ["type:utils", "scope:design-system"]
+}

@@ -1,0 +1,20 @@
+{
+    "dnaID": "ID",
+    "affordabilityStatus": "LEVEL2",
+    "nextActionCode": 1,
+    "lastTriggeredDate": "/Date(1617719250000)/",
+    "employmentGroup": "employed",
+    "isSelfCertDone": true,
+    "sgqStatus": "status",
+    "errorCode": 2,
+    "additionalParams": [
+        {
+            "Key": "key1",
+            "Value": "value1"
+        },
+        {
+            "Key": "key2",
+            "Value": "value2"
+        }
+    ]
+}

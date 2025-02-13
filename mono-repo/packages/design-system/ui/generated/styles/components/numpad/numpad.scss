@@ -1,0 +1,37 @@
+@mixin default {
+    --ds-numpad-active-color-bg: var(--semantic-color-surface-container-low-active);
+    --ds-numpad-active-color-icon: var(--semantic-color-on-surface-base);
+    --ds-numpad-active-color-text: var(--semantic-color-on-surface-base);
+    --ds-numpad-enabled-color-bg: var(--semantic-color-surface-container-low-base);
+    --ds-numpad-enabled-color-icon: var(--semantic-color-on-surface-base);
+    --ds-numpad-enabled-color-text: var(--semantic-color-on-surface-base);
+    --ds-numpad-hover-color-bg: var(--semantic-color-surface-container-low-hover);
+    --ds-numpad-hover-color-icon: var(--semantic-color-on-surface-base);
+    --ds-numpad-hover-color-text: var(--semantic-color-on-surface-base);
+}
+
+@mixin inverse {
+    --ds-numpad-active-color-bg: var(--semantic-color-surface-container-low-active-inverse);
+    --ds-numpad-active-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-numpad-active-color-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-numpad-enabled-color-bg: var(--semantic-color-surface-container-low-base-inverse);
+    --ds-numpad-enabled-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-numpad-enabled-color-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-numpad-hover-color-bg: var(--semantic-color-surface-container-low-hover-inverse);
+    --ds-numpad-hover-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-numpad-hover-color-text: var(--semantic-color-on-surface-base-inverse);
+}
+
+@mixin num-button {
+    --ds-numpad-size-height: var(--semantic-size-x11);
+    --ds-numpad-size-min-width: var(--semantic-size-x11);
+}
+
+@mixin shared {
+    --ds-numpad-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-numpad-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-numpad-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-numpad-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-numpad-space-padding-right: var(--semantic-spacing-container-padding-sm);
+    --ds-numpad-space-padding-top: var(--semantic-spacing-container-padding-sm);
+}

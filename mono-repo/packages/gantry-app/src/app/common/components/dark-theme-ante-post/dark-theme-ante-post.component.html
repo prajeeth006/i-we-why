@@ -1,0 +1,62 @@
+<gn-dark-theme-base-page>
+    <ng-container header-content>
+        <gn-dark-theme-header
+            [title]="result.event.eventName"
+            [racingImage]="result.racingContent?.greyHoundRacingImage?.src || result.racingContent?.horseRacingImage?.src">
+            <ng-container raceStage-content>
+                <div class="header-status-box tilted-card">
+                    <span class="tilted-text">
+                        <ng-container *ngIf="result.event?.eventDateTime">
+                            {{ (result.event?.eventDateTime | darkThemeEventDatetime).date }} <br />
+                            {{ (result.event?.eventDateTime | darkThemeEventDatetime).time }}
+                        </ng-container>
+                        <ng-container *ngIf="result.racingContent?.contentParameters?.AntePostOptionalAdditionalInfo">
+                            {{ result.racingContent?.contentParameters?.AntePostOptionalAdditionalInfo | uppercase }}
+                        </ng-container>
+                    </span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+    <ng-container body-content>
+        <div class="ante-post-large-content ante-post__content">
+            <ul class="ante-post__selections" [class]="getSelectionNumberClass(result.selections.length)">
+                <li
+                    *ngFor="let selection of result.selections | slice: pageDetails.startIndex : pageDetails.endIndex"
+                    id="resultSelections"
+                    class="ante-post__selections--row">
+                    <div class="ante-post__selections--info-wrap">
+                        <span id="selectionName" class="ante-post__selections--title">
+                            {{ selection.selectionName | trimSelectionNamePipe: selectionLength | titlecase }}
+                        </span>
+                    </div>
+                    <div class="ante-post__selections--price-wrap">
+                        <div id="selectionPrice" class="price-info selection-result tilted-card" autoAdjustFont>
+                            <ng-container *ngIf="selection?.prices?.price[0]">
+                                <span class="tilted-text">{{ selection?.price | marketPriceTransform: selection?.hidePrice }}</span>
+                            </ng-container>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-dark-theme-footer-full>
+            <ng-container footer-left-content>
+                <div class="flex-shrink">
+                    <span>{{ result.market?.marketName | capitalizeFirst }}</span>
+                    <span>{{ result.marketEachWay | titlecase }}</span>
+                </div>
+                <div class="flex-container" [ngClass]="result.selections.length >= 20 && 'space-between'">
+                    <span>{{
+                        result.racingContent?.contentParameters?.OthersOnRequest
+                            ? (result.racingContent?.contentParameters?.OthersOnRequest | capitalizeFirst)
+                            : ''
+                    }}</span>
+                    <span *ngIf="result.selections.length >= 20">{{ pageDetails.paginationText | sentenceCase }}</span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-footer-full>
+    </ng-container>
+</gn-dark-theme-base-page>

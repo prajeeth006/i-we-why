@@ -1,0 +1,215 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+@import '../../../../../../dark-theme-global-style/mixins/traps';
+
+// virtual races live price
+.header-current-price {
+    width: 240px;
+
+    @include breakpoint(multidesktop) {
+        width: 120px;
+    }
+}
+
+.greyhound-table {
+    margin: 18px 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 8px 0 0;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin: 52px 0 0;
+    }
+
+    &.runners__list--six {
+        margin: 28px 0 0;
+
+        @include breakpoint(multidesktop) {
+            margin: 14px 0 0;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            margin: 52px 0 0;
+        }
+    }
+
+    li {
+        height: 96px;
+        margin-bottom: 4px;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            margin-bottom: 2px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            height: 61px;
+            margin-bottom: 50px;
+        }
+
+        &.runners__list--item {
+            margin-bottom: 40px;
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 20px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-bottom: 90px;
+            }
+        }
+
+        @include trap-box-styles(120px, 90px);
+        @include breakpoint(multidesktophalf) {
+            @include trap-box-styles(80px, 60px);
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+            padding-left: 38px;
+            font-size: 70px;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 19px;
+                font-size: 35px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: 40px;
+            }
+        }
+
+        .vacant-trap-selection {
+            &::before {
+                content: none;
+            }
+        }
+
+        .selection-past-price {
+            @include flex-center;
+            width: 160px;
+            height: 56px;
+            background-color: $color-white;
+            margin-right: 20px;
+            font-size: 40px;
+            font-weight: $fw-normal;
+            color: $early-price-text;
+
+            @include breakpoint(multidesktop) {
+                width: 80px;
+                height: 28px;
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            @include breakpoint(multidesktophalf) {
+                margin-right: 15px;
+            }
+        }
+
+        .selection-current-price,
+        .selection-plus1-market {
+            @include flex-center;
+            height: 84px;
+            font-size: 70px;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                height: 42px;
+                font-size: 35px;
+            }
+        }
+
+        .selection-current-price {
+            background-color: $color-white;
+            color: $early-price-text;
+        }
+
+        .selection-plus1-market {
+            margin-left: 20px;
+            color: $color-white;
+            background-color: $top-2-finish-bg;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 10px;
+            }
+            @include breakpoint(multidesktophalf) {
+                margin-left: 12px;
+            }
+        }
+
+        .favorite-box {
+            background-color: $theme-yellow;
+        }
+    }
+}
+
+.places {
+    min-width: 240px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        min-width: 120px;
+    }
+}
+
+.wins {
+    width: 240px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        width: 120px;
+    }
+}
+
+.greyhound-racing-post {
+    .selection-content {
+        margin-left: 0px;
+
+        &::before {
+            left: 0;
+        }
+    }
+
+    &__pic {
+        background-color: $color-black;
+        background-position: center;
+        background-size: cover;
+        border-radius: 100px;
+        height: 50px;
+        margin-left: 29px;
+        width: 278px;
+
+        @include breakpoint(multidesktop) {
+            border-radius: 50px;
+            height: 25px;
+            margin-left: 14px;
+            width: 139px;
+        }
+    }
+
+    &.market__item--plus-one {
+        @include breakpoint(multidesktophalf) {
+            position: relative;
+        }
+
+        .selection-content {
+            @include breakpoint(multidesktophalf) {
+                margin-left: 15px;
+
+                &::before {
+                    left: 4px;
+                }
+            }
+        }
+
+        .greyhound-racing-post__pic {
+            @include breakpoint(multidesktophalf) {
+                margin-left: 0;
+                bottom: -25px;
+                left: 99px;
+                position: absolute;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "clickable-card": {
+        "enabled": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.outline.low.base}"
+                }
+            }
+        },
+        "selected": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.container.base}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.outline.base}"
+                }
+            }
+        },
+        "shared": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "clickable-card",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                }
+            }
+        },
+        "space": {
+            "padding-bottom": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "clickable-card",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            },
+            "padding-left": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "clickable-card",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            },
+            "padding-right": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "clickable-card",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            },
+            "padding-top": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "collection": "clickable-card",
+                        "status": "active"
+                    }
+                },
+                "$value": "{semantic.spacing.container.padding-lg}"
+            }
+        }
+    }
+}

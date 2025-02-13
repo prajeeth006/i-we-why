@@ -1,0 +1,394 @@
+@import './src/global-style/_all-variables.scss';
+
+@mixin header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+  font-size: $txt-sm-font2-size;
+  color: $white;
+  height: 20px;
+}
+
+.esp-Layout {
+  .base-header-wrapper {
+    margin-bottom: 5px;
+
+    .banner-header-section {
+      .banner {
+        height: 70px;
+
+        .banner-title-block {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100% !important;
+
+          .banner-title-block-left {
+            height: 100% !important;
+
+            .main-title {
+              font-size: $txt-lg-title-size !important;
+              width: 1270px !important;
+              margin-top: 3px;
+
+              @include breakpoint(multidesktop) {
+                width: 570px;
+              }
+            }
+          }
+        }
+
+        .banner-title-block-right {
+          .rightText {
+            font-size: $txt-lg-title-size !important;
+            padding-right: 17px !important;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  display: flex;
+
+  .base-page-wrapper {
+    padding: 0;
+  }
+
+  .base-body-wrapper {
+    height: calc(100vh - 127px);
+  }
+}
+
+gn-base-page {
+  flex: 1;
+}
+
+.footer {
+  background-color: $body-color-p2;
+  font-weight: bold;
+  font-size: $font-list-title;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.left-side-text {
+  color: $color-p2-light;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    margin: 0 -140px;
+    width: 456px;
+    height: 20px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+.right-side-text {
+  padding: 0px 20px;
+  align-items: center;
+  display: flex;
+  color: $white;
+  text-transform: uppercase;
+
+  .pagination {
+    margin-left: 20px;
+  }
+}
+
+.esp-block {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  .esp-block-list {
+    width: 24.6%;
+
+    .esp-block-header {
+      margin-bottom: 2px;
+      height: 60px;
+    }
+  }
+
+  &.away {
+    align-items: flex-end;
+  }
+
+  .marketContent {
+    padding-top: 2px;
+    color: $border-color-drak;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .meetingName {
+      font-size: $txt-md-font1-size;
+      background: $white;
+      line-height: 36px;
+      font-weight: bold;
+      border: 1px solid $color-p1-bg;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      justify-content: center;
+      color: $body-color-txt;
+      text-transform: uppercase;
+    }
+
+    .betOdds {
+      font-size: $txt-sm-font-size;
+      background: $border-color-drak;
+      line-height: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      align-items: center;
+      padding: 0 10px;
+      justify-content: center;
+      text-transform: uppercase;
+      color: $eps-header-yellow-text;
+    }
+
+    .eventBlock {
+      font-size: $txt-eps-2-size;
+
+      .eventBlock-lists {
+        width: 100%;
+        padding-bottom: 2px;
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+
+      .eventHeader {
+        @include header-section;
+        background: $border-color-drak;
+        &.header-centre{
+          justify-content: center;
+        }
+
+      }
+
+      .eventEarlyPriceHeader {
+        @include header-section;
+        background: $body-color-p2;
+      }
+
+      .eventLiveHeader {
+        @include header-section;
+        background: $eps-header-red-text;
+      }
+
+      .eventStatus {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        &.is-raceOff {
+          background-color: $eps-race-off-bg-color;
+        }
+
+        .resulted {
+          height: 15px;
+          padding: 0px 3px;
+          line-height: 15px;
+          background: $body-color-p2;
+          color: $white;
+          font-weight: bold;
+          font-size: $txt-xs-font1-size;
+
+        }
+        &.bg-red{
+          justify-content: center;
+          padding-bottom:15px;
+          .resulted{
+            background-color: $eps-header-red-text;
+            color: $white;
+          }
+
+          }
+          &.bg-naviblue{
+            .resulted{
+              background-color: $eps-live-race-text;
+              color: $white;
+            }
+          }
+          &.bg-yellow{
+            .resulted{
+              background-color: $eps-header-yellow-text;
+              color: $body-color-txt;
+            }
+
+            }
+        .race-off-time {
+          float: right;
+        }
+
+        span {
+          font-weight: bold;
+        }
+
+        .live {
+          height: 15px;
+          padding: 0px 3px;
+          line-height: 15px;
+          background: $eps-live-race-text;
+          color: $white;
+          font-size: $txt-xs-font1-size;
+        }
+      }
+
+      .selectionList {
+        font-size: 12px;
+        width: 100%;
+        padding: 5px 0px;
+
+        &.is-raceOff {
+          background-color: $eps-race-off-bg-color;
+        }
+
+        tr {
+          height: 17px;
+          td {
+            text-align: center;
+
+            &:nth-child(2) {
+              text-align: left;
+            }
+
+            &.text-align-left {
+              text-align: left;
+            }
+
+            .text-ellipsis {
+              span {
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+
+            &.select-number {
+              color: $body-color-p2;
+            }
+
+            &.horse-odds {
+              text-decoration: line-through;
+              color: rgb(62, 112, 206);
+            }
+          }
+        }
+
+        .nonRunner {
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .market {
+      margin: 0 1%;
+      flex: 0 0 auto;
+      width: 28%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .betName {
+      line-height: 36px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: $txt-sm-font2-size;
+      font-weight: normal;
+      background-color: $color-p1-dark;
+      padding: 0 20px;
+      flex: 1;
+      color: $white;
+      text-align: center;
+    }
+
+    .raceWinner {
+      background-color: #c7debe !important;
+      color: #56703c !important;
+      font-weight: bolder !important;
+    }
+  }
+}
+
+.banner-right {
+  display: flex;
+  flex-direction: column;
+  width: 256px;
+  margin-left: 2px;
+
+  .banner-image {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .banner-info-txt {
+    font-family: calibri;
+    font-weight: 700;
+    font-size: $txt-sm-font2-size;
+    line-height: 14.65px;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 0 10px 20px;
+    word-break: break-word;
+    //max-height: 350px;
+  }
+}
+
+.eventBlock {
+  --gap: 1em;
+  --columns: 2;
+  display: column;
+}
+
+.eventBlock>* {
+  break-inside: avoid;
+}
+
+@supports (grid-template-rows: masonry) {
+  .eventBlock {
+    display: grid;
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
+  }
+
+  .eventBlock>* {
+    margin-bottom: 0em;
+  }
+}
+
+.base-footer-wrapper {
+  margin: 0 !important;
+}

@@ -1,0 +1,262 @@
+{
+    "bottom-nav-tabs": {
+        "active": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.base}"
+                }
+            }
+        },
+        "disabled": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-disabled.outline}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-disabled.outline}"
+                }
+            }
+        },
+        "enabled": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.subtle}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.subtle}"
+                }
+            }
+        },
+        "pressed": {
+            "color": {
+                "bg": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.opacity.transparent}"
+                },
+                "icon": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.base}"
+                },
+                "text": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.on-background.base}"
+                }
+            }
+        },
+        "shared": {
+            "color": {
+                "indicator": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.utility.base-inverse}"
+                },
+                "indicator-outline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color-l2.navigation.background.base}"
+                }
+            },
+            "size": {
+                "icon-size": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.large}"
+                },
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                },
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                }
+            },
+            "space": {
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "bottom-nav-tabs",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.xs}"
+                }
+            }
+        }
+    }
+}

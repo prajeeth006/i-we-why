@@ -1,0 +1,153 @@
+@import './src/global-style/_all-variables.scss';
+
+.base-body-wrapper {
+    .selection-table {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            font-size: $font-list-lg-title;
+            display: flex;
+            color: $body-color-p2;
+            padding-bottom: 10px;
+            height: 142px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $single-list-title;
+                padding-bottom: 5px;
+                height: 70px;
+            }
+
+            .items {
+                display: flex;
+                align-items: center;
+            }
+
+            .table-item-1 {
+                background-color: $color-p6;
+                padding: 10px 7px 10px 20px;
+                flex: 1;
+                box-sizing: border-box;
+
+                @include breakpoint(multidesktop) {
+                 padding: 10px 0px 10px 10px;
+                }
+            }
+
+            .table-item-2 {
+                background-color: $body-color-p2-light-bg;
+                width: 242px;
+                box-sizing: border-box;
+
+                @include breakpoint(multidesktop) {
+                    width: 120px;
+                }
+
+                &.items {
+                    justify-content: center;
+                    //padding: 15px 7px 20px;
+
+                    @include breakpoint(multidesktop) {
+                     //padding: 7px 4px 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .winning-distance-page {
+        .wining-Titel {
+            color: $body-color-p2;
+            padding: 60px 0px 12px 0px;
+            font-size: $font-list-md3-title;
+
+            @include breakpoint(multidesktop) {
+                padding: 35px 0px 6px 0px;
+                font-size: $font-list-lg1-title;
+            }
+        }
+
+        &.winning-distance-list-2 {
+            .wining-Titel {
+                padding: 22px 0px 6px 0px;
+                font-size: $txt-lg-title-size;
+
+                @include breakpoint(multidesktop) {
+                     padding: 13px 0px 3px 0;
+                     font-size: $txt-lg-font-size;
+                }
+            }
+
+            .selection-table {
+                @include breakpoint(multidesktop) {
+                    padding: 0;
+               }
+
+               li{
+                font-size:  $font-list-md2-title;
+                padding-bottom: 4px;
+                height: 89px;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $font-list-title;
+                    padding-bottom: 2px;
+                    height: 44px;
+                }
+
+                .table-item-1 {
+                    flex: 1;
+                }
+
+                .table-item-2 {
+                    width: 188px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 93px;
+                    }
+                }
+              }
+            }
+        }
+
+        &.winning-distance-list-3 {
+            .wining-Titel {
+                padding: 16px 0px 5px 0px;
+                font-size: $txt-formula-h;
+
+                @include breakpoint(multidesktop) {
+                 padding: 10px 0px 3px 0px;
+                 font-size: $txt-md-font2-size;
+                }
+            }
+
+            .selection-table{
+                @include breakpoint(multidesktop) {
+                     padding: 0px;
+                }
+                .table-item-1 {
+                    padding: 8px 7px 8px 20px;
+                }
+                li{
+                    font-size: $txt-formula-h;
+                    padding-bottom: 2px;
+                    height: 58px;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-md-font1-size;
+                        padding-bottom: 1px;
+                        height: 29px;
+                    }
+
+                    .table-item-1 {
+                       flex: 1;
+                    }
+
+                    .table-item-2 {
+                        width: 188px;
+                    }
+                }
+            }
+        }
+    }
+}

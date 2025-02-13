@@ -1,0 +1,63 @@
+@import './src/global-style/_all-variables.scss';
+
+.money-boost-page {
+    padding: 0px 35px 10px 35px;
+    background-color: #E5ECF4;
+}
+
+.money-boost-content {
+    padding-top: 46px;
+    color: $body-color-p2;
+    text-align: center;
+    font-weight: bold;
+
+    @include breakpoint(multidesktop) {
+        padding-top:26px;
+    }
+}
+
+.selection-names {
+    background-color: $white;
+    font-size: $font-list-lg-title;
+    padding: 0 340px;
+    line-height: 89px;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(multidesktop) {
+        font-size: $single-list-title;
+        line-height: 45px;
+        padding: 0 170px;
+        min-height: 167px;
+    }
+}
+
+.current-price {
+    background-color: $body-color-p2-light-bg;
+    margin: 52px auto 8px;
+    font-size: 162px;
+    height: 230px;
+    line-height: 230px;
+    width: 400px;
+
+    @include breakpoint(multidesktop) {
+        margin: 25px auto 4px;
+        font-size: $font-list-lg-title;
+        height: 114px;
+        line-height: 114px;
+        width: 200px;
+    }
+}
+
+.old-price {
+    font-size: $txt-lg-title-size;
+    text-decoration: line-through;
+    line-height: 66px;
+
+    @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font-size;
+        line-height: 33px;
+    }
+}

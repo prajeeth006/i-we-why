@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Project setup -->
+    <PropertyGroup>
+        <Solution>$(MSBuildProjectDirectory)\GantryTradingConnector.sln</Solution>
+        <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+        <OutputPath>.</OutputPath>
+        <SolutionFolder Condition="'$(SolutionFolder)'==''">$([System.IO.Path]::GetDirectoryName($(Solution)))</SolutionFolder>
+		<SkipAspNetCompiler>True</SkipAspNetCompiler>
+		<DismeApiAutoDeploy>False</DismeApiAutoDeploy>		
+		<DismeDeployShortcut>gantrytradingconnector</DismeDeployShortcut>
+    </PropertyGroup>
+
+	<!-- DISME Upload -->
+    <ItemGroup>
+        <CustomProperties Include="GantryTradingConnector\GantryTradingConnector.csproj">
+            <PackageName>GantryTradingConnector.Core</PackageName>
+            <DismeServiceShortcut>gantrytradingconnector</DismeServiceShortcut>
+        </CustomProperties>
+    </ItemGroup>
+
+    <!-- Custom project properties -->
+    <Import Condition=" '$(IgnoreBptyImport)' != 'True'" Project="$(BPTY_BUILD_ROOT)\MSBuild40\Bpty.Build.targets" />
+</Project>

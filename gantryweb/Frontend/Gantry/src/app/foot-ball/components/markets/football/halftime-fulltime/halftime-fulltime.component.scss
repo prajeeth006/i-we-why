@@ -1,0 +1,73 @@
+@import './src/global-style/_all-variables.scss';
+
+@mixin text-styles {
+    background-color: $white;
+    flex: 1;
+    text-align: center;
+    @include text-truncate;
+}
+
+.match-bet-header {
+    @include flex-container(center);
+    color: $body-color-txt;
+    font-size: $txt-lg-title-size;
+    padding-top: 4px;
+
+    @include breakpoint(multidesktop) {
+        padding-top: 2px;
+        font-size: $txt-lg-font-size;
+    }
+}
+
+.bet-details-container {
+    .match-betting-section {
+        display: flex;
+        align-items: center;
+        height: 68px;
+        color: $body-color-txt;
+        font-size: $font-list-lg-title-avr;
+        padding-bottom: 4px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-lg-font1-size;
+            height: 34px;
+            padding-bottom: 2px;
+        }
+
+        .bet-price {
+            width: 160px;
+            text-align: center;
+            background-color: $body-color-p2-light;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+
+            @include breakpoint(multidesktop) {
+                width: 80px;
+            }
+        }
+
+        .player-details-section {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            height: 100%;
+
+            .slash-symbol {
+                width: 86px;
+                text-align: center;
+                background-color: $bg-body;
+
+                @include breakpoint(multidesktop) {
+                    width: 42px;
+                }
+            }
+
+            .market-1,
+            .market-2 {
+                @include text-styles;
+            }
+        }
+    }
+}

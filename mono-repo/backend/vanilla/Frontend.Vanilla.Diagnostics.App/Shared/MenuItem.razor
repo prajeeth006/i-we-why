@@ -1,0 +1,25 @@
+@code {
+
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string Href { get; set; } = "javascript:void(0);";
+
+    [Parameter]
+    public string Icon { get; set; }
+
+    [Parameter]
+    public string Target { get; set; }
+
+    [Parameter]
+    public string OnClick { get; set; }
+
+}
+
+<li class="nav-item" onclick="@OnClick;">
+    <NavLink class="nav-item nav-link" href="@Href" target="@Target" Match="NavLinkMatch.Prefix">
+        <span class="oi oi-@Icon"></span>
+        @Text
+    </NavLink>
+</li>

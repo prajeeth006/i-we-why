@@ -1,0 +1,102 @@
+{
+    "documentVerificationStatus": [
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1644561902000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644561902000)/",
+                    "uploadedReason": "ACCOUNT-ON-HOLD"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644561753000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644620400000)/",
+                    "uploadedReason": "ACCOUNT-ON-HOLD"
+                }
+            ],
+            "isVerified": true,
+            "useCase": "TWO-PLUS-TWO",
+            "verifiedTime": "/Date(1644650400000)/"
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644558418000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644558418000)/",
+                    "uploadedReason": "DEPOSIT-LIMIT-INCREASE"
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1644558452000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644558452000)/",
+                    "uploadedReason": "DEPOSIT-LIMIT-INCREASE"
+                },
+                {
+                    "documentStatus": "RejectedUnClear",
+                    "documentStatusLastUpdated": "/Date(1644559159000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644559159000)/",
+                    "uploadedReason": "ACCOUNT-VERIFICATION"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644559469000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644559469000)/",
+                    "uploadedReason": "ACCOUNT-ON-HOLD"
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1644559525000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644559525000)/",
+                    "uploadedReason": "ACCOUNT-ON-HOLD"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644563304000)/",
+                    "documentType": "CB",
+                    "uploadedDate": "/Date(1644563304000)/",
+                    "uploadedReason": "ACCOUNT-VERIFICATION"
+                },
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644558882000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644558882000)/",
+                    "uploadedReason": "ACCOUNT-VERIFICATION"
+                }
+            ],
+            "isVerified": false,
+            "useCase": "KYC",
+            "verifiedTime": "/Date(1644559525000)/"
+        },
+        {
+            "documentDetails": [
+                {
+                    "documentStatus": "new",
+                    "documentStatusLastUpdated": "/Date(1644562316000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644562316000)/",
+                    "uploadedReason": "ACCOUNT-VERIFICATION"
+                },
+                {
+                    "documentStatus": "Verified",
+                    "documentStatusLastUpdated": "/Date(1644562454000)/",
+                    "documentType": "PASSPORT",
+                    "uploadedDate": "/Date(1644562454000)/",
+                    "uploadedReason": "ACCOUNT-VERIFICATION"
+                }
+            ],
+            "isVerified": true,
+            "useCase": "UK-KYC-REFRESH",
+            "verifiedTime": "/Date(1644562454000)/"
+        }
+    ]
+}

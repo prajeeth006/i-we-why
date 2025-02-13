@@ -1,0 +1,302 @@
+@mixin apple-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-apple-base);
+    --ds-button-social-active-border: var(--semantic-color-social-apple-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-apple-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-apple-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-apple-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-apple-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-apple-base);
+}
+
+@mixin apple-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-apple-hover);
+    --ds-button-social-active-border: var(--semantic-color-social-apple-outline-hover);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-apple-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-apple-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-apple-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-apple-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-apple-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-apple-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-apple-base);
+}
+
+@mixin entain-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-entain-active);
+    --ds-button-social-active-border: var(--semantic-color-social-entain-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-entain-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-entain-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-entain-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-entain-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-entain-base);
+}
+
+@mixin entain-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-entain-active);
+    --ds-button-social-active-border: var(--semantic-color-social-entain-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-entain-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-entain-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-entain-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-entain-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-entain-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-entain-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-entain-base);
+}
+
+@mixin facebook-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-facebook-active);
+    --ds-button-social-active-border: var(--semantic-color-social-facebook-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-facebook-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-facebook-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-facebook-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-facebook-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-facebook-base);
+}
+
+@mixin facebook-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-facebook-active);
+    --ds-button-social-active-border: var(--semantic-color-social-facebook-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-facebook-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-facebook-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-facebook-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-facebook-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-facebook-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-facebook-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-facebook-base);
+}
+
+@mixin google-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-google-active);
+    --ds-button-social-active-border: var(--semantic-color-opacity-transparent);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-google-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-google-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-google-base);
+    --ds-button-social-enabled-border: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-google-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-google-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-google-hover);
+    --ds-button-social-hover-border: var(--semantic-color-opacity-transparent);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-google-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-google-base);
+}
+
+@mixin google-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-google-active);
+    --ds-button-social-active-border: var(--semantic-color-social-google-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-google-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-google-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-google-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-google-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-google-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-google-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-google-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-google-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-google-base);
+}
+
+@mixin large {
+    --ds-button-social-radius-border: var(--semantic-radius-l2-button-large);
+    --ds-button-social-size-height: var(--semantic-size-x11);
+    --ds-button-social-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-social-space-inline: var(--semantic-spacing-inline-md);
+    --ds-button-social-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-button-social-space-padding-left: var(--semantic-spacing-container-padding-2xl);
+    --ds-button-social-space-padding-right: var(--semantic-spacing-container-padding-2xl);
+    --ds-button-social-space-padding-top: var(--semantic-spacing-container-padding-lg);
+}
+
+@mixin medium {
+    --ds-button-social-radius-border: var(--semantic-radius-l2-button-medium);
+    --ds-button-social-size-height: var(--semantic-size-x8);
+    --ds-button-social-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-social-space-inline: var(--semantic-spacing-inline-md);
+    --ds-button-social-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-button-social-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-button-social-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-button-social-space-padding-top: var(--semantic-spacing-container-padding-lg);
+}
+
+@mixin mlife-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-mlife-active);
+    --ds-button-social-active-border: var(--semantic-color-social-mlife-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-mlife-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-mlife-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-mlife-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-mlife-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-mlife-base);
+}
+
+@mixin mlife-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-mlife-active);
+    --ds-button-social-active-border: var(--semantic-color-social-mlife-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-mlife-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-mlife-outine);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-mlife-outine);
+    --ds-button-social-hover-bg: var(--semantic-color-social-mlife-outline-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-mlife-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-mlife-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-mlife-base);
+}
+
+@mixin paypal-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-paypal-active);
+    --ds-button-social-active-border: var(--semantic-color-social-paypal-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-paypal-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-paypal-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-paypal-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-paypal-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-paypal-base);
+}
+
+@mixin paypal-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-paypal-active);
+    --ds-button-social-active-border: var(--semantic-color-social-paypal-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-paypal-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-paypal-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-paypal-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-paypal-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-paypal-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-paypal-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-paypal-base);
+}
+
+@mixin shared {
+    --ds-button-social-size-tap-target: var(--semantic-size-x11);
+}
+
+@mixin small {
+    --ds-button-social-radius-border: var(--semantic-radius-l2-button-small);
+    --ds-button-social-size-height: var(--semantic-size-x6);
+    --ds-button-social-size-icon: var(--semantic-size-icon-small);
+    --ds-button-social-space-inline: var(--semantic-spacing-inline-sm);
+    --ds-button-social-space-padding-bottom: var(--semantic-spacing-container-padding-sm);
+    --ds-button-social-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-button-social-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-button-social-space-padding-top: var(--semantic-spacing-container-padding-sm);
+}
+
+@mixin yahoo-filled {
+    --ds-button-social-active-bg: var(--semantic-color-social-yahoo-active);
+    --ds-button-social-active-border: var(--semantic-color-social-yahoo-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-base);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-base);
+    --ds-button-social-enabled-bg: var(--semantic-color-social-yahoo-base);
+    --ds-button-social-enabled-border: var(--semantic-color-social-yahoo-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-hover-bg: var(--semantic-color-social-yahoo-hover);
+    --ds-button-social-hover-border: var(--semantic-color-social-yahoo-hover);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-yahoo-base);
+}
+
+@mixin yahoo-outline {
+    --ds-button-social-active-bg: var(--semantic-color-social-yahoo-active);
+    --ds-button-social-active-border: var(--semantic-color-social-yahoo-outline-active);
+    --ds-button-social-active-icon: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-active-text: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-disabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-disabled-border: var(--semantic-color-disabled-outline);
+    --ds-button-social-disabled-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-disabled-text: var(--semantic-color-on-disabled-outline);
+    --ds-button-social-enabled-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-social-enabled-border: var(--semantic-color-social-yahoo-outline-base);
+    --ds-button-social-enabled-icon: var(--semantic-color-social-on-yahoo-outline);
+    --ds-button-social-enabled-text: var(--semantic-color-social-on-yahoo-outline);
+    --ds-button-social-hover-bg: var(--semantic-color-social-yahoo-base);
+    --ds-button-social-hover-border: var(--semantic-color-social-yahoo-outline-base);
+    --ds-button-social-hover-icon: var(--semantic-color-social-on-yahoo-base);
+    --ds-button-social-hover-text: var(--semantic-color-social-on-yahoo-base);
+}

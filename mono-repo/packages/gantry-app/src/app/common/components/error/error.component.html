@@ -1,0 +1,7 @@
+<div class="alert alert-danger" *ngIf="errorMessage$ | async as errorMessage">
+    <ng-container *ngIf="showErrorPageUrl$ | async as showErrorPageUrl">
+        <h2 *ngIf="showErrorPageUrl?.showDataFeedApiUrl">{{ errorMessage }}</h2>
+
+        <img class="brand-image" [retrySrc]="showErrorPageUrl?.brandImagePathInElectron" [alt]="brandLabel" />
+    </ng-container>
+</div>

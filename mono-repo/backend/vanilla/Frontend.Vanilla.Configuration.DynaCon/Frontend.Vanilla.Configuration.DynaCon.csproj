@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework support for configuration fetched from DynaCon system.</Description>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Bwin.DynaCon.Api.Contracts"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Core\Frontend.Vanilla.Core.csproj"/>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+@import './src/global-style/_all-variables.scss';
+
+.rugby-container {
+  .bet-details-header {
+    padding-top: 6px !important;
+  }
+}
+
+.base-page-wrapper {
+  .base-header-wrapper {
+    .banner {
+      .banner-sub-title {
+        .banner-sub-title-left {
+          min-width: auto !important;
+        }
+
+        .banner-sub-title-right {
+          min-width: auto !important;
+          flex: 1;
+        }
+      }
+    }
+  }
+}

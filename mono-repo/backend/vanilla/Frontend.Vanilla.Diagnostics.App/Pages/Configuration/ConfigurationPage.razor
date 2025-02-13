@@ -1,0 +1,74 @@
+@page "/config"
+@inherits ConfigurationPageComponent
+
+<PageLayout Title="Configuration Report" LoadChildContent="LoadAsync">
+    @if (Model.ErrorsJson.HasValues)
+    {
+        <div class="alert alert-danger">
+            <JsonViewer Model="Model.ErrorsJson"/>
+        </div>
+    }
+    @if (Model.WarningsJson.HasValues)
+    {
+        <div class="alert alert-warning">
+            <ExpandableChevron IsExpanded="WarningsExpanded" OnClick="() => WarningsExpanded = !WarningsExpanded">
+                Warnings found! Try to resolve them to avoid further issues and confusion.
+            </ExpandableChevron>
+            @if (WarningsExpanded)
+            {
+                <JsonViewer Model="Model.WarningsJson"/>
+            }
+        </div>
+    }
+    <BSNav IsTabs="true">
+        <BSNavItem>
+            <TabLabel>Configuration</TabLabel>
+            <TabContent>
+                <CurrentConfigurationTab Model="Model" OnOverridesChanged="() => LoadAsync()"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>Changes</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.ChangesetChanges"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>Settings</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.SettingsJson"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>Network Traffic</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.NetworkTraffic"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>Proactive Validation</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.ProactiveValidation"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>File Fallback</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.FileFallback"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>Multitenancy</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.MultitenancyJson"/>
+            </TabContent>
+        </BSNavItem>
+        <BSNavItem>
+            <TabLabel>.NET Classes</TabLabel>
+            <TabContent>
+                <JsonViewer Model="Model.DotNetClasses"/>
+            </TabContent>
+        </BSNavItem>
+    </BSNav>
+
+</PageLayout>

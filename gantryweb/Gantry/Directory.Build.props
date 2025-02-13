@@ -1,0 +1,12 @@
+<Project>
+<PropertyGroup>
+  <TargetFramework>net6.0</TargetFramework>
+  <Product>Frontend.Gantry</Product>
+  <Company>Entain</Company>
+  <Copyright>Entain © 2023</Copyright>
+  <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  <FileVersion>1.0.0.1</FileVersion>
+  <InformationalVersion>1.0.0.1</InformationalVersion>
+  <LangVersion>latest</LangVersion>
+</PropertyGroup>
+</Project>

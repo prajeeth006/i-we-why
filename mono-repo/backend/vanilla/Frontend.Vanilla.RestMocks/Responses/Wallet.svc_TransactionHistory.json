@@ -1,0 +1,69 @@
+{
+    "usertransactions": [
+        {
+            "betSlipNumber": "null",
+            "brandId": "null",
+            "cashAdded": 0,
+            "cashDeducted": 0.1,
+            "currency": "null",
+            "dateAndTime": "/Date(1540797054000)/",
+            "description": "MTTRegistration",
+            "finalCashBalance": 499.9,
+            "frontEndId": "null",
+            "initialCashBalance": 500,
+            "productId": "null",
+            "subtype": "null",
+            "type": "null"
+        },
+        {
+            "betSlipNumber": "null",
+            "brandId": "null",
+            "cashAdded": 1.1,
+            "cashDeducted": 0,
+            "currency": "null",
+            "dateAndTime": "/Date(1540797054000)/",
+            "description": "MTTRegistration",
+            "finalCashBalance": 499.9,
+            "frontEndId": "null",
+            "initialCashBalance": 500,
+            "productId": "null",
+            "subtype": "null",
+            "type": "null"
+        },
+        {
+            "betSlipNumber": "null",
+            "brandId": "null",
+            "cashAdded": 2.5,
+            "cashDeducted": 1.5,
+            "currency": "null",
+            "dateAndTime": "/Date(1540797054000)/",
+            "description": "MTTRegistration",
+            "finalCashBalance": 499.9,
+            "frontEndId": "null",
+            "initialCashBalance": 500,
+            "productId": "null",
+            "subtype": "null",
+            "type": "null"
+        },
+        {
+            "betSlipNumber": "null",
+            "brandId": "null",
+            "cashAdded": 0,
+            "cashDeducted": 0,
+            "currency": "null",
+            "dateAndTime": "/Date(1540797054000)/",
+            "description": "MTTRegistration",
+            "finalCashBalance": 499.9,
+            "frontEndId": "null",
+            "initialCashBalance": 500,
+            "productId": "null",
+            "subtype": "null",
+            "type": "null"
+        }
+    ],
+    "totalCount": 0,
+    "profit": 1.36,
+    "loss": 5.36,
+    "netPosition": 4.3,
+    "currency": "EUR"
+}

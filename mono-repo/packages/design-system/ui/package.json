@@ -1,0 +1,142 @@
+{
+    "name": "@frontend/ui",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^18.2.6",
+        "@angular/core": "^18.2.6",
+        "@code-pushup/models": "*"
+    },
+    "dependencies": {
+        "tslib": "^2.6.2"
+    },
+    "devDependencies": {},
+    "sideEffects": false,
+    "exports": {
+        "./generated/styles/betboo/light/semantic.css": {
+            "style": "./generated/styles/betboo/light/semantic.css"
+        },
+        "./generated/styles/betboo-brazil/light/semantic.css": {
+            "style": "./generated/styles/betboo-brazil/light/semantic.css"
+        },
+        "./generated/styles/betcity/light/semantic.css": {
+            "style": "./generated/styles/betcity/light/semantic.css"
+        },
+        "./generated/styles/betmgm/hybrid/semantic.css": {
+            "style": "./generated/styles/betmgm/hybrid/semantic.css"
+        },
+        "./generated/styles/betmgm/dark/semantic.css": {
+            "style": "./generated/styles/betmgm/dark/semantic.css"
+        },
+        "./generated/styles/betmgm/light/semantic.css": {
+            "style": "./generated/styles/betmgm/light/semantic.css"
+        },
+        "./generated/styles/borgata/hybrid/semantic.css": {
+            "style": "./generated/styles/borgata/hybrid/semantic.css"
+        },
+        "./generated/styles/borgata/dark/semantic.css": {
+            "style": "./generated/styles/borgata/dark/semantic.css"
+        },
+        "./generated/styles/borgata/light/semantic.css": {
+            "style": "./generated/styles/borgata/light/semantic.css"
+        },
+        "./generated/styles/bwin/dark/semantic.css": {
+            "style": "./generated/styles/bwin/dark/semantic.css"
+        },
+        "./generated/styles/bwin/light/semantic.css": {
+            "style": "./generated/styles/bwin/light/semantic.css"
+        },
+        "./generated/styles/danskespil/light/semantic.css": {
+            "style": "./generated/styles/danskespil/light/semantic.css"
+        },
+        "./generated/styles/danskespilpoker/dark/semantic.css": {
+            "style": "./generated/styles/danskespilpoker/dark/semantic.css"
+        },
+        "./generated/styles/foxybingo/light/semantic.css": {
+            "style": "./generated/styles/foxybingo/light/semantic.css"
+        },
+        "./generated/styles/foxygames/light/semantic.css": {
+            "style": "./generated/styles/foxygames/light/semantic.css"
+        },
+        "./generated/styles/galabingo/light/semantic.css": {
+            "style": "./generated/styles/galabingo/light/semantic.css"
+        },
+        "./generated/styles/gamebookers/light/semantic.css": {
+            "style": "./generated/styles/gamebookers/light/semantic.css"
+        },
+        "./generated/styles/giocodigitale/light/semantic.css": {
+            "style": "./generated/styles/giocodigitale/light/semantic.css"
+        },
+        "./generated/styles/ladbrokes/light/semantic.css": {
+            "style": "./generated/styles/ladbrokes/light/semantic.css"
+        },
+        "./generated/styles/galacasino/light/semantic.css": {
+            "style": "./generated/styles/galacasino/light/semantic.css"
+        },
+        "./generated/styles/coral/light/semantic.css": {
+            "style": "./generated/styles/coral/light/semantic.css"
+        },
+        "./generated/styles/slotclub/light/semantic.css": {
+            "style": "./generated/styles/slotclub/light/semantic.css"
+        },
+        "./generated/styles/ladbrokes-germany/light/semantic.css": {
+            "style": "./generated/styles/ladbrokes-germany/light/semantic.css"
+        },
+        "./generated/styles/ninjacasino/dark/semantic.css": {
+            "style": "./generated/styles/ninjacasino/dark/semantic.css"
+        },
+        "./generated/styles/oddset/light/semantic.css": {
+            "style": "./generated/styles/oddset/light/semantic.css"
+        },
+        "./generated/styles/optibet/light/semantic.css": {
+            "style": "./generated/styles/optibet/light/semantic.css"
+        },
+        "./generated/styles/partycasino/light/semantic.css": {
+            "style": "./generated/styles/partycasino/light/semantic.css"
+        },
+        "./generated/styles/partycasino-2/light/semantic.css": {
+            "style": "./generated/styles/partycasino-2/light/semantic.css"
+        },
+        "./generated/styles/partyslots/default/semantic.css": {
+            "style": "./generated/styles/partyslots/default/semantic.css"
+        },
+        "./generated/styles/partypoker/light/semantic.css": {
+            "style": "./generated/styles/partypoker/light/semantic.css"
+        },
+        "./generated/styles/partypoker-2/light/semantic.css": {
+            "style": "./generated/styles/partypoker-2/light/semantic.css"
+        },
+        "./generated/styles/partysports/light/semantic.css": {
+            "style": "./generated/styles/partysports/light/semantic.css"
+        },
+        "./generated/styles/pmu/light/semantic.css": {
+            "style": "./generated/styles/pmu/light/semantic.css"
+        },
+        "./generated/styles/premium/dark/semantic.css": {
+            "style": "./generated/styles/premium/dark/semantic.css"
+        },
+        "./generated/styles/premium/light/semantic.css": {
+            "style": "./generated/styles/premium/light/semantic.css"
+        },
+        "./generated/styles/sportingbet/light/semantic.css": {
+            "style": "./generated/styles/sportingbet/light/semantic.css"
+        },
+        "./generated/styles/sportingbet-brazil/light/semantic.css": {
+            "style": "./generated/styles/sportingbet-brazil/light/semantic.css"
+        },
+        "./generated/styles/sportsinteraction/dark/semantic.css": {
+            "style": "./generated/styles/sportsinteraction/dark/semantic.css"
+        },
+        "./generated/styles/vistabet/light/semantic.css": {
+            "style": "./generated/styles/vistabet/light/semantic.css"
+        },
+        "./generated/styles/wheeloffortune/light/semantic.css": {
+            "style": "./generated/styles/wheeloffortune/light/semantic.css"
+        },
+        "./generated/styles/whitelabel/light/semantic.css": {
+            "style": "./generated/styles/whitelabel/light/semantic.css"
+        },
+        "./generated/styles/*": {
+            "style": "./prebuilt-themes/**/*.css"
+        }
+    }
+}

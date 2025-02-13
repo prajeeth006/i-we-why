@@ -1,0 +1,36 @@
+{
+    "unregisteredBrands": [
+        {
+            "key": "PREMIUMDE",
+            "value": "false"
+        },
+        {
+            "key": "BWINDE",
+            "value": "true"
+        },
+        {
+            "key": "PPDE",
+            "value": "false"
+        },
+        {
+            "key": "PSDE",
+            "value": "true"
+        },
+        {
+            "key": "SCDE",
+            "value": "false"
+        },
+        {
+            "key": "GBDE",
+            "value": "false"
+        },
+        {
+            "key": "SBDE",
+            "value": "false"
+        },
+        {
+            "key": "LADBROKEDE",
+            "value": "false"
+        }
+    ]
+}

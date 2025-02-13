@@ -1,0 +1,67 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+        <ng-container *ngIf="!(fillerPageMessage$ | async)">
+            <img class="avr-bg-image" [retrySrc]="vm.backgroundImageUrl">
+            <gn-base-page>
+                <ng-container header-content>
+
+                    <gn-avr-banner [leadTitle]="vm.staticContent?.contentParameters?.Title" [title]="vm.eventName"
+                        [imageRight]="vm?.brandImageUrl" [distance]="vm.distance"
+                        [runnerCount]="!!vm.runnerCount ?  (vm.runnerCount + ' ' + vm.staticContent?.contentParameters?.Runners) : ''"
+                        [eachWay]="!!vm.eachWay ? (vm.staticContent?.contentParameters?.EachWay + ' ' + vm.eachWay) : ''">
+
+                    </gn-avr-banner>
+
+                </ng-container>
+                <ng-container body-content *ngIf="vm.isResultedOrOff">
+                    <ul class="avr-result-table">
+                        <li *ngFor="let runner of vm.resultsTable">
+                            <div class="table-item-1 items border-dark">
+                                <span *ngIf="!!runner.position">
+                                    {{ runner.position | runnerPositionSuffix }}
+                                </span>
+                            </div>
+                            <div class="table-item-2 items  border-dark">
+                                <img *ngIf="!!runner?.imageSourceUrl" [ngClass]="{'motor-race-img': vm.avrEventType == isMotorRace}" [retrySrc]="runner?.imageSourceUrl" height="40px" />
+                            </div>
+                            <div class="table-item-3 items border-dark table-center "
+                                [ngClass]="vm.avrEventType== isHorseRace ? 'ishorse' : 'isdog' ">
+                                <span *ngIf="!!runner.runnerNumber && (vm.avrEventType== isHorseRace)">
+                                    {{ runner.runnerNumber }}
+                                </span>
+                            </div>
+                            <div class="table-item-4 items border-dark">
+                                <span *ngIf="!!runner.runnerName">
+                                    {{ runner.runnerName | uppercase }}
+                                </span>
+                            </div>
+                            <div class="table-item-5 items border-dark table-left">
+                                <span *ngIf="!!runner.price">
+                                    {{ runner.price }}
+                                </span>
+                            </div>
+                            <div class="table-item-6 items border-dark table-right">
+                                <span *ngIf="!!runner.favourite"
+                                [ngClass]="runner.isFavourite ? 'badge' : 'regular-class'">
+                                    {{ runner.favourite }}
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="castcontainer">
+                        <div *ngIf="!!vm.forecast" class="castcontainer-left">
+                            <span class="castname">{{ vm.staticContent?.contentParameters?.Forecast | uppercase
+                                }}</span>
+                            <span class="castvalue">{{ vm?.forecast}}</span>
+                        </div>
+                        <div *ngIf="!!vm.tricast" class="castcontainer-right">
+                            <span class="castname"> {{ vm.staticContent?.contentParameters?.Tricast | uppercase
+                                }}</span>
+                            <span class="castvalue">{{ vm?.tricast}} </span>
+                        </div>
+                    </div>
+                </ng-container>
+            </gn-base-page>
+        </ng-container>
+    </ng-container>
+</ng-container>

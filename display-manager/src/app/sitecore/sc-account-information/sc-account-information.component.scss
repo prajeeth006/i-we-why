@@ -1,0 +1,30 @@
+@use '../../shared-css/abstracts' as abstract;
+@import '../../shared-css/variables.scss';
+
+.login-area {
+  display: flex;
+  align-items: center;
+  font-size: $txt-md-font-size;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .pipe-divider {
+    margin: 0 0.5rem;
+  }
+
+  .user-wrapper {
+    margin-right: $txt-sm-font-size;
+  }
+
+  .user-info-icon {
+    @include abstract.breakpoint-2 {
+      font-size: $txt-sm-font-size;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@use '../../../../../shared-css/abstracts' as abstract;
+@import '../../../../../shared-css/variables.scss';
+
+.navigate-section {
+  padding: 10px 5px;
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .new-carousel {
+    .mat-mdc-outlined-button {
+      border: none;
+      padding: 0;
+      color: $label-light-black;
+      line-height: 0px;
+    }
+  }
+
+  .navigate-btn {
+    padding: 0px 0.2rem;
+    line-height: 27px;
+    min-width: 2rem;
+    border: 1px solid $color-black-1;
+
+    mat-icon {
+      color: $color-black-1;
+    }
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+  .mat-mdc-button-disabled {
+    border: 1px solid $light-grey-bg-3;
+
+    mat-icon {
+      color: $light-grey-bg-4;
+    }
+  }
+}
+
+.navigation-items {
+  .left-navigation {
+    margin-right: 5px;
+  }
+
+  .nav-icon-item {
+    cursor: pointer;
+  }
+}
+
+.sort-by-section {
+  position: relative;
+  display: flex;
+  width: 140px;
+  height: 35px;
+  line-height: 35px;
+  background: $white;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid $border-grey-2;
+  letter-spacing: normal;
+  font-size: $txt-md-font-size;
+
+  @include abstract.breakpoint {
+    width: 6em;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  @include abstract.breakpoint-2 {
+    width: 6em;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: $white;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+    border-left: 1px solid $border-grey-2;
+    color: $label-light-black;
+
+    @include abstract.breakpoint {
+      padding: 0 5px;
+      font-size: $txt-xs-font-size;
+    }
+
+    @include abstract.breakpoint-2 {
+      padding: 0 5px;
+      font-size: $txt-xs-font-size;
+    }
+  }
+
+  .sort-by-dropdown {
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: $white;
+    background-image: none;
+    flex: 1;
+    padding-left: 15px;
+    color: $color-black-4;
+    cursor: pointer;
+    font-size: $txt-md-font-size;
+
+    @include abstract.breakpoint {
+      font-size: $txt-xs-font-size;
+      padding-left: 10px;
+    }
+
+    @include abstract.breakpoint-2 {
+      font-size: $txt-xs-font-size;
+      padding-left: 10px;
+    }
+  }
+
+}
+
+.new-multievent button {
+  font-weight: 500;
+  font-size: $txt-sm-font-size;
+  letter-spacing: 1.25px;
+  color: $label-light-black;
+  border: none;
+}
+
+
+@media (max-width:1280px) {
+
+  .navigation-items .left-navigation {
+    margin-right: 0px;
+  }
+
+  .navigate-section {
+    padding-left: 0px;
+
+    .new-carousel .mat-mdc-outlined-button {
+      font-size: $txt-xs-font-size;
+    }
+  }
+}

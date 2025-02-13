@@ -1,0 +1,25 @@
+{
+    "customerNetDepositAmounts": [
+        {
+            "amount": 54.4,
+            "userId": "ld_user1",
+            "brandId": "brand_100",
+            "accountCategory": 1,
+            "email": "user@bwin.com"
+        },
+        {
+            "amount": 133,
+            "userId": "bz_user1",
+            "brandId": "brand_200",
+            "accountCategory": 2,
+            "email": "account@bwin.com"
+        },
+        {
+            "amount": -103,
+            "userId": "bz_user1",
+            "brandId": "brand_200",
+            "accountCategory": 2,
+            "email": "account@bwin.com"
+        }
+    ]
+}

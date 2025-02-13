@@ -1,0 +1,8 @@
+@mixin shared {
+    --ds-sheet-color-background: var(--semantic-color-l2-sheet-background-base);
+    --ds-sheet-color-drag-handle: var(--semantic-color-l2-sheet-on-background-subtle);
+    --ds-sheet-space-padding-bottom: var(--semantic-spacing-container-padding-xl);
+    --ds-sheet-space-padding-left: var(--semantic-spacing-container-padding-2xl);
+    --ds-sheet-space-padding-right: var(--semantic-spacing-container-padding-2xl);
+    --ds-sheet-space-padding-top: var(--semantic-spacing-container-padding-xl);
+}

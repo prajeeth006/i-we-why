@@ -1,0 +1,133 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.preset-list {
+    max-width: 1460px;
+    margin: 20px 0 20px 30px;
+    font-size: $txt-sm-font-size;
+    font-family: $default-font;
+
+    .tb-header {
+        background-color: $background-grey-color;
+        text-transform: uppercase;
+        letter-spacing: 1.25px;
+        font-weight: $fw-bold;
+        height: 26px;
+        border-radius: 5px;
+    }
+
+    .tb-row {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        padding: 0 20px;
+    }
+
+    .tb-body {
+        max-height: 68vh;
+        overflow-y: auto;
+        @include helper.customScrollBar;
+
+        .tb-row {
+            border-bottom: solid 1px $body-color-p2-lighter-bg;
+            font-weight: $fw-regular;
+            height: 30px;
+            letter-spacing: .25px;
+            box-sizing: border-box;
+
+            &:hover {
+                background-color: $body-color-p2-lighter-bg;
+            }
+
+            .action-btns {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                margin-left: auto;
+                column-gap: 15px;
+
+                .action-btn {
+                    height: 24px;
+                    min-width: 24px;
+                    color: $color-black-light;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &.delete-btn {
+                        margin-left: 5px;
+
+                        &:disabled {
+                            cursor: default;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .header-title {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+            color: $text-black-color;
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            line-height: 1;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+    }
+
+    .number {
+        flex-basis: 50px;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .type,
+    .gantries {
+        flex-basis: 120px;
+    }
+
+    .gantries {
+        flex-grow: 1;
+    }
+
+    .name {
+        flex-basis: 240px;
+    }
+}
+
+.preset-footer {
+    @include helper.flex-container(flex-end, center);
+    max-height: 45px;
+    background-color: $background-grey-color;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+    margin-left: auto;
+
+    button {
+        @include helper.center-content();
+        background-color: $btn-success-bg;
+        border: none;
+        color: $white;
+        border-radius: 4px;
+        width: 190px;
+        height: 35px;
+        font-size: 14px;
+        font-weight: $fw-bold;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .mat-icon {
+        margin-right: 10px;
+    }
+}

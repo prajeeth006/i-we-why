@@ -1,0 +1,106 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.screen-setting {
+  @include helper.flex-container(space-between, normal);
+
+  flex-direction: column;
+  height: calc(100vh - 178px);
+
+  &__default-type {
+    color: $text-black-color;
+
+    @include helper.font-styles($txt-sm-font-size, $fw-regular, 0.25px, 16px);
+
+    margin: 0;
+    padding: 16px $space-20;
+    text-transform: capitalize;
+  }
+
+  &__body {
+    padding: $space-20;
+  }
+
+  &__radio-container {
+    @include helper.flex-container(flex-start, center);
+
+    gap: $space-20;
+    padding-inline: $space-20;
+
+    .screen-setting__radio-button {
+      @include helper.center-content();
+
+      flex-basis: 48px;
+      height: 48px;
+    }
+
+    .screen-setting__radio-label {
+      color: $text-black-color;
+
+      @include helper.font-styles($txt-sm-font-size, $fw-regular, 0.25px, 16px);
+    }
+  }
+
+  &__footer {
+    background-color: $background-grey-color;    
+    padding: $space-20;
+  }
+
+  &__footer-actions {
+    @include helper.flex-container(flex-end, center);
+
+    gap: 15px;
+    height: 55px;
+  }
+
+  &__action-btn {
+    @include helper.center-content();
+
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+
+    @include helper.font-styles();
+
+    padding: 10.5px $space-30;
+    text-transform: uppercase;
+    transition: all .3s ease;
+
+    &--cancel {
+      background-color: $white;
+      color: $text-black-color;
+      box-shadow: 0 0px 0px 1px $text-black-color;
+    }
+
+    &--save {
+      background: $btn-success-bg;
+      color: $white;      
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+::ng-deep {
+  .screen-setting {
+    .mdc-radio{
+      transform: scale(1.2);
+    }
+    .mat-mdc-radio-button.mat-accent {
+      --mdc-radio-selected-focus-icon-color: $text-black-color;
+      --mdc-radio-selected-hover-icon-color: $text-black-color;
+      --mdc-radio-selected-icon-color: $text-black-color;
+      --mdc-radio-selected-pressed-icon-color: $text-black-color;
+      --mat-radio-checked-ripple-color: $text-black-color;
+    }
+    .mdc-form-field.mat-internal-form-field{
+        display: grid;
+        height: 100%;
+        place-content: center;
+        width: 100%;
+      }
+  }
+}

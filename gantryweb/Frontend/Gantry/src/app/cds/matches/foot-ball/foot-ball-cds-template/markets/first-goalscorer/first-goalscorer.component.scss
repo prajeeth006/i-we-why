@@ -1,0 +1,92 @@
+@import './src/global-style/_all-variables.scss';
+
+
+.multimarket-container {
+  &__main {
+    gap: 4px;
+    columns: 2;
+    display: column;
+    color: $color-p1-text;
+
+    @include breakpoint(multidesktop) {
+      margin: 0;
+      gap: 2px;
+    }
+
+    .marketdata {
+      flex: 0 0 50%;
+
+      &__left {
+        @include flex-center;
+        min-width: 99%;
+        height: 68px;
+
+        @include breakpoint(multidesktop) {
+          height: 34px;
+        }
+
+        .betName {
+          justify-content: flex-start;
+        }
+      }
+
+      &__right {
+        display: flex;
+        min-width: 99%;
+        justify-content: center;
+        height: 68px;
+
+        @include breakpoint(multidesktop) {
+          height: 34px;
+        }
+
+        .betName {
+          justify-content: flex-end;
+        }
+      }
+
+      .betName {
+        @include text-truncate;
+        width: 160px;
+        font-size: $font-list-lg-title-avr;
+        background-color: $white;
+        padding: 0 32px;
+        flex: 1;
+        color: $body-color-txt;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-lg-font1-size;
+          line-height: 28px;
+          padding: 0 15px;
+        }
+      }
+
+      .betOdds {
+        font-size: $font-list-lg-title-avr;
+        background: $body-color-p2-light;
+        width: 162px;
+        height: 100%;
+        color: $body-color-txt;
+        text-align: center;
+        overflow: hidden;
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-lg-font1-size;
+          width: 80px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    + .multimarket-container__main {
+      margin-top: 4px;
+
+      @include breakpoint(multidesktop) {
+        margin-top: 2px;
+      }
+    }
+  }
+}

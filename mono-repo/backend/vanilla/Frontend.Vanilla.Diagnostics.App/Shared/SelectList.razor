@@ -1,0 +1,31 @@
+@using Frontend.Vanilla.Diagnostics.Contracts
+
+@code {
+
+    [Parameter]
+    public string SelectedValue { get; set; }
+
+    [Parameter]
+    public EventCallback<string> SelectedValueChanged { get; set; }
+
+    [Parameter]
+    public IReadOnlyList<SelectItem> Items { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; }
+
+    private Task OnSelectedValueChanged(ChangeEventArgs args)
+    {
+        SelectedValue = (string)args.Value;
+
+        return SelectedValueChanged.InvokeAsync(SelectedValue);
+    }
+
+}
+
+<select @onchange="OnSelectedValueChanged" @attributes="InputAttributes" class="form-control">
+    @foreach (var item in Items)
+    {
+        <option value="@item.Value" selected="@(SelectedValue == item.Value)">@item.Text</option>
+    }
+</select>

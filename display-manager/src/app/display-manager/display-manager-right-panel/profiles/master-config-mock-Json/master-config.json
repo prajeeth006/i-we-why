@@ -1,0 +1,1094 @@
+[
+  {
+    "Name": "Profile1",
+    "GantryTypes": [
+      {
+        "Name": "Master",
+        "AssetTypes": [
+          {
+            "Name": "Horses",
+            "Screens": [
+              {
+                "Name": "Horses",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses+2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses+6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Horses +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "GreyHounds",
+            "Screens": [
+              {
+                "Name": "Greyhounds",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Greyhounds +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "Virtuals",
+            "Screens": [
+              {
+                "Name": "Virtuals",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals+4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals+6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Virtuals +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "GreyHoundsVirtuals",
+            "Screens": [
+              {
+                "Name": "GreyhoundsVirtuals",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyHounds Virtuals +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyhoundsVirtuals+2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyHounds Virtuals +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyhoundsVirtuals +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyHounds Virtuals +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyhoundsVirtuals +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "GreyHounds Virtuals +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "Sports",
+            "Screens": [
+              {
+                "Name": "sports",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "sports +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "Marketing",
+            "Screens": [
+              {
+                "Name": "Marketing",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Marketing +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "AVR",
+            "Screens": [
+              {
+                "Name": "Avr",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Avr +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          },
+          {
+            "Name": "Misc",
+            "Screens": [
+              {
+                "Name": "Misc",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +1",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +2",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +3",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +4",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +5",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +6",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              },
+              {
+                "Name": "Misc +7",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenPart": 0,
+                "NowPlaying": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "21",
+        "AssetTypes": [
+          {
+            "Name": "Horses",
+            "Screens": [
+              {
+                "Name": "Horses",
+                "ScreenNumber": "1",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenCoordinate": {
+                  "Name": "1a",
+                  "SortOrder": 1,
+                  "Row": 2,
+                  "Column": 1,
+                  "IsQuad": true,
+                  "IsHalf": false
+                },
+                "NowPlaying": {
+                  "Asset": {
+                    "id": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                    "ruleId": "{9F12F4B8-ECB0-4D7E-B338-C4F76B261625}",
+                    "targetItemId": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                    "name": "ColourOptions",
+                    "isPromotionTreeNode": true,
+                    "isRacingTreeNode": false,
+                    "isChannelTreeNode": false,
+                    "isSkyChannelTreeNode": false,
+                    "isMultiEventTreeNode": false,
+                    "isCarousleNode": false,
+                    "isMultiView": false,
+                    "displayOrder": 1,
+                    "eventMarketPairs": "",
+                    "typeIds": "",
+                    "event": {
+                      "typeId": 0,
+                      "typeName": null,
+                      "categoryCode": null,
+                      "className": null,
+                      "marketsWhichAreDropped": null,
+                      "markets": null,
+                      "isStandardTemplatesLoaded": false,
+                      "isExpandable": true,
+                      "virtual": false,
+                      "tabName": null,
+                      "targetLink": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                      "isMeetingPages": false,
+                      "meetingPageRelativePath": null,
+                      "eventSortCode": null,
+                      "id": 0,
+                      "name": null,
+                      "startTime": null,
+                      "eventName": null
+                    }
+                  },
+                  "Name": "ColourOptions"
+                },
+                "DisplayScreen": {
+                  "screenName": "S 1",
+                  "screenNo": 1,
+                  "Size": "S",
+                  "IsTVChannel": false,
+                  "DecoderID": null
+                }
+              },
+              {
+                "Name": "HorsesHalf",
+                "ScreenNumber": "1",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": true,
+                "IsHalfView": false,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenCoordinate": {
+                  "Name": "1a",
+                  "SortOrder": 2,
+                  "Row": 1,
+                  "Column": 1,
+                  "IsQuad": true,
+                  "IsHalf": false
+                },
+                "NowPlaying": {
+                  "Asset": {
+                    "id": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                    "ruleId": "{9F12F4B8-ECB0-4D7E-B338-C4F76B261625}",
+                    "targetItemId": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                    "name": "ColourOptions",
+                    "isPromotionTreeNode": true,
+                    "isRacingTreeNode": false,
+                    "isChannelTreeNode": false,
+                    "isSkyChannelTreeNode": false,
+                    "isMultiEventTreeNode": false,
+                    "isCarousleNode": false,
+                    "isMultiView": false,
+                    "displayOrder": 1,
+                    "eventMarketPairs": "",
+                    "typeIds": "",
+                    "event": {
+                      "typeId": 0,
+                      "typeName": null,
+                      "categoryCode": null,
+                      "className": null,
+                      "marketsWhichAreDropped": null,
+                      "markets": null,
+                      "isStandardTemplatesLoaded": false,
+                      "isExpandable": true,
+                      "virtual": false,
+                      "tabName": null,
+                      "targetLink": "21e70004-4e7c-4623-8c42-1bd905797d00",
+                      "isMeetingPages": false,
+                      "meetingPageRelativePath": null,
+                      "eventSortCode": null,
+                      "id": 0,
+                      "name": null,
+                      "startTime": null,
+                      "eventName": null
+                    }
+                  },
+                  "Name": "ColourOptions"
+                },
+                "DisplayScreen": {
+                  "screenName": "S 1",
+                  "screenNo": 1,
+                  "Size": "S",
+                  "IsTVChannel": false,
+                  "DecoderID": null
+                }
+              },
+              {
+                "Name": "Horses +1",
+                "ScreenNumber": "2",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/HorseRacing/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": false,
+                "IsHalfView": false,
+                "IsTertiaryView": true,
+                "IsQuadView": false,
+                "ScreenCoordinate": {
+                  "Name": "1a",
+                  "SortOrder": 2,
+                  "Row": 1,
+                  "Column": 2,
+                  "IsQuad": true,
+                  "IsHalf": false
+                },
+                "NowPlaying": {
+                  "Asset": {
+                    "id": "{576BA197-E775-4A03-995D-7408781316A4}",
+                    "ruleId": "{0F25CBA6-5414-473B-B765-9921F37EA88A}",
+                    "targetItemId": "{576BA197-E775-4A03-995D-7408781316A4}",
+                    "name": "Eps",
+                    "isPromotionTreeNode": false,
+                    "isRacingTreeNode": false,
+                    "isChannelTreeNode": true,
+                    "isSkyChannelTreeNode": false,
+                    "isMultiEventTreeNode": false,
+                    "isCarousleNode": false,
+                    "isMultiView": false,
+                    "displayOrder": 1,
+                    "eventMarketPairs": "",
+                    "typeIds": "",
+                    "event": {
+                      "typeId": 0,
+                      "typeName": null,
+                      "categoryCode": null,
+                      "className": null,
+                      "marketsWhichAreDropped": null,
+                      "markets": null,
+                      "isStandardTemplatesLoaded": false,
+                      "isExpandable": true,
+                      "virtual": false,
+                      "tabName": null,
+                      "targetLink": "{576BA197-E775-4A03-995D-7408781316A4}",
+                      "isMeetingPages": false,
+                      "meetingPageRelativePath": null,
+                      "eventSortCode": null,
+                      "id": 0,
+                      "name": null,
+                      "startTime": null,
+                      "eventName": null
+                    }
+                  },
+                  "Name": "Eps"
+                },
+                "DisplayScreen": {
+                  "screenName": "2",
+                  "screenNo": 2,
+                  "Size": "L",
+                  "IsTVChannel": true,
+                  "DecoderID": "TVBOX1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Profile2",
+    "GantryTypes": [
+      {
+        "Name": "5X5",
+        "AssetTypes": [
+          {
+            "Name": "Greyhounds",
+            "Screens": [
+              {
+                "Name": "Greyhounds",
+                "ScreenNumber": "3",
+                "SortOrder": 1,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/Greyhounds/Screen1",
+                "IsDisabled": false,
+                "IsSingleView": false,
+                "IsHalfView": true,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenCoordinate": {
+                  "Name": "1a",
+                  "SortOrder": 2,
+                  "Row": 2,
+                  "Column": 1,
+                  "IsQuad": false,
+                  "IsHalf": false
+                },
+                "NowPlaying": null,
+                "DisplayScreen": {
+                  "screenName": "Greyhounds",
+                  "screenNo": 1,
+                  "Size": null,
+                  "IsTVChannel": false,
+                  "DecoderID": null
+                }
+              },
+              {
+                "Name": "Greyhounds +1",
+                "ScreenNumber": "4",
+                "SortOrder": 2,
+                "ScreenPath": "/sitecore/content/Gantry/DisplayManager/DisplayRightPanel2.0/Coral/Screens/Greyhounds/Screen2",
+                "IsDisabled": false,
+                "IsSingleView": false,
+                "IsHalfView": true,
+                "IsTertiaryView": false,
+                "IsQuadView": false,
+                "ScreenCoordinate": {
+                  "Name": "1a",
+                  "SortOrder": 1,
+                  "Row": 2,
+                  "Column": 1,
+                  "IsQuad": false,
+                  "IsHalf": false
+                },
+                "NowPlaying": null,
+                "DisplayScreen": {
+                  "screenName": "Greyhounds +1",
+                  "screenNo": 1,
+                  "Size": null,
+                  "IsTVChannel": false,
+                  "DecoderID": null
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

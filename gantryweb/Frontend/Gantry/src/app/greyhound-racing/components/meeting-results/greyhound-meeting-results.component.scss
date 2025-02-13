@@ -1,0 +1,101 @@
+@import "./src/global-style/_all-variables.scss";
+
+.meeting-results-table-header {
+    font-size:$single-list-title;  
+    margin-top: 10px;
+    display: flex;
+    color: $white;
+    flex: 1;
+    align-items: center;
+    @include breakpoint(multidesktop){
+        font-size:$txt-md-font1-size;
+    }
+    span{
+        display: flex;
+        align-items: center;
+        flex-basis: 9%;
+        justify-content: center;
+        color: $body-color-txt;
+        padding: 0 0 10px;
+        &:first-child{
+            justify-content: flex-start;
+            padding-left: 10px;
+            flex-basis: 7%;
+        }
+        &.cast-culmn{
+            flex-basis: 13%; 
+        }
+        &.gap{
+            flex-basis: 5%; 
+           
+        }
+    }
+}
+
+.meeting-results-table {
+    font-size:$single-list-title;  
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background: $white;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 6px 0;
+    
+    @include breakpoint(multidesktop){
+        font-size:$txt-md-font1-size;
+        padding: 2px 0;
+        margin-bottom: 4px;
+    }
+
+    .highlight{
+        color: $red;
+    }
+    
+    span{
+        display: flex;
+        align-items: center;
+        flex-basis: 9%;
+        justify-content: center;
+        color: $body-color-txt;
+        padding: 3px 0;
+        &:first-child{
+            justify-content: flex-start;
+            padding: 2px 0 2px 10px;
+            flex-basis: 7%;
+        }
+        &.text-left{
+            justify-content: flex-start;
+            padding-left: 10px;
+        }
+        img{
+            height: 50px;
+            
+            @include breakpoint(multidesktop){
+                height: 25px;   
+            }
+        }
+        &.gap{
+            flex-basis: 5%;
+                  
+        }
+        &.cast-culmn{
+            flex-basis: 13%; 
+        }
+    }
+}
+.onUk{
+    .meeting-results-table-header, .meeting-results-table{
+        span{
+            flex-basis: 10%;
+            &.cast-culmn{
+                flex-basis: 20%; 
+            }
+            &.gap{
+                flex-basis: 5%; 
+               
+            }
+        }
+    }
+    
+}

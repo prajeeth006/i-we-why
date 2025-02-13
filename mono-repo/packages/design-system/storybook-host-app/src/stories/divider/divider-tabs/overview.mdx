@@ -1,0 +1,46 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DividerComponentStories from '../divider.component.stories';
+
+The divider `<ds-divider></ds-divider>` component is a user interface element used to visually separate content within an application. This component is flexible and can be used horizontally or vertically, with various styles, enabling better organization and structuring of content.
+The selector is `<ds-divider></ds-divider>` and by default will be horizontal.
+If you need vertical, add property.
+
+<Canvas of={DividerComponentStories.Divider} />
+
+## Usage
+
+Import `DsDivider` in your component, and apply `ds-divider` in your component.
+
+```ts
+import { DsDivider } from '@frontend/ui/divider'; // 👈 add to file imports
+
+@Component({
+    imports: [DsDivider], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+## Inputs
+
+#### Vertical
+
+-   Type: boolean
+-   Default: false
+-   Description: Determines the orientation of the divider. If set to true, the divider will be vertical.
+
+#### Inverse
+
+-   Type: boolean
+-   Default: false
+-   Description: Sets the inverse state of the divider, changing its visual appearance.
+
+#### Variant
+
+-   Type: string
+-   Options: on-surface, on-surface-low, on-surface-high, on-surface-highest
+-   Description: Specifies the stronger color/contrast of the divider.
+
+By utilizing these configurations and properties, the Divider component can be effectively integrated into your application to enhance the visual structure and organization of content.

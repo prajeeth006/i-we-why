@@ -1,0 +1,82 @@
+<div [ngClass]="selectedTabName == manualConstants.showprice ? 'match-details-page showprice-footer' : 'match-details-page result-footer'">
+    <div class="match-details-wrapper-footer">
+
+    <div class="match-details-form" [formGroup]="form">
+        <div class="controls-section">
+            <div class="form-control">
+                <mat-label class="item-label">Each-Way*</mat-label>
+                <mat-form-field appearance="fill" class="each-way-field" [ngClass]="{ 'is-invalid': ((form.controls['eachway'].invalid) && isSubmit) }">
+                    <mat-select disableOptionCentering panelClass="mat-dropdown-control" id="eachwayField"
+                    formControlName="eachway">
+                        <mat-option [value]="way" *ngFor="let way of eachWayList">{{ way }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="selectedTabName == manualConstants.showprice">
+                <mat-label class="item-label">Run*</mat-label>
+                <mat-form-field appearance="fill" class="run-field" [ngClass]="{ 'is-invalid': ((form.controls['run'].invalid) && isSubmit) }">
+                    <input matInput id="runField" type="text" [OnlyNumber]="true" [maxlength]="2" formControlName="run" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Distance</mat-label>
+                <mat-form-field appearance="fill" class="distance-field">
+                    <input matInput id="distanceField" type="text" maxlength="20" formControlName="distance" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Going</mat-label>
+                <mat-form-field appearance="fill" class="going-field">
+                    <input matInput id="goingField" type="text" maxlength="30" formControlName="going" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="selectedTabName == manualConstants.result">
+                <mat-label class="item-label">Ran*</mat-label>
+                <mat-form-field appearance="fill" class="ran-field" [ngClass]="{ 'is-invalid': ((form.controls['run'].invalid) && isSubmit) }">
+                    <input matInput id="ranField" type="text" formControlName="run" [OnlyNumber]="true" [maxlength]="2" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="match-details-form result-section" *ngIf="selectedTabName == manualConstants.result" [formGroup]="form">
+        <div class="controls-section">
+            <div class="form-control">
+                <mat-label class="item-label">Forecast</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="forecastField" type="text" formControlName="forecast" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Tricast</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="tricastField" type="text" formControlName="tricast" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Win</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="winField" type="text" formControlName="win" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Place</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="placeField" type="text" formControlName="place" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Exacta</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="exactaField" type="text" formControlName="exacta" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control">
+                <mat-label class="item-label">Trifecta</mat-label>
+                <mat-form-field appearance="fill" class="footer-lowersection-fields">
+                    <input matInput id="trifectaField" type="text" formControlName="trifecta" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

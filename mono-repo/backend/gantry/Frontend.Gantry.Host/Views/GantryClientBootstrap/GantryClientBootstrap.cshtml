@@ -1,0 +1,80 @@
+﻿@using Frontend.Host.Features.Assets
+@using Frontend.Host
+
+@inject IIndexViewDataProvider DataProvider
+
+@{
+    Layout = null;//"../Shared/MobileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html data-domain="@ViewBag.domain" server-name="@ViewBag.serverName">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GantryClientBootstrap</title>
+    <link rel="preload" href="/ClientDist/assets/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/ClientDist/assets/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/ClientDist/assets/MidnightSansRDPro-12Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/ClientDist/assets/Tungsten-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <base href="/" />
+
+    <script>
+        window.label = "@ViewBag.domain";
+
+        var scriptsArray = new Array();
+
+        window.addEventListener('error',
+            ((event) => {
+                if (event.target.nodeName === "SCRIPT" && !scriptsArray?.some(src => src === event.target.src)) {
+                    scriptsArray.push(event.target.src);
+                    createScript(event.target.src);
+                }
+            }),
+            true);
+
+        function createScript(script) {
+            retryScripts(script)
+                .then(() => {
+                })
+                .catch((e) => {
+                    setTimeout(() => {
+                        createScript(script);
+                        unloadJS(script);
+                    }, 30000);
+                });
+        }
+
+        function retryScripts(targetUrl) {
+            return new Promise(function (res, rej) {
+                var retryScript = document.createElement('script');
+                retryScript.src = targetUrl;
+                retryScript.type = 'text/javascript';
+                retryScript.onerror = rej;
+                retryScript.async = true;
+                retryScript.onload = res;
+                retryScript.addEventListener('error', rej);
+                retryScript.addEventListener('load', res);
+                var getPreviousScript = document.querySelector("script[src^='" + targetUrl + "']");
+                if (getPreviousScript != null) {
+                    document.head.removeChild(getPreviousScript);
+                }
+                document.head.appendChild(retryScript);
+            });
+        }
+
+        function unloadJS(targetUrl) {
+            var scripts = document.head.querySelector("script[src^='" + targetUrl + "']");
+            if (scripts != null) {
+                document.head.removeChild(scripts);
+            }
+        }
+    
+    </script>
+
+    @await DataProvider.RenderBootstrapAssetsAsync(BootstrapAssetSection.Head, Context.RequestAborted)
+</head>
+<body>
+    <gn-root></gn-root>
+    @await DataProvider.RenderBootstrapAssetsAsync(BootstrapAssetSection.Body, Context.RequestAborted)
+</body>
+</html>

@@ -1,0 +1,15 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.42E6097C.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\refint\Frontend.Vanilla.DomainSpecificLanguage.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\Frontend.Vanilla.DomainSpecificLanguage.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.DomainSpecificLanguage\obj\Debug\ref\Frontend.Vanilla.DomainSpecificLanguage.dll

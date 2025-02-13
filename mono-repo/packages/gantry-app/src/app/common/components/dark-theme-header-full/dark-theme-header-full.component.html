@@ -1,0 +1,16 @@
+<div class="header" [ngClass]="{ 'horse-template-header': isFrom === 'horse' }">
+    <div id="banner" class="header__title--block">
+        <div class="header__title--block-left">
+            <div class="header__logo">
+                <img id="racingImageId" [src]="racingImage" alt="Logo" />
+            </div>
+            <div id="leadTitle" class="header__title">
+                <div class="header__title--content">
+                    <div class="event-title" id="titleId" *ngIf="title" autoAdjustFont>
+                        <span>{{ title }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

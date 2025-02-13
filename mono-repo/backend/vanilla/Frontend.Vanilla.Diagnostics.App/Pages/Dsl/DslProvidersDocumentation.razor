@@ -1,0 +1,79 @@
+@inherits DslProvidersDocumentationComponent
+
+<h2>Available Providers</h2>
+<ul class="list-group" data-testid="providers">
+    @foreach (var provider in ProvidersMetadata)
+    {
+        <li class="list-group-item" id="@provider.Name">
+            <h4 data-testid="title">
+                <ScrollToIdLink ScrollId="@provider.Name"/>
+                @provider.Name
+                <span class="badge badge-info provider-assembly" title="The provider comes from this assembly.">
+                    @provider.Assembly
+                </span>
+            </h4>
+            <p data-testid="description">
+                @provider.Documentation
+            </p>
+            <ul class="list-group">
+                @foreach (var member in provider.Members)
+                {
+                    var memberHtmlId = member.Signature.EscapeToHtmlId();
+                    <li class="list-group-item" id="@memberHtmlId">
+                        <strong data-testid="title">
+                            <ScrollToIdLink ScrollId="@memberHtmlId"/>
+                            @member.Signature
+                            @if (ProvidersValues.TryGetValue(member.Signature, out var memberValue))
+                            {
+                                <span>
+                                    =
+                                    @if (memberValue.ValueJson != null)
+                                    {
+                                        <code title="Current value">
+                                            @memberValue.ValueJson
+                                        </code>
+                                    }
+                                    @if (memberValue.Error != null)
+                                    {
+                                        <span class="badge badge-danger" title="@memberValue.Error">
+                                            Failed to get current value!
+                                        </span>
+                                    }
+                                </span>
+                            }
+                            <span class="badge badge-primary" title="@GetDslTypeDescription(member.Type)">
+                                @member.Type
+                            </span>
+                            <span class="badge badge-success" title="@GetVolatilityDescription(member.Volatility)">
+                                @member.Volatility
+                            </span>
+                            @if (member.ClientSideOnly)
+                            {
+                                <span class="badge badge-warning" title="Can only be evaluated on the client. Attempting to evaluate on the server will throw an exception.">
+                                    Client-side only
+                                </span>
+                            }
+                            @if (member.ObsoleteMessage != null)
+                            {
+                                <span class="badge badge-danger" title="Stop using this provider member because it will be removed soon.">
+                                    Obsolete
+                                </span>
+                            }
+                        </strong>
+                        <div data-testid="description">
+                            @member.Documentation
+                        </div>
+                        @if (member.ObsoleteMessage != null)
+                        {
+                            <div class="alert alert-danger obsolete-warning">
+                                This provider member is obsolete. Stop using it and replace existing occurrences because it will be removed soon.
+                                <br/>
+                                @member.ObsoleteMessage
+                            </div>
+                        }
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>

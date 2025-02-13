@@ -1,0 +1,386 @@
+@use '../../../shared-css/helpers' as helper;
+@import '../../../shared-css/variables.scss';
+
+$manual-racing-greyhound-columns: (
+  "display-order": 105px,
+  "selection-number": 69px,
+  "toggle-vacant": 95px,
+  "toggle-reserve": 99px,
+  "greyhound-trap-number": 66px,
+  "greyhound-name": 856px,
+  "table-odds-sp": 95px,
+  "toggle-favourite": 112px
+);
+
+.show-price-wrapper {
+  min-height: 300px;
+  max-height: 607px;
+  font-size: $txt-md-font-size;
+  line-height: 20px;
+
+  .max-table {
+    padding-inline: 10px;
+  }
+
+  .show-price-table {
+    border-collapse: collapse;
+
+    .show-price-table-header {
+      position: sticky;
+      top: -5px;
+      z-index: 2;
+      background-color: #fafbfc;
+
+      .header-row {
+        @include helper.table-row-cols($manual-racing-greyhound-columns, 'manual-greyhound-event', $row-height: 30px, $margin-bottom-space: 5px);
+        margin: 10px 0;
+
+        th {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0;
+          font-weight: 500;
+          font-size: $txt-sm-font-size;
+          letter-spacing: 1.25px;
+          color: $color-black-4;
+
+          position: sticky;
+
+          &.hamburger {
+            width: 24px;
+          }
+        }
+
+        .greyhound-name {
+          width: 856px;
+          height: 20px;
+        }
+
+        .greyhound-name.result-tab {
+          width: 726px;
+          height: 20px;
+        }
+      }
+    }
+
+    .show-price-table-body {
+      .hamburger-show-price {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -999;
+      }
+
+      .show-price-row {
+        @include helper.table-row-cols($manual-racing-greyhound-columns, 'manual-greyhound-event', $row-height: 40px, $margin-bottom-space: 5px);
+
+        td {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          height: 30px;
+        }
+
+        .toggle-vacant,
+        .toggle-reserve,
+        .toggle-favourite {
+          /* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+          ::ng-deep .mat-mdc-slide-toggle-label {
+            /* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+            .mat-mdc-slide-toggle-bar {
+              margin-right: 5px;
+              width: 34px;
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+            .mat-mdc-slide-toggle-content {
+              --mat-slide-toggle-label-text-size: 12px;
+              --mat-slide-toggle-label-text-line-height: 14px;
+              --mat-slide-toggle-label-text-tracking: 1.25px;
+              height: 14px;
+              --mat-slide-toggle-label-text-weight: 500;
+            }
+          }
+        }
+
+        .greyhound-name.result-tab {
+          width: 726px;
+          height: 30px;
+          .mat-mdc-form-field {
+            height: 30px;
+          }
+        }
+
+        .greyhound-name {
+          width: 856px;
+          height: 30px;
+          .mat-mdc-form-field {
+            height: 30px;
+          }
+        }
+
+        .finished-class {
+          width: 71px;
+          height: 30px;
+          border-radius: 3px;
+          border: 1px solid $label-light-black;
+        }
+
+        .selection-number-dropdown {
+          width: 71px;
+        }
+
+        .invalid {
+          border-color: $invalid-border;
+        }
+      }
+      .greyhound-trap-number {
+        height: 30px;
+        ::ng-deep {
+          .mat-mdc-form-field-flex {
+            .mat-mdc-form-field-infix {
+              margin-left: 0px;
+              
+              .mat-mdc-input-element {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+
+    .table-odds-sp {
+      width: 95px;
+      letter-spacing: 1.25px;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 700;
+      font-style: normal;
+      cursor: pointer;
+
+      .odds-sp {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+
+        ::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+          padding: 0 0.75em;
+        }
+
+        ::ng-deep {
+          .mat-mdc-form-field-flex {
+            width: 70px;
+            .mat-mdc-form-field-infix {
+              margin-left: 0px;
+              
+              .mat-mdc-input-element {
+                text-align: center;
+              }
+            }
+          }
+        }
+
+      }
+      .mat-mdc-form-field.odds-sp {
+        font-size: $txt-sm-font-size;
+        line-height: 13.5px;
+        letter-spacing: normal;        
+      }
+    }
+
+    .table-close {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+
+      .close-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+      }
+    }
+
+    .add-more {
+      width: 100%;
+
+      .button-addrow {
+        background: $addbtn-arrow;
+        width: 100%;
+        height: 30px;
+        align-items: center;
+        text-align: center;
+        border: 0px;
+        cursor: pointer;
+
+        .addrow-div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .add-row-button {
+            margin-left: 7px;
+            letter-spacing: 1.25px;
+            font-weight: 500;
+            font-size: $txt-sm-font-size;
+            color: $label-light-black;
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .table {
+    height: 100%;
+    width: 100%;
+
+    .line {
+      border-bottom: 1px solid $black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button-odds {
+      border: none;
+      width: 47.5px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: $txt-sm-font-size;
+      cursor: pointer;
+      letter-spacing: 1.25px;
+      padding: 0;
+    }
+
+    .button-sp {
+      border: none;
+      width: 47.5px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: $txt-sm-font-size;
+      cursor: pointer;
+      letter-spacing: 1.25px;
+      padding: 0;
+    }
+
+    .button-enabled {
+      background: $color-black-light;
+      color: $white;
+    }
+
+    .button-disabled {
+      background: $white;
+    }
+  }
+
+  .view-mode {
+    pointer-events: none;
+  }
+
+  .max-mdc-table {
+    @include helper.customScrollBar;
+    padding-inline: 10px;
+  }
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .preview-item-section {
+    @include helper.table-row-cols($manual-racing-greyhound-columns, 'manual-greyhound-event', $row-height: 40px, $margin-bottom-space: 5px);
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  ::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex {
+    height: 30px;
+    border-radius: 4px;
+  }
+}
+
+::ng-deep .cdk-overlay-container {
+  /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+  .mat-mdc-select-panel-wrap {
+    .finished-dropdown-control {
+      margin-top: 22px;
+      min-width: calc(100% + 23px) !important;
+      margin-left: 3px;
+      border: 1px solid $label-light-black;
+      border-radius: 3px;
+
+      .mat-mdc-option {
+        background-color: $white;
+        height: 30px;
+
+        &.row-border {
+          border-bottom: 1px solid $label-light-black;
+          padding: 5px;
+          height: 30px;
+          background-color: $white;
+
+          &.mat-mdc-selected {
+            /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version. */
+            .mat-mdc-option-text {
+              background-color: $primary-color-2;
+              --mat-option-selected-state-layer-color: $primary-color-2;
+              color: $white;
+            }
+          }
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version. */
+        .mat-mdc-option-text {
+          text-align: right;
+          height: 20px;
+          box-sizing: border-box !important;
+          line-height: 20px;
+          padding: 0px 5px;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+
+  ::ng-deep .mat-mdc-slide-toggle {
+    --mat-slide-toggle-label-text-line-height: 14.06px;
+    --mat-slide-toggle-label-text-tracking: 1.25px;
+    height: 14px;
+    --mat-slide-toggle-label-text-size: 12px;
+    --mat-slide-toggle-label-text-weight: 500;
+    --mdc-switch-selected-focus-state-layer-color: #72be4461;
+    --mdc-switch-selected-handle-color: #72be4461;
+    --mdc-switch-selected-hover-state-layer-color: #72be4461;
+    --mdc-switch-selected-pressed-state-layer-color: #72be4461;
+    --mdc-switch-selected-focus-handle-color: #72be44;
+    --mdc-switch-selected-hover-handle-color: #72be44;
+    --mdc-switch-selected-pressed-handle-color: #72be44;
+    --mdc-switch-selected-focus-track-color: #72be4461;
+    --mdc-switch-selected-hover-track-color: #72be4461;
+    --mdc-switch-selected-pressed-track-color: #72be4461;
+    --mdc-switch-selected-track-color: #72be4461;
+  
+    .mdc-form-field {
+      .mdc-switch {
+        --mdc-switch-track-width: 34px;
+        --mdc-switch-unselected-icon-size: 0px;
+        --mdc-switch-selected-icon-size: 0px;
+      }
+    }
+  }
+  
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+.mat-mdc-slide-toggle-content {
+  width: 88px;
+}
+
+.is-invalid {
+  border: 1px solid $border-invalid-color;
+}

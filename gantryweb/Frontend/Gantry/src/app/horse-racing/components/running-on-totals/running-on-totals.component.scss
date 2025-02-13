@@ -1,0 +1,84 @@
+@import './src/global-style/_all-variables.scss';
+
+.paginate {
+  color: $body-color-p2;
+  font-size: $font-list-lg1-title;
+  @include breakpoint(multidesktop) {
+    font-size: $txt-md-font-size;
+  }
+}
+
+.paddingThirty {
+  padding-right: 30px;
+}
+
+.mainContent {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: $color-p1-text;
+  @include breakpoint(multidesktop) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &-right,
+  &-left {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:nth-of-type(even) {
+      margin-left: 2%;
+    }
+  }
+
+  .list-section {
+    list-style: none;
+    padding: 0px;
+    margin-top: 0px;
+
+    .courseDetails {
+      font-size: $font-list-md2-title;
+      font-weight: bold;
+      color: $body-color-txt;
+      @include breakpoint(multidesktop) {
+        font-size: $h5-lg-font-size;
+      }
+    }
+
+    .course {
+      padding-bottom: 30px;
+      @include breakpoint(multidesktop) {
+        padding-bottom: 15px;
+      }
+      .courseName {
+        font-size: $font-list-run-title;
+        color: $body-color-txt;
+        padding-bottom: 14px;
+
+        @include breakpoint(multidesktop) {
+          font-size: $txt-md-font-size;
+          padding-bottom: 7px;
+        }
+      }
+
+      .marketContent-center {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        height: 100px;
+        justify-content: center;
+        padding-left: 20px;
+        @include breakpoint(multidesktop) {
+          height: 50px;
+          padding-left: 10px;
+        }
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

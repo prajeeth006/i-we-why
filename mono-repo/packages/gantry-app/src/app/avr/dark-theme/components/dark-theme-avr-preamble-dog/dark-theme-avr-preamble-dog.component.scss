@@ -1,0 +1,66 @@
+@import '../../../../../dark-theme-global-style/_all-variables.scss';
+@import '../../../../../dark-theme-global-style/mixins/_traps.scss';
+
+.avr-preamble-table {
+    margin: 28px 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 14px 0 0;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin: 52px 0 0;
+    }
+
+    li {
+        height: 96px;
+        margin-bottom: 40px;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            margin-bottom: 20px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            margin-bottom: 90px;
+        }
+
+        @include trap-box-styles(118px, 88px);
+
+        @include breakpoint(multidesktophalf) {
+            @include trap-box-styles(80px, 60px);
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+            padding-left: 40px;
+            font-size: $font-70;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 20px;
+                font-size: $font-35;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-40;
+            }
+        }
+
+        .selection-price {
+            @include flex-center;
+            font-size: $font-70;
+            font-weight: $fw-bold;
+            background-color: $color-white;
+            color: $early-price-text;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-35;
+            }
+        }
+
+        .favorite-box {
+            background-color: $theme-yellow;
+        }
+    }
+}

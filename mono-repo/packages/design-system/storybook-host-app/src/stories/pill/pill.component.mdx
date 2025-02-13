@@ -1,0 +1,124 @@
+import { ArgTypes, Canvas, ColorItem, ColorPalette, Meta, Source, Story } from '@storybook/blocks';
+
+import * as DsPillStories from './pill.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './pill-tabs/overview.mdx';
+import MySecondTab from './pill-tabs/examples.mdx';
+
+<Meta of={DsPillStories} />
+<div className="variant-info-container">
+    <h1>Pill Component</h1>
+    <Story of={DsPillStories.ComplexityLevel}></Story>
+</div>
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>
+
+### Color tokens
+
+<ColorPalette>
+  <ColorItem
+    title="--pill-disabled-color-chevron"
+    subtitle=""
+    colors={{
+            '': 'var(--semantic-color-on-disabled-outline)',
+        }}
+  />
+
+{' '}
+
+<ColorItem
+    title="--pill-disabled-color-icon"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-on-disabled-outline)',
+    }}
+/>
+
+{' '}
+
+<ColorItem
+    title="--pill-disabled-color-text"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-on-disabled-outline)',
+    }}
+/>
+
+{' '}
+
+<ColorItem
+    title="--pill-disabled-color-border"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-disabled-outline)',
+    }}
+/>
+
+{' '}
+
+<ColorItem
+    title="-pill-selected-color-chevron"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-l2-pill-on-background-default)',
+    }}
+/>
+
+{' '}
+
+<ColorItem
+    title="--pill-pressed-color-chevron"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-l2-pill-on-background-default)',
+    }}
+/>
+
+{' '}
+
+<ColorItem
+    title="--pill-selected-color-border"
+    subtitle=""
+    colors={{
+        '': 'var(--semantic-color-l2-pill-border-selected)',
+    }}
+/>
+
+  <ColorItem
+    title="--pill-pressed-color-border"
+    subtitle=""
+    colors={{
+            '': 'var(--semantic-color-l2-pill-border-pressed)',
+        }}
+  />
+</ColorPalette>
+
+export function VariantsTitles() {
+    return (
+        <>
+            <p>Type</p>
+            <p>No slots</p>
+            <p>No slots, Chevron</p>
+            <p>Icon</p>
+            <p>Icon, Chevron</p>
+            <p>Right slot</p>
+            <p>Right slot, Chevron</p>
+            <p>Icon, Right slot</p>
+            <p>Icon, Right slot, Chevron</p>
+        </>
+    );
+}

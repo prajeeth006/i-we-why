@@ -1,0 +1,162 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 130px;
+
+    @include flex-center;
+
+    font-size: $font-40;
+    padding: 0 14px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 65px;
+        font-size: $font-20;
+        border-width: 2.5px;
+        padding: 0 7px;
+    }
+}
+
+.heading {
+    font-size: 56px;
+    line-height: 40px;
+    height: 40px;
+
+    @include breakpoint(multidesktop) {
+        font-size: 28px;
+        line-height: 20px;
+        height: 20px;
+    }
+}
+
+.rectangle-box {
+    min-height: 96px;
+    min-width: 240px;
+
+    @include breakpoint(multidesktop) {
+        min-height: 48px;
+        min-width: 120px;
+    }
+}
+
+.tennis-results {
+    .bet-details-container {
+        .match-betting-section {
+            min-height: 96px;
+
+            @include breakpoint(multidesktop) {
+                min-height: 48px;
+            }
+
+            .bet-price {
+                @extend .rectangle-box;
+            }
+        }
+        .match-betting-details-header {
+            margin-bottom: 20px;
+
+            @include breakpoint(multidesktop) {
+                margin-bottom: 10px;
+            }
+
+            #betdetailsTitle.bet-details-title {
+                @extend .heading;
+            }
+        }
+    }
+    .set-betting {
+        &__wrap {
+            width: 1240px;
+            margin: 84px auto 0;
+
+            @include breakpoint(multidesktop) {
+                width: 620px;
+                margin: 42px auto 0;
+            }
+
+            .correct-score-header {
+                margin-bottom: 20px;
+
+                @include breakpoint(multidesktop) {
+                    margin-bottom: 10px;
+                }
+
+                #MarketTitle.bet-details-title {
+                    @extend .heading;
+                }
+            }
+            .correct-score {
+                .bet-details-item {
+                    height: 100%;
+
+                    &:not(:last-child) {
+                        margin-bottom: 24px;
+
+                        @include breakpoint(multidesktop) {
+                            margin-bottom: 12px;
+                        }
+                    }
+                    .betOdds {
+                        @extend .rectangle-box;
+                    }
+                    .bet-details {
+                        height: 96px;
+
+                        @include flex-center;
+
+                        @include breakpoint(multidesktop) {
+                            height: 48px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+html[data-domain='coral.co.uk'] {
+    .header {
+        .header__title--block {
+            .header__title--block-left {
+                .header__logo {
+                    margin-right: 8px;
+                    margin-top: -7px;
+
+                    @include breakpoint(multidesktop) {
+                        margin-right: 4px;
+                        margin-top: -3.5px;
+                    }
+
+                    img {
+                        padding: 8px;
+                        object-fit: contain;
+                        @include breakpoint(multidesktop) {
+                            padding: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+html[data-domain='ladbrokes.com'] {
+    .rectangle-box {
+        min-width: 214.29px;
+        max-width: 214.29px;
+
+        @include breakpoint(multidesktop) {
+            min-width: 107.145px;
+            max-width: 107.145px;
+        }
+    }
+    .text-v {
+        min-width: 80px;
+
+        @include breakpoint(multidesktop) {
+            min-width: 40px;
+        }
+    }
+}

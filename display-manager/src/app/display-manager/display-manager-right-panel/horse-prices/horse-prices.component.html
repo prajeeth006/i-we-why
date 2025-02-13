@@ -1,0 +1,144 @@
+<div section="showpricesection" class="show-price-wrapper">
+  <div [formGroup]="RacingEvent" class="table-container">
+    <table class="show-price-table table" [ngClass]="viewMode ? 'view-mode' : ''" #tableRefHorse cdkDropList (cdkDropListDropped)="sortEvents($event)">
+      <thead class="show-price-table-header">
+        <tr class="header-row" matHeaderRowDef="sticky:true" cdkDrag [cdkDragPreviewClass]="'preview-item-section'">
+          <th class="selection-number">
+            <span class="finished-header-text" *ngIf="selectedTabName == manualConstants.result">FINISHED</span>
+          </th>
+          <th class="hamburger"></th>
+          <th class="toggle-nonrunner" *ngIf="selectedTabName == manualConstants.showprice"></th>
+          <th class="horse-number"><span>#*</span></th>
+          <th class="horse-name">HORSE NAME*</th>
+          <th class="jockey-name">JOCKEY NAME</th>
+          <th class="table-odds-sp">
+            <button id="odds" [ngClass]="!oddssp ? 'button-odds button-enabled':'button-odds button-disabled'"
+              (click)="onChangeStartPricePayout(manualConstants.odds)">{{manualConstants.odds}}</button>
+            <button id="sp" [ngClass]="oddssp ? 'button-sp button-enabled':'button-sp button-disabled'"
+              (click)="onChangeStartPricePayout(manualConstants.sp)">{{manualConstants.sp}}</button>
+          </th>
+          <th class="toggle-favourite" *ngIf="selectedTabName == manualConstants.result"></th>
+          <th class="table-close"></th>
+        </tr>
+      </thead>
+      <tbody class="show-price-table-body" formArrayName="Runners">
+        <ng-container *ngFor="let obj of runnersArray.controls; let i = index; let l = last">
+          <div class="line" id="line"
+            *ngIf="(selectedTabName == manualConstants.showprice ? (i == runnersLength): ((selectedTabName == manualConstants.result) ? (i == activeRows): false))">
+          </div>
+          <tr class="show-price-row" [formGroupName]="i" cdkDrag [cdkDragPreviewClass]="'preview-item-section'">
+            <td class="selection-number" *ngIf="selectedTabName == manualConstants.showprice">
+              <span *ngIf="!runnersLength || (i <= runnersLength-1)">{{ i + 1 }}</span>
+            </td>
+            <td class="selection-number-dropdown" *ngIf="selectedTabName == manualConstants.result">
+              <ng-container *ngIf="(i < activeRows)">
+                <mat-form-field appearance="fill" class="finished-class">
+                  <mat-select disableOptionCentering panelClass="finished-dropdown-control" id="finished{{i}}"
+                    class="finished-class-test" formControlName="finished" (selectionChange)="onFinishedChange();">
+                    <mat-option [value]="rownum" *ngFor="let rownum of activeFinishedArray" class="row-border">{{ rownum
+                      }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </ng-container>
+              <ng-container *ngIf="(i >= activeRows)">
+                <span>{{ i + 1 }}</span>
+              </ng-container>
+            </td>
+            <td class="hamburger" cdkDragHandle>
+              <img class="hamburger-img" [src]="hamburgerPath" alt="hamburger">
+            </td>
+            <td class="toggle-nonrunner" *ngIf="selectedTabName == manualConstants.showprice">
+              <mat-slide-toggle id="isNonRunner{{i}}" (change)="changeRunner($event,i);"
+                formControlName="isNonRunner">NON-RUNNER</mat-slide-toggle>
+            </td>
+            <td class="horse-number">
+              <mat-form-field appearance="fill" class="horse-number-txtbox"
+                [ngClass]="{ 'is-invalid': ( ( obj.get('horseNumber')?.invalid) && isSubmit)  }">
+                <input matInput name="horseNumber{{i}}" [OnlyNumber]="true" [maxlength]="2" required
+                  (change)="checkSelectionDuplicate(i);" formControlName="horseNumber" id="horseNumber"
+                  autocomplete="off" />
+              </mat-form-field>
+            </td>
+            <td class="horse-name">
+              <mat-form-field appearance="fill" class="horse-jockey-name"
+                [ngClass]="{ 'is-invalid': ( ( obj.get('horseName')?.invalid) && isSubmit)  }">
+                <input matInput name="horseName{{i}}" placeholder="Enter Name" formControlName="horseName"
+                  id="horseName" required autocomplete="off" />
+              </mat-form-field>
+            </td>
+            <td class="jockey-name">
+              <mat-form-field appearance="fill" class="horse-jockey-name">
+                <input matInput name="jockeyName{{i}}" placeholder="Enter Name" formControlName="jockeyName"
+                  id="jockeyName" autocomplete="off" />
+              </mat-form-field>
+            </td>
+            <td class="table-odds-sp">
+              <ng-container *ngIf="selectedTabName == manualConstants.showprice">
+                <mat-form-field appearance="fill" class="odds-sp non-runner-show-price" *ngIf="obj.value.isNonRunner">
+                  <input matInput name="price_odds_sp{{i}}"id="priceNR" required formControlName="odds_sp_value" [readonly]="true"
+                    autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="odds-sp runner-odds" *ngIf="!obj.value.isNonRunner && !oddssp"
+                  [ngClass]="{ 'is-invalid': ( ( obj.get('odds_sp_value')?.invalid) && isSubmit)  }">
+                  <input matInput name="price_odds_sp{{i}}" id="priceOdds" formControlName="odds_sp_value" [readonly]="oddssp"
+                    (change)="payoutChange(i);" required [maxlength]="oddssp? 2:6" autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="odds-sp runner-sp" *ngIf="!obj.value.isNonRunner && oddssp"
+                  [ngClass]="{ 'is-invalid': ( ( obj.get('odds_sp_value')?.invalid) && isSubmit)  }">
+                  <input matInput name="price_odds_sp{{i}}" id="priceSP"  required formControlName="odds_sp_value" [readonly]="oddssp"
+                    autocomplete="off" />
+                </mat-form-field>
+              </ng-container>
+              <ng-container *ngIf="selectedTabName == manualConstants.result">
+                <mat-form-field appearance="fill" class="odds-sp result-runner-odds"
+                  [ngClass]="{ 'is-invalid': ( ( obj.get('odds_sp_value')?.invalid) && isSubmit && i < activeRows)  }"
+                  *ngIf="!obj.value.isNonRunner && !oddssp">
+                  <input matInput name="result_odds_sp{{i}}" id="resultsoddsvalue" required formControlName="odds_sp_value"
+                    [readonly]="oddssp" (change)="payoutChangeResult(i);" [required]="i < activeRows ? true : false"
+                    [maxlength]="oddssp? 2:6" autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="odds-sp result-runner-sp"
+                  [ngClass]="{ 'is-invalid': ( ( obj.get('odds_sp_value')?.invalid) && isSubmit && i < activeRows)  }"
+                  *ngIf="!obj.value.isNonRunner && oddssp">
+                  <input matInput name="result_odds_sp{{i}}" id="resultspvalue" [required]="i < activeRows ? true : false"
+                    [readonly]="oddssp" formControlName="odds_sp_value" autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="odds-sp showprice-non-runner" *ngIf="obj.value.isNonRunner">
+                  <input matInput name="result_odds_sp{{i}}" id="resultNR" [required]="i < activeRows ? true : false"
+                    [readonly]="true" formControlName="odds_sp_value" autocomplete="off" />
+                </mat-form-field>
+              </ng-container>
+            </td>
+            <td class="toggle-favourite" *ngIf="selectedTabName == manualConstants.result">
+              <mat-slide-toggle id="isFavourite{{i}}" formControlName="isFavourite">FAVOURITE</mat-slide-toggle>
+            </td>
+            <td class="table-close">
+              <mat-icon id="close" class="close-icon" (click)="deleteRow(i)" aria-hidden="false"
+                aria-label="close icon">close_alt</mat-icon>
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="selectedTabName == manualConstants.showprice">
+          <tr>
+            <td colspan="8" class="add-more">
+              <button type="button" (click)="addNewRow()" class="button-addrow">
+                <div class="addrow-div">
+                  <img id="plus-img" class="plus-img" [src]="addIconPath">
+                  <span class="add-row-button">ADD ROW</span>
+                </div>
+              </button>
+            </td>
+          </tr>
+          <ng-container *ngFor="let obj of emptyArray;">
+            <tr class="empty-tr">
+              <td colspan="8">
+                <div class="button-empty-row"></div>
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

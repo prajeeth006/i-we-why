@@ -1,0 +1,306 @@
+{
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "nx-cloud",
+            "options": {
+                "accessToken": "YjZkODMxYzgtYWU4YS00YWRkLWIzMDQtNDg1MDc5YWJiNWIzfHJlYWQtd3JpdGU=",
+                "url": "https://nxcloud.dev.env.works",
+                "useLightClient": true,
+                "customProxyConfigPath": "./custom-proxy-config.js",
+                "useLatestApi": true
+            }
+        },
+        "local": {
+            "runner": "nx/tasks-runners/default"
+        }
+    },
+    "namedInputs": {
+        "styles": ["{projectRoot}/**/*.scss"],
+        "sharedGlobals": [
+            {
+                "runtime": "yarn --version"
+            },
+            {
+                "runtime": "node --version"
+            }
+        ],
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "production": [
+            "default",
+            "!{projectRoot}/.code-pushup",
+            "!{projectRoot}/.eslintrc.base.json",
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/code-pushup.config.[jt]s",
+            "!{projectRoot}/code-pushup.eslintrc.json",
+            "!{projectRoot}/tsconfig.spec.json",
+            "!{projectRoot}/**/*.spec.[jt]s",
+            "!{projectRoot}/karma.conf.js",
+            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+            "!{projectRoot}/jest.config.[jt]s",
+            "!{projectRoot}/{src/,}test-setup.[jt]s",
+            "!{projectRoot}/**/*.mock.[jt]s",
+            "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+            "!{projectRoot}/.storybook/**/*",
+            "!{projectRoot}/tsconfig.storybook.json",
+            "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?",
+            "!{projectRoot}/README.md"
+        ]
+    },
+    "targetDefaults": {
+        "build": {
+            "cache": true,
+            "dependsOn": [
+                {
+                    "target": "build-base",
+                    "params": "forward"
+                },
+                "^build",
+                "build-themes",
+                "^build-themes"
+            ]
+        },
+        "build-base": {
+            "cache": true,
+            "dependsOn": ["build-themes", "^build-themes"]
+        },
+        "build-dotnet": {
+            "cache": true,
+            "dependsOn": ["^build-dotnet"]
+        },
+        "build-storybook": {
+            "cache": true,
+            "inputs": ["default", "^production", "{projectRoot}/.storybook/**/*", "{projectRoot}/tsconfig.storybook.json"]
+        },
+        "build-themes": {
+            "cache": true,
+            "dependsOn": ["design-system-tokens-to-css-app:generate-css-tokens"]
+        },
+        "scss-checks-build": {
+            "cache": true,
+            "inputs": [
+                {
+                    "runtime": "dotnet --version"
+                },
+                {
+                    "externalDependencies": []
+                }
+            ]
+        },
+        "scss-checks": {
+            "cache": true,
+            "inputs": [
+                {
+                    "runtime": "dotnet --version"
+                },
+                {
+                    "externalDependencies": []
+                }
+            ]
+        },
+        "test-dotnet": {
+            "cache": true,
+            "dependsOn": ["build-dotnet"],
+            "options": {
+                "noBuild": true
+            }
+        },
+        "test": {
+            "cache": true,
+            "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js", "{workspaceRoot}/karma.conf.js"]
+        },
+        "test-betslip": {
+            "cache": true
+        },
+        "test-storybook": {
+            "cache": true
+        },
+        "pipeline-test-storybook": {
+            "cache": true
+        },
+        "chromatic": {
+            "cache": true
+        },
+        "code-pushup": {
+            "cache": true,
+            "inputs": ["default"],
+            "outputs": ["{workspaceRoot}/.code-pushup/{projectName}"]
+        },
+        "code-pushup-ds-report": {
+            "cache": true,
+            "inputs": ["production", "^production", "{workspaceRoot}/packages/design-system/usage-reports-utils/**/*.ts"],
+            "outputs": ["{workspaceRoot}/.code-pushup/{projectName}"]
+        },
+        "lint": {
+            "cache": true,
+            "inputs": [
+                "default",
+                "{workspaceRoot}/.eslintrc.base.json",
+                "{workspaceRoot}/.eslintrc.json",
+                "{workspaceRoot}/.eslintignore",
+                "{workspaceRoot}/tools/eslint-rules/**/*"
+            ],
+            "configurations": {
+                "default": {
+                    "args": ["--quiet"]
+                },
+                "local": {}
+            },
+            "defaultConfiguration": "default"
+        },
+        "lint-styles": {
+            "cache": true,
+            "inputs": [
+                "default",
+                "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?",
+                "{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?",
+                {
+                    "externalDependencies": ["stylelint"]
+                }
+            ],
+            "dependsOn": ["design-system-stylelint-rules:build"]
+        },
+        "lint-styles-staged": {
+            "inputs": ["default", "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?", "{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"],
+            "dependsOn": ["design-system-stylelint-rules:build"]
+        },
+        "lint-betslip": {
+            "cache": true
+        },
+        "e2e": {
+            "cache": true,
+            "inputs": ["default", "^production"]
+        },
+        "generate-css-tokens": {
+            "cache": true,
+            "inputs": ["{workspaceRoot}/packages/design-system/tokens-assets/**/*"]
+        },
+        "publish": {
+            "cache": true,
+            "dependsOn": ["build", "build-publish"]
+        },
+        "integrity": {
+            "cache": true
+        },
+        "@nx/jest:jest": {
+            "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js", "{workspaceRoot}/karma.conf.js"],
+            "cache": true,
+            "options": {
+                "passWithNoTests": true,
+                "coverageReporters": ["text", "json", "html", "lcov", "cobertura"],
+                "codeCoverage": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true,
+                    "bail": 1
+                }
+            }
+        },
+        "@nx/eslint:lint": {
+            "inputs": [
+                "default",
+                "{workspaceRoot}/.eslintrc.base.json",
+                "{workspaceRoot}/.eslintrc.json",
+                "{workspaceRoot}/.eslintignore",
+                "{workspaceRoot}/tools/eslint-rules/**/*"
+            ],
+            "cache": true
+        },
+        "@nx/vite:test": {
+            "cache": true,
+            "inputs": ["default", "^production"]
+        },
+        "@nx/js:tsc": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        },
+        "@nx/angular:ng-packagr-lite": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        },
+        "@nx/esbuild:esbuild": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        }
+    },
+    "cli": {
+        "packageManager": "yarn"
+    },
+    "workspaceLayout": {
+        "appsDir": "packages",
+        "libsDir": "packages",
+        "projectNameAndRootFormat": "as-provided"
+    },
+    "generators": {
+        "@nx/js": {
+            "library": {
+                "strict": true
+            },
+            "application": {
+                "strict": true
+            }
+        },
+        "@nx/angular": {
+            "library": {
+                "strict": true
+            },
+            "application": {
+                "strict": true
+            }
+        },
+        "@nx/angular:library": {
+            "linter": "eslint",
+            "unitTestRunner": "jest"
+        },
+        "@nx/angular:component": {
+            "style": "scss"
+        }
+    },
+    "plugins": [
+        "@themepark/nx-plugin",
+        "@frontend/nx-plugin",
+        "@vanilla/nx-plugin",
+        "@frontend/sports/nx-plugin",
+        "@frontend/oxygen/nx-plugin",
+        {
+            "plugin": "@nx-dotnet/core",
+            "options": {
+                "inferredTargets": {
+                    "build": "build-dotnet",
+                    "test": "test-dotnet",
+                    "lint": false,
+                    "serve": false
+                }
+            }
+        },
+        {
+            "plugin": "@nx/eslint/plugin",
+            "options": {
+                "targetName": "lint",
+                "extensions": ["ts", "tsx", "js", "jsx", "html", "json"]
+            }
+        },
+        {
+            "plugin": "@nx/storybook/plugin",
+            "options": {
+                "buildStorybookTargetName": "build-storybook",
+                "serveStorybookTargetName": "storybook",
+                "testStorybookTargetName": "test-storybook",
+                "staticStorybookTargetName": "static-storybook"
+            }
+        }
+    ],
+    "pluginsConfig": {
+        "@nx/js": {
+            "analyzePackageJson": true,
+            "projectsAffectedByDependencyUpdates": "auto"
+        }
+    },
+    "defaultBase": "origin/main",
+    "useLegacyCache": true
+}

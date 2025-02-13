@@ -1,0 +1,114 @@
+@mixin default-disabled {
+    --ds-notification-bubble-color-bg: var(--semantic-color-disabled-base);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-disabled-base);
+}
+
+@mixin default-live {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-negative-base);
+}
+
+@mixin default-live-dot {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-dot: var(--semantic-color-negative-base);
+}
+
+@mixin default-neutral {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-surface-base);
+}
+
+@mixin default-primary {
+    --ds-notification-bubble-color-bg: var(--semantic-color-primary-base);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-primary-base);
+}
+
+@mixin default-utility {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-utility-base);
+}
+
+@mixin default-utility-dot {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-dot: var(--semantic-color-utility-base);
+}
+
+@mixin inverse-disabled {
+    --ds-notification-bubble-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-disabled-base-inverse);
+}
+
+@mixin inverse-live {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base-inverse);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-negative-base-inverse);
+}
+
+@mixin inverse-live-dot {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-dot: var(--semantic-color-negative-base-inverse);
+}
+
+@mixin inverse-neutral {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base-inverse);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-surface-base-inverse);
+}
+
+@mixin inverse-primary {
+    --ds-notification-bubble-color-bg: var(--semantic-color-primary-base-inverse);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-on-primary-base-inverse);
+}
+
+@mixin inverse-utility {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-base-inverse);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-text: var(--semantic-color-utility-base-inverse);
+}
+
+@mixin inverse-utility-dot {
+    --ds-notification-bubble-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-border: var(--semantic-color-opacity-transparent);
+    --ds-notification-bubble-color-dot: var(--semantic-color-utility-base-inverse);
+}
+
+@mixin large {
+    --ds-notification-bubble-size-dot-height: var(--semantic-size-icon-medium);
+    --ds-notification-bubble-size-dot-width: var(--semantic-size-icon-medium);
+    --ds-notification-bubble-size-height: var(--semantic-size-x6);
+    --ds-notification-bubble-size-min-width: var(--semantic-size-x6);
+    --ds-notification-bubble-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-notification-bubble-space-padding-right: var(--semantic-spacing-container-padding-sm);
+}
+
+@mixin medium {
+    --ds-notification-bubble-size-dot-height: var(--semantic-size-icon-small);
+    --ds-notification-bubble-size-dot-width: var(--semantic-size-icon-small);
+    --ds-notification-bubble-size-height: var(--semantic-size-x4);
+    --ds-notification-bubble-size-min-width: var(--semantic-size-x4);
+    --ds-notification-bubble-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-notification-bubble-space-padding-right: var(--semantic-spacing-container-padding-sm);
+}
+
+@mixin shared {
+    --ds-notification-bubble-radius-border: var(--semantic-radius-max);
+}
+
+@mixin small {
+    --ds-notification-bubble-size-dot-height: var(--semantic-size-icon-xsmall);
+    --ds-notification-bubble-size-dot-width: var(--semantic-size-icon-xsmall);
+    --ds-notification-bubble-size-height: var(--semantic-size-x3);
+    --ds-notification-bubble-size-min-width: var(--semantic-size-x3);
+    --ds-notification-bubble-space-padding-left: var(--semantic-spacing-container-padding-xs);
+    --ds-notification-bubble-space-padding-right: var(--semantic-spacing-container-padding-xs);
+}

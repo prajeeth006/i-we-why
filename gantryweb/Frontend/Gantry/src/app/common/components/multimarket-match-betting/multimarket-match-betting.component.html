@@ -1,0 +1,26 @@
+<div class="bet-details-container" *ngFor="let selection of multiMarket?.selections">
+  <div class="bet-details-header">
+    <div id="homeTitle" class="bet-price">{{ multiMarket?.homeTitle }}</div>
+    <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title ? multiMarket?.title : '' }}</div>
+    <div id="awayTitle" class="bet-price">{{ multiMarket?.awayTitle }}</div>
+  </div>
+  <div class="match-betting-section">
+    <div id="homebetPrice" class="bet-price">
+      {{ selection?.homePrice | marketPriceTransform : selection?.hideHomePrice }}
+    </div>
+    <div class="player-details-section">
+      <div id="homeselectionTitle" class="market-1">{{(selection?.homeSelectionTitle && !selection?.hideHomeTitle? selection?.homeSelectionTitle:'') | trimSelectionNamePipe: nameLength }}</div>
+      <div id="Versus" [ngClass]="multiMarket?.marketVersesName ? 'text-v' : 'draw-price'" *ngIf="multiMarket?.marketVersesName">
+        <span *ngIf="multiMarket?.marketVersesName">{{
+          multiMarket?.marketVersesName ? multiMarket?.marketVersesName : ''
+        }}</span>
+      </div>
+      <span id="drawprice" class="draw-price" *ngIf="!multiMarket?.marketVersesName">
+        {{ selection?.drawPrice | marketPriceTransform : selection?.hideDrawPrice }}</span>
+      <div id="awayselectionTitle" class="market-2">{{ (selection?.awaySelectionTitle && !selection.hideAwayTitle? selection?.awaySelectionTitle: '') | trimSelectionNamePipe: nameLength }}</div>
+    </div>
+    <div id="awaybetPrice" class="bet-price">
+      {{ selection?.awayPrice | marketPriceTransform : selection?.hideAwayPrice }}
+    </div>
+  </div>
+</div>

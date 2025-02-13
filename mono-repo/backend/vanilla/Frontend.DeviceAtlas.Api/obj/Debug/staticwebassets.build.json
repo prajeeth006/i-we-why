@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "DSgCJeMNWNRn339deOfFFUGUCymJ4Df6FEK93hmStiQ=",
+  "Source": "Frontend.DeviceAtlas.Api",
+  "BasePath": "_content/Frontend.DeviceAtlas.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

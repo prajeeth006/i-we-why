@@ -1,0 +1,51 @@
+<div class="preset-list">  
+    <div class="tb-header tb-row">
+      <div class="number header-title">
+        <div>#</div>        
+      </div>
+      <div class="type header-title">
+        <div>Type</div>        
+      </div>
+      <div class="name header-title">
+        <div>Name</div>        
+      </div>
+      <div class="gantries">Gantries</div>
+      <div></div>
+    </div>
+    <div class="tb-body">
+      <div *ngFor="let preset of presetSettings; let i = index" class="tb-row">
+        @let isCustomPreset = preset?.Type?.toLowerCase() != presetTypes.system.toLowerCase();
+        <div class="number">{{ i + 1 }}</div>
+        <div class="type">{{ preset?.Type }}</div>
+        <div class="name">{{ preset?.Name }}</div>
+        <div class="gantries">
+          <ng-container *ngIf="preset?.GantryType?.length > 0; else noGantry">
+            <span *ngFor="let gantry of preset?.GantryType; let j = index">
+              {{ gantry }}<span *ngIf="j < preset?.GantryType?.length - 1">, </span>
+            </span>
+          </ng-container>
+          <ng-template #noGantry>-</ng-template>
+        </div>
+        <div class="action-btns">
+            <button id="editBtn" class="action-btn edit-btn" (click)="editSequencePreset(preset?.SequencePresetId,preset?.Name, preset?.Type)" [disabled]="disableEdit">
+              <img [src]="editIcon" class="edit" id="edit" alt="edit">              
+            </button>
+            <button id="copyBtn" class="action-btn copy-btn" (click)="cloneSequencePreset(preset?.SequencePresetId)" [disabled]="disableClone">
+              <img [src]="copyIcon" class="copy" id="copy" alt="copy"> 
+            </button>
+            <button id="deleteBtn" class="action-btn delete-btn" [disabled]="!isCustomPreset" (click)="isCustomPreset && openDeleteConfirmationPopup(preset?.SequencePresetId,preset?.Name)">
+                @if (isCustomPreset) {
+                <mat-icon aria-hidden="false" aria-label="close icon" class="close">
+                  close</mat-icon>
+                }   
+            </button>
+        </div>
+      </div>
+    </div>
+    <div class="preset-footer">
+      <button class="" (click)="newSequencePreset()">
+        <mat-icon aria-hidden="false" aria-label="add" class="add">
+          add</mat-icon> NEW PRESET
+      </button>
+    </div>
+</div>

@@ -1,0 +1,181 @@
+@use '../../generated/styles/components/tooltip/tooltip.scss' as ds-tooltip;
+@use '../../fonts/font-helper' as helper;
+@use './overlay-prebuilt.scss'; // This file contains overlay prebuilt styles from lib
+
+.ds-tooltip-outer-container {
+    @include ds-tooltip.shared;
+    @include helper.set-font-variables('tooltip', 'label', 'md');
+    @include helper.setup-font-style('tooltip');
+
+    &.ds-tooltip-neutral {
+        @include ds-tooltip.neutral;
+    }
+
+    &.ds-tooltip-utility {
+        @include ds-tooltip.utility;
+    }
+
+    max-width: var(--ds-tooltip-size-max-width);
+    color: var(--ds-tooltip-color-text);
+    border-radius: var(--ds-tooltip-radius-border);
+    opacity: 1;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 16%);
+    cursor: auto;
+
+    .ds-tooltip-container {
+        text-align: left;
+        padding: var(--ds-tooltip-space-padding-top, 0) var(--ds-tooltip-space-padding-right, 0) var(--ds-tooltip-space-padding-bottom, 0)
+            var(--ds-tooltip-space-padding-left, 0);
+        gap: var(--ds-tooltip-space-stack);
+        display: flex;
+        background-color: var(--ds-tooltip-color-background);
+        flex-direction: column;
+        position: relative;
+
+        .ds-tooltip-text-container {
+            display: flex;
+            gap: var(--ds-tooltip-space-stack);
+
+            .ds-tooltip-text {
+                align-self: center;
+
+                /* stylelint-disable selector-max-attribute */
+                [slot='title'] {
+                    @include helper.set-font-variables('tooltip', 'body', 'md-strong');
+                    @include helper.setup-font-style('tooltip');
+
+                    color: var(--ds-tooltip-color-title);
+                    text-align: left;
+                }
+            }
+
+            .ds-tooltip-close-button {
+                cursor: pointer;
+                visibility: hidden; /* Hide by default */
+            }
+
+            .ds-tooltip-close-button:empty {
+                visibility: hidden; /* If there's no close content, keep it hidden */
+            }
+
+            .ds-tooltip-close-button:not(:empty) {
+                visibility: visible; /* Show the close button only if it has content */
+            }
+        }
+
+        [slot='action'] {
+            display: flex;
+            justify-content: end;
+        }
+    }
+
+    /* Arrow styles */
+    .ds-tooltip-arrow {
+        display: inline-flex;
+        position: absolute;
+        color: var(--ds-tooltip-color-background);
+
+        /* Add shadow to arrow, same offset as boxshadow (2px). */
+        filter: drop-shadow(0 4px 8px rgba(0 0 0 / 16%));
+    }
+
+    &.ds-tooltip-right {
+        .ds-tooltip-arrow {
+            left: 1px; /* To have a minimal overlay for pixel rendering issues */
+            transform-origin: top left;
+        }
+
+        &.ds-tooltip-arrow-start .ds-tooltip-arrow {
+            top: 0;
+            transform: translate(0%, 8px) rotate(90deg);
+        }
+
+        &.ds-tooltip-arrow-middle .ds-tooltip-arrow {
+            top: 50%;
+            transform: rotate(90deg) translate(-50%, 0%);
+        }
+
+        &.ds-tooltip-arrow-end .ds-tooltip-arrow {
+            bottom: 0;
+            transform: translate(0%, -17px) rotate(90deg);
+        }
+    }
+
+    &.ds-tooltip-left {
+        .ds-tooltip-arrow {
+            right: 1px; /* To have a minimal overlay for pixel rendering issues */
+            transform-origin: top right;
+        }
+
+        &.ds-tooltip-arrow-start {
+            .ds-tooltip-arrow {
+                top: 0;
+                transform: translate(0%, 8px) rotateZ(270deg);
+            }
+        }
+
+        &.ds-tooltip-arrow-middle {
+            .ds-tooltip-arrow {
+                top: 50%;
+                transform: rotateZ(270deg) translate(50%, 0%);
+            }
+        }
+
+        &.ds-tooltip-arrow-end {
+            .ds-tooltip-arrow {
+                bottom: 0;
+                transform: translate(0%, -17px) rotateZ(270deg);
+            }
+        }
+    }
+
+    &.ds-tooltip-top {
+        .ds-tooltip-arrow {
+            bottom: 1px; /* To have a minimal overlay for pixel rendering issues */
+        }
+
+        &.ds-tooltip-arrow-start {
+            .ds-tooltip-arrow {
+                left: 0;
+                transform: translate(8px, 100%);
+            }
+        }
+
+        &.ds-tooltip-arrow-middle {
+            .ds-tooltip-arrow {
+                left: 50%;
+                transform: translate(-50%, 100%);
+            }
+        }
+
+        &.ds-tooltip-arrow-end {
+            .ds-tooltip-arrow {
+                right: 0;
+                transform: translate(-7px, 100%);
+            }
+        }
+    }
+
+    &.ds-tooltip-bottom {
+        .ds-tooltip-arrow {
+            top: 1px; /* To have a minimal overlay for pixel rendering issues */
+            transform-origin: top center;
+        }
+
+        &.ds-tooltip-arrow-start .ds-tooltip-arrow {
+            left: 0;
+            transform: translate(8px, 0%) rotateZ(180deg);
+        }
+
+        &.ds-tooltip-arrow-middle .ds-tooltip-arrow {
+            left: 50%;
+            transform: translate(-50%, 0%) rotateZ(180deg);
+        }
+
+        &.ds-tooltip-arrow-end .ds-tooltip-arrow {
+            right: 0;
+            transform: translate(-7px, 0%) rotateZ(180deg);
+        }
+    }
+}

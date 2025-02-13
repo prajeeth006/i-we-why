@@ -1,0 +1,56 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+        <ng-container
+            *ngIf="(fillerPageMessage$ | async) === false || (fillerPageMessage$ | async) === null || (fillerPageMessage$ | async) === undefined">
+            <!-- Background Image -->
+            <img class="avr-bg-image" [retrySrc]="vm.backgroundImageUrl" />
+
+            <gn-dark-theme-base-page [pageWrapperClass]="pageWrapperClass">
+                <ng-container header-content>
+                    <gn-dark-theme-avr-banner
+                        [racingImage]="vm.staticContent?.racingVirtualImage?.src"
+                        [title]="vm.eventName"
+                        [countDownValue$]="vm.counterValue$"
+                        [imageRight]="vm?.brandImageUrl"
+                        [isRaceOff]="vm.isResultedOrOff">
+                    </gn-dark-theme-avr-banner>
+                </ng-container>
+
+                <ng-container body-content>
+                    <gn-dark-theme-avr-preamble-dog
+                        *ngIf="vm.avrEventType === isDogRace"
+                        [avrRunnersList]="avrRunnersList"
+                        [tableWrapperClass]="tableWrapperClass">
+                    </gn-dark-theme-avr-preamble-dog>
+
+                    <gn-dark-theme-avr-preamble-horse
+                        *ngIf="vm.avrEventType === isHorseRace"
+                        [avrRunnersList]="avrRunnersList"
+                        [tableWrapperClass]="tableWrapperClass">
+                    </gn-dark-theme-avr-preamble-horse>
+
+                    <gn-dark-theme-avr-preamble-motor
+                        *ngIf="vm.avrEventType === isMotorRace"
+                        [avrRunnersList]="avrRunnersList"
+                        [tableWrapperClass]="tableWrapperClass">
+                    </gn-dark-theme-avr-preamble-motor>
+
+                    <!-- OFF OVERLAY -->
+                    <div *ngIf="vm.isResultedOrOff" class="off-event">
+                        <div class="tilted-card">
+                            <div id="offEvent" class="tilted-text">OFF</div>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <ng-container footer-content>
+                    <gn-dark-theme-avr-footer
+                        [isEventResulted]="false"
+                        [runnerCount]="vm.runnerCount ? vm.runnerCount : ''"
+                        [marketEachWayString]="!!vm.eachWayOnTemplate ? vm.eachWayOnTemplate : ''">
+                    </gn-dark-theme-avr-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+</ng-container>

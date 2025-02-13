@@ -1,0 +1,59 @@
+<div class="bet-details-container">
+    <div class="match-betting-details-header">
+        <div
+            id="betdetailsTitle"
+            class="bet-details-title"
+            *ngIf="
+                !selectionData?.drawSuspended && (!selectionData?.drawMarketAvailable || selectionData?.marketVersesName || selectionData?.drawPrice)
+            ">
+            {{ selectionData?.title | titlecase }}
+        </div>
+    </div>
+    <div class="match-betting-section">
+        <div id="homebetPrice" class="bet-price tilted-card" autoAdjustFont>
+            <span class="tilted-text" *ngIf="selectionData?.homePrice"> {{ selectionData?.homePrice | prepareEvsPipe }}</span>
+        </div>
+        <div class="player-details-section">
+            <div id="homeselectionTitle" [ngClass]="selectionData?.drawMarketAvailable ? 'market-1' : 'full-market-1'">
+                <span *ngIf="selectionData?.homePrice && selectionData?.homeSelectionTitle">
+                    <ng-container *ngIf="selectionData?.trimTitleRequired">
+                        {{ selectionData?.homeSelectionTitle | trimSelectionNamePipe: nameLength }}
+                    </ng-container>
+                    <ng-container *ngIf="!selectionData?.trimTitleRequired">
+                        {{ selectionData?.homeSelectionTitle }}
+                    </ng-container>
+                </span>
+            </div>
+            <ng-container *ngIf="selectionData?.drawMarketAvailable">
+                <div
+                    id="Versus"
+                    [ngClass]="selectionData?.marketVersesName && !selectionData?.drawSuspended ? 'text-v' : 'draw-price tilted-card'"
+                    *ngIf="selectionData?.marketVersesName">
+                    <span *ngIf="selectionData?.marketVersesName && !selectionData?.drawSuspended">{{
+                        selectionData?.marketVersesName ? selectionData?.marketVersesName : ''
+                    }}</span>
+                </div>
+                <div
+                    id="drawprice"
+                    class="draw-price tilted-card"
+                    *ngIf="!selectionData?.marketVersesName || selectionData?.drawPrice"
+                    autoAdjustFont>
+                    <span class="tilted-text"> {{ selectionData?.drawPrice | prepareEvsPipe }}</span>
+                </div>
+            </ng-container>
+            <div id="awayselectionTitle" [ngClass]="selectionData?.drawMarketAvailable ? 'market-2' : 'full-market-2'">
+                <span *ngIf="selectionData?.awayPrice && selectionData?.awaySelectionTitle">
+                    <ng-container *ngIf="selectionData?.trimTitleRequired">
+                        {{ selectionData?.awaySelectionTitle | trimSelectionNamePipe: nameLength }}
+                    </ng-container>
+                    <ng-container *ngIf="!selectionData?.trimTitleRequired">
+                        {{ selectionData?.awaySelectionTitle }}
+                    </ng-container>
+                </span>
+            </div>
+        </div>
+        <div id="awaybetPrice" class="bet-price tilted-card" autoAdjustFont>
+            <span class="tilted-text" *ngIf="selectionData?.awayPrice">{{ selectionData?.awayPrice | prepareEvsPipe }}</span>
+        </div>
+    </div>
+</div>

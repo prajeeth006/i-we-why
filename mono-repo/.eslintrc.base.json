@@ -1,0 +1,178 @@
+{
+    "root": true,
+    "ignorePatterns": ["**/*"],
+    "plugins": ["@nx"],
+    "settings": {
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": ["tsconfig.base.json", "node_modules/rxjs/tsconfig.json"]
+            }
+        }
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "extends": ["plugin:@nx/typescript", "@code-pushup/eslint-config/typescript"],
+            "settings": {
+                "import/resolver": {
+                    "typescript": {
+                        "alwaysTryTypes": true,
+                        "project": ["tsconfig.base.json", "node_modules/rxjs/tsconfig.json"]
+                    }
+                }
+            },
+            "rules": {
+                "@nx/enforce-module-boundaries": [
+                    "error",
+                    {
+                        "allow": ["@nx/devkit"],
+                        "depConstraints": [
+                            {
+                                "sourceTag": "type:app",
+                                "onlyDependOnLibsWithTags": ["type:feature", "type:utils", "type:lib", "type:core-lib", "type:testing"]
+                            },
+                            {
+                                "sourceTag": "type:core-lib",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:ui"]
+                            },
+                            {
+                                "sourceTag": "type:data-access",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:core-lib"]
+                            },
+                            {
+                                "sourceTag": "type:e2e",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:lib", "type:core-lib", "type:testing", "type:data-access"]
+                            },
+                            {
+                                "sourceTag": "type:feature",
+                                "onlyDependOnLibsWithTags": [
+                                    "type:feature",
+                                    "type:ui",
+                                    "type:utils",
+                                    "type:data-access",
+                                    "type:core-lib",
+                                    "type:testing"
+                                ]
+                            },
+                            {
+                                "sourceTag": "type:kit",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:kit", "type:data-access"]
+                            },
+                            {
+                                "sourceTag": "type:lib",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:lib", "type:kit", "type:ui", "type:core-lib", "type:testing"]
+                            },
+                            {
+                                "sourceTag": "type:nx-plugin",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:kit", "type:data-access", "type:nx-plugin"]
+                            },
+                            {
+                                "sourceTag": "type:storybook",
+                                "onlyDependOnLibsWithTags": ["type:ui", "type:utils"]
+                            },
+                            {
+                                "sourceTag": "type:testing",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:lib", "type:core-lib"]
+                            },
+                            {
+                                "sourceTag": "type:theme",
+                                "onlyDependOnLibsWithTags": ["type:theme", "type:utils"]
+                            },
+                            {
+                                "sourceTag": "type:ui",
+                                "onlyDependOnLibsWithTags": ["type:utils", "type:ui"]
+                            },
+                            {
+                                "sourceTag": "type:utils",
+                                "onlyDependOnLibsWithTags": ["type:utils"]
+                            },
+                            {
+                                "sourceTag": "type:smoke-test",
+                                "onlyDependOnLibsWithTags": ["type:utils"]
+                            },
+                            {
+                                "sourceTag": "scope:design-system",
+                                "onlyDependOnLibsWithTags": ["scope:design-system", "scope:shared"]
+                            },
+                            {
+                                "sourceTag": "scope:themepark",
+                                "onlyDependOnLibsWithTags": ["scope:themepark", "scope:shared"]
+                            },
+                            {
+                                "sourceTag": "scope:vanilla",
+                                "onlyDependOnLibsWithTags": ["scope:vanilla", "scope:shared"]
+                            },
+                            {
+                                "sourceTag": "scope:virtualsports",
+                                "onlyDependOnLibsWithTags": ["scope:virtualsports", "scope:shared"]
+                            },
+                            {
+                                "sourceTag": "scope:sports",
+                                "onlyDependOnLibsWithTags": ["scope:sports", "scope:shared", "scope:vanilla"]
+                            },
+                            {
+                                "sourceTag": "scope:sports-betstation",
+                                "onlyDependOnLibsWithTags": ["scope:sports-betstation", "scope:sports", "scope:shared", "scope:vanilla"]
+                            },
+                            {
+                                "sourceTag": "scope:sports-web",
+                                "onlyDependOnLibsWithTags": ["scope:sports-web", "scope:sports", "scope:shared", "scope:vanilla"]
+                            }
+                        ]
+                    }
+                ],
+                "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+                "@typescript-eslint/restrict-template-expressions": "warn",
+                "@typescript-eslint/restrict-plus-operands": "warn",
+                "@typescript-eslint/use-unknown-in-catch-callback-variable": "warn",
+                "@typescript-eslint/no-unused-vars": "error",
+                "no-useless-escape": "warn",
+                "no-extra-boolean-cast": "warn",
+                "no-duplicate-imports": "error",
+                "no-invalid-regexp": "error",
+                "no-multiple-empty-lines": "error",
+                "no-redeclare": "error",
+                "prefer-const": "warn",
+                "no-console": "error",
+                "no-restricted-imports": [
+                    "error",
+                    {
+                        "paths": [
+                            {
+                                "name": "lodash",
+                                "message": "Import from 'lodash-es' instead"
+                            }
+                        ]
+                    }
+                ],
+                "no-restricted-globals": ["warn", "document"],
+                "no-restricted-properties": [
+                    "warn",
+                    {
+                        "object": "window",
+                        "property": "document"
+                    }
+                ]
+            }
+        },
+        {
+            "files": ["*.js", "*.jsx"],
+            "extends": ["plugin:@nx/javascript"],
+            "rules": {}
+        },
+        {
+            "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+            "extends": ["plugin:jest/recommended"],
+            "env": {
+                "jest": true
+            },
+            "rules": {}
+        },
+        {
+            "files": "*.json",
+            "parser": "jsonc-eslint-parser",
+            "rules": {}
+        }
+    ]
+}

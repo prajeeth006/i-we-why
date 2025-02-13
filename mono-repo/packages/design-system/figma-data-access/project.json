@@ -1,0 +1,34 @@
+{
+    "name": "design-system-figma-data-access",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/figma-data-access/src",
+    "projectType": "library",
+    "tags": ["type:data-access", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/build/packages/design-system/figma-data-access",
+                "main": "packages/design-system/figma-data-access/src/index.ts",
+                "tsConfig": "packages/design-system/figma-data-access/tsconfig.lib.json",
+                "assets": ["packages/design-system/figma-data-access/*.md"]
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/package.json"]
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/figma-data-access/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

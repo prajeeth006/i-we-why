@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework support for backend services (e.g. POSAPI).</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="System.ServiceModel.Http" />
+        <PackageReference Include="JetBrains.Annotations" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Core\Frontend.Vanilla.Core.csproj"/>
+        <ProjectReference Include="..\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.csproj"/>
+    </ItemGroup>
+</Project>

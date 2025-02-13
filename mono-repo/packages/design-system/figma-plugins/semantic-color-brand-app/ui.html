@@ -1,0 +1,264 @@
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: var(--figma-color-bg);
+                color: var(--figma-color-text);
+                font-family: Inter, sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+
+            button {
+                display: flex;
+                padding: 14px 20px;
+                align-items: center;
+                gap: 8px;
+
+                justify-content: center;
+                color: var(--figma-color-text-onbrand);
+                background-color: var(--figma-color-bg-brand);
+                flex-shrink: 0;
+                text-decoration: none;
+                outline: none;
+                border: 1px solid var(--figma-color-border-brand);
+                font-weight: 500;
+                box-sizing: border-box;
+                border-radius: 6px;
+                margin-top: 1em;
+            }
+
+            button:hover {
+                background-color: var(--figma-color-bg-brand-hover);
+            }
+
+            button:active {
+                background-color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button:disabled {
+                opacity: 0.5;
+                background-color: var(--figma-color-bg-brand);
+            }
+
+            button.button-outline {
+                background-color: transparent;
+                border: 1px solid var(--figma-color-bg-brand);
+                color: var(--figma-color-bg-brand);
+            }
+
+            button.button-outline:hover {
+                border-color: var(--figma-color-bg-brand-hover);
+                color: var(--figma-color-bg-brand-hover);
+            }
+
+            button.button-outline:active {
+                border-color: var(--figma-color-bg-brand-pressed);
+                color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button.button-outline:disabled {
+                opacity: 0.5;
+                border-color: var(--figma-color-bg-brand);
+                color: var(--figma-color-bg-brand);
+            }
+
+            h2 {
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            button.button-text {
+                background-color: transparent;
+                border: none;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                padding: 0;
+                display: inline-flex;
+                align-items: flex-start;
+                gap: 4px;
+                justify-content: center;
+                color: var(--figma-color-text);
+            }
+
+            .start-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+                height: 100vh;
+                text-align: center;
+                font-size: 48px;
+                line-height: 72px;
+            }
+
+            #rendered-content {
+                padding: 2em;
+            }
+
+            .footer {
+                display: flex;
+                gap: 12px;
+            }
+
+            .state-header {
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="start-container" id="start-container">
+            <p>
+                Welcome,<br />
+                Let's build your semantic variables!
+            </p>
+            <button id="getstarted">Get Started</button>
+            <label style="font-size: 0.25em">
+                <input type="checkbox" id="cache-reset" name="cache-reset" value="true" /> If checked, we will reset cache at beginning.
+            </label>
+        </div>
+
+        <div id="rendered-content"></div>
+
+        <script>
+            document.getElementById('getstarted').onclick = () => {
+                const isCacheResetChecked = document.getElementById('cache-reset').checked;
+                document.getElementById('start-container').style.display = 'none';
+                parent.postMessage({ pluginMessage: { type: 'get-started', isCacheResetChecked: isCacheResetChecked } }, '*');
+            };
+
+            document.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    var elems = document.getElementsByClassName('button-next-step');
+                    for (var elem of elems) {
+                        elem.click();
+                    }
+                }
+            });
+
+            document.addEventListener('change', function (e) {
+                if (hasClass(e.target, 'color-palette-change')) {
+                    document.getElementById('cancel').disabled = true;
+                    parent.postMessage({ pluginMessage: { type: 'color-palette-change', data: e.target.value } }, '*');
+                }
+                if (hasClass(e.target, 'color-palette-exception')) {
+                    document.getElementById('cancel').disabled = true;
+                    parent.postMessage({ pluginMessage: { type: 'color-palette-exception', data: e.target.checked } }, '*');
+                }
+            });
+            document.addEventListener(
+                'click',
+                function (e) {
+                    var closestButton = e.target.closest('button');
+                    if (!closestButton) {
+                        return;
+                    }
+                    if (hasClass(closestButton, 'button-linking-selection')) {
+                        document.getElementById('cancel').disabled = true;
+                        closestButton.disabled = true;
+                        const checkboxes = document.getElementsByClassName('input-checkbox');
+
+                        const data = {};
+                        for (var checkbox of checkboxes) {
+                            data[checkbox.name] = checkbox.checked;
+                        }
+                        console.log(data);
+                        parent.postMessage({ pluginMessage: { type: 'create-linking-selection', data: JSON.stringify(data) } }, '*');
+                    }
+                    if (hasClass(closestButton, 'button-cancel')) {
+                        document.getElementById('cancel').disabled = true;
+                        parent.postMessage({ pluginMessage: { type: 'reset' } }, '*');
+                    }
+                    if (hasClass(closestButton, 'button-create-vars')) {
+                        document.getElementById('cancel').disabled = true;
+                        closestButton.disabled = true;
+                        parent.postMessage({ pluginMessage: { type: 'create-vars', data: '' } }, '*');
+                    }
+                    if (hasClass(closestButton, 'button-prev-step')) {
+                        document.getElementById('cancel').disabled = true;
+                        closestButton.disabled = true;
+                        parent.postMessage({ pluginMessage: { type: 'prev-step', data: '' } }, '*');
+                    }
+                    if (hasClass(closestButton, 'button-edit')) {
+                        document.getElementById('cancel').disabled = true;
+                        closestButton.disabled = true;
+                        console.log(closestButton.className);
+                        parent.postMessage(
+                            {
+                                pluginMessage: {
+                                    type: 'edit',
+                                    data: closestButton.className
+                                        .split(' ')
+                                        .filter((x) => x.startsWith('button-edit-'))[0]
+                                        .substring('button-edit-'.length),
+                                },
+                            },
+                            '*',
+                        );
+                    }
+                    if (hasClass(closestButton, 'button-next-step') || hasClass(closestButton, 'button-refresh')) {
+                        document.getElementById('cancel').disabled = true;
+                        closestButton.disabled = true;
+                        var inputFields = document.getElementsByName('step_value');
+
+                        var message_value = '';
+                        for (var inputField of inputFields) {
+                            if (inputField.type === 'color') {
+                                message_value = inputField.value;
+                            } else if (inputField.type === 'radio') {
+                                if (inputField.checked) {
+                                    message_value = inputField.value;
+                                }
+                            }
+                        }
+
+                        if (message_value === '') {
+                            closestButton.disabled = false;
+                            document.getElementById('cancel').disabled = false;
+                            return;
+                        }
+
+                        if (hasClass(closestButton, 'button-refresh')) {
+                            parent.postMessage({ pluginMessage: { type: 'refresh', data: message_value } }, '*');
+                        } else {
+                            parent.postMessage({ pluginMessage: { type: 'next-step', data: message_value } }, '*');
+                        }
+                    }
+                },
+                false,
+            );
+
+            function hasClass(elem, className) {
+                return elem.className.split(' ').indexOf(className) > -1;
+            }
+
+            onmessage = (event) => {
+                if (event.data.pluginMessage.type === 'step-update') {
+                    document.getElementById('rendered-content').innerHTML = event.data.pluginMessage.message;
+                    /*var inputFields = document.getElementsByName('step_value');
+                    if (inputFields.length === 1 && inputFields[0].type === 'radio') {
+                        var elems = document.getElementsByClassName('button-next-step');
+                        for (var elem of elems) {
+                            elem.click();
+                        }
+                    }*/
+                }
+                if (event.data.pluginMessage.type === 'reset') {
+                    document.getElementById('rendered-content').innerHTML = '';
+                    document.getElementById('start-container').style.display = 'flex';
+                }
+            };
+        </script>
+    </body>
+</html>

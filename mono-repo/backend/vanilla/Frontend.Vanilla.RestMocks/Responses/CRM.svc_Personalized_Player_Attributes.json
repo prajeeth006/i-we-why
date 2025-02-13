@@ -1,0 +1,53 @@
+﻿{
+    "accountName": "A5011",
+    "attributes": {
+        "acknowledgement": {
+            "oddsChangePreference": {
+                "updatedAt": 1732710252960,
+                "value": false
+            },
+            "mobileNumberPopupCloseTimestamp": {
+                "updatedAt": 1732710252960,
+                "value": 1732612619000
+            },
+            "vipCategoryChanged": {
+                "updatedAt": 1732710252960,
+                "value": "20241127"
+            },
+            "vipHostChange": {
+                "updatedAt": 1732710252960,
+                "value": "20241127"
+            },
+            "existingVIPUser": {
+                "updatedAt": 1732710252960,
+                "value": false
+            },
+            "mobileNumberVerified": {
+                "updatedAt": 1732710252960,
+                "value": false
+            },
+            "updateMobileNumberLater": {
+                "updatedAt": 1732710252960,
+                "value": false
+            },
+            "newVIPUser": {
+                "updatedAt": 1732710252960,
+                "value": false
+            },
+            "mobileNumberVerificationAckTimestamp": {
+                "updatedAt": 1732710252960,
+                "value": 1732612619000
+            },
+            "gracePeriod": {
+                "updatedAt": 1732710252960,
+                "value": true
+            }
+        },
+        "vip": {
+            "VIPHUB_GRACE_PERIOD_YN": {
+                "updatedAt": 1732710252960,
+                "value": true
+            }
+        }
+    }
+}

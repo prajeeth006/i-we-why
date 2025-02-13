@@ -1,0 +1,7 @@
+{% macro githubHref(doc) -%}
+https://vie.git.bwinparty.com/vanilla/Vanilla4/tree/master/Source/Bwin.PluginHost/Client/{$ doc.fileInfo.projectRelativePath $}#L{$ doc.location.start.line+3 $}-{$ doc.location.end.line+1 $}
+{%- endmacro %}
+
+{% macro githubViewLink(doc, versionInfo) -%}
+  <a href="{$ githubHref(doc, versionInfo) $}">{$ doc.fileInfo.projectRelativePath $}</a>
+{%- endmacro %}

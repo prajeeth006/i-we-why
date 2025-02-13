@@ -1,0 +1,61 @@
+@import '../../../../../global-style/all-variables';
+
+.info-row {
+    display: flex;
+    .footer-sec {
+        flex: 1;
+        @include breakpoint(multidesktophalf) {
+            display: unset;
+        }
+    }
+}
+.feature-plus-template-footer {
+    display: flex;
+    width: 428px;
+    margin-left: 20px;
+    background: $white;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    position: relative;
+}
+.tip-image {
+    display: flex;
+
+    .c-logo {
+        height: 26px;
+        margin-right: 15px;
+
+        @include breakpoint(multidesktop) {
+            height: 14px;
+            margin-top: 1px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.tip-text {
+    font-weight: bolder;
+    color: $black;
+}
+
+.run-count {
+    margin-right: 40px;
+}
+
+.tip-name {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    color: $black;
+
+    img {
+        margin: 0 6px;
+        height: 44px;
+
+        @include breakpoint(multidesktop) {
+            margin: 0 3px;
+            height: 20px;
+        }
+    }
+}

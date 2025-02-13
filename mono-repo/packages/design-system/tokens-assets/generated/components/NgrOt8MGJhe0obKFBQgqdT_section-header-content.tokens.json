@@ -1,0 +1,73 @@
+{
+    "section-header-content": {
+        "shared": {
+            "color": {
+                "metadata": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                },
+                "title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.primary.base}"
+                }
+            },
+            "space": {
+                "inline-elements": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "inline-metadata": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.sm}"
+                },
+                "inline-title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-top-elements": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-sm}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "section-header-content",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.sm}"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "profiles": {
+        "Frontend.Vanilla.Content.SitecoreTemplateGenerator": {
+            "commandName": "Project",
+            "commandLineArgs": "--host http://rest-m2.bwin.dev.cms.prod.env.works/ --output-file ./../../../../backend/vanilla/Frontend.Vanilla.Content/Model/ContentTemplates.g.cs --namespace Frontend.Vanilla.Content.Model --mapping-profile-type Frontend.Vanilla.Content.Templates.Mapping.DefaultTemplateMappingProfile --mapping-profile-assembly ./../../../../dist/backend/vanilla/Frontend.Vanilla.Content.SitecoreTemplateGenerator/Frontend.Vanilla.Content.dll --template-path /Vanilla/Shared --template-path /Vanilla/Framework --template-path /Vanilla/PlayerInbox --exclude-base-templates"
+        },
+        "WSL": {
+            "commandName": "WSL2",
+            "distributionName": ""
+        }
+    }
+}

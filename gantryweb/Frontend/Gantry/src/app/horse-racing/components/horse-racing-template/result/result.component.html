@@ -1,0 +1,116 @@
+<gn-base-page *ngIf="vm$ | async as vm">
+  <ng-container header-content>
+    <div class="result-custom-banner">
+      <div id="banner" class="banner-title-block">
+        <div id="leadTitle" class="lead-title">
+          {{
+            vm.isVirtualEvent
+              ? vm.horseRacingContent?.contentParameters?.VirtualRacing
+              : vm.horseRacingContent?.contentParameters?.Title
+          }}
+        </div>
+        <div class="main-title-row">
+          <div id="mainTitle" class="main-title">
+            <span id="Time">{{ vm.eventDateTime | eventDatetimeChangeformat }}</span
+            >{{ vm.eventName | uppercase }} -
+            {{ vm.horseRacingContent?.contentParameters?.Result }}
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-sub-title">
+        <div class="banner-sub-title-left">
+          <div class="head-item-1 item-head">
+            <span *ngIf="vm.racingContent?.raceNo" id="RaceNumber"
+              >{{ vm.horseRacingContent?.contentParameters?.RACE }} {{ vm.racingContent.raceNo }}</span
+            >
+            <span *ngIf="vm.racingContent.evrRaceType" id="RaceType"> {{ vm.racingContent.evrRaceType }}</span>
+            <span *ngIf="vm.racingContent?.distance" id="Distance">{{ vm.racingContent.distance | uppercase }}</span>
+            <span *ngIf="vm.racingContent?.going" id="Going">
+              {{ vm.horseRacingContent?.contentParameters?.GOING }}: {{ vm.racingContent.going | uppercase }}</span
+            >
+          </div>
+        </div>
+        <div class="banner-sub-title-right">
+          <div id="RaceOff" class="head-item-2 item-head head-item-2-secondary">
+            {{ vm.horseRacingContent?.contentParameters?.RACE }} {{ vm.raceOffTime | uppercase }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div></div>
+  <ng-container body-content>
+    <div class="amendem-banner" *ngIf="!!vm?.addendumMessage">
+      <span class="amendem-banner-msg"  [style.color]="vm?.addendumColor">{{vm?.addendumMessage}}</span>
+    </div>
+    <ul id="horseTable" class="horse-table result-table">
+      <li *ngFor="let runners of vm.runners" id="hRunners">
+        <div id="Position" class="table-item-3 items border-dark">
+          {{ runners?.position | runnerPositionSuffix }}
+        </div>
+        <div class="table-item-1 items border-dark table-center traps">
+          <img [retrySrc]="runners.jockeySilkImage" hasFallback="true" height="32vh" id="runnerImg"/>
+        </div>
+        <div class="table-item-2 items border-dark" id="RunnerNumber">{{ runners?.horseRunnerNumber }}</div>
+        <div class="table-item-4 items border-dark">
+          <span id="HorseName">{{ runners?.horseName }}</span>
+          <span class="reserved" *ngIf="runners?.isReserved">{{ vm.horseRacingContent?.contentParameters?.Res }}</span>
+        </div>
+        <div class="table-item-5 items table-center border-dark">
+          <div id="RunnerPrice" class="item-5-price">{{ runners?.price | marketPriceTransform: runners?.horseName:vm.runners:true }}</div>
+        </div>
+        <div class="table-item-6 items table-center border-dark" [ngClass]="{ 'betting-favourite': runners.isFavourite }">
+          <span *ngIf="runners?.favourite" id="Favorite">{{ runners?.favourite }}</span>
+        </div>
+        <div class="table-item-6 items table-center border-dark" *ngIf="isHalfScreenType"></div>
+      </li>
+    </ul>
+    <div class="resultcast">
+      <div class="rightforeCast" *ngIf="vm?.foreCast || vm?.triCast">
+        <ul class="list-items">
+          <li *ngIf="vm?.foreCast" id="forecastvalue">
+            <span class="foreCast-titel" id="Forecast">{{ vm.horseRacingContent?.contentParameters?.ForeCast }}:</span> {{ vm.foreCast }}
+          </li>
+          <li *ngIf="vm?.triCast" id="TricastValue">
+            <span class="foreCast-titel" id="Tricast">{{ vm.horseRacingContent?.contentParameters?.TriCast }}:</span> {{ vm.triCast }}
+          </li>
+        </ul>
+      </div>
+      <div class="leftforeCast">
+        <ul class="list-items">
+          <li *ngIf="vm?.win" id="Winvalue">
+            <span class="foreCast-titel" id="Win">{{ vm.horseRacingContent?.contentParameters?.Win }}:</span> {{ vm.win }}
+          </li>
+          <li *ngIf="vm?.placeDividends">
+            <span class="foreCast-titel" id="Place">{{ vm.horseRacingContent?.contentParameters?.Place }}:</span>
+            <span *ngFor="let places of vm?.placeDividends" id="PlaceDividends">{{ places?.dividend | number: '1.2-2' }} </span>
+          </li>
+
+          <li *ngIf="vm.totes?.exacta">
+            <span class="foreCast-titel" id="Exacta">{{ vm.horseRacingContent?.contentParameters?.Exacta }} :</span
+            ><span id="Exactavalue">{{ vm.totes?.exacta }}</span>
+          </li>
+          <li *ngIf="vm.totes?.trifecta">
+            <span class="foreCast-titel" id="Trifecta">{{ vm.horseRacingContent?.contentParameters?.Trifecta }} :</span>
+            <span id="trifectaTotes">{{ vm.totes?.trifecta }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container footer-content>
+    <gn-footer [rightSideText] = "'showRight'">
+      <ng-container right-side-content *ngIf="vm?.horseRaceNonRunnerList">
+        <span id="rightsideText" class="right-side-text">
+           {{vm.horseRacingContent?.contentParameters?.NonRunner }}: {{ vm.horseRaceNonRunnerList }} </span> 
+       </ng-container>
+        <ng-container left-side-content>
+        <span id="RunnerCount" class="run-count" *ngIf="vm?.runnerCount"
+          >{{ vm?.runnerCount | runnerCount }} {{ vm.horseRacingContent?.contentParameters?.RAN }}</span
+        >
+        <span *ngIf="vm?.eachWayResult" id="EachwayResult">{{ vm.eachWayResult }}</span>
+      </ng-container>
+    </gn-footer>
+  </ng-container>
+</gn-base-page>

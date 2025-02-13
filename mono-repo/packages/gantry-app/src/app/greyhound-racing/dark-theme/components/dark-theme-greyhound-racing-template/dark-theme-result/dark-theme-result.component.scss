@@ -1,0 +1,151 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+@import '../../../../../../dark-theme-global-style/mixins/traps';
+
+.header-race-stage-result {
+    width: 240px;
+    height: 129px;
+    @include flex-center;
+    font-size: $font-54;
+    padding: 0 12px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        width: 120px;
+        height: 64px;
+        font-size: $font-27;
+        border-width: 2.5px;
+    }
+}
+
+.greyhound-table {
+    margin: 30px 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: 15px 0 0;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin: 52px 0 0;
+    }
+
+    li {
+        height: 96px;
+        margin-bottom: 24px;
+
+        @include breakpoint(multidesktop) {
+            height: 48px;
+            margin-bottom: 12px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            height: 61px;
+            margin-bottom: 19px;
+        }
+
+        @include trap-box-styles(120px, 90px);
+        @include breakpoint(multidesktophalf) {
+            @include trap-box-styles(80px, 60px);
+        }
+
+        .selection-number {
+            margin-left: 42px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 21px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-left: 25px;
+            }
+        }
+
+        .selection-position {
+            span {
+                @include breakpoint(multidesktophalf) {
+                    height: 40px;
+                    font-size: $font-26;
+                }
+            }
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+            padding-left: 36px;
+            font-size: $font-64;
+            font-weight: $fw-bold;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 18px;
+                font-size: $font-32;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                padding-left: 21px;
+                font-size: $font-40;
+            }
+        }
+
+        .selection-favourite {
+            width: 120px;
+            margin-left: 42px;
+            font-weight: $fw-semibold;
+
+            @include breakpoint(multidesktop) {
+                width: 60px;
+                margin-left: 20px;
+            }
+        }
+
+        .selection-result {
+            @include flex-center;
+
+            font-size: $font-70;
+            font-style: normal;
+            font-weight: $fw-bold;
+            height: 84px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-35;
+                height: 42px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                height: 42px;
+            }
+        }
+    }
+}
+
+.castSec {
+    margin-top: 62px;
+    font-style: normal;
+    font-weight: $fw-medium;
+    line-height: normal;
+    text-transform: capitalize;
+    display: inline-grid;
+    grid-row-gap: 26px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 31px;
+        grid-row-gap: 13px;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        margin-top: 50px;
+    }
+
+    .cast {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: 200px auto;
+        font-size: $font-48;
+
+        @include breakpoint(multidesktop) {
+            grid-column-gap: 10px;
+            grid-template-columns: 100px auto;
+            font-size: $font-24;
+        }
+    }
+}

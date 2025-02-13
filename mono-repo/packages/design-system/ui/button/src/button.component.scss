@@ -1,0 +1,286 @@
+@use '../../generated/styles/components/button/button' as ds-button;
+@use '../../fonts/font-helper' as helper;
+
+@mixin reduced-button-styles {
+    &.ds-btn-large-reduced {
+        @include ds-button.large-reduced;
+    }
+
+    &.ds-btn-medium-reduced {
+        @include ds-button.medium-reduced;
+        @include helper.set-font-variables('button', 'label', 'md-strong');
+    }
+
+    &.ds-btn-small-reduced {
+        @include ds-button.small-reduced;
+        @include helper.set-font-variables('button', 'label', 'sm-strong');
+    }
+}
+
+.ds-button {
+    @include ds-button.shared;
+    @include helper.set-font-variables('button', 'label', 'lg-strong');
+    @include helper.setup-font-style('button');
+
+    --ds-button-border-width-local: 1px;
+    --ds-button-color-text: var(--ds-button-enabled-color-text);
+    --ds-button-bg: var(--ds-button-enabled-color-bg);
+    --ds-button-color-border: var(--ds-button-enabled-color-border);
+    --ds-button-color-icon: var(--ds-button-enabled-color-icon);
+
+    min-height: var(--ds-button-size-min-height);
+    max-height: var(--ds-button-size-max-height);
+    cursor: pointer;
+    align-items: center;
+    background: var(--ds-button-bg);
+    border: var(--ds-button-border-width-local) solid var(--ds-button-color-border);
+    border-radius: var(--ds-button-radius-border);
+    box-sizing: border-box;
+    color: var(--ds-button-color-text);
+    content-visibility: auto;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--ds-button-space-padding-top, 0) var(--ds-button-space-padding-right, 0) var(--ds-button-space-padding-bottom, 0)
+        var(--ds-button-space-padding-left, 0);
+
+    &.ds-btn-small {
+        @include ds-button.small;
+        @include helper.set-font-variables('button', 'label', 'sm-strong');
+    }
+
+    &.ds-btn-medium {
+        @include ds-button.medium;
+        @include helper.set-font-variables('button', 'label', 'md-strong');
+    }
+
+    &.ds-btn-large {
+        @include ds-button.large;
+    }
+
+    &.ds-btn-filled-primary {
+        @include ds-button.filled-primary;
+    }
+
+    &.ds-btn-filled-secondary {
+        @include ds-button.filled-secondary;
+    }
+
+    &.ds-btn-filled-tertiary {
+        @include ds-button.filled-tertiary;
+    }
+
+    &.ds-btn-filled-success {
+        @include ds-button.filled-success;
+    }
+
+    &.ds-btn-filled-utility {
+        @include ds-button.filled-utility;
+    }
+
+    &.ds-btn-outline-primary {
+        @include ds-button.outline-primary;
+    }
+
+    &.ds-btn-outline-secondary {
+        @include ds-button.outline-secondary;
+    }
+
+    &.ds-btn-outline-tertiary {
+        @include ds-button.outline-tertiary;
+    }
+
+    &.ds-btn-flat-tertiary {
+        @include ds-button.flat-tertiary;
+    }
+
+    &.ds-btn-flat-utility {
+        @include ds-button.flat-utility;
+    }
+
+    &.ds-btn-flat-reduced-utility {
+        @include ds-button.flat-utility;
+        @include reduced-button-styles;
+    }
+
+    &.ds-btn-flat-reduced-tertiary {
+        @include ds-button.flat-tertiary;
+        @include reduced-button-styles;
+    }
+
+    &.ds-btn-inverse {
+        &.ds-btn-filled-primary {
+            @include ds-button.filled-primary-inverse;
+        }
+
+        &.ds-btn-filled-secondary {
+            @include ds-button.filled-secondary-inverse;
+        }
+
+        &.ds-btn-filled-tertiary {
+            @include ds-button.filled-tertiary-inverse;
+        }
+
+        &.ds-btn-outline-primary {
+            @include ds-button.outline-primary-inverse;
+        }
+
+        &.ds-btn-outline-secondary {
+            @include ds-button.outline-secondary-inverse;
+        }
+
+        &.ds-btn-outline-tertiary {
+            @include ds-button.outline-tertiary-inverse;
+        }
+
+        &.ds-btn-flat-tertiary {
+            @include ds-button.flat-tertiary-inverse;
+        }
+
+        &.ds-btn-flat-utility {
+            @include ds-button.flat-utility-inverse;
+        }
+
+        &.ds-btn-filled-utility {
+            @include ds-button.filled-utility-inverse;
+        }
+
+        &.ds-btn-flat-reduced-utility {
+            @include ds-button.flat-utility-inverse;
+        }
+
+        &.ds-btn-flat-reduced-tertiary {
+            @include ds-button.flat-tertiary-inverse;
+        }
+    }
+    /* stylelint-disable selector-max-attribute */
+    // [slot='start'],
+    // [slot='end'] {
+    //     color: var(--ds-button-color-icon);
+    //     height: var(--ds-button-size-icon);
+    //     width: var(--ds-button-size-icon);
+    // }
+    @media (hover: hover) {
+        &:hover {
+            --ds-button-bg: var(--ds-button-hover-color-bg);
+            --ds-button-color-border: var(--ds-button-hover-color-border);
+            --ds-button-color-icon: var(--ds-button-hover-color-icon);
+
+            // --ds-button-color-text: var(--ds-button-hover-color-text);
+
+            color: var(
+                --ds-button-hover-color-text
+            ); /* added this temperory fix to overcome the anchor tag styles which are overriding from themepark file reboot.scss  which will be removed 
+        eventually once we are more stable with DS and more teams have adopted wide range of components from DS */
+        }
+    }
+
+    &:active {
+        --ds-button-color-text: var(--ds-button-active-color-text);
+        --ds-button-bg: var(--ds-button-active-color-bg);
+        --ds-button-color-border: var(--ds-button-active-color-border);
+        --ds-button-color-icon: var(--ds-button-active-color-icon);
+    }
+
+    &.ds-btn-disabled {
+        --ds-button-color-text: var(--ds-button-disabled-color-text);
+        --ds-button-bg: var(--ds-button-disabled-color-bg);
+        --ds-button-color-border: var(--ds-button-disabled-color-border);
+        --ds-button-color-icon: var(--ds-button-disabled-color-icon);
+
+        pointer-events: none;
+    }
+
+    .ds-btn-container {
+        align-items: center;
+        display: flex;
+        gap: var(--ds-button-space-inline);
+        justify-content: center;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    .ds-btn-text,
+    .ds-btn-sub-text {
+        white-space: nowrap;
+    }
+
+    .ds-btn-txt-wrap {
+        white-space: pre-wrap;
+    }
+
+    .ds-btn-sub-text {
+        @include helper.setup-font-style('button');
+        @include helper.set-font-variables('button', 'label', 'md-strong');
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    [slot='subtext'] {
+        display: flex;
+        margin-top: var(--ds-button-space-stack);
+    }
+}
+
+.ds-btn-container {
+    // to fix vn-icon sizing added deep nesting to be more specific with the scoping
+    svg {
+        color: var(--ds-button-color-icon);
+        height: var(--ds-button-size-icon);
+        width: var(--ds-button-size-icon);
+        display: flex;
+        align-items: center;
+    }
+}
+
+.ds-button-truncate {
+    --ds-btn-container-width: 100%;
+
+    width: var(--ds-btn-container-width);
+
+    .ds-btn-container,
+    .ds-btn-sub-text {
+        width: var(--ds-btn-container-width);
+    }
+
+    .ds-btn-text,
+    .ds-btn-sub-text [slot='subtext'] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ds-btn-sub-text [slot='subtext'] {
+        display: block;
+    }
+}
+
+.ds-button-loader {
+    --ds-loader-animation-duration: 3s;
+    --ds-loader-border-color: #e4e4ed;
+    --ds-loader-border-radius: 50%;
+    --ds-loader-border-right-color: #f4f4f4;
+    --ds-loader-border-width: 4px;
+    --ds-loader-size: 12px;
+
+    animation: ds-button-spinner var(--ds-loader-animation-duration) infinite linear;
+    border: var(--ds-loader-border-width) solid var(--ds-loader-border-color);
+    border-right-color: var(--ds-loader-border-right-color);
+    border-radius: var(--ds-loader-border-radius);
+    height: var(--ds-loader-size);
+    width: var(--ds-loader-size);
+}
+
+.ds-button-loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@keyframes ds-button-spinner {
+    to {
+        transform: rotate(1turn);
+    }
+}

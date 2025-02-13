@@ -1,0 +1,9 @@
+<div class="promotion-layout" [ngStyle]="!!data?.backgroundImage?.src && {'background-image': 'url(' + data?.backgroundImage?.src + ')'}">
+    <div [ngClass]="(data?.title || data?.description) ?  'promotion-Bg':'no-bg'">
+        <p>{{data?.title}}</p>
+        <p class="description" [innerHTML]="data?.description"></p>
+    </div>
+    <img [retrySrc]="data?.foregroundImage?.src" style="min-height: 90vh; object-fit: cover;">
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

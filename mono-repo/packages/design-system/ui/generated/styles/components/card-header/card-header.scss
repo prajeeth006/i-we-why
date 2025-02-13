@@ -1,0 +1,43 @@
+@mixin shared {
+    --ds-card-header-color-left-chevron: var(--semantic-color-on-surface-base);
+    --ds-card-header-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-card-header-color-title: var(--semantic-color-on-surface-base);
+    --ds-card-header-radius-bottom-left-border: var(--semantic-size-xquarter);
+    --ds-card-header-radius-bottom-right-border: var(--semantic-size-xquarter);
+    --ds-card-header-radius-top-left-border: var(--semantic-size-xquarter);
+    --ds-card-header-radius-top-right-border: var(--semantic-size-xquarter);
+    --ds-card-header-size-border: var(--semantic-size-xquarter);
+    --ds-card-header-size-divider-height: var(--semantic-size-x4);
+    --ds-card-header-size-min-height: var(--semantic-size-x11);
+    --ds-card-header-space-inline: var(--semantic-spacing-inline-md);
+    --ds-card-header-space-inline-title: var(--semantic-spacing-inline-sm);
+    --ds-card-header-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-card-header-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-card-header-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-card-header-space-padding-top: var(--semantic-spacing-container-padding-none);
+    --ds-card-header-space-stack: var(--semantic-spacing-stack-xs);
+}
+
+@mixin surface-high {
+    --ds-card-header-active-color-background: var(--semantic-color-surface-container-high-active);
+    --ds-card-header-enabled-color-background: var(--semantic-color-surface-container-high-base);
+    --ds-card-header-hover-color-background: var(--semantic-color-surface-container-high-hover);
+}
+
+@mixin surface-highest {
+    --ds-card-header-active-color-background: var(--semantic-color-surface-container-highest-active);
+    --ds-card-header-enabled-color-background: var(--semantic-color-surface-container-highest-base);
+    --ds-card-header-hover-color-background: var(--semantic-color-surface-container-highest-hover);
+}
+
+@mixin surface-low {
+    --ds-card-header-active-color-background: var(--semantic-color-surface-container-lowest-active);
+    --ds-card-header-enabled-color-background: var(--semantic-color-surface-container-low-base);
+    --ds-card-header-hover-color-background: var(--semantic-color-surface-container-lowest-hover);
+}
+
+@mixin surface-lowest {
+    --ds-card-header-active-color-background: var(--semantic-color-surface-container-lowest-active);
+    --ds-card-header-enabled-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-card-header-hover-color-background: var(--semantic-color-surface-container-lowest-hover);
+}

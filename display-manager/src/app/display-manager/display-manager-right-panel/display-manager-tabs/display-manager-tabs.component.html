@@ -1,0 +1,55 @@
+<div class="right-side-panel-tabs" [ngClass]="{'sequencing-tabs': isSequencingEnabled}">
+  <mat-tab-group id="mainParentTabGroup" class="main-parent-tab-group" [selectedIndex]="selectedTab.value"
+    (selectedIndexChange)="selectedTab.setValue($event)" #tabGroup>
+    <mat-tab *ngFor="let tab of parentTabs; let i=index;" [disabled]="sequenceJourneyStatus">
+      <ng-template mat-tab-label>
+        <div id="mainTabItem" class="main-tab-item main-parent-tab">
+          <span [id]="'dot-' + (tab?.name?.toLowerCase() || '')" class="dot" [style.background-color]="getBackgroundColor(tab?.name)" *ngIf="tab?.name && isTabVisible(tab)"></span>
+          <img id="tabItemIcon" class="tab-item-icon tab-item-icon-main" *ngIf="!!tab?.imageUrl" [src]="tab?.imageUrl">
+          <span id="mainTabText" class="main-tab-text" *ngIf="!!tab?.name" id="tabName">{{tab?.name}}</span>
+        </div>
+      </ng-template>      
+      <div [ngSwitch]="tab?.name?.toLowerCase()?.trim()">
+        <ng-container *ngSwitchCase="'master'">
+          <app-master-layout [childTabs]="tab.childTabs"></app-master-layout>
+        </ng-container>
+        <ng-container *ngSwitchCase="'individual'">
+          <app-individual-layout></app-individual-layout>
+        </ng-container>
+      </div>
+    </mat-tab>
+    <mat-tab *ngFor="let tab of multieventTabs; let position = index" [disabled]="sequenceJourneyStatus">
+      <ng-template mat-tab-label>
+        <div id="mainTabItemList" class="main-tab-item multievent--tab-link" [id]="'list-'+ position" cdkDropList
+          cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)"
+          [cdkDropListConnectedTo]="getAllListTabs(position)">
+          <div cdkDrag class="tab-name">
+            <img id="multiEventTab" class="multi-event-tab"
+              [src]="childNodeDefaultIconPath">
+            <span id="mainTabValue" [ngClass]="{ 'active': selectedTab.value-parentTabs.length === position }"
+            class="main-tab-text-sub">{{selectedTab.value-parentTabs.length == position ?
+              tabOrder(tab.tabName, position) : tabShrink(tabOrder(tab.tabName, position))}}</span>
+            <mat-icon id="close" class="close-icon-section" (click)="closeTab(position)" aria-hidden="false"
+                aria-label="close icon">close_alt</mat-icon>
+          </div>
+        </div>
+      </ng-template>
+        <multi-event [tabIndex]="position" [eventType]="tab?.eventType ? tab.eventType : ''"
+        [eventFormData]="tab?.eventFormData ? tab?.eventFormData: null"></multi-event>
+    </mat-tab>
+      <mat-tab *ngFor="let tab of parentRightTabs.slice().reverse(); let i=index;" [disabled]="sequenceJourneyStatus">
+        <ng-template mat-tab-label>
+          <div #tabRight id="mainTabItem" [ngClass]="'main-tab-item main-parent-tab label-align-right tab-' + (tab?.name?.toLowerCase()?.trim())">
+            <span class="dot" [style.background-color]="getBackgroundColor(tab?.name)" *ngIf="tab?.name && isTabVisible(tab)"></span>
+            <img id="tabItemIcon" class="tab-item-icon tab-item-icon-main" *ngIf="!!tab?.imageUrl" [src]="tab?.imageUrl">
+            <span id="mainTabText" class="main-tab-text" *ngIf="!!tab?.name" id="tabName">{{tab?.name}}</span>
+          </div>
+        </ng-template>
+        <div [ngSwitch]="tab?.name?.toLowerCase()?.trim()" *ngIf="tab.childTabs && tab.childTabs.length">
+          <ng-container *ngSwitchCase="'settings'">
+            <settings-layout *ngIf="isSettingsTab" [childTabs]="tab.childTabs"></settings-layout>
+          </ng-container>
+        </div>
+      </mat-tab>
+  </mat-tab-group>
+</div>

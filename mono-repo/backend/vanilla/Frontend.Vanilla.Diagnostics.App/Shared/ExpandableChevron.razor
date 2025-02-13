@@ -1,0 +1,17 @@
+@code {
+
+    [Parameter]
+    public bool IsExpanded { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+}
+
+<span class="expandable" @onclick="OnClick">
+    <span class="oi @(IsExpanded ? "oi-chevron-bottom" : "oi-chevron-right")"></span>
+    @ChildContent
+</span>

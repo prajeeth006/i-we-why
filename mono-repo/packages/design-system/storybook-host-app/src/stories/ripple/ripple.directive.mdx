@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+import * as DsRippleStories from './ripple.directive.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './ripple-tabs/overview.mdx';
+import MySecondTab from './ripple-tabs/examples.mdx';
+
+## Disclaimer: only a draft
+
+There is not decision or design work picked up yet on this.
+
+# Ripple
+
+<Meta of={DsRippleStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

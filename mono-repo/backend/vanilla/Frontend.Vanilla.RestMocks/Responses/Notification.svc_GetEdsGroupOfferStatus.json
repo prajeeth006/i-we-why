@@ -1,0 +1,22 @@
+{
+    "campaignDetails": [
+        {
+            "id": 456,
+            "name": "testcampaignOne",
+            "optInDate": "/Date(1638541440000)/",
+            "optInStatus": "OFFERED"
+        },
+        {
+            "id": 5678,
+            "name": "testCampaignTwo",
+            "optInDate": null,
+            "optInStatus": "OPTED_IN"
+        }
+    ],
+    "groupOptinStatusParameters": [
+        {
+            "key": "key1",
+            "value": "value1"
+        }
+    ]
+}

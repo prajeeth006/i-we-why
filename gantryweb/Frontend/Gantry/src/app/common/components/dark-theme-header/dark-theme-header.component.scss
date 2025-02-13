@@ -1,0 +1,113 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+.banner{
+    background-color: $template-bg;
+    padding: 20px 35px;
+    border: solid 5px $black;
+    color: $white;
+    .banner-title-block{
+        display: flex;        
+        height: 62px;
+        text-transform: uppercase;
+        align-items: center;
+
+        .banner-title-block-left{
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            .banner-logo{
+                height: auto;
+                width: 100%;
+                margin-right: 12px;
+            }
+            .lead-title{
+                font-size: $fs-lead-title;
+                color: $lead-title-text;
+                flex-grow: 1;
+                display: flex;
+                gap: 15;
+                padding-left: 28px;
+            }
+        }
+
+        .banner-title-block-right{
+            display: flex;
+            .early-price{
+                border: solid 2px $early-price-bg;
+                width: 117px;
+                height: 60px;
+                transform: skew(-12.5deg);
+                display: flex;   
+                text-align: center;
+                align-items: center;
+                font-size: $fs-lg-early-price;
+                
+                &.filled{
+                    background-color: $early-price-bg;
+                    color: $early-price-text;
+                }
+                .skewed-content{
+                    transform: skew(12.5deg);
+                }
+            }
+            .top-3-finish{
+                border: solid 2px $top-3-finish-bg;
+                width: 117px;
+                height: 60px;
+                transform: skew(-12.5deg); 
+                display: flex;   
+                text-align: center;
+                align-items: center;
+                background-color: $top-3-finish-bg;
+                color: $top-3-finish-text;
+                  
+            }
+        }
+        
+        
+    }
+}
+
+
+//Specific to coral
+html[data-domain*="coral.co.uk"] {
+    .banner{
+        .banner-title-block{
+            .banner-title-block-left{
+                .lead-title{
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        border: solid 2.5px $white;
+                        border-top: none;
+                        border-right: none;
+                        border-radius: 0 0 0 25px;
+                        transform: skewX(-12.5deg);
+                    }
+                }
+            }
+            .banner-title-block-right{
+                .early-price{           
+                    border-radius: 0 25px 0 25px;                       
+                }
+            }        
+        }
+    }
+}
+
+
+//Specific to ladbrokes
+html[data-domain*="ladbrokes.com"]{
+    .banner{
+        .banner-title-block{
+            .banner-title-block-left{
+                border-bottom: solid 2.5px $white;            
+            }
+            .banner-title-block-right{
+                .early-price{           
+                    border-radius: 12.5px;           
+                }
+            }        
+        }
+    }
+}

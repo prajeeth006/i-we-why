@@ -1,0 +1,9 @@
+{
+  "Configuration": {
+    "VanillaFramework.Services.ServiceClients": {
+      "AccessId": {
+        "Values": [ { "Value": "my-personal-access-id" } ]
+      }
+    }
+  }
+}

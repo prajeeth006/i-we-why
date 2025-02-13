@@ -1,0 +1,10 @@
+@code {
+
+    private void Load(PageLoadArgs args)
+    {
+        args.IsNotFound = true;
+    }
+
+}
+
+<PageLayout LoadChildContent="Load"/>

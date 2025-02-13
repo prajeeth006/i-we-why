@@ -1,0 +1,57 @@
+@use '../../generated/styles/components/toast/toast' as ds-toast;
+@use '../../fonts/font-helper' as helper;
+
+.ds-toast {
+    @include ds-toast.shared;
+
+    --ds-toast-width: 100%;
+    --ds-toast-description-mr: auto;
+    --ds-toast-icon-size: 12px; // missing token
+
+    align-items: center;
+    background-color: var(--ds-toast-color-bg);
+    border-radius: var(--ds-toast-radius-border);
+    box-shadow: var(--semantic-elevation-raised-4-box-shadow);
+    box-sizing: border-box;
+    color: var(--ds-toast-color-text);
+    display: flex;
+    gap: var(--ds-toast-space-inline);
+    min-height: var(--ds-toast-size-min-height);
+    padding: var(--ds-toast-space-padding-top) var(--ds-toast-space-padding-right) var(--ds-toast-space-padding-bottom)
+        var(--ds-toast-space-padding-left);
+    width: var(--ds-toast-width);
+
+    .ds-toast-status-icon {
+        display: flex; // temporary solution
+
+        svg {
+            height: var(--ds-toast-icon-size);
+            width: var(--ds-toast-icon-size);
+            color: var(--ds-toast-color-icon);
+        }
+    }
+
+    &.ds-toast-info {
+        @include ds-toast.info;
+    }
+
+    &.ds-toast-warning {
+        @include ds-toast.warning;
+    }
+
+    &.ds-toast-error {
+        @include ds-toast.error;
+    }
+
+    &.ds-toast-success {
+        @include ds-toast.success;
+    }
+
+    .ds-toast-description {
+        @include helper.set-font-variables('toast', 'label', 'lg');
+        @include helper.setup-font-style('toast');
+
+        margin-right: var(--ds-toast-description-mr);
+        word-break: break-word;
+    }
+}

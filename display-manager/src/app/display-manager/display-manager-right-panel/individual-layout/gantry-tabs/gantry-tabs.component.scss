@@ -1,0 +1,62 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.individual-tab-selections-group {
+    padding: 10px 10px 0;
+
+    &-section {
+        @include helper.center-content;
+        align-items: flex-end;
+        padding: 10px 20px 0;
+        background-color: $background-grey-color;
+
+        .gantry-type-btn {
+            flex: 1 1 162px;
+            height: 30px;
+            text-align: center;
+            border: 0;
+            background-color: $background-grey-color;
+            line-height: 14.06px;
+            letter-spacing: 1.25px;
+            font-family: $default-font;
+            font-weight: $fw-medium;
+            font-size: $txt-sm-font-size;
+            text-transform: capitalize;
+            cursor: pointer;
+            color: $color-black-light;
+
+            &.active-gantry-type {
+                border-radius: 5px 5px 0 0;
+                background-color: $white;
+                color: $color-black-light;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 5.45%;
+                    width: 89%;
+                    height: 3px;
+                    background-color: $color-black-light;
+                }
+            }
+
+            .dot-indicator {
+                width: fit-content;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    background-color: $purple-bg;
+                    border-radius: 50px;
+                    right: -8px;
+                    top: -1px;
+                }
+            }
+        }
+    }
+}

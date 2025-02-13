@@ -1,0 +1,3588 @@
+{
+    "Countries": [
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "AC",
+            "name": "Ascension",
+            "predial": "+247",
+            "threeLetterCode": "ASC",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Romance Standard Time",
+            "id": "AD",
+            "name": "Andorra",
+            "predial": "+376",
+            "threeLetterCode": "AND",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arabian Standard Time",
+            "id": "AE",
+            "name": "United Arab Emirates",
+            "predial": "+971",
+            "threeLetterCode": "ARE",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "AF",
+            "name": "Afghanistan",
+            "predial": "+93",
+            "threeLetterCode": "AFG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "AG",
+            "name": "Antigua and Barbuda",
+            "predial": "+1268",
+            "threeLetterCode": "ATG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "AI",
+            "name": "Anguilla",
+            "predial": "+1264",
+            "threeLetterCode": "AIA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "AL",
+            "name": "Albania",
+            "predial": "+355",
+            "threeLetterCode": "ALB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Caucasus Standard Time",
+            "id": "AM",
+            "name": "Armenia",
+            "predial": "+374",
+            "threeLetterCode": "ARM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "AN",
+            "name": "Netherlands Antilles",
+            "predial": "+599",
+            "threeLetterCode": "ANT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "AO",
+            "name": "Angola",
+            "predial": "+244",
+            "threeLetterCode": "AGO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "AQ",
+            "name": "Antarctica",
+            "predial": "+672",
+            "threeLetterCode": "ATA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Argentina Standard Time",
+            "id": "AR",
+            "name": "Argentina",
+            "predial": "+54",
+            "threeLetterCode": "ARG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Samoa Standard Time",
+            "id": "AS",
+            "name": "American Samoa",
+            "predial": "+684",
+            "threeLetterCode": "ASM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "AT",
+            "name": "Austria",
+            "predial": "+43",
+            "threeLetterCode": "AUT",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Australia Standard Time",
+            "id": "AU",
+            "name": "Australia",
+            "predial": "+61",
+            "threeLetterCode": "AUS",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "AW",
+            "name": "Aruba",
+            "predial": "+297",
+            "threeLetterCode": "ABW",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "AX",
+            "name": "Aland Islands",
+            "predial": "+358",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Azerbaijan Standard Time",
+            "id": "AZ",
+            "name": "Azerbaijan",
+            "predial": "+994",
+            "threeLetterCode": "AZE",
+            "zipFormat": "llsDDDD",
+            "zipFormatValidation": {
+                "maxLength": 7,
+                "minLength": 4,
+                "regex": "(?=^[a-zA-Z]?[a-zA-Z]?\\s?\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "BA",
+            "name": "Bosnia-Herzegovina",
+            "predial": "+387",
+            "threeLetterCode": "BIH",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "BB",
+            "name": "Barbados",
+            "predial": "+246",
+            "threeLetterCode": "BRB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Asia Standard Time",
+            "id": "BD",
+            "name": "Bangladesh",
+            "predial": "+880",
+            "threeLetterCode": "BGD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "BE",
+            "name": "Belgium",
+            "predial": "+32",
+            "threeLetterCode": "BEL",
+            "zipFormat": "RAW(4, 4, /^[1-9]{1}[0-9]{3}$/)",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "^[1-9]{1}[0-9]{3}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenwich Standard Time",
+            "id": "BF",
+            "name": "Burkina Faso",
+            "predial": "+226",
+            "threeLetterCode": "BFA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "FLE Standard Time",
+            "id": "BG",
+            "name": "Bulgaria",
+            "predial": "+359",
+            "threeLetterCode": "BGR",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arabic Standard Time",
+            "id": "BH",
+            "name": "Bahrain",
+            "predial": "+973",
+            "threeLetterCode": "BHR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "BI",
+            "name": "Burundi",
+            "predial": "+257",
+            "threeLetterCode": "BDI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "BJ",
+            "name": "Benin",
+            "predial": "+229",
+            "threeLetterCode": "BEN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "BL",
+            "name": "St Barthelemy",
+            "predial": "+590",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "BM",
+            "name": "Bermuda",
+            "predial": "+441",
+            "threeLetterCode": "BMU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "North Asia Standard Time",
+            "id": "BN",
+            "name": "Brunei Darussalam",
+            "predial": "+673",
+            "threeLetterCode": "BRN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Western Standard Time",
+            "id": "BO",
+            "name": "Bolivia",
+            "predial": "+591",
+            "threeLetterCode": "BOL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "BQ",
+            "name": "Bonaire Saint Eustatius and Saba",
+            "predial": "+599",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. South America Standard Time",
+            "id": "BR",
+            "name": "Brazil",
+            "predial": "+55",
+            "threeLetterCode": "BRA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Pacific Standard Time",
+            "id": "BS",
+            "name": "Bahamas",
+            "predial": "+1242",
+            "threeLetterCode": "BHS",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Asia Standard Time",
+            "id": "BT",
+            "name": "Bhutan",
+            "predial": "+975",
+            "threeLetterCode": "BTN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "BU",
+            "name": "Burma",
+            "predial": null,
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "BV",
+            "name": "Bouvet Island",
+            "predial": "+74",
+            "threeLetterCode": "BVT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "BW",
+            "name": "Botswana",
+            "predial": "+267",
+            "threeLetterCode": "BWA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "BY",
+            "name": "Belarus",
+            "predial": "+375",
+            "threeLetterCode": "BLR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central America Standard Time",
+            "id": "BZ",
+            "name": "Belize",
+            "predial": "+501",
+            "threeLetterCode": "BLZ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Canada Central Standard Time",
+            "id": "CA",
+            "name": "Canada",
+            "predial": "+1",
+            "threeLetterCode": "CAN",
+            "zipFormat": "LDLsDLD",
+            "zipFormatValidation": {
+                "maxLength": 7,
+                "minLength": 6,
+                "regex": "(?=^[a-zA-Z]\\d[a-zA-Z]\\s?\\d[a-zA-Z]\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Myanmar Standard Time",
+            "id": "CC",
+            "name": "Cocos (Keeling) Islands",
+            "predial": "+61",
+            "threeLetterCode": "CCK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "CD",
+            "name": "Democratic Republic of the Congo",
+            "predial": "+243",
+            "threeLetterCode": "COD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "CF",
+            "name": "Central African Republic",
+            "predial": "+236",
+            "threeLetterCode": "CAF",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "CG",
+            "name": "Congo",
+            "predial": "+242",
+            "threeLetterCode": "COG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "CH",
+            "name": "Switzerland",
+            "predial": "+41",
+            "threeLetterCode": "SUI",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenwich Standard Time",
+            "id": "CI",
+            "name": "Cote d Ivoire",
+            "predial": "+225",
+            "threeLetterCode": "CIV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "CK",
+            "name": "Cook Islands",
+            "predial": "+682",
+            "threeLetterCode": "COK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "CL",
+            "name": "Chile",
+            "predial": "+56",
+            "threeLetterCode": "CHL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "CM",
+            "name": "Cameroon",
+            "predial": "+237",
+            "threeLetterCode": "CMR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "CN",
+            "name": "China",
+            "predial": "+86",
+            "threeLetterCode": "CHN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "CO",
+            "name": "Colombia",
+            "predial": "+57",
+            "threeLetterCode": "COL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central America Standard Time",
+            "id": "CR",
+            "name": "Costa Rica",
+            "predial": "+506",
+            "threeLetterCode": "CRI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "CU",
+            "name": "Cuba",
+            "predial": "+53",
+            "threeLetterCode": "CUB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Cape Verde Standard Time",
+            "id": "CV",
+            "name": "Cape Verde",
+            "predial": "+238",
+            "threeLetterCode": "CPV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Western Standard Time",
+            "id": "CW",
+            "name": "Curaçao",
+            "predial": "+599",
+            "threeLetterCode": "CUW",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "CX",
+            "name": "Christmas Island",
+            "predial": "+61",
+            "threeLetterCode": "CXR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GTB Standard Time",
+            "id": "CY",
+            "name": "Cyprus",
+            "predial": "+357",
+            "threeLetterCode": "CYP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "CZ",
+            "name": "Czech Republic",
+            "predial": "+420",
+            "threeLetterCode": "CZE",
+            "zipFormat": "XXXXXxxx",
+            "zipFormatValidation": {
+                "maxLength": 8,
+                "minLength": 5,
+                "regex": "(?=^[ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z]?[ 0-9a-zA-Z]?[ 0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "DE",
+            "name": "Germany",
+            "predial": "+49",
+            "threeLetterCode": "DEU",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "DJ",
+            "name": "Djibouti",
+            "predial": "+253",
+            "threeLetterCode": "DJI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "DK",
+            "name": "Denmark",
+            "predial": "+45",
+            "threeLetterCode": "DNK",
+            "zipFormat": "RAW(4, 4, /^[1-9]{1}[0-9]{3}$/)",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "^[1-9]{1}[0-9]{3}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "DM",
+            "name": "Dominica",
+            "predial": "+1767",
+            "threeLetterCode": "DMA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "DO",
+            "name": "Dominican Republic",
+            "predial": "+1809",
+            "threeLetterCode": "DOM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "DZ",
+            "name": "Algeria",
+            "predial": "+213",
+            "threeLetterCode": "DZA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Pacific Standard Time",
+            "id": "EC",
+            "name": "Ecuador",
+            "predial": "+593",
+            "threeLetterCode": "ECU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "EE",
+            "name": "Estonia",
+            "predial": "+372",
+            "threeLetterCode": "EST",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Egypt Standard Time",
+            "id": "EG",
+            "name": "Egypt",
+            "predial": "+20",
+            "threeLetterCode": "EGY",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "EH",
+            "name": "Western Sahara",
+            "predial": "+212",
+            "threeLetterCode": "ESH",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "ER",
+            "name": "Eritrea",
+            "predial": "+291",
+            "threeLetterCode": "ERI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "ES",
+            "name": "Spain",
+            "predial": "+34",
+            "threeLetterCode": "ESP",
+            "zipFormat": "RAW(5, 6, /^[0-9]{5}[0-9]?$|^(?=\\d* \\d*$).{6}$/)",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 5,
+                "regex": "^[0-9]{5}[0-9]?$|^(?=\\d* \\d*$).{6}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "ET",
+            "name": "Ethiopia",
+            "predial": "+251",
+            "threeLetterCode": "ETH",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "FLE Standard Time",
+            "id": "FI",
+            "name": "Finland",
+            "predial": "+358",
+            "threeLetterCode": "FIN",
+            "zipFormat": "RAW(5, 5, /^[0-9]{4}[0|5|7|9]{1}$/)",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "^[0-9]{4}[0|5|7|9]{1}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "FJ",
+            "name": "Fiji",
+            "predial": "+679",
+            "threeLetterCode": "FJI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Western Standard Time",
+            "id": "FK",
+            "name": "Falkland Islands",
+            "predial": "+500",
+            "threeLetterCode": "FLK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific Standard Time",
+            "id": "FM",
+            "name": "Micronesia, Federated States of",
+            "predial": "+691",
+            "threeLetterCode": "FSM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "FO",
+            "name": "Faroe Islands",
+            "predial": "+298",
+            "threeLetterCode": "FRO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Romance Standard Time",
+            "id": "FR",
+            "name": "France",
+            "predial": "+33",
+            "threeLetterCode": "FRA",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "GA",
+            "name": "Gabon",
+            "predial": "+241",
+            "threeLetterCode": "GAB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GB",
+            "name": "United Kingdom",
+            "predial": "+44",
+            "threeLetterCode": "GBR",
+            "zipFormat": "XXXXXxxx",
+            "zipFormatValidation": {
+                "maxLength": 8,
+                "minLength": 5,
+                "regex": "(?=^[ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z][ 0-9a-zA-Z]?[ 0-9a-zA-Z]?[ 0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Brazilian Standard Time",
+            "id": "GD",
+            "name": "Grenada",
+            "predial": "+1473",
+            "threeLetterCode": "GRD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Georgian Standard Time",
+            "id": "GE",
+            "name": "Georgia",
+            "predial": "+995",
+            "threeLetterCode": "GEO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenland Standard Time",
+            "id": "GF",
+            "name": "French Guiana",
+            "predial": "+594",
+            "threeLetterCode": "GUF",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GG",
+            "name": "Guernsey",
+            "predial": "+44",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GH",
+            "name": "Ghana",
+            "predial": "+233",
+            "threeLetterCode": "GHA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GI",
+            "name": "Gibraltar",
+            "predial": "+350",
+            "threeLetterCode": "GIB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "GL",
+            "name": "Greenland",
+            "predial": "+299",
+            "threeLetterCode": "GRL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GM",
+            "name": "Gambia",
+            "predial": "+220",
+            "threeLetterCode": "GMB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GN",
+            "name": "Guinea",
+            "predial": "+224",
+            "threeLetterCode": "GIN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "GP",
+            "name": "Guadeloupe",
+            "predial": "+590",
+            "threeLetterCode": "GLP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "GQ",
+            "name": "Equatorial Guinea",
+            "predial": "+240",
+            "threeLetterCode": "GNQ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GTB Standard Time",
+            "id": "GR",
+            "name": "Greece",
+            "predial": "+30",
+            "threeLetterCode": "GRC",
+            "zipFormat": "RAW(5, 6, /^[0-9]{5}$|^(?=\\d+ \\d+$).{6}$/)",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 5,
+                "regex": "^[0-9]{5}$|^(?=\\d+ \\d+$).{6}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenland Standard Time",
+            "id": "GS",
+            "name": "South Georgia",
+            "predial": "+00",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "GT",
+            "name": "Guatemala",
+            "predial": "+502",
+            "threeLetterCode": "GTM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "West Pacific Standard Time",
+            "id": "GU",
+            "name": "Guam",
+            "predial": "+671",
+            "threeLetterCode": "GUM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "GW",
+            "name": "Guinea-Bissau",
+            "predial": "+245",
+            "threeLetterCode": "GNB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Western Standard Time",
+            "id": "GY",
+            "name": "Guyana",
+            "predial": "+592",
+            "threeLetterCode": "GUY",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "China Standard Time",
+            "id": "HK",
+            "name": "Hong Kong",
+            "predial": "+852",
+            "threeLetterCode": "HKG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "HM",
+            "name": "Heard and Mc Donald Islands",
+            "predial": "+672",
+            "threeLetterCode": "HMD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Standard Time",
+            "id": "HN",
+            "name": "Honduras",
+            "predial": "+504",
+            "threeLetterCode": "HND",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "HR",
+            "name": "Croatia",
+            "predial": "+385",
+            "threeLetterCode": "HRV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "HT",
+            "name": "Haiti",
+            "predial": "+509",
+            "threeLetterCode": "HTI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "HU",
+            "name": "Hungary",
+            "predial": "+36",
+            "threeLetterCode": "HUN",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "ID",
+            "name": "Indonesia",
+            "predial": "+62",
+            "threeLetterCode": "IDN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "North Asia Standard Time",
+            "id": "IE",
+            "name": "Ireland",
+            "predial": "+353",
+            "threeLetterCode": "IRL",
+            "zipFormat": "AAAsAAAA",
+            "zipFormatValidation": {
+                "maxLength": 8,
+                "minLength": 7,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]\\s?[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Israel Standard Time",
+            "id": "IL",
+            "name": "Israel",
+            "predial": "+972",
+            "threeLetterCode": "ISR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "IM",
+            "name": "Isle of Man",
+            "predial": "+44",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "India Standard Time",
+            "id": "IN",
+            "name": "India",
+            "predial": "+91",
+            "threeLetterCode": "IND",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Asia Standard Time",
+            "id": "IO",
+            "name": "British Indian Ocean Territory",
+            "predial": "+246",
+            "threeLetterCode": "IOT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "IQ",
+            "name": "Iraq",
+            "predial": "+964",
+            "threeLetterCode": "IRQ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "IR",
+            "name": "Iran",
+            "predial": "+98",
+            "threeLetterCode": "IRN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "IS",
+            "name": "Iceland",
+            "predial": "+354",
+            "threeLetterCode": "ISL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "IT",
+            "name": "Italy",
+            "predial": "+39",
+            "threeLetterCode": "ITA",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "JE",
+            "name": "Jersey",
+            "predial": "+44",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "JM",
+            "name": "Jamaica",
+            "predial": "+1876",
+            "threeLetterCode": "JAM",
+            "zipFormat": "RAW(2, 9, /^[a-zA-Z0-9]{2,9}$/)",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 2,
+                "regex": "^[a-zA-Z0-9]{2,9}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Jordan Standard Time",
+            "id": "JO",
+            "name": "Jordan",
+            "predial": "+962",
+            "threeLetterCode": "JOR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Tokyo Standard Time",
+            "id": "JP",
+            "name": "Japan",
+            "predial": "+81",
+            "threeLetterCode": "JPN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "KE",
+            "name": "Kenya",
+            "predial": "+254",
+            "threeLetterCode": "KEN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Asia Standard Time",
+            "id": "KG",
+            "name": "Kyrgyzstan",
+            "predial": "+996",
+            "threeLetterCode": "KGZ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "KH",
+            "name": "Cambodia",
+            "predial": "+855",
+            "threeLetterCode": "KHM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Tonga Standard Time",
+            "id": "KI",
+            "name": "Kiribati",
+            "predial": "+686",
+            "threeLetterCode": "KIR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arabic Standard Time",
+            "id": "KM",
+            "name": "Comoros",
+            "predial": "+269",
+            "threeLetterCode": "COM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "KN",
+            "name": "Saint Kitts and Nevis",
+            "predial": "+1869",
+            "threeLetterCode": "KNA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "KP",
+            "name": "Korea (North)",
+            "predial": "+850",
+            "threeLetterCode": "PRK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Korea Standard Time",
+            "id": "KR",
+            "name": "Korea (South)",
+            "predial": "+82",
+            "threeLetterCode": "KOR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arab Standard Time",
+            "id": "KW",
+            "name": "Kuwait",
+            "predial": "+965",
+            "threeLetterCode": "KWT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "KY",
+            "name": "Cayman Islands",
+            "predial": "+345",
+            "threeLetterCode": "CYM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Asia Standard Time",
+            "id": "KZ",
+            "name": "Kazakhstan",
+            "predial": "+7",
+            "threeLetterCode": "KAZ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "LA",
+            "name": "Lao Peoples Democratic Republic",
+            "predial": "+856",
+            "threeLetterCode": "LAO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "LB",
+            "name": "Lebanon",
+            "predial": "+961",
+            "threeLetterCode": "LBN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "LC",
+            "name": "St. Lucia",
+            "predial": "+758",
+            "threeLetterCode": "LCA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "LI",
+            "name": "Liechtenstein",
+            "predial": "+423",
+            "threeLetterCode": "LIE",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Sri Lanka Standard Time",
+            "id": "LK",
+            "name": "Sri Lanka",
+            "predial": "+94",
+            "threeLetterCode": "LKA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "LR",
+            "name": "Liberia",
+            "predial": "+231",
+            "threeLetterCode": "LBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "LS",
+            "name": "Lesotho",
+            "predial": "+266",
+            "threeLetterCode": "LSO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "LT",
+            "name": "Lithuania",
+            "predial": "+370",
+            "threeLetterCode": "LTU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "LU",
+            "name": "Luxembourg",
+            "predial": "+352",
+            "threeLetterCode": "LUX",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "FLE Standard Time",
+            "id": "LV",
+            "name": "Latvia",
+            "predial": "+371",
+            "threeLetterCode": "LVA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "LY",
+            "name": "Libya",
+            "predial": "+218",
+            "threeLetterCode": "LBY",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Europe Standard Time",
+            "id": "MA",
+            "name": "Morocco",
+            "predial": "+212",
+            "threeLetterCode": "MAR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "MC",
+            "name": "Monaco",
+            "predial": "+377",
+            "threeLetterCode": "MCO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "MD",
+            "name": "Moldova",
+            "predial": "+373",
+            "threeLetterCode": "MDA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "ME",
+            "name": "Montenegro",
+            "predial": "+382",
+            "threeLetterCode": "MNE",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "MF",
+            "name": "St Martin",
+            "predial": "+590",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "MG",
+            "name": "Madagascar",
+            "predial": "+261",
+            "threeLetterCode": "MDG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "New Zealand Standard Time",
+            "id": "MH",
+            "name": "Marshall Islands",
+            "predial": "+692",
+            "threeLetterCode": "MHL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "MK",
+            "name": "North Macedonia",
+            "predial": "+389",
+            "threeLetterCode": "MKD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "ML",
+            "name": "Mali",
+            "predial": "+223",
+            "threeLetterCode": "MLI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "MM",
+            "name": "Myanmar",
+            "predial": "+95",
+            "threeLetterCode": "MMR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "MN",
+            "name": "Mongolia",
+            "predial": "+976",
+            "threeLetterCode": "MNG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "China Standard Time",
+            "id": "MO",
+            "name": "Macau",
+            "predial": "+853",
+            "threeLetterCode": "MAC",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "West Pacific Standard Time",
+            "id": "MP",
+            "name": "Northern Mariana Islands",
+            "predial": "+1670",
+            "threeLetterCode": "MNP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "MQ",
+            "name": "Martinique",
+            "predial": "+596",
+            "threeLetterCode": "MTQ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "MR",
+            "name": "Mauritania",
+            "predial": "+222",
+            "threeLetterCode": "MRT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SA Western Standard Time",
+            "id": "MS",
+            "name": "Montserrat",
+            "predial": "+664",
+            "threeLetterCode": "MSR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "MT",
+            "name": "Malta",
+            "predial": "+356",
+            "threeLetterCode": "MLT",
+            "zipFormat": "RAW(7, 8, /(?=^.{7,8}$)^(([a-zA-Z] ?){3}([0-9]){4})$/)",
+            "zipFormatValidation": {
+                "maxLength": 8,
+                "minLength": 7,
+                "regex": "(?=^.{7,8}$)^(([a-zA-Z] ?){3}([0-9]){4})$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Russian Standard Time",
+            "id": "MU",
+            "name": "Mauritius",
+            "predial": "+230",
+            "threeLetterCode": "MUS",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "MV",
+            "name": "Maldives",
+            "predial": "+960",
+            "threeLetterCode": "MDV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "MW",
+            "name": "Malawi",
+            "predial": "+265",
+            "threeLetterCode": "MWI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Standard Time (Mexico)",
+            "id": "MX",
+            "name": "Mexico",
+            "predial": "+52",
+            "threeLetterCode": "MEX",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Singapore Standard Time",
+            "id": "MY",
+            "name": "Malaysia",
+            "predial": "+60",
+            "threeLetterCode": "MYS",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "MZ",
+            "name": "Mozambique",
+            "predial": "+258",
+            "threeLetterCode": "MOZ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Namibia Standard Time",
+            "id": "NA",
+            "name": "Namibia",
+            "predial": "+264",
+            "threeLetterCode": "NAM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "NC",
+            "name": "New Caledonia",
+            "predial": "+687",
+            "threeLetterCode": "NCL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "NE",
+            "name": "Niger",
+            "predial": "+227",
+            "threeLetterCode": "NER",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "NF",
+            "name": "Norfolk Island",
+            "predial": "+672",
+            "threeLetterCode": "NFK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "NG",
+            "name": "Nigeria",
+            "predial": "+234",
+            "threeLetterCode": "NGA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Standard Time",
+            "id": "NI",
+            "name": "Nicaragua",
+            "predial": "+505",
+            "threeLetterCode": "NIC",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "NL",
+            "name": "Netherlands",
+            "predial": "+31",
+            "threeLetterCode": "NLD",
+            "zipFormat": "RAW(6, 7, /(?=^.{6,7}$)^(([0-9] ?){4}( ?[a-zA-Z]){2})$/)",
+            "zipFormatValidation": {
+                "maxLength": 7,
+                "minLength": 6,
+                "regex": "(?=^.{6,7}$)^(([0-9] ?){4}( ?[a-zA-Z]){2})$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "NO",
+            "name": "Norway",
+            "predial": "+47",
+            "threeLetterCode": "NOR",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Nepal Standard Time",
+            "id": "NP",
+            "name": "Nepal",
+            "predial": "+977",
+            "threeLetterCode": "NPL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "NR",
+            "name": "Nauru",
+            "predial": "+674",
+            "threeLetterCode": "NRU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Samoa Standard Time",
+            "id": "NU",
+            "name": "Niue",
+            "predial": "+683",
+            "threeLetterCode": "NIU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "New Zealand Standard Time",
+            "id": "NZ",
+            "name": "New Zealand",
+            "predial": "+64",
+            "threeLetterCode": "NZL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arabian Standard Time",
+            "id": "OM",
+            "name": "Oman",
+            "predial": "+968",
+            "threeLetterCode": "OMN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "PA",
+            "name": "Panama",
+            "predial": "+507",
+            "threeLetterCode": "PAN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "PE",
+            "name": "Peru",
+            "predial": "+51",
+            "threeLetterCode": "PER",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Hawaiian Standard Time",
+            "id": "PF",
+            "name": "French Polynesia",
+            "predial": "+689",
+            "threeLetterCode": "PYF",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "AUS Eastern Standard Time",
+            "id": "PG",
+            "name": "Papua New Guinea",
+            "predial": "+675",
+            "threeLetterCode": "PNG",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "North Asia Standard Time",
+            "id": "PH",
+            "name": "Philippines",
+            "predial": "+63",
+            "threeLetterCode": "PHL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "PK",
+            "name": "Pakistan",
+            "predial": "+92",
+            "threeLetterCode": "PAK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "PL",
+            "name": "Poland",
+            "predial": "+48",
+            "threeLetterCode": "POL",
+            "zipFormat": "RAW(6, 6, /^[0-9]{2}-[0-9]{3}$/)",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 6,
+                "regex": "^[0-9]{2}-[0-9]{3}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenland Standard Time",
+            "id": "PM",
+            "name": "St. Pierre and Miquelon",
+            "predial": "+508",
+            "threeLetterCode": "SPM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific Standard Time",
+            "id": "PN",
+            "name": "Pitcairn",
+            "predial": "+872",
+            "threeLetterCode": "PCN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "PR",
+            "name": "Puerto Rico",
+            "predial": "+787",
+            "threeLetterCode": "PRI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Jordan Standard Time",
+            "id": "PS",
+            "name": "Palestinian Territories",
+            "predial": "+970",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Europe Standard Time",
+            "id": "PT",
+            "name": "Portugal",
+            "predial": "+351",
+            "threeLetterCode": "POR",
+            "zipFormat": "DDDDDDD",
+            "zipFormatValidation": {
+                "maxLength": 7,
+                "minLength": 7,
+                "regex": "(?=^\\d\\d\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "North Asia East Standard Time",
+            "id": "PW",
+            "name": "Palau",
+            "predial": "+680",
+            "threeLetterCode": "PLW",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "PY",
+            "name": "Paraguay",
+            "predial": "+595",
+            "threeLetterCode": "PRY",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arab Standard Time",
+            "id": "QA",
+            "name": "Qatar",
+            "predial": "+974",
+            "threeLetterCode": "QAT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Russian Standard Time",
+            "id": "RE",
+            "name": "Reunion",
+            "predial": "+262",
+            "threeLetterCode": "REU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "RO",
+            "name": "Romania",
+            "predial": "+40",
+            "threeLetterCode": "ROM",
+            "zipFormat": "DDDDDD",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 6,
+                "regex": "(?=^\\d\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "RS",
+            "name": "Serbia",
+            "predial": "+381",
+            "threeLetterCode": "SRB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Russian Standard Time",
+            "id": "RU",
+            "name": "Russian Federation",
+            "predial": "+7",
+            "threeLetterCode": "RUS",
+            "zipFormat": "DDDDDD",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 6,
+                "regex": "(?=^\\d\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Egypt Standard Time",
+            "id": "RW",
+            "name": "Rwanda",
+            "predial": "+250",
+            "threeLetterCode": "RWA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Arabic Standard Time",
+            "id": "SA",
+            "name": "Saudi Arabia",
+            "predial": "+966",
+            "threeLetterCode": "SAU",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "SB",
+            "name": "Solomon Islands",
+            "predial": "+677",
+            "threeLetterCode": "SLB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Russian Standard Time",
+            "id": "SC",
+            "name": "Seychelles",
+            "predial": "+248",
+            "threeLetterCode": "SYC",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "SD",
+            "name": "Sudan",
+            "predial": "+249",
+            "threeLetterCode": "SDN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "SE",
+            "name": "Sweden",
+            "predial": "+46",
+            "threeLetterCode": "SWE",
+            "zipFormat": "RAW(5, 5, /^[1-9]{1}[0-9]{4}$/)",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "^[1-9]{1}[0-9]{4}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Singapore Standard Time",
+            "id": "SG",
+            "name": "Singapore",
+            "predial": "+65",
+            "threeLetterCode": "SGP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "SH",
+            "name": "St. Helena",
+            "predial": "+290",
+            "threeLetterCode": "SHN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "SI",
+            "name": "Slovenia",
+            "predial": "+386",
+            "threeLetterCode": "SVN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "SJ",
+            "name": "Svalbard and Jan Mayen Islands",
+            "predial": "+47",
+            "threeLetterCode": "SJM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "SK",
+            "name": "Slovakia",
+            "predial": "+421",
+            "threeLetterCode": "SVK",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "SL",
+            "name": "Sierra Leone",
+            "predial": "+232",
+            "threeLetterCode": "SLE",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "SM",
+            "name": "San Marino",
+            "predial": "+378",
+            "threeLetterCode": "SMR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "SN",
+            "name": "Senegal",
+            "predial": "+221",
+            "threeLetterCode": "SEN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "SO",
+            "name": "Somalia",
+            "predial": "+252",
+            "threeLetterCode": "SOM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Atlantic Standard Time",
+            "id": "SR",
+            "name": "Suriname",
+            "predial": "+597",
+            "threeLetterCode": "SUR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "SS",
+            "name": "South Sudan",
+            "predial": null,
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "ST",
+            "name": "Sao Tome and Principe",
+            "predial": "+239",
+            "threeLetterCode": "STP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central America Standard Time",
+            "id": "SV",
+            "name": "El Salvador",
+            "predial": "+503",
+            "threeLetterCode": "SLV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "SX",
+            "name": "Sint Maarten",
+            "predial": "+599",
+            "threeLetterCode": "SXM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "SY",
+            "name": "Syria",
+            "predial": "+963",
+            "threeLetterCode": "SYR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "SZ",
+            "name": "Swaziland",
+            "predial": "+268",
+            "threeLetterCode": "SWZ",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "US Eastern Standard Time",
+            "id": "TC",
+            "name": "Turks and Caicos Islands",
+            "predial": "+1649",
+            "threeLetterCode": "TCA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "W. Central Africa Standard Time",
+            "id": "TD",
+            "name": "Chad",
+            "predial": "+235",
+            "threeLetterCode": "TCD",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "West Pacific Standard Time",
+            "id": "TF",
+            "name": "French Southern Territories",
+            "predial": "+262",
+            "threeLetterCode": "ATF",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "TG",
+            "name": "Togo",
+            "predial": "+228",
+            "threeLetterCode": "TGO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "TH",
+            "name": "Thailand",
+            "predial": "+66",
+            "threeLetterCode": "THA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "TJ",
+            "name": "Tajikistan",
+            "predial": "+992",
+            "threeLetterCode": "TJK",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Tonga Standard Time",
+            "id": "TK",
+            "name": "Tokelau",
+            "predial": "+690",
+            "threeLetterCode": "TKL",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "TL",
+            "name": "East Timor",
+            "predial": "+670",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "TM",
+            "name": "Turkmenistan",
+            "predial": "+993",
+            "threeLetterCode": "TKM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "TN",
+            "name": "Tunisia",
+            "predial": "+216",
+            "threeLetterCode": "TUN",
+            "zipFormat": "DDDD",
+            "zipFormatValidation": {
+                "maxLength": 4,
+                "minLength": 4,
+                "regex": "(?=^\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Tonga Standard Time",
+            "id": "TO",
+            "name": "Tonga",
+            "predial": "+676",
+            "threeLetterCode": "TON",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "North Asia East Standard Time",
+            "id": "TP",
+            "name": "East Timor",
+            "predial": "+670",
+            "threeLetterCode": "TMP",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "TR",
+            "name": "Turkey",
+            "predial": "+90",
+            "threeLetterCode": "TUR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "TT",
+            "name": "Trinidad and Tobago",
+            "predial": "+1868",
+            "threeLetterCode": "TTO",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "TV",
+            "name": "Tuvalu",
+            "predial": "+688",
+            "threeLetterCode": "TUV",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Taipei Standard Time",
+            "id": "TW",
+            "name": "Taiwan",
+            "predial": "+886",
+            "threeLetterCode": "TWN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "TZ",
+            "name": "Tanzania",
+            "predial": "+255",
+            "threeLetterCode": "TZA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Europe Standard Time",
+            "id": "UA",
+            "name": "Ukraine",
+            "predial": "+380",
+            "threeLetterCode": "UKR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "UG",
+            "name": "Uganda",
+            "predial": "+256",
+            "threeLetterCode": "UGA",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "New Zealand Standard Time",
+            "id": "UM",
+            "name": "Unites States Minor Outlying Islands",
+            "predial": "+1",
+            "threeLetterCode": "UMI",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Eastern Standard Time",
+            "id": "US",
+            "name": "USA",
+            "predial": "+1",
+            "threeLetterCode": "USA",
+            "zipFormat": "DDDDD",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 5,
+                "regex": "(?=^\\d\\d\\d\\d\\d$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Greenland Standard Time",
+            "id": "UY",
+            "name": "Uruguay",
+            "predial": "+598",
+            "threeLetterCode": "URY",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pakistan Standard Time",
+            "id": "UZ",
+            "name": "Uzbekistan",
+            "predial": "+998",
+            "threeLetterCode": "UZB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Europe Standard Time",
+            "id": "VA",
+            "name": "Vatican City State (Holy See)",
+            "predial": "+39",
+            "threeLetterCode": "VAT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "VC",
+            "name": "Saint Vincent and the Grenadines",
+            "predial": "+1784",
+            "threeLetterCode": "VCT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Venezuela Standard Time",
+            "id": "VE",
+            "name": "Venezuela",
+            "predial": "+58",
+            "threeLetterCode": "VEN",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Pacific SA Standard Time",
+            "id": "VG",
+            "name": "Virgin Islands (British)",
+            "predial": "+284",
+            "threeLetterCode": "VGB",
+            "zipFormat": "AAAAAA",
+            "zipFormatValidation": {
+                "maxLength": 6,
+                "minLength": 6,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "US Eastern Standard Time",
+            "id": "VI",
+            "name": "United States Virgin Islands",
+            "predial": "+1",
+            "threeLetterCode": "VIR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "SE Asia Standard Time",
+            "id": "VN",
+            "name": "Vietnam",
+            "predial": "+84",
+            "threeLetterCode": "VNM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central Pacific Standard Time",
+            "id": "VU",
+            "name": "Vanuatu",
+            "predial": "+678",
+            "threeLetterCode": "VUT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Fiji Standard Time",
+            "id": "WF",
+            "name": "Wallis and Futuna Islands",
+            "predial": "+681",
+            "threeLetterCode": "WLF",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Samoa Standard Time",
+            "id": "WS",
+            "name": "Samoa (Independent)",
+            "predial": "+685",
+            "threeLetterCode": "WSM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "Central European Standard Time",
+            "id": "XK",
+            "name": "Kosovo",
+            "predial": "+383",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "YE",
+            "name": "Yemen",
+            "predial": "+967",
+            "threeLetterCode": "YEM",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "E. Africa Standard Time",
+            "id": "YT",
+            "name": "Mayotte",
+            "predial": "+262",
+            "threeLetterCode": "MYT",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "ZA",
+            "name": "South Africa",
+            "predial": "+27",
+            "threeLetterCode": "ZAF",
+            "zipFormat": "RAW(4, 5, /^[0-9]{4}[0-9]?$|^(?=\\d* \\d*$).{5}$/)",
+            "zipFormatValidation": {
+                "maxLength": 5,
+                "minLength": 4,
+                "regex": "^[0-9]{4}[0-9]?$|^(?=\\d* \\d*$).{5}$"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "ZM",
+            "name": "Zambia",
+            "predial": "+260",
+            "threeLetterCode": "ZMB",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "ZR",
+            "name": "Zaire",
+            "predial": "+00",
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "South Africa Standard Time",
+            "id": "ZW",
+            "name": "Zimbabwe",
+            "predial": "+263",
+            "threeLetterCode": "ZWE",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        },
+        {
+            "defaultCurrency": "USD",
+            "defaultTimezone": "GMT Standard Time",
+            "id": "ZZ",
+            "name": "Other",
+            "predial": null,
+            "threeLetterCode": "GBR",
+            "zipFormat": "AAAaaaaaa",
+            "zipFormatValidation": {
+                "maxLength": 9,
+                "minLength": 3,
+                "regex": "(?=^[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?$)(?!.*\\s\\s)"
+            }
+        }
+    ]
+}

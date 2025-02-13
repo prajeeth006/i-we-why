@@ -1,0 +1,1521 @@
+import { SportBookEventStructured, SportBookMarketStructured, SportBookResult, SportBookSelection } from "src/app/common/models/data-feed/sport-bet-models";
+import { GreyhoundRacingEntry, GreyhoundRacingRunnersResult, GreyhoundStaticContent } from "src/app/greyhound-racing/models/greyhound-racing-template.model";
+import { RacingContentGreyhoundResult } from "src/app/greyhound-racing/models/racing-content.model";
+
+export class MockGreyhoundRacingRunnersData {
+   sportBookResult: SportBookResult = {
+      "events": new Map<number, SportBookEventStructured>(
+         [
+            [
+               2027556,
+               {
+                  "markets": new Map<number, SportBookMarketStructured>(
+                     [
+                        [
+                           82443526,
+                           {
+                              "selections": new Map<number, SportBookSelection>(
+                                 [
+                                    [
+                                       272677195,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677195,
+                                          "selectionName": "PATS DAUGHTER",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 6,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Place",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                { "numPrice": 11, "denPrice": 8, "selectionPriceType": "SP" }
+                                             ]
+                                          },
+                                          //"place": 2
+                                       }
+                                    ],
+                                    [
+                                       272677196,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677196,
+                                          "selectionName": "UNNAMED FAVOURITE",
+                                          "selectionStatus": "Active",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 9999,
+                                          "outcomeMeaningMajorCode": "1",
+                                          "outcomeMeaningMinorCode": "1",
+                                          "channels": [
+                                             "K",
+                                             "R",
+                                             "a",
+                                             "b",
+                                             "c",
+                                             "d"
+                                          ],
+                                          "isResulted": false,
+                                          "isResultConfirmed": false,
+                                          "resultCode": "Unset",
+                                          "isSettled": false,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "create",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          runnerNumber: null,
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272677190,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677190,
+                                          "selectionName": "DANCE RONNIE",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 2,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Win",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 9,
+                                                   "denPrice": 2,
+                                                   "selectionPriceType": "SP"
+                                                }
+                                             ]
+                                          },
+                                          //"place": 1
+                                       }
+                                    ],
+                                    [
+                                       272677194,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677194,
+                                          "selectionName": "MARBELLA JIMMY",
+                                          "selectionStatus": "Active",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 4,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": false,
+                                          "isResultConfirmed": false,
+                                          "resultCode": "Unset",
+                                          "isSettled": false,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 6,
+                                                   "denPrice": 1,
+                                                   "selectionPriceType": "LP"
+                                                }
+                                             ]
+                                          }
+                                       }
+                                    ],
+                                    [
+                                       272677192,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677192,
+                                          "selectionName": "GIFTED CUSTOMER",
+                                          "selectionStatus": "Active",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 3,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": false,
+                                          "isResultConfirmed": false,
+                                          "resultCode": "Unset",
+                                          "isSettled": false,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 10,
+                                                   "denPrice": 1,
+                                                   "selectionPriceType": "LP"
+                                                }
+                                             ]
+                                          }
+                                       }
+                                    ],
+                                    [
+                                       372677193, {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 372677193,
+                                          "selectionName": "Duplicate N/R",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 1,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Place",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 9,
+                                                   "denPrice": 2,
+                                                   "selectionPriceType": "SP"
+                                                }
+                                             ]
+                                          },
+                                          //"place": 3
+                                       }
+                                    ],
+                                    [
+                                       272677193, {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677193,
+                                          "selectionName": "GREAT BOSS",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 1,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Place",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 9,
+                                                   "denPrice": 2,
+                                                   "selectionPriceType": "SP"
+                                                }
+                                             ]
+                                          },
+                                          //"place": 3
+                                       }
+                                    ],
+                                    [
+                                       272677191, {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82443526,
+                                          "selectionKey": 272677191,
+                                          "selectionName": "FABULOUS GUEST",
+                                          "selectionStatus": "Active",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 0,
+                                          "runnerNumber": 5,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": false,
+                                          "isResultConfirmed": false,
+                                          "resultCode": "Unset",
+                                          "isSettled": false,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                                          },
+                                          "prices": {
+                                             "price": [
+                                                {
+                                                   "numPrice": 3,
+                                                   "denPrice": 1,
+                                                   "selectionPriceType": "LP"
+                                                }
+                                             ]
+                                          }
+                                       }
+                                    ]
+                                 ]
+                              ),
+                              "eventKey": 2027556,
+                              "marketKey": 82443526,
+                              "marketMeaningMajorCode": "-",
+                              "marketMeaningMinorCode": "--",
+                              "marketName": "WIN OR EACH WAY",
+                              "marketStatus": "Suspended",
+                              "displayOrder": 0,
+                              "displayStatus": "Displayed",
+                              "marketSort": "--",
+                              "marketTypeKey": "-",
+                              "isResulted": false,
+                              "isResultConfirmed": false,
+                              "isCashoutAvailable": false,
+                              "maxAccumulator": "25",
+                              "minAccumulator": "1",
+                              "marketFlags": "LX",
+                              "hasRestrictedSet": "N",
+                              "isAntepost": false,
+                              "isPlaceOnlyAvailable": false,
+                              "isEachWayAvailable": "true",
+                              "isForecastMarket": "true",
+                              "isGpAvailable": true,
+                              "isHandicapMarket": false,
+                              "isIndexMarket": false,
+                              "isLpAvailable": true,
+                              "isMarketBIR": false,
+                              "isOverUnderMarket": false,
+                              "isSpAvailable": true,
+                              "isStandardFixedOddsMarket": true,
+                              "isTricastMarket": true,
+                              "eachWayFactorDen": "4",
+                              "eachWayFactorNum": "1",
+                              "eachWayPlaces": "2",
+                              "eachWayWithBet": "N",
+                              "marketGroupID": "137062",
+                              "channels": ["K", "R", "a", "b", "c", "d"],
+                              "meta": { "operation": "update", "parents": "c.19:cl.198:t.1863:e.2027556" },
+                              "nCastDividends": [
+                                 {
+                                    "validFrom": new Date("2022-01-21 11:17:29"),
+                                    "ncastTypeCode": "TC",
+                                    "dividend": "46.95",
+                                    // "selectionKey1": "272677190",
+                                    // "selectionKey2": "272677195",
+                                    // "selectionKey3": "272677193"
+                                 }
+                              ],
+                              betMinStake: null,
+                              nCastDividend: null,
+                              nCastDeleteDividend: undefined
+                           }
+                        ],
+                        [
+                           82474318,
+                           {
+                              "selections": new Map<number, SportBookSelection>(
+                                 [
+                                    [
+                                       272867147,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867147,
+                                          "selectionName": "PATS DAUGHTER",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 6,
+                                          "runnerNumber": 6,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Win",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272867143,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867143,
+                                          "selectionName": "FABULOUS GUEST",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 5,
+                                          "runnerNumber": 5,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Lose",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272867146,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867146,
+                                          "selectionName": "MARBELLA JIMMY",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 4,
+                                          "runnerNumber": 4,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Lose",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272867144,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867144,
+                                          "selectionName": "GIFTED CUSTOMER",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 3,
+                                          "runnerNumber": 3,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Lose",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272867142,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867142,
+                                          "selectionName": "DANCE RONNIE",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 2,
+                                          "runnerNumber": 2,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Win",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ],
+                                    [
+                                       272867145,
+                                       {
+                                          "eventKey": 2027556,
+                                          "marketKey": 82474318,
+                                          "selectionKey": 272867145,
+                                          "selectionName": "GREAT BOSS",
+                                          "selectionStatus": "Suspended",
+                                          "displayStatus": "Displayed",
+                                          "displayOrder": 1,
+                                          "runnerNumber": 1,
+                                          "outcomeMeaningMajorCode": "-",
+                                          "outcomeMeaningMinorCode": "-",
+                                          "channels": ["K", "R", "a", "b", "c", "d"],
+                                          "isResulted": true,
+                                          "isResultConfirmed": true,
+                                          "resultCode": "Lose",
+                                          "isSettled": true,
+                                          "suspensionReason": "-",
+                                          "meta": {
+                                             "operation": "update",
+                                             "parents": "c.19:cl.198:t.1863:e.2027556:m.82474318"
+                                          },
+                                          prices: null
+                                       }
+                                    ]
+                                 ]),
+                              "eventKey": 2027556,
+                              "marketKey": 82474318,
+                              "marketMeaningMajorCode": "-",
+                              "marketMeaningMinorCode": "--",
+                              "marketName": "TOP 2",
+                              "marketStatus": "Suspended",
+                              "displayOrder": 90,
+                              "displayStatus": "Displayed",
+                              "marketSort": "--",
+                              "marketTypeKey": "-",
+                              "isResulted": true,
+                              "isResultConfirmed": true,
+                              "isCashoutAvailable": false,
+                              "maxAccumulator": "25",
+                              "minAccumulator": "1",
+                              "marketFlags": "LX",
+                              "hasRestrictedSet": "N",
+                              "isAntepost": false,
+                              "isPlaceOnlyAvailable": false,
+                              "isEachWayAvailable": "false",
+                              "isForecastMarket": "false",
+                              "isGpAvailable": false,
+                              "isHandicapMarket": false,
+                              "isIndexMarket": false,
+                              "isLpAvailable": true,
+                              "isMarketBIR": false,
+                              "isOverUnderMarket": false,
+                              "isSpAvailable": false,
+                              "isStandardFixedOddsMarket": true,
+                              "isTricastMarket": false,
+                              "eachWayWithBet": "N",
+                              "marketGroupID": "137062",
+                              "channels": ["K", "R", "a", "b", "c", "d"],
+                              "meta": {
+                                 "operation": "update",
+                                 "parents": "c.19:cl.198:t.1863:e.2027556"
+                              },
+                              betMinStake: null,
+                              eachWayFactorDen: null,
+                              eachWayFactorNum: null,
+                              eachWayPlaces: null,
+                              nCastDividend: null,
+                              nCastDividends: null,
+                              nCastDeleteDividend: undefined
+                           }
+                        ]
+                     ]),
+                  "eventKey": 2027556,
+                  "eventName": "11:16 HARLOW",
+                  "eventStatus": "Suspended",
+                  "displayStatus": "Displayed",
+                  "displayOrder": 0,
+                  "hasBIRMarkets": "false",
+                  "eventSort": "MTCH",
+                  "eventDateTime": new Date("2022-01-21T11:16:00Z"),
+                  "isEventStarted": true,
+                  "isEventFinished": false,
+                  "isEventResulted": false,
+                  "isCashoutAvailable": true,
+                  "channels": ["K", "R", "a", "b", "c", "d"],
+                  "flags": ["BL", "UK"],
+                  "meta": {
+                     "operation": "update",
+                     "parents": "c.19:cl.198:t.1863"
+                  },
+                  "raceStage": "O[Off]",
+                  "offTime": new Date("2022-01-21 11:16:10")
+               }
+            ]
+         ]
+      )
+   };
+
+   racingGreyhoundContent: RacingContentGreyhoundResult = {
+      "ladbrokesDigitalEventId": [2071618],
+      "ladbrokesRetailEventId": [1308209],
+      "coralDigitalEventId": [7382461],
+      "coralRetailEventId": [2027556],
+      "distance": "238m",
+      "trackName": "HARLOW",
+      "bags": "S",
+      "raceNo": "5",
+      "raceType": "F",
+      "postPick": "5-1-6",
+      "grade": "D4",
+      "rpTrackId": 69,
+      "time": "2022-01-21T11:16:00",
+      "obStartTime": "2022-01-21T11:16:00",
+      "prize": "65",
+      "rpRaceId": 1883507,
+      "countryCode": "GB",
+      abandoned: null,
+      isIrishRace: null,
+      "runners": [
+         {
+            "comment": "Heed any market confidence now dropped",
+            "rating": "100",
+            "dogColor": "Black",
+            "last5Runs": "42613",
+            "bestRecentTime": "15",
+            "trap": "1",
+            "lastRunTime": "15",
+            "rpDogId": 558265,
+            "trainerName": "S Clark",
+            "dogName": "Great Boss",
+            "preRprRating": "86",
+            "starRating": "4",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [
+               {
+                  "comment": "EP,Ld1,Rls",
+                  "distance": "238m",
+                  "weight": "26.6",
+                  "grade": "D4",
+                  "winner": "Pronto Jim",
+                  "distanceBeaten": "1 1/2",
+                  "going": "-25",
+                  "winnersTime": "15.69",
+                  "trap": "1",
+                  "date": "09 Jan 2022",
+                  "position": "1st",
+                  "calcTime": "15.44", "bend": "3-1-",
+                  sectionalTime: null
+               },
+               {
+                  "comment": "EvCh",
+                  "distance": "238m",
+                  "weight": "26.6",
+                  "grade": "D4",
+                  "winner": "Effernogue Lady",
+                  "distanceBeaten": "4",
+                  "going": "-5",
+                  "winnersTime": "15.47",
+                  "trap": "1",
+                  "date": "24 Dec 2021",
+                  "position": "2nd",
+                  "calcTime": "15.74",
+                  "bend": "6-2-",
+                  sectionalTime: null
+               },
+               {
+                  "comment": "EvCh",
+                  "distance": "238m",
+                  "weight": "26.7",
+                  "grade": "D4",
+                  "winner": "Millmount Jet",
+                  "distanceBeaten": "5 1/4",
+                  "going": "-10",
+                  "winnersTime": "15.49",
+                  "trap": "1",
+                  "date": "19 Dec 2021",
+                  "position": "4th",
+                  "calcTime": "15.79",
+                  "bend": "5-2-",
+                  sectionalTime: null
+               },
+               {
+                  "comment": "VSAw,Bmp1",
+                  "distance": "238m",
+                  "weight": "26.7",
+                  "grade": "D3",
+                  "winner": "Millmount Mint",
+                  "distanceBeaten": "3 1/4",
+                  "going": "-15",
+                  "winnersTime": "15.51",
+                  "trap": "2",
+                  "date": "16 Jan 2022",
+                  "position": "3rd",
+                  "calcTime": "15.62",
+                  "bend": "6-2-",
+                  sectionalTime: null
+               },
+               {
+                  "comment": "Bmp1\u00262",
+                  "distance": "238m",
+                  "weight": "26.4",
+                  "grade": "D4",
+                  "winner": "Minnies Tacha",
+                  "distanceBeaten": "5 1/4",
+                  "going": "-5",
+                  "winnersTime": "15.54",
+                  "trap": "2",
+                  "date": "02 Jan 2022",
+                  "position": "6th",
+                  "calcTime": "15.90",
+                  "bend": "4-5-",
+                  sectionalTime: null
+               }]
+         },
+         {
+            "comment": "Could have work cut out to become competitive",
+            "rating": "95",
+            "dogColor": "Black",
+            "last5Runs": "12552",
+            "bestRecentTime": "15",
+            "trap": "2",
+            "lastRunTime": "15",
+            "rpDogId": 547465,
+            "trainerName": "P Clarke",
+            "dogName": "Dance Ronnie",
+            "preRprRating": "77",
+            "starRating": "2",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [{
+               "comment": "BmpRnUp",
+               "distance": "415m",
+               "sectionalTime": "5",
+               "weight": "29.7",
+               "grade": "A7",
+               "winner": "Unknown Gladys",
+               "distanceBeaten": "8 1/4",
+               "going": "-20",
+               "winnersTime": "26.89",
+               "trap": "1",
+               "date": "05 Jan 2022",
+               "position": "5th",
+               "calcTime": "27.32",
+               "bend": "5333"
+            },
+            {
+               "comment": "EP,Ld1-3",
+               "distance": "415m",
+               "sectionalTime": "4",
+               "weight": "30.4",
+               "grade": "A7",
+               "winner": "Hello Twiggy",
+               "distanceBeaten": "1 1/2",
+               "going": "-50",
+               "winnersTime": "27.62",
+               "trap": "3",
+               "date": "14 Jan 2022",
+               "position": "2nd",
+               "calcTime": "27.24",
+               "bend": "2112"
+            },
+            {
+               "comment": "SAw,Crd1",
+               "distance": "238m",
+               "weight": "30.0",
+               "grade": "D4",
+               "winner": "Anmima Biddy",
+               "distanceBeaten": "4 1/4",
+               "going": "-10",
+               "winnersTime": "15.47",
+               "trap": "3",
+               "date": "01 Jan 2022",
+               "position": "5th",
+               "calcTime": "15.71",
+               "bend": "6-6-",
+               sectionalTime: null
+            },
+            {
+               "comment": "QAw,Ld-NrLn",
+               "distance": "238m",
+               "weight": "30.1",
+               "grade": "D4",
+               "winner": "Mums Fancy",
+               "distanceBeaten": "shd",
+               "going": "0",
+               "winnersTime": "15.43",
+               "trap": "3",
+               "date": "22 Dec 2021",
+               "position": "2nd",
+               "calcTime": "15.44",
+               "bend": "1-1-",
+               sectionalTime: null
+            },
+            {
+               "comment": "ALd",
+               "distance": "238m",
+               "weight": "30.3",
+               "grade": "D4",
+               "winner": "Milltown Milk",
+               "distanceBeaten": "1 1/4",
+               "going": "-10",
+               "winnersTime": "15.55",
+               "trap": "3",
+               "date": "18 Dec 2021",
+               "position": "1st",
+               "calcTime": "15.45",
+               "bend": "1-1-",
+               sectionalTime: null
+            }]
+         },
+         {
+            "comment": "The selection looks to have a far stronger profile",
+            "rating": "92",
+            "dogColor": "Black",
+            "last5Runs": "12566",
+            "bestRecentTime": "15",
+            "trap": "3",
+            "lastRunTime": "15",
+            "rpDogId": 533889,
+            "trainerName": "P Ward",
+            "dogName": "Gifted Customer",
+            "preRprRating": "86",
+            "starRating": "4",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [{
+               "comment": "Bmp1\u00262",
+               "distance": "238m",
+               "weight": "26.7",
+               "grade": "D4",
+               "winner": "Strafield Beauty",
+               "distanceBeaten": "10 1/2",
+               "going": "-15",
+               "winnersTime": "15.46",
+               "trap": "3",
+               "date": "12 Jan 2022",
+               "position": "6th",
+               "calcTime": "16.15",
+               "bend": "4-6-",
+               sectionalTime: null
+            },
+            {
+               "comment": "Bmp1\u00262",
+               "distance": "238m",
+               "weight": "26.8",
+               "grade": "D4",
+               "winner": "Darver Bruno",
+               "distanceBeaten": "5 3/4",
+               "going": "-15",
+               "winnersTime": "15.6",
+               "trap": "3",
+               "date": "31 Dec 2021",
+               "position": "6th",
+               "calcTime": "15.91",
+               "bend": "2-5-",
+               sectionalTime: null
+            },
+            {
+               "comment": "EvCh",
+               "distance": "238m",
+               "weight": "27.0",
+               "grade": "D4",
+               "winner": "Pyraza",
+               "distanceBeaten": "5",
+               "going": "-5",
+               "winnersTime": "15.44",
+               "trap": "3",
+               "date": "22 Dec 2021",
+               "position": "5th",
+               "calcTime": "15.79",
+               "bend": "4-4-",
+               sectionalTime: null
+            },
+            {
+               "comment": "EvCh",
+               "distance": "238m",
+               "weight": "27.3",
+               "grade": "D3",
+               "winner": "Sanctury Maid",
+               "distanceBeaten": "1 1/4",
+               "going": "-5",
+               "winnersTime": "15.4",
+               "trap": "3",
+               "date": "15 Dec 2021",
+               "position": "2nd",
+               "calcTime": "15.45",
+               "bend": "3-2-",
+               sectionalTime: null
+            },
+            {
+               "comment": "ALd",
+               "distance": "238m",
+               "weight": "26.3",
+               "grade": "D4",
+               "winner": "Mums Fancy",
+               "distanceBeaten": "1 1/2",
+               "going": "-5",
+               "winnersTime": "15.32",
+               "trap": "3",
+               "date": "10 Dec 2021",
+               "position": "1st",
+               "calcTime": "15.27",
+               "bend": "1-1-",
+               sectionalTime: null
+            }]
+         },
+         {
+            "comment": "An uninterrupted round would be a blessing",
+            "rating": "95",
+            "dogColor": "Blue",
+            "last5Runs": "26253",
+            "bestRecentTime": "15",
+            "trap": "4",
+            "lastRunTime": "15",
+            "rpDogId": 518198,
+            "trainerName": "D Carter",
+            "dogName": "Marbella Jimmy",
+            "preRprRating": "80",
+            "starRating": "2",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [{
+               "comment": "SAw,Crd1",
+               "distance": "238m",
+               "weight": "30.5",
+               "grade": "D4",
+               "winner": "Darver Bruno",
+               "distanceBeaten": "3 1/4",
+               "going": "-25",
+               "winnersTime": "15.58",
+               "trap": "3",
+               "date": "14 Jan 2022",
+               "position": "3rd",
+               "calcTime": "15.59",
+               "bend": "5-3-",
+               sectionalTime: null
+            },
+            {
+               "comment": "SAw,BdBmp1",
+               "distance": "238m",
+               "weight": "30.5",
+               "grade": "D4",
+               "winner": "Lemon Joan",
+               "distanceBeaten": "7 1/2",
+               "going": "-25",
+               "winnersTime": "15.54",
+               "trap": "3",
+               "date": "07 Jan 2022",
+               "position": "5th",
+               "calcTime": "15.89",
+               "bend": "6-5-",
+               sectionalTime: null
+            },
+            {
+               "comment": "Ld-RnIn,Mid",
+               "distance": "238m",
+               "weight": "30.2",
+               "winner": "Levin Wolf",
+               "distanceBeaten": "1/2",
+               "going": "-15",
+               "winnersTime": "15.86",
+               "trap": "3",
+               "date": "31 Dec 2021",
+               "position": "2nd",
+               "calcTime": "15.75",
+               "bend": "1-1-",
+               sectionalTime: null,
+               grade: null
+            },
+            {
+               "comment": "Ld-KO1/2",
+               "distance": "238m",
+               "weight": "30.2",
+               "grade": "D3",
+               "winner": "Darver Schillaci",
+               "distanceBeaten": "dist",
+               "going": "-5",
+               "winnersTime": "15.61",
+               "trap": "3",
+               "date": "24 Dec 2021",
+               "position": "6th",
+               "calcTime": "0.00",
+               "bend": "1-6-",
+               sectionalTime: null
+            },
+            {
+               "comment": "Chl\u0026Crd1/2,RnOn",
+               "distance": "238m",
+               "weight": "30.0",
+               "grade": "D3",
+               "winner": "Fix Eight",
+               "distanceBeaten": "1/2",
+               "going": "-5",
+               "winnersTime": "15.4",
+               "trap": "3",
+               "date": "17 Dec 2021",
+               "position": "2nd",
+               "calcTime": "15.39",
+               "bend": "2-2-",
+               sectionalTime: null
+            }]
+         },
+         {
+            "comment": "Likely to carry the majority of support and run well",
+            "rating": "99",
+            "dogColor": "Black",
+            "last5Runs": "34113",
+            "bestRecentTime": "15",
+            "trap": "5",
+            "lastRunTime": "15",
+            "rpDogId": 548123,
+            "trainerName": "E Gowler",
+            "dogName": "Fabulous Guest",
+            "preRprRating": "77",
+            "starRating": "2",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [{
+               "comment": "LdRnUp-2,W",
+               "distance": "238m",
+               "weight": "25.8",
+               "grade": "D4",
+               "winner": "Mums Fancy",
+               "distanceBeaten": "1 1/2",
+               "going": "-10",
+               "winnersTime": "15.61",
+               "trap": "5",
+               "date": "19 Jan 2022",
+               "position": "3rd",
+               "calcTime": "15.62",
+               "bend": "2-1-",
+               sectionalTime: null
+            },
+            {
+               "comment": "Ld-2",
+               "distance": "238m",
+               "weight": "25.4",
+               "grade": "D3",
+               "winner": "Roseville Eske",
+               "distanceBeaten": "1 1/4",
+               "going": "-10",
+               "winnersTime": "15.56",
+               "trap": "5",
+               "date": "31 Dec 2021",
+               "position": "3rd",
+               "calcTime": "15.55",
+               "bend": "1-1-",
+               sectionalTime: null
+            },
+            {
+               "comment": "ALd,W",
+               "distance": "238m",
+               "weight": "26.3",
+               "grade": "D4",
+               "winner": "Mums Fancy",
+               "distanceBeaten": "1 1/4",
+               "going": "-20",
+               "winnersTime": "15.65",
+               "trap": "6",
+               "date": "12 Jan 2022",
+               "position": "1st",
+               "calcTime": "15.45",
+               "bend": "1-1-",
+               sectionalTime: null
+            },
+            {
+               "comment": "QAw,ALd",
+               "distance": "238m",
+               "weight": "26.0",
+               "grade": "D4",
+               "winner": "Darver Bruno",
+               "distanceBeaten": "1/2",
+               "going": "-25",
+               "winnersTime": "15.71",
+               "trap": "6",
+               "date": "09 Jan 2022",
+               "position": "1st",
+               "calcTime": "15.46",
+               "bend": "1-1-",
+               sectionalTime: null
+            },
+            {
+               "comment": "SAw,W2",
+               "distance": "238m",
+               "weight": "26.3",
+               "grade": "D4",
+               "winner": "Strafield Beauty",
+               "distanceBeaten": "4 3/4",
+               "going": "-5",
+               "winnersTime": "15.37",
+               "trap": "6",
+               "date": "05 Jan 2022",
+               "position": "4th",
+               "calcTime": "15.70",
+               "bend": "6-3-",
+               sectionalTime: null
+            }]
+         },
+         {
+            "comment": "Fair chance, be around as winning line looms",
+            "rating": "98",
+            "dogColor": "Black",
+            "last5Runs": "36242",
+            "bestRecentTime": "15",
+            "trap": "6",
+            "lastRunTime": "15",
+            "rpDogId": 553607,
+            "trainerName": "S Clark",
+            "dogName": "Pats Daughter",
+            "preRprRating": "82",
+            "starRating": "3",
+            bitchSeason: null,
+            damName: null,
+            dogSex: null,
+            reserve: null,
+            sireName: null,
+            whelp: null,
+            "form": [{
+               "comment": "QAw,Chl-2",
+               "distance": "238m",
+               "weight": "24.2",
+               "grade": "D4",
+               "winner": "Darver Bruno",
+               "distanceBeaten": "2",
+               "going": "-25",
+               "winnersTime": "15.58",
+               "trap": "6",
+               "date": "14 Jan 2022",
+               "position": "2nd",
+               "calcTime": "15.49",
+               "bend": "1-2-",
+               sectionalTime: null
+            },
+            {
+               "comment": "QAw,W",
+               "distance": "238m",
+               "weight": "23.6",
+               "grade": "D4",
+               "winner": "Lemon Joan",
+               "distanceBeaten": "5 1/4",
+               "going": "-25",
+               "winnersTime": "15.54",
+               "trap": "6",
+               "date": "07 Jan 2022",
+               "position": "4th",
+               "calcTime": "15.71",
+               "bend": "1-2-",
+               sectionalTime: null
+            },
+            {
+               "comment": "EP,W",
+               "distance": "238m",
+               "weight": "22.8",
+               "grade": "D4",
+               "winner": "Clear Lake",
+               "distanceBeaten": "2 1/2",
+               "going": "-5",
+               "winnersTime": "15.37",
+               "trap": "6",
+               "date": "02 Jan 2022",
+               "position": "2nd",
+               "calcTime": "15.52",
+               "bend": "2-2-",
+               sectionalTime: null
+            },
+            {
+               "comment": "Bmp1/2",
+               "distance": "238m",
+               "weight": "23.7",
+               "grade": "D3",
+               "winner": "Calico Lucky",
+               "distanceBeaten": "9 1/4",
+               "going": "-30",
+               "winnersTime": "15.58",
+               "trap": "6",
+               "date": "26 Dec 2021",
+               "position": "6th",
+               "calcTime": "16.02",
+               "bend": "4-6-",
+               sectionalTime: null
+            },
+            {
+               "comment": "EvCh,W",
+               "distance": "238m",
+               "weight": "24.3",
+               "winner": "Black Eyed Razl",
+               "distanceBeaten": "4 1/4",
+               "going": "-10",
+               "winnersTime": "15.46",
+               "trap": "6",
+               "date": "19 Dec 2021",
+               "position": "3rd",
+               "calcTime": "15.69",
+               "bend": "2-2-",
+               sectionalTime: null,
+               grade: null
+            }]
+         }],
+      "numberOfRunners": "6",
+      "otherEventIds": null,
+      sisData: undefined
+   };
+   greyHoundRacingRunnersResult: GreyhoundRacingRunnersResult =
+      {
+         "categoryName": "GREYHOUND RACING",
+         "isVirtualEvent": false,
+         eventStatus: 'Active',
+         displayStatus: 'Displayed',
+         "markets": new Array<SportBookMarketStructured>(
+
+            {
+               "selections": new Map<number, SportBookSelection>(
+                  [
+                     [
+                        272677195,
+                        {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677195,
+                           "selectionName": "PATS DAUGHTER",
+                           "selectionStatus": "Suspended",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 6,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": true,
+                           "isResultConfirmed": true,
+                           "resultCode": "Place",
+                           "isSettled": true,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 { "numPrice": 11, "denPrice": 8, "selectionPriceType": "SP" }
+                              ]
+                           },
+                           //"place": 2
+                        }
+                     ],
+                     [
+                        272677196,
+                        {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677196,
+                           "selectionName": "UNNAMED FAVOURITE",
+                           "selectionStatus": "Active",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 9999,
+                           "outcomeMeaningMajorCode": "1",
+                           "outcomeMeaningMinorCode": "1",
+                           "channels": [
+                              "K",
+                              "R",
+                              "a",
+                              "b",
+                              "c",
+                              "d"
+                           ],
+                           "isResulted": false,
+                           "isResultConfirmed": false,
+                           "resultCode": "Unset",
+                           "isSettled": false,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "create",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           runnerNumber: null,
+                           prices: null
+                        }
+                     ],
+                     [
+                        272677190,
+                        {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677190,
+                           "selectionName": "DANCE RONNIE",
+                           "selectionStatus": "Suspended",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 2,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": true,
+                           "isResultConfirmed": true,
+                           "resultCode": "Win",
+                           "isSettled": true,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 {
+                                    "numPrice": 9,
+                                    "denPrice": 2,
+                                    "selectionPriceType": "SP"
+                                 }
+                              ]
+                           },
+                           //"place": 1
+                        }
+                     ],
+                     [
+                        272677194,
+                        {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677194,
+                           "selectionName": "MARBELLA JIMMY",
+                           "selectionStatus": "Active",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 4,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": false,
+                           "isResultConfirmed": false,
+                           "resultCode": "Unset",
+                           "isSettled": false,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 {
+                                    "numPrice": 6,
+                                    "denPrice": 1,
+                                    "selectionPriceType": "LP"
+                                 }
+                              ]
+                           }
+                        }
+                     ],
+                     [
+                        272677192,
+                        {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677192,
+                           "selectionName": "GIFTED CUSTOMER",
+                           "selectionStatus": "Active",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 3,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": false,
+                           "isResultConfirmed": false,
+                           "resultCode": "Unset",
+                           "isSettled": false,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 {
+                                    "numPrice": 10,
+                                    "denPrice": 1,
+                                    "selectionPriceType": "LP"
+                                 }
+                              ]
+                           }
+                        }
+                     ],
+                     [
+                        272677193, {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677193,
+                           "selectionName": "GREAT BOSS",
+                           "selectionStatus": "Suspended",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 1,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": true,
+                           "isResultConfirmed": true,
+                           "resultCode": "Place",
+                           "isSettled": true,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 {
+                                    "numPrice": 9,
+                                    "denPrice": 2,
+                                    "selectionPriceType": "SP"
+                                 }
+                              ]
+                           },
+                           //"place": 3
+                        }
+                     ],
+                     [
+                        272677191, {
+                           "eventKey": 2027556,
+                           "marketKey": 82443526,
+                           "selectionKey": 272677191,
+                           "selectionName": "FABULOUS GUEST",
+                           "selectionStatus": "Active",
+                           "displayStatus": "Displayed",
+                           "displayOrder": 0,
+                           "runnerNumber": 5,
+                           "outcomeMeaningMajorCode": "-",
+                           "outcomeMeaningMinorCode": "-",
+                           "channels": ["K", "R", "a", "b", "c", "d"],
+                           "isResulted": false,
+                           "isResultConfirmed": false,
+                           "resultCode": "Unset",
+                           "isSettled": false,
+                           "suspensionReason": "-",
+                           "meta": {
+                              "operation": "update",
+                              "parents": "c.19:cl.198:t.1863:e.2027556:m.82443526"
+                           },
+                           "prices": {
+                              "price": [
+                                 {
+                                    "numPrice": 3,
+                                    "denPrice": 1,
+                                    "selectionPriceType": "LP"
+                                 }
+                              ]
+                           }
+                        }
+                     ]
+                  ]
+               ),
+               "eventKey": 2027556,
+               "marketKey": 82443526,
+               "marketMeaningMajorCode": "-",
+               "marketMeaningMinorCode": "--",
+               "marketName": "WIN OR EACH WAY",
+               "marketStatus": "Suspended",
+               "displayOrder": 0,
+               "displayStatus": "Displayed",
+               "marketSort": "--",
+               "marketTypeKey": "-",
+               "isResulted": false,
+               "isResultConfirmed": false,
+               "isCashoutAvailable": false,
+               "maxAccumulator": "25",
+               "minAccumulator": "1",
+               "marketFlags": "LX",
+               "hasRestrictedSet": "N",
+               "isAntepost": false,
+               "isPlaceOnlyAvailable": false,
+               "isEachWayAvailable": "true",
+               "isForecastMarket": "true",
+               "isGpAvailable": true,
+               "isHandicapMarket": false,
+               "isIndexMarket": false,
+               "isLpAvailable": true,
+               "isMarketBIR": false,
+               "isOverUnderMarket": false,
+               "isSpAvailable": true,
+               "isStandardFixedOddsMarket": true,
+               "isTricastMarket": true,
+               "eachWayFactorDen": "4",
+               "eachWayFactorNum": "1",
+               "eachWayPlaces": "2",
+               "eachWayWithBet": "N",
+               "marketGroupID": "137062",
+               "channels": ["K", "R", "a", "b", "c", "d"],
+               "meta": { "operation": "update", "parents": "c.19:cl.198:t.1863:e.2027556" },
+               "nCastDividends": [
+                  {
+                     "validFrom": new Date("2022-01-21 11:17:29"),
+                     "ncastTypeCode": "TC",
+                     "dividend": "46.95",
+                     // "selectionKey1": "272677190",
+                     // "selectionKey2": "272677195",
+                     // "selectionKey3": "272677193"
+                  }
+               ],
+               betMinStake: null,
+               nCastDividend: null,
+               nCastDeleteDividend: undefined
+            }),
+         "greyhoundRacingEntries": new Array<GreyhoundRacingEntry>(),
+         "racingContent": new RacingContentGreyhoundResult(),
+         "eventName": "11:54 HENLOW",
+         "defaultPriceColumn": "EARLY PRICE",
+         "raceStage": "",
+         "bettingFavouritePrice": 1,
+         "areCurrentPricesPresent": false,
+         "arePastPricesPresent": false,
+         "arePlus1MarketPricesPresent": false,
+         "arePlus2MarketPricesPresent": false,
+         "greyhoundRacingTipRunnerOrder": [],
+         "greyhoundRacingPostTip": [],
+         "isRaceOff": false,
+         "marketEachWayString": "EACH-WAY: 1/4 ODDS, 2 PLACES",
+         "greyHoundImageData": new GreyhoundStaticContent(),
+         "isNonRunner": false,
+         "isUKEvent": false,
+         "eventTimePlusTypeName": null,
+         "napOrNb": "NAB",
+         "hasAnyReservedRunner": true,
+      };
+
+}

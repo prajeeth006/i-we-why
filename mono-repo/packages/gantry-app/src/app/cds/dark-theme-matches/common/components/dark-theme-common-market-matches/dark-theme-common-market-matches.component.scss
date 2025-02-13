@@ -1,0 +1,125 @@
+@import '../../../../../../../src/dark-theme-global-style/all-variables';
+
+.bet-details-container {
+    .match-betting-details-header {
+        .bet-details-title {
+            color: $market-title-color;
+            font-size: $font-48;
+            font-weight: $fw-medium;
+            text-align: center;
+            height: 34px;
+            line-height: 34px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-24;
+                height: 17px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .match-betting-section {
+        display: flex;
+        align-items: center;
+        height: $fs-md-cricket-row-height;
+        font-size: $font-60;
+        font-weight: $fw-bold;
+        margin-top: 10px;
+
+        @include breakpoint(multidesktop) {
+            height: $fs-sm-cricket-row-height;
+            font-size: $font-30;
+            margin-top: 5px;
+        }
+
+        .bet-price {
+            color: $state-box-text;
+            background-color: $state-box-bg;
+            height: 80px;
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                height: 40px;
+            }
+        }
+
+        .player-details-section {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            height: 100%;
+            margin: 0px 30px;
+            color: $color-white;
+            @include text-truncate;
+
+            @include breakpoint(multidesktop) {
+                margin: 0px 15px;
+            }
+
+            .text-v {
+                text: {
+                    align: center;
+                    transform: lowercase;
+                }
+
+                padding-left: 17px;
+                padding-right: 17px;
+                width: 76px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    padding-left: 8.5px;
+                    padding-right: 8.5px;
+                    width: 38px;
+                }
+            }
+
+            .draw-price {
+                flex: 0 0 238px;
+                text-align: center;
+                color: $state-box-text;
+                background-color: $color-white;
+                height: 80px;
+                @include flex-center;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                    flex-basis: 119px;
+                }
+            }
+
+            .market-1,
+            .market-2 {
+                width: 606px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 303px;
+                }
+            }
+
+            .full-market-1,
+            .full-market-2 {
+                width: 644px;
+                @include bottom-border-weight;
+
+                @include breakpoint(multidesktop) {
+                    width: 322px;
+                }
+            }
+
+            .market-2,
+            .full-market-2 {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.match-betting-details-header {
+    margin-bottom: 10px;
+
+    @include breakpoint(multidesktop) {
+        margin-bottom: 5px;
+    }
+}

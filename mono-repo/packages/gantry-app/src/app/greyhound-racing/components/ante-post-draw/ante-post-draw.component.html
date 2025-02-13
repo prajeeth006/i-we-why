@@ -1,0 +1,31 @@
+<div class="ante-post-page">
+    <ng-container *ngIf="vm$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-base-page>
+                <ng-container header-content>
+                    <gn-banner [leadTitle]="vm.categoryName" [title]="vm.eventName" [subtitleLeft]="vm.typeName" [subtitleRight]=""> </gn-banner>
+                </ng-container>
+                <ng-container body-content>
+                    <ul class="selection-table">
+                        <li *ngFor="let selection of vm?.selections" id="anteSelection">
+                            <div class="market-block">
+                                <div class="table-item-1 items" *ngIf="!selection?.hideEntry">
+                                    <img [retrySrc]="selection?.trapImage" height="40vh" id="trapImage" />
+                                </div>
+                                <div id="sName" class="table-item-2 items">{{ selection.name }}</div>
+                            </div>
+                            <div id="sPrice" class="table-item-3 items">
+                                {{ selection?.price | marketPriceTransform: selection?.hidePrice }}
+                            </div>
+                        </li>
+                    </ul>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-footer [leftSideText]="vm.winOrEachWayText"></gn-footer>
+                </ng-container>
+            </gn-base-page>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

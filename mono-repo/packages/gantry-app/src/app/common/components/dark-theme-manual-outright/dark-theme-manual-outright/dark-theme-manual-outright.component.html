@@ -1,0 +1,52 @@
+<gn-dark-theme-base-page class="outright-content outright-content__manual">
+    <ng-container header-content>
+        <gn-dark-theme-header [title]="result?.eventName" [racingImage]="sportsTypeImage">
+            <ng-container raceStage-content>
+                <div class="header-status-box tilted-card">
+                    <span id="eventStartDate" class="tilted-text" *ngIf="result?.date">
+                        {{ (result?.date | darkThemeEventDatetime).date }}<br />{{ (result?.date | darkThemeEventDatetime).time }}
+                    </span>
+                </div>
+            </ng-container>
+        </gn-dark-theme-header>
+    </ng-container>
+    <ng-container body-content>
+        <div [ngClass]="mainClassWrapper" class="outright-content__wrapper">
+            <ul class="selection-table">
+                <li *ngFor="let selection of result?.Runners | slice: pageDetails.startIndex : pageDetails.endIndex" id="manualResultSelections">
+                    <div
+                        id="selectionName"
+                        class="selection-name"
+                        [ngClass]="{ 'selection-name--max-length': selectionLength === unrestrictedNameLength }">
+                        {{
+                            selectionLength === unrestrictedNameLength
+                                ? selection.selectionName
+                                : (selection.selectionName | trimSelectionNamePipe: selectionLength)
+                        }}
+                    </div>
+                    <div class="selection-content">
+                        <div id="selectionPrice" class="current-price__tilted" autoAdjustFont>
+                            <ng-container *ngIf="selection?.odds">
+                                <span class="current-price__tilted--text">{{ selection?.odds | marketPriceTransform: false : true }}</span>
+                            </ng-container>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <ng-container footer-content>
+        <gn-dark-theme-footer [extendedWidthToHalf]="'outright-content__footer'">
+            <ng-container left-side-content>
+                {{ result?.marketEachWay | sentenceCase }}
+            </ng-container>
+            <ng-container right-side-content>
+                <div class="footer-flex">
+                    <ng-container *ngIf="pageSize && result?.Runners?.length > 20 ? pageDetails?.paginationText : ''">
+                        <span class="pagination-text" id="paginationText">{{ pageDetails.paginationText }}</span>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </gn-dark-theme-footer>
+    </ng-container>
+</gn-dark-theme-base-page>

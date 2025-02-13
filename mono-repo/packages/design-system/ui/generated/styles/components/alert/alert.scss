@@ -1,0 +1,86 @@
+@mixin caution-default {
+    --ds-alert-color-bg: var(--semantic-color-caution-container-base);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-caution-base);
+    --ds-alert-color-text: var(--semantic-color-on-caution-container);
+}
+
+@mixin caution-inverse {
+    --ds-alert-color-bg: var(--semantic-color-caution-container-base-inverse);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-caution-base-inverse);
+    --ds-alert-color-text: var(--semantic-color-on-caution-container-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin default {
+    /** @deprecated This token is no longer available in Figma (2024-11-13T16:13:56.806Z) */
+    --ds-alert-caution-color-bg: var(--semantic-color-caution-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-13T16:13:56.806Z) */
+    --ds-alert-caution-color-border: var(--semantic-color-opacity-transparent);
+}
+
+@mixin error-default {
+    --ds-alert-color-bg: var(--semantic-color-negative-container-base);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-negative-base);
+    --ds-alert-color-text: var(--semantic-color-on-negative-container);
+}
+
+@mixin error-inverse {
+    --ds-alert-color-bg: var(--semantic-color-negative-container-base-inverse);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-negative-base-inverse);
+    --ds-alert-color-text: var(--semantic-color-on-negative-container-inverse);
+}
+
+@mixin info-default {
+    --ds-alert-color-bg: var(--semantic-color-utility-container-base);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-utility-base);
+    --ds-alert-color-text: var(--semantic-color-on-utility-container);
+}
+
+@mixin info-inverse {
+    --ds-alert-color-bg: var(--semantic-color-utility-container-base-inverse);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-utility-base-inverse);
+    --ds-alert-color-text: var(--semantic-color-on-utility-container-inverse);
+}
+
+@mixin shared {
+    --ds-alert-radius-border: var(--semantic-radius-semi-rounded-sm);
+    --ds-alert-size-icon-container-height: var(--semantic-size-icon-xlarge);
+    --ds-alert-size-icon-container-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-alert-size-icon-container-padding-left: var(--semantic-spacing-container-padding-none);
+    --ds-alert-size-icon-container-padding-right: var(--semantic-spacing-container-padding-none);
+    --ds-alert-size-icon-container-padding-top: var(--semantic-spacing-container-padding-none);
+    --ds-alert-size-icon-container-width: var(--semantic-size-icon-xlarge);
+    --ds-alert-size-icon-height: var(--semantic-size-icon-small);
+    --ds-alert-size-icon-width: var(--semantic-size-icon-small);
+    --ds-alert-size-min-height: var(--semantic-size-x10);
+    --ds-alert-size-min-width: var(--semantic-size-x10);
+    --ds-alert-space-button-inline: var(--semantic-spacing-inline-md);
+    --ds-alert-space-button-padding: var(--semantic-spacing-inline-sm);
+    --ds-alert-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-alert-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-alert-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-alert-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-alert-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-alert-space-stack: var(--semantic-spacing-inline-xs);
+    --ds-alert-space-text-padding: var(--semantic-spacing-container-padding-sm);
+}
+
+@mixin success-default {
+    --ds-alert-color-bg: var(--semantic-color-positive-container-base);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-positive-base);
+    --ds-alert-color-text: var(--semantic-color-on-positive-container);
+}
+
+@mixin success-inverse {
+    --ds-alert-color-bg: var(--semantic-color-positive-container-base-inverse);
+    --ds-alert-color-border: var(--semantic-color-opacity-transparent);
+    --ds-alert-color-icon: var(--semantic-color-positive-base-inverse);
+    --ds-alert-color-text: var(--semantic-color-on-positive-container-inverse);
+}

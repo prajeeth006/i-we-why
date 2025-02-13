@@ -1,0 +1,129 @@
+{
+    "scrollbar": {
+        "default": {
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.base}"
+                    },
+                    "thumb": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.active}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.base}"
+                    },
+                    "thumb": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.hover}"
+                    }
+                }
+            }
+        },
+        "inverse": {
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.base-inverse}"
+                    },
+                    "thumb": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.active-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.base-inverse}"
+                    },
+                    "thumb": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "scrollbar",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.hover-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "scrollbar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.max}"
+                }
+            },
+            "size": {
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "scrollbar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                },
+                "width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "scrollbar",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x2}"
+                }
+            }
+        }
+    }
+}

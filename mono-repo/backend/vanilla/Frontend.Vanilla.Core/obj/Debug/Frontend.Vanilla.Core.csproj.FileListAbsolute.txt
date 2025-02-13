@@ -1,0 +1,14 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Core\Frontend.Vanilla.Core.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Core\Frontend.Vanilla.Core.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Core\Frontend.Vanilla.Core.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Core\Frontend.Vanilla.Core.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\refint\Frontend.Vanilla.Core.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\Frontend.Vanilla.Core.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Core\obj\Debug\ref\Frontend.Vanilla.Core.dll

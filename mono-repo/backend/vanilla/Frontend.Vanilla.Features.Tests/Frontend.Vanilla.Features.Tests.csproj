@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+		<WarningsNotAsErrors>CS0436</WarningsNotAsErrors>
+		<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="appsettings.json" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <None Remove="Diagnostics\HealthPages\AssetsHandling\Conflict-File.txt" />
+        <None Remove="Diagnostics\HealthPages\AssetsHandling\Conflict_file.txt" />
+        <None Remove="Diagnostics\HealthPages\AssetsHandling\TestFile.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Diagnostics\HealthPages\AssetsHandling\Conflict_file.txt" />
+        <EmbeddedResource Include="Diagnostics\HealthPages\AssetsHandling\Conflict-File.txt" />
+        <EmbeddedResource Include="Diagnostics\HealthPages\AssetsHandling\TestFile.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="WebSocket4Net" />
+		<PackageReference Include="xunit.v3" />
+        <PackageReference Include="xunit.runner.visualstudio">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="JunitXml.TestLogger" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Features\Frontend.Vanilla.Features.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.Testing\Frontend.Vanilla.Testing.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>

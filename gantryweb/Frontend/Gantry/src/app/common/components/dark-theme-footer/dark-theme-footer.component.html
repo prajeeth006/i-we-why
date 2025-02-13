@@ -1,0 +1,16 @@
+<div class="footer-seperator"></div>
+<div class="footer">
+    <div id="leftsideText" class="left-side-text">
+      XX Run
+      <ng-content select="[left-side-content]"></ng-content>
+    </div>
+    <div id="centerText" class="center-side-text"></div>
+    <div id="rightsideText" class="right-side-text">
+      <div>1/X Odds X-X-X-X-X-X</div>
+      <div>Win Only</div>
+      {{ rightSideText !== 'showRight' ? rightSideText : '' }}
+      <ng-content select="[right-side-content]"></ng-content>
+    </div>
+    <ng-content></ng-content>
+</div>
+

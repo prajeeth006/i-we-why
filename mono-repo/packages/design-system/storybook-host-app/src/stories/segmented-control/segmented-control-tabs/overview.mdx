@@ -1,0 +1,99 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsSegmentedControlStories from '../segmented-control.component.stories';
+
+## Usage
+
+Import `DsSegmentedControlModule` in your component.
+
+```ts
+import { DsSegmentedControlModule } from '@frontend/ui/segmented-control'; // 👈 add to file imports
+
+@Component({
+    imports: [DsSegmentedControlModule], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### FullWidth
+
+For the component to be occupied the fullwidth then add \[fullWidth]="true".
+
+### ActiveOption
+
+If a particular option/item need to be select/active by using the input then add the value of the "name" of a particular option to be select in \[activeOption]="value of name".
+
+**Example:** From above code "value of name" is "A" i.e., here name='A' given.
+
+### twoLineTruncation
+
+With this input you are able to define to show 2 lines of text in the segmented control and the second line will be truncated
+`twoLineTruncation="true"` or just use attribute `twoLineTruncation`
+
+### Inverse
+
+If a component need to have inverse styes then add \[inverse]="true".
+
+### roleType
+
+It is used to add role to the component for the accessibility screen reader purpose. It has two options
+
+-   tablist (default)
+-   radiogroup
+
+We need to select the option based on our requirement. By default it is tablist. If you dont specify anything then also the role will be tablist only.
+
+### Outputs
+
+<h5>activeOptionChange</h5>
+<p>Event emits when the option selection has changed. Where the `$event` gives the selected option index</p>
+
+```json
+{
+    "index": 2,
+    "event": {
+        "isTrusted": true,
+        "altKey": false,
+        "altitudeAngle": 1.5707963267948966,
+        "azimuthAngle": 0,
+        "bubbles": true,
+        "button": 0,
+        "buttons": 0,
+        "cancelBubble": false,
+        "cancelable": true,
+        "clientX": 433,
+        "clientY": 85,
+        "composed": true,
+        "ctrlKey": false
+    }
+}
+```
+
+### How to use output events in segmented control:
+
+```html
+<ds-segmented-control (activeOptionChange)="onSelectionChange($event)"></ds-segmented-control>
+```
+
+### Segmented item width (max-width)
+
+For text truncation we have token for min-width(44px) so it will apply the same for all the items but you need to specify the "max-width" for segmented item so that it will take the max width for the option and then it will truncate if it is more than that width.
+You can customize the width of the segment item in the `segmented-control` using CSS variables. Set these variables in your CSS to adjust the width:
+
+-   `--ds-segment-item-text-max-width`: Sets the max-width of the segment item. Default is `auto`.
+
+To adjust the width, add the following CSS to your styles:
+
+```html
+<ds-segmented-control class="ds-segmented-control component-class-name">
+    <ds-segment-item>...</ds-segment-item>
+</ds-segmented-control>
+```
+
+```css
+.component-class-name {
+    --ds-segment-item-text-max-width: 100px;
+}
+```

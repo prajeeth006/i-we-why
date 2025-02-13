@@ -1,0 +1,41 @@
+{
+    "name": "design-system-ds-deprecation-feature",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/ds-deprecation-feature/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/build/packages/design-system/ds-deprecation-feature",
+                "main": "packages/design-system/ds-deprecation-feature/src/index.ts",
+                "tsConfig": "packages/design-system/ds-deprecation-feature/tsconfig.lib.json",
+                "assets": ["packages/design-system/ds-deprecation-feature/*.md"]
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/package.json"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/ds-deprecation-feature/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/ds-deprecation-feature/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:design-system"]
+}

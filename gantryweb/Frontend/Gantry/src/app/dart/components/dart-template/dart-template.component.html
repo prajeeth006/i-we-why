@@ -1,0 +1,29 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <ng-container *ngIf="!(errorMessage$ | async)">
+    <gn-base-page>
+      <ng-container header-content>
+        <!-- Header / Banner Content -->
+        <gn-banner
+          [leadTitle]="vm.leadTitle"
+          [title]="vm.eventName"
+          [subtitleLeft]="vm.eventDateTime | sportEventDateFormat: vm.dartDataContent"
+          [subtitleRight]="vm.optionalInfo"
+        >
+        </gn-banner>
+      </ng-container>
+
+      <ng-container body-content>
+        <div>
+          <gn-match-betting [matchData]="vm.mainEventInfoPanel"></gn-match-betting>
+          <gn-correct-score [matchData]="vm.correctScoreBettingInfoPanel"></gn-correct-score>
+          <gn-match-one-on-one [matchData]="vm.most180SBettingInfoPanel"> </gn-match-one-on-one>
+          <gn-match-one-on-one [matchData]="vm.handicapBettingInfoPanel"> </gn-match-one-on-one>
+        </div>
+      </ng-container>
+      <ng-container footer-content>
+        <gn-footer [leftSideText]="vm.onRequest" [rightSideText]="vm.moreMarkets"> </gn-footer>
+      </ng-container>
+    </gn-base-page>
+  </ng-container>
+</ng-container>
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

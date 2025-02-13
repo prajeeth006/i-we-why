@@ -1,0 +1,2494 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.Core.Abstractions.IEnvironment">
+            <summary>
+            Abstraction of <see cref="T:System.Environment" /> to ease unit testing.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Abstractions.IEnvironment.MachineName">
+            <summary>
+            Gets the name of this computer.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Abstractions.IEnvironment.GetEnvironmentVariable(System.String)">
+            <summary>
+            Retrieves the value of an environment variable from the current process.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Abstractions.IExecutionContext">
+            <summary>
+            Abstraction of static API of <see cref="T:System.Threading.ExecutionContext" /> to ease unit testing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Abstractions.ITask">
+            <summary>
+            Abstraction of static API of <see cref="T:System.Threading.Tasks.Task" /> to ease unit testing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Abstractions.IThread">
+            <summary>
+            Abstraction of <see cref="T:System.Threading.Thread" /> to ease unit testing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.CompressedDistributedCache">
+            <summary>
+            (De)compresses data read from or written to <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" />
+            hence minimazing size (by more then 50%) of the data being transmitted over network and stored in decorated cache.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.CompressedDistributedCache.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Frontend.Vanilla.Core.IO.Compression.IDeflateCompressor)">
+            <summary>
+            (De)compresses data read from or written to <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" />
+            hence minimazing size (by more then 50%) of the data being transmitted over network and stored in decorated cache.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Diagnostics.DistributedCacheHealthCheck">
+            <summary>
+            Health check for IDistributedCache where we currently supported Redis and Hekaton.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Diagnostics.DistributedCacheHealthCheck.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Frontend.Vanilla.Core.Caching.Isolation.ILabelIsolatedDistributedCache)">
+            <summary>
+            Health check for IDistributedCache where we currently supported Redis and Hekaton.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.DistributedCacheBase">
+            <summary>
+            Base class which replaces method pairs with single one with <see cref="T:Frontend.Vanilla.Core.System.ExecutionMode" /> and adds validation of input parameters.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.EnvironmentIsolatedDistributedCache">
+            <summary>Prefixes key with current environment.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.EnvironmentIsolatedDistributedCache.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Frontend.Vanilla.Core.Configuration.IEnvironmentProvider)">
+            <summary>Prefixes key with current environment.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.IRequestScopedValuesProvider">
+            <summary>
+            Resolves request scoped Items.
+            Registered as Scoped service and retrieved from current HttpContext services in the caller.
+            Using Lazy to avoid early execution of the factory method, executing only when ConcurrentDictionary adds the value.
+            https://andrewlock.net/making-getoradd-on-concurrentdictionary-thread-safe-using-lazy/.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.DistributedCacheIsolation">
+            <summary>
+            Methods for isolating <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.DistributedCacheIsolation.IsolateBy(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            Isolates cache entries by prepending their keys with given constant prefix.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.HybridCacheIsolation">
+            <summary>
+            Methods for isolating <see cref="T:Microsoft.Extensions.Caching.Hybrid.HybridCache" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.HybridCacheIsolation.IsolateBy(Microsoft.Extensions.Caching.Hybrid.HybridCache,System.String)">
+            <summary>
+            Isolates cache entries by prepending their keys with given constant prefix.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.HybridCacheIsolation.IsolateBy(Microsoft.Extensions.Caching.Hybrid.HybridCache,System.Func{System.String,System.String})">
+            <summary>
+            Isolates cache entries by prepending their keys with factory function.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Hybrid.HybridCache" /> with ability to isolate entries using key prefixes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.#ctor(Microsoft.Extensions.Caching.Hybrid.HybridCache,System.Func{System.String,System.String})">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Hybrid.HybridCache" /> with ability to isolate entries using key prefixes.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.Inner">
+            <summary>
+            Inner.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.GetKeyPrefix">
+            <summary>
+            Key prefix isolation function.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.GetOrCreateAsync``2(System.String,``0,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask{``1}},Microsoft.Extensions.Caching.Hybrid.HybridCacheEntryOptions,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Proxy to HybridCache.GetOrCreateAsync.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.SetAsync``1(System.String,``0,Microsoft.Extensions.Caching.Hybrid.HybridCacheEntryOptions,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Proxy to HybridCache.SetAsync.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.RemoveAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Proxy to HybridCache.RemoveAsync.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.IsolatedHybridCache.RemoveByTagAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Proxy to HybridCache.RemoveByTagAsync.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.ILabelIsolatedMemoryCache">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Memory.IMemoryCache" /> in which cache keys are automatically
+            extended by <see cref="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel" /> to isolate entries between labels.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.ILabelIsolatedDistributedCache">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" /> in which cache keys are automatically
+            extended by <see cref="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel" /> to isolate entries between labels.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.LabelIsolatedHybridCache">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Hybrid.HybridCache" /> in which cache keys are automatically
+            extended by <see cref="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel" /> to isolate entries between labels.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.LabelIsolatedHybridCache.#ctor(Microsoft.Extensions.Caching.Hybrid.HybridCache,Frontend.Vanilla.Core.Configuration.IEnvironmentProvider)">
+            <summary>
+            An instance of <see cref="T:Microsoft.Extensions.Caching.Hybrid.HybridCache" /> in which cache keys are automatically
+            extended by <see cref="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel" /> to isolate entries between labels.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Isolation.MemoryCacheIsolation">
+            <summary>
+            Methods for isolating <see cref="T:Microsoft.Extensions.Caching.Memory.IMemoryCache" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Isolation.MemoryCacheIsolation.IsolateBy(Microsoft.Extensions.Caching.Memory.IMemoryCache,System.Object)">
+            <summary>
+            Isolates cache entries by extending their keys with given constant prefix.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.MemoryCacheEntryDecorator">
+            <summary>
+            Base class for easy extension of standard cache entry returned by <see cref="M:Microsoft.Extensions.Caching.Memory.IMemoryCache.CreateEntry(System.Object)" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.MemoryCacheEntryDecorator.#ctor(Microsoft.Extensions.Caching.Memory.ICacheEntry)">
+            <summary>
+            Base class for easy extension of standard cache entry returned by <see cref="M:Microsoft.Extensions.Caching.Memory.IMemoryCache.CreateEntry(System.Object)" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.MemoryCacheExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.Caching.Memory.IMemoryCache" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Tracing.TracedDistributedCache">
+            <summary>
+            Records all details of distributed cache operation for tracing purposes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Tracing.TracedDistributedCache.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Frontend.Vanilla.Core.Diagnostics.ITraceRecorder)">
+            <summary>
+            Records all details of distributed cache operation for tracing purposes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Caching.Tracing.TracedMemoryCache">
+            <summary>
+            Records all details of memory cache operation for tracing purposes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Caching.Tracing.TracedMemoryCache.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache,Frontend.Vanilla.Core.Diagnostics.ITraceRecorder)">
+            <summary>
+            Records all details of memory cache operation for tracing purposes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.CollectionExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.CollectionExtensions.Add``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>Adds specified elements to the end of this collection. Thanks to the name 'Add', works with collection initializer.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.CollectionExtensions.Add``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <summary>Adds specified elements to the end of this collection. Thanks to the name 'Add', works with collection initializer.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.DictionaryBase`2">
+            <summary>
+            Base class for implementation of <see cref="T:System.Collections.Generic.IDictionary`2" /> because <see cref="T:System.Collections.Generic.Dictionary`2" /> can't be overridden at all.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.DictionaryBase`2.inner">
+            <summary>Gets inner decorated dictionary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryBase`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryBase`2.ValidateItem(`0,`1)">
+            <summary>Validates a key and a value specified by caller before it's being added, set or removed from/to inner dictionary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryBase`2.ValidateKey(`0)">
+            <summary>Validates a key specified by caller before it's being retrieved, added, set or  from/to inner dictionary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryBase`2.ValidateValue(`1)">
+            <summary>Validates a value specified by caller before it's being added, set or removed from/to inner dictionary.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.DictionaryEqualityComparer`2">
+            <summary>
+            Determines if two dictionaries contain equal items regardless of their order.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.DictionaryExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Collections.Generic.IDictionary`2" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.GetValue``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},``0)">
+            <summary>
+            Returns the value stored in a dictionary under the specified <paramref name="key" />.
+            If given collection is not a <see cref="T:System.Collections.Generic.IDictionary`2" /> nor <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2" />,
+            finds single item with specified <paramref name="key" />.
+            If no item is present for the key, default value is returned.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.Add``2(System.Collections.Generic.IDictionary{``0,``1},System.ValueTuple{``0,``1}[])">
+            <summary>Adds specified key-value tuples to this dictionary. Thanks to the name 'Add', works with collection initializer.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.Add``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}},Frontend.Vanilla.Core.Collections.KeyConflictResolution)">
+            <summary>Adds specified key-value tuples to this dictionary. Thanks to the name 'Add', works with collection initializer.</summary>
+            <exception cref="T:System.InvalidOperationException">If there is a conflict and <see cref="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Throw" /> is specified.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.Add``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},Frontend.Vanilla.Core.Collections.KeyConflictResolution)">
+            <summary>Adds specified key-value pairs to this dictionary. Thanks to the name 'Add', works with collection initializer.</summary>
+            <exception cref="T:System.InvalidOperationException">If there is a conflict and <see cref="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Throw" /> is specified.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.Add(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Specialized.NameValueCollection,Frontend.Vanilla.Core.Collections.KeyConflictResolution)">
+            <summary>
+            Adds specified name-value collection to this dictionary. Thanks to the name 'Add', works with collection initializer.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">If there is a conflict and <see cref="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Throw" /> is specified.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.GetOrAddFromFactory``2(System.Collections.Concurrent.ConcurrentDictionary{System.Object,System.Lazy{System.Object}},``0,System.Func{``0,``1})">
+            <summary>For multithread scenarios, using ConcurrentDictionary of HttpContext.Items from <see cref="T:Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor"/>.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryExtensions.GetBoolean(System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.String)">
+            <summary>
+            Retrieves value from given collection by the key and tries to convert it using bool.TryParse.
+            Returns false if value is not found or empty. Throws an exception if the value can't be parsed.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DictionaryStringExtensions.TryGetString(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.String,System.String@)">
+            <summary>Throws comprehensive exception if retrieved value is not a string nor null.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.DuplicateException">
+            <summary>
+            Used especially in tests to check that check was raised with particular value config detected.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.DuplicateException.#ctor(System.Object,System.String)">
+            <summary>
+            Used especially in tests to check that check was raised with particular value config detected.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.DuplicateFindingExtensions">
+            <summary>
+            Extension methods for handling duplicates in the collection.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.EmptyDictionary`2">
+            <summary>Singleton instance of a dictionary which is empty.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.EmptyDictionary`2.Singleton">
+            <summary>Singleton instance of a dictionary which is empty.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.EnumerableExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IEnumerable`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>Creates a dictionary from this enumerable sequence of key-value pairs.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.ValueTuple{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>Creates a dictionary from this enumerable sequence of tuples.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.CreateDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0},System.Nullable{System.Int32})">
+            <summary>Own impl b/c old .NET Framework doesn't include duplicate key in the exception message. Remove once migrated to .NET Core.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Distinct``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>Returns distinct elements from this enumerable sequence based on equality comparison provided via a lambda function.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>Executes the specified <paramref name="action" /> for each element of this enumerable sequence.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>Executes the specified <paramref name="action" /> for each element of this enumerable sequence providing its index too.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.NullToEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Returns empty sequence if this one is null. Otherwise returns this one. Hhandy for chaining so that you don't need to specify generic parameters.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.NullToEmpty``1(System.Collections.Generic.IReadOnlyList{``0})">
+            <summary>Returns empty collection if this one is null. Otherwise returns this one. Hhandy for chaining so that you don't need to specify generic parameters.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Join``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>Shortcut for <see cref="M:System.String.Join``1(System.String,System.Collections.Generic.IEnumerable{``0})" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Concat``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Shortcut for <see cref="M:System.String.Concat``1(System.Collections.Generic.IEnumerable{``0})" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Append``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>Convenient method on top of LINQ.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Prepend``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>Convenient method on top of LINQ.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>Convenient method on top of LINQ.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.ToDebugString``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets debug string of items in the enumerable.
+            Useful when you want to write items to log.
+            If no items then returns '(empty)'.
+            If one item then returns item itself.
+            Otherwise returns items prefixed with their index (one-based) joined by new line.
+            Nulls are replaced with '(null)'.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.EnumerableExtensions.Enumerate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Useful when you just want to enumerate the collection without copying and storing it.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.KeyConflictResolution">
+            <summary>
+            Defines what to do if there is key conflict when merging two keyed collections.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Throw">
+            <summary>
+            An exception should be thrown.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Skip">
+            <summary>
+            Conflict element should be skipped.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.KeyConflictResolution.Overwrite">
+            <summary>
+            Target entry should be overwritten.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.KeyValue">
+            <summary>
+            Shorthand for creating a <see cref="T:System.Collections.Generic.KeyValuePair`2" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.LazyEnumerable">
+            <summary>
+            Lazily gets enumerable and then enumerates it. Useful if a method returning whole collection is heavy and may not be needed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.ListExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IList`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.NameValueCollectionExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Collections.Specialized.NameValueCollection" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.NameValueCollectionExtensions.AsReadOnly(System.Collections.Specialized.NameValueCollection)">
+            <summary>Returns a read-only wrapper around the given <see cref="T:System.Collections.Specialized.NameValueCollection" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.NameValueCollectionExtensions.ContainsKey(System.Collections.Specialized.NameValueCollection,System.String,System.StringComparison)">
+            <summary>Determines whether the <see cref="T:System.Collections.Specialized.NameValueCollection" /> contains the specified key according to given comparison.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.NameValueCollectionExtensions.Add(System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection,Frontend.Vanilla.Core.Collections.KeyConflictResolution,System.StringComparison)">
+            <summary>
+            Adds entries from <paramref name="entriesToAdd" /> collection to <paramref name="collection" />.
+            On contrary to <see cref="M:System.Collections.Specialized.NameValueCollection.Add(System.Collections.Specialized.NameValueCollection)" /> conflicting values are not merged but resolved according to <paramref name="conflictResolution" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.NameValueCollectionExtensions.GetBoolean(System.Collections.Specialized.NameValueCollection,System.String)">
+            <summary>
+            Retrieves value from given collection by the key and tries to convert it using bool.TryParse.
+            Returns false if value is not found or empty. Throws an exception if the value can't be parsed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.ReadOnlyNameValueCollection">
+            <summary>
+            Read-only wrapper for <see cref="T:System.Collections.Specialized.NameValueCollection"/>.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Collections.ReadOnlyNameValueCollection.Empty">
+            <summary>
+            Gets an immutable <see cref="T:System.Collections.Specialized.NameValueCollection"/> that contains no entries.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.ReadOnlyNameValueCollection.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.Core.Collections.ReadOnlyNameValueCollection"/> class.
+            </summary>
+            <param name="collectionToCopy">The collection to copy its items.</param>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.ReadOnlySet`1">
+            <summary>
+            Read-only wrapper for a <see cref="T:System.Collections.Generic.ISet`1" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.ReadOnlySet`1.#ctor(System.Collections.Generic.ISet{`0})">
+            <summary>
+            Read-only wrapper for a <see cref="T:System.Collections.Generic.ISet`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Collections.TemporaryBuffer`1">
+            <summary>
+            Thread-safe collection which stores predefined number of lastly added items.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Collections.TemporaryBuffer`1.#ctor(System.Int32)">
+            <summary>
+            Thread-safe collection which stores predefined number of lastly added items.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IConfigurationEngine">
+            <summary>
+            Main abstract entry point for providing configuration objects.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.ConfigurationInstanceJsonConverter">
+            <summary>
+            Marker for JSON converter used when deserializing a configuration instance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.ConfigurationInstanceJsonConverter.#ctor(Newtonsoft.Json.JsonConverter)">
+            <summary>
+            Marker for JSON converter used when deserializing a configuration instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IConfigurationBuilder`1">
+            <summary>
+            Builds configuration of given type usually according to previously specified parameters (via methods or property setters).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IConfigurationFactory`2">
+            <summary>
+            Creates configuration instance from deserialized DTO.
+            It can be done to create completely different object, apply some post-processing or just validation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.PassThroughConfigurationFactory`2">
+            <summary>Default factory to be used when <typeparamref name="TDto" /> implements <typeparamref name="TConfiguration" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.ConfigurationBuilderFactory`2">
+            <summary>Configuration factory which creates an instance using specified builder.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IConfigurationImplementationParameter">
+            <summary>
+            Info regarding parameters needed for create an instance of configuration implementation class.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IConfigurationInfo">
+            <summary>
+            Describes all info regarding config provided by a developer.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.DependencyInjectionConfigurationEngine">
+            <summary>
+            Default configuration engine which resolves configs directly from dependency injection provider.
+            Of course if config registration is overwritten then there is no need for engine.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DependencyInjectionConfigurationEngine.#ctor(System.IServiceProvider,Frontend.Vanilla.Core.Configuration.IDisableableGuard)">
+            <summary>
+            Default configuration engine which resolves configs directly from dependency injection provider.
+            Of course if config registration is overwritten then there is no need for engine.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.DependencyInjectionExtensions">
+            <summary>
+            Dependency injection for adding configuration models.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DependencyInjectionExtensions.AddConfiguration``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString)">
+            <summary>
+            Registers a configuration model.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DependencyInjectionExtensions.AddConfigurationWithFactory``3(Microsoft.Extensions.DependencyInjection.IServiceCollection,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString)">
+            <summary>Registers a configuration model with its factory which is also registered as a single instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DependencyInjectionExtensions.AddConfigurationWithBuilder``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString)">
+            <summary>Registers a configuration model with its builder.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IDisableableConfiguration">
+            <summary>
+            Marks the configuration which can be disabled.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IDisableableConfiguration.IsEnabled">
+            <summary>
+            Indicates if the configuration is enabled.
+            If disabled, it doesn't get validated by configuration system.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IDisableableGuard">
+            <summary>
+            Guard for correct behavior regarding <see cref="T:Frontend.Vanilla.Core.Configuration.IDisableableConfiguration" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.IDisableableGuard.Decorate(System.Type,System.Object)">
+            <summary>
+            Decorates the configuration implementing <see cref="T:Frontend.Vanilla.Core.Configuration.IDisableableConfiguration" /> with a logic to allow access only if the configuration is enabled.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.DynaConParameter">
+            <summary>
+            A name-value pair representing query string parameter which is sent to DynaCon REST service to retrieve the configuration.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.DynaConParameter.Name">
+            <summary>Gets the name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.DynaConParameter.Value">
+            <summary>Gets the value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DynaConParameter.#ctor(System.String,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.DynaConParameter.ToString">
+            <summary>Returns a string representation of this object.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider">
+            <summary>
+            Provides a sorted list of environments for configuration purposes.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.Environment">
+            <summary>Gets the name of environment that this app is running in e.g. qa2, prod.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.IsProduction">
+            <summary>Denotes whether the app runs in the production environment or not.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel">
+            <summary>
+            Gets the label dynamically resolved according to current context so it should be obtained just-in-time, not during app startup.
+            Vanilla webs resolve the value from hostname of current HTTP request, but label positioning can be on start or end of host string. Examples: bwin.com, casino.nj.partycasino.com.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentDomain">
+            <summary>
+            Gets the top level domain from end of host string always - dynamically resolved according to current context so it should be obtained just-in-time, not during app startup.
+            Vanilla webs resolve the value from hostname of current HTTP request. Examples: bwin.com, casino.nj.partycasino.com.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.IsSingleDomainApp">
+            <summary>
+            Gets a value indicating whether the app runs as part of single domain app (either as the single domain host/entry web) or
+            one of REST APIs that are being called from the host app.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.EnvironmentProviderExtensions">
+            <summary>Extensions for <see cref="T:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Configuration.EnvironmentProviderExtensions.IsCurrentLabel(Frontend.Vanilla.Core.Configuration.IEnvironmentProvider,System.Uri)">
+            <summary>Determines if given URL corresponds to <see cref="P:Frontend.Vanilla.Core.Configuration.IEnvironmentProvider.CurrentLabel" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Configuration.InvalidConfigurationException">
+            <summary>
+            Indicates that some configuration instance is invalid, providing particular errors.
+            Usuall thrown manually by <see cref="T:Frontend.Vanilla.Core.Configuration.IConfigurationFactory`2" /> or <see cref="T:Frontend.Vanilla.Core.Configuration.IConfigurationBuilder`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Data.ISqlConnectionFactory">
+            <summary>
+            Abstraction of <see cref="T:Microsoft.Data.SqlClient.SqlConnection" /> creation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.ActivationExtensions">
+            <summary>
+            Shorter syntax for <see cref="T:Microsoft.Extensions.DependencyInjection.ActivatorUtilities" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecorationBuilder`1">
+            <summary>Used to specify decorators in strongly-typed manner.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecoratorExtensions">
+            <summary>
+            Extension methods for easy application of decorator pattern with dependency injection.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecoratorExtensions.AddSingletonWithDecorators``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Frontend.Vanilla.Core.DependencyInjection.Decorator.DecorationBuilder{``0}})">
+            <summary>Adds singleton  <typeparamref name="TService" /> wrapping it by given decorators in respective order.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecoratorExtensions.AddScopedWithDecorators``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Frontend.Vanilla.Core.DependencyInjection.Decorator.DecorationBuilder{``0}})">
+            <summary>Adds singleton  <typeparamref name="TService" /> wrapping it by given decorators in respective order.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecoratorExtensions.AddWithDecorators``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,System.Action{Frontend.Vanilla.Core.DependencyInjection.Decorator.DecorationBuilder{``0}})">
+            <summary>Adds <typeparamref name="TService" /> wrapping it by given decorators in respective order.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.Decorator.DecoratorExtensions.AddWithDecorators``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime,System.Func{System.IServiceProvider,``0},System.Action{Frontend.Vanilla.Core.DependencyInjection.Decorator.DecorationBuilder{``0}})">
+            <summary>Adds <typeparamref name="TService" /> wrapping it by given decorators in respective order.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.ExternallyManaged.ExternallyManagedExtensions.AddExternallyManaged``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            Registers given service as transient one to be externally managed using <see cref="T:Frontend.Vanilla.Core.DependencyInjection.ExternallyManaged.ExternalManager`1" />.
+            This allows creation of whole graph of services with one service (e.g. config) injected according to your needs.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.ExternallyManaged.ExternalManager`1">
+            <summary>
+            Externally manages value injected to transient services created on demand.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.InjectedArgument">
+            <summary>
+            Specifies an argument that will be explicitly injected during service creation using <see cref="T:Frontend.Vanilla.Core.DependencyInjection.InjectedArgumentExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.DependencyInjection.InjectedArgument.#ctor(System.Func{System.IServiceProvider,System.Object})">
+            <summary>
+            Specifies an argument that will be explicitly injected during service creation using <see cref="T:Frontend.Vanilla.Core.DependencyInjection.InjectedArgumentExtensions" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.InjectedArgumentExtensions">
+            <summary>
+            Extension methods for easy registration of a service with explicit parameters.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.DependencyInjection.MarkLoadedExtensions">
+            <summary>
+            Extensions for loading some services only once by marking them as already loaded.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.CallerInfo.Get">
+            <summary>
+            Gets diagnostic information regarding external caller.
+            Should be used in case of an error to provide sufficient data to fix it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.DurationFormatter.FormatDuration(System.TimeSpan)">
+            <summary>
+            For diagnostic measurements. Shows duration in milliseconds b/c it's readable and lower values are insignificant to optimize.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata">
+            <summary>
+            Defines metadata describing an <see cref="T:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.Name">
+            <summary>Gets the name. It must be unique.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.Description">
+            <summary>Gets the text describing what is actually checked.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.WhatToDoIfFailed">
+            <summary>Gets steps describing what should be done if the check fails.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.Severity">
+            <summary>Gets the severity.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.ConfigurationFeatureName">
+            <summary>Gets name of DynaCon feature corresponding to the configuration which is used during execution of this health check.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.DocumentationUri">
+            <summary>Gets the URL where this health check or related feature is documented.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckMetadata.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckSeverity,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,System.Uri)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult">
+            <summary>
+            Report regarding health of an application component.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult.Error">
+            <summary>Gets the error describing why the check has not passed.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult.Details">
+            <summary>Gets the details regarding check execution.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult.Success">
+            <summary>Gets static success result.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult.CreateSuccess(System.Object)">
+            <summary>Creates successfully passed result.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckResult.CreateFailed(System.Object,System.Object)">
+            <summary>Create failed result providing error explanation.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckSeverity">
+            <summary>
+            Defines severity of <see cref="T:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck" />.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckSeverity.Default">
+            <summary>
+            It should pass for the app to work properly. Usually it's related to a feature or some component
+            therefore should be fixed by responsible persons.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Diagnostics.Health.HealthCheckSeverity.Critical">
+            <summary>
+            It must pass always because the app is unable to work otherwise.
+            Therefore if it fails then monitoring tools pound an alarm for on-duty team to fix it as soon as possible.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck">
+            <summary>
+            Checks the health state of the application component.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck.IsEnabled">
+            <summary>
+            Indicates if health check should be enabled/visible.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck.Metadata">
+            <summary>Gets the metadata describing this check.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.Health.IHealthCheck.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Executes the check.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.IDiagnosticInfoProvider">
+            <summary>
+            Easy way how to implement dedicated diagnostic page which is just showing some info, be it dynamic or static.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Diagnostics.ITraceRecorder">
+            <summary>
+            Records debug information for diagnostic purposes if recording is enabled.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Diagnostics.ITraceRecorder.GetRecordingTrace">
+            <summary>Also starts a stopwatch if recording so it should be called before actual operation.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor">
+            <summary>
+            Resolves context specific variables. Context can be static, HttpContext, some other scope...
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor.Items">
+            <summary>Gets a dictionary for storing values for current context.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Ioc.ICurrentContextSwitchHandler">
+            <summary>
+            Registers to events related to switching app context e.g. static, HttpContext, some other scope...
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Ioc.IStaticContextManager">
+            <summary>
+            Simple implementation of <see cref="T:Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor" /> that stores items statically and allows explicit switch by the caller.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.Compression.IBrotliCompressor">
+            <summary>
+            Brotli implementation of <see cref="T:Frontend.Vanilla.Core.IO.Compression.ICompressor" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.Compression.IDeflateCompressor">
+            <summary>
+            Deflate implementation of <see cref="T:Frontend.Vanilla.Core.IO.Compression.ICompressor" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.Compression.IGzipCompressor">
+            <summary>
+            GZIP implementation of <see cref="T:Frontend.Vanilla.Core.IO.Compression.ICompressor" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.Compression.ICompressor">
+            <summary>
+            Wraps compression algorithm.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.FileSystemPath">
+            <summary>Base class which guarantees that the path contains only valid chars.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.FileSystemPath.#ctor(System.String,System.Func{System.String,System.String},System.String)">
+            <summary>Used by inherited classes to execute the validation only once and with comprehensive error message.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.RootedPath">
+            <summary>Represents rooted file system path e.g. "C:/dir/file.txt".</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.IO.RootedPath.MustBe">
+            <summary>Message.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.RootedPath.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.Core.IO.RootedPath"/> class.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.RootedPath.Combine(System.String[])">
+            <summary>
+            Combines with instance of the <see cref="T:Frontend.Vanilla.Core.IO.RootedPath"/> class.
+            </summary>
+            <param name="relativePaths"></param>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.RelativePath">
+            <summary>Represents relative file system path e.g. "dir/file.txt".</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.RelativePath.#ctor(System.String)">
+            <summary>Represents relative file system path e.g. "dir/file.txt".</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.FileSystemProperties">
+            <summary>Common properties of a file or a directory.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.FileSystemProperties.#ctor(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Common properties of a file or a directory.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.IFileSystem">
+            <summary>
+            File system abstraction suited for Vanilla apps.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.IO.IFileSystem.AppDirectory">
+            <summary>Gets root directory where files current app are located.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.GetProperties(Frontend.Vanilla.Core.IO.RootedPath)">
+            <summary>Returns <see cref="T:Frontend.Vanilla.Core.IO.FileProperties" />, <see cref="T:Frontend.Vanilla.Core.IO.DirectoryProperties"/> or null (if file system item doesn't exist).</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.GetFileProperties(Frontend.Vanilla.Core.IO.RootedPath)">
+            <summary>Returns <see cref="T:Frontend.Vanilla.Core.IO.FileProperties" /> or null (if file doesn't exist). Throws <see cref="T:System.IO.FileLoadException" /> if particular file system item isn't a file.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileBytes(Frontend.Vanilla.Core.IO.RootedPath)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileBytesAsync(Frontend.Vanilla.Core.IO.RootedPath,System.Threading.CancellationToken)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileBytesAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.Core.IO.RootedPath)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileText(Frontend.Vanilla.Core.IO.RootedPath)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileTextAsync(Frontend.Vanilla.Core.IO.RootedPath,System.Threading.CancellationToken)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.ReadFileTextAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.Core.IO.RootedPath)">
+            <exception cref="T:System.IO.FileNotFoundException">If file or some directory on given path doesn't exist.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.WriteFileAsync(Frontend.Vanilla.Core.IO.RootedPath,System.String,System.Threading.CancellationToken)">
+            <summary>Writes empty file if given null or empty. Also creates a parent directory.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.AppendToFileAsync(Frontend.Vanilla.Core.IO.RootedPath,System.String,System.Threading.CancellationToken)">
+            <summary>Appends to the end of file. Writes empty file if given null or empty. Also creates a parent directory.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.WriteFileAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.Core.IO.RootedPath,System.String)">
+            <summary>Writes empty file if given null or empty. Also creates a parent directory.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.WatchFile(Frontend.Vanilla.Core.IO.RootedPath)">
+            <summary>Writes empty file if given null or empty. Also creates a parent directory.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.IO.IFileSystem.DeleteFile(Frontend.Vanilla.Core.IO.RootedPath)">
+            <summary>Deletes given file.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.IO.StreamExtensions">
+            <summary>
+            Extensions method for <see cref="T:System.IO.Stream" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.Abstract.JsonConverterBase">
+            <summary>
+            Base convenient class for Vanilla <see cref="T:Newtonsoft.Json.JsonConverter" />-s.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.Abstract.JsonConverterBase`1">
+            <summary>
+            Base class for generic JSON converters.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.Abstract.JsonReadConverter">
+            <summary>
+            Base class for converter meant only for reading objects from JSON.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.Abstract.JsonWriteConverter">
+            <summary>
+            Base class for converter meant only for writing objects to JSON.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.Abstract.JsonWriteConverter`1">
+            <summary>
+            Base class for converter meant only for writing objects of particular type to JSON.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.KeyValueDictionaryConverter">
+            <summary>
+            Converts a list of key-value pairs to/from a regular dictionary.
+            Especially used in communication with PosAPI.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.NameValueCollectionJsonConverter">
+            <summary>
+            Converts value of the type <see cref="T:System.Collections.Specialized.NameValueCollection"/> to JSON dictionary, where the Name of the collection item
+            is converted to dictionary's key and the Value is concatenated using comma separator and stored as a dictionary's value.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.RegexStringJsonConverter">
+            <summary>
+            Converts value of type <see cref="T:System.Text.RegularExpressions.Regex" /> to/from raw string in JSON.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.Converters.StringValuesJsonConverter">
+            <summary>
+            Converts <see cref="T:Microsoft.Extensions.Primitives.StringValues" /> from/to a single string or an array of strings.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Json.JObjectExtensions">
+            <summary>
+            Extension method of <see cref="T:Newtonsoft.Json.Linq.JObject" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.IClientIpResolutionAlgorithm">
+            <summary>
+            Main abstract logic for client IP address resolution shared between Vanilla and PosAPI.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IClientIpResolutionAlgorithm.Resolve(System.Net.IPAddress,System.String,System.Collections.Generic.IReadOnlyCollection{Frontend.Vanilla.Core.Net.IpSubnet},System.Collections.Generic.ICollection{System.String})">
+            <summary>Executes the resolution of client IP address.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.ClientIpResolutionAlgorithm">
+            <summary>See <see cref="T:Frontend.Vanilla.Core.Net.IClientIpResolutionAlgorithm" />.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Net.ClientIpResolutionAlgorithm.DynaConParameters">
+            <summary>Gets details of DynaCon configuration of company internal subnets shared between Vanilla and PosAPI.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.IClientIPResolver">
+            <summary>
+            Logic for resolution of client IP address.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IClientIPResolver.Resolve">
+            <summary>
+            Resolves IP host address of the remote client according to Vanilla setup and deployment.
+            Tries to get public IP. If not available then gets first private one according the rules.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.HttpStatusCodeExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Net.HttpStatusCode" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.HttpStatusCodeExtensions.IsSucccess(System.Net.HttpStatusCode)">
+            <summary>
+            Determines if given HTTP status code is 2XX class therefore denotes a success.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.IInternalRequestEvaluator">
+            <summary>
+            Determines whether the application is requested from internal company network.
+            Logic is according to app type. It should be used mainly for internal diagnostic pages and features.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IInternalRequestEvaluator.IsInternal">
+            <summary>
+            Determines whether the request is made from internal company network.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.IPAddressExtensions">
+            <summary>
+            Provides common usable extensions for working with <see cref="T:System.Net.IPAddress"/>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IPAddressExtensions.IsPrivate(System.Net.IPAddress)">
+            <summary>
+            Determines whether an IP address is private as per <a href="http://tools.ietf.org/html/rfc1918">RFC1918</a>.
+            </summary>
+            <remarks>
+            The Network Operations Team (=> Yusuf Sar) confirmed that private IP Addresses
+            cannot be spoofed, or more exactly will not be routed, from outside our systems.
+            </remarks>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Net.IpSubnet">
+            <summary>
+            Represents subnet of IP addresses.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Net.IpSubnet.NetworkAddress">
+            <summary>Gets the network address.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Net.IpSubnet.Mask">
+            <summary>Gets the mask representing number of bits identifying this subnet.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Net.IpSubnet.MaskAddress">
+            <summary>Gets the mask address.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IpSubnet.#ctor(System.String)">
+            <summary>
+            Creates a new instance by parsing a string according to CIDR notation
+            which is a network IP address prefix followed by a mask suffix representing number of significant bit of the prefix e.g. "192.168.1.0/24".
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IpSubnet.Contains(System.Net.IPAddress)">
+            <summary>Determines if given IP address belongs to this subnet.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.IpSubnet.ToString">
+            <summary>See <see cref="M:System.Object.ToString" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Net.QualityHeader.Parse(System.String)">
+            <summary>
+            Parses header which specifies multiple values with their qualities.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.Disposable">
+            <summary>
+            Base class for implementing the disposable pattern easily and thread-safe.
+            </summary>
+            <remarks>
+            Not suitable if you also need control over finalization (e.g. for dealing with unmanaged resources).
+            </remarks>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Patterns.Disposable.IsDisposed">
+            <summary>
+            Indicates wheter the instance has already been disposed.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.Disposable.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.Disposable.OnDispose">
+            <summary>
+            Implement this method to handle managed resource disposal.
+            </summary>
+            <remarks>
+            Will be called only once even if clients call more than once, even from different threads.
+            </remarks>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.DisposableAction">
+            <summary>
+            An implementation of the disposable pattern that calls an <see cref="T:System.Action"/> at disposal time.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.DisposableAction.#ctor(System.Action)">
+            <summary>Initializes a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.DisposableAction.OnDispose">
+            <summary>Calls the <see cref="T:System.Action"/> passed in to the constructor to handle disposal.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`1">
+            <summary>
+            Provides an extensible <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation based on lambda functions.
+            </summary>
+            <typeparam name="T">The type of items that can be compared.</typeparam>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`1.Equals(`0,`0)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type <typeparamref name="T"/> to compare.</param>
+            <param name="y">The second object of type <typeparamref name="T"/> to compare.</param>
+            <returns>
+            <see langword="true"/> if the specified objects are equal; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`1.GetHashCode(`0)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The object for which a hash code is to be returned.</param>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`1.#ctor(System.Func{`0,`0,System.Boolean},System.Func{`0,System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`1"/> class.
+            </summary>
+            <param name="equalsFunc">The equals func.</param>
+            <param name="hashCodeFunc">The hash code func.</param>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`2">
+             <summary>
+             Provides an extensible <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation based on lambda functions.
+             </summary>
+             <typeparam name="T">The type of items that can be compared.</typeparam>
+             <typeparam name="TValue">The type of the value used for equality testing, which can
+             be a member of objects under comparison.</typeparam>
+             <example><code><![CDATA[
+                 public class MyItem {
+                     public int MyProperty { get; set; }
+                 }
+            
+                 public static class Program {
+                     public static void Main(string[] args) {
+                         IEnumerable<MyItem> items = ... // get this from somewhere
+            
+                         // filter the sequence of items so that only distinct items (according to MyProperty value) are retained
+                         var distinctByMyProperty = items.Distinct(new LambdaEqualityComparer<MyItem, int>(item => item.MyProperty));
+                     }
+                 }
+             ]]></code></example>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`2.Equals(`0,`0)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type <typeparamref name="T"/> to compare.</param>
+            <param name="y">The second object of type <typeparamref name="T"/> to compare.</param>
+            <returns>
+            <see langword="true"/> if the specified objects are equal; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`2.GetHashCode(`0)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The object for which a hash code is to be returned.</param>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`2.#ctor(System.Func{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.Core.Patterns.LambdaEqualityComparer`2"/> class.
+            </summary>
+            <param name="memberSelector">A function that selects the member (or expression) to be used
+            for equality comparison (e.g. <c>item => item.Property</c>).</param>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.LambdaFactory`1">
+            <summary>
+            Generic factory for creating an object using provided lambda expression.
+            Useful in combination with dependency injection.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.LambdaFactory`1.#ctor(System.Func{`0})">
+            <summary>
+            Generic factory for creating an object using provided lambda expression.
+            Useful in combination with dependency injection.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1">
+            <summary>
+            Offers implementations of <see cref="T:System.IEquatable`1" />, <see cref="T:System.IComparable" /> and
+            <see cref="T:System.IComparable`1" /> based on the result of calling <see cref="M:System.Object.ToString"/>,
+            thus enabling string-based equality/comparison testing and sorting.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <example><code><![CDATA[
+                public class MyClass : ToStringEquatable<MyClass> {
+                    public override string ToString() {
+                        // define a string view of your class, and you get equality and comparison based on these string values
+                    }
+                }
+            ]]></code></example>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.Comparison">
+            <summary>
+            This is static for a very specific reason, it is not shared between different closed types of ToStringEquatable and can be set
+            for each closed type in a static constructor of its type to something different.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.CompareTo(System.Object)">
+            <summary>
+            See <see cref="M:System.IComparable.CompareTo(System.Object)" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.CompareTo(`0)">
+            <summary>
+            See <see cref="M:System.IComparable`1.CompareTo(`0)" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.Equals(System.Object)">
+            <summary>
+            See <see cref="M:System.Object.Equals(System.Object)" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.Equals(`0)">
+            <summary>
+            See <see cref="M:System.IEquatable`1.Equals(`0)" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.ToString">
+            <summary>
+            See <see cref="M:System.Object.ToString" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.ToStringEquatable`1.GetHashCode">
+            <summary>
+            See <see cref="M:System.Object.GetHashCode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.WithWarnings`1">
+            <summary>Wrapper for some value (usually operation result) with related warnings.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Patterns.WithWarnings`1.Value">
+            <summary>Gets result value.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Patterns.WithWarnings`1.Warnings">
+            <summary>Gets warnings related to the <see cref="P:Frontend.Vanilla.Core.Patterns.WithWarnings`1.Value" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.WithWarnings`1.#ctor(`0,System.Collections.Generic.IEnumerable{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString})">
+            <summary>Create a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.WithWarnings`1.Deconstruct(`0@,System.Collections.Generic.IReadOnlyList{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString}@)">
+            <summary>Deconstructs the instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.WithWarnings`1.op_Implicit(`0)~Frontend.Vanilla.Core.Patterns.WithWarnings{`0}">
+            <summary>Create a new instance with no warnings.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Patterns.WithWarningsExtensions">
+            <summary>Extension methods.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.WithWarningsExtensions.WithWarnings``1(``0,Frontend.Vanilla.Core.System.Text.TrimmedRequiredString[])">
+            <summary>Packs given value with related warnings.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Patterns.WithWarningsExtensions.WithWarnings``1(``0,System.Collections.Generic.IEnumerable{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString})">
+            <summary>Packs given value with related warnings.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.AssemblyExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Reflection.Assembly" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.AssemblyExtensions.GetFileVersion(System.Reflection.Assembly)">
+            <summary>
+            Gets assembly version read from AssemblyFileVersionAttribute.
+            </summary>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.AssemblyExtensions.GetFullVersion(System.Reflection.Assembly)">
+            <summary>
+            Gets full assembly version read from AssemblyInformationalVersionAttribute.
+            </summary>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.CustomAttributeProviderExtensions">
+            <summary>
+            Extension methods of <see cref="T:System.Reflection.ICustomAttributeProvider" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.CustomAttributeProviderExtensions.Get``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>Gets first <typeparamref name="TAttribute" /> defined on this member. <c>Null</c> if there is no custom attribute of that.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.CustomAttributeProviderExtensions.GetRequired``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>Gets first mandatory <typeparamref name="TAttribute" /> defined on this member.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.CustomAttributeProviderExtensions.Has``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>Checks whether one or more instance of <typeparamref name="TAttribute" /> is defined on this member.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Delegator.DelegatorProxyBuilder">
+            <summary>
+            Builds a proxy which delegates execution to an object resolved by <see cref="T:Frontend.Vanilla.Core.Reflection.Delegator.IProxyDelegator" /> in the runtime.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.Delegator.DelegatorProxyBuilder.#ctor(System.Type,System.Type)">
+            <summary>
+            Builds a proxy which delegates execution to an object resolved by <see cref="T:Frontend.Vanilla.Core.Reflection.Delegator.IProxyDelegator" /> in the runtime.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Delegator.IProxyDelegator">
+            <summary>
+            Resolves target object to which the proxy should delegate execution in the runtime.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Facade.DelegateToAttribute">
+            <summary>
+            Instructs facade to delegate the execution to specified service and its member (method or property).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Reflection.Facade.DelegateToAttribute.ServiceType">
+            <summary>Gets the interface of the service to which the execution should be delegated.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Reflection.Facade.DelegateToAttribute.MethodOrPropertyName">
+            <summary>Gets the name of method or property (according to facade member type) of <see cref="P:Frontend.Vanilla.Core.Reflection.Facade.DelegateToAttribute.ServiceType" /> to which the execution should be delegated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.Facade.DelegateToAttribute.#ctor(System.Type,System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.GenericInvocationExtensions">
+            <summary>
+            Provides easy way to call a generic method when you have generic arguments avilable only in the runtime stored in variables.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.CompiledMethod">
+            <summary>Universal method which was created by compiling a <see cref="T:System.Reflection.MethodInfo" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.MethodCompilationExtensions">
+            <summary>
+            Helper for compiling a method obtained via reflection to a delegate using compiled expressions because their perfomance is close to compiled code.
+            See http://www.palmmedia.de/Blog/2012/2/4/reflection-vs-compiled-expressions-vs-delegates-performance-comparision.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.MethodCompilationExtensions.Compile(System.Reflection.MethodInfo)">
+            <summary>Compiles to universal delegate. Supports static methods too.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.MethodCompilationExtensions.Compile``1(System.Reflection.MethodInfo)">
+            <summary>Compiles to specified delegate.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.ParentTypeFirstOrderer">
+            <summary>
+            Orders given types so that base types will go before inherited ones.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyBuilder">
+            <summary>
+            Defines how proxy class should be built.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.MethodCSharpGenerator">
+            <summary>
+            Helper for generating C# code of a method.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.RoslynProxy">
+            <summary>
+            Generates proxy class based on instructions from provided <see cref="T:Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyBuilder" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyCodeGenerator">
+            <summary>
+            Generates C# code of proxy class based on given proxy builder.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyCompiler">
+            <summary>
+            Compiles given code of a type to dynamic assembly in memory and loads it.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.Proxy.RoslynProxyQueue">
+            <summary>
+            Compiles given source codes of multiple types to a dynamic assembly in memory and loads them.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.Proxy.RoslynProxyQueue.#ctor(Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyCompiler,Frontend.Vanilla.Core.Reflection.Proxy.IRoslynProxyCodeGenerator)">
+            <summary>
+            Compiles given source codes of multiple types to a dynamic assembly in memory and loads them.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Reflection.TypeExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Type" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.TypeExtensions.IsFinalClass(System.Type)">
+            <summary>Checks if the type is final non-abstract class which can be instantiated.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Reflection.TypeExtensions.GetDefaultValue(System.Type)">
+            <summary>
+            Gets null for reference types and default value for value types.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter">
+            <summary>
+            Formats given object as REST content thus (de)serializing it array of bytes.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.ContentType">
+            <summary>Gets the content type header of serialized REST content.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Serialize(System.Object)">
+            <summary>Serializes given content as array of bytes.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>Deserializes a content of requested type from given array of bytes.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter">
+            <summary>
+            (De)serializes an object to JSON using Newtonsoft serializer to be used as REST content.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter.Default">
+            <summary>
+            Gets the instance with default JSON settings.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter.#ctor(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter.ContentType">
+            <summary>See <see cref="P:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.ContentType" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>See <see cref="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Deserialize(System.Byte[],System.Type)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.NewtonsoftJsonFormatter.Serialize(System.Object)">
+            <summary>See <see cref="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Serialize(System.Object)" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.Formatters.StringFormatter">
+            <summary>
+            (De)serializes a string to be used as REST content.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Rest.Formatters.StringFormatter.Singleton">
+            <summary>Gets the instance of this class.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.Formatters.StringFormatter.ContentType">
+            <summary>See <see cref="P:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.ContentType" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.StringFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>See <see cref="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Deserialize(System.Byte[],System.Type)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.StringFormatter.Serialize(System.Object)">
+            <summary>See <see cref="M:Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter.Serialize(System.Object)" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.Formatters.UrlEncodedFormFormatter">
+            <summary>
+            (De)serializes an object to url encoded form.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.Rest.Formatters.UrlEncodedFormFormatter.Singleton">
+            <summary>Gets the instance of this class.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.Formatters.UrlEncodedFormFormatter.ContentType">
+            <summary>Gets the content type header of serialized REST content.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.UrlEncodedFormFormatter.Serialize(System.Object)">
+            <summary>Serializes given content as array of bytes.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.Formatters.UrlEncodedFormFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>
+            Deserializes a content of requested type from given array of bytes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.HttpHeaders">
+            <summary>
+            Constants with standard HTTP request and response headers.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.IRestClient">
+            <summary>
+            Central class for executing <see cref="T:Frontend.Vanilla.Core.Rest.RestRequest" />.
+            On the contrary to <see cref="T:System.Net.HttpWebRequest" />, response is returned for any <see cref="T:System.Net.HttpStatusCode" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.IRestClient.Execute(Frontend.Vanilla.Core.Rest.RestRequest)">
+            <summary>Executes given REST request synchronously.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.IRestClient.ExecuteAsync(Frontend.Vanilla.Core.Rest.RestRequest,System.Threading.CancellationToken)">
+            <summary>Executes given REST request asynchronously.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.IRestClient.ExecuteAsync(Frontend.Vanilla.Core.System.ExecutionMode,Frontend.Vanilla.Core.Rest.RestRequest)">
+            <summary>Executes given REST request according to given mode.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestClientBase.#ctor">
+            <summary>Just for easier testing.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestHeaders">
+            <summary>
+            The collection of HTTP headers usable with <see cref="T:Frontend.Vanilla.Core.Rest.IRestClient" />.
+            Adds custom validation on top of regular dictionary.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestHeaders.ValidateKey(System.String)">
+            <summary>Validates given header name.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestHeaders.ToString">
+            <summary>Returns concatenated string containing all header name and values.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestRequestHeaders">
+            <summary>
+            The collection of HTTP request headers usable with <see cref="T:Frontend.Vanilla.Core.Rest.RestRequest" />.
+            Adds custom validation on top of regular dictionary.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequestHeaders.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequestHeaders.ValidateKey(System.String)">
+            <summary>Validates given header name.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestResponseHeaders">
+            <summary>
+            The collection of HTTP response headers usable with <see cref="T:Frontend.Vanilla.Core.Rest.RestResponse" />.
+            Adds custom validation on top of regular dictionary.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestResponseHeaders.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestNetworkException">
+            <summary>
+                Represents network error experienced by <see cref="T:Frontend.Vanilla.Core.Rest.IRestClient" /> when establishing the connection thus no HTTP
+                REST response is available.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestNetworkException.#ctor(System.String,System.Exception)">
+            <summary>
+                Represents network error experienced by <see cref="T:Frontend.Vanilla.Core.Rest.IRestClient" /> when establishing the connection thus no HTTP
+                REST response is available.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestRequest">
+            <summary>
+            Configurable REST request with all data required to execute it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequest.#ctor(Frontend.Vanilla.Core.System.Uris.HttpUri,System.Net.Http.HttpMethod)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.Url">
+            <summary>Gets or sets request URL.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.Method">
+            <summary>Gets or sets HTTP method.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.Headers">
+            <summary>Gets HTTP headers.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.Content">
+            <summary>Gets or sets content which should be posted.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.Timeout">
+            <summary>Gets or sets timeout. Default: 100 seconds.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequest.FollowRedirects">
+            <summary>Gets or sets a value that indicates whether the handler should follow redirection responses. Default: true.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequest.ToString">
+            <summary>Returns method with URL e.g. "GET https://en.wikipedia.org/wiki/Batman".</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestRequestContent">
+            <summary>
+            Defines content of REST requested to be serialized and posted to the server.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequestContent.Bytes">
+            <summary>
+            Gets the bytes which should be posted to the service.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequestContent.Value">
+            <summary>
+            Gets the value which was serialized to <see cref="P:Frontend.Vanilla.Core.Rest.RestRequestContent.Bytes" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestRequestContent.Formatter">
+            <summary>
+            Gets the formatter used to serialize <see cref="P:Frontend.Vanilla.Core.Rest.RestRequestContent.Value" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequestContent.#ctor(System.Object,Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter)">
+            <summary>
+            Creates new instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestRequestConverter">
+            <summary>
+            Converts <see cref="T:Frontend.Vanilla.Core.Rest.RestRequest" /> to <see cref="T:System.Net.Http.HttpRequestMessage" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestRequestConverter.Convert(Frontend.Vanilla.Core.Rest.RestRequest)">
+            <summary>Right now it doesn't validate header values except of newline validation. This would be beneficial, example
+            httpRequestMessage.Content.Headers.ContentType = new MediaTypeHeaderValue(request.Content.Formatter.ContentType);.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestResponse">
+            <summary>
+            REST response with all data received from a service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestResponse.#ctor(Frontend.Vanilla.Core.Rest.RestRequest)">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.StatusCode">
+            <summary>
+            Gets or sets the HTTP status code.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.StatusDescription">
+            <summary>Gets or sets the status description. If set to null or whitespace string, <see cref="P:Frontend.Vanilla.Core.Rest.RestResponse.StatusCode" /> is used instead. That's also default value.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.Request">
+            <summary>Gets or sets the request which led to this response.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.Headers">
+            <summary>Gets the headers returned by the server.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.Content">
+            <summary>Gets or sets the content bytes.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestResponse.Deserialize``1(Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter)">
+            <summary>Strongly-typed version of <see cref="M:Frontend.Vanilla.Core.Rest.RestResponse.Deserialize(System.Type,Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestResponse.Deserialize(System.Type,Frontend.Vanilla.Core.Rest.Formatters.IRestFormatter)">
+            <summary>Deserializes <see cref="P:Frontend.Vanilla.Core.Rest.RestResponse.Content" /> to requested type using given formatter. Throws if <c>null</c> is deserialized.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Rest.RestResponse.ExecutionDuration">
+            <summary>Gets or sets the execution duration.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.RestResponse.ToString">
+            <summary>Returns status code with its description e.g. "500 InternalServerError".</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.RestResponseConverter">
+            <summary>
+            Converts <see cref="T:System.Net.Http.HttpResponseMessage" /> to <see cref="T:Frontend.Vanilla.Core.Rest.RestResponse" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Rest.TracedRestClient">
+            <summary>
+            Records all details of REST request execution for tracing purposes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Rest.TracedRestClient.#ctor(Frontend.Vanilla.Core.Rest.RestClientBase,Frontend.Vanilla.Core.Diagnostics.ITraceRecorder,System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Records all details of REST request execution for tracing purposes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Enum`1">
+            <summary>
+            Provides strongly-typed utilities for enum types.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.EnumExtensions">
+            <summary>
+            Provides extension methods for enumerations.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.EnumExtensions.IsDefinedEnum``1(``0)">
+            <summary>Returns an indication whether given value exists in enumeration type.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.EnumExtensions.IsCombinationOfDefinedFlags``1(``0)">
+            <summary>Determines if given value is combination of flags defined in particular enumeration type.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ExceptionExtensions">
+            <summary>
+            Extension methods for an <see cref="T:System.Exception" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExceptionExtensions.GetMessageIncludingInner(System.Exception)">
+            <summary>
+            Constructs full error message including messages from inner exceptions.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExceptionExtensions.ThrowException(System.Runtime.ExceptionServices.ExceptionDispatchInfo)">
+            <summary>Returns dummy exception b/c ExceptionDispatchInfo.Throw is void.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ExecutionMode">
+            <summary>
+            Token to indicate whether the method should be executed synchronously or asynchronously
+            according to existence of <see cref="P:Frontend.Vanilla.Core.System.ExecutionMode.AsyncCancellationToken" />.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.ExecutionMode.Sync">
+            <summary>Gets the default token which instructs synchronous execution.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.Async(System.Threading.CancellationToken)">
+            <summary>Creates a token which instructs asynchronous execution with given <see cref="T:System.Threading.CancellationToken" />.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.ExecutionMode.AsyncCancellationToken">
+            <summary>Gets the token.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.Equals(System.Object)">
+            <summary>See <see cref="M:System.Object.Equals(System.Object)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.Equals(Frontend.Vanilla.Core.System.ExecutionMode)">
+            <summary>See <see cref="M:System.IEquatable`1.Equals(`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.GetHashCode">
+            <summary>See <see cref="M:System.Object.GetHashCode" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.ToString">
+            <summary>See <see cref="M:System.Object.ToString" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.ExecuteSync``1(System.Threading.Tasks.Task{``0},System.Boolean)">
+            <summary>
+            Executes task synchronously and gets the result.
+            Correctly extracts exception if any, not wrapping them to <see cref="T:System.AggregateException" />.
+            This is meant to be used only on tasks according to <see cref="F:Frontend.Vanilla.Core.System.ExecutionMode.Sync" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.ExecuteSync(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Executes task synchronously and gets the result.
+            Correctly extracts exception if any, not wrapping them to <see cref="T:System.AggregateException" />.
+            This is meant to be used only on tasks according to <see cref="F:Frontend.Vanilla.Core.System.ExecutionMode.Sync" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ExecutionMode.ExecuteSync``1(System.Func{Frontend.Vanilla.Core.System.ExecutionMode,System.Threading.Tasks.Task{``0}},System.Boolean)">
+            <summary>Executes task synhrounusly and returns result.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ExecutionModeExtensions">
+            <summary>
+            Extension methods to add <see cref="T:Frontend.Vanilla.Core.System.ExecutionMode" /> support to <see cref="T:System.Data.Common.DbConnection" /> and <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ExecutionModeSemaphore">
+            <summary>
+            Detects async-sync deadlock in addition to underlying <see cref="T:System.Threading.SemaphoreSlim" />:
+            1) Given a single thread, execute multiple operations in parallel e.g. <see cref="M:System.Threading.Tasks.Task.WhenAll(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})" />.
+            2) First operation is <see cref="M:Frontend.Vanilla.Core.System.ExecutionMode.Async(System.Threading.CancellationToken)" />, acquires the semaphore then on await suspends its execution b/c it's real async.
+            3) Second operation is <see cref="F:Frontend.Vanilla.Core.System.ExecutionMode.Sync" />, it waits for the semaphore but only thread that can release it is this one hence deadlock.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.HashCode">
+            <summary>
+            Uses ValueTuple for combining hash codes.
+            Inspired by <see href="https://docs.microsoft.com/en-us/dotnet/api/system.hashcode?view=netcore-2.2" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.LockExtensions">
+            <summary>
+            Extension methods for locks and semaphores.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.ObjectExtensions.If``1(``0,System.Boolean,System.Action{``0})">
+            <summary>Generic helper for fluent syntax.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.RandomGenerator">
+            <summary>
+            Thread-safe random number generator.
+            Useful when you need only few numbers from multiple places/threads.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.RandomGenerator.GetDouble">
+            <summary>Returns a random floating-point number that is greater than or equal to 0.0, and less than 1.0 in thread-safe way.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.RandomGenerator.GetInt32">
+            <summary>Returns a non-negative random integer in thread-safe way.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.RandomGenerator.GetInt32(System.Int32)">
+            <summary>Returns a non-negative random integer that is less than the specified maximum in thread-safe way.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.RandomGenerator.Get``1">
+            <summary>Returns random defined enum value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.RandomGenerator.GetBoolean">
+            <summary>Returns random boolean value.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ReferenceEqualityComparer">
+            <summary>
+            Determines object equality based on their reference equality.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ReferenceTypeEqualityComparer`1">
+            <summary>
+            Base class for equality comparers of reference types.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.ComparableReferenceTypeEqualityComparer`1">
+            <summary>
+            Base class for equality and common comparers of reference types.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.TaskExtensions.NoContextRestore``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            For low-level operations (e.g. I/O operations) that don't need SynchronizationContext (usually HttpContext)
+            to be restored for the rest of an async method after await finishes. This improves the performance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.TaskExtensions.NoContextRestore(System.Threading.Tasks.Task)">
+            <summary>See <see cref="M:Frontend.Vanilla.Core.System.TaskExtensions.NoContextRestore``1(System.Threading.Tasks.Task{``0})" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.DefaultResultTask`1">
+            <summary>Singleton with cached completed task with null value.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.Identifier">
+            <summary>
+            A string which complies to requirements for an identifier in a programming language e.g. C# or JavaScript.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.Identifier.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+            <exception cref="T:System.ArgumentException">If given string isn't valid according to restrictions of this class.</exception>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.IndentedStringBuilder">
+            <summary>
+            Wraps <see cref="T:System.Text.StringBuilder" /> and indents all lines accordingly. Useful for code generation.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.IndentedStringBuilder.AppendLines(System.String)">
+            <summary>Useful to merge existing multiline code.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.RequiredString">
+            <summary>
+            Wrapper for a string which can't be null, empty nor white-space.
+            Used to express contract of an interfaced service explicitly, remove input validations and enforce exceptions early in consumers' unit tests if they pass invalid value.
+            This will be especially useful with C# 8 which supports non-nullable references -> valid input guaranteed almost always.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.Text.RequiredString.Value">
+            <summary>Gets the string value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+            <exception cref="T:System.ArgumentException">If given string isn't valid according to restrictions of this class.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.#ctor(System.String,System.Func{System.String,System.String},System.String)">
+            <summary>Used by inherited classes to execute the validation only once and with comprehensive error message.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.op_Implicit(System.String)~Frontend.Vanilla.Core.System.Text.RequiredString">
+            <summary>Creates a new instance from given string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.op_Implicit(Frontend.Vanilla.Core.System.Text.RequiredString)~System.String">
+            <summary>Converts this instance to regular string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.op_Implicit(Frontend.Vanilla.Core.System.Text.RequiredString)~Microsoft.Extensions.Primitives.StringValues">
+            <summary>Converts this instance to <see cref="T:Microsoft.Extensions.Primitives.StringValues" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.ToString">
+            <summary>Converts this instance to regular string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.Equals(System.String)">
+            <summary>Determines whether <see langword="this" /> string is equal to the given string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.EqualsIgnoreCase(System.String)">
+            <summary>Determines whether <see langword="this" /> string is equal to the given string using <see cref="F:System.StringComparison.OrdinalIgnoreCase" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.Equals(System.Object)">
+            <summary>Determines whether <see langword="this" /> string is equal to the given object.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredString.GetHashCode">
+            <summary>See <see cref="M:System.Object.GetHashCode" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.RequiredStringComparer">
+            <summary>
+            Comparer for <see cref="T:Frontend.Vanilla.Core.System.Text.RequiredString" /> based on <see cref="T:System.StringComparer" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.Text.RequiredStringComparer.OrdinalIgnoreCase">
+            <summary>Gets comparer based on <see cref="P:System.StringComparer.OrdinalIgnoreCase" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredStringComparer.Compare(Frontend.Vanilla.Core.System.Text.RequiredString,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>See <see cref="M:System.Collections.Generic.IComparer`1.Compare(`0,`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredStringComparer.Equals(Frontend.Vanilla.Core.System.Text.RequiredString,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>See <see cref="M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredStringComparer.GetHashCode(Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>See <see cref="M:System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.RequiredStringComparer.AsTrimmed">
+            <summary>Simple cast to ease usage with LINQ.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.StringBuilderExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Text.StringBuilder" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.StringExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.String" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.RemovePrefix(System.String,System.String,System.StringComparison)">
+            <summary>Removes the specified <paramref name="prefix" /> from this string if exists.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.RemoveSuffix(System.String,System.String,System.StringComparison)">
+            <summary>Removes the specified <paramref name="suffix" /> from this string if exists.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.RemoveAll(System.String,System.String,System.StringComparison)">
+            <summary>Removes all occurrences of all <paramref name="substr" /> within this string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.ToCamelCase(System.String)">
+            <summary>Converts this string to camel cased one. Implementation corresponds to the one from Newtonsoft.JSON.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.WhiteSpaceToNull(System.String)">
+            <summary>Converts null or whitespace value to null. Otherwise returns original value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.EncodeToBytes(System.String,System.Text.Encoding)">
+            <summary>Encodes all the characters in this string into a sequence of bytes using provided <paramref name="encoding" /> or UTF-8.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.DecodeToString(System.Byte[],System.Text.Encoding)">
+            <summary>Decodes this byte array into a string using provided <paramref name="encoding" /> or UTF-8.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>Similar to <see cref="M:System.String.Contains(System.String)" /> but with comparison parameter.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.ToComparer(System.StringComparison)">
+            <summary>Converts <see cref="T:System.StringComparison" /> to <see cref="T:System.StringComparer" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.SubstringWhile(System.String,System.Int32,System.Func{System.Char,System.Boolean})">
+            <summary>Creates a substring from all subsequent chars from start index that satisfy given condition.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.AsTrimmedRequired(System.String)">
+            <summary>Creates a new <see cref="T:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString" /> so the input string must be valid accordingly.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.AsRequired(System.String)">
+            <summary>Creates a new <see cref="T:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString" /> so the input string must be valid accordingly.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.PatternReplace(System.String,System.String,System.String)">
+            <summary> Replaces in string based on regex pattern. </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary> Returns truncated string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.StringExtensions.SplitPath(System.String,System.Boolean)">
+            <summary> Returns separated strings for path and query. </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.StringIgnoreCaseExtensions">
+            <summary>
+            Ordinal case-insensitive shortcuts b/c used very often.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString">
+            <summary>
+            Requires that string is trimmed in addition to <see cref="T:Frontend.Vanilla.Core.System.Text.RequiredString" />.
+            Used to express contract of an interfaced service explicitly, remove input validations and enforce exceptions early in consumers' unit tests if they pass invalid value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+            <exception cref="T:System.ArgumentException">If given string isn't valid according to restrictions of this class.</exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString.#ctor(System.String,System.Func{System.String,System.String},System.String)">
+            <summary>Used by inherited classes to execute the validation only once and with comprehensive error message.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString.op_Implicit(System.String)~Frontend.Vanilla.Core.System.Text.TrimmedRequiredString">
+            <summary>Creates a new instance from given string.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.TimeSpanExtensions">
+            <summary>
+            Extensions methods for <see cref="T:System.TimeSpan" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.TryObjectExtensions">
+            <summary>
+            Generic convenience extension methods for safe code execution.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.TryObjectExtensions.Try``2(``0,System.Func{``0,``1},Microsoft.Extensions.Logging.ILogger,System.Action)">
+            <summary>
+            Calls <paramref name="getValue" /> on <paramref name="service" />.
+            If it fails then the exception is written to <paramref name="log" /> and default value of <typeparamref name="TResult" /> is returned.
+            Parameter <paramref name="dummy" /> is necessary for compiler to distinguish this frim async overload.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.TryObjectExtensions.TryAsync``2(``0,System.Func{``0,System.Threading.Tasks.Task{``1}},Microsoft.Extensions.Logging.ILogger,``1)">
+            <summary>
+            Asynchronously calls <paramref name="getValueAsync" /> on <paramref name="service" />.
+            If it fails then the exception is written to <paramref name="log" /> and <paramref name="failedResult" /> is returned.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.TryObjectExtensions.TryAsync``2(``0,System.Func{``0,System.Threading.Tasks.Task{``1}},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Asynchronously calls <paramref name="getValueAsync" /> on <paramref name="service" />.
+            If it fails then the exception is written to <paramref name="log" /> and <see langword="null" /> is returned.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.HttpUri">
+            <summary>
+            Represents an absolute URL with scheme http or https.
+            Used to express contract of an interfaced service explicitly, remove input validations and enforce exceptions early in consumers' unit tests if they pass invalid value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.HttpUri.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.HttpUri.#ctor(System.Uri)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.HttpUri.TryCreate(System.String,Frontend.Vanilla.Core.System.Uris.HttpUri@)">
+            <summary>Tries to create a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.PathRelativeUri">
+            <summary>
+            Represents a path-relative URI meaning it's not rooted e.g. 'path/file.txt' but '/rooted.txt' would be invalid.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.PathRelativeUri.#ctor(System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.PathRelativeUri.#ctor(System.Uri)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling">
+            <summary>
+            Strategy to provide different options when adding query string values.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling.Merge">
+             <summary>
+             Use values from both original query string and new values.
+            
+             Example:
+             Original: ?a=1&amp;b=2
+             Add: (a, 3)
+             Result: ?a=1&amp;a=3&amp;b=2
+             </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling.PreferNew">
+             <summary>
+             Use values from new values.
+            
+             Example:
+             Original: ?a=1&amp;b=2
+             Add: (a, 3)
+             Result: ?a=3&amp;b=2
+             </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling.PreferOriginal">
+             <summary>
+             Use values from new values.
+            
+             Example:
+             Original: ?a=1&amp;b=2
+             Add: (a, 3)
+             Result: ?a=1&amp;b=2
+             </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.QueryUtil">
+            <summary>
+            Utility for working with query string. Independent from full .NET framework or external NuGet package.
+            Inspired by Microsoft.AspNetCore.WebUtilities.QueryHelpers.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions">
+            <summary>
+            Extensions of <see cref="T:System.UriBuilder" /> for fluent building of a Uri.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AppendPathSegment(System.UriBuilder,System.String)">
+            <summary>
+            Appends given path segment to the URL being constructed.
+            Trailing white-spaces are removed. If you want to keep them, append a slash or encode them.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AppendTrailingSlash(System.UriBuilder)">
+            <summary>Appends trailing slash (if not already present) to the URL being constructed. It eases combination with other relative URLs.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParametersIfValueNotWhiteSpace(System.UriBuilder,System.ValueTuple{System.String,System.String}[])">
+            <summary>Adds the query string parameters to the URL being constructed. Parameter is added only if its value is not null nor white-space.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParametersIfValueNotWhiteSpace(System.UriBuilder,Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling,System.ValueTuple{System.String,System.String}[])">
+            <summary>Adds the query string parameters to the URL being constructed. Parameter is added only if its value is not null nor white-space.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParametersIfValueNotWhiteSpace(System.UriBuilder,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling)">
+            <summary>Adds the query string parameters to the URL being constructed. Parameter is added only if its value is not null nor white-space.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParameters(System.UriBuilder,System.ValueTuple{System.String,System.String}[])">
+            <summary>Adds the query string parameters to the URL being constructed.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParameters(System.UriBuilder,Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling,System.ValueTuple{System.String,System.String}[])">
+            <summary>Adds the query string parameters to the URL being constructed.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParameters(System.UriBuilder,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling)">
+            <summary>Adds the query string parameters to the URL being constructed.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.AddQueryParameters(System.UriBuilder,System.Collections.Specialized.NameValueCollection,Frontend.Vanilla.Core.System.Uris.QueryStringDuplicateHandling)">
+            <summary>Adds the query string parameters to the URL being constructed.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.If(System.UriBuilder,System.Boolean,System.Action{System.UriBuilder})">
+            <summary>Configures the builder if given condition is satisfied. Convenient for fluent syntax.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.GetRelativeUri(System.UriBuilder)">
+            <summary>Gets relative URL thus omitting left part (scheme, host...).</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.GetHttpUri(System.UriBuilder)">
+            <summary>Constructs HTTP URL from given builder.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriBuilderExtensions.ChangeSchemeWithPort(System.UriBuilder,System.String,System.Int32)">
+            <summary>Changes scheme and also port which is set to default one according to scheme if not provided explicitly.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Uris.UriExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Uri" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriExtensions.HasEqualComponents(System.Uri,System.Uri,System.UriComponents,System.UriFormat,System.StringComparison)">
+            <summary>Determines if two URIs have equal components using the specified comparison rules.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriExtensions.IsHttpHost(System.Uri)">
+            <summary>Determines if specified URI is an absolute HTTP(s) URL which specifies host of some service.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriExtensions.IsHttp(System.Uri)">
+            <summary>Determines if specified URI is an absolute HTTP(s) URL.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriExtensions.BuildNew(Frontend.Vanilla.Core.System.Uris.HttpUri,System.Action{System.UriBuilder})">
+            <summary>Clones given HTTP URL and configures this new one using specified func.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Uris.UriExtensions.HideSensitiveQueryParamValue(Frontend.Vanilla.Core.System.Uris.HttpUri,System.String)">
+            <summary>Replaces value of given key with asterisks.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.UtcDateTime">
+            <summary>
+            Requires that datetime has <see cref="P:System.DateTime.Kind" /> is <see cref="F:System.DateTimeKind.Utc" />.
+            Used to express contract of an interfaced service explicitly, remove input validations and enforce exceptions early in consumers' unit tests if they pass invalid value.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.UtcDateTime.UnixEpoch">
+            <summary>Defines the point in time when Unix time is equal to 0 which is January 1, 1970 00:00:00 UTC.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.UtcDateTime.Value">
+            <summary>Gets the value.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.UtcDateTime.ValueWithOffset">
+            <summary>Gets the value with UTC offset.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.#ctor(System.DateTime)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.#ctor(System.DateTimeOffset)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.ToString">
+            <summary>Gets the string representation in round-trip ISO 8601 format which is best suited for technical usage e.g. exchange between systems.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.Equals(System.Object)">
+            <summary>See <see cref="M:System.Object.Equals(System.Object)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.GetHashCode">
+            <summary>See <see cref="M:System.Object.GetHashCode" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.Equals(Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>See <see cref="M:System.IEquatable`1.Equals(`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.CompareTo(Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>See <see cref="M:System.IComparable`1.CompareTo(`0)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.ConvertTo(System.TimeZoneInfo)">
+            <summary>Converts given time to the time in a particular time zone.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Core.System.UtcDateTime.Format">
+            <summary>Gets standard <see cref="T:System.DateTime" /> format string which is best suited for technical usage e.g. exchange between systems.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.TryParse(System.String)">
+            <summary>Parses value from given string according to round-trip ISO 8601 format which is best suited for technical usage e.g. exchange between systems.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_Addition(Frontend.Vanilla.Core.System.UtcDateTime,System.TimeSpan)">
+            <summary>Adds a specified time interval to a specified date and time, yielding a new date and time.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_Subtraction(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Subtracts a specified date and time from another specified date and time and returns a time interval.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_Subtraction(Frontend.Vanilla.Core.System.UtcDateTime,System.TimeSpan)">
+            <summary>Subtracts a specified time interval from a specified date and time and returns a new date and time.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_Equality(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether two specified instances of DateTime are equal.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_Inequality(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether two specified instances of DateTime are not equal.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_LessThan(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether one specified DateTime is earlier than another specified DateTime.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_LessThanOrEqual(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_GreaterThan(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether one specified DateTime is later than another specified DateTime.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.UtcDateTime.op_GreaterThanOrEqual(Frontend.Vanilla.Core.System.UtcDateTime,Frontend.Vanilla.Core.System.UtcDateTime)">
+            <summary>Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.VanillaEnvironment">
+            <summary>
+            Provides information about current environment.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.System.Wrapper`1">
+            <summary>
+            Simple value wrapper for general use.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.System.Wrapper`1.Value">
+            <summary>Gets wrapped value.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Wrapper`1.#ctor(`0)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Wrapper`1.op_Implicit(`0)~Frontend.Vanilla.Core.System.Wrapper{`0}">
+            <summary>Creates a <see cref="T:Frontend.Vanilla.Core.System.Wrapper`1" /> implicitly.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Wrapper`1.op_Implicit(Frontend.Vanilla.Core.System.Wrapper{`0})~`0">
+            <summary>Gets <see cref="P:Frontend.Vanilla.Core.System.Wrapper`1.Value" /> implicitly.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.System.Wrapper`1.ToString">
+            <summary>Returns info about <see cref="P:Frontend.Vanilla.Core.System.Wrapper`1.Value" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.Background.IBackgroundOperation">
+            <summary>
+            Captures details of the operation to be executed on background in strongly-typed manner.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.Background.IBackgroundWorker">
+            <summary>
+            Runs background task with properly passed current context.
+            Also this eases unit testing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.Background.CultureBackgroundWorkInitializer">
+            <summary>
+            Passes culture to background operation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.Background.IBackgroundWorkInitializer">
+            <summary>
+            Captures some important part of parent context and sets it up in a new thread for background work run by <see cref="T:Frontend.Vanilla.Core.Time.Background.IBackgroundWorker" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.Background.UserBackgroundWorkInitializer">
+            <summary>
+            Sets explicit anonymous user for background operation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.ICancellationHelper">
+            <summary>
+            Helps with cancellation in unit tests because <see cref="T:System.Threading.CancellationTokenSource" /> uses a timer
+            which takes actual time to get called and sometimes it even doesn't get called at all because it runs on background esp. on overlaoded machine.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.IClock">
+            <summary>
+            Convenient way how to get current system time and user-local timezone offset and be able to mock it.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Time.IClock.UtcNow">
+            <summary>Gets current system time in UTC.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Time.IClock.UserLocalNow">
+            <summary>Gets <see cref="P:Frontend.Vanilla.Core.Time.IClock.UtcNow" /> converted to current user's timezone offset <see cref="T:System.DateTimeOffset"/>.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Core.Time.IClock.UnixTimeMilliseconds">
+            <summary>Gets the number of milliseconds that have elapsed since 1970-01-01 UTC.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Time.IClock.StartNewStopwatch">
+            <summary>Starts a new stopwatch and returns func which gets elapsed time.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Time.ITimerFactory">
+            <summary>
+            Factory for timer which makes unit testing easier.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Utils.ContentTypes">
+            <summary>
+            Constants with Internet content types.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Utils.Guard">
+            <summary>
+            A helper class containing for parameter checking.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotNull``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentNullException" /> an exception if <paramref name="value" /> is null.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotEmpty(System.String,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentNullException" /> if <paramref name="value" /> is null or empty string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotWhiteSpace(System.String,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or white-space string.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.TrimmedRequired(System.String,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or withespace.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotEmpty``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if collection <paramref name="value" /> is null or does not contain any item.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotNullItems``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if collection <paramref name="value" /> is null or contains null item.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotEmptyNorNullItems``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if collection <paramref name="value" /> is null or empty or contains null item.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotNullValues``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if dictionary <paramref name="value" /> is null or contains null in its <see cref="P:System.Collections.IDictionary.Values" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.NotEmptyNorNullValues``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if dictionary <paramref name="value" /> is null or empty or contains null in its <see cref="P:System.Collections.IDictionary.Values" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.Greater``1(System.Nullable{``0},``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentOutOfRangeException" /> if <paramref name="value" /> is not greater than the supplied boundary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.GreaterOrEqual``1(System.Nullable{``0},``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentOutOfRangeException" /> if <paramref name="value" /> is not greater than nor equal to the supplied boundary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.Less``1(System.Nullable{``0},``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentOutOfRangeException" /> if <paramref name="value" /> is not less than the supplied boundary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.LessOrEqual``1(System.Nullable{``0},``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentOutOfRangeException" /> if <paramref name="value" /> is not less than nor equal to the supplied boundary.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.AbsoluteUri(System.Uri,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or not an absolute <see cref="T:System.Uri" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.DefinedEnum``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is not a defined enum value of <typeparamref name="T" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.CombinationOfDefinedFlags``1(``0,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is not a combination of defined values of [Flags] enum <typeparamref name="T" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.AssignableTo``1(System.Type,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or not a type assignable to <typeparamref name="T" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.Interface(System.Type,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or not an interface.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.FinalClass(System.Type,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is null or not <see cref="M:Frontend.Vanilla.Core.Reflection.TypeExtensions.IsFinalClass(System.Type)" />.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.Guard.Requires(System.Boolean,System.String,System.String)">
+            <summary>Throws <see cref="T:System.ArgumentException" /> if <paramref name="condition" /> is not met.</summary>
+            <exception cref="T:System.ArgumentException">Thrown if the condition is not met.</exception>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Utils.IHashAlgorithm`1">
+            <summary>
+            Wraps particular <see cref="T:System.Security.Cryptography.HashAlgorithm" /> to use it in more convenient way.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.IHashAlgorithm`1.CalculateHash(System.Byte[])">
+            <summary>
+            Returns a string representing the hash value of a bytes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Utils.MessageUtil">
+            <summary>
+            Utility for nice formatting of objects written to a diagnostic message e.g. exception, log.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.MessageUtil.Dump``1(``0)">
+            <summary>Formats the value according to its type to be used in a diagnostic message e.g. exception, log.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Utils.VanillaOrdering.OrderVanillaFirst``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Puts items from Vanilla first, then the rest so that product developers can override logic (usually values) those from Vanilla.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.Abstract.CollectionValidationAttribute">
+            <summary>
+            Base class for validation of collections.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.Abstract.DictionaryValidationAttribute">
+            <summary>
+            Base class for validation of dictionaries.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.Abstract.GenericValidationAttribute">
+            <summary>
+            Base class for strongly-typed validation of generic objects.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.Abstract.RequiredHelper">
+            <summary>
+            Helper related to <see cref="T:System.ComponentModel.DataAnnotations.RequiredAttribute" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.Abstract.ValidationAttributeBase">
+            <summary>
+            Base class to reduce code duplication. It constructs error messages based on provided format.
+            Value is not validated if it's null or white-space string because that's the task of <see cref="T:System.ComponentModel.DataAnnotations.RequiredAttribute" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.DefinedEnumValueAttribute">
+            <summary>
+            Validates that the value of an enum property is within defined values of particular enum type.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.HttpHostUrlAttribute">
+            <summary>
+            Verifies that the value of a property is an absolute HTTP(S) URI with no query nor fragment hence suitable for constructing child URIs.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.MinimumAttribute">
+            <summary>
+            Validates the value to be greater than or equal to predefined minimum.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.MinimumTimeSpanAttribute">
+            <summary>
+            Implementation of <see cref="T:Frontend.Vanilla.Core.Validation.Annotations.MinimumAttribute" /> for validation of timespan specified as string constant for the attribute decorating a property.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Validation.Annotations.MinimumTimeSpanAttribute.#ctor(System.String)">
+            <summary>
+            Implementation of <see cref="T:Frontend.Vanilla.Core.Validation.Annotations.MinimumAttribute" /> for validation of timespan specified as string constant for the attribute decorating a property.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.NotEmptyCollectionAttribute">
+            <summary>
+            Validates that property of any type implementing <see cref="T:System.Collections.IEnumerable" /> is not an empty collection.
+            It still can be <c>null</c> to pass the validation. Can be used in combination with <see cref="T:System.ComponentModel.DataAnnotations.RequiredAttribute" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.NotEmptyNorWhiteSpaceAttribute">
+            <summary>
+            Verifies that value is not empty nor white-space string. However it can still be null.
+            This is usefull to avoid unnecessary trimming.
+            It doesn't make sense to use it together with RequiredAttribute which already checks null or white-space.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.RequiredItemsAttribute">
+            <summary>
+            Validates collection item to be not null or not white-space in case of strings.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.RequiredKeysAttribute">
+            <summary>
+            Validates dictionary string keys to be not white-space.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.RequiredStringAttribute">
+            <summary>
+            In addition to <see cref="T:System.ComponentModel.DataAnnotations.RequiredAttribute" /> specifies custom validation message
+            and provides static method for validation.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.RequiredValuesAttribute">
+            <summary>
+            Validates dictionary values to be not null or not white-space in case of strings.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.RootedPathAttribute">
+            <summary>
+            Verifies that the value of a property is rooted filesystem path.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.UniqueItemsAttribute">
+            <summary>
+            Validates collection member to contain only unique values thus no duplicates.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.Annotations.UniqueKeysAttribute">
+            <summary>
+            Validates dictionary string keys to be unique according to given comparison.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.Validation.Annotations.UniqueKeysAttribute.#ctor(System.StringComparison)">
+            <summary>
+            Validates dictionary string keys to be unique according to given comparison.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.ObjectValidator">
+            <summary>
+            Helper class to make validation provided by <see cref="T:System.ComponentModel.DataAnnotations.Validator" /> more seamless.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Validation.ValidationResultComparer">
+            <summary>
+            Determines equality of two instances by their <see cref="P:System.ComponentModel.DataAnnotations.ValidationResult.ErrorMessage" /> and <see cref="P:System.ComponentModel.DataAnnotations.ValidationResult.MemberNames" />
+            beceause by <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult" /> doesn't implement respective methods.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.VanillaCoreServices">
+            <summary>
+            Vanilla core services.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Core.VanillaCoreServices.AddVanillaCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Vanilla core services.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Core.Xml.XElementExtensions">
+            <summary>
+            Extensions methods for <see cref="T:System.Xml.Linq.XElement" />.
+            </summary>
+        </member>
+        <member name="T:Bwin.SCM.NCover.NCoverExcludeAttribute">
+            <summary>
+            Allows to exclude code from Bwin continuous integration coverage tools.
+            </summary>
+        </member>
+    </members>
+</doc>

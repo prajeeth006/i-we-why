@@ -1,0 +1,2 @@
+C:\dev\monorepo\backend\vanilla\Frontend.TestWeb.Host\wwwroot\files\test.txt
+wwwroot\files\test.txt

@@ -1,0 +1,73 @@
+{
+    "extends": ["stylelint-config-standard-scss"],
+    "plugins": ["stylelint-declaration-strict-value", "../../../dist/build/packages/design-system/stylelint-rules"],
+    "rules": {
+        "no-descending-specificity": null,
+        "value-keyword-case": null,
+        "declaration-no-important": true,
+        "selector-pseudo-element-no-unknown": [true, { "ignorePseudoElements": ["ng-deep"] }],
+        "selector-no-qualifying-type": null,
+        "selector-max-attribute": [0, { "ignoreAttributes": ["type", "disabled", "slot"] }],
+        "selector-pseudo-class-disallowed-list": [
+            "nth-child",
+            "nth-last-child",
+            "first-child",
+            "last-child",
+            "only-child",
+            "nth-of-type",
+            "nth-last-of-type",
+            "first-of-type",
+            "last-of-type",
+            "only-of-type",
+            "is",
+            "where",
+            "has"
+        ],
+        "selector-combinator-allowed-list": [" ", ">"],
+        "selector-attribute-operator-allowed-list": ["="],
+        "font-weight-notation": "numeric",
+        "scss/dollar-variable-pattern": "^[-a-zA-Z0-9_]+$",
+        "scss/at-extend-no-missing-placeholder": true,
+        "scss/at-if-no-null": true,
+        "scss/at-rule-no-unknown": true,
+        "scss/at-use-no-unnamespaced": true,
+        "scss/at-use-no-redundant-alias": true,
+        "scss/dimension-no-non-numeric-values": true,
+        "scss/function-calculation-no-interpolation": true,
+        "scss/function-no-unknown": true,
+        "scss/function-quote-no-quoted-strings-inside": true,
+        "scss/function-unquote-no-unquoted-strings-inside": true,
+        "scss/map-keys-quotes": "always",
+        "scss/property-no-unknown": true,
+        "scss/selector-no-redundant-nesting-selector": true,
+        "scss/selector-no-union-class-name": true,
+        "scss/no-duplicate-dollar-variables": true,
+        "scss/no-duplicate-mixins": true,
+        "scss/no-global-function-names": true,
+        "scale-unlimited/declaration-strict-value": [
+            [
+                "/color$/",
+                "fill",
+                "stroke",
+                "/^padding/",
+                "/^margin/",
+                "/width$/",
+                "/height$/",
+                "/size$/",
+                "/gap$/",
+                "/radius$/",
+                "/spacing$/",
+                "/size$/"
+            ],
+            {
+                "ignoreFunctions": false,
+                "ignoreValues": ["currentColor", "inherit"],
+                "expandShorthand": true
+            }
+        ],
+
+        "design-system/no-deprecated-variable": [{ "severity": "warning", "app": "design-system" }],
+        "design-system/no-deprecated-mixins": [{ "severity": "warning", "app": "design-system" }]
+    },
+    "ignoreFiles": ["generated/**"]
+}

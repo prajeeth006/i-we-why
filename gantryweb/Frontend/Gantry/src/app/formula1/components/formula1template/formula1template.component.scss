@@ -1,0 +1,139 @@
+@import './src/global-style/_all-variables.scss';
+
+.bet-markets {
+  display: flex;
+  margin-bottom: 8px;
+
+  @include breakpoint(multidesktop) {
+    margin-bottom: 4px;
+  }
+
+  .empt-space {
+    display: flex;
+    flex: 1;
+
+    + .market-betName {
+      min-width: 250px;
+      max-width: 250px;
+      margin-left: 0;
+
+      @include breakpoint(multidesktop) {
+        min-width: 134px;
+        max-width: 134px;
+        flex-basis: unset;
+        margin-left: 0;
+      }
+
+      + .market-betName {
+        margin-left: 40px;
+
+        @include breakpoint(multidesktop) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .market-betName,
+  .bet-markets-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    max-width: 180px;
+    margin-left: 70px;
+
+    @include breakpoint(multidesktop) {
+      min-width: 110px;
+      max-width: 110px;
+      flex-direction: unset;
+      margin-left: 10px;
+    }
+  }
+
+  &-list {
+    .betOdds {
+      display: flex;
+      min-width: 180px;
+      max-width: 180px;
+      background-color: $body-color-p2-light;
+      font-size: $font-list-md2-title;
+      height: 100%;
+      color: $color-p1-text;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(multidesktop) {
+        font-size: $font-list-title;
+        min-width: 90px;
+        max-width: 90px;
+      }
+    }
+  }
+
+  .market-betName {
+    white-space: nowrap;
+    padding-top: 10px;
+    font-size: $txt-formula-h;
+    color: $color-p1-text;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font-size;
+      padding-top: 5px;
+    }
+
+    &-status {
+      font-size: $font-list-title;
+      padding-top: 0;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-md-font2-size;
+      }
+    }
+  }
+}
+
+.item-block {
+  display: flex;
+  flex-direction: column;
+
+  .driver {
+    flex: 1;
+    font-size: $font-list-md2-title;
+    align-items: center;
+    justify-content: center;
+    color: $color-p1-text;
+    background-color: $white;
+    margin-right: 35px;
+    padding: 14px 20px;
+
+    @include breakpoint(multidesktop) {
+      font-size: $font-list-lg1-title;
+      margin-right: 25px;
+      padding: 4px 10px;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    + .bet-markets-list {
+      min-width: 250px;
+      max-width: 250px;
+      margin-left: 0;
+
+      @include breakpoint(multidesktop) {
+        min-width: 134px;
+        max-width: 134px;
+        flex-basis: unset;
+        margin-left: 0;
+      }
+
+      + .bet-markets-list {
+        margin-left: 40px;
+
+        @include breakpoint(multidesktop) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

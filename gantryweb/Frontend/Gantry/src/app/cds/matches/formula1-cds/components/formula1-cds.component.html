@@ -1,0 +1,60 @@
+<ng-container *ngIf="formula1CDSContent as vm">
+  <ng-container *ngIf="!(errorMessage$ | async)">
+    <ng-container *ngIf="vm?.racerList">
+      <gn-base-page>
+        <ng-container header-content>
+
+          <gn-banner [leadTitle]="vm?.sportName" [title]="vm?.title"
+            [subtitleLeft]="vm?.eventStartDate | sportEventDateFormat: vm?.content"
+            [subtitleRight]="vm?.competitionName">
+          </gn-banner>
+
+        </ng-container>
+        <ng-container body-content>
+          <div id="raceBet" class="bet-markets">
+            <div class="empt-space"></div>
+
+            <div id="raceBetName" class="market-betName" *ngFor="let raceBet of vm?.racerBetNameList | slice:0:4">
+
+              {{raceBet?.betName }}
+
+            </div>
+
+          </div>
+          <div id="racerList" class="item-block" *ngIf='vm.racerList'>
+
+            <div id="racerInfo" class="bet-markets" *ngFor="let racer of vm.racerList | slice:0:6">
+
+              <span id="racerName" class="driver">{{racer.driverName | trimSelectionNamePipe : nameLength }}</span>
+
+              <div id="rSelectionDetails" class="bet-markets-list" *ngFor="let bet of racer.selectionDetails">
+
+                <span id="betOdds" class="betOdds">{{bet?.betOdds| prepareEvsPipe}} </span>
+
+              </div>
+
+            </div>
+
+            <div id="downBetMarket" class="bet-markets ">
+              <div class="empt-space"></div>
+
+              <div span id="Text" class="market-betName market-betName-status"
+                *ngFor="let each of vm.winOrEachWayTextList | slice:0:4">
+                {{each?.winOrEachWayText }}
+              </div>
+
+            </div>
+          </div>
+        </ng-container>
+        <ng-container footer-content>
+
+          <gn-footer [leftSideText]="vm?.content?.contentParameters?.LeftStipulatedLine">
+          </gn-footer>
+
+        </ng-container>
+      </gn-base-page>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

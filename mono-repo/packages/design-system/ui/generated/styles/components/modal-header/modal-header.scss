@@ -1,0 +1,32 @@
+@mixin dragger {
+    --ds-modal-header-color-dragger: var(--semantic-color-on-surface-subtle);
+    --ds-modal-header-size-min-height: var(--semantic-size-x6);
+}
+
+@mixin shared {
+    --ds-modal-header-color-subtitle: var(--semantic-color-on-surface-subtle);
+    --ds-modal-header-color-title: var(--semantic-color-on-surface-base);
+    --ds-modal-header-radius-border: var(--semantic-radius-semi-rounded-md);
+    --ds-modal-header-size-stroke: var(--semantic-size-xquarter);
+    --ds-modal-header-space-inline: var(--semantic-spacing-inline-md);
+    --ds-modal-header-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-modal-header-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-header-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-modal-header-space-padding-top: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin surface {
+    --ds-modal-header-color-background: var(--semantic-color-surface-base);
+}
+
+@mixin surface-high {
+    --ds-modal-header-color-background: var(--semantic-color-surface-container-high-base);
+}
+
+@mixin surface-low {
+    --ds-modal-header-color-background: var(--semantic-color-surface-container-low-base);
+}
+
+@mixin surface-lowest {
+    --ds-modal-header-color-background: var(--semantic-color-surface-container-lowest-base);
+}

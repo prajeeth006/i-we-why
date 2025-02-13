@@ -1,0 +1,249 @@
+@use '../../../shared-css/helpers' as helper;
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+
+$manual-sports-table-columns: (
+  "selection-number": 60px,
+  "hamburger": 24px,
+  "selection-name-col": 1220px,
+  "odds": 95px,
+  "time": 95px,
+  "draw": 95px,
+  "player-team-name": 405px,
+  "table-close": 16px,
+);
+
+.preview-item-section {
+  @include helper.table-row-cols($manual-sports-table-columns, 'manual-horse-racing-event', $row-height: 40px, $margin-bottom-space: 5px);
+}
+
+::ng-deep .mat-mdc-slide-toggle {
+  --mat-slide-toggle-label-text-size: 12px;
+  --mat-slide-toggle-label-text-line-height: 14.06px;
+  --mat-slide-toggle-label-text-tracking: 1.25px;
+  height: 14px;
+  --mdc-switch-selected-focus-state-layer-color: #72be4461;
+  --mdc-switch-selected-handle-color: #72be4461;
+  --mdc-switch-selected-hover-state-layer-color: #72be4461;
+  --mdc-switch-selected-pressed-state-layer-color: #72be4461;
+  --mdc-switch-selected-focus-handle-color: #72be44;
+  --mdc-switch-selected-hover-handle-color: #72be44;
+  --mdc-switch-selected-pressed-handle-color: #72be44;
+  --mdc-switch-selected-focus-track-color: #72be4461;
+  --mdc-switch-selected-hover-track-color: #72be4461;
+  --mdc-switch-selected-pressed-track-color: #72be4461;
+  --mdc-switch-selected-track-color: #72be4461;
+
+  .mdc-form-field {
+    .mdc-switch {
+      --mdc-switch-track-width: 34px;
+      --mdc-switch-unselected-icon-size: 0px;
+      --mdc-switch-selected-icon-size: 0px;
+    }
+  }
+}
+
+:host::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  height: 30px;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of slide-toggle that may no longer apply for the MDC version. */
+.mat-mdc-slide-toggle-content {
+  width: 88px;
+}
+
+.manual-match-details-form {
+  display: flex;
+  justify-content: center;
+  width: 1430px;
+  height: 75px;
+  padding: 10px 0 5px;
+  box-sizing: border-box;
+
+  .controls-section {
+    display: flex;
+
+    .mr-15 {
+      margin-right: 15px;
+    }
+
+    .draw-section {
+      margin-inline: 20px;
+    }
+
+    .sport-event-outright-mmarket {
+      margin-top: 10px;
+      width: 487.5px !important;
+    }
+
+    .draw-field {
+      width: 95px;
+      margin-top: 10px;
+    }
+
+    .field-odds {
+      width: 95px;
+      margin-top: 10px;
+    }
+
+    .time {
+      margin-top: 10px;
+      width: 140px;
+    }
+
+    .date {
+      margin-top: 10px;
+      width: 210px;
+    }
+
+    .sport-event-outright-mmarket {
+      margin-top: 10px;
+      width: 350px;
+    }
+
+    .field-date {
+      margin-top: 10px;
+      width: 210px;
+    }
+
+    .draw-section {
+      margin-inline: 20px;
+    }
+
+    .separator {
+      width: 5px;
+    }
+
+    .item-label {
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.25px;
+      color: $label-light-black;
+      white-space: nowrap;
+      height: 20px;
+
+      @include abstract.breakpoint {
+        font-size: $txt-sm-font-size;
+      }
+
+      @include abstract.breakpoint-2 {
+        font-size: $txt-md-font-size;
+      }
+    }
+  }
+}
+
+.manual-sports-section {
+  height: calc(100vh - 422px);
+
+  .manual-sports-table {
+    border-collapse: collapse;
+
+    .manual-sports-table-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: $table-header-bg;
+
+      .header-row {
+        @include helper.table-row-cols($manual-sports-table-columns, 'manual-horse-racing-event', $row-height: 28px, $margin-bottom-space: 10px);
+
+        th {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0;
+
+          font-weight: 500;
+          font-size: $txt-sm-font-size;
+          letter-spacing: 1.25px;
+          line-height: 20px;
+          color: $color-black-4;
+
+          position: sticky;
+        }
+      }
+    }
+
+    .manual-sports-table-body {
+      .manual-sports-row {
+        @include helper.table-row-cols($manual-sports-table-columns, 'manual-horse-racing-event', $row-height: 40px, $margin-bottom-space: 5px);
+
+        td {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          height: 30px;
+        }
+      }
+
+      .empty-tr {
+        display: flex;
+        align-items: center;
+        height: 40px;
+
+        td {
+          background: $background-grey-color;
+          width: 100%;
+          height: 30px;
+        }
+      }
+
+      .add-more-row {
+        height: 34px;
+        width: 100%;
+
+        @include helper.addMoreRow();
+      }
+    }
+  }
+
+
+
+  .sports-table-container {
+    margin: 10px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.outright-table-container {
+      height: calc(100% - 20px);
+    }
+
+    @include helper.customScrollBar;
+
+    .table {
+      height: 100%;
+      width: 100%;
+
+      .line {
+        border-bottom: 1px solid $black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .plus-img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .add-more {
+        @include helper.addMoreRow();
+      }
+
+    }
+  }
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.is-invalid {
+  border: 1px solid $border-invalid-color;
+}

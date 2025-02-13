@@ -1,0 +1,14 @@
+@page "/report"
+@inherits HealthReportPageComponent
+
+<PageLayout Title="Health Report" LoadChildContent="LoadAsync">
+    <ul class="list-group list-group-horizontal mb-1">
+        <li class=@(Result.AllPassed ? "list-group-item bg-success text-white" : "list-group-item bg-danger text-white")>
+            @Result.OverallResult
+        </li>
+        <li class="list-group-item">Environment: <b>@Result.Environment</b></li>
+        <li class="list-group-item">Server: @Result.ServerId</li>
+        <li class="list-group-item">Client IP: @Result.ClientIp</li>
+    </ul>
+    <TreeView Model="Result.Details"/>
+</PageLayout>

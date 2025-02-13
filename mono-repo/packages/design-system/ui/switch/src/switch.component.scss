@@ -1,0 +1,142 @@
+@use '../../generated/styles/components/switch/switch' as ds-switch;
+@use '../../fonts/font-helper' as font-helper;
+
+.ds-switch {
+    @include ds-switch.shared;
+    @include ds-switch.enabled;
+
+    // fonts
+    @include font-helper.set-font-variables('switch', 'label', 'lg');
+    @include font-helper.setup-font-style('switch');
+
+    color: var(--ds-switch-color-label);
+    cursor: pointer;
+
+    --ds-switch-bg-size: calc(var(--ds-switch-slider-bg-size) + 1px);
+    --ds-switch-input-margin: auto;
+    --ds-switch-knob-border-radius: 50%;
+    --ds-switch-knob-box-shadow: var(--semantic-elevation-raised-2-box-shadow);
+    --ds-switch-knob-left-position: 2px;
+    --ds-switch-margin-zero: 0;
+    --ds-switch-slider-bg-size: calc(2 * var(--ds-switch-size-track-width));
+    --ds-switch-lever-bg-color: var(--ds-switch-color-track-off);
+
+    .ds-switch-label-wrapper {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        float: none;
+        position: relative;
+        z-index: 1;
+    }
+
+    .ds-switch-custom-input {
+        cursor: pointer;
+        height: var(--ds-switch-size-knob-height);
+        inset: 0;
+        margin: var(--ds-switch-input-margin);
+        opacity: 0.01;
+        pointer-events: all;
+        position: absolute;
+        width: var(--ds-switch-size-knob-width); // hidden checkbox size
+    }
+
+    .ds-switch-lever {
+        background-color: var(--ds-switch-lever-bg-color);
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        background-size: var(--ds-switch-bg-size); // +1 just to make sure bg is not cut
+        border-radius: var(--ds-switch-radius-track-border);
+        content: '';
+        display: inline-block;
+        height: var(--ds-switch-size-track-height);
+        margin: var(--ds-switch-margin-zero) var(--ds-switch-space-inline);
+        position: relative;
+        transition: background 0.2s;
+        vertical-align: middle;
+        width: var(--ds-switch-size-track-width);
+        z-index: -1;
+    }
+
+    .ds-switch-knob {
+        background: var(--ds-switch-color-knob-on);
+        border-radius: var(--ds-switch-knob-border-radius);
+        box-shadow: var(--ds-switch-knob-box-shadow);
+        content: '';
+        height: var(--ds-switch-size-knob-height);
+        left: var(--ds-switch-knob-left-position);
+        position: absolute;
+        top: calc(-0.5 * (var(--ds-switch-size-knob-height) - var(--ds-switch-size-track-height))); // setting knob in the middle
+        transition:
+            left 0.3s,
+            background 0.3s,
+            box-shadow 0.1s;
+        width: var(--ds-switch-size-knob-width);
+    }
+
+    &.ds-switch-checked {
+        --ds-switch-lever-bg-color: var(--ds-switch-color-track-on);
+        --ds-switch-knob-left-position: calc(var(--ds-switch-size-track-width) - var(--ds-switch-size-knob-width) - 2px);
+    }
+
+    &.animate-check {
+        .ds-switch-knob {
+            animation: pulse-on 300ms;
+        }
+    }
+
+    &.animate-uncheck {
+        .ds-switch-knob {
+            animation: pulse-off 300ms;
+        }
+    }
+
+    @keyframes pulse-on {
+        40% {
+            transform: scaleX(1.3);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes pulse-off {
+        40% {
+            transform: scaleX(1.3);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    &.ds-switch-disabled {
+        @include ds-switch.disabled;
+
+        --ds-switch-knob-box-shadow: none;
+
+        cursor: not-allowed;
+
+        .ds-switch-label-wrapper,
+        .ds-switch-custom-input,
+        .ds-switch-lever {
+            pointer-events: none;
+        }
+    }
+
+    .sr-only {
+        --ds-radio-sr-width: 1px;
+        --ds-radio-sr-height: 1px;
+        --ds-radio-sr-padding: 0;
+        --ds-radio-sr-border: 0;
+
+        position: absolute;
+        width: var(--ds-radio-sr-width);
+        height: var(--ds-radio-sr-height);
+        padding: var(--ds-radio-sr-padding);
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: var(--ds-radio-sr-border);
+    }
+}

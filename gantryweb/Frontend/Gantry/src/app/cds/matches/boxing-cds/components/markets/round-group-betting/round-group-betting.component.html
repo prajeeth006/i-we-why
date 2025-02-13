@@ -1,0 +1,18 @@
+<div id="betPrices" class="bet-details-with-prices" *ngIf="multiMarket.selections?.length">
+  <div class="bet-details-header">
+    <div id="MarketTitle" class="bet-details-title">{{ multiMarket?.title }}</div>
+  </div>
+  <div class="bet-details-item-list">
+    <div id="betItems" class="bet-details-item" *ngFor="let selection of multiMarket.selections">
+      <div id="HomePrice" class="bet-price">
+        {{ selection.homePrice | prepareEvsPipe}}
+      </div>
+      <div id="Totaldetails" class="bet-details">
+        {{ selection?.name }}
+      </div>
+      <div id="AwayPrice" class="bet-price">
+        {{ selection.awayPrice | prepareEvsPipe}}
+      </div>
+    </div>
+  </div>
+</div>

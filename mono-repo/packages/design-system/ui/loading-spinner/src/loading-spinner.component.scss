@@ -1,0 +1,44 @@
+@use 'sass:math';
+@use '../../generated/styles/components/loading-indicator/loading-indicator' as ds-loading-indicator;
+
+.ds-loading-spinner {
+    --ds-loading-indicator-margin: auto;
+    --ds-loading-indicator-position: fixed;
+
+    $elementsSum: 12;
+    $animationTime: 1.2s;
+
+    @include ds-loading-indicator.shared;
+
+    color: var(--ds-loading-indicator-color-bg);
+    contain: strict;
+    content-visibility: auto;
+    display: block;
+    height: var(--ds-loading-indicator-size-height);
+    inset: 0;
+    margin: var(--ds-loading-indicator-margin);
+    position: var(--ds-loading-indicator-position);
+    width: var(--ds-loading-indicator-size-width);
+    will-change: opacity;
+
+    .ds-loading-spinner-el {
+        animation: loading-spinner $animationTime infinite ease-in-out both;
+
+        @for $i from 2 through $elementsSum {
+            &.ds-loading-spinner-el-#{$i} {
+                animation-delay: (-$animationTime + math.div($animationTime, $elementsSum) * ($i - 1));
+            }
+        }
+    }
+}
+
+@keyframes loading-spinner {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+}

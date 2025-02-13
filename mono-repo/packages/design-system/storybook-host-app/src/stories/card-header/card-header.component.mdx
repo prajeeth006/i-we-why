@@ -1,0 +1,26 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as CardHeaderStories from './card-header.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './card-header-tabs/overview.mdx';
+import MySecondTab from './card-header-tabs/examples.mdx';
+
+# Card Header
+
+<Meta of={CardHeaderStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

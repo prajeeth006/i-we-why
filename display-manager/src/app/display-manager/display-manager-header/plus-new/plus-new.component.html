@@ -1,0 +1,25 @@
+<button 
+  id="plus"
+  class="btn btn--plus-new btn--state-active" 
+  mat-button 
+  [matMenuTriggerFor]="menu" 
+  (menuOpened)="isOpened()" 
+  (menuClosed)="isClosed()" 
+  [class.btn--state-active]="isMenuOpened" [disabled]="sequencencingHelper.sequenceJourneyStatus()">
+  <span class="btn__label">New</span>
+</button>
+<mat-menu #menu="matMenu" [class]="activeLabelClass" class="new-header-main-dropdown">
+  <button id="carousel" mat-menu-item (click)="newCarousel()">Carousel</button>
+  <button id="sportsCoupon" mat-menu-item (click)="newSportsCoupon()">Sports Coupon</button>
+  <button id="racingChallenges" mat-menu-item (click)="newRacingChallenge()">Racing Challenges</button>
+  <button id="manualRacingTemplate" mat-menu-item (click)="newManualRacingTemplate()">Manual Racing Template</button>
+  <button id="manualSportsTemplate" mat-menu-item [matMenuTriggerFor]="manualSportsTemplate">Manual Sports
+    Template</button>
+</mat-menu>
+<mat-menu #manualSportsTemplate="matMenu" [class]="activeLabelClass" class="new-header-sub-dropdown">
+  <!-- <button id="multiMarket" mat-menu-item
+    (click)="newManualSportsTemplate(tabNamesEnum.manual_sports_multi_market)">Multi Market</button> -->
+  <button id="outRight" mat-menu-item
+    (click)="newManualSportsTemplate(tabNamesEnum.manual_sports_outright)">Outright</button>
+  <!-- <button id="coupon" mat-menu-item (click)="newManualSportsTemplate(tabNamesEnum.manual_sports_coupon)">Coupon</button> -->
+</mat-menu>

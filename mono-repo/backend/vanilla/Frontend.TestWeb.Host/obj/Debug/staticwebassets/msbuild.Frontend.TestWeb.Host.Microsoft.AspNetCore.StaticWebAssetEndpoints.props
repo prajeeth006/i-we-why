@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Frontend.TestWeb.Host/files/test.jrv623uafb.txt">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\files\test.txt'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jrv623uafb"},{"Name":"integrity","Value":"sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="},{"Name":"label","Value":"_content/Frontend.TestWeb.Host/files/test.txt"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 05:09:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Frontend.TestWeb.Host/files/test.txt">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\files\test.txt'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"18"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022T3SVi3hUAZ409prxLIZnVoq0f0ujm3pqDDuTLXCSQrg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 18 Nov 2024 05:09:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

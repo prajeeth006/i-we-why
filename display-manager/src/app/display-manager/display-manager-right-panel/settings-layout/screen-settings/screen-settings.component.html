@@ -1,0 +1,22 @@
+<div class="screen-setting">
+    <div class="screen-setting__body">
+        <p class="screen-setting__default-type">Default template type:</p>
+        <mat-radio-group aria-labelledby="screen-setting__radio-group-label" class="screen-setting__radio-group"
+            [(ngModel)]="screenSettingValue" [attr.aria-label]="'Select screen type'">            
+            <div *ngFor="let screenType of screenData?.childTabs" class="screen-setting__radio-container">
+                <mat-radio-button class="screen-setting__radio-button" [value]="screenType.name"></mat-radio-button>
+                <span class="screen-setting__radio-label">{{ screenType.name }}</span>
+            </div>
+        </mat-radio-group>
+    </div>
+    <div class="screen-setting__footer">
+        <div class="screen-setting__footer-actions">
+            <button id="cancelBtn" class="screen-setting__action-btn screen-setting__action-btn--cancel" (click)="cancel();" [disabled]="screenSettingValue === oldScreenSettingValue">
+                Cancel
+            </button>
+            <button id="saveBtn" class="screen-setting__action-btn screen-setting__action-btn--save" (click)="save();" [disabled]="screenSettingValue === oldScreenSettingValue">
+                Save changes
+            </button>
+        </div>
+    </div>
+</div>

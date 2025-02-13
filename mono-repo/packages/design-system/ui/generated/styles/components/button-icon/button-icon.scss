@@ -1,0 +1,274 @@
+@mixin filled-primary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-primary-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-primary-base);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-primary-base);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-primary-base);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-primary-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-primary-base);
+}
+
+@mixin filled-primary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-primary-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-primary-base-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-primary-base-inverse);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-primary-base-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-primary-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-primary-base-inverse);
+}
+
+@mixin filled-secondary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-secondary-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-secondary-base);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-secondary-base);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-secondary-base);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-secondary-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-secondary-base);
+}
+
+@mixin filled-secondary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-secondary-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-secondary-base-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-secondary-base-inverse);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-secondary-base-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-secondary-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-secondary-base-inverse);
+}
+
+@mixin filled-tertiary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-tertiary-base);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-tertiary-base);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-tertiary-base);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-tertiary-base);
+}
+
+@mixin filled-tertiary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-tertiary-base-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-tertiary-base-inverse);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-tertiary-base-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-tertiary-base-inverse);
+}
+
+@mixin flat-tertiary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-container-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-tertiary-active);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-tertiary-base);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-container-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-tertiary-hover);
+}
+
+@mixin flat-tertiary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-container-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-tertiary-active-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-tertiary-base-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-container-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-tertiary-hover-inverse);
+}
+
+@mixin flat-utility {
+    --ds-button-icon-active-color-bg: var(--semantic-color-utility-container-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-utility-active);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-utility-base);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-utility-container-base);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-utility-hover);
+}
+
+@mixin flat-utility-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-utility-container-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-icon: var(--semantic-color-utility-active-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-utility-base-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-utility-container-base-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-utility-hover-inverse);
+}
+
+@mixin large {
+    --ds-button-icon-radius-border: var(--semantic-radius-l2-button-large);
+    --ds-button-icon-size-height: var(--semantic-size-x11);
+    --ds-button-icon-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-icon-size-width: var(--semantic-size-x11);
+}
+
+@mixin large-reduced {
+    --ds-button-icon-radius-border: var(--semantic-radius-l2-button-large);
+    --ds-button-icon-size-height: var(--semantic-size-x6);
+    --ds-button-icon-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-icon-size-width: var(--semantic-size-x6);
+}
+
+@mixin medium {
+    --ds-button-icon-radius-border: var(--semantic-radius-l2-button-medium);
+    --ds-button-icon-size-height: var(--semantic-size-x8);
+    --ds-button-icon-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-icon-size-width: var(--semantic-size-x8);
+}
+
+@mixin medium-reduced {
+    --ds-button-icon-radius-border: var(--semantic-radius-l2-button-medium);
+    --ds-button-icon-size-height: var(--semantic-size-x5);
+    --ds-button-icon-size-icon: var(--semantic-size-icon-medium);
+    --ds-button-icon-size-width: var(--semantic-size-x5);
+}
+
+@mixin outline-primary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-primary-container-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-primary-outline-active);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-primary-outline);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-primary-outline-base);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-primary-outline);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-primary-container-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-primary-outline-hover);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-primary-outline);
+}
+
+@mixin outline-primary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-primary-container-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-primary-outline-active-inverse);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-primary-outline-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-outline-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-primary-outline-base-inverse);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-primary-outline-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-primary-container-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-primary-outline-hover-inverse);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-primary-outline-inverse);
+}
+
+@mixin outline-secondary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-secondary-container-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-secondary-outline-active);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-secondary-outline);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-secondary-outline-base);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-secondary-outline);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-secondary-container-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-secondary-outline-hover);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-secondary-outline);
+}
+
+@mixin outline-secondary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-active-color-border: var(--semantic-color-secondary-outline-active-inverse);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-base-inverse);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-secondary-outline-base-inverse);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-secondary-outline-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-hover-color-border: var(--semantic-color-secondary-outline-hover-inverse);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-secondary-outline-inverse);
+}
+
+@mixin outline-tertiary {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-container-active);
+    --ds-button-icon-active-color-border: var(--semantic-color-tertiary-outline-active);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-tertiary-outline);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-outline);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-tertiary-outline-base);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-tertiary-outline);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-container-hover);
+    --ds-button-icon-hover-color-border: var(--semantic-color-tertiary-outline-hover);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-tertiary-outline);
+}
+
+@mixin outline-tertiary-inverse {
+    --ds-button-icon-active-color-bg: var(--semantic-color-tertiary-container-active-inverse);
+    --ds-button-icon-active-color-border: var(--semantic-color-tertiary-outline-active-inverse);
+    --ds-button-icon-active-color-icon: var(--semantic-color-on-tertiary-outline-inverse);
+    --ds-button-icon-disabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    --ds-button-icon-disabled-color-icon: var(--semantic-color-on-disabled-outline-inverse);
+    --ds-button-icon-enabled-color-bg: var(--semantic-color-opacity-transparent);
+    --ds-button-icon-enabled-color-border: var(--semantic-color-tertiary-outline-base-inverse);
+    --ds-button-icon-enabled-color-icon: var(--semantic-color-on-tertiary-outline-inverse);
+    --ds-button-icon-hover-color-bg: var(--semantic-color-tertiary-container-hover-inverse);
+    --ds-button-icon-hover-color-border: var(--semantic-color-tertiary-outline-hover-inverse);
+    --ds-button-icon-hover-color-icon: var(--semantic-color-on-tertiary-outline-inverse);
+}
+
+@mixin small {
+    --ds-button-icon-radius-border: var(--semantic-radius-l2-button-small);
+    --ds-button-icon-size-height: var(--semantic-size-x6);
+    --ds-button-icon-size-icon: var(--semantic-size-icon-small);
+    --ds-button-icon-size-width: var(--semantic-size-x6);
+}

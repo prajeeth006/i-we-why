@@ -1,0 +1,64 @@
+<div class="info-row">
+    <gn-dark-theme-footer [extendedWidthToHalf]="'footer-flex-content__auto'">
+        <ng-container left-side-content>
+            <span id="RunCount" class="run-count"
+                >{{ !!runnerCount ? runnerCount : '' }}
+                {{
+                    !!runnerCount
+                        ? isEventResulted
+                            ? horseRacingContent?.contentParameters?.RAN
+                                ? (horseRacingContent?.contentParameters?.RAN | titlecase)
+                                : ''
+                            : horseRacingContent?.contentParameters?.RUN
+                              ? (horseRacingContent?.contentParameters?.RUN | titlecase)
+                              : ''
+                        : ''
+                }}
+            </span>
+            <span
+                *ngIf="distance || !isVirtualRace"
+                id="Distance"
+                class="distance-race-type"
+                [ngClass]="{ 'distance-race-type__empty': !distance && !isVirtualRace }">
+                {{ distance }}
+            </span>
+            <span id="RaceType" *ngIf="evrRaceType">
+                {{ evrRaceType | titlecase }}
+            </span>
+            <ng-container [ngSwitch]="currentItem$ | async">
+                <ng-container *ngSwitchCase="flipGoingPostPicStages?.FcTcValue">
+                    <span id="FcTcValue" *ngIf="FcTcValue">
+                        {{ FcTcValue }}
+                    </span>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="flipGoingPostPicStages?.Going">
+                    <span id="Going" *ngIf="going">
+                        {{ horseRacingContent?.contentParameters?.GOING ? (horseRacingContent?.contentParameters?.GOING | titlecase) : '' }}:
+                        {{ going | titlecase }}
+                    </span>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="flipGoingPostPicStages?.RacingPostPic">
+                    <div
+                        *ngIf="
+                            ((isHalfScreenType && !isScrollingAsset) || (!isHalfScreenType && isRCEnabled && horseRacingEntries?.length > 10)) &&
+                            racingPostTipHorseName &&
+                            !isNonRunner
+                        "
+                        class="racingpost-image-section">
+                        <div class="racingpost-image">
+                            <img class="c-logo" [src]="horseRacingContent?.darkThemeRacingPostImage?.src" id="logo" />
+                        </div>
+                        <div id="TipName" [ngClass]="isNonRunner ? 'tip-nonrunnername' : ''">{{ racingPostTipHorseName | titlecase }}</div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+        <ng-container right-side-content>
+            <span id="marketEachWay" class="market-each-way">{{ marketEachWayString | titlecase }}</span>
+        </ng-container>
+        <ng-content></ng-content>
+    </gn-dark-theme-footer>
+</div>

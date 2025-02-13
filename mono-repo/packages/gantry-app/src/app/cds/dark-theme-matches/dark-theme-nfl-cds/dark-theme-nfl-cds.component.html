@@ -1,0 +1,65 @@
+<div class="nfl-result">
+    <ng-container *ngIf="nflCDSContent$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-dark-theme-base-page>
+                <ng-container header-content>
+                    <gn-dark-theme-header [title]="vm?.title" [racingImage]="vm?.content?.nflImage?.src">
+                        <ng-container raceStage-content>
+                            <div class="header-status-box tilted-card">
+                                <span id="DefaultPriceColumn" class="tilted-text" *ngIf="vm?.eventStartDate?.length > 1">
+                                    {{ (vm?.eventStartDate | darkThemeEventDatetime)?.date }}<br />{{
+                                        (vm?.eventStartDate | darkThemeEventDatetime)?.time
+                                    }}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </gn-dark-theme-header>
+                </ng-container>
+                <ng-container body-content>
+                    <ng-container *ngFor="let market of vm?.games">
+                        <div id="tMarkets" class="nfl-bet  {{ getCleanClassGameName(market?.gameName) }}">
+                            <div class="bet-details-container">
+                                <div class="match-betting-details-header">
+                                    <div id="betdetailsTitle" class="bet-details-title">
+                                        {{ market?.gameName | titlecase }}
+                                    </div>
+                                </div>
+                                <div class="match-betting-section">
+                                    <div id="homebetPrice" class="bet-price tilted-card" autoAdjustFont>
+                                        <span class="tilted-text"> {{ market?.matchBetting?.homeBettingPrice | prepareEvsPipe }}</span>
+                                    </div>
+                                    <div class="player-details-section">
+                                        <div id="homeselectionTitle" class="full-market-1">
+                                            <span *ngIf="market?.matchBetting?.homePlayer && market?.matchBetting?.homeBettingPrice">
+                                                {{ market?.matchBetting?.homePlayer }}</span
+                                            >
+                                        </div>
+                                        <div id="awayselectionTitle" class="full-market-2">
+                                            <span *ngIf="market?.matchBetting?.awayPlayer && market?.matchBetting?.awayBettingPrice">
+                                                {{ market?.matchBetting?.awayPlayer }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="awaybetPrice" class="bet-price tilted-card" autoAdjustFont>
+                                        <span class="tilted-text">{{ market?.matchBetting?.awayBettingPrice | prepareEvsPipe }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-dark-theme-footer>
+                        <ng-container left-side-content>
+                            {{ vm?.competitionName }}
+                        </ng-container>
+                        <ng-container right-side-content>
+                            {{ vm?.content?.contentParameters?.BetStationPricesFluctuation ?? '' }}
+                        </ng-container>
+                    </gn-dark-theme-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+    <gn-error [errorMessage$]="errorMessage$"></gn-error>
+</div>

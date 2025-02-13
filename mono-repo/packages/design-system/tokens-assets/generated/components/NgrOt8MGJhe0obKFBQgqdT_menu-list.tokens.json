@@ -1,0 +1,17 @@
+{
+    "menu-list": {
+        "shared": {
+            "size": {
+                "min-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "menu-list",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x35}"
+                }
+            }
+        }
+    }
+}

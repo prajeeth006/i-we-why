@@ -1,0 +1,978 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.Configuration.DynaCon</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.IChangeset">
+            <summary>
+            Defines a set of configs returned from the service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer">
+            <summary>
+            Stores configuration snapshot and handles it in thread-safe manner.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer.GetSnapshot">
+            <summary>
+            This is a method instead of property to emphasise that snapshot can be changed by other threads in the meantime.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer.SetSnapshot(Frontend.Vanilla.Configuration.DynaCon.Container.SetSnapshotDelegate)">
+            <summary>
+            Sets a new snapshot based on the current one in thread-safe manner.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot">
+            <summary>
+            Wraps all configuration state at discrete time.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.ActiveChangeset">
+            <summary>The latest valid changeset till now which is used to retrieve actual configuration.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.OverriddenChangeset">
+            <summary>Overrides <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.ActiveChangeset" />.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.FutureChangesets">
+            <summary>All changesets supposed to be active after <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.ActiveChangeset" />.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.LatestChangeset">
+            <summary>Changeset with the latest <see cref="P:Frontend.Vanilla.Configuration.DynaCon.IChangeset.ValidFrom" /> among <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.ActiveChangeset" /> and <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshot.FutureChangesets" />.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationSnapshotFactory">
+            <summary>
+            Wraps all configuration related information at particular time.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyFallbackFileHandler">
+            <summary>
+            Defines specific handling of file with a fallback context hierarchy.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyFallbackFileHandler.#ctor(Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings)">
+            <summary>
+            Defines specific handling of file with a fallback context hierarchy.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyFallbackReportHandler">
+            <summary>
+            Defines details of the report related to the file with a fallback context hierarchy.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyFallbackReportHandler.#ctor(Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy)">
+            <summary>
+            Defines details of the report related to the file with a fallback context hierarchy.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyInitializer">
+            <summary>
+            Initializes shared instance of context hierarchy.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyInitializer.#ctor(Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchyManager,Frontend.Vanilla.Configuration.DynaCon.Context.IContextHierarchyRestService,Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile{Frontend.Vanilla.Configuration.DynaCon.Context.VariationContextHierarchy},Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.Context.ContextHierarchyInitializer})">
+            <summary>
+            Initializes shared instance of context hierarchy.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.IContextHierarchyRestService">
+            <summary>
+            Dedicated endpoint which is same for all tenants compared to <see cref="T:Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy">
+            <summary>
+            Holds shared (for all tenants) instance of variation context hierarchy object b/c it's (mostly) unrelated to a changeset.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.IDynamicVariationContextResolver">
+            <summary>
+            Resolves current variation context value using registered <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Context.IDynaConVariationContextProvider" />-s.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.IDynaConVariationContextProvider">
+            <summary>
+            Provides a dynamic value for variation context property for selecting appropriate configuration at runtime.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Context.IDynaConVariationContextProvider.Name">
+            <summary>
+            Gets the name of variation context property provided.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Context.IDynaConVariationContextProvider.GetCurrentValue(Frontend.Vanilla.Core.Collections.ReadOnlySet{Frontend.Vanilla.Core.System.Text.TrimmedRequiredString})">
+            <summary>
+            Gets the current value of variation context property.
+            Value can't be null in order to be able to target specific state by variation context.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.StaticVariationContext">
+            <summary>
+            Extracted DynaCon variation context parameters which are constant for the app.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Context.VariationContext">
+            <summary>
+            Represents application context in which the configuration instance should be used.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Context.VariationContext.Properties">
+            <summary>
+            Includes all children e.g. qa -> [qa, qa1, qa2, qa3, dev]
+            ReadOnlySet is used b/c it has Contains() method directly.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.ICurrentChangesetResolver">
+            <summary>Resolves changeset for current context.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.CurrentChangesetResolver">
+            <summary>Primary implementation specific for a tenant.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.CurrentChangesetResolver.#ctor(Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer)">
+            <summary>Primary implementation specific for a tenant.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.CachedChangesetResolver">
+            <summary>Caches current changeset for current context including multitenancy.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.CachedChangesetResolver.#ctor(Frontend.Vanilla.Configuration.DynaCon.ICurrentChangesetResolver,Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor)">
+            <summary>Caches current changeset for current context including multitenancy.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.ICurrentConfigurationResolver">
+            <summary>
+            Resolves instance of a config for current context (HttpRequest).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.DefaultChangesetDeserializer">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.FeedbackDeserializerDecorator">
+            <summary>
+            Sends feedback to DynaCon regarding validity of deserialized changesets.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.FeedbackDeserializerDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer,Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings,Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService,Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextHierarchyExpander,Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.FeedbackDeserializerDecorator})">
+            <summary>
+            Sends feedback to DynaCon regarding validity of deserialized changesets.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer">
+            <summary>
+            Deserializes whole set of configs from JSON model.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.DefaultFeatureDeserializer">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.DefaultFeatureDeserializer.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver,Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.IInstanceDeserializer)">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer">
+            <summary>
+            Deserializes all instances for a single feature from given DTO returned from DynaCon.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.InputCleanUpDecorator">
+            <summary>
+            Cleans up input DTO from DynaCon - validates it, filters values, returns appropriate warnings or throws.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.InstanceCountOverflowDecorator">
+            <summary>
+            Guards that number of config instances don't overflow causing app death.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.InstanceCountOverflowDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer)">
+            <summary>
+            Guards that number of config instances don't overflow causing app death.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.PropertyMismatchDecorator">
+            <summary>
+            Checks for mismatch between config CLR properties and keys returned from DynaCon.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.PropertyMismatchDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer)">
+            <summary>
+            Checks for mismatch between config CLR properties and keys returned from DynaCon.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.ValuesOptimizationDecorator">
+            <summary>
+            Drops useless values once there is a one with higher priority which applies to any context.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.ValuesOptimizationDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.B_Feature.IFeatureDeserializer)">
+            <summary>
+            Drops useless values once there is a one with higher priority which applies to any context.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.DefaultInstanceDeserializer">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.IInstanceDeserializer" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.IInstanceDeserializer">
+            <summary>
+            Deserializes single configuration instance from given JSON for the feature.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.IInstanceDeserializer.Deserialize(Frontend.Vanilla.Core.Configuration.IConfigurationInfo,Newtonsoft.Json.Linq.JObject)">
+            <exception cref="T:Frontend.Vanilla.Core.Configuration.InvalidConfigurationException">If config values from DynaCon are invalid.</exception>
+            <exception cref="T:System.Exception">Unexpected errors.</exception>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.ResultValidationDecorator">
+            <summary>
+            Executes data annotation validation of the config instance after it's deserialized.
+            If config is disabled, validation is skipped.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.ResultValidationDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.C_Instance.IInstanceDeserializer)">
+            <summary>
+            Executes data annotation validation of the config instance after it's deserialized.
+            If config is disabled, validation is skipped.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.DefaultInstanceJsonResolver">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.DefaultInstanceJsonResolver.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator,Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonBuilder)">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver">
+            <summary>
+            Resolves all relevant variation contexts with JSON of a corresponding configuration instance.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonBuilder">
+            <summary>
+            Constructs JSON for all properties of a feature according to given context.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.InstanceJsonOptimizationDecorator">
+            <summary>
+            Removes duplicates not needed because of other entries with equal JSON and more generic context.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.InstanceJsonOptimizationDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver)">
+            <summary>
+            Removes duplicates not needed because of other entries with equal JSON and more generic context.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.PlaceholderReplacingDecorator">
+            <summary>
+            Replaces ${dynacon:contextProperty} placeholders in configuration JSON. It may require multiplication of configs for each value.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.PlaceholderReplacingDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.D_InstanceJson.IInstanceJsonResolver,Frontend.Vanilla.Configuration.DynaCon.Context.StaticVariationContext)">
+            <summary>
+            Replaces ${dynacon:contextProperty} placeholders in configuration JSON. It may require multiplication of configs for each value.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.ContextCombinationDecorator">
+            <summary>
+            Creates all possible combinations of contexts returned by inner.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.ContextCombinationDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator)">
+            <summary>
+            Creates all possible combinations of contexts returned by inner.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextHierarchyExpander">
+            <summary>
+            Expands variation context according to given hierarchy by enumerating children or parents for given context property.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.ContextOptimizationDecorator">
+            <summary>
+            Execludes unnecessary contexts hence configs because there is no chance they will be used because other contexts with higher priority will be matched.
+            For example if defined context values are: label = [bwin.es, party.com]; nativeApp = [sports, unknown]
+            and actual contexts are:
+            - priority = 10, label = bwin.es, nativeApp = sports
+            - priority = 10, label = bwin.es, nativeApp = unknown
+            - priority = 8, label = bwin.es -> useless b/c one of previous values will always match first.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.ContextOptimizationDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator,Frontend.Vanilla.Configuration.DynaCon.Context.StaticVariationContext)">
+            <summary>
+            Execludes unnecessary contexts hence configs because there is no chance they will be used because other contexts with higher priority will be matched.
+            For example if defined context values are: label = [bwin.es, party.com]; nativeApp = [sports, unknown]
+            and actual contexts are:
+            - priority = 10, label = bwin.es, nativeApp = sports
+            - priority = 10, label = bwin.es, nativeApp = unknown
+            - priority = 8, label = bwin.es -> useless b/c one of previous values will always match first.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.DefaultContextEnumerator">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.DefaultContextEnumerator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextHierarchyExpander)">
+            <summary>
+            Main implementation of <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Deserialization.E_Context.IContextEnumerator">
+            <summary>
+            Enumerates all possible of contexts from values in given feature DTO.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings">
+            <summary>
+            Settings of DynaCon configuration engine.
+            Must be always valid also in unit test in order to test only meaningful scenarios
+            therefore they must be always create using <see cref="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverridesMode">
+            <summary>Defines mode of local overrides.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Configuration.DynaCon.LocalOverridesMode.Disabled">
+            <summary>Overrides are disabled.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Configuration.DynaCon.LocalOverridesMode.File">
+            <summary>Overrides come from local file defined in <see cref="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.LocalOverridesFile" />.</summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Configuration.DynaCon.LocalOverridesMode.Session">
+            <summary>Overrides are stored in the user's session (static field for non-web apps).</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder">
+            <summary>
+            Builds <see cref="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings" /> in strongly guarded way providing reasonable defaults.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.Host">
+            <summary>
+            Gets or sets the host URL of DynaCon API.
+            Default: https://api.dynacon.bwin.prod/.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ApiVersion">
+            <summary>
+            Gets or sets the API version used in the URL.
+            Default: v1.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ChangesetFallbackFile">
+            <summary>
+            Gets or sets the path of file with fallback changeset.
+            It can be a pattern which is resolved to a final file for a concrete tenant (label for Vanilla web app).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ContextHierarchyFallbackFile">
+            <summary>
+            Gets or sets the path of file with fallback changeset.
+            It can be a pattern which is resolved to a final file for a concrete tenant (label for Vanilla web app).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.DynaconAppBootFallbackFile">
+            <summary>
+            Gets or sets the path of file with fallback company network subnets.
+            It can be a pattern which is resolved to a final file for a concrete tenant (label for Vanilla web app).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.LocalOverridesMode">
+            <summary>
+            Gets or sets the mode of local overrides.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.LocalOverridesFile">
+            <summary>
+            Gets or sets the path of file with local overrides.
+            It can be a pattern which is resolved to a final file for a concrete tenant (label for Vanilla web app).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.EnableLocalFileOverrides(System.String)">
+            <summary>
+            Sets <see cref="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.LocalOverridesFile" /> and <see cref="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.LocalOverridesMode" /> at the same time.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ChangesPollingInterval">
+            <summary>
+            Gets or sets the interval of polling for configuration changes.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.PollingStartupDelay">
+            <summary>
+            Gets or sets the startup delay during which polling request shouldn't be executed yet. Usually the app is starting up during this time hence very busy.
+            Default: 10 seconds.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ProactiveValidationPollingInterval">
+            <summary>
+            Gets or sets the interval of polling for validatable changesets (e.g. waiting for approval) in order to proactively validate them.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.NetworkTimeout">
+            <summary>
+            Gets or sets the network timeout for HTTP requests to DynaCon API.
+            Default: 10 seconds.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ValidatableChangesetsNetworkTimeout">
+            <summary>
+            Gets or sets the network timeout for HTTP requests to DynaCon API to fetch validatable changesets.
+            Default: 10 seconds.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.PastChangesetsMaxCount">
+            <summary>
+            Gets or sets the maximum number of past changesets stored and displayed in diagnostic report.
+            Default: 10.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.PastServiceCallsMaxCount">
+            <summary>
+            Gets or sets maximum number of past service calls stored and displayed in diagnostic report.
+            Default: 100.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.PastProactivelyValidatedChangesetsMaxCount">
+            <summary>
+            Gets or sets maximum number of past proactively validated changesets stored and displayed in diagnostic report.
+            Default: 10.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.AdminWeb">
+            <summary>
+            Gets or sets the URL of admin web for managing the configuration.
+            Default: https://admin.dynacon.prod.env.works/.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.SendFeedback">
+            <summary>
+            Indicates if feedback regarding changeset validity should be sent to DynaCon.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.ExplicitChangesetId">
+            <summary>
+            Gets or sets the ID of a changeset which should be loaded directly instead of current one.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.Parameters">
+            <summary>
+            Gets or sets the list of parameters.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.AdditionalInfo">
+            <summary>
+            See <see cref="P:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings.AdditionalInfo" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.#ctor(Frontend.Vanilla.Core.Configuration.DynaConParameter[])">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettingsBuilder.Build">
+            <summary>Builds the settings. Internally called by Vanilla.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.DynaConProxyConfigurationEngine">
+            <summary>
+            Creates proxy for configuration model which gets injected.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.BackupToFallbackFileDecorator">
+            <summary>
+            Decorates <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer" />. Backs up recently activated configuration to the fallback file.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.FileFallback.BackupToFallbackFileDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer,Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile{Frontend.Vanilla.Configuration.DynaCon.IValidChangeset})">
+            <summary>
+            Decorates <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer" />. Backs up recently activated configuration to the fallback file.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.ChangesetFallbackFileHandler">
+            <summary>
+            Defines specific handling of file with a fallback changeset.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.FileFallback.ChangesetFallbackFileHandler.#ctor(Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings,Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer)">
+            <summary>
+            Defines specific handling of file with a fallback changeset.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.ChangesetFallbackReportHandler">
+            <summary>
+            Defines details of the report related to the file with a fallback changeset.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackChangesetLoader">
+            <summary>
+            On startup if loading configuration from REST service fails, tries to load it from fallback file.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackChangesetLoader.#ctor(Frontend.Vanilla.Configuration.DynaCon.Initialization.IInitialChangesetLoader,Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile{Frontend.Vanilla.Configuration.DynaCon.IValidChangeset},Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackChangesetLoader})">
+            <summary>
+            On startup if loading configuration from REST service fails, tries to load it from fallback file.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackDto">
+            <summary>
+            Contents of fallback file for <see cref="T:Frontend.Vanilla.Configuration.DynaCon.IValidChangeset" /> and <see cref="T:Bwin.DynaCon.Api.Contracts.V1.VariationHierarchyResponse" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile`1">
+            <summary>
+            Manages the last valid raw version of configuration data stored in the fallback file.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile`1.Handler">
+            <summary>Null if file is disabled.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackFile`1.#ctor(Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFileDataHandler{`0},Frontend.Vanilla.Core.IO.IFileSystem,Frontend.Vanilla.Configuration.DynaCon.FileFallback.GetAppIdentifierHandler,Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.FileFallback.FallbackFile{`0}})">
+            <summary>Lists all parameters to verify their availability with dependency injection.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFileHandler`1">
+            <summary>Actual file handling if particular fallback is enabled.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFileDataHandler`1">
+            <summary>
+            Defines logic for particular data stored in related fallback file.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.IConfigurationInitializer">
+            <summary>
+            Initializes the configuration engine by loading changeset.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.IConfigurationInitializer.Initialize">
+            <summary>
+            Initializes the configuration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.ChangesetInitializer">
+            <summary>
+            Initializes changeset according to <see cref="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Initialization.ChangesetInitializer.#ctor(Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer,Frontend.Vanilla.Configuration.DynaCon.Initialization.IInitialChangesetLoader)">
+            <summary>
+            Initializes changeset according to <see cref="T:Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.CompositeInitializer">
+            <summary>
+            Executes multiple initializers in specified order.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Initialization.CompositeInitializer.#ctor(System.Collections.Generic.IEnumerable{Frontend.Vanilla.Configuration.DynaCon.IConfigurationInitializer})">
+            <summary>
+            Executes multiple initializers in specified order.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.ConfigurationLoadException">
+            <summary>
+            Thrown by <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.CurrentChangesetLoader" /> if initialization of current configuration failed.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Initialization.ConfigurationLoadException.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,System.Exception)">
+            <summary>
+            Thrown by <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.CurrentChangesetLoader" /> if initialization of current configuration failed.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.CurrentChangesetLoader">
+            <summary>
+            Loads the configuration from REST service on startup.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Initialization.CurrentChangesetLoader.#ctor(Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService,Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer,Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls,Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy,Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.Initialization.CurrentChangesetLoader})">
+            <summary>
+            Loads the configuration from REST service on startup.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.ExplicitChangesetLoader">
+            <summary>
+            On startup loads particular changeset if explicit ID is specified in the settings.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Initialization.ExplicitChangesetLoader.#ctor(Frontend.Vanilla.Configuration.DynaCon.Initialization.IInitialChangesetLoader,Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings,Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService,Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer,Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls,Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy)">
+            <summary>
+            On startup loads particular changeset if explicit ID is specified in the settings.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Initialization.IInitialChangesetLoader">
+            <summary>
+            Loads initial configuration on startup.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Integration.AppContextBackgroundWorkInitializer">
+            <summary>
+            Passes current context items so that background operation is executed with same config b/c that may have been a reason to execute it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Integration.AppContextBackgroundWorkInitializer.#ctor(Frontend.Vanilla.Core.Ioc.ICurrentContextAccessor,Frontend.Vanilla.Configuration.DynaCon.ICurrentChangesetResolver)">
+            <summary>
+            Passes current context items so that background operation is executed with same config b/c that may have been a reason to execute it.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IChangesetOverrider">
+            <summary>
+            Overrides a changeset using given overrides.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IConfigurationOverridesService">
+            <summary>
+            Facade for manipulating configuration overrides. Their type is dependant on the configuration.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.File.FileOverridesStorage">
+            <summary>
+            Stores config overrides in a single <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.LocalOverridesFile" /> for all users.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.File.FileOverridesStorage.#ctor(Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings,Frontend.Vanilla.Core.IO.IFileSystem)">
+            <summary>
+            Stores config overrides in a single <see cref="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.LocalOverridesFile" /> for all users.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IOverridesStorage">
+            <summary>
+            Storage of configuration overrides according to set-up <see cref="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverridesMode" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.ManipulationService.ISetAllOverridesJsonCommand">
+            <summary>
+            Central command for setting all overrides together.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesConfigurationContainerDecorator">
+            <summary>
+            Decorator which resolves configuration according to configured overrides if any.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesConfigurationContainerDecorator.#ctor(Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer,Microsoft.Extensions.Caching.Memory.IMemoryCache,Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IOverridesStorage,Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IChangesetOverrider)">
+            <summary>
+            Decorator which resolves configuration according to configured overrides if any.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IOverridesJsonMerger">
+            <summary>
+            Merges given JSON object with configuration overrides to primary one.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesStorageFactory">
+            <summary>
+            Creates <see cref="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IOverridesStorage" /> according to configuration. Makes sure that all dependencies exist on startup.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesStorageFactory.#ctor(Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings,Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings,Frontend.Vanilla.Core.IO.IFileSystem,Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.Session.IDynaConOverridesSessionIdentifier)">
+            <summary>
+            Creates <see cref="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IOverridesStorage" /> according to configuration. Makes sure that all dependencies exist on startup.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesValidationOverrider">
+            <summary>
+            Validates meaningfulness of specified overrides before creating a changeset by merging them in.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.OverridesValidationOverrider.#ctor(Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IChangesetOverrider)">
+            <summary>
+            Validates meaningfulness of specified overrides before creating a changeset by merging them in.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.Session.IDynaConOverridesSessionIdentifier">
+            <summary>
+            Identifies session with DynaCon overrides.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.Session.SessionOverridesStorage">
+            <summary>
+            Stores config overrides in memory cache per each user session.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.Session.SessionOverridesStorage.#ctor(Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.Session.IDynaConOverridesSessionIdentifier,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Stores config overrides in memory cache per each user session.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.ITenant">
+            <summary>
+            All runtime stuff related to a tenant.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.ITenantFactory">
+            <summary>
+            Creates a new tenant by loading its configuration and preparing all services.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantServices">
+            <summary>
+            Resolves all top-level scoped services used by a tenant at once. So it makes sure all of them are correctly initialized.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantServices.#ctor(Frontend.Vanilla.Configuration.DynaCon.IConfigurationInitializer,Frontend.Vanilla.Configuration.DynaCon.ICurrentChangesetResolver,Frontend.Vanilla.Configuration.DynaCon.Reporting.IConfigurationReporter,Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IConfigurationOverridesService)">
+            <summary>
+            Resolves all top-level scoped services used by a tenant at once. So it makes sure all of them are correctly initialized.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings">
+            <summary>
+            Settings specific to concrete tenant (label for Vanilla web app).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.Name">
+            <summary>Name.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.ChangesetFallbackFile">
+            <summary>ChangesetFallbackFile.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.LocalOverridesFile">
+            <summary>LocalOverridesFile.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.Parameters">
+            <summary>Parameters.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings.#ctor(Frontend.Vanilla.Core.System.Text.TrimmedRequiredString,Frontend.Vanilla.Core.IO.RootedPath,Frontend.Vanilla.Core.IO.RootedPath,System.Collections.Generic.IEnumerable{Frontend.Vanilla.Core.Configuration.DynaConParameter})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings"/> class.
+            </summary>
+            <param name="name"></param>
+            <param name="changesetFallbackFile"></param>
+            <param name="localOverridesFile"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Multitenancy.ITenantSettingsFactory">
+            <summary>
+            Creates settings for a tenant.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.IActivateChangesetJob">
+            <summary>
+            Sets given changeset to be the active one.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.IChangesProcessor">
+            <summary>
+            Creates new snapshot based on given config changes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.PollForChangesJob">
+            <summary>
+            Checks for configuration changes and applies corresponding changes (determined by the inner processor).
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.PollForChangesJob.#ctor(Frontend.Vanilla.Configuration.DynaCon.Container.IConfigurationContainer,Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService,Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.IChangesProcessor,Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy,Microsoft.Extensions.Logging.ILogger{Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.PollForChangesJob})">
+            <summary>
+            Checks for configuration changes and applies corresponding changes (determined by the inner processor).
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.ContextHierarchy.UpdateContextHierarchyJob">
+            <summary>
+            Updates common instance of context variation hierarchy as far as it's not bound to a changeset.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Polling.ContextHierarchy.UpdateContextHierarchyJob.#ctor(Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchyManager,Frontend.Vanilla.Configuration.DynaCon.Context.IContextHierarchyRestService)">
+            <summary>
+            Updates common instance of context variation hierarchy as far as it's not bound to a changeset.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.IPollingScheduler`1">
+            <summary>
+            Polls DynaCon service to retrieve some particular data.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ProactiveValidationJob">
+            <summary>
+            Fetches validatable changesets (e.g. waiting for approval) from DynaCon in order to proactively validate them.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ProactiveValidationJob.#ctor(Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService,Frontend.Vanilla.Configuration.DynaCon.Deserialization.A_Changeset.IChangesetDeserializer,Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog{Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ValidatedChangesetInfo},Frontend.Vanilla.Configuration.DynaCon.Context.ICurrentContextHierarchy,Frontend.Vanilla.Core.Time.IClock)">
+            <summary>
+            Fetches validatable changesets (e.g. waiting for approval) from DynaCon in order to proactively validate them.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ValidatedChangesetInfo">
+            <summary>
+            Info regarding past proactively validated changeset.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ValidatedChangesetInfo.#ctor(Frontend.Vanilla.Core.System.UtcDateTime,System.Int64,Frontend.Vanilla.Core.System.Text.RequiredString)">
+            <summary>
+            Info regarding past proactively validated changeset.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.ConfigurationReport">
+            <summary>
+            Defines format of configuration status data. It is displayed in <c>/health/config</c>.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.IConfigurationReporter">
+            <summary>
+            Reports configuration status by collecting data from partial reporters.
+            It is used in <c>/health/config</c> and health check.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.DynaConHealthCheck">
+            <summary>
+            Checks overall state of the configuration loaded from DynaCon.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.DynaConHealthCheck.#ctor(Frontend.Vanilla.Configuration.DynaCon.Reporting.IConfigurationReporter)">
+            <summary>
+            Checks overall state of the configuration loaded from DynaCon.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog`1">
+            <summary>
+            Stores past items of particular type.
+            Their count is limited according to settings.
+            Collection is thread-safe for both reading and writing.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.IPartialConfigurationReporter">
+            <summary>
+            Fills specific configuration status to the report.
+            This pattern is ugly, but it reduces code and if building fails, we still have some partially-filled report.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ChangesetReporter">
+            <summary>
+            Reports data regarding active/next/previous changesets etc.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ChangesetReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls,Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog{Frontend.Vanilla.Configuration.DynaCon.PastChangesetInfo})">
+            <summary>
+            Reports data regarding active/next/previous changesets etc.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.FallbackFileReporter`1">
+            <summary>
+            Reports info regarding fallback file status. It is used in <c>/health/config</c>.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.FallbackFileReporter`1.#ctor(Frontend.Vanilla.Configuration.DynaCon.FileFallback.IFallbackFile{`0},Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.IFallbackReportHandler)">
+            <summary>
+            Reports info regarding fallback file status. It is used in <c>/health/config</c>.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.LocalOverridesReporter">
+            <summary>
+            Reports state of local overrides - session or file.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.LocalOverridesReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings,Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings,Frontend.Vanilla.Core.IO.IFileSystem,Frontend.Vanilla.Configuration.DynaCon.LocalOverrides.IConfigurationOverridesService)">
+            <summary>
+            Reports state of local overrides - session or file.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.MultitenancyReporter">
+            <summary>
+            Reports tenant details in multitenant setup.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.MultitenancyReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.Multitenancy.ITenantManager)">
+            <summary>
+            Reports tenant details in multitenant setup.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.PollingForChangesReporter">
+            <summary>
+            Reports state of polling DynaCon service for configuration changes.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.PollingForChangesReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls,Frontend.Vanilla.Configuration.DynaCon.Polling.IPollingScheduler{Frontend.Vanilla.Configuration.DynaCon.Polling.Changes.PollForChangesJob})">
+            <summary>
+            Reports state of polling DynaCon service for configuration changes.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ProactiveValidationReporter">
+            <summary>
+            Reports state of polling for changesets in order to proactively validate them.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ProactiveValidationReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog{Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ValidatedChangesetInfo},Frontend.Vanilla.Configuration.DynaCon.Polling.IPollingScheduler{Frontend.Vanilla.Configuration.DynaCon.Polling.ProactiveValidation.ProactiveValidationJob},Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls)">
+            <summary>
+            Reports state of polling for changesets in order to proactively validate them.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ServiceCallsReporter">
+            <summary>
+            Reports state of REST calls to DynaCon service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.ServiceCallsReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog{Frontend.Vanilla.Configuration.DynaCon.RestService.RestServiceCallInfo},Frontend.Vanilla.Core.Time.IClock)">
+            <summary>
+            Reports state of REST calls to DynaCon service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.SettingsReporter">
+            <summary>
+            Reports configuration settings.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.SettingsReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.DynaConEngineSettings,Frontend.Vanilla.Configuration.DynaCon.Multitenancy.TenantSettings,System.Collections.Generic.IEnumerable{Frontend.Vanilla.Core.Configuration.IConfigurationInfo})">
+            <summary>
+            Reports configuration settings.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.VariationContextReporter">
+            <summary>
+            Fully resolves dynamic variation context for current request and reports it.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.Reporting.PartialReporters.VariationContextReporter.#ctor(Frontend.Vanilla.Configuration.DynaCon.Context.StaticVariationContext,Frontend.Vanilla.Configuration.DynaCon.Context.IDynamicVariationContextResolver)">
+            <summary>
+            Fully resolves dynamic variation context for current request and reports it.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestClient">
+            <summary>
+            Generic class for executing REST requests to DynCon service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.RestService.ConfigurationRestClientLogger">
+            <summary>
+            Intercepts all calls to DynaCon and preserves them in <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog`1" /> for later diagnostics.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.RestService.ConfigurationRestClientLogger.#ctor(Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestClient,Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog{Frontend.Vanilla.Configuration.DynaCon.RestService.RestServiceCallInfo},Frontend.Vanilla.Core.Time.IClock)">
+            <summary>
+            Intercepts all calls to DynaCon and preserves them in <see cref="T:Frontend.Vanilla.Configuration.DynaCon.Reporting.IHistoryLog`1" /> for later diagnostics.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationRestService">
+            <summary>
+            Encapsulates communication with DynCon API endpoints.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.RestService.IConfigurationServiceUrls">
+            <summary>
+            Provides URLs for accessing DynaCon endpoints.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.RestService.RestServiceCallInfo">
+            <summary>
+            Info about the call made to DynaCon REST service.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.RestService.RestServiceCallInfo.#ctor(Frontend.Vanilla.Core.System.Uris.HttpUri,System.Net.Http.HttpMethod,Frontend.Vanilla.Core.System.UtcDateTime,System.TimeSpan,System.String,System.String,System.Exception)">
+            <summary>
+            Info about the call made to DynaCon REST service.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Configuration.DynaCon.VanillaDynaConServices">
+            <summary>
+            Vanilla DynaCon configuration engine.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Configuration.DynaCon.VanillaDynaConServices.AddVanillaDynaConConfigurationEngine(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Vanilla DynaCon configuration engine.
+            Also adds dependency <see cref="M:Frontend.Vanilla.Core.VanillaCoreServices.AddVanillaCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />.
+            </summary>
+        </member>
+    </members>
+</doc>

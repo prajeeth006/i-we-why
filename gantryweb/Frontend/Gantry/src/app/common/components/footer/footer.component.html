@@ -1,0 +1,12 @@
+<div class="footer">
+  <div id="leftsideText" class="left-side-text">
+    {{ leftSideText }}
+    <ng-content select="[left-side-content]"></ng-content>
+  </div>
+  <div id="centerText" class="center-side-text">{{ centerSideText }}</div>
+  <div id="rightsideText" class="right-side-text" *ngIf="rightSideText">
+    {{ rightSideText !== 'showRight' ? rightSideText : '' }}
+    <ng-content select="[right-side-content]"></ng-content>
+  </div>
+  <ng-content></ng-content>
+</div>

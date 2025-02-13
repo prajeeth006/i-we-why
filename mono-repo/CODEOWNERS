@@ -1,0 +1,99 @@
+# workspace
+[workspace][1] @vanilla @push-based
+/CODEOWNERS
+/*.*
+/.*/
+/docs/
+/packages/eslint-utils/
+/packages/code-pushup-utils/
+/tools/
+/CHANGELOG.md @sports-frontends @vanilla @frontend-vip-hub @push-based @payments-approvers @frontend-gantry @frontend-poker @engagementtools @frontend-promo @frontend-bingo  @gamingportal @themes 
+/tsconfig.base.json @sports-frontends @vanilla @frontend-vip-hub @push-based @payments-approvers @frontend-gantry @frontend-poker @engagementtools @frontend-promo @frontend-bingo  @gamingportal @themes
+
+# vanilla
+[vanilla][1] @vanilla @push-based
+/backend/vanilla/
+/backend/host-app/
+/backend/*.*
+/packages/*.*
+/packages/dev-kit/
+/packages/nx-plugin/
+/packages/workspace-validation-plugin-lib/
+/packages/gitlab-data-access/
+/packages/loaders-lib/
+/packages/migration-kit/
+/packages/moxxi-test-utils/
+/packages/sfapi-smoke-test/
+/packages/testweb-app/
+/packages/vanilla/
+/packages/host-app/
+ 
+[themepark][1] @themes @push-based
+/packages/themepark/
+ 
+[design-system][1] @themes @push-based
+/packages/design-system/
+ 
+[gaming][1] @gaming-portal-approvers @push-based
+/packages/casino/
+/packages/global-search/
+/packages/horseracing/
+/packages/lottery-app/
+/packages/virtualsports-app/
+/backend/casino/
+/backend/globalsearch/
+/backend/virtualsports/
+/backend/gamingportal/
+/backend/horseracing/
+/backend/lottery/
+ 
+[bingo][1] @frontend-bingo @push-based
+/packages/mokabingo-app/
+/packages/bingo/
+/backend/mokabingo/
+/backend/bingo/
+ 
+[promo][1] @frontend-promo @push-based @engagementtools
+/packages/promo/
+/backend/promo/
+ 
+[engagement][1] @engagementtools @vanilla
+/backend/engagement/
+
+[frontend-e2e-test-framework][1] @frontend-e2e-framework-approvers
+/packages/e2e-test-framework/
+ 
+[myaccount][1] @myaccount-approvers @myaccount-label-approvers @market-portal-admins @push-based
+/packages/myaccount/
+/backend/myaccount/
+ 
+[sports][1] @sports-frontends
+/packages/sports/
+/backend/sports/
+ 
+[sports-playwright][1] @sports-frontends/playwright-team
+/packages/sports/libs/automation/playwright/
+/packages/sports/web/e2e/
+/packages/sports/betstation/e2e/
+ 
+[poker][1] @frontend-poker @push-based
+/packages/poker/
+/backend/poker/
+ 
+[gantry][1] @frontend-gantry @push-based
+/packages/gantry-app/
+/backend/gantry/
+ 
+[payments][2] @payments-approvers @push-based
+/packages/betslipqd-app/
+/packages/quickdeposit-app/
+/packages/cashier-app/
+/packages/payments/
+/backend/payments/
+ 
+[viphub][1] @frontend-vip-hub @push-based
+/packages/rewards-hub/
+
+[oxygen][3] @frontend-oxygen-approvers
+/packages/oxygen/
+/backend/oxygen/

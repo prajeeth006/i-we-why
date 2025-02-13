@@ -1,0 +1,249 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    @include flex-center;
+    font-size: $font-40;
+    padding: 0 14px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: $font-20;
+        border-width: 2.5px;
+        padding: 0 7px;
+    }
+}
+
+.selection-table {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        font-weight: $fw-bold;
+    }
+}
+
+//Templates for 1 to 6 runners
+.ante-post-small-content {
+    &.outright-content__wrapper {
+        margin-top: 59px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 29px;
+        }
+    }
+
+    .selection-table {
+        li {
+            padding-bottom: 24px;
+            font-size: $font-70;
+
+            @include breakpoint(multidesktop) {
+                padding-bottom: 12px;
+                font-size: $font-35;
+            }
+
+            .current-price__tilted {
+                height: 96px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+//Templates for 7 or 8 runners
+.ante-post-medium-content {
+    &.outright-content__wrapper {
+        margin-top: 17px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 8px;
+        }
+    }
+
+    .selection-table {
+        li {
+            padding-bottom: 4px;
+            font-size: $font-70;
+
+            @include breakpoint(multidesktop) {
+                padding-bottom: 2px;
+                font-size: $font-35;
+            }
+
+            .current-price__tilted {
+                height: 96px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+//Templates for 9 to 12 runners
+.ante-post-large-content {
+    &.outright-content__wrapper {
+        margin-top: 37px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 18px;
+        }
+    }
+
+    .selection-table {
+        @include grid-colum-flow(2, 6, 36px, 60px);
+
+        li {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            font-size: $font-60;
+
+            &.nonlist {
+                opacity: 0;
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-30;
+            }
+
+            .selection-content {
+                &::before {
+                    content: none;
+                }
+            }
+
+            .current-price__tilted {
+                height: 96px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+//Templates for 13 to 16 runners
+.ante-post-extralarge-content {
+    &.outright-content__wrapper {
+        margin-top: 17px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 8px;
+        }
+    }
+
+    .selection-table {
+        @include grid-colum-flow(2, 8, 4px, 60px);
+
+        li {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            font-size: $font-60;
+
+            &.nonlist {
+                opacity: 0;
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-30;
+            }
+
+            .selection-content {
+                &::before {
+                    content: none;
+                }
+            }
+
+            .current-price__tilted {
+                height: 96px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                }
+
+                .current-price__tilted--text {
+                    &.price__morethan--sixchar {
+                        font-size: 55px;
+
+                        @include breakpoint(multidesktop) {
+                            font-size: 27.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Templates for more than 17 then 20 runners template
+.ante-post-pagination-content {
+    &.outright-content__wrapper {
+        margin-top: 17px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 8px;
+        }
+    }
+
+    .selection-table {
+        @include grid-colum-flow(2, 10, 8px, 60px);
+
+        li {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            font-size: $font-56;
+
+            &.nonlist {
+                opacity: 0;
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-28;
+            }
+
+            .selection-content {
+                &::before {
+                    content: none;
+                }
+            }
+
+            .current-price__tilted {
+                height: 72px;
+
+                @include breakpoint(multidesktop) {
+                    height: 36px;
+                }
+
+                .current-price__tilted--text {
+                    &.price__morethan--sixchar {
+                        font-size: 53px;
+
+                        @include breakpoint(multidesktop) {
+                            font-size: 26.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.current-price__tilted {
+    background-color: $color-white;
+    color: $theme-white-bg-text;
+    @include flex-center;
+}

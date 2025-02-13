@@ -1,0 +1,85 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsTooltipStories from '../tooltip.component.stories';
+
+Tooltip is a simple popup menu to provide extra information or operations.
+It can also provide action elements like links and buttons.
+The DsTooltip component is designed to display tooltip notifications with customizable content.
+It uses slots to allow you to insert specific elements into predefined areas of the tooltip.
+
+## Usage
+
+Import `DsTooltipModule` in your component.
+
+```ts
+import { DsTooltipModule } from '@frontend/ui/tooltip'; // 👈 add to file imports
+
+@Component({
+    template: `...`,
+    imports: [DsTooltipModule], // 👈 add to component imports
+})
+export class AppComponent {}
+```
+
+To use the ds-tooltip component, include the `<ds-tooltip></ds-tooltip>` selector in your template. The content inside the tooltip is divided into different slots.
+
+We also need to add below two directives to enable the tooltip on button/Icon etc.
+
+-   **[dsTooltipTriggerFor]="tooltipTemplate"** is a directive used for displaying the overlay/tooltip from the template you provide and link here.
+-   **[dsTooltipOnFocus]"** is a directive used for configuring the visibility options like mouse events of the tooltip.
+
+**Note:** If you want to open tooltip only on click event then use only **[dsTooltipTriggerFor]="tooltipTemplate"** directive
+
+**Note:** **tooltipToggleChange** emits when the tooltip visibility changes, making it possible to manage visibility from outside the directive.
+
+### Slots
+
+-   **Description:** Use the slot="description" for adding the text for the tooltip.
+-   **Title:** Use the slot="title" attribute for the title to display. This is useful for adding a title to the tooltip, If you don't want to render the title on tooltip just no need to add anything in this slot;
+    -   Basically It will display the content, if anything added to this slot otherwise not.
+-   **Action Button:** Use the slot="action". If you want to add a button to perform some action directly from the tooltip overlay/popup. It will be always on the right bottom;
+    -   Basically It will display the content, if anything added to this slot otherwise not.
+-   **Close Icon:** Use the slot="close" attribute for the close icon slot. This allows you to add a close button to the tooltip overlay/popup.
+
+### Stylings
+
+We can style tooltip overlay area in 4 ways using `tooltipPosition` input as follows :
+
+-   top (default)
+-   left
+-   bottom
+-   right
+
+And also tooltip overlay contain arrow so we can change alignment of arrow in 3 directions. It can be done using the `arrowPosition` input:
+
+-   start (default)
+-   middle
+-   end
+
+## Behavior of tooltip
+
+### AutoOpen
+
+Automatically opens the tooltip when the component is initialized and closes after 10s. It is a boolean we need to provide as `[autoOpen]="autoOpen"`.
+
+### autoCloseTime
+
+When the tooltip opens automatically, this will Controls the amount of time the component remains open once displayed, closing it automatically after the specified duration has passed.
+
+### closeOnScroll
+
+Optionally closes the tooltip when scrolling. It is a boolean, we need to pass the value true to close the tooltip on scroll. Otherwise false.
+
+It is helpful to use only with click event i.e., only using the **[dsTooltipTriggerFor]="tooltipTemplate"** directive not with the mouse events.
+
+### hasBackdrop
+
+Determines whether there is a backdrop behind the tooltip.
+It is used to close the tooltip on any click outside the tooltip area. It is a boolean, we need to pass the value true to close the tooltip on click of outside the tooltip area. Otherwise false.
+
+It is helpful to use only with click event i.e., only using the **[dsTooltipTriggerFor]="tooltipTemplate"** directive not with the mouse events.
+
+### tooltipToggle
+
+Two-way bound input that externally controls tooltip visibility.

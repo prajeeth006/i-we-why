@@ -1,0 +1,15 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.ServiceClients\Frontend.Vanilla.ServiceClients.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.ServiceClients\Frontend.Vanilla.ServiceClients.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.ServiceClients\Frontend.Vanilla.ServiceClients.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.ServiceClients\Frontend.Vanilla.ServiceClients.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.3A30D9BE.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\refint\Frontend.Vanilla.ServiceClients.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\Frontend.Vanilla.ServiceClients.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.ServiceClients\obj\Debug\ref\Frontend.Vanilla.ServiceClients.dll

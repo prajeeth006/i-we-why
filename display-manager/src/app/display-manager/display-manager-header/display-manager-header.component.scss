@@ -1,0 +1,43 @@
+@use '../../shared-css/abstracts' as abstract;
+@import '../../shared-css/variables.scss';
+
+
+.header-section {
+  margin: 0 $txt-sm-font-size;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  height: 48px;
+
+  @include abstract.breakpoint-2 {
+    height: 35px;
+  }
+
+  .brand-logo {
+    height: 25px;
+
+    @include abstract.breakpoint-2 {
+      height: 15px;
+    }
+  }
+
+  .border-line {
+    height: 30px;
+    width: 2px;
+    background-color: #013357;
+  }
+
+  .right-header {
+    display: flex;
+    align-items: center;
+
+    @include abstract.breakpoint-2 {
+      font-size: 12px;
+    }
+  }
+
+  label-selector {
+    margin-left: 0.5rem;
+  }
+}

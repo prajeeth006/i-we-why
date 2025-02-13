@@ -1,0 +1,83 @@
+<div class="manual-main-header">
+    <div class="manual-match-details-form">
+        <div class="controls-section" [formGroup]="form">
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                <div class="item-label">Sport*</div>
+                <mat-form-field appearance="fill" class="field-name">
+                    <input matInput type="text" id="csportName" placeholder="Enter Name" formControlName="sportName" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName != manualConstants.manual_sports_coupon && menuName != manualConstants.manual_sports_outright">
+                <div class="item-label">Sport*</div>
+                <mat-form-field appearance="fill" class="sport-event-outright-mmarket">
+                    <input matInput type="text" id="sportName" placeholder="Enter Name" formControlName="sportName" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control sport-name" *ngIf="menuName == manualConstants.manual_sports_outright">
+                <div class="item-label">Sport*</div>
+                <mat-form-field appearance="fill" class="form-field event-type-field">
+                    <mat-select disableOptionCentering panelClass="sportName-dropdown-control" id="sportName"
+                        class="select-sportName" formControlName="sportName"
+                        (selectionChange)="onSportChange('Change', $event.value)" [disabled]="isSaved"
+                        [ngClass]="{'reset-disable': isSaved }">
+                        <mat-option [value]="sportName" *ngFor="let sportName of sportsList" id="sportName">{{ sportName
+                            }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                <div class="item-label">Template Title*</div>
+                <mat-form-field appearance="fill" class="field-name">
+                    <input matInput type="text" id="templateTitle" placeholder="Enter Name"
+                        formControlName="templateTitle" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                <div class="item-label">Market Type</div>
+                <mat-form-field appearance="fill" class="field-name">
+                    <input matInput type="text" id="marketType" placeholder="Enter Name" formControlName="marketType" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                <div class="item-label">Start Date</div>
+                <mat-form-field appearance="fill" class="field-date">
+                    <input matInput id="startDate" class="date-range-control" placeholder="DD/MM/YYYY" formControlName="startDate" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <span class="separator" *ngIf="menuName == manualConstants.manual_sports_coupon">-</span>
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_coupon">
+                <div class="item-label">End Date</div>
+                <mat-form-field appearance="fill" class="field-date">
+                    <input matInput id="endDate" class="date-range-control" placeholder="DD/MM/YYYY" formControlName="endDate" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName != manualConstants.manual_sports_coupon  && menuName != manualConstants.manual_sports_outright">
+                <div class="item-label">Event Name*</div>
+                <mat-form-field appearance="fill" class="sport-event-outright-mmarket">
+                    <input matInput type="text" id="eventName" placeholder="Enter Name"
+                        formControlName="eventName" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName == manualConstants.manual_sports_outright">
+                    <div class="item-label">Event Name*</div>
+                    <mat-form-field appearance="fill" class="sport-event-outright-mmarket " [ngClass]="{ 'is-invalid': ((form.controls['eventName'].invalid) && isSubmit) }">
+                        <input matInput type="text" id="eventName" placeholder="Enter Name" class="event-ellipsis" required
+                            formControlName="eventName" autocomplete="off"/>
+                    </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName != manualConstants.manual_sports_coupon">
+                <div class="item-label">Date</div>
+                <mat-form-field appearance="fill" class="date">
+                    <input matInput type="text" id="date" formControlName="date" placeholder="DD/MM/YYYY" [maxlength]="25" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+            <div class="form-control" *ngIf="menuName != manualConstants.manual_sports_coupon">
+                <div class="item-label">Time</div>
+                <mat-form-field appearance="fill" class="time">
+                    <input matInput type="text" id="time" formControlName="time" placeholder="HH:MM" [maxlength]="25" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

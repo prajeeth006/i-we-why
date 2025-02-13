@@ -1,0 +1,104 @@
+@use '../../../../../shared-css/helpers' as helper;
+@use '../../../../../shared-css/abstracts' as abstract;
+@import '../../../../../shared-css/variables.scss';
+
+.event-screens-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 114px);
+    font-size: $txt-md-font-size;
+    line-height: 20px;
+
+    @include abstract.breakpoint-2 {
+        width: 90px;
+    }
+
+    &.disabled {
+        opacity: $half-opacity;
+    }
+
+    .screen-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 69px;
+        background: $white;
+        border: 0.5px solid $background-grey-1;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-size: $txt-md-font-size;
+        line-height: 20px;
+
+        &.disabled {
+            opacity: $half-opacity;
+        }
+
+        .screen-header {
+            @include helper.center-content;
+            min-height: 45px;
+            border-radius: 2px;
+            margin: 5px;
+            border-width: 1px;
+            border-style: solid;
+            box-sizing: border-box;
+            font-size: $txt-md-font-size;
+            line-height: 20px;
+
+            .event-name {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 12px;
+                color: #67379A;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+            }
+        }
+
+        .screen-type {
+            position: absolute;
+            bottom: 0px;
+            box-sizing: border-box;
+            align-self: center;
+            width: auto;
+            font-weight: 500;
+            text-align: center;
+            padding: 0px 4px;
+            height: 14px;
+            line-height: 14px;
+            box-sizing: border-box;
+            background-color: $color-black-light;
+            border: 1px solid $color-black-light;
+            border-radius: 3px;
+            color: $white;
+            letter-spacing: 0.6px;
+            font-size: $txt-md-font-size;
+            white-space: nowrap;
+
+            @include abstract.breakpoint-2 {
+                font-size: $txt-xs-font-size;
+            }
+
+            &.longer-tv-txt-name {
+                padding: 0 2.5px;
+            }
+        }
+    }
+
+    .event-name-and-time {
+        @include helper.center-content;
+        font-size: $txt-sm-font-size;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.4px;
+        width: 100%;
+        height: 32px;
+        line-height: 20px;
+        color: $text-black-color;
+        margin-top: 5px;
+        word-break: break-all;
+
+        @include abstract.breakpoint-2 {
+            width: 90px;
+        }
+    }
+}

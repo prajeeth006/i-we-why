@@ -1,0 +1,14 @@
+@import '../../../../../dark-theme-global-style/_all-variables.scss';
+@import '../../../../../dark-theme-global-style/mixins/_traps.scss';
+
+.avr-bg-image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    @media (orientation: portrait) {
+        min-height: 100vh;
+    }
+}

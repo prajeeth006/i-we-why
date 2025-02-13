@@ -1,0 +1,106 @@
+@import '../../../../dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    @include flex-center;
+    font-size: $font-36;
+    padding: 0 14px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: $font-18;
+        border-width: 2.5px;
+        padding: 0 7px;
+    }
+}
+
+.golf-page__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 76px;
+    grid-row-gap: 58px;
+    margin-top: 43px;
+
+    @include breakpoint(multidesktop) {
+        grid-column-gap: 38px;
+        grid-row-gap: 29px;
+        margin-top: 21.5px;
+    }
+
+    .winning-title {
+        color: $coral-yellow-lads-white;
+        font-size: $font-48;
+        line-height: 34px;
+        font-weight: $fw-medium;
+
+        @include breakpoint(multidesktop) {
+            font-size: $font-24;
+            line-height: 17px;
+        }
+    }
+
+    .selection-table {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        margin-top: 30px;
+
+        @include breakpoint(multidesktop) {
+            margin-top: 15px;
+            row-gap: 10px;
+        }
+
+        li {
+            font-size: $font-60;
+            font-weight: $fw-bold;
+            display: flex;
+            column-gap: 30px;
+            justify-content: space-between;
+            height: 80px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-30;
+                column-gap: 15px;
+                height: 40px;
+            }
+
+            .selection-name {
+                flex: 1;
+                border-bottom: solid 4px white;
+                line-height: 70px;
+
+                @include breakpoint(multidesktop) {
+                    border-width: 2px;
+                    line-height: 35px;
+                }
+            }
+
+            .current-price__tilted {
+                height: 80px;
+                background-color: $color-white;
+                color: $theme-white-bg-text;
+                @include flex-center;
+
+                @include breakpoint(multidesktop) {
+                    height: 40px;
+                }
+
+                .current-price__tilted--text {
+                    &.price__morethan--sixchar {
+                        font-size: 55px;
+
+                        @include breakpoint(multidesktop) {
+                            font-size: 27.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

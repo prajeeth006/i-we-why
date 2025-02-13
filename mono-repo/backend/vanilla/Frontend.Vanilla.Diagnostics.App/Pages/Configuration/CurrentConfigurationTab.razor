@@ -1,0 +1,180 @@
+@using Frontend.Vanilla.Diagnostics.Contracts
+@using Frontend.Vanilla.Diagnostics.Contracts.Configuration
+@inherits CurrentConfigurationTabComponent
+
+<p data-testid="changesetInfo">
+    Current changeset: <strong>#@Model.ActiveChangesetId</strong>
+    (<a href="@Model.Urls.ActiveChangesetApi" target="_blank">API</a>, <a href="@Model.Urls.ChangesetHistoryAdmin" target="_blank">History</a>)
+    @if (Model.FutureChangesetIds.Count > 0)
+    {
+        <text>soon followed by</text>
+
+        foreach (var (id, index) in Model.FutureChangesetIds.Select((x, i) => (x, i)))
+        {
+            @(index != 0 ? "and then" : null)
+            <a href="@string.Format(Model.Urls.ChangesetAdminPattern, id)" target="_blank">#@id</a>
+        }
+    }
+</p>
+<p data-testid="dynaConServices">
+    Used DynaCon services:
+    @foreach (var (service, index) in Model.DynaConServiceNames.Select((x, i) => (x, i)))
+    {
+        @(index != 0 ? "|" : null)
+        <a href="@string.Format(Model.Urls.ServiceAdminPattern, service)" target="_blank">@service</a>
+    }
+</p>
+<p data-testid="currentContext">
+    Your current variation context:
+    @foreach (var context in Model.CurrentVariationContext)
+    {
+        <span class="badge badge-secondary mr-1">
+            @context.Key: @context.Value
+        </span>
+    }
+</p>
+<div data-testid="overrides">
+    <strong>@(Model.OverridesMode ?? "Disabled")</strong> overrides:
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-success" @onclick="() => EditOverridesDialog.ShowAsync(Model.OverridesJson)" disabled="@(Model.OverridesMode == null)">
+            <span class="oi oi-pencil"></span> Edit
+        </button>
+        <button class="btn btn-danger" @onclick="() => ClearOverrides()" disabled="@(!Model.OverridesJson.HasValues || IsClearingOverrides)">
+            <span class="oi oi-trash"></span> @(IsClearingOverrides ? "Clearing" : "Clear")
+        </button>
+        <a class="btn btn-primary @(!Model.OverridesJson.HasValues ? "disabled" : null)" href="@("/" + DiagnosticApiUrls.Configuration.SharedOverrides.ShareUrl)" target="_blank">
+            <span class="oi oi-share"></span> Share
+        </a>
+    </div>
+</div>
+<p class="d-flex flex-row" data-testid="filters">
+    <CheckBox @bind-Checked="@ShowOnlyFeaturesWithOverrides" Text="Show only features with overrides" Disabled="!Model.OverridesJson.HasValues"/>
+    <CheckBox @bind-Checked="@ShowOnlyConfigsForCurrentContext" Text="Show only configurations for current variation context"/>
+</p>
+
+@foreach (var feature in Model.ActiveChangesetFeatures.Where(f => !ShowOnlyFeaturesWithOverrides || GetFeatureJson(Model.OverridesJson, f.Key) != null))
+{
+    var isExpanded = ExpandedFeatures.Contains(feature.Key);
+    var overrideFeatureJson = GetFeatureJson(Model.OverridesJson, feature.Key);
+    <div class="card" id="@feature.Key" data-testid="feature">
+        <div class="card-body">
+            <div class="row">
+                <h5 class="card-title col-auto mr-auto">
+                    <ExpandableChevron IsExpanded="isExpanded" OnClick="() => ExpandedFeatures.Toggle(feature.Key)">@feature.Key</ExpandableChevron>
+                    <small class="text-muted">
+                        <ScrollToIdLink ScrollId="@feature.Key" Click="() => ExpandedFeatures.Add(feature.Key)"/>
+                        edit in <a href="@(new Uri(string.Format(Model.Urls.FeatureAdminPattern, feature.Key)))" target="_blank">DynaCon</a>
+                    </small>
+                </h5>
+                @if (overrideFeatureJson != null)
+                {
+                    <div class="col-auto">
+                        <span class="badge badge-danger mr-1">
+                            <span class="oi oi-flash"></span> Overrides
+                        </span>
+                    </div>
+                }
+            </div>
+            @if (isExpanded)
+            {
+                var dynaConFeatureJson = GetFeatureJson(Model.DynaConJson, feature.Key);
+                <div class="card-group">
+                    <div class="card" data-testid="instances">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Configurations per Context</h6>
+                            @foreach (var config in feature.Value.Where(f => !ShowOnlyConfigsForCurrentContext || f.CurrentlyUsed))
+                            {
+                                <div data-testid="instance">
+                                    @if (config.CurrentlyUsed)
+                                    {
+                                        <span class="badge badge-success mr-1">
+                                            Currently used in your context
+                                        </span>
+                                    }
+                                    <span class="badge badge-primary mr-1">
+                                        Priority: @config.Priority
+                                    </span>
+                                    @if (config.CriticalityLevel != 0)
+                                    {
+                                        <span class="badge badge-danger mr-1">
+                                            Criticality: @((CriticalityLevel)config.CriticalityLevel)
+                                        </span>
+                                    }
+                                    @if (config.Context.Count > 0)
+                                    {
+                                        @foreach (var context in config.Context.OrderBy(c => c.Key))
+                                        {
+                                            <span class="badge badge-secondary mr-1">
+                                                @context.Key: [@string.Join(", ", context.Value)]
+                                            </span>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-secondary mr-1">Any</span>
+                                    }
+                                    <JsonViewer Model="config.InstanceJson" IsCondensed="true" HideValues="config.CriticalityLevel == 1"/>
+                                </div>
+
+                                if (ShowOnlyConfigsForCurrentContext && feature.Value.Count > 1)
+                                {
+                                    <div class="text-muted">
+                                        There are @(feature.Value.Count - 1) more configurations for other contexts.
+                                        <button class="btn btn-light btn-sm" @onclick="() => ShowOnlyConfigsForCurrentContext = false">Show All</button>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    @if (overrideFeatureJson != null)
+                    {
+                        <div class="card" data-testid="overridesJson">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted row">
+                                    <span class="col-auto mr-auto">Local Overrides</span>
+                                    <span class="col-auto">
+                                        <OverrideButton Text="Edit"
+                                                        IconClass="oi-pencil"
+                                                        DynaConFeatureJson="dynaConFeatureJson"
+                                                        OnClick="keyName => EditFeatureOverridesAsync(dynaConFeatureJson, overrideFeatureJson, feature.Key, keyName)">
+                                            <button class="btn btn-danger btn-sm" @onclick="() => ClearOverrides(feature.Key)" disabled="@IsClearingOverrides">
+                                                <span class="oi oi-trash"></span> @(IsClearingOverrides ? "Clearing" : "Clear")
+                                            </button>
+                                        </OverrideButton>
+                                    </span>
+                                </h6>
+                                <JsonViewer Model="overrideFeatureJson" Class="dynacon" IsCondensed="true"/>
+                            </div>
+                        </div>
+                    }
+                    <div class="card" data-testid="dynaConJson">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted row">
+                                <span class="col-auto mr-auto">Underlying Data from DynaCon</span>
+                                @if (overrideFeatureJson == null)
+                                {
+                                    <span class="col-auto">
+                                        <OverrideButton Text="Override"
+                                                        IconClass="oi-flash"
+                                                        IsDisabled="@(Model.OverridesMode == null)"
+                                                        DynaConFeatureJson="dynaConFeatureJson"
+                                                        OnClick="keyName => EditFeatureOverridesAsync(dynaConFeatureJson, null, feature.Key, keyName)"/>
+                                    </span>
+                                }
+                            </h6>
+                            <JsonViewer Model="dynaConFeatureJson" Class="dynacon" IsCondensed="true"/>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h6 class="card-subtitle mb-2 text-muted" data-testid="collapsedProperties">
+                    @(string.Join(", ", feature.Value[0].InstanceJson.Properties().Select(p => p.Name))).
+                </h6>
+            }
+        </div>
+    </div>
+}
+<EditOverridesDialog @ref="EditOverridesDialog" OnSaveOverrides="e => SaveOverrides(e.FeatureName, e.KeyName, e.OverridesJson)"/>
+<ScrollToFragmentOnLoad OnScroll="f => OnScrollFromUrlFragment(f)"/>

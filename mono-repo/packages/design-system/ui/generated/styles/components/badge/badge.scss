@@ -1,0 +1,415 @@
+@mixin blue {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-base);
+}
+
+@mixin blue-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-base-inverse);
+}
+
+@mixin blue-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-strong);
+}
+
+@mixin blue-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-strong-inverse);
+}
+
+@mixin blue-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-subtle);
+}
+
+@mixin blue-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-blue-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-blue-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-blue-subtle-inverse);
+}
+
+@mixin disabled {
+    --ds-badge-color-bg: var(--semantic-color-disabled-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-badge-color-text: var(--semantic-color-on-disabled-base);
+}
+
+@mixin disabled-inverse {
+    --ds-badge-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-disabled-base-inverse);
+}
+
+@mixin green {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-base);
+}
+
+@mixin green-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-base-inverse);
+}
+
+@mixin green-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-strong);
+}
+
+@mixin green-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-strong-inverse);
+}
+
+@mixin green-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-subtle);
+}
+
+@mixin green-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-green-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-green-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-green-subtle-inverse);
+}
+
+@mixin medium {
+    --ds-badge-radius-border: var(--semantic-radius-l2-badge-medium);
+    --ds-badge-size-icon: var(--semantic-size-icon-small);
+    --ds-badge-size-l-slot-height: var(--semantic-size-x4);
+    --ds-badge-size-l-slot-min-width: var(--semantic-size-x3);
+    --ds-badge-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-badge-space-padding-bottom: var(--semantic-spacing-container-padding-xs);
+    --ds-badge-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-badge-space-padding-right: var(--semantic-spacing-container-padding-sm);
+    --ds-badge-space-padding-top: var(--semantic-spacing-container-padding-xs);
+}
+
+@mixin neutral {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-base);
+}
+
+@mixin neutral-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-base-inverse);
+}
+
+@mixin neutral-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-shade);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-shade);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-shade);
+}
+
+@mixin neutral-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-shade-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-shade-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-shade-inverse);
+}
+
+@mixin neutral-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-tint);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-subtle);
+}
+
+@mixin neutral-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-gray-tint-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-gray-tint-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-gray-tint-inverse);
+}
+
+@mixin orange {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-base);
+}
+
+@mixin orange-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-base-inverse);
+}
+
+@mixin orange-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-strong);
+}
+
+@mixin orange-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-strong-inverse);
+}
+
+@mixin orange-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-subtle);
+}
+
+@mixin orange-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-orange-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-orange-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-orange-subtle-inverse);
+}
+
+@mixin primary {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-base);
+}
+
+@mixin primary-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-base-inverse);
+}
+
+@mixin primary-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-strong);
+}
+
+@mixin primary-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-strong-inverse);
+}
+
+@mixin primary-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-subtle);
+}
+
+@mixin primary-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-primary-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-primary-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-primary-subtle-inverse);
+}
+
+@mixin purple {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-base);
+}
+
+@mixin purple-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-base-inverse);
+}
+
+@mixin purple-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-strong);
+}
+
+@mixin purple-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-strong-inverse);
+}
+
+@mixin purple-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-subtle);
+}
+
+@mixin purple-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-purple-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-purple-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-purple-subtle-inverse);
+}
+
+@mixin red {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-base);
+}
+
+@mixin red-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-base-inverse);
+}
+
+@mixin red-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-strong);
+}
+
+@mixin red-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-strong-inverse);
+}
+
+@mixin red-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-subtle);
+}
+
+@mixin red-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-red-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-red-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-red-subtle-inverse);
+}
+
+@mixin secondary {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-base);
+}
+
+@mixin secondary-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-base-inverse);
+}
+
+@mixin secondary-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-strong);
+}
+
+@mixin secondary-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-strong-inverse);
+}
+
+@mixin secondary-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-subtle);
+}
+
+@mixin secondary-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-brand-secondary-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-brand-secondary-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-brand-secondary-subtle-inverse);
+}
+
+@mixin xsmall {
+    --ds-badge-radius-border: var(--semantic-radius-l2-badge-xsmall);
+    --ds-badge-size-icon: var(--semantic-size-icon-xsmall);
+    --ds-badge-size-l-slot-height: var(--semantic-size-x3);
+    --ds-badge-size-l-slot-min-width: var(--semantic-size-x2);
+    --ds-badge-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-badge-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-badge-space-padding-left: var(--semantic-spacing-container-padding-sm);
+    --ds-badge-space-padding-right: var(--semantic-spacing-container-padding-sm);
+    --ds-badge-space-padding-top: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin yellow {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-base);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-base);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-base);
+}
+
+@mixin yellow-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-base-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-base-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-base-inverse);
+}
+
+@mixin yellow-strong {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-strong);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-strong);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-strong);
+}
+
+@mixin yellow-strong-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-strong-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-strong-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-strong-inverse);
+}
+
+@mixin yellow-subtle {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-subtle);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-subtle);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-subtle);
+}
+
+@mixin yellow-subtle-inverse {
+    --ds-badge-color-bg: var(--semantic-color-supporting-yellow-subtle-inverse);
+    --ds-badge-color-border: var(--semantic-color-opacity-transparent);
+    --ds-badge-color-icon: var(--semantic-color-on-supporting-yellow-subtle-inverse);
+    --ds-badge-color-text: var(--semantic-color-on-supporting-yellow-subtle-inverse);
+}

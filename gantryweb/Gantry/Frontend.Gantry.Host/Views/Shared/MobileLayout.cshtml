@@ -1,0 +1,106 @@
+@using Bwin.Vanilla.Features.Assets
+@using Frontend.Vanilla.DotNetCore.Host
+@using Bwin.Vanilla.Features.HtmlInjection
+@inject ILayoutViewDataProvider VanillaDataProvider
+
+@{
+    Layout = null;
+    Context.Response.DisableCache();
+}
+<!doctype html>
+<html class="fw-fourteen">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@VanillaDataProvider.GetPageTitle(Context)</title>
+    <meta name="apple-mobile-web-app-title" content="@VanillaDataProvider.GetPageTitle(Context)" />
+    <meta name="description" content="@VanillaDataProvider.Description" />
+    <meta name="viewport" content="@VanillaDataProvider.GetViewport()" />
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        function boot() {
+            const lang = getCookie('lang') || 'en';
+            return fetch(`/${lang}/api/clientconfig`, {
+                cache: 'no-store',
+                headers: {
+                    'x-bwin-browser-url': location.href,
+                    'x-bwin-browser-referrer': document.referrer,
+                    'X-App-Context': self === top ? 'default' : 'iframe'
+                },
+                credentials: 'same-origin'
+            })
+            .then(res => res.json())
+                .then(config => window['clientConfig'] = config)
+            .catch(err => console.error(err));
+        }
+        window['_boot'] = boot();
+        window.script_load = (function () {
+            var that = this;
+            that.mapping = {};
+            that.startTime = Date.now();
+            return {
+                timings: {},
+                start: function (id) {
+                    that.mapping[id] = Date.now();
+                },
+                onEnd: function (script) {
+                    var startTime = that.mapping[script.id];
+                    if (startTime) {
+                        this.timings[script.src] = Date.now() - startTime;
+                        delete that.mapping[script.id];
+                    }
+                }
+            }
+        })();
+
+    </script>
+
+    @RenderSection("HtmlHeadTags", required: false)
+    @if (!IsSectionDefined("HtmlHeadTags"))
+    {
+        @VanillaDataProvider.RenderHtmlHeadTagsFromSitecore()
+        @VanillaDataProvider.RenderHtmlHeadTagsFromDynacon()
+        @VanillaDataProvider.RenderAbTestingScript()
+        @VanillaDataProvider.RenderWebAppMetadata()
+    }
+
+    @VanillaDataProvider.RenderCanonicalLinkTag(Context)
+    @RenderSection("PageHead", required: false)
+
+    @RenderSection("HeadAssets", required: false)
+    @if (!IsSectionDefined("HeadAssets"))
+    {
+        @VanillaDataProvider.RenderBootstrapAssets(BootstrapAssetSection.Head)
+    }
+
+    @{
+        VanillaDataProvider.RenderSiteScripts(SiteScriptsPosition.Top);
+    }
+</head>
+<body>
+    @VanillaDataProvider.RenderSplashScreen()
+
+    @RenderBody()
+
+    @RenderSection("PageBottom", required: false)
+
+    @RenderSection("BodyAssets", required: false)
+    @if (!IsSectionDefined("BodyAssets"))
+    {
+        @VanillaDataProvider.RenderBootstrapAssets(BootstrapAssetSection.Body)
+    }
+
+    @{
+        VanillaDataProvider.RenderSiteScripts(SiteScriptsPosition.Bottom);
+    }
+    @RenderSection("PageEnd", required: false)
+
+    @VanillaDataProvider.RenderSiteScripts(SiteScriptsPosition.Top)
+    @VanillaDataProvider.RenderRenderedTimeStamp()
+</body>
+</html>

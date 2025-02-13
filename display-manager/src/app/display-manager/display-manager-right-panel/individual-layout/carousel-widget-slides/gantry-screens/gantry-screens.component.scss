@@ -1,0 +1,66 @@
+@use '../../../../../shared-css/helpers' as helper;
+@import '../../../../../shared-css/variables.scss';
+
+.slide {
+  height: 100%;
+  box-sizing: border-box;
+
+  .slide-content {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5px;
+
+    .screens-row {
+      @include helper.grid-container(center, 5px);
+      grid-template-columns: repeat(auto-fit, 228px);
+
+      .screen-column {
+        position: relative;
+      }
+    }
+
+  }
+
+}
+
+.screen-context-menu-hidden {
+  visibility: hidden;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+
+  &.screen-context-menu-open-dropdown {
+      background-color: $white;
+      width: 242px;
+      margin-top: 1px;
+      min-height: auto;
+
+      .mat-mdc-menu-content:not(:empty) {
+          padding-top: 0;
+          padding-bottom: 0;
+      }
+
+      .mat-mdc-menu-item {
+          background: $white;
+          color: $text-black-color;
+          font-size: $txt-md-font-size;
+          height: 30px;
+          min-height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+      }
+
+      .mat-mdc-menu-item:hover:not([disabled]) {
+          background-color: $dropdown-item-hover-bg-1;
+      }
+
+      .mat-mdc-menu-item[disabled] {
+          color: $label-light-black;
+      }
+  }
+}

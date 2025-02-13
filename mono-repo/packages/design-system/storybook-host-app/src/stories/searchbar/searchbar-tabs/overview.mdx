@@ -1,0 +1,33 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsSearchBarStories from '../searchbar.component.stories';
+
+The `DsSearchBar` component is designed to provide a customizable search bar for your UI. It includes the ability to project content such as a custom search icon, a close button, and an action button.
+This allows for flexibility in its use and customization to fit various design requirements.
+
+<Canvas of={DsSearchBarStories.Default} />
+
+## Usage
+
+Import `DsSearchBar` and `DsSearchInput` in your component, and apply them accordingly.
+
+```ts
+import { DsSearchBar, DsSearchInput } from '@frontend/ui/searchbar'; // 👈 add to file imports
+
+@Component({
+    imports: [DsSearchBar, DsSearchInput], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### dsSearchInput Directive
+
+This directive is applied to the input element within the search bar to facilitate interaction.
+
+e.g
+
+```html
+    <input dsSearchInput></input>
+```

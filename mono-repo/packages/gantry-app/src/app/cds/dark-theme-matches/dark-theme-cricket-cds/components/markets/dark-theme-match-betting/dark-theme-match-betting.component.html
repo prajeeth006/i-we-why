@@ -1,0 +1,5 @@
+<div
+    [ngClass]="selectionData && selectionData?.drawTitle && selectionData?.drawTitle != '' ? 'draw-details' : 'match-betting-details'"
+    *ngIf="(selectionData | keyvalue)?.length">
+    <gn-dark-common-market [selectionData]="selectionData"></gn-dark-common-market>
+</div>

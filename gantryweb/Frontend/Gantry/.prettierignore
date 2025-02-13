@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all TS files:
+# *.ts
+
+# Ignore global-style folder files
+global-style

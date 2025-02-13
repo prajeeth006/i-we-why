@@ -1,0 +1,43 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsBadgeStories from '../badge.component.stories';
+
+The Badge component `<ds-badge></ds-badge>` provides a way to display badges with various sizes, variants, and additional features such as icons or placeholders (like success icon in our case).
+You can make icon movable with properties slot for start and end position.
+
+<Canvas of={DsBadgeStories.Default} />
+
+## Usage
+
+Import `DsBadge` in your component.
+
+```ts
+import { DsBadge } from '@frontend/ui/badge'; // 👈 add to file imports
+
+@Component({
+    imports: [DsBadge], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+-   size: xsmall, medium.
+-   variant: primary, primary-strong, primary-subtle,secondary,secondary-strong,secondary-subtle,green,green-strong,green-subtle,yellow,yellow-strong,yellow-subtle, neutral,neutral-strong,neutral-subtle,red,red-strong,red-subtle,purple,purple-strong,purple-subtle,blue,blue-strong,blue-subtle,orange,orange-strong,orange-subtle,
+-   disabled: Specifies whether the badge is in a disabled state.
+
+### Badge variants
+
+-   By default, badges dont have any icons attached and are set in medium size and in primary variant.
+
+-   Badges with icon are available only in xsmall and medium sizes.
+
+-   Badges with icon are available only in xsmall and medium sizes.
+
+-   Badges with icon are available only in medium sizes.
+
+-   Badges with success icon are available only in xsmall and medium sizes.
+
+-   Badges with both icon and success icon are available only in xsmall and medium sizes.

@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as ToastComponentStories from './toast.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './toast-tabs/overview.mdx';
+import MySecondTab from './toast-tabs/examples.mdx';
+
+# Toast Component
+
+<Meta of={ToastComponentStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

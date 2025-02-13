@@ -1,0 +1,247 @@
+{
+    "Balance": {
+        "accountCurrency": "EUR",
+        "accountBalance": 10000,
+        "availableBalance": 44,
+        "balanceForGameType": 500,
+        "bonusWinningsRestrictedBalance": 400,
+        "cashoutRestrictedBalance": 330,
+        "cashoutRestrictedCashBalance": 660,
+        "cashoutableBalance": 900,
+        "cashoutableBalanceAtOnline": 8000,
+        "cashoutableBalanceReal": 9000,
+        "depositRestrictedBalance": 150,
+        "inPlayAmount": 5,
+        "owedAmount": 10,
+        "playMoneyBalance": 22,
+        "playMoneyInPlayAmount": 1543,
+        "pokerWinningsRestrictedBalance": 7835,
+        "releaseRestrictedBalance": 1337,
+        "taxWithheldAmount": 123,
+        "paypalBalance": 100,
+        "paypalCashoutableBalance": 0,
+        "sportsExclusiveBalance": 100,
+        "sportsDepositBalance": 110,
+        "gamesDepositBalance": 120,
+        "sportsWinningsBalance": 130,
+        "pokerWinningsBalance": 140,
+        "slotsWinningsBalance": 150,
+        "sportsRestrictedBalance": 160,
+        "pokerRestrictedBalance": 170,
+        "slotsRestrictedBalance": 180,
+        "allWinningsBalance": 1000,
+        "maxLimitExceededBalance": 220,
+        "prepaidCardDepositBalance": 200
+    },
+    "ClaimValues": [
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/locality",
+            "Value": "City1"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/stateorprovince",
+            "Value": "State1"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country",
+            "Value": "ES"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/title",
+            "Value": "Mr"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/gamingDeclarationFlag",
+            "Value": "N"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
+            "Value": "BEFNAME1"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname",
+            "Value": "BELNAME1"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/secondsurname",
+            "Value": ""
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/email",
+            "Value": "be_qa1espsmm51@ivycomptech.com"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/screenname",
+            "Value": "qa1espsmm51"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/dateofbirth",
+            "Value": "1940-03-02"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/birthlocality",
+            "Value": null
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/birthstateorprovince",
+            "Value": null
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/birthcountry",
+            "Value": null
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/postalcode",
+            "Value": "447474"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mobilephone",
+            "Value": null
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/mobilecountrycode",
+            "Value": null
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/homephone",
+            "Value": "475657371"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/phonecountrycode",
+            "Value": "44"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier",
+            "Value": " "
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/streetaddress",
+            "Value": "Address1"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/address2",
+            "Value": "Address21"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/timezone",
+            "Value": "Central European Standard Time"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/utcoffset",
+            "Value": "60"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/language",
+            "Value": "EN"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/culture",
+            "Value": "en-US"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/accountcategoryId",
+            "Value": "-1"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/realplayer",
+            "Value": "True"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/nameidentifier",
+            "Value": "8151552"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/pg/nameidentifier",
+            "Value": "106167999"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+            "Value": "be_qa1espsmm51"
+        },
+        {
+            "Key": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "Value": "DefaultUser"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/ssotoken",
+            "Value": "u31eEn45GJl6JN2JPU9gczCuA5cc%2Ff5T72YaqlVuzrlHJiVY8URGAH5DVkpcbNbZF6kDk0P3WDRPvbSm25VC5Nx4iews8J96dC%2FuVRuNdLhuJrH%2BAZsFwMVtCJM%2BW1y%2FLZmG3Cn2wWQYFZgm7oFsaC6sjNZS%2BTsPcQK6VZ%2BShsz1pNAa97JkibKyCq300x7VTdOUhgnBVQpOUWHaQWLzGitUXM9rL51MuHealxrZMMqxim%2Fntmy2ty%2FL0xcal4R2ObSDLKNWF4wD9xGHaRC4ssPeVo2PA%2B7TTlV3ac1YqWc%3D"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/currency",
+            "Value": "EUR"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/workflowtype",
+            "Value": "0"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/pg/servicesession",
+            "Value": "317d89c3a86f403c9475221f8d69e2c7"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/pg/globalsession",
+            "Value": "18021112022013Hn60bFJM2ng"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/user/vipLevel",
+            "Value": "CLUB"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/country",
+            "Value": "US"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/locality",
+            "Value": "Wayne"
+        },
+        {
+            "Key": "http://api.bwin.com/v3/geoip/stateorprovince",
+            "Value": "New Jersey"
+        }
+    ],
+    "LoyaltyStatus": {
+        "cancelledPoints": 0,
+        "category": "B",
+        "expiredMarketPoints": 0,
+        "extraPoints": 0,
+        "isOptInEnabled": true,
+        "monthlyPoints": 0,
+        "monthlyPointsSetDate": "/Date(1359694800000)/",
+        "nextDowngradeTime": "/Date(1362114000000)/",
+        "otherDeductedPoints": 0,
+        "points": 0,
+        "pointsToRequalify": 0,
+        "pointsToUpgrade": 400,
+        "productwiseMarketPoints": [],
+        "usedMarketPoints": 0
+    },
+    "PostLoginValues": [
+        {
+            "Key": "WEBMASTER_ID",
+            "Value": "1000"
+        },
+        {
+            "Key": "SOF_GRACE_DURATION",
+            "Value": "5"
+        },
+        {
+            "Key": "TEMP_PARTNER_TOKEN",
+            "Value": "123456112022013Hn60bFJM2ng"
+        }
+    ],
+    "accountCategoryId": 0,
+    "globalSessionId": "18021112022013Hn60bFJM2ng",
+    "language": "EN",
+    "lastLoginUTC": "/Date(1360684817000)/",
+    "lastLogoutUTC": "/Date(1360684913000)/",
+    "realPlayer": true,
+    "screenName": "qa1espsmm51",
+    "serverTimeUTC": "/Date(1360684941912)/",
+    "serviceSessionId": "317d89c3a86f403c9475221f8d69e2c7",
+    "sessionToken": "SessionToken_DefaultUser",
+    "ssoToken": "u31eEn45GJl6JN2JPU9gczCuA5cc%2Ff5T72YaqlVuzrlHJiVY8URGAH5DVkpcbNbZF6kDk0P3WDRPvbSm25VC5Nx4iews8J96dC%2FuVRuNdLhuJrH%2BAZsFwMVtCJM%2BW1y%2FLZmG3Cn2wWQYFZgm7oFsaC6sjNZS%2BTsPcQK6VZ%2BShsz1pNAa97JkibKyCq300x7VTdOUhgnBVQpOUWHaQWLzGitUXM9rL51MuHealxrZMMqxim%2Fntmy2ty%2FL0xcal4R2ObSDLKNWF4wD9xGHaRC4ssPeVo2PA%2B7TTlV3ac1YqWc%3D",
+    "userName": "qa1espsmm51",
+    "userToken": "856e62bd95d846bb932fd5680f9c895c",
+    "superCookie": "superCookieValue",
+    "workflowType": 0
+}

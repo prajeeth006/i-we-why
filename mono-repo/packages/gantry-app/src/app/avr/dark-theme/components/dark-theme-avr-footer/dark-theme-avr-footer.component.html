@@ -1,0 +1,13 @@
+<div class="dark-themr-avr-footer">
+    <gn-dark-theme-footer>
+        <ng-container left-side-content>
+            <span id="runCount" class="run-count"> {{ runnerCount ? runnerCount : ' ' }} {{ isEventResulted ? 'Ran' : 'Run' }} </span>
+        </ng-container>
+
+        <ng-container right-side-content>
+            <span class="market-each-way" *ngIf="marketEachWayString" id="MarketEachWay">
+                {{ marketEachWayString | titlecase }}
+            </span>
+        </ng-container>
+    </gn-dark-theme-footer>
+</div>

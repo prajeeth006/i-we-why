@@ -1,0 +1,16 @@
+@inherits LogEntryDetailComponent
+
+<li class="list-group-item" data-testid="log-entry">
+    <ExpandableChevron IsExpanded="@IsExpanded" OnClick="() => IsExpanded = !IsExpanded">
+        @Entry.Timestamp.ToString("O")
+        <span class="badge @LevelCssClass">
+            @Entry.Level
+        </span>
+        @Entry.FormattedMessage
+    </ExpandableChevron>
+
+    @if (IsExpanded)
+    {
+        <JsonViewer Model="Entry.Properties" IsCondensed="true"/>
+    }
+</li>

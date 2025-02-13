@@ -1,0 +1,16 @@
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Features\DataProtection\key-bc8627db-94b9-4067-ad9d-2da02d0cb7aa.xml
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Features\Frontend.Vanilla.Features.deps.json
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Features\Frontend.Vanilla.Features.dll
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Features\Frontend.Vanilla.Features.pdb
+C:\dev\monorepo\dist\backend\vanilla\Frontend.Vanilla.Features\Frontend.Vanilla.Features.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.csproj.AssemblyReference.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.AssemblyInfoInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.AssemblyInfo.cs
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.csproj.CoreCompileInputs.cache
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.659A80F1.Up2Date
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\refint\Frontend.Vanilla.Features.dll
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.xml
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\Frontend.Vanilla.Features.pdb
+C:\dev\monorepo\backend\vanilla\Frontend.Vanilla.Features\obj\Debug\ref\Frontend.Vanilla.Features.dll

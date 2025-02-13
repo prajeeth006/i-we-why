@@ -1,0 +1,31 @@
+<div id="firstGoalscorer" class="first-goal-scrorecontainer" *ngIf="multiMarket && multiMarket.selections?.length > 0">
+  <div class="bet-details-header">
+    <div id="homeTitle" class="bet-price">{{ multiMarket?.homeTitle }}</div>
+    <div id="betdetailsTitle" class="bet-details-title">{{ multiMarket?.title }}</div>
+    <div id="awayTitle" class="bet-price">{{ multiMarket?.awayTitle }}</div>
+  </div>
+  <div id="multiMarket" class="multimarket-container__main" *ngFor="let selection of multiMarket.selections">
+    <div class="marketdata">
+      <div class="marketdata__left">
+        <span id="homePrice" class="betOdds"
+          >{{ selection?.homePrice  | marketPriceTransform : selection?.hideHomePrice }}
+        </span>
+        <span id="homeSelectionTitle" class="betName" *ngIf="!multiMarket?.trimValue">{{ selection?.homeSelectionTitle && !selection?.hideHomeTitle ? selection?.homeSelectionTitle: ''}}</span>
+        <span id="homeSelectionTrimTitle" class="betName" *ngIf="multiMarket?.trimValue">
+          {{(selection?.homeSelectionTitle && !selection?.hideHomeTitle ? selection?.homeSelectionTitle: '') | trimSelectionNamePipe: nameLength}}
+        </span>
+      </div>
+    </div>
+    <div class="marketdata">
+      <div class="marketdata__right">
+        <span id="awaySelectionTitle" class="betName" *ngIf="!multiMarket?.trimValue">{{ selection?.awaySelectionTitle && !selection?.hideAwayTitle ? selection?.awaySelectionTitle : '' }}</span>
+        <span id="awaySelectionTrimTitle" class="betName" *ngIf="multiMarket?.trimValue">
+          {{(selection?.awaySelectionTitle && !selection?.hideAwayTitle ? selection?.awaySelectionTitle : '')  | trimSelectionNamePipe: nameLength }}
+        </span>
+        <span id="awayPrice" class="betOdds"
+          >{{ selection?.awayPrice | marketPriceTransform : selection?.hideAwayPrice }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

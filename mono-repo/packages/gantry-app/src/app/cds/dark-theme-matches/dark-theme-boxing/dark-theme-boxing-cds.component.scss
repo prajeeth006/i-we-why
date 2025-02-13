@@ -1,0 +1,18 @@
+@import '../../../../../src/dark-theme-global-style/all-variables';
+
+.header-status-box {
+    height: 129px;
+    @include flex-center;
+    font-size: $font-40;
+    padding: 0 14px;
+    border: solid 5px $color-white;
+    color: $color-white;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        height: 64px;
+        font-size: $font-20;
+        border-width: 2.5px;
+        padding: 0 7px;
+    }
+}

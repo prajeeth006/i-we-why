@@ -1,0 +1,171 @@
+{
+    "modal-header": {
+        "dragger": {
+            "color": {
+                "dragger": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                }
+            },
+            "size": {
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x6}"
+                }
+            }
+        },
+        "shared": {
+            "color": {
+                "subtitle": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.subtle}"
+                },
+                "title": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.on-surface.base}"
+                }
+            },
+            "radius": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "stroke": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                }
+            },
+            "space": {
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                }
+            }
+        },
+        "surface": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.base}"
+                }
+            }
+        },
+        "surface-high": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.high.base}"
+                }
+            }
+        },
+        "surface-low": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.low.base}"
+                }
+            }
+        },
+        "surface-lowest": {
+            "color": {
+                "background": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "modal-header",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.color.surface.container.lowest.base}"
+                }
+            }
+        }
+    }
+}

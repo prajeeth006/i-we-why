@@ -1,0 +1,28 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as LoadingSpinnerStories from '../loading-spinner.component.stories';
+
+The `DsLoadingSpinner` component is a visual indicator used to display a loading animation.
+The loading spinner `<ds-loading-spinner></ds-loading-spinner>` component is a user interface element used to visually represent a loading state of the application.
+
+<Canvas of={LoadingSpinnerStories.Default}></Canvas>
+
+## Usage
+
+Import `DsLoadingSpinner` in your component.
+
+```ts
+import { DsLoadingSpinner } from "@frontend/ui/loading-spinner"; // 👈 add to file imports
+
+@Component({
+  template: `...`
+  imports: [DsLoadingSpinner] // 👈 add to component imports
+})
+export class AppComponent {}
+
+```
+
+### Dynacon Configuration
+
+This component needs to be configured in **Dynacon** to work correctly. Ensure that your [**Dynacon**](https://admin.dynacon.prod.env.works/services/198137/features/198454/keys/440017/valuematrix?_matchAncestors=true) settings are updated to support this component.

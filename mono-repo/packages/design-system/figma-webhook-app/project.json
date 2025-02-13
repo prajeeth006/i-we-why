@@ -1,0 +1,78 @@
+{
+    "name": "design-system-figma-webhook-app",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/figma-webhook-app/src",
+    "projectType": "application",
+    "tags": ["type:app", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "platform": "node",
+                "format": ["esm"],
+                "bundle": true,
+                "outputPath": "dist/build/packages/design-system/figma-webhook-app",
+                "main": "packages/design-system/figma-webhook-app/src/main.ts",
+                "tsConfig": "packages/design-system/figma-webhook-app/tsconfig.app.json",
+                "assets": ["packages/design-system/figma-webhook-app/src/assets"],
+                "generatePackageJson": true,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "configurations": {
+                "development": {},
+                "production": {
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "design-system-figma-webhook-app:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "design-system-figma-webhook-app:build:development"
+                },
+                "production": {
+                    "buildTarget": "design-system-figma-webhook-app:build:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/figma-webhook-app/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/figma-webhook-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

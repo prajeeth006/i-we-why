@@ -1,0 +1,14 @@
+@page "/dsl"
+@inherits DslPageComponent
+
+<PageLayout Title="Domain Specific Language" LoadChildContent="LoadAsync"
+            SubtitleLink="@(("https://vie.git.bwinparty.com/vanilla/vanilla/-/wikis/features/domain-specific-language", "docs"))">
+    <DslExpressionTester/>
+    <hr/>
+    <DslProvidersShortcuts ProvidersMetadata="Metadata.Providers"/>
+    <hr/>
+    <DslProvidersDocumentation ProvidersMetadata="Metadata.Providers" ProvidersValues="ProvidersValues"/>
+    <hr/>
+    <DslSyntaxDocumentation SyntaxHints="Metadata.SyntaxHints"/>
+    <ScrollToFragmentOnLoad/>
+</PageLayout>

@@ -1,0 +1,23 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from '../icon-button.component.stories';
+
+The _icon button_ it is a button with `ds-icon-btn-icon` selector, and it works in a way that you can put your icon
+and it will project it inside the button.
+
+<Canvas of={ButtonStories.Default} />
+
+## Usage
+
+Import `DsIconButton` in your component, and apply `ds-icon-button` in your buttons or anchor elements.
+
+```ts
+import { DsIconButton } from '@frontend/ui/icon-button'; // 👈 add to file imports
+
+@Component({
+    imports: [DsIconButton], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```

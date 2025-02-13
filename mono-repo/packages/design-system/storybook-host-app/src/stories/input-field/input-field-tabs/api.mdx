@@ -1,0 +1,51 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as InputFieldStories from '../input-field.component.stories';
+
+## Features
+
+### Focus and Autofill Detection
+
+The component tracks whether the input is focused or autofilled using signals (`focused`, `focusVisible`, `isAutofilled`). It reacts dynamically to state changes, ensuring the UI responds correctly to focus or autofill events. The directive detects when the browser autofills a form field and adjusts the UI accordingly. It listens for the `animationstart` event to trigger autofill state changes.
+
+### Floating Labels
+
+The label for the input will float above the field under the following conditions:
+
+1. **Floating Label State**: If the `floatingLabel` input property is set to `true`.
+2. **Focus State**: If the input field is focused.
+3. **Input Value Presence**: If the input field has a value.
+4. **Autofill Detection**: If the input field has been autofilled by the browser.
+
+### State Handling
+
+The component adjusts its state and appearance based on the following conditions:
+
+-   **Disabled State**: Adds the `ds-input-field-disabled` class when the form control is disabled, graying out the field, preventing any interaction or focus changes. The input will not respond to keyboard or mouse events.
+-   **Locked State**: Applies the `ds-input-field-locked` class when the input field has a `readonly` attribute, indicating that the input is not editable. The focus can still be visible when the `focusVisible` signal is true, providing feedback that the input is currently being interacted with via the keyboard, but not through mouse clicks.
+-   **Error State**: Applies the `ds-input-field-invalid` class when validation fails, providing visual feedback for incorrect input. Applied when the form control is invalid and has been touched, providing clear visual feedback to the user.
+-   **Hover State**: Adds the `ds-input-field-hover` class when the input field is hovered, enhancing user experience with visual cues.
+-   **Focused State**: Applies the `ds-input-field-focused` class when the input is focused, indicating active interaction.
+
+### Required Field Validation
+
+In the `DsInputField` component, the required field state is determined by the presence of `Validators.required` in the form control's validators. The component supports the display of an asterisk (\*) next to the label to visually indicate that a field is required. By default, the asterisk will be added when the required validator is applied to the associated form control. However, you can customize this behavior by using the `isFieldRequired` input. If set to `false`, it will hide the asterisk, even if the required validator is present.
+
+### Integration with `NgControl`
+
+The `DsInputField` component works seamlessly with Angular's `NgControl` to provide form control validation and state management in reactive forms. When used within a reactive form, `DsInputField` detects the state of the form control and applies appropriate styling and validation feedback.
+
+-   **Automatic Status Handling**: The component listens to status changes from `NgControl` (e.g., `VALID`, `INVALID`) and applies classes such as `ds-input-field-invalid` based on the control's status.
+
+-   **Touch and Validation**: It responds to when the control is touched (`control.touched`) to provide validation feedback only after the user has interacted with the form field.
+
+#### Example with Reactive Forms
+
+```html
+<form [formGroup]="form">
+    <ds-input-field labelText="Email">
+        <input dsInput formControlName="email" />
+    </ds-input-field>
+</form>
+```

@@ -1,0 +1,52 @@
+<ol class="breadcrumb-menu-list" *ngIf="(breadCrumbArray$ | async)?.length">
+  <ng-container *ngIf="breadCrumbArray$ | async as breadCrumbArray">
+    <li class="breadcrumb-menu-item" *ngIf="breadCrumbArray!.length > 2">
+      <mat-icon aria-hidden="false" aria-label="folder" class="breadcrumb-folder-icon">folder
+      </mat-icon>
+      <a href="javascript:void(0)" class="breadcrumb-text">...</a>
+      <mat-icon aria-hidden="false" class="breadcrumb-toggle-arrow" (click)="isArrowCollapsed = !isArrowCollapsed">{{
+        isArrowCollapsed ? 'arrow_right' : 'arrow_drop_down'
+        }}</mat-icon>
+
+      <div class="dropdown-menu-container" id="child-dropdown" [ngClass]="isArrowCollapsed ? 'hide-menu' : 'show-menu'">
+        <div class="triangle"></div>
+        <ul class="menu-truncated-items">
+          <li *ngFor="let item of breadCrumbArray">
+            <a href="javascript:void(0)"
+              (click)="getBreadCrumbNode(item?.nodeProperties?.id, item?.nodeProperties?.name)">
+              <mat-icon aria-hidden="false" aria-label="arrow left icon" class="breadcrumb-arrow-left">
+                arrow_left</mat-icon>
+              <span> {{ item?.nodeProperties?.name }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="breadcrumb-menu-item" *ngFor="
+                  let itemmore of breadCrumbArray
+                      | slice
+                          : (breadCrumbArray!.length > 2
+                                ? breadCrumbArray!.length === (0 || 1)
+                                    ? 0
+                                    : breadCrumbArray!.length - 2
+                                : 0);
+                  let last = last
+              ">
+      <mat-icon aria-hidden="false" aria-label="folder" class="breadcrumb-folder-icon">folder
+      </mat-icon>
+      <a href="javascript:void(0)"
+        (click)="getBreadCrumbNode(itemmore?.nodeProperties?.id, itemmore?.nodeProperties?.name)"
+        class="breadcrumb-text" [title]="itemmore?.nodeProperties?.name">
+        {{ itemmore?.nodeProperties?.name }}</a>
+      <ng-template *ngIf="last; else foldericon">
+        <mat-icon aria-hidden="false" aria-label="arrow right icon" class="breadcrumb-arrow-right">arrow_right
+        </mat-icon>
+      </ng-template>
+      <ng-template #foldericon>
+        <mat-icon aria-hidden="false" aria-label="arrow right icon" class="breadcrumb-arrow-right">arrow_right
+        </mat-icon>
+      </ng-template>
+    </li>
+  </ng-container>
+</ol>

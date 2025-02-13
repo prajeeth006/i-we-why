@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0aWIGQkry0oRcRpPWp93tW9DSlBWFABE/hi5xW8k3l0=",
+  "Source": "Frontend.SharedFeatures.Api",
+  "BasePath": "_content/Frontend.SharedFeatures.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

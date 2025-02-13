@@ -1,0 +1,23 @@
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnScroll { get; set; }
+
+    [Inject]
+    public NavigationManager Navigation { get; set; }
+
+    [Inject]
+    public IJSRuntime JsRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var id = firstRender ? new Uri(Navigation.Uri).Fragment.TrimStart('#').Trim() : "";
+
+        if (!string.IsNullOrWhiteSpace(id))
+        {
+            await OnScroll.InvokeAsync(id);
+            await JsRuntime.InvokeVoidAsync("scrollToElementId", id);
+        }
+    }
+
+}

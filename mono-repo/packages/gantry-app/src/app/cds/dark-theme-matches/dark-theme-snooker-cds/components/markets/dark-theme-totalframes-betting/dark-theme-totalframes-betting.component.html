@@ -1,0 +1,3 @@
+<div [ngClass]="isDrawMarketListed ? 'draw-totalframes-betting' : 'totalframes-betting'" *ngIf="(selectionData | keyvalue)?.length">
+    <gn-dark-common-market [selectionData]="selectionData"></gn-dark-common-market>
+</div>

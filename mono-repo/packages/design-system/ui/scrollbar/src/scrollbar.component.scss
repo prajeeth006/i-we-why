@@ -1,0 +1,52 @@
+@use '../../generated/styles/components/scrollbar/scrollbar' as ds-scrollbar;
+
+@supports not selector(::-webkit-scrollbar) {
+    .ds-scrollbar {
+        --ds-scrollbar-size-width-thin: thin;
+
+        @include ds-scrollbar.shared;
+        @include ds-scrollbar.default;
+
+        scrollbar-color: var(--ds-scrollbar-enabled-color-thumb) var(--ds-scrollbar-enabled-color-background);
+        scrollbar-width: var(--ds-scrollbar-size-width-thin);
+    }
+}
+
+.ds-scrollbar {
+    @include ds-scrollbar.shared;
+    @include ds-scrollbar.default;
+
+    ::-webkit-scrollbar {
+        width: var(--ds-scrollbar-size-width);
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--ds-scrollbar-enabled-color-background);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--ds-scrollbar-enabled-color-thumb);
+        border-radius: var(--ds-scrollbar-radius-border);
+    }
+
+    .ng-scrollbar {
+        --scrollbar-border-radius: var(--ds-scrollbar-radius-border); // has to be PX
+
+        // --scrollbar-hover-size: 10px;
+        // --scrollbar-overscroll-behavior: initial;
+        // --scrollbar-padding: 2px;
+
+        // Set the thickness of the scrollbar track
+        // --scrollbar-thickness: 20; // has to be a number in version 13
+        --scrollbar-size: var(--ds-scrollbar-size-width);
+        --scrollbar-thumb-color: var(--ds-scrollbar-enabled-color-thumb);
+        --scrollbar-thumb-hover-color: var(--ds-scrollbar-hover-color-thumb);
+
+        // --scrollbar-thumb-transition: height ease-out 0.15s, width ease-out 0.15s;
+        --scrollbar-track-color: var(--ds-scrollbar-enabled-color-background);
+
+        // --scrollbar-track-transition: height ease-out 0.15s, width ease-out 0.15s;
+        // --scrollbar-transition-delay: 0.8s;
+        // --scrollbar-transition-duration: 0.4s;
+    }
+}

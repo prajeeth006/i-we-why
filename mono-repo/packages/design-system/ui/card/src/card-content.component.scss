@@ -1,0 +1,6 @@
+@use '../../generated/styles/components/card/card' as ds-card;
+
+.ds-card-content {
+    display: block;
+    padding: var(--ds-card-space-padding-top) var(--ds-card-space-padding-right) var(--ds-card-space-padding-bottom) var(--ds-card-space-padding-left);
+}

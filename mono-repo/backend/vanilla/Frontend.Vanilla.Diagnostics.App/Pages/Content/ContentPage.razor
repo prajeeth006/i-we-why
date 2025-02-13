@@ -1,0 +1,113 @@
+@page "/content"
+@inherits ContentPageComponent
+
+<PageLayout Title="Sitecore Content" ReloadDisabled="true" LoadChildContent="LoadAsync">
+    <div class="alert alert-secondary">
+        Sitecore Host:
+        <code>
+            <small>@GetSitecoreHostEmphasized()</small>
+        </code>
+    </div>
+
+    <BSForm Model="Model" OnValidSubmit="@SubmitAsync">
+        <DataAnnotationsValidator/>
+        <div class="form-group">
+            <label for="pathInput">Path</label>
+            <BSInput @bind-Value="Model.Path" InputType="InputType.Text" ValidateOnChange="true" id="pathInput" placeholder="MobileLogin-v1.0/Chat/Chat"/>
+            <BSFeedback For="@(() => Model.Path)"/>
+        </div>
+        <div class="form-group">
+            <label for="cultureSelect">Culture</label>
+            <SelectList @bind-SelectedValue="Model.Culture" Items="Metadata.Cultures" id="cultureSelect"/>
+        </div>
+        <div class="form-group">
+            <label for="pathRelativitySelect">Path Relativity</label>
+            <SelectList @bind-SelectedValue="Model.PathRelativity" Items="Metadata.PathRelativities" id="pathRelativitySelect"/>
+        </div>
+        <div class="form-group">
+            <CheckBox @bind-Checked="Model.RequireTranslation" Text="Require Translation"/>
+        </div>
+        <div class="form-group">
+            <label for="dslEvaluationSelect">DSL Evaluation</label>
+            <SelectList @bind-SelectedValue="Model.DslEvaluation" Items="Metadata.DslEvaluations" id="dslEvaluationSelect"/>
+        </div>
+        <div class="form-group">
+            <label for="revisionNumber">Revision</label>
+            <BSInput @bind-Value="Model.Revision" InputType="InputType.Text" ValidateOnChange="true" id="revisionNumber"/>
+            <BSFeedback For="@(() => Model.Revision)"/>
+        </div>
+        <div class="form-group">
+            <CheckBox @bind-Checked="Model.BypassCache" Text="Bypass Cache"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" disabled="@IsTestInProgress">
+                Load content
+            </button>
+        </div>
+    </BSForm>
+
+    @if (IsTestInProgress)
+    {
+        <div class="loading-indicator"></div>
+    }
+
+    @if (TestResult != null)
+    {
+        <ul class="list-group">
+            <li class="list-group-item @(TestResult.Status == "Success" ? "active" : "list-group-item-danger")" data-testid="status">
+                Status: <strong>@TestResult.Status</strong>
+            </li>
+            <li class="list-group-item" data-testid="sitecoreUrl">
+                Sitecore URL: <a href="@TestResult.RequestUrl" target="_blank">@TestResult.RequestUrl</a>
+            </li>
+            @if (TestResult.SitecoreLoadTime != null)
+            {
+                <li class="list-group-item" data-testid="sitecoreLoadTime">
+                    Loaded from Sitecore at: <code>@TestResult.SitecoreLoadTime</code>
+                </li>
+            }
+            @if (TestResult.ConditionResultType != null)
+            {
+                <li class="list-group-item" data-testid="conditionResultType">
+                    Evaluation result type: <code>@TestResult.ConditionResultType</code>
+                </li>
+            }
+            @if (TestResult.DocumentType != null)
+            {
+                <li class="list-group-item" data-testid="documentType">
+                    Document Type: <code>@TestResult.DocumentType</code>
+                </li>
+            }
+            @if (TestResult.ServerDocument != null)
+            {
+                <li class="list-group-item" data-testid="serverDocument">
+                    <div>Server document</div>
+                    <JsonViewer Model="TestResult.ServerDocument" IsCondensed="true"/>
+                </li>
+            }
+            @if (TestResult.ClientDocument != null)
+            {
+                <li class="list-group-item" data-testid="clientDocument">
+                    <div>Client document (loaded using Vanilla IClientContentService)</div>
+                    <JsonViewer Model="TestResult.ClientDocument" IsCondensed="true"/>
+                </li>
+            }
+            @if (TestResult.Errors.Count > 0)
+            {
+                <li class="list-group-item" data-testid="errors">
+                    <div>Errors</div>
+                    <ul>
+                        @foreach (var error in TestResult.Errors)
+                        {
+                            <li>@error</li>
+                        }
+                    </ul>
+                </li>
+            }
+            <li class="list-group-item" data-testid="trace">
+                <div>Trace</div>
+                <JsonViewer Model="TestResult.Trace" IsCondensed="true"/>
+            </li>
+        </ul>
+    }
+</PageLayout>

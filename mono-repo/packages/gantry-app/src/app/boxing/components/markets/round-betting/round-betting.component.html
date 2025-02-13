@@ -1,0 +1,29 @@
+<div *ngIf="matchData && (leftBetList.size > 0 || rightBetList.size > 0)">
+    <div class="bet-details-header">
+        <div class="bet-price"></div>
+        <div id="DisplayTitle" class="bet-details-title">{{ matchData?.marketDisplayTitle }}</div>
+        <div class="bet-price"></div>
+    </div>
+    <div id="betDetails" class="bet-details-item" *ngFor="let roundValue of staticRoundValues">
+        <div id="LeftBetList" class="bet-price">
+            {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform: leftBetList.get(roundValue)?.hideOdds }}
+        </div>
+        <div id="betDetails" class="bet-details">{{ roundValue }}</div>
+        <div id="RightBetList" class="bet-price">
+            {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform: rightBetList.get(roundValue)?.hideOdds }}
+        </div>
+    </div>
+    <div id="autoScroll" class="autoScroll">
+        <div [@autoScroll]="{ value: animationState, params: { nextPosition: nextPosition } }" (@autoScroll.done)="onEnd($event)">
+            <div #scrollItem class="bet-details-item" *ngFor="let roundValue of autoScrollRounds" id="autoSitems">
+                <div id="LeftBetList" class="bet-price">
+                    {{ leftBetList.get(roundValue)?.betOdds | marketPriceTransform: leftBetList.get(roundValue)?.hideOdds }}
+                </div>
+                <div id="BetDetails" class="bet-details">{{ roundValue }}</div>
+                <div id="RightBetList" class="bet-price">
+                    {{ rightBetList.get(roundValue)?.betOdds | marketPriceTransform: rightBetList.get(roundValue)?.hideOdds }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

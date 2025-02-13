@@ -1,0 +1,30 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsPillStories from '../pill.component.stories';
+
+### Default
+
+<Canvas of={DsPillStories.Default} />
+
+### Default with Chevron
+
+<Canvas of={DsPillStories.DefaultWithChevron} />
+
+### With Icon
+
+<Canvas of={DsPillStories.WithIcon} />
+
+### With Icon and Chevron
+
+<Canvas of={DsPillStories.WithIconAndChevron} />
+
+### With large Notification Bubble and rounded padding
+
+When component with large size is projected inside ds-pill, it should have ds-pill-rounded-padding class
+
+<Canvas of={DsPillStories.WithLargeNotificationBubbleAndRoundedPadding} />
+
+### With Icon and NotificationBubble
+
+<Canvas of={DsPillStories.WithIconAndNotificationBubble} />

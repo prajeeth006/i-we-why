@@ -1,0 +1,19 @@
+@mixin default {
+    --ds-divider-on-surface-color-border: var(--semantic-color-on-surface-divider);
+    --ds-divider-on-surface-high-color-border: var(--semantic-color-on-surface-container-high-divider);
+    --ds-divider-on-surface-highest-color-border: var(--semantic-color-on-surface-container-highest-divider);
+    --ds-divider-on-surface-low-color-border: var(--semantic-color-on-surface-container-low-divider);
+    --ds-divider-on-surface-lowest-color-border: var(--semantic-color-on-surface-container-lowest-divider);
+}
+
+@mixin inverse {
+    --ds-divider-on-surface-color-border: var(--semantic-color-on-surface-divider-inverse);
+    --ds-divider-on-surface-high-color-border: var(--semantic-color-on-surface-container-high-divider-inverse);
+    --ds-divider-on-surface-highest-color-border: var(--semantic-color-on-surface-container-highest-divider-inverse);
+    --ds-divider-on-surface-low-color-border: var(--semantic-color-on-surface-container-low-divider-inverse);
+    --ds-divider-on-surface-lowest-color-border: var(--semantic-color-on-surface-container-lowest-divider-inverse);
+}
+
+@mixin shared {
+    --ds-divider-size-border: var(--semantic-size-xquarter);
+}

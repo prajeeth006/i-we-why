@@ -1,0 +1,1130 @@
+{
+    "input-text-field": {
+        "$extensions": {
+            "com.entaingroup.ext-figma": {
+                "status": "deprecated",
+                "status_changed_at": "2024-12-08T22:09:19.921Z"
+            }
+        },
+        "default": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-12-08T22:09:19.921Z"
+                }
+            },
+            "disabled": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.base}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            },
+            "error": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.outline.base}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            },
+            "focused": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.active}"
+                    },
+                    "cursor": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "placeholder-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            },
+            "hover": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.hover}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.hover}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            },
+            "locked": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base}"
+                    }
+                }
+            }
+        },
+        "inverse": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-12-08T22:09:19.921Z"
+                }
+            },
+            "disabled": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-disabled.base-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.base-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            },
+            "error": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.outline.base-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            },
+            "focused": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.outline.active-inverse}"
+                    },
+                    "cursor": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "placeholder-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.hover-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.low.hover-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            },
+            "locked": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "color": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.base-inverse}"
+                    },
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.disabled.outline-inverse}"
+                    },
+                    "icon-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "input-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "label": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "required-text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "input-text-field",
+                                "status": "deprecated",
+                                "status_changed_at": "2024-12-08T22:09:19.921Z"
+                            }
+                        },
+                        "$value": "{semantic.color.negative.base-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "$extensions": {
+                "com.entaingroup.ext-figma": {
+                    "status": "deprecated",
+                    "status_changed_at": "2024-12-08T22:09:19.921Z"
+                }
+            },
+            "radius": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.radius.semi-rounded-md}"
+                }
+            },
+            "size": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "border-width": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                },
+                "height-md": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                },
+                "icon-feedback": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.medium}"
+                },
+                "icon-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.medium}"
+                },
+                "icon-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.size.icon.medium}"
+                }
+            },
+            "space": {
+                "$extensions": {
+                    "com.entaingroup.ext-figma": {
+                        "status": "deprecated",
+                        "status_changed_at": "2024-12-08T22:09:19.921Z"
+                    }
+                },
+                "inline": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.inline.md}"
+                },
+                "padding-bottom": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "padding-left": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-2xl}"
+                },
+                "padding-right": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-xl}"
+                },
+                "padding-top": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.container.padding-none}"
+                },
+                "stack": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "input-text-field",
+                            "status": "deprecated",
+                            "status_changed_at": "2024-12-08T22:09:19.921Z"
+                        }
+                    },
+                    "$value": "{semantic.spacing.stack.sm}"
+                }
+            }
+        }
+    }
+}

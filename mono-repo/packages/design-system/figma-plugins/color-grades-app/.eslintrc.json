@@ -1,0 +1,13 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "max-depth": "off",
+        "sonarjs/cognitive-complexity": "off",
+        "unicorn/numeric-separators-style": "off",
+        "unicorn/prefer-add-event-listener": "off",
+        "unicorn/prefer-at": "off"
+    }
+}

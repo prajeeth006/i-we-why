@@ -1,0 +1,11 @@
+<div class="display-manager-main-layout" [ngClass]="{'loading-overlay': showOverlay}">
+  <display-manager-header class="header-display-wrapper" [ngClass]="labelSelectorService.labelCssClass | lowercase">
+  </display-manager-header>
+
+  <display-manager-left-panel class="left-panel-wrapper" [class.in-active]="sequencencingHelper._isLeftPannelInActive()">
+  </display-manager-left-panel>
+
+  <display-manager-right-panel class="right-panel-wrapper"
+    [ngClass]="{'carousel-modal-overlay': isCarouselModalOpened}">
+  </display-manager-right-panel>
+</div>

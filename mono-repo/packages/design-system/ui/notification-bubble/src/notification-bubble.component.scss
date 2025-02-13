@@ -1,0 +1,118 @@
+@use '../../generated/styles/components/notification-bubble/notification-bubble' as ds-notification-bubble;
+@use '../../fonts/font-helper' as helper;
+
+.ds-notification-bubble {
+    @include ds-notification-bubble.shared;
+
+    --ds-notification-bubble-width-local: fit-content;
+    --ds-notification-bubble-padding-zero: 0;
+    --ds-notification-bubble-padding: 0 var(--ds-notification-bubble-space-padding-right, 0) 0 var(--ds-notification-bubble-space-padding-left, 0);
+
+    // fonts
+    @include helper.set-font-variables('notification-bubble', 'label', 'sm-strong');
+    @include helper.setup-font-style('notification-bubble');
+
+    align-items: center;
+    border-radius: var(--ds-notification-bubble-radius-border);
+    background: var(--ds-notification-bubble-color-bg);
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    height: var(--ds-notification-bubble-size-height);
+    min-width: var(--ds-notification-bubble-size-min-width);
+    padding: var(--ds-notification-bubble-padding);
+    width: var(--ds-notification-bubble-width-local);
+    color: var(--ds-notification-bubble-color-text);
+
+    &.ds-notification-bubble-primary {
+        @include ds-notification-bubble.default-primary;
+    }
+
+    &.ds-notification-bubble-live-dot,
+    &.ds-notification-bubble-utility-dot {
+        --ds-notification-bubble-padding: var(--ds-notification-bubble-padding-zero);
+    }
+
+    &.ds-notification-bubble-live-dot {
+        @include ds-notification-bubble.default-live-dot;
+    }
+
+    &.ds-notification-bubble-utility-dot {
+        @include ds-notification-bubble.default-utility-dot;
+    }
+
+    &.ds-notification-bubble-live {
+        @include ds-notification-bubble.default-live;
+    }
+
+    &.ds-notification-bubble-neutral {
+        @include ds-notification-bubble.default-neutral;
+    }
+
+    &.ds-notification-bubble-utility {
+        @include ds-notification-bubble.default-utility;
+    }
+
+    &.ds-notification-bubble-disabled:not(.ds-notification-bubble-live-dot, .ds-notification-bubble-utility-dot) {
+        @include ds-notification-bubble.default-disabled;
+    }
+
+    &.ds-notification-bubble-inverse {
+        &.ds-notification-bubble-primary {
+            @include ds-notification-bubble.inverse-primary;
+        }
+
+        &.ds-notification-bubble-live-dot {
+            @include ds-notification-bubble.inverse-live-dot;
+        }
+
+        &.ds-notification-bubble-utility-dot {
+            @include ds-notification-bubble.inverse-utility-dot;
+        }
+
+        &.ds-notification-bubble-live {
+            @include ds-notification-bubble.inverse-live;
+        }
+
+        &.ds-notification-bubble-neutral {
+            @include ds-notification-bubble.inverse-neutral;
+        }
+
+        &.ds-notification-bubble-utility {
+            @include ds-notification-bubble.inverse-utility;
+        }
+
+        &.ds-notification-bubble-disabled:not(.ds-notification-bubble-live-dot, .ds-notification-bubble-utility-dot) {
+            @include ds-notification-bubble.inverse-disabled;
+        }
+    }
+
+    /* The following should be variables as soon as Figma supports it, we just assume now some default styling */
+    &.ds-notification-bubble-large {
+        @include ds-notification-bubble.large;
+
+        // fonts
+        @include helper.set-font-variables('notification-bubble', 'label', 'lg-strong');
+    }
+
+    &.ds-notification-bubble-medium {
+        @include ds-notification-bubble.medium;
+
+        // fonts
+        @include helper.set-font-variables('notification-bubble', 'label', 'sm-strong');
+    }
+
+    &.ds-notification-bubble-small {
+        @include ds-notification-bubble.small;
+
+        // fonts
+        @include helper.set-font-variables('notification-bubble', 'label', 'xs-strong', 'sans-serif');
+    }
+
+    .ds-notification-bubble-inside-dot {
+        background: var(--ds-notification-bubble-color-dot);
+        border-radius: var(--ds-notification-bubble-radius-border);
+        width: var(--ds-notification-bubble-size-dot-width);
+        height: var(--ds-notification-bubble-size-dot-height);
+    }
+}

@@ -1,0 +1,8 @@
+
+<ng-container *ngIf="isNewDesignEnabled; then newDesign else oldDesign"></ng-container>
+<ng-template #newDesign>
+    <gn-dark-theme-horse-racing></gn-dark-theme-horse-racing>
+</ng-template>
+<ng-template #oldDesign>
+    <gn-horse-racing-template></gn-horse-racing-template>
+</ng-template>

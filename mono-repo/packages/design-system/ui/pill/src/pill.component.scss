@@ -1,0 +1,134 @@
+@use '../../generated/styles/components/pill/pill' as ds-pill;
+@use '../../fonts/font-helper' as helper;
+
+.ds-pill {
+    --ds-pill-border-width-local: 1px;
+    --ds-pill-bg: var(--ds-pill-enabled-color-bg);
+    --ds-pill-border-color: var(--ds-pill-enabled-color-border);
+    --ds-pill-text-color: var(--ds-pill-enabled-color-text);
+    --ds-pill-padding: var(--ds-pill-padding-top, 0) var(--ds-pill-padding-right, 0) var(--ds-pill-padding-bottom, 0) var(--ds-pill-padding-left, 0);
+
+    @include ds-pill.shared;
+    @include helper.set-font-variables('pill', 'label', 'lg');
+    @include helper.setup-font-style('pill');
+
+    background: var(--ds-pill-bg);
+    border: var(--ds-pill-border-width-local) solid var(--ds-pill-border-color);
+    border-radius: var(--ds-pill-radius);
+    color: var(--ds-pill-text-color);
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 0 auto;
+    gap: var(--ds-pill-inline);
+    height: var(--ds-pill-height);
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    padding: var(--ds-pill-padding);
+    position: relative;
+    content-visibility: auto;
+
+    [slot='start'],
+    [slot='end'] {
+        svg {
+            height: var(--ds-pill-icon-size);
+            width: var(--ds-pill-icon-size);
+        }
+    }
+
+    &.ds-pill-small {
+        @include ds-pill.small;
+        @include helper.set-font-variables('pill', 'label', 'md');
+
+        &.ds-pill-selected {
+            @include helper.set-font-variables('pill', 'label', 'md-strong');
+        }
+    }
+
+    &.ds-pill-medium {
+        @include ds-pill.medium;
+    }
+
+    &.ds-pill-current {
+        @include ds-pill.current;
+    }
+
+    &.ds-pill-subtle {
+        @include ds-pill.subtle;
+    }
+
+    &.ds-pill-strong {
+        @include ds-pill.strong;
+    }
+
+    &.ds-pill-inverse {
+        &.ds-pill-current {
+            @include ds-pill.current-inverse;
+        }
+
+        &.ds-pill-subtle {
+            @include ds-pill.subtle-inverse;
+        }
+
+        &.ds-pill-strong {
+            @include ds-pill.strong-inverse;
+        }
+    }
+
+    &.ds-pill-selected {
+        @include helper.set-font-variables('pill', 'label', 'lg-strong');
+
+        --ds-pill-bg: var(--ds-pill-selected-color-bg);
+        --ds-pill-border-color: var(--ds-pill-selected-color-border);
+        --ds-pill-text-color: var(--ds-pill-selected-color-text);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-pill-bg: var(--ds-pill-hover-color-bg);
+            --ds-pill-border-color: var(--ds-pill-hover-color-border);
+
+            /* added this color style here - temporary fix to overcome the anchor tag styles which are overriding from themepark file reboot.scss  which will be removed
+                eventually once we are more stable with DS and more teams have adopted wide range of components from DS */
+
+            color: var(--ds-pill-hover-color-text);
+        }
+    }
+
+    &:active {
+        --ds-pill-bg: var(--ds-pill-active-color-bg);
+        --ds-pill-border-color: var(--ds-pill-active-color-border);
+        --ds-pill-text-color: var(--ds-pill-active-color-text);
+    }
+
+    &.ds-pill-disabled {
+        --ds-pill-bg: var(--ds-pill-disabled-color-bg);
+        --ds-pill-border-color: var(--ds-pill-disabled-color-border);
+        --ds-pill-text-color: var(--ds-pill-disabled-color-text);
+
+        cursor: not-allowed;
+    }
+
+    &.ds-pill-rounded-padding {
+        --ds-pill-padding: 0 4px 0 12px;
+    }
+
+    .ds-pill-text {
+        white-space: nowrap;
+    }
+
+    .ds-button-touch-target {
+        height: var(--ds-pill-tap-target);
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* stylelint-disable selector-max-attribute */
+    [slot='start'] {
+        align-items: center;
+        display: flex;
+    }
+}

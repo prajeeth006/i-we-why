@@ -1,0 +1,14 @@
+{
+    "extends": ["../../../.eslintrc.base.json"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "extends": ["../../eslint-utils/jest", "../../eslint-utils/typescript"],
+            "files": ["*.ts", "*.tsx"],
+            "parserOptions": {
+                "project": ["packages/design-system/shared-storybook-utils/tsconfig.*?.json"]
+            },
+            "rules": {}
+        }
+    ]
+}

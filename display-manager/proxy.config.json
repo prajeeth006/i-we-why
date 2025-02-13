@@ -1,0 +1,32 @@
+{
+  "/sitecore/api/*": {
+      "target": "http://cms.local.env.works",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+  },
+  "/temp/iconcache": {
+      "target": "http://cms.local.env.works",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+  },
+  "/sitecore/shell/*":{
+    "target": "http://cms.local.env.works",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/identity/login/*":{
+    "target": "http://cms.local.env.works",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "*/*":{
+    "target": "http://cms.local.env.works",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

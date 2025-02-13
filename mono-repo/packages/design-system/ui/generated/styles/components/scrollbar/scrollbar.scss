@@ -1,0 +1,20 @@
+@mixin default {
+    --ds-scrollbar-enabled-color-background: var(--semantic-color-opacity-base);
+    --ds-scrollbar-enabled-color-thumb: var(--semantic-color-opacity-active);
+    --ds-scrollbar-hover-color-background: var(--semantic-color-opacity-base);
+    --ds-scrollbar-hover-color-thumb: var(--semantic-color-opacity-hover);
+}
+
+@mixin inverse {
+    --ds-scrollbar-enabled-color-background: var(--semantic-color-opacity-base-inverse);
+    --ds-scrollbar-enabled-color-thumb: var(--semantic-color-opacity-active-inverse);
+    --ds-scrollbar-hover-color-background: var(--semantic-color-opacity-base-inverse);
+    --ds-scrollbar-hover-color-thumb: var(--semantic-color-opacity-hover-inverse);
+}
+
+@mixin shared {
+    --ds-scrollbar-radius-border: var(--semantic-radius-max);
+    --ds-scrollbar-size-min-height: var(--semantic-size-x6);
+    --ds-scrollbar-size-width: var(--semantic-size-x2);
+    --ds-scrollbar-size-width-no-unit: var(--semantic-size-x2-no-unit);
+}

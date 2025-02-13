@@ -1,0 +1,282 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+@import '../../../../../dark-theme-global-style/mixins/_traps.scss';
+
+$trap-box-width: 100%;
+$tl-mr: 63px;
+$tl-mr_2x: 126px;
+
+@mixin text-stroke($width) {
+    -webkit-text-stroke-width: $width;
+}
+
+@mixin trap-6-styles($height, $top, $bottom, $stroke-width) {
+    &::before,
+    &::after {
+        height: $height;
+        top: $top;
+
+        @include breakpoint(multidesktop) {
+            height: calc($height / 2);
+            top: calc($top / 2);
+        }
+    }
+
+    &::after {
+        top: unset;
+        bottom: $bottom;
+
+        @include breakpoint(multidesktop) {
+            bottom: calc($bottom / 2);
+        }
+    }
+
+    span {
+        @include text-stroke($stroke-width);
+
+        @include breakpoint(multidesktop) {
+            @include text-stroke(calc($stroke-width / 2));
+        }
+    }
+}
+
+.trap-wrapper {
+    height: 100%;
+    width: $trap-box-width;
+
+    @include flex-container(flex-start, center);
+
+    flex-direction: column;
+
+    .trap-layout {
+        margin-top: $tl-mr_2x;
+
+        @include breakpoint(multidesktop) {
+            margin-top: $tl-mr;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(6, 272px);
+            gap: 28px;
+            width: $trap-box-width;
+
+            @include breakpoint(multidesktop) {
+                grid-template-columns: repeat(6, 136px);
+                gap: 14px;
+            }
+        }
+
+        &__title {
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 44px;
+            text-align: center;
+
+            @include breakpoint(multidesktop) {
+                font-size: 30px;
+                line-height: 22px;
+            }
+        }
+
+        @include trap-box-styles($trap-box-width, 204px);
+
+        .selection-number {
+            border-radius: 34px;
+            font-size: 190.4px;
+            margin-bottom: 44px;
+            margin-top: 63px;
+
+            @include breakpoint(multidesktop) {
+                border-radius: 17px;
+                font-size: 95.2px;
+                height: 102px;
+                margin-bottom: 21px;
+                margin-top: 32px;
+                width: 136px;
+            }
+
+            &.trap-6 {
+                @include trap-6-styles(40.8px, 40.8px, 40.8px, 7.05px);
+            }
+        }
+
+        &.trap-layout-2 {
+            margin-top: 46px;
+
+            @include breakpoint(multidesktop) {
+                margin-top: 23px;
+            }
+
+            &:first-child {
+                margin-top: 34px;
+
+                @include breakpoint(multidesktop) {
+                    margin-top: 17px;
+                }
+            }
+
+            .trap-layout__grid {
+                gap: 60px;
+                grid-template-columns: repeat(6, 240px);
+
+                @include breakpoint(multidesktop) {
+                    gap: 30px;
+                    grid-template-columns: repeat(6, 120px);
+                }
+            }
+
+            .trap-layout__title {
+                font-size: 52px;
+                line-height: 37px;
+
+                @include breakpoint(multidesktop) {
+                    font-size: 26px;
+                    line-height: 18px;
+                }
+            }
+
+            @include trap-box-styles($trap-box-width, 180px);
+
+            .selection-number {
+                border-radius: 30px;
+                font-size: 168px;
+                margin-bottom: 12px;
+                margin-top: 33px;
+
+                @include breakpoint(multidesktop) {
+                    width: 120px;
+                    height: 90px;
+                    font-size: 84px;
+                    margin-bottom: 6px;
+                    margin-top: 17px;
+                    border-radius: 15px;
+                }
+
+                &.trap-6 {
+                    @include trap-6-styles(36px, 36px, 36px, 5.05px);
+                }
+            }
+
+            .selection-price {
+                height: 96px;
+                font-size: 71px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                    font-size: 35.556px;
+                }
+            }
+        }
+
+        &.trap-layout-3 {
+            margin-top: 30px;
+
+            @include breakpoint(multidesktop) {
+                margin-top: 15px;
+            }
+
+            &:first-child {
+                margin-top: 24px;
+
+                @include breakpoint(multidesktop) {
+                    margin-top: 12px;
+                }
+            }
+
+            .trap-layout__grid {
+                gap: 56px;
+                grid-template-columns: repeat(6, 240px);
+
+                @include breakpoint(multidesktop) {
+                    gap: 28px;
+                    grid-template-columns: repeat(6, 120px);
+                }
+            }
+
+            .trap-layout__title {
+                font-size: 48px;
+                line-height: 34px;
+
+                @include breakpoint(multidesktop) {
+                    font-size: 24px;
+                    line-height: 17px;
+                }
+            }
+
+            @include trap-box-styles($trap-box-width, 84px);
+
+            .selection-number {
+                border-radius: 14px;
+                font-size: 78.4px;
+                margin-bottom: 6px;
+                margin-top: 20px;
+
+                @include breakpoint(multidesktop) {
+                    border-radius: 7px;
+                    font-size: 39.2px;
+                    margin-bottom: 3px;
+                    margin-top: 10px;
+                    width: 120px;
+                    height: 42px;
+                }
+
+                &.trap-6 {
+                    @include trap-6-styles(16.8px, 16.8px, 16.8px, 3.05px);
+                }
+            }
+
+            .selection-price {
+                height: 96px;
+                font-size: 71px;
+
+                @include breakpoint(multidesktop) {
+                    height: 48px;
+                    font-size: 35.556px;
+                }
+            }
+        }
+
+        &__row {
+            @include flex-center;
+            flex-direction: column;
+        }
+    }
+
+    .selection-price {
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        color: $early-price-text;
+        background-color: $color-white;
+        height: 108px;
+
+        @include flex-center;
+
+        @include breakpoint(multidesktop) {
+            font-size: 40px;
+            height: 54px;
+        }
+    }
+}
+
+.flex-shrink {
+    flex-shrink: 0;
+    margin-right: 12px;
+
+    @include breakpoint(multidesktop) {
+        margin-right: 6px;
+    }
+}
+
+.flex-container {
+    width: $trap-box-width;
+
+    @include flex-container(flex-end, center);
+
+    &.space-between {
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "divider": {
+        "default": {
+            "on-surface": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.divider}"
+                    }
+                }
+            },
+            "on-surface-high": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.high.divider}"
+                    }
+                }
+            },
+            "on-surface-highest": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.highest.divider}"
+                    }
+                }
+            },
+            "on-surface-low": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.low.divider}"
+                    }
+                }
+            },
+            "on-surface-lowest": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.lowest.divider}"
+                    }
+                }
+            }
+        },
+        "inverse": {
+            "on-surface": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.divider-inverse}"
+                    }
+                }
+            },
+            "on-surface-high": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.high.divider-inverse}"
+                    }
+                }
+            },
+            "on-surface-highest": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.highest.divider-inverse}"
+                    }
+                }
+            },
+            "on-surface-low": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.low.divider-inverse}"
+                    }
+                }
+            },
+            "on-surface-lowest": {
+                "color": {
+                    "border": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "divider",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.container.lowest.divider-inverse}"
+                    }
+                }
+            }
+        },
+        "shared": {
+            "size": {
+                "border": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "divider",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.xquarter}"
+                }
+            }
+        }
+    }
+}

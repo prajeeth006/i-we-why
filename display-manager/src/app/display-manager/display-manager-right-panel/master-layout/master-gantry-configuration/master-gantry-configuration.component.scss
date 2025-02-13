@@ -1,0 +1,50 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.screens-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 228px);
+  column-gap: 20px;
+  justify-content: center;
+
+  &.special-screens-row {
+    grid-template-columns: 114px;
+    grid-auto-columns: 114px;
+    column-gap: 20px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px dashed #878E99;
+    margin: 20px 20px 0;
+    padding-top: 20px;
+
+    .switch-case {
+      width: 114px
+    }
+  }
+
+}
+
+.gantry-types-selections-group {
+  @include helper.center-content;
+  height: 30px;
+  padding: 20px;
+
+  .gantry-type-btn {
+    width: 115px;
+    text-align: center;
+    height: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    border: 0;
+    letter-spacing: 1.25px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &.active-type {
+      background-color: $color-black-light;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import './src/global-style/_all-variables.scss';
+
+@mixin text-styles {
+  background-color: $white;
+  flex: 1;
+  @include text-truncate;
+}
+
+.match-bet-header {
+  @include flex-container(center);
+  color: $body-color-txt;
+  font-size: $txt-lg-title-size;
+  padding-top: 4px;
+
+  @include breakpoint(multidesktop) {
+    padding-top: 2px;
+    font-size: $txt-lg-font-size;
+  }
+}
+
+.bet-details-container {
+  .bet-details-header {
+    padding-top: 10px;
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font-size
+    }
+  }
+
+  .match-betting-section {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    color: $body-color-txt;
+    font-size: $font-list-lg-title-avr;
+
+    @include breakpoint(multidesktop) {
+      font-size: $txt-lg-font1-size;
+      height: 34px;
+    }
+
+    .bet-price {
+      width: 162px;
+      overflow: hidden;
+      text-align: center;
+      background-color: $body-color-p2-light;
+      height: 100%;
+      text-transform: uppercase;
+
+      @include breakpoint(multidesktop) {
+        width: 80px;
+      }
+    }
+
+    .player-details-section {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      height: 100%;
+
+      .text-v {
+        width: 80px;
+        text-align: center;
+        background-color: $white;
+
+        @include breakpoint(multidesktop) {
+          width: 40px;
+        }
+      }
+
+      .draw-price {
+        width: 162px;
+        text-align: center;
+        background-color: var(--body-color-p2-light);
+
+        @include breakpoint(multidesktop) {
+          width: 80px;
+        }
+      }
+
+      .market-1 {
+        @include text-styles;
+        padding-left: 30px;
+
+        @include breakpoint(multidesktop) {
+          padding-left: 15px;
+        }
+      }
+
+      .market-2 {
+        @include text-styles;
+        text-align: right;
+        padding-right: 30px;
+
+        @include breakpoint(multidesktop) {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}

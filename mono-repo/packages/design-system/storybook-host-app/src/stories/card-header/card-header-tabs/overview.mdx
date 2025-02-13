@@ -1,0 +1,70 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as CardHeaderStories from '../card-header.component.stories';
+
+The Card Header component, identified by the `ds-card-header`, provides a simple and flexible way to add headers to cards in your application.
+This header component offers the flexibility to showcase a title and subtitle.
+You can also customize the content of the header to match user preferences.
+
+<Canvas of={CardHeaderStories.Default} />
+
+## Usage
+
+Import `DsCardHeader` in your component, and apply `ds-card-header` in your card component.
+
+```ts
+import { DsCardHeader } from '@frontend/ui/card-header'; // 👈 add to file imports
+
+@Component({
+    imports: [DsCardHeader], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+#### title
+
+-   Type: \`string
+-   Description: Specifies the main title text to display in the card header. (**required**)
+
+#### subtitle
+
+-   Type: `string`
+-   Description: Specifies an optional subtitle text to display in the card header. (**optional**)
+
+#### expandable
+
+-   Type: `boolean`
+-   Default: `false`
+-   Description: Specifies whether the card header is expandable to reveal additional content (toggle icon button). (**optional**)
+
+#### variant
+
+-   Type: `string`
+-   Options: `'surface-lowest'`, `'surface-low'`, `'surface-high'`, `'surface-highest'`
+-   Default: `'surface-lowest'`
+-   Description: Specifies the stronger color/contrast of the card header.
+
+### Outputs
+
+#### HeaderClick
+
+-   **Type**: `EventEmitter<void>`
+-   **Description**: An event emitter that fires when the card header text is clicked. Use this event to perform actions or handle interactions when the header is clicked by the user.
+
+### Slots
+
+#### slot="start"
+
+-   Description: Slot for custom content to be placed at the start of the header. Typically used for icons, images, or other visual indicators.
+
+#### slot="title"
+
+-   Description: Slot for custom content to be placed at the end of the title. This can be used for badges, icons, or any element that complements the title.
+
+#### slot="end"
+
+-   Description: Slot for custom content to be placed at the end of the header. Useful for additional buttons, dividers or any other elements that should appear at the far right of the header.

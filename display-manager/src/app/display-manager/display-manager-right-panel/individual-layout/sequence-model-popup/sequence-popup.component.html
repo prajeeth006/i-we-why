@@ -1,0 +1,51 @@
+<div class="sequence-preset-carousel" cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+    <div class="carousel-header" mat-dialog-title cdkDragHandle>
+        <div class="header-wrapper">
+            <div class="header-title" id="dialogHeaderTitle">{{dialogHeaderTitle}}</div>
+            <div class="header-badge">
+                <img class="left-icon" [src]="presetIconPath">
+                <div class="preset-badge" *ngFor="let presetItem of presetlist">
+                    <div class="header-label-text">{{presetItem}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-dialog-content class="carousel-content">
+        <form [formGroup]="newPresetForm">
+            <div class="preset-content">
+                <div class="preset-content__left">
+                    <mat-label class="item-label">PRESET*</mat-label>
+                    <div id="presetDropdown" class="preset-dropdown">
+                        <mat-form-field appearance="fill">
+                        <mat-label class="preset-dropdown__label">Select Preset</mat-label>
+                        <mat-select disableOptionCentering panelClass="preset-settings-dropdown"
+                            class="mySelectClass" (selectionChange)="selectPreset($event.value)" formControlName="presetName">
+                            <mat-option *ngFor="let item of listOfPreset" [value]="item"
+                            id="presetName">
+                            <span id="presetCategory"></span>
+                            {{ item.Name }}
+                            </mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <button id="apply-btn" (click)="applyPreset()" mat-stroked-button class="preset-content--apply-btn" [disabled]="!isApplyEnabled"><div class="label-text">APPLY</div></button>
+            </div>
+            <app-preset-assets-table  id="sequence-preset-carousel-continue" [parentFormgroup]="newPresetForm" [messageTitle]="messageTitle"></app-preset-assets-table>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions class="carousel-footer">
+            <!-- Right Side -->
+            <div class="carousel-footer__right">
+                    <button id="reset-changes-btn" mat-stroked-button class="footer-btn reset-sequence-btn" (click)="resetSequence()" [disabled]="isPresetUpdate || newPresetForm.pristine"> 
+                        <div class="button-with-icon">
+                            <img class="left-icon" [src]="resetIconPath">
+                            <div class="label-text">RESET CHANGES</div>
+                        </div>
+                    </button>
+                    <div class="divider"></div>
+                    <button id="cancel-btn" class="footer-btn back-btn" mat-dialog-close><div class="label-text">BACK</div></button>
+                    <button id="continue-btn" class="footer-btn success-sequence-btn border-none" (click)="addSequence()" [disabled]="!isCreatePresetEnabled || newPresetForm.invalid"><div class="label-text">ADD SEQUENCE</div></button>
+            </div>
+    </mat-dialog-actions>
+</div>

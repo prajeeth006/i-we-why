@@ -1,0 +1,26 @@
+<div>
+    <ng-container *ngIf="vm$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <ng-container *ngIf="vm?.Runners?.length > 0 && vm?.Runners?.length <= 6">
+                <gn-dark-theme-manual-outright
+                    [result]="vm"
+                    [pageSize]="6"
+                    [selectionLength]="unrestrictedNameLength"></gn-dark-theme-manual-outright>
+            </ng-container>
+            <ng-container *ngIf="vm?.Runners?.length > 6 && vm?.Runners?.length <= 12">
+                <gn-dark-theme-manual-outright
+                    [result]="vm"
+                    [pageSize]="12"
+                    [selectionLength]="vm?.Runners?.length <= 8 ? unrestrictedNameLength : nameLength"></gn-dark-theme-manual-outright>
+            </ng-container>
+            <ng-container *ngIf="vm?.Runners?.length > 12 && vm?.Runners?.length <= 20">
+                <gn-dark-theme-manual-outright [result]="vm" [pageSize]="20" [selectionLength]="nameLength"></gn-dark-theme-manual-outright>
+            </ng-container>
+            <ng-container *ngIf="vm?.Runners?.length > 20">
+                <gn-dark-theme-manual-outright [result]="vm" [pageSize]="20" [selectionLength]="nameLength"></gn-dark-theme-manual-outright>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

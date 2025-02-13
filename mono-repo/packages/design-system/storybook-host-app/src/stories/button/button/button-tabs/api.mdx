@@ -1,0 +1,74 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from '../button.component.stories';
+
+## Testing DS buttons
+
+In order to easily test `DsButtons` the Design System Team exports [test harnesses](https://material.angular.io/cdk/test-harnesses/overview) which are utilities that query for the button inside your application templates.
+
+An example on how to use `DsButtonHarness`.
+
+First import `DsButtonHarness`, `TestbedHarnessEnvironment` and `HarnessLoader`.
+
+```ts
+import { HarnessLoader } from '@angular/cdk/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+
+import { DsButtonHarness } from '@frontend/ui/button/testing';
+```
+
+Configure `Testbed` to use the harness loader.
+
+```ts
+describe('test for MyComponent', () => {
+    let fixture: ComponentFixture<MyComponent>;
+    let loader: HarnessLoader;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({ imports: [MyComponent] });
+
+        fixture = TestBed.createComponent(MyComponent);
+        fixture.detectChanges();
+
+        // create an instance for the loader
+        loader = TestbedHarnessEnvironment.loader(fixture);
+    });
+    // ...
+});
+```
+
+Use the loader to query for the `DsButton` inside test cases:
+
+```ts
+it('should load all button harnesses', async () => {
+    // queries all the buttons inside the component template
+    const buttons = await loader.getAllHarnesses(DsButtonHarness);
+    expect(buttons.length).toBe(2);
+
+    // query only one ds-button based also on filters
+    const button = await loader.getHarness(DsButtonHarness.with({ text: 'Text button' }));
+
+    // we can also filter the buttons we want to query
+    const buttons = await loader.getAllHarnesses(DsButtonHarness.with({ subText: 'Additional Text' }));
+    const buttons = await loader.getAllHarnesses(DsButtonHarness.with({ text: /button/i }));
+    const disabledButtons = await loader.getAllHarnesses(DsButtonHarness.with({ disabled: true }));
+    const notDisabledButtons = await loader.getAllHarnesses(DsButtonHarness.with({ disabled: false }));
+
+    // we can check some properties of the button
+    expect(await button.getText()).toBe('Submit button');
+    expect(await button.getSubText()).toBe('Additional Text');
+
+    // we can click or focus
+    await button.click();
+    await button.focus();
+
+    // check for disabled or loading
+    expect(await button.isDisabled()).toBe(true);
+    expect(await button.isLoading()).toBe(true);
+});
+```
+
+Find all the possible filters here in the [source code](https://vie.git.bwinparty.com/vanilla/monorepo/-/blob/main/packages/design-system/ui/button/src/button/button.harness.ts?ref_type=heads).
+
+Also, check out some tests in the [DsButton tests](https://vie.git.bwinparty.com/vanilla/monorepo/-/blob/main/packages/design-system/ui/button/src/button/button.component.spec.ts?ref_type=heads) itself for more ideas.

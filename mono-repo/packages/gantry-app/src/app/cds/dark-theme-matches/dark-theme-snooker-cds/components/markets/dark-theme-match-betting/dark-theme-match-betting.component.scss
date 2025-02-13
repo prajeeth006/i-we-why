@@ -1,0 +1,9 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+.match-betting-details {
+    margin-top: 32px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 16px;
+    }
+}

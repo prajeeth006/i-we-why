@@ -1,0 +1,9 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+
+import * as ButtonStories from '../bonus-button.component.stories';
+
+### Bonus Button
+
+<Canvas of={ButtonStories.Default} />
+
+<ArgTypes of={ButtonStories} exclude={['label', 'valueText']} />

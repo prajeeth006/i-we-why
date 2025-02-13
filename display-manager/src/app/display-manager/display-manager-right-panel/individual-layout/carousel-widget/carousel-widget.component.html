@@ -1,0 +1,38 @@
+<c-carousel [interval]="0" [animate]="false"  transition="slide" data-slides="_slides()" (itemChange)="onItemChange($event)" #carousel >
+  <c-carousel-inner>
+    <c-carousel-item>
+      <app-gantry-screens [gantryScreenData]="_gantryScreenData"></app-gantry-screens>
+    </c-carousel-item>
+    <c-carousel-item>
+      <app-peripheral-screens [peripheralScreenData]="_peripheralScreenData"></app-peripheral-screens>
+    </c-carousel-item>
+  </c-carousel-inner>
+
+  <!-- Default Controls -->
+  <c-carousel-control [routerLink] caption="Previous" direction="prev" #ctrlPrev></c-carousel-control>
+  <c-carousel-control [routerLink] caption="Next" direction="next" #ctrlNext></c-carousel-control>
+
+  <!-- Custom Controls -->
+  <div class="carousel-controls">
+    <button class="carousel-control-prev" (click)="prev()" [disabled]="isFirstSlide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <g [attr.class]="isFirstSlide ? 'inactive' : 'active'">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M16.5901 23.9102L28.5901 35.9102L31.4101 33.0902L22.2501 23.9102L31.4101 14.7302L28.5901 11.9102L16.5901 23.9102Z"
+            fill="#485362" />
+        </g>
+      </svg>
+    </button>
+    <button class="carousel-control-next" (click)="next()" [disabled]="isLastSlide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <g [attr.class]="isLastSlide ? 'inactive' : 'active'">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M31.4099 23.9102L19.4099 11.9102L16.5899 14.7302L25.7499 23.9102L16.5899 33.0902L19.4099 35.9102L31.4099 23.9102Z"
+            fill="#485362" />
+        </g>
+      </svg>
+    </button>
+  </div>
+
+  <c-carousel-indicators></c-carousel-indicators>
+</c-carousel>

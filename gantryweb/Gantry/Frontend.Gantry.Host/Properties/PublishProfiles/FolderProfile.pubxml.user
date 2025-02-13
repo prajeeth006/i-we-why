@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\dev\gantryweb\Gantry\Frontend.Gantry.Host\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-05-04T13:57:50.3557224Z;True|2023-05-04T19:18:53.0087075+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

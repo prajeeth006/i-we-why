@@ -1,0 +1,62 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as ButtonStories from '../button-toggle.component.stories';
+
+The `DsButton` component is designed as a dumb component, meaning it has no internal logic to manage its own state or handle user interactions such as clicks. Instead, it relies entirely on the parent component to pass down properties like kind, variant and size. This makes the `DsButton` highly reusable and versatile in various scenarios, where its appearance and behavior can be controlled externally without modifying the component itself.
+
+<Canvas of={ButtonStories.ButtonToggle}></Canvas>
+
+### Handling toggle state
+
+Since `DsButton` component has no logics related to its click/selected state, there should be a parent component responsible for managing the button’s state from the outside, such as whether it is selected or unselected. It also handles any logic related to user interaction.
+
+The parent component controls:
+
+-   **State management**: Whether the button is selected or unselected.
+-   **Event handling**: The click event to toggle the state.
+-   **Content projection**: Depending on state or event, different content is projected to `DsButton`.
+-   **Input binding**: Passing the `kind`, `variant`, `size` as inputs to the button component.
+
+In this way, the parent component acts as the orchestrator, while the `DsButton` only responds to the inputs it receives.
+
+### Example Button Toggle component behavior
+
+If we don't need to project content inside button and still want to change its appearance based on toggle state, we can only change its inputs by handling selected flag in parent component.
+
+**!!!** Please keep in mind that there might be some restrictions when it comes to mixing variants, sizes and kinds. By default, no incorrect mixins should be provided by designers. If you are in a state of adoption DS components and there is an option for a toggle state that is not supported by Design System buttons, please consult it with DS designers.
+[You can check whether variants are supported here.](?path=/docs/components-button-button-all-variants--overview)
+
+### Example Parent Component
+
+```ts
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { DsIconButton } from './icon-button.component';
+import { DemoIconComponent } from './demo-icon.component';
+@Component({
+    selector: 'ds-demo-button-toggle',
+    standalone: true,
+    imports: [DsIconButton, DemoIconComponent],
+    template: `
+        <button ds-icon-button [kind]="selected ? 'secondary' : 'primary'" (click)="selected = !selected">
+            <ds-demo-icon [iconName]="selected ? 'close' : 'chevron'"></ds-demo-icon>
+        </button>
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DsDemoButtonToggle {
+    selected = input(false);
+}
+```
+
+In the example provided, the selected state toggles when the button is clicked, which changes both the icon projected and the button style.
+This case would cover any occurrence of **add to favourite** or **star** like scenarios.
+Instead of the icon, any kind of content related to the button could be projected conditionally, i.e. badge, pill, label.
+
+![Button Toggle Examples](docs-assets/button-toggle-examples.png 'Button Toggle Examples')
+
+```html
+<button ds-icon-button [kind]="selected ? 'secondary' : 'primary'" (click)="selected = !selected">
+    <ds-demo-icon [iconName]="selected ? 'close' : 'chevron'"></ds-demo-icon>
+</button>
+```

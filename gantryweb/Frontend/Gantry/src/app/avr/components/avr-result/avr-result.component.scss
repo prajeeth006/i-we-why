@@ -1,0 +1,261 @@
+@import './src/global-style/_all-variables.scss';
+
+.base-page-wrapper {
+  z-index: 13;
+  background-color: transparent !important;
+}
+
+.base-body-wrapper { 
+  flex-direction: column;
+  width: 100%;
+  @include flex-center;
+  margin: auto;
+}
+
+.base-footer-wrapper {
+  display: none;
+}
+
+.avr-result-table {
+  list-style: none;
+  width: 1342px;
+  padding: 60px 0 100px 0;
+  margin: 0; 
+
+  @include breakpoint(multidesktop) {
+    width: 680px;
+    padding: 40px 0 108px 0;
+    margin: 0;    
+  }
+
+  li {
+    height: 84px;
+    display: flex;
+    align-items: stretch;
+    color: $body-color-p2;
+
+    @include breakpoint(multidesktop) {
+      height: 42px;
+    }
+
+    .items {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-item-1 {
+      background-color: $body-color-p2-lighter-bg;    
+      width: 140px;
+      font-size:  $font-list-lg-title-avr;
+      line-height: 74px;      
+      padding-left: 22px;
+      text-align: left;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        line-height: 40px;
+        width: 71px;
+        padding-left: 11px;
+      }     
+
+    }
+
+    .table-item-2 {
+  
+      width: 118px;      
+      @include flex-center;
+      background-color: $bg-image-dark;     
+      @include breakpoint(multidesktop) {
+        width: 60px;        
+      }
+
+
+      img {
+        width: 67px;
+        height: 67px;      
+        @include breakpoint(multidesktop) {
+          height: 31px;
+          width: 31px;
+        }
+
+        &.motor-race-img {
+          height: 60px;
+          width: 60px;
+
+          @include breakpoint(multidesktop) {
+            height: 36px;
+            width: 36px;
+          }
+        }
+      }
+
+    }
+
+    .table-item-3 {
+      flex-basis: 10%;
+      min-width: 8%;
+      font-size: $font-list-lg-title-avr;
+      line-height: 74px;
+      background-color: $body-color-p2-lighter-bg;
+      justify-content: center;
+      &.isdog{          
+        display: none;
+      }
+      @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        line-height: 40px;
+      }    
+    }
+
+    .table-item-4 {
+      font-size: $font-list-lg-title-avr;
+      background-color: $body-color-p2-lighter-bg;
+      flex-basis: 45%;
+      min-width: 45%;
+      line-height: 74px;
+      text-align: left;
+      flex: 1;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        line-height: 40px;
+        flex-basis: unset;
+        min-width: unset;
+        flex: 1;
+      }   
+
+      span {
+        padding-left: 20px;
+        @include breakpoint(multidesktop) {
+          padding-left: 10px;
+        }
+      }
+
+    }
+
+    .table-item-5 {
+      font-size: $font-list-lg-title-avr;
+      flex-basis: 15%;
+      min-width: 15%;
+      background-color: $body-color-p2-lighter-bg;
+      line-height: 74px;
+      justify-content: center;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        line-height: 40px;
+      }    
+    }
+
+    .table-item-6 {
+      font-size: $font-list-lg-title-avr;
+      width: 97px;
+      line-height: 74px;
+      background-color: $body-color-p2-lighter-bg;
+
+      @include breakpoint(multidesktop) {
+        font-size: $txt-lg-font1-size;
+        line-height: 40px;
+        width: 49px;        
+      }   
+
+      .badge {
+        background-color: $color-p5;
+        @include flex-center;
+        width: 100%;
+        height: 100%;
+
+      }
+
+      .regular-class {
+        display: block;
+        @include flex-center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .border-dark {
+      border-bottom: solid $body-color-p2 2px;
+    }
+
+    .table-center {
+      justify-content: center;
+    }
+
+    .table-right {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.castcontainer {
+  display: flex;
+  padding-top: 80px;
+  color: $color-p1-text;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 70%;
+
+  &-right,
+  &-left {
+    display: flex;
+    flex-direction: row;
+    width: 44%;
+    margin-bottom: 10px;
+
+  }
+  width: 1342px;
+  @include breakpoint(multidesktop) {
+    width: 680px;
+    padding: 0;
+  }
+  .castname {
+    line-height: 82px;
+    @include text-truncate;
+    font-size: $font-list-title;
+    font-weight: normal;
+    background-color: $color-p1-bg;
+    padding: 0 20px;
+    flex: 1 1 47%;
+    color: $white;
+    text-align: center;
+    @include breakpoint(multidesktop) {
+      font-size: $antipost-font-list-title;
+      line-height: 42px;
+    }
+
+  }
+
+  .castvalue {
+    font-size: $font-list-title;
+    background: $white;
+    line-height: 82px;
+    font-weight: bold;
+    width: 53%;
+    @include flex-center;
+    padding: 0 10px;  
+    color: $body-color-txt;
+    @include breakpoint(multidesktop) {
+      font-size: $antipost-font-list-title;
+      line-height: 42px;
+    }
+
+  }
+
+}
+
+
+
+.avr-bg-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+
+  @media (orientation: portrait) {
+    min-height: 100vh;
+  }
+}

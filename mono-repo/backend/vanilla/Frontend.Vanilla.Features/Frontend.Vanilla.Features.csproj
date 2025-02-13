@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla web app features</Description>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Caching.Hekaton\Frontend.Vanilla.Caching.Hekaton.csproj"/>
+        <ProjectReference Include="..\Frontend.Vanilla.Configuration.DynaCon\Frontend.Vanilla.Configuration.DynaCon.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.Diagnostics.Contracts\Frontend.Vanilla.Diagnostics.Contracts.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.ServiceClients\Frontend.Vanilla.ServiceClients.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.DomainSpecificLanguage\Frontend.Vanilla.DomainSpecificLanguage.csproj" />
+        <ProjectReference Include="..\Frontend.Vanilla.Content\Frontend.Vanilla.Content.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ardalis.SmartEnum" />
+        <PackageReference Include="ErrorOr" />
+        <PackageReference Include="LaunchDarkly.ServerSdk" />
+        <PackageReference Include="Microsoft.Extensions.Http" />
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+        <PackageReference Include="Microsoft.Extensions.Logging" />
+        <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" />
+        <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" NoWarn="NU5104" />
+        <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.Process" NoWarn="NU5104" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
+        <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" />
+        <PackageReference Include="Serilog" />
+        <PackageReference Include="Serilog.Extensions.Logging" />
+        <PackageReference Include="Serilog.Sinks.Async" />
+        <PackageReference Include="Serilog.Sinks.Console" />
+        <PackageReference Include="Serilog.Sinks.File" />
+        <PackageReference Include="System.Text.Encodings.Web" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+        <PackageReference Include="Serilog.AspNetCore" />
+        <PackageReference Include="Swashbuckle.AspNetCore" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="SpaFiles\**\**" />
+        <Content Include="DataProtection\*.xml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,44 @@
+﻿@using Frontend.Host
+@using Frontend.Host.Features.Assets
+@using Frontend.Vanilla.Features.WebAbstractions
+@inject IIndexViewDataProvider VanillaDataProvider
+
+@{
+    Layout = null;
+    Context.Response.DisableCache();
+}
+<!doctype html>
+<html class="fw-fourteen">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    <meta name="apple-mobile-web-app-title"  />
+    <meta name="description" content="@VanillaDataProvider.Description" />
+    <meta name="viewport" content="@VanillaDataProvider.GetViewport()" />
+
+    @RenderSection("HtmlHeadTags", required: false)
+    @if (!IsSectionDefined("HtmlHeadTags"))
+    {
+        
+        @VanillaDataProvider.RenderAbTestingScript()
+   
+    }
+
+    @VanillaDataProvider.RenderCanonicalLinkTag(Context)
+    @RenderSection("PageHead", required: false)
+
+    @RenderSection("HeadAssets", required: false)
+    @if (!IsSectionDefined("HeadAssets"))
+    {
+        @await VanillaDataProvider.RenderBootstrapAssetsAsync(BootstrapAssetSection.Head, Context.RequestAborted)
+    }
+
+</head>
+<body>
+
+    @RenderBody()
+
+</body>
+</html>

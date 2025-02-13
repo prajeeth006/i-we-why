@@ -1,0 +1,97 @@
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+
+.tabs-and-profile-section {
+    .active-profile {
+        display: flex;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        z-index: 11;
+        margin-right: 20px;
+        letter-spacing: 0.6px;
+        line-height: 20px;
+        color: $text-black-color;
+        font-size: $txt-sm-font-size;
+        font-weight: 400;
+
+        @include abstract.breakpoint-2 {
+            top: 25px;
+        }
+
+        .active-profile-txt {
+            &::after {
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                background-color: $active-profile-bg;
+                border-radius: 50%;
+                margin: 0 5px;
+                content: '';
+                vertical-align: middle;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+
+    .config-display-tabs {
+        ::ng-deep {
+            .mat-mdc-tab-label-container {
+                height: 64px;
+                background-color: $background-grey-color;
+                letter-spacing: 1.25px;
+                font-size: $txt-sm-font-size;
+                --mat-tab-header-label-text-size: $txt-sm-font-size;
+
+                .mat-mdc-tab-labels {
+                    height: 64px;
+                    align-items: flex-end;
+                    padding-left: 20px;
+                    background-color: $background-grey-color;
+
+                    @include abstract.breakpoint-2 {
+                        height: 50px;
+                    }
+
+                    .mat-mdc-tab {
+                        height: 44px !important;
+                        background-color: $background-grey-color !important;
+                        font-weight: 400;
+                        min-width: 200px !important;
+                        max-width: 200px !important;
+                        letter-spacing: 1.25px;
+                        line-height: 14px;
+
+                        @include abstract.breakpoint-2 {
+                            height: 35px !important;
+                            min-width: 150px !important;
+                            max-width: 150px !important;
+                        }
+
+                        .mat-mdc-tab-label-content,
+                        .master-tab-section {
+                            display: flex;
+                            align-items: center;
+
+                            .tab-item-icon {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .mat-mdc-tab.mdc-tab--active {
+                        background-color: $white !important;
+                        opacity: 1;
+                        font-weight: 700;
+                    }
+
+                    .mat-mdc-tab {
+                        height: 44px;
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}

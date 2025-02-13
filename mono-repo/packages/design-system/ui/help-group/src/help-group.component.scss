@@ -1,0 +1,37 @@
+@use '../../generated/styles/components/help-text/help-text' as ds-help-text;
+@use '../../fonts/font-helper' as helper;
+
+.ds-help-text-group {
+    @include ds-help-text.shared;
+    @include ds-help-text.default;
+    @include helper.set-font-variables('help-text', 'label', 'md');
+    @include helper.setup-font-style('help-text');
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-help-text-space-stack);
+    padding: var(--ds-help-text-space-padding-top) var(--ds-help-text-space-padding-right) var(--ds-help-text-space-padding-bottom)
+        var(--ds-help-text-space-padding-left);
+
+    &.ds-help-text-group-inverse {
+        @include ds-help-text.inverse;
+    }
+
+    [slot='header'] {
+        @include helper.setup-font-style('help-text');
+        @include helper.set-font-variables('help-text', 'label', 'md-strong');
+
+        background-color: var(--ds-help-text-group-bg);
+        border-color: var(--ds-help-text-group-border);
+        color: var(--ds-help-text-group-text);
+    }
+
+    .ds-help-text-group-content {
+        @include helper.setup-font-style('help-text');
+        @include helper.set-font-variables('help-text', 'label', 'md');
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-help-text-space-stack);
+    }
+}

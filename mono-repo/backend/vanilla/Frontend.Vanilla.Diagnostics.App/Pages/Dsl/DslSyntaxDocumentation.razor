@@ -1,0 +1,44 @@
+@inherits DslSyntaxDocumentationComponent
+
+<h2>Syntax</h2>
+<table class="table table-hover table-sm dsl-syntax">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Keywords</th>
+        <th>Examples</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var hint in SyntaxHints)
+    {
+        <tr id="@hint.HtmlId">
+            <td>
+                <ScrollToIdLink ScrollId="@hint.HtmlId"/>
+            </td>
+            <td>
+                <ul>
+                    @foreach (var keywordHtml in hint.KeywordHtmls)
+                    {
+                        <li>
+                            @(new MarkupString(keywordHtml))
+                        </li>
+                    }
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    @foreach (var exampleHtml in hint.ExampleHtmls)
+                    {
+                        <li>@(new MarkupString(exampleHtml))</li>
+                    }
+                </ul>
+            </td>
+            <td>
+                @hint.Description
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,169 @@
+<!-- Standard link tag-->
+<html>
+    <head>
+        <style>
+            body {
+                background-color: var(--figma-color-bg);
+                color: var(--figma-color-text);
+                padding: 2em;
+                font-family: Inter, sans-serif;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--figma-color-text-onbrand);
+                background-color: var(--figma-color-bg-brand);
+                flex-shrink: 0;
+                text-decoration: none;
+                outline: none;
+                border: 1px solid var(--figma-color-border-brand);
+                font-weight: 500;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 12px;
+                box-sizing: border-box;
+                border-radius: 6px;
+                margin-top: 1em;
+            }
+
+            button:hover {
+                background-color: var(--figma-color-bg-brand-hover);
+            }
+
+            button:active {
+                background-color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button:disabled {
+                opacity: 0.5;
+                background-color: var(--figma-color-bg-brand);
+            }
+
+            #messages ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .danger {
+                color: var(--figma-color-text-danger);
+            }
+
+            .warning {
+                color: var(--figma-color-text-warning);
+            }
+
+            .success {
+                color: var(--figma-color-text-success);
+            }
+
+            select {
+                padding: 0 0 0 7px;
+                height: 28px;
+            }
+
+            .pdf {
+                color: #000000;
+                font-size: 12px;
+                width: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Variable Checker</h2>
+
+        <label><input type="checkbox" id="sameModeCheckbox" /> Check if variables reference only same mode (for semantic and reference)</label> <br />
+
+        <br /><br />
+
+        <label><input type="radio" name="fileType" value="all" checked /> No type</label><br />
+        <label><input type="radio" name="fileType" value="reference" /> Reference File</label><br />
+        <label><input type="radio" name="fileType" value="semantic" /> Semantic File</label><br />
+        <label><input type="radio" name="fileType" value="component" /> Component File</label><br />
+
+        <div id="mode-selection"></div>
+
+        <button class="button button--primary" id="check">Check Variables</button>
+        <button class="button button--primary" id="print" disabled>PDF (Print)</button>
+
+        <p id="messages"></p>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        <script>
+            document.getElementById('check').onclick = () => {
+                const isModeCheck = document.getElementById('sameModeCheckbox').checked;
+                document.getElementById('sameModeCheckbox').disabled = true;
+                document.getElementById('check').disabled = true;
+                document.getElementById('print').disabled = true;
+                document.getElementById('messages').innerHTML = '';
+                const fileTypes = document.getElementsByName('fileType');
+                let fileTypeValue = 'all';
+                for (const fileType of fileTypes) {
+                    if (fileType.checked) {
+                        fileTypeValue = fileType.value;
+                    }
+                }
+
+                setTimeout(() => {
+                    parent.postMessage({ pluginMessage: { type: 'check-variables', checkModes: isModeCheck, fileTypeValue: fileTypeValue } }, '*');
+                }, 100);
+            };
+
+            document.getElementById('print').onclick = () => {
+                // Default export is a4 paper, portrait, using millimeters for units
+                const { jsPDF } = window.jspdf;
+
+                var pdf = new jsPDF({
+                    unit: 'px',
+                    orientation: 'l',
+                });
+
+                document.getElementById('messages').classList = 'pdf';
+                pdf.html(document.getElementById('messages'), {
+                    callback: function (doc) {
+                        doc.save('variable-errors.pdf');
+                        document.getElementById('messages').classList = '';
+                    },
+                    margin: 10,
+                });
+            };
+
+            document.addEventListener('change', (event) => {
+                const form = event.target.closest('form');
+                if (form) {
+                    var formData = new FormData(form);
+                    parent.postMessage({ pluginMessage: { type: 'mode-selection-form-update', ...Object.fromEntries(formData) } }, '*');
+                }
+            });
+
+            onmessage = (event) => {
+                if (event.data.pluginMessage.type === 'mode-selection-dialog') {
+                    document.getElementById('mode-selection').innerHTML = event.data.pluginMessage.message;
+                }
+                if (event.data.pluginMessage.type === 'check-variables-result-progress') {
+                    document.getElementById('messages').innerHTML = event.data.pluginMessage.message;
+                }
+                if (event.data.pluginMessage.type === 'check-variables-result') {
+                    document.getElementById('messages').innerHTML = event.data.pluginMessage.message;
+                    document.getElementById('check').disabled = false;
+                    document.getElementById('print').disabled = false;
+                    document.getElementById('sameModeCheckbox').disabled = false;
+                }
+
+                if (event.data.pluginMessage.type === 'check-same-mode-result') {
+                    document.getElementById('sameModeCheckbox').checked = event.data.pluginMessage.message;
+                }
+
+                if (event.data.pluginMessage.type === 'file-type-result') {
+                    const fileTypes = document.getElementsByName('fileType');
+                    for (const fileType of fileTypes) {
+                        fileType.checked = fileType.value === event.data.pluginMessage.message;
+                    }
+                }
+            };
+        </script>
+    </body>
+</html>

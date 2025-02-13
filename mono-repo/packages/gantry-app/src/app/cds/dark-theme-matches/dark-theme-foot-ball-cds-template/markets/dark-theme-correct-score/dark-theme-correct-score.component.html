@@ -1,0 +1,36 @@
+<div
+    *ngIf="multiMarket.selections && multiMarket.selections.length > 0"
+    [ngClass]="isTwoMarkets ? 'correct-score-container two-markets__available' : 'correct-score-container'">
+    <div id="Staticroundvalues" class="correct-score-section flex-space-center" *ngFor="let roundValue of multiMarket?.selections">
+        <div *ngIf="roundValue?.homeSelectionTitle || roundValue?.homePrice; then homeSelection; else noHomeSelection"></div>
+        <ng-template #homeSelection>
+            <div class="home-team-col score-and-price-col flex-space-center">
+                <div id="homePrice" class="price-block correct-score__price tilted-card football--multimarket__price" autoAdjustFont>
+                    <span class="tilted-text">{{ roundValue?.homePrice | prepareEvsPipe }}</span>
+                </div>
+                <div id="homeScore" class="final-score football--multimarket__name border-bottom-none">{{ roundValue?.homeSelectionTitle }}</div>
+            </div>
+        </ng-template>
+        <ng-template #noHomeSelection>
+            <div></div>
+        </ng-template>
+        <div class="draw-details-col score-and-price-col flex-space-center" *ngIf="roundValue?.drawSelectionTitle">
+            <div id="drawScore" class="final-score football--multimarket__name border-bottom-none">{{ roundValue?.drawSelectionTitle }}</div>
+            <div id="drawPrice" class="price-block correct-score__price tilted-card football--multimarket__price" autoAdjustFont>
+                <span class="tilted-text">{{ roundValue?.drawPrice | prepareEvsPipe }}</span>
+            </div>
+        </div>
+        <div *ngIf="roundValue?.awaySelectionTitle || roundValue?.awayPrice; then awaySelection; else noAwaySelection"></div>
+        <ng-template #awaySelection>
+            <div class="away-team-col score-and-price-col flex-space-center">
+                <div id="AwayScore" class="final-score football--multimarket__name border-bottom-none">{{ roundValue?.awaySelectionTitle }}</div>
+                <div id="AwayPrice" class="price-block correct-score__price tilted-card football--multimarket__price" autoAdjustFont>
+                    <span class="tilted-text">{{ roundValue?.awayPrice | prepareEvsPipe }}</span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #noAwaySelection>
+            <div></div>
+        </ng-template>
+    </div>
+</div>

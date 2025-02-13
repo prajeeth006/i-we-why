@@ -1,0 +1,242 @@
+@import '../../../../../dark-theme-global-style/all-variables';
+
+.header {
+    height: $header-full-height;
+
+    @include breakpoint(multidesktop) {
+        height: $header-quad-height;
+    }
+
+    .header__title--block {
+        height: $header-full-height;
+        display: flex;
+        column-gap: 20px;
+        text-transform: uppercase;
+
+        @include breakpoint(multidesktop) {
+            height: $header-quad-height;
+            column-gap: 10px;
+        }
+
+        .header__title--block-left {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+
+            .header__logo {
+                display: flex;
+
+                img {
+                    height: 124px;
+                    width: 124px;
+                    margin-right: 16px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 62px;
+                        height: 62px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .header__title {
+                font-size: $fs-full-lead-title;
+                font-family: $ff-header-title;
+                color: $color-white;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $fs-quad-lead-title;
+                }
+
+                .header__title--content {
+                    width: 100%;
+                    display: flex;
+                    column-gap: 30px;
+
+                    @include breakpoint(multidesktop) {
+                        column-gap: 15px;
+                    }
+                }
+
+                .event-title {
+                    @include text-truncate;
+                }
+            }
+
+            .header__countdowntimer {
+                transform: translateZ(1px);
+                font-family: $ff-roboto-condensed;
+                font-style: italic;
+                font-weight: $fw-bold;
+                text-align: right;
+                color: $footer-yellow-text;
+                margin-right: 16px;
+
+                @include breakpoint(multidesktop) {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .header__title--block-right {
+            .header__image {
+                display: flex;
+
+                img {
+                    width: 240px;
+                    height: 130px;
+
+                    @include breakpoint(multidesktop) {
+                        width: 120px;
+                        height: 65px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+html[data-domain*='ladbrokes.com'] {
+    .header__title--block-left {
+        .header__title {
+            position: relative;
+            font-weight: $fw-normal;
+            padding-left: 24px;
+            line-height: $header-full-height;
+            padding-bottom: 22px;
+
+            @include breakpoint(multidesktop) {
+                line-height: $header-quad-height;
+                padding-left: 12px;
+                padding-bottom: 11px;
+            }
+
+            .header__title--content {
+                padding-left: 60px;
+
+                @include breakpoint(multidesktop) {
+                    padding-left: 30px;
+                }
+            }
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: -4px;
+                border: solid 5px $color-white;
+                border-top: none;
+                border-right: none;
+                border-radius: 0 0 0 36px;
+                transform: skewX(-$tilted-angle);
+                width: calc(100% - 22px);
+                height: 100%;
+
+                @include breakpoint(multidesktop) {
+                    top: -2px;
+                    left: 11px;
+                    border-width: 2.5px;
+                    border-radius: 0 0 0 18px;
+                }
+            }
+
+            .event-title {
+                max-width: 1100px;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 550px;
+                }
+
+                &.is-race-off {
+                    max-width: 1290px;
+
+                    @include breakpoint(multidesktop) {
+                        max-width: 645px;
+                    }
+                }
+            }
+        }
+
+        .header__countdowntimer {
+            font-size: $font-100;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-50;
+            }
+        }
+    }
+
+    .avr-result-template {
+        .header__title--block-left {
+            .header__title {
+                .event-title {
+                    max-width: 1290px;
+
+                    @include breakpoint(multidesktop) {
+                        max-width: 645px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+html[data-domain*='coral.co.uk'] {
+    .header__title--block-left {
+        border-bottom: solid 5px $color-white;
+
+        @include breakpoint(multidesktop) {
+            border-width: 2.5px;
+        }
+
+        .header__title {
+            padding-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 12px;
+            }
+
+            .event-title {
+                max-width: 1180px;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 590px;
+                }
+
+                &.is-race-off {
+                    max-width: 1355px;
+
+                    @include breakpoint(multidesktop) {
+                        max-width: 675px;
+                    }
+                }
+            }
+        }
+
+        .header__countdowntimer {
+            font-size: $font-90;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-45;
+            }
+        }
+    }
+
+    .avr-result-template {
+        .header__title--block-left {
+            .header__title {
+                .event-title {
+                    max-width: 1355px;
+
+                    @include breakpoint(multidesktop) {
+                        max-width: 675px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<Project>
+
+<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+<PropertyGroup>
+  <Product>Frontend.Gantry</Product>
+  <ImplicitUsings>enable</ImplicitUsings>
+  <Nullable>enable</Nullable>
+</PropertyGroup>
+</Project>

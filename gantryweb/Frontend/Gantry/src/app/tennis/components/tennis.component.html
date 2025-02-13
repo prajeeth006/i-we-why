@@ -1,0 +1,71 @@
+<div class="tennis-results">
+  <ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+      <gn-base-page>
+        <ng-container header-content>
+          <gn-banner
+            [leadTitle]="vm.title"
+            [title]="vm.eventName"
+            [subtitleLeft]="vm.eventDateTime | sportEventDateFormat: vm.content"
+            [subtitleRight]="vm.typeName"
+          >
+          </gn-banner>
+        </ng-container>
+        <ng-container body-content>
+          <div id="tMarkets" class="tennis-bet" *ngFor="let market of vm.markets">
+            <div class="marketContent match-betting" *ngIf="market.marketName == vm.MatchBetting && !vm.ishideEntry">
+              <h2 id="matchBetting">{{ vm?.content?.contentParameters?.MatchBetting }}</h2>
+              <ng-container class="market-left" *ngFor="let selection of market.selections | keyvalue">
+                <div class="market-left-content" *ngIf="selection.value.outcomeMeaningMinorCode == 'H'">
+                  <span id="homeBettingPrice" class="betting-price">
+                    {{ vm?.homePlayerBet | marketPriceTransform : selection?.value?.hidePrice }}
+                  </span>
+                  <span id="homePlayer" class="betting-team" *ngIf="!selection?.value?.hideEntry">
+                    {{ vm?.homePlayer | trimSelectionNamePipe: nameLength }}
+                  </span>
+                  <span class="betting-team" *ngIf="selection?.value?.hideEntry"></span>
+                </div>
+              </ng-container>
+              <div id="Versus" class="team-vs">{{ vm?.content?.contentParameters?.V }}</div>
+              <ng-container class="market-right" *ngFor="let selection of market.selections | keyvalue">
+                <div class="market-right-content" *ngIf="selection.value.outcomeMeaningMinorCode == 'A'">
+                  <span id="awayPlayer" class="betting-team" *ngIf="!selection?.value?.hideEntry">
+                    {{ vm?.awayPlayer | trimSelectionNamePipe: nameLength  }}
+                 </span>
+                  <span  class="betting-team" *ngIf="selection?.value?.hideEntry"></span>
+                  <span id="awayBettingPrice" class="betting-price">
+                    {{vm?.awayPlayerBet | marketPriceTransform : selection?.value?.hidePrice }}
+                  </span>
+                </div>
+              </ng-container>
+            </div>
+
+            <div class="marketContent set-betting" *ngIf="market.marketName == vm.SetBetting">
+              <h2 id="SetBetting" *ngIf="vm.isSetScore">{{ vm?.content?.contentParameters?.SetBetting }}</h2>
+              <div *ngFor="let set of vm.sets | keyvalue" id="sets">
+                <ng-container *ngIf="!set?.value?.ishideEntry">
+                  <div  class="game-list">
+                    <span id="homeBettingPrice" class="betting-price">
+                      {{ set?.value?.homePlayerBet | marketPriceTransform : set?.value?.isHomeHideEntry }}
+                    </span>
+                    <span id="scorePoint" class="game-point">
+                      {{ set?.key }}
+                   </span>
+                   <span id="awayBettingPrice" class="betting-price">
+                     {{ set?.value?.awayPlayerBet | marketPriceTransform : set?.value?.isAwayHideEntry }}
+                   </span>
+                 </div>
+               </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container footer-content>
+          <gn-footer [leftSideText]="vm.leftStipulatedLine" [rightSideText]="vm.rightStipulatedLine"> </gn-footer>
+        </ng-container>
+      </gn-base-page>
+    </ng-container>
+  </ng-container>
+</div>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

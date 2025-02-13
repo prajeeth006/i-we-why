@@ -1,0 +1,34 @@
+@use '../../generated/styles/components/modal-dialog/modal-dialog' as ds-modal-dialog;
+
+.ds-modal {
+    @include ds-modal-dialog.shared;
+
+    --ds-modal-dialog-border: var(--ds-modal-dialog-size-border) solid #f4f5f6;
+    --ds-modal-dialog-padding: 12px;
+    --ds-modal-dialog-box-shadow: 0 20px 45px 0 #0000004d;
+    --ds-modal-dialog-icon-size: 32px;
+    --ds-modal-dialog-img-width: 100%;
+    --ds-modal-dialog-header-img-height: 140px;
+    --ds-modal-dialog-content-max-height: 400px;
+
+    background-color: var(--ds-modal-dialog-color-background);
+    border: var(--ds-modal-dialog-border);
+    border-color: var(--ds-modal-dialog-color-border);
+    border-radius: var(--ds-modal-dialog-radius-border);
+    box-shadow: var(--ds-modal-dialog-box-shadow);
+    color: var(--ds-modal-dialog-color-text);
+    min-width: var(--ds-modal-dialog-size-min-width);
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.ds-modal-content {
+    display: block;
+    padding: var(--ds-modal-dialog-space-padding-top) var(--ds-modal-dialog-space-padding-right) var(--ds-modal-dialog-space-padding-bottom)
+        var(--ds-modal-dialog-space-padding-left);
+}
+
+.mat-mdc-dialog-container {
+    --mdc-dialog-container-color: transparent;
+}

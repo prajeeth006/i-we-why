@@ -1,0 +1,88 @@
+@mixin default {
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-bg: var(--semantic-color-surface-container-lowest-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-border: var(--semantic-color-surface-outline-low-hover);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-icon: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-text: var(--semantic-color-on-surface-subtle);
+    --ds-search-disabled-color-bg: var(--semantic-color-disabled-base);
+    --ds-search-disabled-color-border: var(--semantic-color-disabled-outline);
+    --ds-search-disabled-color-icon: var(--semantic-color-on-disabled-base);
+    --ds-search-disabled-color-text: var(--semantic-color-on-disabled-base);
+    --ds-search-enabled-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-search-enabled-color-border: var(--semantic-color-surface-outline-low-base);
+    --ds-search-enabled-color-icon: var(--semantic-color-on-surface-base);
+    --ds-search-enabled-color-text: var(--semantic-color-on-surface-subtle);
+    --ds-search-filled-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-search-filled-color-border: var(--semantic-color-surface-outline-low-base);
+    --ds-search-filled-color-icon: var(--semantic-color-on-surface-base);
+    --ds-search-filled-color-text: var(--semantic-color-on-surface-base);
+    --ds-search-focused-color-bg: var(--semantic-color-surface-container-lowest-base);
+    --ds-search-focused-color-border: var(--semantic-color-utility-outline-base);
+    --ds-search-focused-color-icon: var(--semantic-color-on-surface-base);
+    --ds-search-focused-color-text: var(--semantic-color-on-surface-base);
+    --ds-search-hover-color-bg: var(--semantic-color-surface-container-lowest-hover);
+    --ds-search-hover-color-border: var(--semantic-color-surface-outline-low-hover);
+    --ds-search-hover-color-filled-text: var(--semantic-color-on-surface-base);
+    --ds-search-hover-color-icon: var(--semantic-color-on-surface-base);
+    --ds-search-hover-color-placeholder: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-hover-color-text: var(--semantic-color-on-surface-subtle);
+}
+
+@mixin inverse {
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-bg: var(--semantic-color-surface-container-lowest-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-border: var(--semantic-color-surface-outline-lowest-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-icon: var(--semantic-color-on-surface-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-active-color-text: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-search-disabled-color-bg: var(--semantic-color-disabled-base-inverse);
+    --ds-search-disabled-color-border: var(--semantic-color-disabled-outline-inverse);
+    --ds-search-disabled-color-icon: var(--semantic-color-on-disabled-base-inverse);
+    --ds-search-disabled-color-text: var(--semantic-color-on-disabled-base-inverse);
+    --ds-search-enabled-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-search-enabled-color-border: var(--semantic-color-surface-outline-low-base-inverse);
+    --ds-search-enabled-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-enabled-color-text: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-search-filled-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-search-filled-color-border: var(--semantic-color-surface-outline-lowest-base-inverse);
+    --ds-search-filled-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-filled-color-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-focused-color-bg: var(--semantic-color-surface-container-lowest-base-inverse);
+    --ds-search-focused-color-border: var(--semantic-color-utility-outline-base);
+    --ds-search-focused-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-focused-color-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-hover-color-bg: var(--semantic-color-surface-container-lowest-hover-inverse);
+    --ds-search-hover-color-border: var(--semantic-color-surface-outline-low-hover-inverse);
+    --ds-search-hover-color-filled-text: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-hover-color-icon: var(--semantic-color-on-surface-base-inverse);
+    --ds-search-hover-color-placeholder: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-09T20:23:42.077Z) */
+    --ds-search-hover-color-text: var(--semantic-color-on-surface-subtle-inverse);
+}
+
+@mixin large {
+    --ds-search-size-height: var(--semantic-size-x11);
+}
+
+@mixin shared {
+    --ds-search-radius-border: var(--semantic-radius-l2-search);
+    --ds-search-size-border: var(--semantic-size-xquarter);
+    --ds-search-size-clear-icon: var(--semantic-size-icon-medium);
+    --ds-search-size-search-icon: var(--semantic-size-icon-medium);
+    --ds-search-space-inline: var(--semantic-spacing-inline-xs);
+    --ds-search-space-input-inline: var(--semantic-spacing-inline-md);
+    --ds-search-space-padding-bottom: var(--semantic-spacing-container-padding-none);
+    --ds-search-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-search-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-search-space-padding-top: var(--semantic-spacing-container-padding-none);
+}
+
+@mixin small {
+    --ds-search-size-height: var(--semantic-size-x8);
+}

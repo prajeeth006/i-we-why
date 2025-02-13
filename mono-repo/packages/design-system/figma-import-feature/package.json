@@ -1,0 +1,13 @@
+{
+    "name": "design-system-figma-import-feature",
+    "version": "0.0.1",
+    "dependencies": {
+        "tslib": "^2.3.0",
+        "@design-system/figma-data-access": "*",
+        "@design-system/figma-shared-feature": "*",
+        "@design-system/token-path-config-utils": "*",
+        "@figma/rest-api-spec": "^0.21.0"
+    },
+    "type": "commonjs",
+    "main": "./src/index.js"
+}

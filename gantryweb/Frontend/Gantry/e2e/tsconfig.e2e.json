@@ -1,0 +1,16 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "e2edist",
+      "module": "commonjs",
+      "target": "es5",
+      "types": [
+        "jasmine",
+        "jasminewd2",
+        "node"
+      ]
+    },
+	"exclude": ["node_modules"],
+  "include": ["**.ts"],
+}
+  

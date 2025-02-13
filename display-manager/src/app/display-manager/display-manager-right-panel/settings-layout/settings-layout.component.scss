@@ -1,0 +1,35 @@
+@use '../../../shared-css/abstracts' as abstract;
+@use '../../../shared-css/helpers' as helper;
+@import '../../../shared-css/variables.scss';
+
+.settings-section {
+    display: flex;
+    padding: 10px;
+    
+    .settings-display-tabs {
+        width: 276px;
+        height: 276px;
+        @include helper.flex-container(center);
+        background-color: $background-grey-color;
+        color: $color-black-light;
+        font-size: $txt-md-font-size;
+        font-weight: $fw-bold;
+        margin: 20px 0 0 20px;
+        letter-spacing: 1.25px;
+        line-height: 16.41px;
+        border-radius: 5px;
+
+        .settings-tab-section {
+            @include helper.center-content();
+
+            cursor: pointer;
+            flex-direction: column;
+            width: 100%;
+            
+            img {
+                padding-bottom: 10px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,28 @@
+@use '../../../../../shared-css/helpers' as helper;
+@import '../../../../../shared-css/variables.scss';
+
+.slide {
+  height: 100%;
+  box-sizing: border-box;
+
+  .slide-content {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    .screens-row {
+      @include helper.center-content();
+      column-gap: 20px;
+      grid-template-columns: 114px;
+  
+      .screen-column {
+        width: 114px;
+        max-height: 106px;
+        height: 106px;
+        position: relative;
+      }
+    }
+  
+  }
+}

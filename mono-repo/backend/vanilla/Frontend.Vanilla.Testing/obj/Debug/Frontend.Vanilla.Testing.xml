@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.Testing</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.Testing.AbstractTests.AddServicesOnceTest">
+            <summary>
+                Tests that particular method adds its services only once hence it has some flag to avoid double execution.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.AbstractTests.DependencyInjectionTestsBase">
+            <summary>
+            temp.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.AbstractTests.DependencyInjectionTestsBase.#ctor">
+            <summary>
+            test.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.ActionResultExtensions">
+            <summary>
+                Provides extension methods for easier testing of wrapped action results.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ActionResultExtensions.GetOriginalResult``1(Microsoft.AspNetCore.Mvc.IActionResult)">
+            <summary>
+                Gets the original <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult" /> from a result extended with a subclass
+                of <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.ExtendResultBase" />. If the result has not been extended, just returns the
+                same result.
+            </summary>
+            <param name="result">The result to resolve nested results from.</param>
+            <typeparam name="T">The expected type of the original result.</typeparam>
+            <returns>The original result, or the same result if it hasn't been extended.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ActionResultExtensions.GetOriginalResult(Microsoft.AspNetCore.Mvc.IActionResult)">
+            <summary>
+                Gets the original <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult" /> from a result extended with a subclass
+                of <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.ExtendResultBase" />. If the result has not been extended, just returns the
+                same result.
+            </summary>
+            <param name="result">The result to resolve nested results from.</param>
+            <returns>The original result, or the same result if it hasn't been extended as dynamic.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ActionResultExtensions.GetResults(Microsoft.AspNetCore.Mvc.IActionResult,System.Func{System.Object,System.Boolean})">
+            <summary>
+                Returns all results in the chain created by nesting <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.ExtendResultBase" /> instances
+                that match the specified filter. Ordered from the original to outermost.
+            </summary>
+            <param name="result">The result to resolve nested results from.</param>
+            <param name="filter">Predicate to filter the results.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ActionResultExtensions.GetResultsOfType``1(Microsoft.AspNetCore.Mvc.IActionResult)">
+            <summary>
+                Returns all results in the chain created by nesting <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.ExtendResultBase" /> instances
+                of the specified type. Ordered from the original to outermost.
+            </summary>
+            <param name="result">The result to resolve nested results from.</param>
+            <typeparam name="T">The type of results to extract.</typeparam>
+            <returns>All results of type <typeparamref name="T" />.</returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ActionResultExtensions.GetMessages(Microsoft.AspNetCore.Mvc.IActionResult)">
+            <summary>
+                Gets all messages from all <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.MessageResult" />s from the <see cref="T:Frontend.Vanilla.Features.Json.ActionResults.ExtendResultBase" /> chain.
+            </summary>
+            <param name="result">The result to resolve messages from.</param>
+            <returns>All api messages from all results.</returns>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.ConcurrencyTest">
+            <summary>
+                Utilities for testing behavior of code if run concurrently from more threads.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ConcurrencyTest.Run(System.Int32,System.Action{System.Int32})">
+            <summary>
+                Runs given <paramref name="action" /> concurrently by specified count of threads.
+            </summary>
+            <param name="threadCount">Amount of threads that should execute the action.</param>
+            <param name="action">
+                The action to be executed by all threads. Parameter passed to the action is zero-based index of
+                the thread.
+            </param>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.DisableableHelper">
+            <summary>
+                Utility for apply <see cref="T:Frontend.Vanilla.Core.Configuration.IDisableableGuard" /> on <see cref="T:Frontend.Vanilla.Core.Configuration.IDisableableConfiguration" /> in tests.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.DisableableHelper.GetGuardedDisableable``1(``0)">
+            <summary>
+                Decorates configuration by <see cref="T:Frontend.Vanilla.Core.Configuration.IDisableableGuard" /> so that it has same behavior as in production.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.DynaConProviderTestsBase">
+            <summary>
+            Base class used to ease dynacon provider tests.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.DynaConProviderTestsBase.Name_ShouldBeSpecified">
+            <summary>Used to test name as singleton.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.DynaConProviderTestsBase.DefaultValue_ShouldBeSpecified">
+            <summary>Used to test default value.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FakeConfigurationFactory">
+            <summary>
+                Configuration factory which creates mocks. Useful if you don't want to provide mocks for all configs one by one.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.TestAssembly.Get(System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+                Mock assembly for testing.
+            </summary>
+            <param name="name">Set name of assembly.</param>
+            <param name="infoVersion">Set informational version attribute of assembly.</param>
+            <param name="fileVersion">Set file version attribute of assembly.</param>
+            <param name="isVanilla">Set product attribute of assembly.</param>
+            <param name="assemblyVersion">Set assembly version of assembly.</param>
+            <returns>
+                The assembly.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.TestCancellationToken.Get">
+            <summary>
+                Create a fake using CTS in order to be unique each time.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.TestExecutionMode.Get">
+            <summary>
+                Create a fake using CTS in order to be unique each time.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Fakes.TestLogger`1">
+            <summary>
+            Logger that is used to mock <see cref="T:Microsoft.Extensions.Logging.ILogger`1" />.
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.TestLogger`1.Logged">
+            <summary>Gets logged events.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.TestLogger`1.VerifyNothingLogged">
+            <summary>Verifies that count of logged events is equal to 0.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Fakes.LoggedEvent">
+            <summary>Represents a logged event.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.LoggedEvent.#ctor(System.Exception,Microsoft.Extensions.Logging.LogLevel,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},System.String)">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Exception">
+            <summary>Gets the exception.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Level">
+            <summary>Gets the level.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.MessageFormat">
+            <summary>Gets the message format template.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Data">
+            <summary>Gets the data.</summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.FinalMessage">
+            <summary>
+                Gets final formatted message constructed from <see cref="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.MessageFormat" /> and <see cref="P:Frontend.Vanilla.Testing.Fakes.LoggedEvent.FinalMessage" />.
+                This isn't used in production.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Verify(Microsoft.Extensions.Logging.LogLevel,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>Verifies this event to have given level, data and null exception.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Verify(Microsoft.Extensions.Logging.LogLevel,System.ValueTuple{System.String,System.Object}[])">
+            <summary>Verifies this event to have given level, data and null exception.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Verify(Microsoft.Extensions.Logging.LogLevel,System.Exception,System.ValueTuple{System.String,System.Object}[])">
+            <summary>Verifies this event to have given level, exception and data.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Fakes.LoggedEvent.Verify(Microsoft.Extensions.Logging.LogLevel,System.Linq.Expressions.Expression{System.Func{System.Exception,System.Boolean}},System.ValueTuple{System.String,System.Object}[])">
+            <summary>Verifies this event to have given level, data and exception satisfies given predicate.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Fakes.TestMemoryCache">
+            <summary>
+                Stores info about created entries so that we can easily unit test their expiration and other details.
+                Uses real <see cref="T:Microsoft.Extensions.Caching.Memory.MemoryCache" /> underneath.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Fakes.AuthState">
+            <summary>
+            auth state.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Testing.Fakes.AuthState.Anonymous">
+            <summary>
+            anonymous.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Testing.Fakes.AuthState.Authenticated">
+            <summary>
+            authenticated.
+            </summary>
+        </member>
+        <member name="F:Frontend.Vanilla.Testing.Fakes.AuthState.Workflow">
+            <summary>
+            workflow.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Fakes.TrimmedStrs">
+            <summary>
+                Helper for convenient handling of <see cref="T:Frontend.Vanilla.Core.System.Text.TrimmedRequiredString" /> in unit tests.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FluentAssertions.ActionFluentAssertions">
+            <summary>
+                Brings fluent assertions of <see cref="T:System.Action" /> to <see cref="T:System.Func`1" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FluentAssertions.CollectionFluentAssertions">
+            <summary>
+                Additional fluent assertions for collections.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FluentAssertions.ExceptionFluentAssertions">
+            <summary>
+                Additional fluent assertions for exceptions.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FluentAssertions.JsonFluentAssertions">
+            <summary>
+                Fluent assertions for verifying a JSON string or a token.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.FluentAssertions.ValidationFluentAssertions">
+            <summary>
+                Fluent assertions validating an object and checking related errors.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.ItIs.SameAs``1(System.Func{``0})">
+            <summary>
+                Useful when you want to match object in a variable/field even if it gets assigned afterwards.
+                <code>
+            var hero = new Hero("Batman");
+            service.Setup(s => s.Foo(hero)).Returns("foo"); // Only current object in hero variable will match
+            service.Setup(s => s.Bar(hero)).Returns("bar"); // Any object in hero variable will match
+            hero = new Hero("Joker");
+            </code>
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.ItIs.NotWhiteSpace">
+            <summary>
+                Useful when checking logged message.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Moq.WithAnyExtensions">
+            <summary>Extension methods to setup or verify a call regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.SetupWithAnyArgs``2(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>Performs setup on the mock regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.SetupWithAnyArgs``1(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Action{``0}})">
+            <summary>Performs setup on the mock regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.VerifyWithAnyArgs``1(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Action{``0}},System.Func{Moq.Times})">
+            <summary>Performs verification on the mock regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.VerifyWithAnyArgs``1(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Action{``0}},System.Nullable{Moq.Times})">
+            <summary>Performs verification on the mock regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.VerifyWithAnyArgs``2(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Moq.Times})">
+            <summary>Performs verification on the mock regardless of arguments.</summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Moq.WithAnyExtensions.VerifyWithAnyArgs``2(Moq.Mock{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Nullable{Moq.Times})">
+            <summary>Performs verification on the mock regardless of arguments.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.ServiceClients.PosApiSerializationTester">
+            <summary>
+                Test helper to verify serialization of data objects using <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" />.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ServiceClients.PosApiSerializationTester.Deserialize``1(System.String)">
+            <summary>
+                Deserializes specified type from given JSON in the same ways as <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" /> does.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.ServiceClients.PosApiSerializationTester.Serialize(System.Object)">
+            <summary>
+                Deserializes given object to JSON string in the same ways as <see cref="T:Frontend.Vanilla.ServiceClients.Infrastructure.IPosApiRestClient" /> does.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.SetupExtensions">
+            <summary>
+                Extension methods for MOQ setups.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.SetupExtensions.ThrowsOrReturns``2(Moq.Language.Flow.ISetup{``0,``1},System.Object)">
+            <summary>
+                If given object is exception, configures setup to throw it. Otherwise configures setup to return it.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.TempFile">
+            <summary>
+                Helpers for handling temp files in tests.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.UriAnyQueryOrderExtensions">
+            <summary>
+                Determines if two URLs are equal regardless of order of query string parameters.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Wait.Until(System.Func{System.Boolean},System.Nullable{System.TimeSpan},System.TimeSpan)">
+            <summary>
+            Waits until specified condition is fulfilled. If not then it fails the test.
+            By default waits for 5 seconds. Inspired by Protractor.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Wait.Until(System.Func{System.Threading.Tasks.Task{System.Boolean}},System.Nullable{System.TimeSpan},System.TimeSpan)">
+            <summary>
+            Waits until specified condition is fulfilled. If not then it fails the test.
+            By default waits for 5 seconds. Inspired by Protractor.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.WcfFakeProxy">
+             <summary>
+                 Implements a fake <see cref="T:Frontend.Vanilla.Testing.WcfFakeProxy" /> in order to allow unit testing of Windows Communication
+                 Foundation based proxies.
+             </summary>
+             <example>
+                 <code title="Usage"
+                     description="In order to use this fake implementation of WcfFakeProxy, create a new class as follows:"
+                     lang="CS"><![CDATA[
+             public class FakeServiceClient : WcfFakeProxy, IServiceContract
+            
+             // Replace IServiceContract with your service contract interface to test.
+             // Implement the IServiceContract service contract to mimic the behavior of the real service.
+             ]]></code>
+             </example>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.WcfFakeProxy.InnerChannel">
+            <summary>
+                Gets or sets the inner channel.
+            </summary>
+            <value>The inner channel.</value>
+        </member>
+        <member name="E:Frontend.Vanilla.Testing.WcfFakeProxy.System#ServiceModel#ICommunicationObject#Closed">
+            <summary>
+                Occurs when the communication object completes its transition from the closing state into the closed state.
+            </summary>
+        </member>
+        <member name="E:Frontend.Vanilla.Testing.WcfFakeProxy.System#ServiceModel#ICommunicationObject#Closing">
+            <summary>
+                Occurs when the communication object first enters the closing state.
+            </summary>
+        </member>
+        <member name="E:Frontend.Vanilla.Testing.WcfFakeProxy.System#ServiceModel#ICommunicationObject#Faulted">
+            <summary>
+                Occurs when the communication object first enters the faulted state.
+            </summary>
+        </member>
+        <member name="E:Frontend.Vanilla.Testing.WcfFakeProxy.System#ServiceModel#ICommunicationObject#Opened">
+            <summary>
+                Occurs when the communication object completes its transition from the opening state into the opened state.
+            </summary>
+        </member>
+        <member name="E:Frontend.Vanilla.Testing.WcfFakeProxy.System#ServiceModel#ICommunicationObject#Opening">
+            <summary>
+                Occurs when the communication object first enters the opening state.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Abort">
+            <summary>
+                Causes a communication object to transition immediately from its current state into the closed state.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Close">
+            <summary>
+                Causes a communication object to transition from its current state into the closed state.
+            </summary>
+            <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">
+                The Close method
+                was called on an object in the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The default close timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to close gracefully.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Close(System.TimeSpan)">
+            <summary>
+                Causes a communication object to transition from its current state into the closed state.
+            </summary>
+            <param name="timeout">
+                The Timespan that specifies how long the send operation has to complete
+                before timing out.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">
+                The Close method
+                was called on an object in the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to close gracefully.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.BeginClose(System.AsyncCallback,System.Object)">
+            <summary>
+                Begins an asynchronous operation to close a communication object.
+            </summary>
+            <returns>
+                The <see cref="T:System.IAsyncResult" /> that references the asynchronous close operation.
+            </returns>
+            <param name="callback">
+                The <see cref="T:System.AsyncCallback" /> delegate that receives notification of the completion
+                of the asynchronous close operation.
+            </param>
+            <param name="state">
+                An object, specified by the application, that contains state information associated with the asynchronous
+                close operation.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">
+                The BeginClose method
+                was called on an object in the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The default timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to close gracefully.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.BeginClose(System.TimeSpan,System.AsyncCallback,System.Object)">
+            <summary>
+                Begins an asynchronous operation to close a communication object with a specified timeout.
+            </summary>
+            <returns>
+                The <see cref="T:System.IAsyncResult" /> that references the asynchronous close operation.
+            </returns>
+            <param name="timeout">The Timespan that specifies how long the send operation has to complete before timing out.</param>
+            <param name="callback">
+                The <see cref="T:System.AsyncCallback" /> delegate that receives notification of the completion of
+                the asynchronous close operation.
+            </param>
+            <param name="state">
+                An object, specified by the application, that contains state
+                information associated with the asynchronous close operation.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">
+                The BeginClose method
+                was called on an object in the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The specified timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to close gracefully.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.EndClose(System.IAsyncResult)">
+            <summary>
+                Completes an asynchronous operation to close a communication object.
+            </summary>
+            <param name="result">
+                The <see cref="T:System.IAsyncResult" /> that is returned by a call to the
+                <c>BeginClose</c> method.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">
+                The <c>BeginClose</c> method
+                was called on an object in the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to close gracefully.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Open">
+            <summary>
+                Causes a communication object to transition from the created state into the opened state.
+            </summary>
+            <exception cref="T:System.ServiceModel.CommunicationException">
+                The <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was unable to be opened and has entered the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The default open timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to enter the <see cref="F:System.ServiceModel.CommunicationState.Opened" /> state and has entered the
+                <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Open(System.TimeSpan)">
+            <summary>
+                Causes a communication object to transition from the created state into the opened state within a specified
+                interval of time.
+            </summary>
+            <param name="timeout">The Timespan that specifies how long the send operation has to complete before timing out.</param>
+            <exception cref="T:System.ServiceModel.CommunicationException">
+                The <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was unable to be opened and has entered the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The specified timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to enter the <see cref="F:System.ServiceModel.CommunicationState.Opened" /> state and has entered the
+                <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.BeginOpen(System.AsyncCallback,System.Object)">
+            <summary>
+                Begins an asynchronous operation to open a communication object.
+            </summary>
+            <returns>
+                The <see cref="T:System.IAsyncResult" /> that references the asynchronous open operation.
+            </returns>
+            <param name="callback">
+                The <see cref="T:System.AsyncCallback" /> delegate that receives notification of the completion of the
+                asynchronous open operation.
+            </param>
+            <param name="state">
+                An object, specified by the application, that contains state information
+                associated with the asynchronous open operation.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationException">
+                The <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was unable to be opened and has entered the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The default open timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to enter the <see cref="F:System.ServiceModel.CommunicationState.Opened" /> state and has entered the
+                <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.BeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)">
+            <summary>
+                Begins an asynchronous operation to open a communication object within a specified interval of time.
+            </summary>
+            <returns>
+                The <see cref="T:System.IAsyncResult" /> that references the asynchronous open operation.
+            </returns>
+            <param name="timeout">
+                The Timespan that specifies how long the send operation has to complete
+                before timing out.
+            </param>
+            <param name="callback">
+                The <see cref="T:System.AsyncCallback" /> delegate that receives
+                notification of the completion of the asynchronous open operation.
+            </param>
+            <param name="state">
+                An object, specified by the application, that contains state information associated with the
+                asynchronous open operation.
+            </param>
+            <exception cref="T:System.ServiceModel.CommunicationException">
+                The <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was unable to be opened and has entered the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The specified timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was able to enter the <see cref="F:System.ServiceModel.CommunicationState.Opened" /> state and has entered the
+                <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.EndOpen(System.IAsyncResult)">
+            <summary>
+                Completes an asynchronous operation to open a communication object.
+            </summary>
+            <param name="result">The <see cref="T:System.IAsyncResult" /> that is returned by a call to the <c>BeginOpen</c> method.</param>
+            <exception cref="T:System.ServiceModel.CommunicationException">
+                The <see cref="T:System.ServiceModel.ICommunicationObject" />
+                was unable to be opened and has entered the <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+            <exception cref="T:System.TimeoutException">
+                The timeout elapsed before the <see cref="T:System.ServiceModel.ICommunicationObject" /> was able
+                to enter the <see cref="F:System.ServiceModel.CommunicationState.Opened" /> state and has entered the
+                <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> state.
+            </exception>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.WcfFakeProxy.State">
+            <summary>
+                Gets the current state of the communication-oriented object.
+            </summary>
+            <returns>
+                The value of the <see cref="T:System.ServiceModel.CommunicationState" /> of the object.
+            </returns>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.WcfFakeProxy.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Xunit.DelayedMessageBus">
+            <summary>
+            Used to capture messages to potentially be forwarded later. Messages are forwarded by
+            disposing of the message bus.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Xunit.DelayedMessageBus.#ctor(Xunit.v3.IMessageBus)">
+            <summary>
+            Used to capture messages to potentially be forwarded later. Messages are forwarded by
+            disposing of the message bus.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Xunit.RepeatAttribute">
+            <summary>
+            Enables repeating of tests.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Xunit.RepeatAttribute.#ctor(System.Int32)">
+            <summary>
+            Receives count of repetitions.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Xunit.RepeatAttribute.GetData(System.Reflection.MethodInfo,Xunit.Sdk.DisposalTracker)">
+            <summary>
+            GetData.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Testing.Xunit.RepeatAttribute.SupportsDiscoveryEnumeration">
+            <summary>SupportsDiscoveryEnumeration.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Xunit.RetryFactAttribute">
+            <summary>
+            Works just like [Fact] except that failures are retried (by default, 5 times).
+            </summary>
+        </member>
+        <member name="P:Frontend.Vanilla.Testing.Xunit.RetryFactAttribute.MaxRetries">
+            <summary>Max Retries.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Xunit.RetryFactDiscoverer">
+            <summary>RetryFactDiscoverer.</summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Testing.Xunit.RetryTestCase">
+            <summary>This class is used for facts, and for serializable pre-enumerated individual data rows in theories.</summary>
+        </member>
+    </members>
+</doc>

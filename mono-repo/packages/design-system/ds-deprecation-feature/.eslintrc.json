@@ -1,0 +1,17 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {
+        "@nx/dependency-checks": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/no-dynamic-delete": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "max-lines-per-function": "off",
+        "no-bitwise": "off",
+        "no-param-reassign": "off",
+        "sonarjs/no-redundant-jump": "off"
+    }
+}

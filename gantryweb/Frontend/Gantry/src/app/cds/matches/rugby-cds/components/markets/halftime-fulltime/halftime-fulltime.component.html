@@ -1,0 +1,22 @@
+<div class="bet-details-container" [ngClass]="{ 'more-games' : gamesCount > 4 }"
+    *ngIf="market && (market.leftBetList?.length > 0 || market.rightBetList?.length > 0 )">
+    <div class="bet-details-header">
+        <div id="betdetailsTitle" class="bet-details-title">{{market?.content?.contentParameters?.HalfTImeFullTime}}</div>
+    </div>
+    <div id="firstEntry" class="match-betting-section" *ngIf="market.leftBetList?.length > 0">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength}}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{market.leftBetList[0]?.betName | trimSelectionNamePipe: nameLength}}</div>
+        </div>
+        <div id="betPrice" class="bet-price">{{market.leftBetList[0]?.betOdds  | prepareEvsPipe}} </div>
+    </div>
+    <div id="secondEntry" class="match-betting-section" *ngIf="market.rightBetList?.length > 0">
+        <div class="player-details-section">
+            <div id="leftBetList" class="market-1">{{market.rightBetList[0]?.betName | trimSelectionNamePipe : nameLength}}</div>
+            <span id="slash" class="slash-symbol">/</span>
+            <div id="rightBetList" class="market-2">{{market.rightBetList[0]?.betName | trimSelectionNamePipe : nameLength }}</div>
+        </div>
+        <div id="betPrice" class="bet-price">{{market.rightBetList[0]?.betOdds  | prepareEvsPipe}}</div>
+    </div>
+</div>

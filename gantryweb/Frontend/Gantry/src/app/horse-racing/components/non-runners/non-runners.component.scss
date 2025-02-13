@@ -1,0 +1,130 @@
+@import './src/global-style/_all-variables.scss';
+.base-body-wrapper{
+    padding: 30px 0 10px 0;
+    background-color: $body-color-p2-lighter-bg;
+    @include breakpoint(multidesktop){
+        padding: 0 0 10px 0;
+    }
+
+    .non-runners-content{
+        font-weight: bold;
+        padding: 0px;
+
+        ul>li:nth-child(odd){
+            background-color:$white;
+        }
+
+        .non-runners-table {
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+            margin-top: 20px;
+            @include breakpoint(multidesktop){
+                margin-top: 10px;
+            }
+        
+            li {
+                display: flex;
+                align-items: stretch;
+                color: $body-color-p2;
+                padding: 4px 5px;
+                @include breakpoint(multidesktop){
+                    padding: 2px 5px;
+                }
+                
+                .items {
+                    display: flex;
+                    align-items: center;
+                }
+        
+                .table-item-1 {
+                    flex-basis: 45%;
+                    min-width: 45%;
+                    font-size: $h3-lg-font-size;                   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include breakpoint(multidesktop){
+                        font-size: $h2-font-size;
+     
+                    }
+                }
+        
+                .table-item-2 {
+                    flex-basis: 10%;
+                    min-width: 10%;
+                    text-align: center;
+                    font-size: $h3-lg-font-size;
+                    @include breakpoint(multidesktop){                      
+                        font-size: $h2-font-size;
+     
+                    }
+                }
+
+                .table-item-3 {
+                    flex-basis: 45%;
+                    min-width: 45%;
+                    text-align: center;
+                    font-size: $h3-lg-font-size;                   
+                    @include breakpoint(multidesktop){
+                        font-size: $h2-font-size;
+      
+                    }
+                }
+        
+                .border-dark {
+                    border-bottom: solid $primary 1px;
+                }
+        
+                .border-red {
+                    border-bottom: solid $color-p2 1px;
+                }
+        
+                .border-green {
+                    border-bottom: solid $color-p4 1px;
+                }
+        
+                .table-center {
+                    justify-content: center;
+                }
+        
+                .betting-favourite {
+                    background-color: $color-p5;
+                }
+            }
+        }
+    }
+}
+
+.base-header-wrapper{
+    .subtitle-content{
+        display: flex;
+        font-weight: bold;
+        background: $white;
+        padding: 4px 10px;
+        color: $border-color;
+        font-size: $font-list-lg1-title;
+        text-align: center;
+        border: solid $border-color 1px;
+        @include breakpoint(multidesktop){
+            font-size: $txt-md-font-size;       
+        }
+    
+        .subtitle-element-1{
+            flex-basis: 45%;
+            min-width: 45%;
+        }
+    
+        .subtitle-element-2{
+            flex-basis: 10%;
+            min-width: 10%;
+            text-align: center;
+        }
+    
+        .subtitle-element-3{
+            flex-basis: 450%;
+            min-width: 45%;
+            text-align: center;
+        }
+    }
+}
+

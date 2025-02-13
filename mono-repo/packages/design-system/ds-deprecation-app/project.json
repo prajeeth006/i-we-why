@@ -1,0 +1,104 @@
+{
+    "name": "ds-deprecation-app",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/ds-deprecation-app/src",
+    "projectType": "application",
+    "tags": ["type:app", "scope:design-system"],
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "platform": "node",
+                "outputPath": "dist/build/packages/design-system/ds-deprecation-app",
+                "format": ["cjs"],
+                "bundle": true,
+                "external": ["@code-pushup/utils"],
+                "main": "packages/design-system/ds-deprecation-app/src/index.ts",
+                "tsConfig": "packages/design-system/ds-deprecation-app/tsconfig.app.json",
+                "generatePackageJson": true,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "configurations": {
+                "development": {},
+                "production": {
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
+            }
+        },
+        "all": {
+            "executor": "nx:run-commands",
+            "cache": false,
+            "options": {
+                "command": "node dist/build/packages/design-system/ds-deprecation-app/index.js",
+                "args": ["--fix"]
+            },
+            "dependsOn": ["build"]
+        },
+        "generate-safely-removable-deprecated-tokens-list": {
+            "executor": "nx:run-commands",
+            "cache": false,
+            "options": {
+                "command": "node dist/build/packages/design-system/ds-deprecation-app/index.js"
+            },
+            "dependsOn": ["build"]
+        },
+        "remove-safe-deprecated-tokens": {
+            "executor": "nx:run-commands",
+            "cache": false,
+            "options": {
+                "command": "node dist/build/packages/design-system/ds-deprecation-app/main.js",
+                "args": ["--fix", "--skip-generation"]
+            },
+            "dependsOn": ["build"]
+        },
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "ds-deprecation-app:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "ds-deprecation-app:build:development"
+                },
+                "production": {
+                    "buildTarget": "ds-deprecation-app:build:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/ds-deprecation-app/jest.config.ts"
+            }
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/ds-deprecation-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

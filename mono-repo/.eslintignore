@@ -1,0 +1,14 @@
+dist
+tmp
+docs
+node_modules
+.vs
+.vscode
+.idea
+.husky
+.yarn
+.angular
+.verdaccio
+.devcontainer
+**/code-pushup.config.ts
+**/code-pushup.*.config.ts

@@ -1,0 +1,16 @@
+<div class="slide peripheral-screens-slide">
+  <div class="slide-content">
+    @for (row of _peripheralScreens()?.rows; track row; let rowIndex=$index) {
+    <div class="screens-row">
+      @for (column of row?.columns; track column; let columnIndex = $index) {
+        @for (screen of column?.screens; track screen; let columnIndex = $index) {
+          <div class="screen-column">
+            <app-screen-layout-single [layoutStyle]="'SP'" [data]="screen"
+              [screenInfo]="screen?.ScreenDetails?.Single![0]"></app-screen-layout-single>
+          </div>
+        }
+      }
+    </div>
+    }
+  </div>
+</div>

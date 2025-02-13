@@ -1,0 +1,145 @@
+{
+    "extends": ["stylelint-config-standard-scss"],
+    "rules": {
+        "declaration-no-important": true,
+        "function-calc-no-unspaced-operator": true,
+        "no-extra-semicolons": true,
+        "no-eol-whitespace": true,
+        "order/properties-alphabetical-order": true,
+        "selector-attribute-operator-space-before": "never",
+        "no-empty-source": null,
+        "color-hex-length": "long",
+        "selector-class-pattern": "^(?![0-9])[a-z0-9-_]+$",
+        "selector-id-pattern": "^[a-z][a-zA-Z0-9-]+$",
+        "scss/at-mixin-pattern": "[a-z][a-zA-Z0-9-]+$",
+        "scss/at-function-pattern": "[a-z][a-zA-Z0-9-]+$",
+        "keyframes-name-pattern": "[a-z][a-zA-Z0-9-]+$",
+        "scss/dollar-variable-pattern": "^[-a-zA-Z0-9_.]+$",
+        "no-descending-specificity": null,
+        "custom-property-empty-line-before": null,
+        "property-no-vendor-prefix": null,
+        "custom-property-pattern": "^[a-z0-9-_]+$",
+        "selector-not-notation": "simple",
+        "selector-type-no-unknown": null,
+        "selector-pseudo-element-no-unknown": [true, { "ignorePseudoElements": ["ng-deep"] }],
+        "no-invalid-position-at-import-rule": null,
+        "value-keyword-case": null,
+        "scss/dollar-variable-empty-line-before": null,
+        "scss/dollar-variable-colon-space-after": null,
+        "scss/double-slash-comment-whitespace-inside": null,
+        "scss/double-slash-comment-empty-line-before": null,
+        "scss/operator-no-newline-after": null,
+        "scss/at-rule-conditional-no-parentheses": null,
+        "scss/no-global-function-names": [
+            true,
+            {
+                "severity": "warning"
+            }
+        ],
+        "custom-property-no-missing-var-function": null,
+        "scss/at-extend-no-missing-placeholder": null,
+        "media-feature-name-no-vendor-prefix": null,
+        "scss/at-if-closing-brace-newline-after": null,
+        "scss/at-if-closing-brace-space-after": null,
+        "scss/at-else-empty-line-before": null,
+        "scss/at-else-closing-brace-newline-after": null,
+        "scss/at-else-closing-brace-space-after": null,
+
+        "color-function-notation": ["modern"],
+        "font-family-no-missing-generic-family-keyword": [
+            true,
+            {
+                "severity": "warning",
+                "ignoreFontFamilies": ["themeicons"]
+            }
+        ],
+        "indentation": [
+            4,
+            {
+                "ignore": "param"
+            }
+        ],
+        "no-duplicate-selectors": [
+            true,
+            {
+                "severity": "warning",
+                "message": "Same class selector is used on more places!"
+            }
+        ],
+        "at-rule-empty-line-before": null,
+        "max-nesting-depth": [
+            6,
+            {
+                "severity": "warning"
+            }
+        ],
+        "color-hex-case": [
+            "lower",
+            {
+                "message": "Lowercase letters are easier to distinguish from numbers"
+            }
+        ],
+        "csstree/validator": {
+            "syntaxExtensions": ["sass", "less"],
+            "properties": {
+                "font-display": "swap",
+                "-moz-padding-start": "<length> | <percentage>",
+                "background-position": "| <pxtorem()>",
+                "background-size": "| <pxtorem()>",
+                "border-radius": "| <pxtorem()>",
+                "flex": "| <pxtorem()>",
+                "font-size": "| <pxtorem()>",
+                "height": "| <pxtorem()>",
+                "left": "| <pxtorem()>",
+                "line-height": "| <pxtorem()>",
+                "margin-bottom": "| <pxtorem()>",
+                "margin-right": "| <pxtorem()>",
+                "margin-top": "| <pxtorem()>",
+                "margin": "| <pxtorem()>",
+                "max-width": "| <pxtorem()>",
+                "min-height": "| <pxtorem()>",
+                "min-width": "| <pxtorem()>",
+                "padding-left": "| <pxtorem()>",
+                "padding": "| <pxtorem()>",
+                "right": "| <pxtorem()>",
+                "top": "| <pxtorem()>",
+                "width": "| fit-content | <pxtorem()>"
+            },
+            "types": {
+                "pxtorem()": "pxtorem( [<length>]{1,4} )"
+            },
+            "ignoreProperties": [
+                "container-name",
+                "container-type",
+                "container",
+                "aspect-ratio",
+                "syntax",
+                "initial-value",
+                "inherits",
+                "at-root",
+                "contain-intrinsic-size",
+                "content-visibility"
+            ],
+
+            "ignoreAtrules": ["container", "at-root"]
+        }
+    },
+    "plugins": ["stylelint-order", "stylelint-csstree-validator"],
+    "defaultSeverity": "error",
+    "ignoreFunctions": ["rem"],
+    "ignoreFiles": [
+        "node_modules/**",
+        "packages/themepark/themes/**/themeicons.scss",
+        "packages/themepark/themes/**/vn-img.scss",
+        "packages/themepark/themes/**/links.scss",
+        "packages/themepark/themes/**/all-shared-coral-ladbrokes.scss",
+        "packages/themepark/themes/**/typography.scss",
+        "packages/themepark/themes/**/pc-banner-splash-tile.scss",
+        "packages/themepark/themes-ds/**/themeicons.scss",
+        "packages/themepark/themes-ds/**/vn-img.scss",
+        "packages/themepark/themes-ds/**/links.scss",
+        "packages/themepark/themes-ds/**/all-shared-coral-ladbrokes.scss",
+        "packages/themepark/themes-ds/**/typography.scss",
+        "packages/themepark/themes-ds/**/pc-banner-splash-tile.scss"
+    ]
+}

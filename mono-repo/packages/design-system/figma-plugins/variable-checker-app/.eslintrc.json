@@ -1,0 +1,24 @@
+{
+    "extends": ["./code-pushup.eslintrc.json"],
+    "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/no-shadow": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "eqeqeq": "off",
+        "max-lines": "off",
+        "max-lines-per-function": "off",
+        "promise/catch-or-return": "off",
+        "sonarjs/cognitive-complexity": "off",
+        "sonarjs/no-collapsible-if": "off",
+        "sonarjs/no-duplicated-branches": "off",
+        "unicorn/no-lonely-if": "off",
+        "unicorn/prefer-add-event-listener": "off",
+        "unicorn/prefer-array-some": "off",
+        "unicorn/prefer-includes": "off"
+    }
+}

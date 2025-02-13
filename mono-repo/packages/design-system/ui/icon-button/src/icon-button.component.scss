@@ -1,0 +1,174 @@
+@use '../../generated/styles/components/button-icon/button-icon' as ds-icon-button;
+
+@mixin reduced-button-styles {
+    &.ds-btn-icon-large-reduced {
+        @include ds-icon-button.large-reduced;
+    }
+
+    &.ds-btn-icon-medium-reduced {
+        @include ds-icon-button.medium-reduced;
+    }
+}
+
+.ds-icon-button {
+    --ds-button-bonus-border-width-local: 1px;
+    --ds-button-icon-bg-color: var(--ds-button-icon-enabled-color-bg);
+    --ds-button-icon-border-color: var(--ds-button-icon-enabled-color-border);
+    --ds-button-icon-color: var(--ds-button-icon-enabled-color-icon);
+
+    align-items: center;
+    background: var(--ds-button-icon-bg-color);
+    border: none;
+    border-radius: var(--ds-button-icon-radius-border);
+    border-color: var(--ds-button-icon-border-color);
+    box-sizing: border-box;
+    color: var(--ds-button-icon-color);
+    content-visibility: auto;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    width: var(--ds-button-icon-size-width, var(--ds-button-icon-height));
+    height: var(--ds-button-icon-size-height, var(--ds-button-icon-width));
+
+    &.ds-btn-icon-small {
+        @include ds-icon-button.small;
+    }
+
+    &.ds-btn-icon-medium {
+        @include ds-icon-button.medium;
+    }
+
+    &.ds-btn-icon-large {
+        @include ds-icon-button.large;
+    }
+
+    &.ds-btn-icon-filled-primary {
+        @include ds-icon-button.filled-primary;
+    }
+
+    &.ds-btn-icon-filled-secondary {
+        @include ds-icon-button.filled-secondary;
+    }
+
+    &.ds-btn-icon-filled-tertiary {
+        @include ds-icon-button.filled-tertiary;
+    }
+
+    &.ds-btn-icon-flat-tertiary {
+        @include ds-icon-button.flat-tertiary;
+    }
+
+    &.ds-btn-icon-flat-reduced-tertiary {
+        @include ds-icon-button.flat-tertiary;
+        @include reduced-button-styles;
+    }
+
+    &.ds-btn-icon-flat-reduced-utility {
+        @include ds-icon-button.flat-utility;
+        @include reduced-button-styles;
+    }
+
+    &.ds-btn-icon-flat-utility {
+        @include ds-icon-button.flat-utility;
+    }
+
+    &.ds-btn-icon-outline-primary,
+    &.ds-btn-icon-outline-secondary,
+    &.ds-btn-icon-outline-tertiary {
+        border: var(--ds-button-bonus-border-width-local) solid var(--ds-button-icon-enabled-color-border);
+
+        &.ds-btn-icon-disabled {
+            --ds-button-icon-enabled-color-border: var(--ds-button-icon-disabled-color-border);
+        }
+    }
+
+    &.ds-btn-icon-outline-primary {
+        @include ds-icon-button.outline-primary;
+    }
+
+    &.ds-btn-icon-outline-secondary {
+        @include ds-icon-button.outline-secondary;
+    }
+
+    &.ds-btn-icon-outline-tertiary {
+        @include ds-icon-button.outline-tertiary;
+    }
+
+    &.ds-btn-inverse {
+        &.ds-btn-icon-flat-tertiary {
+            @include ds-icon-button.flat-tertiary-inverse;
+        }
+
+        &.ds-btn-icon-flat-utility {
+            @include ds-icon-button.flat-utility-inverse;
+        }
+
+        &.ds-btn-icon-outline-primary {
+            @include ds-icon-button.outline-primary-inverse;
+        }
+
+        &.ds-btn-icon-outline-secondary {
+            @include ds-icon-button.outline-secondary-inverse;
+        }
+
+        &.ds-btn-icon-outline-tertiary {
+            @include ds-icon-button.outline-tertiary-inverse;
+        }
+
+        &.ds-btn-icon-filled-primary {
+            @include ds-icon-button.filled-primary-inverse;
+        }
+
+        &.ds-btn-icon-filled-secondary {
+            @include ds-icon-button.filled-secondary-inverse;
+        }
+
+        &.ds-btn-icon-filled-teritiary {
+            @include ds-icon-button.filled-tertiary-inverse;
+        }
+
+        &.ds-btn-icon-flat-reduced-utility {
+            @include ds-icon-button.flat-utility-inverse;
+        }
+
+        &.ds-btn-icon-flat-reduced-tertiary {
+            @include ds-icon-button.flat-tertiary-inverse;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            --ds-button-icon-bg-color: var(--ds-button-icon-hover-color-bg);
+            --ds-button-icon-color: var(--ds-button-icon-hover-color-icon);
+            --ds-button-icon-border-color: var(--ds-button-icon-hover-color-border);
+        }
+    }
+
+    &:active {
+        --ds-button-icon-bg-color: var(--ds-button-icon-active-color-bg);
+        --ds-button-icon-color: var(--ds-button-icon-active-color-icon);
+    }
+
+    &.ds-btn-icon-disabled {
+        --ds-button-icon-bg-color: var(--ds-button-icon-disabled-color-bg);
+        --ds-button-icon-border-color: var(--ds-button-icon-disabled-color-border);
+        --ds-button-icon-color: var(--ds-button-icon-disabled-color-icon);
+
+        pointer-events: none;
+    }
+}
+
+.ds-icon-btn-icon {
+    height: var(--ds-button-icon-size-icon);
+    width: var(--ds-button-icon-size-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // to fix vn-icon sizing added deep nesting to be more specific with the scoping
+    svg {
+        height: var(--ds-button-icon-size-icon);
+        width: var(--ds-button-icon-size-icon);
+        color: var(--ds-button-icon-color);
+    }
+}

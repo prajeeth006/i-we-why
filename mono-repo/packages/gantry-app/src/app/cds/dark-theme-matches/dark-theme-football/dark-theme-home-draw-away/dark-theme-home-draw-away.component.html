@@ -1,0 +1,106 @@
+<div>
+    <ng-container *ngIf="homeDrawAwayResult$ | async as vm">
+        <ng-container *ngIf="(errorMessage$ | async) === false || (errorMessage$ | async) === null || (errorMessage$ | async) === undefined">
+            <gn-dark-theme-base-page>
+                <ng-container header-content>
+                    <gn-dark-theme-header
+                        [title]="vm?.content?.contentParameters?.WeekendCoupon ?? ''"
+                        [racingImage]="vm?.content?.footballImage?.src">
+                        <ng-container raceStage-content>
+                            <div class="header-status-box tilted-card">
+                                <span
+                                    id="DefaultPriceColumn"
+                                    class="tilted-text"
+                                    *ngIf="vm?.eventDateTimeInputValue && vm?.eventDateTimeInputValue?.length > 0">
+                                    {{ vm?.eventDateTimeInputValue[0] }}<br />{{ vm?.eventDateTimeInputValue[1] }}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </gn-dark-theme-header>
+                </ng-container>
+
+                <ng-container body-content>
+                    <div class="football-coupon">
+                        <div class="football-coupon__header">
+                            <span id="Time" class="football-coupon__heading football-coupon__heading--time"></span>
+                            <span id="home" class="football-coupon__heading football-coupon__heading--home">{{
+                                vm?.content?.contentParameters?.Home ? (vm?.content?.contentParameters?.Home | titlecase) : ''
+                            }}</span>
+                            <div class="space1"></div>
+                            <span id="draw" class="football-coupon__heading football-coupon__heading--draw">{{
+                                vm?.content?.contentParameters?.Draw ? (vm?.content?.contentParameters?.Draw | titlecase) : ''
+                            }}</span>
+                            <div class="space2"></div>
+                            <span id="away" class="football-coupon__heading football-coupon__heading--away">{{
+                                vm?.content?.contentParameters?.Away ? (vm?.content?.contentParameters?.Away | titlecase) : ''
+                            }}</span>
+                        </div>
+                        <ul id="selectionTable" class="football-coupon__list">
+                            <ng-container *ngFor="let event of vm?.homeDrawAwayEvent | slice: pageDetails.startIndex : pageDetails.endIndex">
+                                <li
+                                    id="events"
+                                    class="football-coupon__item"
+                                    *ngIf="event?.homeSelection?.price || event?.drawSelection?.price || event?.awaySelection?.price">
+                                    <div id="tabletime" class="football-coupon__time">
+                                        {{
+                                            event?.eventDateTime
+                                                | sportEventDateFormat: vm.gantryCommonContent : { weekday: 'short', timeStyle: 'short' }
+                                        }}
+                                    </div>
+                                    <div
+                                        id="homenumber"
+                                        class="football-coupon__price football-coupon__price--home selection-result tilted-card"
+                                        autoAdjustFont>
+                                        <ng-container *ngIf="event?.homeSelection?.price">
+                                            <span class="tilted-text">{{
+                                                event?.homeSelection?.price | marketPriceTransform: event?.homeSelection?.hidePrice
+                                            }}</span>
+                                        </ng-container>
+                                    </div>
+                                    <div id="tablehomename" class="football-coupon__selection football-coupon__selection--home">
+                                        <span>{{ event?.homeSelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                                    </div>
+                                    <div
+                                        id="drawnumber"
+                                        class="football-coupon__price football-coupon__price--draw selection-result tilted-card"
+                                        autoAdjustFont>
+                                        <ng-container *ngIf="event?.drawSelection?.price">
+                                            <span class="tilted-text">{{
+                                                event?.drawSelection?.price | marketPriceTransform: event?.drawSelection?.hidePrice
+                                            }}</span>
+                                        </ng-container>
+                                    </div>
+                                    <div id="tableawayname" class="football-coupon__selection football-coupon__selection--away">
+                                        <span>{{ event?.awaySelection?.selectionName | trimSelectionNamePipe: nameLength }}</span>
+                                    </div>
+                                    <div
+                                        id="awaynumber"
+                                        class="football-coupon__price football-coupon__price--away selection-result tilted-card"
+                                        autoAdjustFont>
+                                        <ng-container *ngIf="event?.awaySelection?.price">
+                                            <span class="tilted-text">
+                                                {{ event?.awaySelection?.price | marketPriceTransform: event?.awaySelection?.hidePrice }}
+                                            </span>
+                                        </ng-container>
+                                    </div>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </ng-container>
+                <ng-container footer-content>
+                    <gn-dark-theme-footer>
+                        <ng-container left-side-content
+                            ><span>{{ pageDetails.paginationText | sentenceCase }}</span></ng-container
+                        >
+                        <ng-container right-side-content
+                            ><span>{{ vm?.content?.contentParameters?.BetStationPricesFluctuation ?? '' }}</span></ng-container
+                        >
+                    </gn-dark-theme-footer>
+                </ng-container>
+            </gn-dark-theme-base-page>
+        </ng-container>
+    </ng-container>
+
+    <gn-error [errorMessage$]="errorMessage$"></gn-error>
+</div>

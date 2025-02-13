@@ -1,0 +1,95 @@
+default:
+  image: bpty-docker-local.artifactory.bwinparty.corp/b2d-win-msbuild:17.0
+  tags:
+    - windows-docker-runner
+
+.job_template: &build_stage_common
+  stage: build
+   
+.job_template: &schedule_never_rules
+    rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - when: always
+
+.job_template: &schedule_never_rules_master_always
+    rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_BRANCH != "main"
+      when: manual
+      allow_failure: true
+    - when: on_success
+
+.job_template: &publish_stage
+  stage: publish
+  
+.job-template: &fortify_stage
+  stage: build
+  tags:
+    - fortify-docker
+  dependencies: []
+
+
+# stages
+stages:
+  - build  
+  - publish
+  - deploy
+  - daily
+
+before_script:
+  - 'cd GantryTradingConnector'
+
+# build:
+#   stage: build
+#   tags:
+#     - windows-docker-runner
+#   script:
+#     - dotnet build --nologo -c Release .\GantryTradingConnector\GantryTradingConnector.sln
+#   cache: 
+#     paths:
+#       # Save build output for later usage (deploy)
+#       - ./GantryTradingConnector/GantryTradingConnector/bin/Release
+#     policy: push
+
+server-build:
+  <<: *build_stage_common
+  <<: *schedule_never_rules
+  script:
+    - 'powershell -File ../build-version.ps1'
+    - 'dotnet restore GantryTradingConnector.sln -s https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public'
+    - 'dotnet build GantryTradingConnector.sln -c Release --force --no-restore --no-incremental'
+    - 'dotnet publish GantryTradingConnector\\GantryTradingConnector.csproj -c Release -r win-x64 --force -o GantryTradingConnector\\bin\\Publish'
+  artifacts:
+    paths:
+      - GantryTradingConnector\\GantryTradingConnector\\bin\\publish\\**
+    when: always 
+
+# publish stage
+disme-upload:
+  <<: *publish_stage
+  <<: *schedule_never_rules_master_always
+  script:
+    - 'msbuild.exe -t:Bpty_Package,Bpty_DismeAPIUpload -p:Configuration=Publish,DismeDeploymentTemplate=dev -verbosity:minimal Bpty.Build.proj'
+  artifacts:
+    paths:
+      - GantryTradingConnector/_build/deploy/*.xml
+      
+#fortify stage
+fortify:
+  <<: *fortify_stage
+  <<: *schedule_never_rules
+  script:
+    - 'msbuild `@$env:BPTY_BUILD_ROOT\MSBuild40\MSBuild.rsp /target:Bpty_CleanSolution,Bpty_FetchNuget,Bpty_Fortify_MSBuild ./Bpty.Build.proj'
+  timeout: 3 hours 30 minutes
+  needs: []
+

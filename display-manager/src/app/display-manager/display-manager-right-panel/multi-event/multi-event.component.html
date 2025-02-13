@@ -1,0 +1,187 @@
+<div class="manual-creation-wrapper" [formGroup]="multiEventForm"
+  [ngClass]="{ 'non-manual-wrapper': eventType !== manualConstants.manual}">
+  <div id="mainsection" class="main-section" section="main" [ngClass]="mainClassWrapper">
+    <div class="form-controls-section">
+      <app-sports-header *ngIf="eventType == tabNamesEnum.sports" [categories]="categories"
+        formGroupName="sportsHeaderGroup" [competitions]="competitions" [regions]="regions"
+        (eventsChange)='eventsResult($event)'></app-sports-header>
+      <app-racing-header *ngIf="eventType == tabNamesEnum.racing" [categories]="categories"
+        formGroupName="racingHeaderGroup" [competitions]="competitions" [regions]="regions"
+        (eventsChange)='eventsResult($event)'></app-racing-header>
+      <app-manual-header *ngIf="eventType == manualConstants.manual"
+        [formGroupName]="isManualGreyHounds ? 'manualGreyhoundsHeaderGroup' : 'manualHeaderGroup'"
+        [activeCategory]="activeCategory" [selectedTabName]="selectedTabName" [categories]="manualRacingList"
+        [countries]="countries" [activeCountry]="isManualGreyHounds ? activeCountry : ''"
+        (onChangeCategory)="updateActiveCategory($event)" [isSubmit]="isSubmit"
+        (updateActiveCountry)="updateActiveCountry($event)" [tabIndex]="tabIndex" [isSaved]="isSaved"></app-manual-header>
+      <app-manual-sports-template-header
+        *ngIf="isManualSports && eventType == manualConstants.manual_sports_outright && manualOutrightSportsList && manualOutrightSportsList.length>0" [activeSport]="activeSport"
+        [sportsList]="manualOutrightSportsList" formGroupName="manualSportsMultiMarketHeaderGroup" [isSubmit]="isSubmit" (onChangeSport)="updateActiveSport($event)" [isSaved]="isSaved"
+        [tabIndex]="tabIndex" [menuName]="eventType"></app-manual-sports-template-header>
+    </div>
+
+    <!-- show price and result tabs section -->
+    <div class="sub-tabs-row" *ngIf="eventType == manualConstants.manual">
+      <div class="sub-tab-btns-group">
+        <button id="showprice" class="sub-tab-item"
+          [ngClass]="selectedTabName == manualConstants.showprice ? 'is-tab-active' : 'is-tab-inActive'"
+          (click)="tabChanged(manualConstants.showprice)">{{manualConstants.showprice}}
+        </button>
+        <button id="result" class="sub-tab-item"
+          [ngClass]="selectedTabName == manualConstants.result ? 'is-tab-active' : 'is-tab-inActive'"
+          (click)="tabChanged(manualConstants.result)">{{manualConstants.result}}
+        </button>
+      </div>
+      <div class="form-control active-rows" *ngIf="selectedTabName == manualConstants.result">
+        <mat-label class="item-label">Active Rows</mat-label>
+        <mat-form-field appearance="fill" class="active-row">
+          <mat-select disableOptionCentering panelClass="mat-dropdown-control-1"  id="activerows" formControlName="activerows"
+            (selectionChange)="onActiveRowsChange($event.value);">
+            <mat-option [value]="rownum" *ngFor="let rownum of activeRowsArray" class="row-border">{{ rownum }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div
+        [ngClass]="selectedTabName == manualConstants.showprice ? 'form-tab-block showprice-line' : 'form-tab-block result-line'">
+      </div>
+      <div class="column-raceoff" *ngIf="selectedTabName == manualConstants.showprice">
+        <mat-label class="text-info">RACE OFF</mat-label>
+          <mat-slide-toggle id="raceOff" class="race-off" formControlName="raceoff"></mat-slide-toggle>
+      </div>
+      <div class="column-raceoff" *ngIf="selectedTabName == manualConstants.result">
+        <mat-label class="text-info item-label">RESULTED </mat-label>
+        <mat-slide-toggle id="resulted" formControlName="isEventResulted"></mat-slide-toggle>
+      </div>
+    </div>
+
+    <!-- non manual configuration for sports coupon and racing challange-->
+    <div class="divider-row" *ngIf="eventType != manualConstants.manual" [ngClass]="getDividerSpecialClass(eventType)">
+    </div>
+
+    <div class="body-show-match-details" section="body" *ngIf="eventType != manualConstants.manual && !isManualSports"
+      [class.hasRunningOnTotal]="this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1'">
+      <ul class="event-results-list" cdkDropList (cdkDropListDropped)="sortEvents($event)"
+        *ngIf="events && events.length > 0">
+        <div class="header-section">
+          <li class="header-list">
+            <span class="header-item">#</span>
+            <span class="header-item"></span>
+            <span class="header-item"
+              [class.hide-for-runningontotals]="this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1' || eventType == tabNamesEnum.racing">DATE
+              & TIME</span>
+            <span class="header-item"
+              [class.runningontotals]="this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1'">{{
+              this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1' ? 'TYPES'
+              :
+              (eventType ==
+              tabNamesEnum.sports ? 'EVENTS' : 'MEETINGS')}}</span>
+            <span class="header-item"></span>
+          </li>
+        </div>
+        <div class="main-body-section">
+          <li class="main-list" *ngFor="let event of events; let i = index" cdkDrag
+            [cdkDragPreviewClass]="'preview-item-section'">
+            <span class="index-number">{{i+1}}</span>
+            <span class="hamburger-icon"><img [src]="hamburgerPath" alt="" cdkDragHandle></span>
+            <span class="date-and-time"
+              [class.hide-for-runningontotals]="this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1' || eventType == tabNamesEnum.racing">
+              {{ event.startTime | date:"MMM d, y, HH:mm" }}</span>
+            <span class="event-name-date-time"
+              [class.runningontotals]="this.multiEventForm.value.market?.IsPageDoesNotDependsOnEvents == '1'">{{
+              event.name }}</span>
+            <span class="close-icon-section">
+              <mat-icon class="close-icon" (click)="events.splice(i, 1)" aria-hidden="false"
+                aria-label="close icon">close_alt</mat-icon></span>
+          </li>
+        </div>
+      </ul>
+
+      <div *ngIf="(!events || events.length == 0) && eventType != manualConstants.manual"
+        class="form-validation-message">
+        Apply filters to generate template
+      </div>
+    </div>
+
+    <!-- manual configuration  -->
+    <div section="body" class="show-price-wrapper body-class"
+      *ngIf="eventType == manualConstants.manual && !isManualSports" id="RaceoffStyle"
+      [ngClass]="{'raceoff-style' : multiEventForm.value.raceoff}">
+      <div *ngIf="isManualGreyHounds;then greyhounds else default"></div>
+      <ng-template #greyhounds>
+        <app-manual-greyhound-prices [selectedTabName]="selectedTabName" [activeCountry]="activeCountry" [isResulted]="isResulted"
+          [activeRows]="multiEventForm.controls.activerows.value" [activeFinishedArray]="activeFinishedArray"
+          [runners]="multiEventForm.value?.Runners" [isSubmit]="isSubmit"></app-manual-greyhound-prices>
+      </ng-template>
+      <ng-template #default>
+        <app-horse-prices [selectedTabName]="selectedTabName" [activeRows]="multiEventForm.controls.activerows.value"
+          [activeFinishedArray]="activeFinishedArray" [runners]="multiEventForm.value?.Runners" [isResulted]="isResulted"
+          [isSubmit]="isSubmit"></app-horse-prices>
+      </ng-template>
+
+    </div>
+
+    <!-- manual sports configuration  -->
+    <div section="body" class="sports-template-wrapper"
+      *ngIf="isManualSports && eventType == manualConstants.manual_sports_outright">
+      <app-manual-sports-template [menuName]="eventType" formGroupName="manualSportsMultiMarketGroup"
+        [isSubmit]="isSubmit" [runners]="multiEventForm.value?.Runners"></app-manual-sports-template>
+    </div>
+
+    <!-- manual footer -->
+    <div section="footer" class="footer" [ngClass]="{'result-form-group': selectedTabName == manualConstants.result}"
+      *ngIf="eventType == manualConstants.manual || isManualSports">
+      <app-manual-footer *ngIf="eventType == manualConstants.manual && selectedTabName && !isManualGreyHounds"
+        [selectedTabName]="selectedTabName" [categories]="categories" formGroupName="footerGroup"
+        [isSubmit]="isSubmit"></app-manual-footer>
+
+      <app-manual-greyhound-footer *ngIf="eventType == manualConstants.manual && selectedTabName && isManualGreyHounds"
+        [selectedTabName]="selectedTabName" [categories]="categories" formGroupName="footerGroup"
+        [isSubmit]="isSubmit"></app-manual-greyhound-footer>
+
+      <div *ngIf="isManualSports" id="footerText" class="manual-sports-footer">
+        <span>{{manualConstants.manual_sports_footer_text}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-action-buttons"
+    [ngClass]="eventType !== manualConstants.manual && !this.isManualSports ? 'not-manual'  : this.isManualSports ? 'multi-market-footer': ''">
+    <div class="footer-info" *ngIf="counter > 0">
+      <img class="info-icon" [src]="infoErrorIconPath">
+      <span id="footerText" class="footer-text">You must correct errors ({{counter}}) before you can save</span>
+    </div>
+    <div class="buttons-section">
+      <ng-container *ngIf="eventType == manualConstants.manual || isManualSports">
+        <button id="reset" class="reset-button" (click)="resetMultiEvent()" [disabled]="isValuePresent"
+          [ngClass]="{'reset-disable': isValuePresent }" *ngIf="!isSaved && !isOverride">
+          <div class="button-text-center">
+            <img class="reset-image" [src]="resetIconPath" alt="reset">
+            <span>RESET CHANGES</span>
+          </div>
+        </button>
+
+        <button id="reset" class="reset-button" (click)="resetMultiEvent()"
+          [disabled]="isValuePresent || multiEventForm.pristine"
+          [ngClass]="{'reset-disable': isValuePresent || multiEventForm.pristine}" *ngIf="isSaved || isOverride">
+          <div class="button-text-center">
+            <img class="reset-image" [src]="resetIconPath" alt="reset">
+            <span>RESET CHANGES</span>
+          </div>
+        </button>
+      </ng-container>
+      <div class="vertical-border" *ngIf="eventType == manualConstants.manual || isManualSports"></div>
+      <button id="preview" class="preview-button" *ngIf="eventType == manualConstants.manual || isManualSports"
+        [disabled]="!isSaved" [ngClass]="{'preview-disable': (!isSaved) }" (click)="previewItem()">PREVIEW</button>
+
+      <button id="saveas" class="action-item save-as-button"
+        [disabled]="(eventType == tabNamesEnum.sports) ? !(events && events.length > 0) : (eventType == tabNamesEnum.racing ? !(events && events.length > 0) : isValuePresent)"
+        [ngClass]="{'save-disable': (eventType == tabNamesEnum.sports) ? !(events && events.length > 0) : (eventType == tabNamesEnum.racing ? !(events && events.length > 0) : isValuePresent) }"
+        (click)="saveMultiEvent()" *ngIf="!isSaved">SAVE AS</button>
+
+      <button id="save" class="action-item save-button" [disabled]="isValuePresent || multiEventForm.pristine"
+        [ngClass]="{'save-disable': isValuePresent || multiEventForm.pristine}" (click)="saveMultiEvent()"
+        *ngIf="isSaved">SAVE</button>
+    </div>
+  </div>
+  <div>

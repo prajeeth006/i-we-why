@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created using https://vie.git.bwinparty.com/sports-frontends/Sportsbook/blob/master/Source/Bwin.SportsBetting.Build.proj as a reference -->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Solution>$(MSBuildProjectDirectory)\Gantry.sln</Solution>
+    <SolutionName>Gantry</SolutionName>
+    <SolutionFolder Condition="'$(SolutionFolder)'==''">$([System.IO.Path]::GetDirectoryName($(Solution)))</SolutionFolder>
+    <SolutionFolderParent>$(MSBuildProjectDirectory)\..\</SolutionFolderParent>
+    <BuildFolder Condition="'$(BuildFolder)'==''">$(SolutionFolder)\_build</BuildFolder>
+    <BptyBuildOutputFolder>$(BuildFolder)</BptyBuildOutputFolder>
+    <OutputPath>.</OutputPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <!-- HostProject sets the path to the web project containing the PluginHost -->
+    <HostProject>$(MSBuildProjectDirectory)\Frontend.Gantry.Host\Frontend.Gantry.Host.csproj</HostProject>
+    <VanillaPluginAreasFolder>Frontend.Gantry.Host\Areas</VanillaPluginAreasFolder>
+    <AssemblyInfo Condition="'$(AssemblyInfo)'==''">$(SolutionFolder)\Shared\GlobalAssemblyInfo.cs</AssemblyInfo>
+    <DismeDeployEnv>qa</DismeDeployEnv>
+    <!--Remove Below line to disable auto deployment-->
+    <DismeDeployShortcuts></DismeDeployShortcuts>
+    <FortifyVSVersion>14.0</FortifyVSVersion>
+    <BwinNugetFeed>https://artifactory.bwinparty.corp/artifactory/api/nuget/nuget-public/</BwinNugetFeed>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SkipAspNetCompiler>True</SkipAspNetCompiler>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NDependProjectFile>$(MSBuildProjectDirectory)\NDependProject.xml</NDependProjectFile>
+    <NDependVersion>5</NDependVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <CustomProperties Include="Frontend.Gantry.Host\Frontend.Gantry.Host.csproj">
+      <DismeServiceShortcut>Gantry</DismeServiceShortcut>
+      <PackageName>Frontend.Gantry.Host</PackageName>
+    </CustomProperties>
+  </ItemGroup>
+  <PropertyGroup>
+    <ClientDistFolder>$(MSBuildProjectDirectory)\Frontend.Gantry.Host\ClientDist</ClientDistFolder>
+  </PropertyGroup>
+  <Target Name="CleanClientDist" BeforeTargets="Bpty_Build" Condition="Exists('$(ClientDistFolder)')">
+    <ItemGroup>
+      <FilesToClean Include="$(ClientDistFolder)\**\*" />
+      <Directories Include="$([System.IO.Directory]::GetDirectories('$(ClientDistFolder)', '*', System.IO.SearchOption.AllDirectories))" Exclude="$(ClientDistFolder)" />
+    </ItemGroup>
+    <Delete Files="@(FilesToClean)" ContinueOnError="true" />
+    <RemoveDir Directories="@(Directories)" />
+    <Message Text="ClientDist cleaned." />
+  </Target>
+  <Target Name="Webpack">
+    <Message Text="&#xD;&#xA;=== Webpack ===&#xD;&#xA;" Importance="high" />
+    <Exec Command="yarn --cwd ../Frontend/Gantry install --pure-lockfile" LogStandardErrorAsError="false" />
+    <Exec Command="yarn --cwd ../Frontend/Gantry fixmemlmt" LogStandardErrorAsError="false" />
+    <Exec Command="yarn --cwd ../Frontend/Gantry build" LogStandardErrorAsError="false" />
+  </Target>
+  <Import Project="$(BPTY_BUILD_ROOT)\MSBuild40\Bpty.Build.targets" />
+  <Target Name="Cms_SetAssemblyInfo">
+    <Error Condition="'$(AssemblyInfo)' == ''" Text="Could not determine the AssemblyInfo file path. Set the property 'AssemplyInfo'." />
+    <FileUpdate Files="@(_AssemblyInfoFile)" Regex="AssemblyVersion\(&quot;(\d+)\.(\d+)\.(\d+)\.(\d+)&quot;" ReplacementText="AssemblyVersion(&quot;$(BuildVersion)&quot;" />
+    <FileUpdate Files="@(_AssemblyInfoFile)" Regex="AssemblyFileVersion\(&quot;(\d+)\.(\d+)\.(\d+)\.(\d+)&quot;" ReplacementText="AssemblyFileVersion(&quot;$(BuildVersion)&quot;" />
+  </Target>
+</Project>

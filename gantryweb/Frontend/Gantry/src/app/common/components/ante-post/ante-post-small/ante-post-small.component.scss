@@ -1,0 +1,63 @@
+@import './src/global-style/_all-variables.scss';
+.base-body-wrapper {
+  .ante-post-large-content {
+    font-weight: bold;
+    padding: 0 0 10px 0;
+  }
+
+  .selection-table {
+    list-style: none;
+    padding: 60px 0 0 0;
+    margin: 0;
+    @include breakpoint(multidesktop) {
+      padding: 35px 0;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      align-items: stretch;
+      color: $body-color-p2;
+      padding-bottom: 8px;
+      @include breakpoint(multidesktop) {
+        padding-bottom: 4px;
+      }
+      .items {
+        display: flex;
+        align-items: center;
+      }
+
+      .table-item-1 {
+        background-color: $white;
+        font-size: $font-list-md2-title;
+        padding: 10px 20px 12px 20px;
+        flex: 1;
+        line-height: 79px;
+        @include breakpoint(multidesktop) {
+          font-size: $font-list-title;
+          line-height: 39px;
+          padding: 5px 10px 6px 10px;
+          flex-basis: unset;
+          flex: 1;
+        }
+      }
+
+      .table-item-2 {
+        font-size: $font-list-md2-title;
+        width: 182px;
+        line-height: 79px;
+        background-color: $body-color-p2-light;
+        padding: 5px 0;
+        &.items {
+          justify-content: center;
+        }
+        @include breakpoint(multidesktop) {
+          font-size: $font-list-title;
+          line-height: 39px;
+          padding: 5px 10px 6px 10px;
+          width: 70px;
+          flex-basis: unset;
+        }
+      }
+    }
+  }
+}

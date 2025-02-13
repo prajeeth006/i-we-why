@@ -1,0 +1,184 @@
+@use '../../../../../../shared-css/abstracts' as abstract;
+@use '../../../../../../shared-css/helpers' as helper;
+@import '../../../../../../shared-css/variables.scss';
+
+.tv-screen-wrapper {
+    .tv-screen-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: $white;
+        border: 0.5px solid $background-grey-1;
+        border-radius: 3px;
+        padding: 5px 5px 0;
+        width: 114px;
+        height: 64px;
+        font-size: $txt-md-font-size;
+        line-height: 20px;
+
+        &.selected-screens {
+            border: 2px solid $primary-color-2;
+
+            .selected-screen__number {
+                width: 28px;
+                height: 28px;
+                background-color: $primary-color-2;
+                color: $white;
+                border-radius: 100px;
+                text-align: center;
+                font-weight: $fw-bold;
+                font-size: $txt-md-font-size;
+                line-height: 16.41px;
+                @include helper.center-content();
+            }
+        }
+
+        &.changed-screens {
+            border: 2px solid $purple-bg;
+
+            .screen-number {
+                background-color: $purple-bg;
+                border: 1px solid $purple-bg;
+            }
+        }
+
+        &.large-screen {
+            width: 228px;
+            height: 170px;
+
+            .tv-screen-content {
+                height: 146px;
+            }
+        }
+
+        &.half-screen {
+            height: 170px;
+
+            .tv-screen-content {
+                height: 146px;
+            }
+        }
+
+        &.special-screen{
+            height: 69px;
+
+            .tv-screen-content {
+                height: 45px;
+            }
+        }
+
+        .tv-screen-content {
+            background-color: transparent;
+            box-sizing: border-box;
+            @include helper.center-content();
+            height: 40px;
+            padding: 2px;
+            position: relative;
+            border-radius: 2px;
+            border: 1px solid $border-line-color;
+
+
+            .tv-screen-sequence-number {
+                position: absolute;
+                left: 10px;
+                top: 6px;
+                width: 20px;
+                height: 20px;
+                @include helper.center-content();
+                background-color: $white;
+                border-radius: 100px;
+                font-size: $txt-md-font-size;
+                font-weight: $fw-bold;
+            }
+
+            .asset-icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .screen-number {
+            display: flex;
+            column-gap: 5px;
+            position: absolute;
+            bottom: 0px;
+            box-sizing: border-box;
+            align-self: center;
+            width: auto;
+            font-weight: 500;
+            text-align: center;
+            padding: 0px 4px;
+            height: 14px;
+            line-height: 14px;
+            box-sizing: border-box;
+            background-color: $color-black-light;
+            border: 1px solid $color-black-light;
+            border-radius: 3px;
+            color: $white;
+            letter-spacing: 0.6px;
+            font-size: $txt-sm-font-size;
+            white-space: nowrap;
+
+            @include abstract.breakpoint-2 {
+                font-size: $txt-xs-font-size;
+            }
+
+            &.large-screen-tag {
+                height: 18px;
+                line-height: 18px;
+            }
+        }
+
+
+
+        &.disabled {
+            opacity: $half-opacity;
+        }
+    }
+
+    .event-name-and-time {
+        display: flex;
+        justify-content: center;
+        font-size: $txt-sm-font-size;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.4px;
+        width: 87px;
+        height: 32px;
+        line-height: 20px;
+        color: $text-black-color;
+        margin: 5px auto 0;
+        word-break: break-all;
+    }
+
+    &.large-screen {
+
+        .event-name-and-time {
+            width: 100%;
+            margin: 5px 0 0;
+        }
+    }
+    &.screen-disabled{
+        pointer-events: none;
+        .tv-screen-section{
+            opacity: .5;
+        }
+    }
+}
+
+::ng-deep .gantry-tooltip {
+    background-color: $text-black-color;
+    width: 122px;
+    border-radius: 2px;
+    padding: 2px, 4px, 2px, 4px;
+    gap: 5px;
+    position: relative;
+    bottom: 40%;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.tv-screen-section:has(.js-app-droppable--zone) {
+    border: 2px solid #037AFF !important;
+}

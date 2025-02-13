@@ -1,0 +1,9 @@
+@mixin shared {
+    --ds-bottom-nav-color-bg: var(--semantic-color-l2-navigation-background-base);
+    --ds-bottom-nav-color-border: var(--semantic-color-opacity-transparent);
+    --ds-bottom-nav-space-padding-bottom: var(--semantic-spacing-stack-md);
+    --ds-bottom-nav-space-padding-left: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-space-padding-right: var(--semantic-spacing-container-padding-none);
+    --ds-bottom-nav-space-padding-top: var(--semantic-spacing-stack-sm);
+    --ds-bottom-nav-space-stack: var(--semantic-spacing-stack-none);
+}

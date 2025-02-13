@@ -1,0 +1,6 @@
+<div id="eventScreensWrapper" class="event-screens-wrapper">
+    <div id="boxItem" class="box-item" *ngFor="let screen of data; let i = index"
+        [ngClass]="{'left-half':screen?.ScreenCoordinate.IsHalf && i === 0, 'right-half':screen?.ScreenCoordinate.IsHalf && i === 2}">
+        <app-gantry-single-screen [data]="screen"></app-gantry-single-screen>
+    </div>
+</div>

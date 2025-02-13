@@ -1,0 +1,26 @@
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
+
+import * as ButtonStories from './social-button.component.stories';
+
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
+import MyFirstTab from './social-button-tabs/overview.mdx';
+import MySecondTab from './social-button-tabs/examples.mdx';
+
+# Social Button
+
+<Meta of={ButtonStories} />
+
+<Tabs>
+    <TabList>
+        <Tab>Overview</Tab>
+        <Tab>Examples</Tab>
+    </TabList>
+    <TabPanels>
+        <TabPanel>
+            <MyFirstTab />
+        </TabPanel>
+        <TabPanel>
+            <MySecondTab />
+        </TabPanel>
+    </TabPanels>
+</Tabs>

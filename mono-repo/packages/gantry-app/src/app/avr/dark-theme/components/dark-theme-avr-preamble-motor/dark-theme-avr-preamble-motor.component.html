@@ -1,0 +1,19 @@
+<ul class="avr-preamble-table selection-table selection-number-12">
+    <li *ngFor="let runner of avrRunnersList">
+        <div class="selection-number motor-avr" [ngClass]="['motor-avr--' + runner?.runnerNumber]">
+            <span>{{ runner.runnerNumber }}</span>
+        </div>
+
+        <div class="selection-name">
+            <span *ngIf="!!runner.runnerName">
+                {{ runner.runnerName | titlecase }}
+            </span>
+        </div>
+
+        <div *ngIf="!!runner.price" class="selection-price tilted-card" [ngClass]="runner.isFavourite && 'favorite-box'" autoAdjustFont>
+            <span class="tilted-text">
+                {{ runner.price | marketPriceTransform: false }}
+            </span>
+        </div>
+    </li>
+</ul>

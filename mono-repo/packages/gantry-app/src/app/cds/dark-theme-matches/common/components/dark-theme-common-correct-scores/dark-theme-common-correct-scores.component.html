@@ -1,0 +1,24 @@
+<div id="correctScores" *ngIf="multiMarket && multiMarket?.selections?.length > 0">
+    <div class="correct-score-header">
+        <div id="HomeTitle" class="bet-details-title" *ngIf="multiMarket?.homeTitle">{{ multiMarket.homeTitle | titleCaseExceptPipe }}</div>
+        <div id="MarketTitle" class="bet-details-title" *ngIf="multiMarket?.title">{{ multiMarket.title | titleCaseExceptPipe }}</div>
+        <div id="AwayTitle" class="bet-details-title" *ngIf="multiMarket?.awayTitle">{{ multiMarket.awayTitle | titleCaseExceptPipe }}</div>
+    </div>
+    <div class="correct-score">
+        <div id="betItems" class="bet-details-item" *ngFor="let selection of multiMarket.selections">
+            <div id="HomePrice" class="betOdds tilted-card" autoAdjustFont>
+                <span class="tilted-text" *ngIf="selection?.homePrice">
+                    {{ selection.homePrice | prepareEvsPipe }}
+                </span>
+            </div>
+            <div id="Totaldetails" class="bet-details">
+                {{ multiMarket?.trimValue ? (selection?.selectionTitle | trimSelectionNamePipe: nameLength) : selection?.selectionTitle }}
+            </div>
+            <div id="AwayPrice" class="betOdds tilted-card" autoAdjustFont>
+                <span class="tilted-text" *ngIf="selection?.awayPrice">
+                    {{ selection.awayPrice | prepareEvsPipe }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+@code {
+
+    [Parameter]
+    public string ScrollId { get; set; }
+
+    [Parameter]
+    public EventCallback Click { get; set; }
+
+    [Inject]
+    public NavigationManager Navigation { get; set; }
+
+}
+
+@{
+    var anchorUrl = new UriBuilder(Navigation.Uri) { Fragment = ScrollId }.Uri.ToString();
+}
+
+<a href="@anchorUrl" title="URL to scroll to this item" @onmouseup="args => Click.InvokeAsync(args)" onclick="event.stopPropagation();">#</a>

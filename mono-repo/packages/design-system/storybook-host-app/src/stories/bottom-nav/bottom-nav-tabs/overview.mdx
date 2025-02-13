@@ -1,0 +1,46 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsBottomNavStories from '../bottom-nav.component.stories';
+
+The DsBottomNav component is a customizable bottom navigation bar designed for mobile or responsive web applications. It provides a user-friendly way to navigate between different sections of an application using tabs located at the bottom of the screen. Each tab can be enhanced with custom icons, labels, and other features to suit the application's design requirements.
+
+<Canvas of={DsBottomNavStories.Default}></Canvas>
+
+## Usage
+
+Import `DsBottomNavModule` in your component.
+
+```ts
+import { DsBottomNavModule } from '@frontend/ui/bottom-nav'; // 👈 add to file imports
+
+@Component({
+    imports: [DsBottomNavModule], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### DsBottomNavTab Component
+
+    - Description: A tab component that represents an individual tab within the DsBottomNav.
+    - Selector: ds-bottom-nav-tab
+
+-   \*Notification Bubble:
+    You can display a notification bubble for any tab to indicate a new alert or update.
+    The DsNotificationBubble component can be used inside a tab to show notifications, such as unread messages or pending actions.
+    Notification bubbles can be styled and positioned within the tab content.
+
+-   \*Bet Amount:
+    You can display a bet amount on any tab. The bet amount can be shown within the tab content using a custom variable.
+
+### Inputs
+
+-   disabled: (boolean) When true, the tab cannot be selected.
+-   active: (boolean) When set to true, this tab will be initially selected.
+
+### Selected State
+
+-   Each DsBottomNavTab has an internal selected state managed by the DsBottomNav component.
+-   The selected state is automatically updated based on the active input (keyboard navigation will trigger click).
+-   You can set a tab to be initially selected by adding the [active]="true" attribute to the ds-bottom-nav-tab element.

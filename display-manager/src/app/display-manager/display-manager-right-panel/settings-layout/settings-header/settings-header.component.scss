@@ -1,0 +1,38 @@
+@use '../../../../shared-css/helpers' as helper;
+@import '../../../../shared-css/variables.scss';
+
+.settings-header {
+    @include helper.flex-container(flex-start, center);
+    height: 36px;
+    background-color: $background-grey-color;
+    padding: 20px;
+    column-gap: 10px;
+    margin: 10px 10px 0;
+
+    &-info {
+        @include helper.flex-container(flex-start, center);
+        column-gap: 10px;
+    }
+
+    &-back-btn{
+        width: 23px;
+        height: 23px;
+        cursor: pointer;
+    }
+
+    &-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    &-name {
+        color: $color-black-light;
+        font-family: $default-font;
+        font-size: $txt-md-font-size;
+        font-style: normal;
+        font-weight: $fw-bold;
+        line-height: normal;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+    }
+}

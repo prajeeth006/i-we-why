@@ -1,0 +1,32 @@
+.ds-scroll-container {
+    display: flex;
+    -webkit-overflow-scrolling: touch; /* Important for iOS devices */
+
+    &.ds-hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.ds-scroll-container-overflow-y {
+        overflow-y: auto;
+
+        &.ds-scroll-container-mandatory {
+            scroll-snap-type: y mandatory;
+        }
+
+        &.ds-scroll-container-proximity {
+            scroll-snap-type: y proximity;
+        }
+    }
+
+    &.ds-scroll-container-overflow-x {
+        overflow-x: auto;
+
+        &.ds-scroll-container-mandatory {
+            scroll-snap-type: x mandatory;
+        }
+
+        &.ds-scroll-container-proximity {
+            scroll-snap-type: y proximity;
+        }
+    }
+}

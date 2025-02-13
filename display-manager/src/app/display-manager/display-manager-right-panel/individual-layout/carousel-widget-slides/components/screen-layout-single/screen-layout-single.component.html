@@ -1,0 +1,47 @@
+<div id="screenWrapper" *ngIf="gantryType" class="tv-screen-wrapper" [ngClass]="{ 'large-screen' : layoutStyle == 'L' }"  
+
+  [currentScreen]="gantryType+'_'+screenInfo.DisplayName"
+  [appIndividualDroppable]="screenInfo.CanDroppable == true ? gantryType+'_'+screenInfo.DisplayName : undefined"
+  [appIndividualDraggable]="!isReadOnly && screenInfo.CanDraggable && !sequencencingHelper.sequenceJourneyStatus() ? screenInfo :  undefined"
+  [IsSkyTv]="!!screenInfo.IsSkyTv"
+  [IsTv]="!!screenInfo.IsTv"
+  (onDroppableComplete)="individualSaveService.onZoneDrop($event, data, screenInfo)"
+  (contextmenu)="onRightClickEventScreenWrapper($event)"
+  [IsReadOnly]= "isReadOnly"  
+  [class.screen-disabled]="!screenInfo.IsPartOfSequence && sequencencingHelper.sequenceJourneyStatus()"
+>
+  <div id="tvScreenSection" class="tv-screen-section" [ngClass]="{ 
+    'large-screen' : layoutStyle == 'L' ,
+    'half-screen' : layoutStyle == 'H',
+    'special-screen' : layoutStyle == 'SP',
+    }">
+    <div id="tvScreenContent" class="tv-screen-content" [ngClass]="{'half-screen-inner-box': layoutStyle == 'H'}"
+      [ngStyle]="{
+      'background-color': screenInfo | assetInfo : isReadOnly : { IsAssetColor: true },
+      'border-color':  screenInfo | assetInfo : isReadOnly : { IsScreenBorderColor: true },
+    }">
+        
+        <!-- @if (screenInfo?.IsPartOfSequence) {
+          <div id="tvScreenSequenceNumber" class="tv-screen-sequence-number">{{screenInfo.NewAssetToSave?.SequenceId}}</div>
+        } -->
+  
+        <img id="assetIcon" class="asset-icon" [src]="screenInfo | assetInfo : isReadOnly : { IsAssetImage: true }" [alt]="screenInfo.DisplayName" draggable="false">
+    
+    </div>
+    <div id="tvScreenLabel" class="screen-number">
+      <!-- @if (data?.IsPartOfSequence) {
+        <img id="sequenceIcon" class="sequence-icon" [src]="this.sequenceIcon" alt="sequence-icon" draggable="false">
+      } -->
+      <span id="displayName" >{{screenInfo.DisplayName}}</span>
+    </div>
+  </div>
+
+
+  <div id="eventNameAndTime" class="event-name-and-time"
+    [matTooltip]="screenInfo | assetInfo : isReadOnly : { IsTooltipName: true }"
+    matTooltipPosition="below"
+     matTooltipClass='gantry-tooltip'>
+     {{screenInfo | assetInfo : isReadOnly : { IsName: true } }}
+  </div>
+
+</div>

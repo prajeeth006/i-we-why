@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Frontend.Vanilla.Caching.Hekaton</name>
+    </assembly>
+    <members>
+        <member name="T:Frontend.Vanilla.Caching.Hekaton.DataLayer.CacheExpiration">
+            <summary>
+            Defines final expiration to be set in Hekaton database.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Caching.Hekaton.DataLayer.ICacheExpirationCalculator">
+            <summary>
+            Calculates <see cref="T:Frontend.Vanilla.Caching.Hekaton.DataLayer.CacheExpiration" />.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Caching.Hekaton.DataLayer.IHekatonDataLayer">
+            <summary>
+            Encapsulates communication with Hekaton database.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Caching.Hekaton.HekatonDistributedCache">
+            <summary>
+            Implementation of <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" /> which stores values in Hekaton database.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Caching.Hekaton.HekatonDistributedCache.#ctor(Frontend.Vanilla.Caching.Hekaton.DataLayer.IHekatonDataLayer,Frontend.Vanilla.Caching.Hekaton.DataLayer.ICacheExpirationCalculator)">
+            <summary>
+            Implementation of <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache" /> which stores values in Hekaton database.
+            </summary>
+        </member>
+        <member name="T:Frontend.Vanilla.Caching.Hekaton.HekatonServices">
+            <summary>
+            Services of Vanilla Hekaton distributed cache.
+            </summary>
+        </member>
+        <member name="M:Frontend.Vanilla.Caching.Hekaton.HekatonServices.AddVanillaHekatonDistributedCache(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Vanilla Hekaton distributed cache.
+            Also adds dependency <see cref="M:Frontend.Vanilla.Core.VanillaCoreServices.AddVanillaCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)" />.
+            </summary>
+        </member>
+    </members>
+</doc>

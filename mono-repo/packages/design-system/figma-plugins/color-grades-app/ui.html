@@ -1,0 +1,184 @@
+<!-- Standard link tag-->
+<html>
+    <head>
+        <style>
+            body {
+                background-color: var(--figma-color-bg);
+                color: var(--figma-color-text);
+                padding: 2em;
+                font-family: Inter, sans-serif;
+            }
+
+            .pdf {
+                color: #000000;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--figma-color-text-onbrand);
+                background-color: var(--figma-color-bg-brand);
+                flex-shrink: 0;
+                text-decoration: none;
+                outline: none;
+                border: 1px solid var(--figma-color-border-brand);
+                font-weight: 500;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 12px;
+                box-sizing: border-box;
+                border-radius: 6px;
+                margin-top: 1em;
+            }
+
+            button:hover {
+                background-color: var(--figma-color-bg-brand-hover);
+            }
+
+            button:active {
+                background-color: var(--figma-color-bg-brand-pressed);
+            }
+
+            button:disabled {
+                opacity: 0.5;
+                background-color: var(--figma-color-bg-brand);
+            }
+
+            #messages ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .danger {
+                color: var(--figma-color-text-danger);
+            }
+
+            .warning {
+                color: var(--figma-color-text-warning);
+            }
+
+            .success {
+                color: var(--figma-color-text-success);
+            }
+
+            table {
+                border-collapse: collapse;
+                width: max-content;
+            }
+            tr {
+                border: none;
+            }
+            td {
+                border-bottom: solid 1px black;
+                border-top: solid 1px black;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Color Grade Generator</h2>
+
+        <p>
+            <button class="button button--primary" id="reset">Reset</button>
+        </p>
+
+        <div id="colors" style="display: grid">
+            <p>How many Colors to you want to generate?</p>
+            <input id="color_amount" value="1" placeholder="1" />
+        </div>
+
+        <button class="button button--primary" id="generateColorFields">Create Color Inputs</button>
+        <button class="button button--primary" id="check" style="display: none">Generate Color Grades</button>
+        <button class="button button--primary" id="print" disabled>PDF (Print)</button>
+
+        <div id="color-results"></div>
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script>
+        document.getElementById('reset').onclick = () => {
+            document.getElementById('print').disabled = true;
+            document.getElementById('colors').innerHTML =
+                '<p>How many Colors to you want to generate?</p><input id="color_amount" value="1" placeholder="1">';
+            document.getElementById('generateColorFields').style.display = 'block';
+            document.getElementById('check').style.display = 'none';
+            document.getElementById('color-results').innerHTML = '';
+        };
+
+        document.getElementById('generateColorFields').onclick = () => {
+            document.getElementById('reset').disabled = true;
+            document.getElementById('print').disabled = true;
+            const textbox = document.getElementById('color_amount');
+            const inputs = parseInt(textbox.value);
+            if (inputs < 1 || isNaN(inputs)) {
+                return;
+            }
+
+            document.getElementById('generateColorFields').style.display = 'none';
+            const color_inputs = document.getElementById('colors');
+
+            let innerHtmlContent = '';
+            for (let i = 0; i < inputs; i++) {
+                innerHtmlContent += '<input class="color_input" placeholder="#000000">';
+            }
+            color_inputs.innerHTML = innerHtmlContent;
+            document.getElementById('check').style.display = 'block';
+            document.getElementById('reset').disabled = false;
+        };
+
+        document.getElementById('check').onclick = () => {
+            document.getElementById('reset').disabled = true;
+            document.getElementById('check').disabled = true;
+            document.getElementById('print').disabled = true;
+            const textboxes = document.getElementsByClassName('color_input');
+            const values = [];
+            for (const textbox of textboxes) {
+                if (textbox.value === '') {
+                    values.push('#000000');
+                } else {
+                    values.push(textbox.value);
+                }
+            }
+            const table = document.getElementById('color-results');
+            table.innerHTML = 'The more color you define, the longer verification will take, as it compares each color with each other color';
+            setTimeout(() => {
+                parent.postMessage({ pluginMessage: { type: 'create-grades', colors: values } }, '*');
+            }, 10);
+        };
+
+        document.getElementById('print').onclick = () => {
+            // Default export is a4 paper, portrait, using millimeters for units
+            const { jsPDF } = window.jspdf;
+
+            const textboxes = document.getElementsByClassName('color_input');
+            const elCount = textboxes.length;
+
+            const width = 100 + 175 * elCount;
+            const lines = document.getElementById('result-table').getElementsByTagName('tr').length;
+            const height = lines * 110;
+            const isPortrait = width < height;
+            var pdf = new jsPDF({ orientation: isPortrait ? 'p' : 'l', unit: 'pt', format: [width, height] });
+
+            document.getElementById('result-table').classList = 'pdf';
+            pdf.html(document.getElementById('result-table'), {
+                callback: function (doc) {
+                    doc.save('color-export.pdf');
+                    document.getElementById('result-table').classList = '';
+                },
+                margin: 10,
+            });
+        };
+
+        onmessage = (event) => {
+            if (event.data.pluginMessage.type === 'create-grades-result') {
+                document.getElementById('color-results').innerHTML = event.data.pluginMessage.message;
+                document.getElementById('reset').disabled = false;
+                document.getElementById('check').disabled = false;
+                document.getElementById('print').disabled = false;
+            }
+        };
+    </script>
+</html>

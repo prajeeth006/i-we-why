@@ -1,0 +1,92 @@
+@import '../../../../../global-style/all-variables';
+@import '../../../../../dark-theme-global-style/mixins//traps';
+
+.greyhound-table {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    column-gap: 100px;
+
+    @include breakpoint(multidesktop) {
+        column-gap: 50px;
+    }
+
+    li {
+        display: flex;
+        width: 840px;
+        margin-bottom: 52px;
+        font-weight: $fw-bold;
+        @include trap-box-styles(540px, 108px);
+
+        .selection-number {
+            font-size: $font-100;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-50;
+            }
+        }
+
+        @include breakpoint(multidesktop) {
+            width: 420px;
+            margin-bottom: 26px;
+        }
+
+        &:last-child,
+        &:nth-child(3) {
+            margin-bottom: 0;
+        }
+
+        .traps {
+            z-index: 2;
+
+            &.trap-6 {
+                @include trap-number-stripes($height: 21.6px);
+            }
+        }
+    }
+}
+
+.name-title {
+    line-height: 43px;
+    font-size: $font-60;
+    margin-top: 66px;
+    margin-bottom: 79px;
+    font-weight: $fw-medium;
+
+    @include breakpoint(multidesktop) {
+        line-height: 21.5px;
+        font-size: $font-30;
+        margin-top: 33px;
+        margin-bottom: 49.5px;
+    }
+}
+
+.selection-price {
+    @include flex-center;
+    height: 108px;
+    background-color: $color-white;
+    color: $theme-white-bg-text;
+    font-size: $font-80;
+
+    @include breakpoint(multidesktop) {
+        height: 54px;
+        font-size: $font-40;
+    }
+}
+
+.rewardsconatiner {
+    font-size: $font-56;
+    margin-top: 80px;
+    line-height: 40px;
+    display: flex;
+    column-gap: 45px;
+    font-weight: $fw-medium;
+
+    @include breakpoint(multidesktop) {
+        font-size: $font-28;
+        margin-top: 40px;
+        line-height: 20px;
+        column-gap: 22.5px;
+    }
+}

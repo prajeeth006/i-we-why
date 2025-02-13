@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "profiles": {
+        "Frontend.Gantry.Host": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "dev",
+                "VANILLA_DEV_MODE_ENABLED": "true"
+            },
+            "dotnetRunMessages": true,
+            "applicationUrl": "https://dev.gantry.coral.co.uk;"
+        }
+      ,
+      "IIS": {
+        "commandName": "IIS",
+        "launchBrowser": false,
+        "launchUrl": "https://dev.gantry.coral.co.uk",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "dev"
+        }
+      }
+    },
+    "iisSettings": {
+      "windowsAuthentication": false,
+      "anonymousAuthentication": true,
+      "iisExpress": {
+        "applicationUrl": "http://localhost:63708/",
+        "sslPort": 44342
+      },
+      "iis": {
+        "applicationUrl": "https://dev.gantry.coral.co.uk",
+        "sslPort": 0
+      }
+    }
+  }

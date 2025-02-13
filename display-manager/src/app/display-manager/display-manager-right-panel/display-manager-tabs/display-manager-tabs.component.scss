@@ -1,0 +1,174 @@
+@import '../../../../app/shared-css/variables.scss';
+
+.right-side-panel-tabs {
+  ::ng-deep {    
+    .mat-mdc-tab-group {
+      .mat-mdc-tab-label-container {
+        background-color: $body-color-p2-lighter-bg;
+        .mat-mdc-tab-labels {
+          font-weight: 400;
+          font-size: $txt-sm-font-size;
+          color: $label-light-black;
+          background-color: $body-color-p2-lighter-bg;
+          line-height: 14px;
+          letter-spacing: 1.25px;
+          height: 30px;
+          min-width: min-content;
+          width: 130px;
+          max-width: 130px;
+          border-radius: 5px 5px 0px 0px;
+          padding: 0 0px;
+          border-bottom: none;
+          .mat-mdc-tab.mdc-tab--active {
+            font-weight: 700;
+            color: $label-light-black;
+            background-color: $white;
+            opacity: 1;
+            border-radius: 5px 5px 0 0;
+          }
+
+          .mdc-tab__text-label {
+            color: $label-light-black;
+          }
+
+          .mat-mdc-tab {
+            padding-left: 0px;
+            padding-right: 0px;
+            max-width: max-content;
+            height: 30px;
+
+            .main-tab-item {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              .tab-item-icon {
+                &.tab-item-icon-main{
+                  padding: 0;
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+
+              .tab-name {
+                column-gap: 6px;
+                padding: 0 6px;
+                place-items: center;
+                .multi-event-tab {
+                  object-fit: contain;
+                }
+
+                .main-tab-text-sub {
+                  font-size: $txt-sm-font-size;
+                  line-height: 1;
+                  min-width: 59px;
+                }
+              }
+            }
+
+            .main-parent-tab {
+              display: flex;
+              flex-direction: row;
+              column-gap: 10px;
+              align-items: center;
+              padding: 0 20px;
+            }
+
+          }
+
+          .tab-name-text {
+            margin-top: 5px
+          }
+          .close-icon-section {
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+          }
+
+        }
+
+      }
+      .mat-mdc-tab.mat-mdc-tab-disabled{
+        opacity: .5;
+      }
+    }
+    
+  }
+  &.sequencing-tabs {
+    ::ng-deep {
+      .mat-mdc-tab-group {
+        .mat-mdc-tab-header:not(.mat-mdc-tab-body-wrapper .mat-mdc-tab-header){
+        .mat-mdc-tab-label-container {
+          .mat-mdc-tab-labels {
+            max-width: 100%;
+            min-width: unset;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            div.mat-mdc-tab[role="tab"]{
+              float: inline-start;
+              &.tab-align-end{
+                float: inline-end;
+              }
+              .tab-settings{
+                font-weight: 700;
+                padding: 0 30px;
+              }
+
+              .main-tab-text-sub {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: 59px;
+                &:not(.active){
+                  max-width: 59px;
+                }
+              }              
+            }        
+
+          }
+        }
+        }
+      }
+      .mat-mdc-tab-header {
+        display: block;
+      }    
+      .mat-mdc-tab-header-pagination {
+        display: none;
+      }
+    }
+  }
+  .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tab-name {
+  display: flex;
+}

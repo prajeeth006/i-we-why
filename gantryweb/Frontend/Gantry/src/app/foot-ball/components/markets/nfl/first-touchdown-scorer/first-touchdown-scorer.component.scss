@@ -1,0 +1,136 @@
+@import './src/global-style/_all-variables.scss';
+
+.marketContent {
+    display: flex;
+    padding: 20px 0;
+    margin: 0;
+    color: $color-p1-text;
+
+    @include breakpoint(multidesktop) {
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    &-right,
+    &-left {
+        display: flex;
+        flex-direction: row;
+        width: 49%;
+        margin-bottom: 10px;
+
+        &:nth-of-type(even) {
+            margin-left: 2%;
+        }
+
+    }
+
+    .market {
+        margin: 0 1%;
+        flex: 0 0 auto;
+        width: 14%;
+        flex-direction: column;
+        @include flex-center;
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 2px;
+            width: 100%;
+            display: flex;
+            background-color: $body-color-p2;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            margin-top: -4px;
+        }
+
+        //    &::after {
+        //        content: '';
+        //        height: 2px;
+        //        width: 22%;
+        //        display: flex;
+        //        background-color: $body-color-p2;
+        //        position: absolute;
+        //        right : 0px;
+        //        top: 50%;
+        //        margin-top: -4px;
+        //    }
+        .marketContent-center {
+            @include flex-center;
+            flex-direction: column;
+            background-color: $body-color-p2-lighter-bg;
+            position: relative;
+            width: 56%;
+            min-width: 100px;
+
+            .marketTitle {
+                text-align: center;
+                font-size: $txt-md-font1-size;
+                color: $body-color-txt;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $txt-sm-font2-size;
+                }
+            }
+
+            .marketSubTitle {
+                font-weight: normal;
+                font-size: $txt-sm-font2-size;
+                color: $body-color-txt;
+            }
+        }
+    }
+
+    .item-lg {
+        flex: 0 0 auto;
+        width: 42%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        &.away {
+            align-items: flex-end;
+        }
+
+    }
+
+    .betName {
+        line-height: 50px;
+        @include text-truncate;
+        font-size: $txt-md-font1-size;
+        font-weight: normal;
+        background-color: $color-p1-dark;
+        padding: 0 20px;
+        flex: 1;
+        color: $white;
+        text-align: center;
+        line-height: 60px;
+        width: 60px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-sm-font2-size;
+            line-height: 40px;
+        }
+
+    }
+
+    .betOdds {
+        font-size: $txt-md-font1-size;
+        background: $white;
+        line-height: 50px;
+        font-weight: bold;
+        width: 50px;
+        @include flex-center;
+        height: 100%;
+        color: $body-color-txt;
+        line-height: 60px;
+        width: 60px;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-sm-font2-size;
+            line-height: 40px;
+            width: 45px;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "name": "design-system-storybook-host-app",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/design-system/storybook-host-app/src",
+    "projectType": "application",
+    "tags": ["type:storybook", "scope:shared"],
+    "implicitDependencies": ["design-system-ui"],
+    "targets": {
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/dist/test/{projectRoot}"],
+            "options": {
+                "jestConfig": "packages/design-system/storybook-host-app/jest.config.ts"
+            }
+        },
+        "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {
+                "quiet": true,
+                "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/**/*.html", "{projectRoot}/package.json"]
+            }
+        },
+        "storybook": {
+            "executor": "@storybook/angular:start-storybook",
+            "options": {
+                "port": 4400,
+                "configDir": "packages/design-system/storybook-host-app/.storybook",
+                "browserTarget": "design-system-storybook-host-app:build-storybook",
+                "compodoc": false,
+                "assets": [
+                    {
+                        "input": "packages/design-system/shared-ds-utils/src/assets/demo-icons",
+                        "glob": "**/*",
+                        "output": "demo-icons"
+                    }
+                ]
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@storybook/angular:build-storybook",
+            "outputs": ["{options.outputDir}"],
+            "options": {
+                "outputDir": "dist/build-storybook/packages/design-system/storybook-host-app",
+                "configDir": "packages/design-system/storybook-host-app/.storybook",
+                "browserTarget": "design-system-storybook-host-app:build-storybook",
+                "compodoc": false,
+                "styles": [
+                    "@angular/material/prebuilt-themes/indigo-pink.css",
+                    "packages/design-system/ui/generated/all-themes.css",
+                    "packages/design-system/shared-storybook-utils/styles/all-fonts.scss",
+                    "packages/design-system/storybook-host-app/.storybook/custom.css"
+                ],
+                "assets": [
+                    {
+                        "input": "packages/design-system/shared-ds-utils/src/assets/demo-icons",
+                        "glob": "**/*",
+                        "output": "demo-icons"
+                    }
+                ],
+                "webpackStatsJson": true
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "test-storybook": {
+            "command": "test-storybook -c ./packages/design-system/storybook-host-app/.storybook --url=http://localhost:4400 --index-json"
+        },
+        "pipeline-test-storybook": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx --yes concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\"  \"npx http-server dist/build-storybook/packages/design-system/storybook-host-app -p 6006 -a 127.0.0.1 -s\" \"npx --yes wait-on tcp:6006 && yarn test-storybook -c packages/design-system/storybook-host-app/.storybook --testTimeout=60000 --index-json 2>&1\""
+                ]
+            }
+        },
+        "static-storybook": {
+            "executor": "@nx/web:file-server",
+            "options": {
+                "buildTarget": "design-system-storybook-host-app:build-storybook",
+                "staticFilePath": "dist/build-storybook/packages/design-system/storybook-host-app",
+                "port": 6006,
+                "host": "127.0.0.1"
+            },
+            "configurations": {
+                "ci": {
+                    "buildTarget": "design-system-storybook-host-app:build-storybook:ci"
+                }
+            }
+        },
+        "chromatic": {
+            "command": "chromatic --ci --only-changed --exit-once-uploaded --storybook-build-dir=dist/build-storybook/packages/design-system/storybook-host-app --storybook-base-dir='./' --working-dir='./packages/design-system/storybook-host-app' --untraced='!(packages/design-system/storybook-host-app/**|packages/design-system/ui/**)' --project-token=$CHROMATIC_PROJECT_TOKEN_DS",
+            "dependsOn": ["build-storybook", "pipeline-test-storybook"]
+        },
+        "code-pushup": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx @code-pushup/cli --config=packages/design-system/storybook-host-app/code-pushup.config.ts --tsconfig=tsconfig.base.json --progress=false"
+                ]
+            }
+        }
+    }
+}

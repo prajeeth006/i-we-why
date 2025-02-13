@@ -1,0 +1,1230 @@
+@import '../../../../../../global-style/all-variables';
+@import '../../../../../../global-style/mixins/_traps.scss';
+
+.banner-sub-title {
+    background: $white;
+    display: flex;
+    align-items: stretch;
+    height: 60px;
+    font-size: $font-list-lg1-title;
+
+    @include breakpoint(multidesktop) {
+        height: 30px;
+        font-size: $txt-md-font-size;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        height: 30px;
+        font-size: $txt-md-font-size;
+    }
+
+    .item-head {
+        display: flex;
+        align-items: center;
+        color: $body-color-p2;
+    }
+
+    .banner-sub-title-left {
+        flex-basis: 50%;
+        display: flex;
+        flex: 1;
+        border: 2px solid $body-color-p2;
+
+        @include breakpoint(multidesktop) {
+            border: 1px solid $body-color-p2;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            border: 1px solid $body-color-p2;
+        }
+    }
+
+    .banner-sub-title-right {
+        //flex-basis: 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        .head-item-1 {
+            padding: 0 0 0 30px;
+
+            @include breakpoint(multidesktop) {
+                padding: 0 0 0 15px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                padding: 0 0 0 15px;
+            }
+        }
+
+        &-feature-layout {
+            .head-item-2 {
+                min-width: 218px;
+                font-size: $txt-lg-font1-size;
+
+                .approach {
+                    font-size: $txt-md-font1-size;
+                }
+            }
+        }
+    }
+
+    .head-item-1 {
+        flex-basis: 100%;
+        border-right: 0;
+        padding: 0 0 0 20px;
+        font-size: $font-list-lg1-title;
+
+        @include breakpoint(multidesktop) {
+            font-size: $txt-md-font-size;
+            padding: 0 0 0 10px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            font-size: $txt-md-font-size;
+            padding: 0 0 0 10px;
+        }
+
+        span {
+            display: flex;
+            margin-right: 40px;
+
+            @include breakpoint(multidesktop) {
+                margin-right: 20px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-right: 20px;
+            }
+
+            &:last-child {
+                margin: none;
+            }
+        }
+    }
+
+    .head-item-2 {
+        min-width: 320px;
+        background-color: $body-color-p2;
+        color: $color-p5;
+        border: 2px solid $border-color;
+        border-right: 0;
+        font-size: $font-list-title;
+
+        @include breakpoint(multidesktop) {
+            min-width: 160px;
+            font-size: $txt-sm-font-size;
+            border: 1px solid $border-color;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            min-width: 180px;
+            font-size: $txt-sm-font-size;
+            border: 1px solid $border-color;
+        }
+    }
+
+    .head-item-3 {
+        background-color: $early-price-bg-color;
+        color: $market-price-text;
+        border: 2px solid $market-price-text;
+        padding: 4px 0;
+        position: relative;
+
+        @include breakpoint(multidesktop) {
+            border-width: 1px;
+        }
+
+        &::after {
+            background-color: $early-price-bg-color;
+            //top: 56px !important;
+        }
+
+        &.head-item-2-secondary {
+            min-width: 320px;
+            border: 2px solid $border-color-drak;
+
+            @include breakpoint(multidesktop) {
+                min-width: 160px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                min-width: 180px;
+            }
+
+            span span {
+                font-size: $font-list-title;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $txt-sm-font-size;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $txt-sm-font-size;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        span {
+            font-size: $h2-md-font-size;
+            line-height: 25px;
+
+            &.unset-width {
+                display: flex;
+                max-width: 100px;
+            }
+
+            span {
+                max-width: 100px;
+                word-break: break-word;
+                display: flex;
+
+                @include breakpoint(multidesktop) {
+                    max-width: 54px;
+                }
+            }
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-sm-font2-size;
+                line-height: 12px;
+
+                span {
+                    max-width: 54px;
+                }
+
+                &.unset-width {
+                    max-width: 50px;
+                }
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $txt-md-font-size;
+                line-height: 20px;
+
+                span {
+                    max-width: 102px;
+                }
+
+                &.unset-width {
+                    max-width: 102px;
+                }
+            }
+
+            &.gameOff {
+                span {
+                    max-width: unset;
+                }
+            }
+        }
+    }
+
+    .head-item-2-secondary {
+        background-color: $color-p2;
+        color: #ffffff;
+        border-left: solid $border-color 2px;
+
+        span.gameOff {
+            flex-basis: auto;
+            margin: 0;
+            padding: 10px;
+            width: auto;
+        }
+
+        &.finish {
+            background: $white;
+            color: $color-p2;
+            position: relative;
+            flex-basis: 26% !important;
+
+            .blinking {
+                position: absolute;
+                width: 100% !important;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    .head-item-4 {
+        background-color: $top-finish-bg-color;
+        color: $market-price-text;
+        border: solid $market-price-text 2px;
+        margin: 0 4px;
+        position: relative;
+        padding: 10px 0;
+
+        @include breakpoint(multidesktop) {
+            border-width: 2px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            border-width: 2px;
+        }
+    }
+
+    .head-item-5 {
+        background-color: $top-finish-bg-color;
+        color: $market-price-text;
+        border: solid $market-price-text 2px;
+        //border-bottom: none;
+        position: relative;
+        box-shadow: -20px 0 var(--color-p1-bg);
+        margin-left: 20px;
+
+        @include breakpoint(multidesktop) {
+            box-shadow: -10px 0 var(--color-p1-bg);
+            margin-left: 10px;
+            border-width: 2px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            border-width: 2px;
+            box-shadow: -10px 0 var(--color-p1-bg);
+            margin-left: 10px;
+        }
+
+        span {
+            font-size: $h2-md-font-size;
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            line-height: 24px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-sm-font2-size;
+                line-height: 12px;
+                width: 92%;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: ($txt-md-font-size - 1px);
+                width: unset;
+            }
+        }
+
+        &::after {
+            background-color: $top-finish-bg-color;
+        }
+    }
+
+    .arrow-down {
+        &::after {
+            content: '';
+            width: 140px;
+            display: flex;
+            position: absolute;
+            left: 0px;
+            height: 8px;
+            top: 56px;
+            clip-path: polygon(0% 10%, 100% 10%, 50% 100%);
+            padding-bottom: 10%;
+            background-color: $early-price-bg-arrow;
+
+            @include breakpoint(multidesktop) {
+                width: 68px;
+                left: 0px;
+                height: 8px;
+                top: 28px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                width: 100px;
+                left: 0px;
+                height: 8px;
+                top: 27px;
+            }
+        }
+    }
+
+    .head-item-3,
+    .head-item-4,
+    .head-item-5 {
+        flex-basis: 142px;
+        min-width: 142px;
+
+        @include breakpoint(multidesktop) {
+            flex-basis: 70px;
+            min-width: 70px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            flex-basis: 102px;
+            min-width: 102px;
+        }
+
+        span,
+        .market-heading {
+            word-break: break-word;
+            width: 92%;
+            text-align: center;
+            display: flex;
+            font-size: $h2-md-font-size;
+            justify-content: center;
+            flex-direction: column;
+            line-height: 22px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-sm-font2-size;
+                line-height: 11px;
+                padding: 0 10px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: 16px;
+                line-height: 11px;
+                padding: 0;
+                word-break: inherit;
+                width: inherit;
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+
+            &.race-it-off {
+                span {
+                    font-size: $h2-md-font-size;
+                    padding: 0 20px;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-sm-font-size;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $txt-sm-font-size;
+                    }
+                }
+            }
+        }
+    }
+
+    .head-item-2,
+    .head-item-3,
+    .head-item-4,
+    .head-item-5 {
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    &.form-entry-sub-header {
+        .banner-sub-title-left {
+            flex-basis: 50%;
+            flex: 1;
+            border-right: none;
+
+            @include breakpoint(multidesktop) {
+                flex-basis: 50%;
+            }
+        }
+
+        .banner-sub-title-right {
+            //flex-basis: 770px;
+            // border: 2px solid $body-color-p2;
+            border-left: none;
+
+            &-feature-layout {
+                flex-basis: 322px;
+            }
+
+            @include breakpoint(multidesktop) {
+                //flex-basis: 380px;
+                border: 1px solid $body-color-p2;
+                border-left: none;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                //flex-basis: 380px;
+                border: 1px solid $body-color-p2;
+                border-left: none;
+            }
+
+            .head-item-1 {
+                @include breakpoint(multidesktophalf) {
+                    justify-content: flex-end;
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+.greyhound-table {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0;
+
+    @include breakpoint(multidesktop) {
+        padding: 14px 0 0;
+    }
+
+    @include breakpoint(multidesktophalf) {
+        padding: 16px 0 0;
+    }
+
+    li {
+        display: flex;
+        align-items: stretch;
+        color: $body-color-txt;
+
+        @include breakpoint(multidesktophalf) {
+            height: 84px;
+        }
+
+        .items {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-item-1 {
+            background-color: $color-p6;
+            flex-basis: 5%;
+            min-width: 5%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            &.traps {
+                min-width: unset;
+                flex-basis: 121px;
+                height: 90px;
+
+                @include breakpoint(multidesktop) {
+                    flex-basis: 60px;
+                    height: 45px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    flex-basis: 84px;
+                    height: 82px;
+                }
+            }
+
+            @include trap-box-styles(60px, 60px);
+
+            .selection-number {
+                @include breakpoint(multidesktophalf) {
+                    width: 84px;
+                    height: 82px;
+                    font-size: 80px;
+                }
+
+                &.trap__country--uk {
+                    &.trap-6 {
+                        @include trap-number-stripes();
+                    }
+                }
+
+                &.trap__country--aus {
+                    &.trap-2 {
+                        @include trap-number-stripes();
+                    }
+                }
+            }
+        }
+
+        .table-item-2 {
+            font-size: $txt-lg-font-size;
+            flex-basis: 5%;
+            min-width: 5%;
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-md-font-size;
+            }
+        }
+
+        .table-item-3 {
+            font-size: $font-lg-48;
+            flex-basis: 32%;
+            flex: 1;
+
+            @include breakpoint(multidesktop) {
+                font-size: $h2-md-font-size;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-list-lg1-title;
+            }
+
+            &.form-entry {
+                flex-basis: unset;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $h2-md-font-size;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $h4-lg-font-size;
+                }
+            }
+        }
+
+        .table-item-4 {
+            // font-size: $txt-md-font-size;
+            // flex-basis: 25%;
+            // min-width: 25%;
+
+            // @include breakpoint(multidesktop) {
+            //   font-size: $txt-sm-font1-size;
+            // }
+
+            // span {
+            //   padding-left: 20px;
+            // }
+            &.form-entry-count {
+                flex-basis: 770px;
+                background-color: $bg-v-2;
+                font-size: $winning-title-36;
+                flex-grow: inherit;
+
+                &.feature-form-entry-count {
+                    flex-basis: 322px;
+                }
+
+                @include breakpoint(multidesktop) {
+                    font-size: $h3-font-size;
+                    flex-basis: 380px;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $txt-lg-font-size;
+                    flex-basis: 165px;
+                    justify-content: center;
+                }
+
+                .content-price-block {
+                    padding-left: 30px;
+
+                    @include breakpoint(multidesktop) {
+                        padding-left: 15px;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        .table-item-5,
+        .table-item-6 {
+            font-size: $single-list-title;
+            flex-basis: 8%;
+            font-weight: normal;
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-md-font3-size;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $txt-md-font1-size;
+            }
+        }
+
+        .table-item-7,
+        .table-item-8,
+        .table-item-9 {
+            font-size: $font-lg-48;
+            flex-basis: 142px;
+
+            @include breakpoint(multidesktop) {
+                font-size: $h2-md-font-size;
+                flex-basis: 70px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $avr-count-txt-32;
+                flex-basis: 102px;
+            }
+        }
+
+        .table-item-7 {
+            //background-color: $early-price-bg-color;
+            color: $market-price-text;
+
+            &.price-border {
+                border-color: $border-color-drak;
+            }
+
+            &.early-price,
+            &.favorite-box {
+                &.price-border {
+                    border-color: $market-price-text;
+                }
+            }
+        }
+
+        .table-item-8 {
+            background-color: $top-finish-bg-color;
+            color: $market-price-text;
+            margin: 0 5px;
+        }
+
+        .table-item-9 {
+            background-color: $top-finish-bg-color;
+            color: $market-price-text;
+            margin-left: 20px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 10px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-left: 10px;
+            }
+        }
+
+        .table-item-11 {
+            color: $color-p2;
+            margin: 0 5px;
+        }
+
+        .table-item-12 {
+            color: $color-p4;
+            margin-left: 20px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 10px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                margin-left: 10px;
+            }
+        }
+
+        .table-item-10,
+        .table-item-11,
+        .table-item-12 {
+            font-size: $txt-lg-font-size;
+            flex-basis: 142px;
+            background-color: $body-color-p2-lighter-bg;
+
+            @include breakpoint(multidesktop) {
+                flex-basis: 70px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                flex-basis: 102px;
+            }
+        }
+
+        .price-border {
+            border-bottom: 2px solid $market-price-text;
+            box-sizing: border-box;
+
+            @include breakpoint(multidesktop) {
+                border-bottom: 1px solid $market-price-text;
+            }
+        }
+
+        .border-dark {
+            border-bottom: 2px solid $border-color-drak;
+
+            @include breakpoint(multidesktop) {
+                border-width: 1px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                border-width: 1px;
+            }
+        }
+
+        .border-red {
+            border-bottom: 2px solid $color-p2;
+
+            @include breakpoint(multidesktop) {
+                border-width: 1px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                border-width: 1px;
+            }
+        }
+
+        .border-green {
+            border-bottom: 2px solid $color-p4;
+
+            @include breakpoint(multidesktop) {
+                border-width: 1px;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                border-width: 1px;
+            }
+        }
+
+        .favorite-box {
+            background-color: $favorite-box;
+            color: $color-p1-text;
+            // border:2px solid $favorite-border-color;
+        }
+
+        .table-center {
+            justify-content: center;
+        }
+
+        .betting-favourite {
+            background-color: $color-p5;
+        }
+
+        &.runnersSix {
+            @include breakpoint(multidesktophalf) {
+                height: 114px;
+            }
+
+            .table-item-1 {
+                &.traps {
+                    height: 119px;
+
+                    @include breakpoint(multidesktop) {
+                        height: 59px;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        flex-basis: 84px;
+                        height: 113px;
+                    }
+                }
+
+                @include trap-box-styles(81px, 81px, 80px);
+
+                .selection-number {
+                    @include breakpoint(multidesktophalf) {
+                        width: 60px;
+                        height: 60px;
+                        font-size: 58px;
+                    }
+
+                    &.trap__country--uk {
+                        &.trap-6 {
+                            @include trap-number-stripes(16.2px);
+                        }
+                    }
+
+                    &.trap__country--aus {
+                        &.trap-2 {
+                            @include trap-number-stripes(16.2px);
+                        }
+                    }
+                }
+            }
+
+            .table-item-3 {
+                font-size: $txt-lg-title-size;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $txt-lg-font-size;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $font-list-lg1-title;
+                }
+
+                &.form-entry-count {
+                    font-size: $winning-title-36;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-md-font2-size;
+                    }
+                }
+            }
+
+            .content-block {
+                .sub-content {
+                    font-size: $h2-md-font-size;
+
+                    @include breakpoint(multidesktop) {
+                        font-size: $txt-sm-font2-size;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        font-size: $txt-md-font2-size;
+                    }
+                }
+
+                .greyhoundname-with-res {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .table-item-7,
+            .table-item-8,
+            .table-item-9 {
+                font-size: $txt-lg-title-size;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $h2-font-size;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $avr-count-txt-32;
+                }
+            }
+
+            .table-item-5,
+            .table-item-6 {
+                font-size: $single-list-title;
+                font-weight: normal;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $txt-md-font3-size;
+                }
+
+                @include breakpoint(multidesktophalf) {
+                    font-size: $txt-md-font1-size;
+                }
+            }
+        }
+    }
+
+    .content-block {
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+
+        @include breakpoint(multidesktop) {
+            padding-left: 20px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            padding-left: 20px;
+        }
+
+        .sub-content {
+            font-size: $txt-md-font2-size;
+
+            @include breakpoint(multidesktop) {
+                font-size: $txt-xs-font1-size;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $txt-xs-font1-size;
+            }
+        }
+
+        .greyhoundname-with-res {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .early-price {
+        background-color: $early-price-bg-color;
+        color: $market-price-text;
+    }
+
+    .betting-wo {
+        background-color: $betting-wo-bg-color;
+        color: $market-price-text;
+    }
+
+    .top-finish {
+        background-color: $top-finish-bg-color;
+        color: $market-price-text;
+    }
+
+    .favorite-box {
+        background-color: $favorite-box;
+        color: $color-p1-text;
+        //border:2px solid $favorite-border-color !important;
+    }
+
+    .reserved {
+        display: grid;
+        place-items: center;
+        background-color: $primary;
+        color: $white;
+        font-size: $txt-sm-font2-size;
+        margin-left: 20px;
+        width: 109px;
+        height: 37px;
+        font-size: $h2-md-font-size;
+
+        @include breakpoint(multidesktop) {
+            margin-left: 10px;
+            width: 54px;
+            height: 18px;
+            font-size: $txt-sm-font2-size;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            margin-left: 20px;
+            width: 80px;
+            height: 26px;
+            font-size: $txt-md-font-size;
+        }
+    }
+}
+
+.banner-sub-title {
+    .post-pic-logo {
+        display: flex;
+        width: 428px;
+        align-items: center;
+        justify-content: center;
+        border-left: 20px solid $color-p1-bg;
+        background-color: $black;
+
+        img {
+            width: 254px;
+            height: 34px;
+        }
+
+        &.no-post-pic {
+            background-color: $color-p1-bg;
+        }
+    }
+}
+
+.feature-plus-template-right-box {
+    background-color: $white;
+    margin-left: 20px;
+    width: 428px;
+    position: relative;
+
+    &:after {
+        content: '';
+        height: 50px;
+        width: 100%;
+        background-color: $white;
+        position: absolute;
+        bottom: -50px;
+    }
+
+    &-postpick {
+        margin: 0;
+
+        .tip-order {
+            height: 228px;
+
+            .post-tip-img {
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+            }
+
+            img {
+                height: 60px;
+                margin: 0 10px;
+            }
+
+            span {
+                display: flex;
+                padding: 0 10px;
+                align-items: center;
+                justify-content: center;
+                font-size: $h5-lg-font-size;
+
+                &.message-info {
+                    text-align: center;
+                    padding: 24px 47px;
+                }
+            }
+        }
+    }
+
+    .market {
+        display: flex;
+        flex-direction: column;
+        min-height: 228px;
+
+        .market-block {
+            padding-bottom: 60px;
+            margin-top: 20px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        .market-title {
+            font-size: $txt-lg-font1-size;
+            font-weight: 400;
+            background-color: $color-p1-bg;
+            color: $white;
+            display: flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .market-list {
+            display: flex;
+            color: $color-p1;
+            height: 40px;
+            margin: 0 15px 5px;
+            font-size: $txt-lg-font1-size;
+
+            .market-name {
+                display: flex;
+                flex: 1;
+                background-color: $feature-market-bg-color;
+                align-items: center;
+                padding-left: 10px;
+            }
+
+            .market-price {
+                display: flex;
+                min-width: 90px;
+                align-items: center;
+                justify-content: center;
+                background-color: $feature-market-price-bg-color;
+            }
+        }
+    }
+}
+
+.greyhound-table-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: calc(100vh - 350px);
+}
+
+.market-1 {
+    color: $color-p2 !important;
+}
+
+.market-2 {
+    color: $color-p4 !important;
+}
+
+// .info-total {
+//   display: flex;
+//   justify-content: flex-end;
+//   font-size: 20px;
+//   margin: 0px !important;
+
+//   .places {
+//     flex-basis: 8%;
+//     color: $color-p2;
+//     text-align: center;
+//     margin: 0px;
+//   }
+
+//   .places.standardPlus1 {
+//     color: $color-p4;
+//   }
+
+//   // .wins {
+//   //   flex-basis: 8%;
+//   //   min-width: 8%;
+//   //   color: $color-p4;
+//   //   text-align: center;
+//   //   margin-left: 5px;
+//   // }
+
+//   .wins.standardPlus2 {
+//     color: $color-p2;
+//   }
+// }
+
+.blinking-first {
+    animation: 5s cubic-bezier(1, -1.7, 0, 3.66) 0s infinite normal blinker-hide; //blinker 1s linear infinite;
+}
+
+.blinking-second {
+    opacity: 0;
+    animation: 5s cubic-bezier(1, -1.7, 0, 3.66) 0s infinite normal blinker-show;
+}
+
+@keyframes blinker-hide {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes blinker-show {
+    100% {
+        opacity: 1;
+    }
+}
+
+.post-pic-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 53px;
+    background-color: $white;
+    height: 135px;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(multidesktophalf) {
+        position: relative;
+        z-index: 9;
+    }
+
+    .post-pic-logo {
+        .c-logo {
+            height: 28px;
+        }
+    }
+
+    .tip-order {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        img {
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        .nan {
+            display: flex;
+            margin: 0 10px;
+            font-size: $txt-md-font2-size;
+        }
+    }
+}
+
+.screen {
+    display: flex;
+    justify-content: space-between;
+}
+
+.odds {
+    font-size: 30px;
+    background: rgb(0, 71, 121);
+    margin-top: 20px;
+    color: white;
+    padding: 10px 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.inside {
+    font-size: 30px;
+    background: rgb(0, 71, 121);
+    margin-top: 20px;
+    color: white;
+    padding: 10px 10px;
+}
+
+.nab {
+    align-self: start;
+    margin-left: 60px;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.price {
+    display: flex;
+    margin: 0 10px;
+}
+
+.screen {
+    .greyhound-table {
+        .table-item-4 {
+            &.form-entry-count {
+                flex-basis: 322px;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import '../../../dark-theme-global-style/_all-variables.scss';
+
+.dash-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: fill;
+    object-fit: fill;
+    -o-object-position: center;
+    object-position: center;
+    z-index: 1;
+}

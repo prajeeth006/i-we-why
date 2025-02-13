@@ -1,0 +1,34 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsCardComponentStories from '../card.component.stories';
+
+### Example With Standalone
+
+<Canvas of={DsCardComponentStories.Default} />
+
+### Example With Card Header
+
+<Canvas of={DsCardComponentStories.WithCardHeader} />
+
+### Example with noOverflow
+
+<Canvas of={DsCardComponentStories.noOverflow} />
+
+### Example with noBorder
+
+<Canvas of={DsCardComponentStories.noBorder} />
+
+### Example with noBorderRadius
+
+<Canvas of={DsCardComponentStories.noBorderRadius} />
+
+### Example with hover
+
+<Canvas of={DsCardComponentStories.WithHover} />
+
+### Example With Header, Content and Footer
+
+-   Description: By default, card container has no padding applied. It can be used as a standalone one in order to place other components inside, like accordion, list items, image etc. However, DsCard provides header, content and footer for padding and surface styles.
+
+<Canvas of={DsCardComponentStories.WithCardHeaderContentFooter} />

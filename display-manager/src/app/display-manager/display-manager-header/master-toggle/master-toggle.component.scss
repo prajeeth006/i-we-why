@@ -1,0 +1,92 @@
+@import '../../../shared-css/variables.scss';
+
+::ng-deep {
+    .header-actions-right {
+        display: flex;
+        align-items: center;
+
+        .master-toggle {
+            font-family: $default-font;
+            margin: 0 16px;
+            padding: 0 10px;
+
+            .mat-mdc-slide-toggle.mat-accent .mdc-form-field {
+                padding-bottom: 0;
+            }
+
+            .mdc-label {
+                align-items: center;
+                color: $white;
+                display: flex;
+
+                font: {
+                    size: 12px;
+                    style: normal;
+                    weight: 500;
+                }
+
+                gap: 5px;
+                letter-spacing: 1.25px;
+                line-height: normal;
+                margin-right: 10px;
+                text-transform: uppercase;
+            }
+
+            .mdc-switch__icons {
+                display: none;
+            }
+
+            .mdc-switch {
+                .mdc-switch__track {
+                    &::before {
+                        background-color: #E5E5E5;
+                    }
+                }
+
+                .mdc-switch__shadow {
+                    transform: scale(1.1);
+                }
+
+                &:enabled {
+
+                    &:focus:not(:active) .mdc-switch__track::before,
+                    &:hover:not(:focus):not(:active) .mdc-switch__track::before {
+                        background-color: #E5E5E5;
+                    }
+                }
+
+                &.mdc-switch--unselected {
+                    .mdc-elevation-overlay {
+                        background-color: $white;
+                    }
+                    &.mdc-switch--disabled {
+                        .mdc-switch__handle::before{
+                            background: $white;
+                        }
+                    }
+                }
+
+                &.mdc-switch--selected {
+                    .mdc-elevation-overlay {
+                        background-color: $btn-success-bg;
+                    }
+                    &.mdc-switch--disabled {
+                        .mdc-switch__handle::before{
+                            background: $btn-success-bg;
+                        }
+                    }
+                }
+                &.mdc-switch--disabled {
+                    .mdc-switch__track{
+                        opacity: 1;
+                    }
+                }
+            }
+            &.disabled{
+                .mdc-switch.mdc-switch--disabled{
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}

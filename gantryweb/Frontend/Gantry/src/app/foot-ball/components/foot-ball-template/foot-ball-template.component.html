@@ -1,0 +1,51 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <ng-container *ngIf="!(errorMessage$ | async)">
+    <gn-base-page>
+      <ng-container header-content>
+        <gn-banner
+          [leadTitle]="vm.marketResult.leadTitle"
+          [title]="vm.marketResult.eventName"
+          [subtitleLeft]="vm.marketResult.eventDateTime | sportEventDateFormat: vm.gantryCommonContent"
+          [subtitleRight]="vm.marketResult.subTitleRight"
+        >
+        </gn-banner>
+      </ng-container>
+
+      <ng-container body-content>
+        <div *ngIf="!isNFLPage && !isRugbyPage">
+          <gn-match-result [market]="vm.marketResult.matchResult"></gn-match-result>
+          <gn-first-goalscorer [market]="vm.marketResult.firstGoalScorer"></gn-first-goalscorer>
+          <gn-correct-score [market]="vm.marketResult.correctScore"></gn-correct-score>
+          <gn-totalgoalsinthematch [content]="vm.content" [market]="vm.marketResult.totalGoalsInTheMatch">
+          </gn-totalgoalsinthematch>
+          <gn-bothteamsto-score [market]="vm.marketResult.bothTeamsToScore"></gn-bothteamsto-score>
+          <gn-matchresult-bothteamstoscore [market]="vm.marketResult.matchResultBothTeamsToScore">
+          </gn-matchresult-bothteamstoscore>
+        </div>
+        <div *ngIf="isNFLPage && !isRugbyPage">
+          <gn-money-line [market]="vm.marketResult.moneyLine"></gn-money-line>
+          <gn-handicap-betting [market]="vm.marketResult.handicapBetting"></gn-handicap-betting>
+          <gn-winning-margin [market]="vm.marketResult.winningMargin"></gn-winning-margin>
+          <gn-first-touchdown-scorer [market]="vm.marketResult.firstTouchdownScorer"> </gn-first-touchdown-scorer>
+        </div>
+        <div
+          *ngIf="isRugbyPage && !isNFLPage"
+          [ngClass]="{ 'rugby-container': vm.marketResult.TotalPoints?.leftBetList?.length > 0 }"
+        >
+          <gn-match-result [market]="vm.marketResult.matchResult" [isRugbyPage]="isRugbyPage"> </gn-match-result>
+          <gn-handicap-betting [market]="vm.marketResult.handicapBetting" [isRugbyPage]="isRugbyPage"> </gn-handicap-betting>
+          <gn-handicap-betting [market]="vm.marketResult.TotalPoints" [isRugbyPage]="isRugbyPage"> </gn-handicap-betting>
+          <gn-handicap-betting [market]="vm.marketResult.FirstHalfHandicap" [isRugbyPage]="isRugbyPage"> </gn-handicap-betting>
+          <gn-halftime-fulltime [market]="vm.marketResult.halfOrFullTime"></gn-halftime-fulltime>
+        </div>
+      </ng-container>
+
+      <ng-container footer-content>
+        <gn-footer [leftSideText]="vm.marketResult.leftStipulatedLine" [rightSideText]="vm.marketResult.rightStipulatedLine">
+        </gn-footer>
+      </ng-container>
+    </gn-base-page>
+  </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

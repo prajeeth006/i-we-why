@@ -1,0 +1,33 @@
+@mixin shared {
+    --ds-card-footer-size-divider-height: var(--semantic-size-x4);
+    --ds-card-footer-size-min-height: var(--semantic-size-x11);
+    --ds-card-footer-space-inline: var(--semantic-spacing-inline-md);
+    --ds-card-footer-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-card-footer-space-padding-left: var(--semantic-spacing-container-padding-xl);
+    --ds-card-footer-space-padding-right: var(--semantic-spacing-container-padding-xl);
+    --ds-card-footer-space-padding-top: var(--semantic-spacing-container-padding-lg);
+}
+
+@mixin surface-high {
+    --ds-card-footer-active-color-background: var(--semantic-color-surface-container-high-active);
+    --ds-card-footer-enabled-color-background: var(--semantic-color-surface-container-high-base);
+    --ds-card-footer-hover-color-background: var(--semantic-color-surface-container-high-hover);
+}
+
+@mixin surface-highest {
+    --ds-card-footer-active-color-background: var(--semantic-color-surface-container-highest-active);
+    --ds-card-footer-enabled-color-background: var(--semantic-color-surface-container-highest-base);
+    --ds-card-footer-hover-color-background: var(--semantic-color-surface-container-highest-hover);
+}
+
+@mixin surface-low {
+    --ds-card-footer-active-color-background: var(--semantic-color-surface-container-low-active);
+    --ds-card-footer-enabled-color-background: var(--semantic-color-surface-container-low-base);
+    --ds-card-footer-hover-color-background: var(--semantic-color-surface-container-low-hover);
+}
+
+@mixin surface-lowest {
+    --ds-card-footer-active-color-background: var(--semantic-color-surface-container-lowest-active);
+    --ds-card-footer-enabled-color-background: var(--semantic-color-surface-container-lowest-base);
+    --ds-card-footer-hover-color-background: var(--semantic-color-surface-container-lowest-hover);
+}

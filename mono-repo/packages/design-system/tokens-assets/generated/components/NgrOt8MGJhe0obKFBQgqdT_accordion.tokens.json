@@ -1,0 +1,2084 @@
+{
+    "accordion": {
+        "shared": {
+            "size": {
+                "min-height": {
+                    "$extensions": {
+                        "com.entaingroup.ext-figma": {
+                            "collection": "accordion",
+                            "status": "active"
+                        }
+                    },
+                    "$value": "{semantic.size.x11}"
+                }
+            },
+            "space": {
+                "content": {
+                    "padding-bottom": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    },
+                    "padding-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    },
+                    "padding-right": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    },
+                    "padding-top": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    }
+                },
+                "header": {
+                    "inline": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.inline.md}"
+                    },
+                    "padding-bottom": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-sm}"
+                    },
+                    "padding-left": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    },
+                    "padding-right": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-xl}"
+                    },
+                    "padding-top": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.spacing.container.padding-sm}"
+                    }
+                }
+            }
+        },
+        "surface-high": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.highest.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "surface-high-inverse": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.high.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        },
+        "surface-highest": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.highest.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.highest.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.highest.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.highest.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "surface-highest-inverse": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.highest.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.highest.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.highest.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.highest.base-inverse}"
+                    },
+                    "icon-2": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        },
+        "surface-low": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "surface-low-inverse": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.low.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        },
+        "surface-lowest": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.lowest.active}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.outline.lowest.hover}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "surface-lowest-inverse": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.surface.container.lowest.base-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        },
+        "transparent": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base}"
+                    }
+                }
+            }
+        },
+        "transparent-inverse": {
+            "active": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.active-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "enabled": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "hover": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.hover-inverse}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            },
+            "selected": {
+                "color": {
+                    "background": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.opacity.transparent}"
+                    },
+                    "icon": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.utility.base-inverse}"
+                    },
+                    "subtitle": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.subtle-inverse}"
+                    },
+                    "text": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    },
+                    "title": {
+                        "$extensions": {
+                            "com.entaingroup.ext-figma": {
+                                "collection": "accordion",
+                                "status": "active"
+                            }
+                        },
+                        "$value": "{semantic.color.on-surface.base-inverse}"
+                    }
+                }
+            }
+        }
+    }
+}

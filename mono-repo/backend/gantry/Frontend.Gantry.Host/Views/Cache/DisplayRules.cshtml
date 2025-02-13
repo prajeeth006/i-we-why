@@ -1,0 +1,172 @@
+﻿@using Frontend.Gantry.Shared.Core.Models.Services.SiteCore
+
+@model Dictionary<string, List<Frontend.Gantry.Shared.Core.Models.Services.SiteCore.SiteCoreDisplayRuleItemDetails>>
+
+@{
+    Layout = null;//"../Shared/MobileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cache - Display Rules</title>
+    <base href="/" />
+    <style>
+        .table-row {
+            display: flex;
+        }
+
+            .table-row.table-row-key {
+                margin-top: 30px;
+            }
+
+            .table-row .cache-key {
+                -ms-flex-basis: 100%;
+                -o-flex-basis: 100%;
+                -webkit-flex-basis: 100%;
+                flex-basis: 100%;
+                font-size: 25px;
+                font-weight: bold;
+                text-align: center;
+                background-color: rgba(67, 95, 189, 0.26);
+                padding: 5px;
+            }
+
+            .table-row.table-row-header {
+                border-bottom: solid #011E55 1px;
+            }
+
+            .table-row .cache-header-item {
+                -ms-flex-basis: 12%;
+                -o-flex-basis: 12%;
+                -webkit-flex-basis: 12%;
+                flex-basis: 12%;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 5px;
+            }
+
+            .table-row .cache-item {
+                -ms-flex-basis: 12%;
+                -o-flex-basis: 12%;
+                -webkit-flex-basis: 12%;
+                flex-basis: 12%;
+                font-size: 14px;
+                word-break: break-all;
+                padding: 5px;
+            }
+
+	        .norecords {
+	            width: 100%;
+	            margin: 0 auto;
+	            text-align: center;
+	            margin-top: 10px;
+	        }
+	        .leftAlign {
+	            float: left;
+	        }
+	        .rightAlign {
+	            float: right;
+	        }
+    </style>
+    @*<script type="application/javascript">
+          var global = window;
+        </script>*@
+    @*@Html.RenderBootstrapAssets(BootstrapAssetSection.Head)*@
+</head>
+<body>
+    <h1>Display Rules Cache</h1>
+    <div style="height: 10px;">
+        <div class="leftAlign">
+            <input type="button"
+                   value="Cache"
+                   onclick="location.href = '@Url.Action("GetDisplayRules", "Cache")'" />
+            <input type="button"
+                   value="Reinitialize Cache"
+                   onclick="location.href = '@Url.Action("ReInitializeCache", "Cache")'" />
+        </div>
+        <div class="rightAlign">
+        
+            @using (Html.BeginForm("GetCacheRuleItem", "Cache", FormMethod.Get ))
+            {
+                <input type="text" id="ruleId" name="ruleId" placeholder="Search with Cache key (Rule Item ID)"/>
+                <input type="submit"/>
+            }
+        </div>
+    </div>
+
+
+    <div class="cache-table">
+        
+        
+        @if (Model.Count <= 0)
+        {
+            <div class="norecords">No Items fount with given Cache Key</div>
+        }
+
+
+        @foreach (KeyValuePair<string, List<SiteCoreDisplayRuleItemDetails>> cacheKeyValues in Model.OrderBy(k => k.Key))
+        {
+            <div>
+
+                @if (@cacheKeyValues.Value != null)
+                {
+                    <div class="table-row table-row-key">
+                        <div class="cache-key">@cacheKeyValues.Key (@cacheKeyValues.Value.Count)</div> <br/>
+                    </div>
+                }
+                else
+                {
+                    <div class="table-row table-row-key">
+                        <div class="cache-key">@cacheKeyValues.Key</div> <br/>
+                    </div>
+                }
+                <div>
+                    <div class="table-row table-row-header">
+                        <div class="cache-header-item">DisplayRuleItemId</div>
+                        <div class="cache-header-item">TargetItemId</div>
+                        <div class="cache-header-item">TargetItemPath</div>
+                        <div class="cache-header-item">LastUpdated</div>
+                        <div class="cache-header-item">ScreenInShop</div>
+                        <div class="cache-header-item">GantryType</div>
+                        <div class="cache-header-item">ViewGroup</div>
+                        <div class="cache-header-item">ViewId</div>
+                        <div class="cache-header-item">ShopId</div>
+                        <div class="cache-header-item">Location</div>
+                        <div class="cache-header-item">DeviceId</div>
+                        <div class="cache-header-item">Brand</div>
+                        <div class="cache-header-item">TypeName</div>
+                        <div class="cache-header-item">GroupsNames</div>
+                    </div>
+                    @if (cacheKeyValues.Value != null)
+                    {
+                        //foreach (var displayRuleItem in cacheKeyValues.Value.OrderByDescending(item => item.Updated))
+                        foreach (var displayRuleItem in cacheKeyValues.Value)
+                        {
+                            <div class="table-row">
+                                <div class="cache-item">@displayRuleItem.DisplayRuleItemId</div>
+                                <div class="cache-item">@displayRuleItem.TargetItemId</div>
+                                <div class="cache-item">@displayRuleItem.TargetItemPath</div>
+                                <div class="cache-item">@displayRuleItem.Updated</div>
+                                <div class="cache-item">@displayRuleItem.ScreenInShop</div>
+                                <div class="cache-item">@displayRuleItem.GantryType</div>
+                                <div class="cache-item">@displayRuleItem.ViewGroup</div>
+                                <div class="cache-item">@displayRuleItem.ViewId</div>
+                                <div class="cache-item">@displayRuleItem.ShopId</div>
+                                <div class="cache-item">@displayRuleItem.Location</div>
+                                <div class="cache-item">@displayRuleItem.DeviceId</div>
+                                <div class="cache-item">@displayRuleItem.Brand</div>
+                                <div class="cache-item">@displayRuleItem.TypeName</div>
+                                <div class="cache-item">@string.Join(", ", displayRuleItem.GroupsNames)</div>
+                            </div>
+                        }
+                    }
+                </div>
+
+            </div>
+        }
+    </div>
+</body>
+</html>

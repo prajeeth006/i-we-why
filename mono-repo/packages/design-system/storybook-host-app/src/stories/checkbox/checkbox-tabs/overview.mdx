@@ -1,0 +1,103 @@
+import { Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import * as CheckboxComponentStories from '../checkbox.component.stories';
+
+The ds-checkbox component is a checkbox element that supports various states and behaviors such as checked, unchecked, indeterminate, and disabled. It also allows for optional label text by simply placing it between the tags.
+
+<Canvas of={CheckboxComponentStories.WithLabel} />
+
+## Usage
+
+Import `DsCheckbox` in your component.
+
+```ts
+import { DsCheckbox } from '@frontend/ui/checkbox'; // 👈 add to file imports
+
+@Component({
+    imports: [DsCheckbox], // 👈 add to component imports
+    template: `...`,
+})
+export class AppComponent {}
+```
+
+### Inputs
+
+-   checked (boolean): Determines if the checkbox is checked.
+-   indeterminate (boolean): Determines if the checkbox is in an indeterminate state.
+-   disabled (boolean): Determines if the checkbox is disabled. Default value is false.
+-   size (DsCheckboxSize): Determines the size of the checkbox. Possible values are 'small' and 'large'. Default value is large.
+-   ariaLabel (string): Sets the aria-label attribute for accessibility.
+-   ariaLabelledby (string): Sets the aria-labelledby attribute for accessibility.
+-   ariaDescribedby (string): Sets the aria-describedby attribute for accessibility.
+
+### Outputs
+
+-   checkedChange (EventEmitter): Emits when the checked state of the checkbox changes.
+
+## NgModelExample
+
+### FormsModule with ngModel
+
+The `FormsModule` is used to work with template-driven forms in Angular. It provides the ngModel directive, which is used for two-way data binding, allowing you to synchronize the `form controls` values with the component's properties.
+
+```ts
+import { FormsModule } from '@angular/forms'; // 👈 add to file imports
+```
+
+```html
+<form>
+    <ds-checkbox
+        [(ngModel)]="value"
+        name="checkBox"
+        [checked]="${args.checked}"
+        [indeterminate]="${args.checked ? false : args.indeterminate}"
+        [disabled]="${args.disabled}"
+        size="${args.size}"
+        >label</ds-checkbox
+    >
+</form>
+```
+
+### In this story:
+
+-   The FormsModule is imported to enable template-driven forms.
+-   The checkBox component uses \[(ngModel)] for two-way binding to the value property in the component.
+-   The name attribute is set on the dscheckbox for form control name.
+
+{' '}
+
+<Canvas of={CheckboxComponentStories.NgModelExample} />
+
+## ReactiveFormsExample
+
+### ReactiveFormsModule with Reactive Forms
+
+The `ReactiveFormsModule` is used to work with reactive forms in Angular. It provides a model-driven approach to handling form inputs, making it easier to manage and validate form state.
+
+```ts
+import { ReactiveFormsModule } from '@angular/forms'; // 👈 add to file imports
+```
+
+```html
+<form [formGroup]="form">
+    <ds-checkbox
+        [value]="value"
+        (valueChange)="value = $event"
+        formControlName="checkBox"
+        [checked]="${args.checked}"
+        [indeterminate]="${args.checked ? false : args.indeterminate}"
+        [disabled]="${args.disabled}"
+        size="${args.size}"
+        >label</ds-checkbox
+    >
+</form>
+```
+
+### In this story:
+
+-   The ReactiveFormsModule is imported to enable reactive forms.
+-   A FormGroup with a FormControl is created and initialized with the value argument.
+-   The formGroup directive binds the form in the template to the form property in the component.
+-   The formControlName directive is used on the ds-checkbox to bind it to the checkBox form control.
+-   The \[value] binding and (valueChange) event work similarly to the template-driven approach but are managed within the reactive form model
+
+<Canvas of={CheckboxComponentStories.ReactiveFormsExample} />

@@ -1,0 +1,15 @@
+<div class="banner">
+    <div id="banner" class="banner-title-block">
+      <div class="banner-title-block-left">
+          <div><img class="banner-logo" src="" height="50vh" /></div>
+          <div id="leadTitle" class="lead-title" *ngIf="leadTitle">
+            {leadTitle}
+          </div>
+      </div>
+      <div class="banner-title-block-right">          
+          <div id="earlyPrice" class="early-price" *ngIf="stage">Early Price</div>
+          <div id="top3Finish" class="top-3-finish" *ngIf="">Top 3 finish</div>
+      </div>
+      <ng-content></ng-content>
+</div>  
+<!-- *ngIf="imageRight" [retrySrc]="imageRight" -->

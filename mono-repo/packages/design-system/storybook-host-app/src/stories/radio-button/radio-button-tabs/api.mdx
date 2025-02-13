@@ -1,0 +1,66 @@
+import { ArgTypes, Canvas, Controls, Meta, Story } from '@storybook/blocks';
+import { Source } from '@storybook/blocks';
+
+import * as DsRadioButtonStories from '../radio-button.component.stories';
+
+## Testing with TestHarness
+
+To test the `DsRadioButton` and `DsRadioGroup` components, you can use Angular's TestHarness. Here's a brief overview of how to set it up and use it:
+
+-   Creating the TestHarness for DsRadioButton:
+    Create a custom harness class (DsRadioButtonHarness) that extends ComponentHarness.
+    Define methods to interact with and verify the state of the radio button, such as checking if it is selected or disabled.
+
+    ```html
+    export class DsRadioButtonHarness extends ComponentHarness { static hostSelector = 'ds-radio-button'; private radioInput =
+    this.locatorFor('input[type="radio"]'); async isSelected(): Promise<boolean>
+        { return (await this.radioInput()).getProperty('checked'); } }</boolean
+    >
+    ```
+
+-   Creating the TestHarness for DsRadioGroup:
+    Create another harness class (DsRadioGroupHarness) that also extends ComponentHarness.
+    This class should include methods to retrieve the list of radio buttons within the group, get the group's value, and select a specific radio button based on its value.
+    Define one more method to verify the size of radio group, such as large or small.
+
+    ```html
+    export class DsRadioGroupHarness extends ComponentHarness { static hostSelector = 'ds-radio-group'; private radioButtons =
+    this.locatorForAll(DsRadioButtonHarness); async getRadioButtons(): Promise<DsRadioButtonHarness[]>
+        { return this.radioButtons(); } async selectRadioButton(index: number): Promise<void>
+            { const radioButtons = await this.getRadioButtons(); return radioButtons[index].select(); } }</void
+        ></DsRadioButtonHarness[]
+    >
+    ```
+
+-   Writing Tests:
+    Set up the test environment using Angular's testing utilities.
+    Use the harnesses to interact with the DsRadioButton and DsRadioGroup components within your tests.
+    For example, you can write tests to select a radio button by its value and verify its state.
+
+```html
+it('should check the correct radio button', async () => { const radioGroup = await loader.getHarness(DsRadioGroupHarness); await
+radioGroup.selectRadioButton(1); const radioButtons = await radioGroup.getRadioButtons(); expect(await radioButtons[1].isSelected()).toBe(true); });
+```
+
+### ControlValueAccessor
+
+The `ControlValueAccessor` interface is used in Angular to create custom form controls that integrate seamlessly with Angular's forms API. It allows a custom component to act like a form control, making it compatible with both template-driven forms and reactive forms. When a component implements ControlValueAccessor, it can participate in Angular's form binding and validation mechanisms.
+
+-   `writeValue(obj: any): void`:
+    This method is called by Angular to write a value to the component. It's used to set the value of the custom form control from the model (e.g., when the form is initialized or when the model changes).
+
+-   `registerOnChange(fn: any): void`:
+    This method is called by Angular to register a callback function that should be called when the value of the component changes in the UI. This function is responsible for updating the form model when the component's value changes.
+
+-   `registerOnTouched(fn: any): void`:
+    This method is called by Angular to register a callback function that should be called when the control is touched (e.g., when the user interacts with the control). This function is responsible for marking the control as touched in the form model
+
+-   `setDisabledState?(isDisabled: boolean): void`:
+    This method is called by Angular to enable or disable the component. This function updates the component's disabled state.
+
+## Features
+
+-   **Two-State Representation**: The radio button component visually represents two states, commonly "selected" and "unselected".
+-   **Event Binding**: Emits events on state change, enabling the parent component or service to respond to user interactions.
+-   **Data Binding**: Supports Angular's two-way data binding to keep the model and the view in sync.
+-   **Disabled State**: Can be rendered in a disabled state where user interaction is prevented.

@@ -1,0 +1,18 @@
+@page "/info/{UrlPath}"
+@inherits InfoDetailsPageComponent
+
+<PageLayout Title="@(Model?.Name ?? "Loading...")" SubtitleLink="@(("info", "Info Page"))" LoadChildContent="LoadAsync">
+    <div class="description">
+        <p>
+            @Model.ShortDescription
+        </p>
+        @if (Model.DescriptionHtml != null)
+        {
+            @((MarkupString)Model.DescriptionHtml)
+        }
+    </div>
+    <hr/>
+    <div class="details">
+        <JsonViewer Model="Model.DetailsJson"/>
+    </div>
+</PageLayout>

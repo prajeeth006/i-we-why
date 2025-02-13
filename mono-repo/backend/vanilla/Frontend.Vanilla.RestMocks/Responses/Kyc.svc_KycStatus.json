@@ -1,0 +1,42 @@
+{
+    "accountStatus": -1,
+    "additionalKycInfo": [
+        {
+            "key": "Unknown",
+            "value": "Unknown"
+        }
+    ],
+    "addressVerificationStatus": "Unknown",
+    "ageVerificationGraceDays": 0,
+    "ageVerificationStatus": "Unknown",
+    "amlVerificationStatus": "Unknown",
+    "bankIdVerificationStatus": -1,
+    "blackListVerificationStatus": "Unknown",
+    "createDate": "/Date(1359694800000)/",
+    "custom3": "verified",
+    "custom4": "valid",
+    "depositGraceDays": 10,
+    "emailVerificationStatus": 2,
+    "f2FVerificationRequired": false,
+    "graceDaysBeforeNextAction": -1,
+    "graceDaysUnit": null,
+    "idVerificationGraceDays": 0,
+    "idVerificationGracePeriod": "/Date(1359694800000)/",
+    "idVerificationStatus": "Unknown",
+    "isKycStarted": false,
+    "kycAttempts": 0,
+    "kycMaxAttempts": 0,
+    "kycMaxAttemptsReached": false,
+    "kycVerified": false,
+    "partiallyVerified": false,
+    "personalIdVerificationStatus": -1,
+    "secretPinVerificationStatus": -1,
+    "ssnVerificationAttempts": 0,
+    "ssnVerificationMaxAttempts": 0,
+    "ssnVerificationMaxAttemptsReached": false,
+    "ssnVerificationStatus": "Unknown",
+    "thirdPartyVerificationStatus": "Unknown",
+    "verificationDaysLeft": -1,
+    "verificationStatus": 0,
+    "verificationType": -1
+}

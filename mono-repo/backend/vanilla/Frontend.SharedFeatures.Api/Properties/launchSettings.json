@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "profiles": {
+        "Frontend.SharedFeatures.Api-vanilla.intranet": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": true,
+            "applicationUrl": "https://vanilla.intranet.shared-features-api.frontend-dev.aws.local:666",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "dev",
+                "VANILLA_HOSTING_PLATFORM": "AKS",
+                "VANILLA_LABEL_RESOLUTION": "1",
+                "VANILLA_DEV_MODE_ENABLED": "true"
+            }
+        },
+        "Frontend.SharedFeatures.Api-bwin.com": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": true,
+            "applicationUrl": "https://bwin.com.shared-features-api.frontend-dev.aws.local:666",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "dev",
+                "VANILLA_LABEL_RESOLUTION": "1",
+                "VANILLA_DEV_MODE_ENABLED": "true"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+    <PropertyGroup>
+        <StaticWebAssetBasePath>health</StaticWebAssetBasePath>
+        <AssemblyName>DiagnosticsHealth</AssemblyName>
+        <CacheBuster>1.0</CacheBuster>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="BlazorStrap" />
+        <PackageReference Include="BlazorStrap.V4" />
+        <PackageReference Include="BlazorStrap.Extensions.TreeView"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.WebUtilities" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Diagnostics.Contracts\Frontend.Vanilla.Diagnostics.Contracts.csproj"/>
+    </ItemGroup>
+    <Target Name="CopySpaArtifacts">
+        <Exec
+                Command="dotnet publish -c Release -o $(ProjectDir)..\Frontend.Vanilla.Features\SpaFiles"
+                ConsoleToMSBuild="True"
+                IgnoreExitCode="False"
+        >
+        </Exec>
+    </Target>
+</Project>

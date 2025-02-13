@@ -1,0 +1,38 @@
+{
+    "accountStatus": -1,
+    "addressVerificationStatus": "Unknown",
+    "ageVerificationGraceDays": 0,
+    "ageVerificationStatus": "Unknown",
+    "amlVerificationStatus": "Unknown",
+    "bankIdVerificationStatus": -1,
+    "blackListVerificationStatus": "Unknown",
+    "depositGraceDays": 10,
+    "emailVerificationStatus": 2,
+    "f2FVerificationRequired": false,
+    "graceDaysBeforeNextAction": -1,
+    "graceDaysUnit": null,
+    "idVerificationGraceDays": 0,
+    "idVerificationStatus": "Unknown",
+    "isKycStarted": false,
+    "kycAttempts": 0,
+    "kycMaxAttempts": 0,
+    "kycMaxAttemptsReached": false,
+    "kycVerified": true,
+    "partiallyVerified": false,
+    "personalIdVerificationStatus": -1,
+    "secretPinVerificationStatus": -1,
+    "ssnVerificationAttempts": 0,
+    "ssnVerificationMaxAttempts": 0,
+    "ssnVerificationMaxAttemptsReached": false,
+    "ssnVerificationStatus": "Unknown",
+    "verificationDaysLeft": -1,
+    "verificationStatus": 0,
+    "verificationType": -1,
+    "custom3": "true",
+    "additionalKycInfo": [
+        {
+            "key": "Unknown",
+            "value": "Unknown"
+        }
+    ]
+}

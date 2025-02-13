@@ -1,0 +1,232 @@
+@mixin default {
+    --ds-range-selector-handle-active-color-color: var(--semantic-color-utility-active);
+    --ds-range-selector-handle-disabled-color-color: var(--semantic-color-disabled-base);
+    --ds-range-selector-handle-enabled-color-color: var(--semantic-color-utility-base);
+    --ds-range-selector-handle-hover-color-color: var(--semantic-color-utility-hover);
+    --ds-range-selector-label-color-disabled: var(--semantic-color-disabled-base);
+    --ds-range-selector-label-color-enabled: var(--semantic-color-on-surface-base);
+    --ds-range-selector-stop-disabled-color-background: var(--semantic-color-on-disabled-base);
+    --ds-range-selector-stop-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    --ds-range-selector-stop-enabled-color-background: var(--semantic-color-on-surface-subtle);
+    --ds-range-selector-stop-enabled-color-foreground: var(--semantic-color-on-utility-base);
+    --ds-range-selector-track-disabled-color-background: var(--semantic-color-disabled-base);
+    --ds-range-selector-track-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    --ds-range-selector-track-enabled-color-background: var(--semantic-color-on-surface-divider);
+    --ds-range-selector-track-enabled-color-foreground: var(--semantic-color-utility-base);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin handle {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-active-color-color: var(--semantic-color-utility-active);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-active-color-color: var(--semantic-color-utility-active);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-disabled-color-color: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-enabled-color-color: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-hover-color-color: var(--semantic-color-utility-hover);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-color: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-color: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-hover-color-color: var(--semantic-color-utility-hover);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-active-color-color: var(--semantic-color-utility-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-disabled-color-color: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-enabled-color-color: var(--semantic-color-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-hover-color-color: var(--semantic-color-utility-hover-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-size-height: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-size-width: var(--semantic-size-x6);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin handle-inverse {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-active-color-color: var(--semantic-color-utility-active-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-color: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-color: var(--semantic-color-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-hover-color-color: var(--semantic-color-utility-hover-inverse);
+}
+
+@mixin inverse {
+    --ds-range-selector-handle-active-color-color: var(--semantic-color-utility-active-inverse);
+    --ds-range-selector-handle-disabled-color-color: var(--semantic-color-disabled-base-inverse);
+    --ds-range-selector-handle-enabled-color-color: var(--semantic-color-utility-base-inverse);
+    --ds-range-selector-handle-hover-color-color: var(--semantic-color-utility-hover-inverse);
+    --ds-range-selector-label-color-disabled: var(--semantic-color-disabled-base-inverse);
+    --ds-range-selector-label-color-enabled: var(--semantic-color-on-surface-base-inverse);
+    --ds-range-selector-stop-disabled-color-background: var(--semantic-color-on-disabled-base-inverse);
+    --ds-range-selector-stop-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    --ds-range-selector-stop-enabled-color-background: var(--semantic-color-on-surface-subtle-inverse);
+    --ds-range-selector-stop-enabled-color-foreground: var(--semantic-color-on-utility-base-inverse);
+    --ds-range-selector-track-disabled-color-background: var(--semantic-color-disabled-base-inverse);
+    --ds-range-selector-track-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    --ds-range-selector-track-enabled-color-background: var(--semantic-color-on-surface-divider-inverse);
+    --ds-range-selector-track-enabled-color-foreground: var(--semantic-color-utility-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin label {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-color-disabled: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-color-enabled: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-color-disabled: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-color-enabled: var(--semantic-color-on-surface-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-color-disabled: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-color-enabled: var(--semantic-color-on-surface-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin label-inverse {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-color-disabled: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-color-enabled: var(--semantic-color-on-surface-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin radius {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-track-border: var(--semantic-radius-max);
+}
+
+@mixin shared {
+    --ds-range-selector-radius-track-border: var(--semantic-radius-max);
+    --ds-range-selector-size-handle-height: var(--semantic-size-x6);
+    --ds-range-selector-size-handle-width: var(--semantic-size-x6);
+    --ds-range-selector-size-stop-height: var(--semantic-size-xhalf);
+    --ds-range-selector-size-stop-width: var(--semantic-size-xhalf);
+    --ds-range-selector-size-track-bar-height: var(--semantic-size-x1);
+    --ds-range-selector-space-inline: var(--semantic-spacing-inline-lg);
+    --ds-range-selector-space-padding-bottom: var(--semantic-spacing-container-padding-lg);
+    --ds-range-selector-space-padding-left: var(--semantic-spacing-container-padding-lg);
+    --ds-range-selector-space-padding-right: var(--semantic-spacing-container-padding-lg);
+    --ds-range-selector-space-padding-top: var(--semantic-spacing-container-padding-lg);
+    --ds-range-selector-space-stack: var(--semantic-spacing-stack-md);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin size {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-handle-height: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-handle-width: var(--semantic-size-x6);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-stop-height: var(--semantic-size-xhalf);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-stop-width: var(--semantic-size-xhalf);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-track-bar-height: var(--semantic-size-x1);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin stop {
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-disabled-color-background: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-enabled-color-background: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-enabled-color-foreground: var(--semantic-color-on-utility-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-background: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-background: var(--semantic-color-on-surface-subtle);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-foreground: var(--semantic-color-on-utility-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-disabled-color-background: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-enabled-color-background: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-enabled-color-foreground: var(--semantic-color-on-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-size-height: var(--semantic-size-xhalf);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-size-width: var(--semantic-size-xhalf);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin stop-inverse {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-background: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-background: var(--semantic-color-on-surface-subtle-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-foreground: var(--semantic-color-on-utility-base-inverse);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin track {
+    /** @deprecated This token is no longer available in Figma (2024-11-26T23:32:10.781Z) */
+    --ds-range-selector-default-color-background: var(--semantic-color-utility-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-26T23:32:10.781Z) */
+    --ds-range-selector-default-color-foreground: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-disabled-color-background: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-enabled-color-background: var(--semantic-color-tertiary-container-base);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-default-enabled-color-foreground: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-background: var(--semantic-color-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-foreground: var(--semantic-color-on-disabled-base);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-background: var(--semantic-color-on-surface-divider);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-foreground: var(--semantic-color-utility-base);
+    /** @deprecated This token is no longer available in Figma (2024-11-26T23:32:10.781Z) */
+    --ds-range-selector-inverse-color-background: var(--semantic-color-utility-container-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-11-26T23:32:10.781Z) */
+    --ds-range-selector-inverse-color-foreground: var(--semantic-color-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-disabled-color-background: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-enabled-color-background: var(--semantic-color-tertiary-container-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-inverse-enabled-color-foreground: var(--semantic-color-utility-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-radius-border: var(--semantic-radius-max);
+    /** @deprecated This token is no longer available in Figma (2024-12-08T22:09:19.921Z) */
+    --ds-range-selector-size-bar-height: var(--semantic-size-x1);
+}
+
+/** @deprecated This mixin is no longer available in Figma */
+@mixin track-inverse {
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-background: var(--semantic-color-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-disabled-color-foreground: var(--semantic-color-on-disabled-base-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-background: var(--semantic-color-on-surface-divider-inverse);
+    /** @deprecated This token is no longer available in Figma (2025-01-17T10:06:15.448Z) */
+    --ds-range-selector-enabled-color-foreground: var(--semantic-color-utility-base-inverse);
+}

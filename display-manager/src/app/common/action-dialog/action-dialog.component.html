@@ -1,0 +1,26 @@
+<div class="modern-dialog__wrapper">
+    <div class="modern-dialog__header">{{ data?.dialog_title }}</div>
+    <div class="modern-dialog__body">
+        <ng-container *ngIf="isSaveMode; else genericMessage">
+            <div class="modern-dialog__save-event">
+              <div class="filename-section">
+                <span class="file-name-txt">File Name:</span>
+                <input type="text" id="fileName" [(ngModel)]="name" (ngModelChange)="onNameChange()" placeholder="Give Asset Name"
+                  class="file-name-control" [class.invalidName]="!isValidName || nameError" />
+              </div>
+              <div class="save-info" *ngIf="nameError || !isValidName">
+                <img class="info-icon" [src]="data.infoErrorIcon" />
+                <span id="saveFileErrorText" class="fileName-error-text">
+                  <span *ngIf="!isValidName">{{ manualConstants.fine_name_error }}</span>
+                  <span *ngIf="isValidName && nameError">{{ manualConstants.fine_name_exists }}</span>
+                </span>
+              </div>
+            </div>
+          </ng-container>
+        <ng-template #genericMessage><span [innerHTML]="data?.dialog_msg"></span></ng-template>        
+    </div>
+    <div class="modern-dialog__footer">      
+        <button id="btn-cancel" class="modern-dialog__action-btn modern-dialog__action-btn--cancel" (click)="cancel();">{{ data?.dialog_btn_cancel }}</button>
+        <button id="btn-submit" class="modern-dialog__action-btn modern-dialog__action-btn--save" [ngClass]="{ 'save-disable': isSaveMode && (!isValidName || nameError) }" [disabled]="isSaveMode && (!isValidName || nameError)" (click)="confirmAction();">{{ data?.dialog_btn_submit }}</button>        
+    </div>
+</div>

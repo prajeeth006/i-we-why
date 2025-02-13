@@ -1,0 +1,57 @@
+# =========================
+# Editors
+# =========================
+.vs
+.idea
+.vscode/*
+!.vscode/settings.json
+
+# =========================
+# Common folders and files
+# =========================
+.angular
+.sonarqube
+dist/
+node_modules/
+tmp
+.jest-cache
+Folder.DotSettings.user
+
+# =========================
+# yarn
+# =========================
+/yarn-error.log
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# =========================
+# Nx
+# =========================
+migrations.json
+validate-workspace-report.*.json
+validate-workspace-report.json
+.env
+
+**/.DS_Store
+.nx
+/.code-pushup/
+measures/
+
+storybook-static
+
+# =========================
+# Playwright
+# =========================
+.auth
+**/test-results
+playwright-report
+.lambdatest
+*.log
+/coverage/
+
+vite.config.*.timestamp*

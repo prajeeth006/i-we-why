@@ -1,0 +1,9 @@
+@import '../../../../../../dark-theme-global-style/all-variables';
+
+.header-current-price,
+.header-plus1-market {
+    width: 240px;
+    @include breakpoint(multidesktop) {
+        width: 120px;
+    }
+}

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Vanilla framework support for distributed caching using SQL Server In-Memory OLTP (a.k.a. Hekaton).</Description>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Frontend.Vanilla.Core\Frontend.Vanilla.Core.csproj"/>
+    </ItemGroup>
+</Project>

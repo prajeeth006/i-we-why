@@ -1,0 +1,8 @@
+{
+    "Currencies": [
+        {
+            "id": "EUR",
+            "name": "Euro"
+        }
+    ]
+}

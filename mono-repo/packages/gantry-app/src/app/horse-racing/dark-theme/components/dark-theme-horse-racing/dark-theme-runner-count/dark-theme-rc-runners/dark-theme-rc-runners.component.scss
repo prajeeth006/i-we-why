@@ -1,0 +1,336 @@
+@import '../../../../../../../dark-theme-global-style/all-variables';
+
+.header-current-price {
+    width: 234px;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+    }
+}
+
+.horse-table {
+    margin: $spacing-20 0 0;
+
+    @include breakpoint(multidesktop) {
+        margin: calc($spacing-20 / 2) 0 0;
+    }
+
+    li {
+        font-size: $font-64;
+
+        @include breakpoint(multidesktop) {
+            font-size: $font-32;
+        }
+
+        .selection-number {
+            font-style: normal;
+            font-weight: $fw-bold;
+            height: 80px;
+            line-height: normal;
+            text-transform: capitalize;
+            width: 90px;
+
+            @include flex-center;
+
+            @include breakpoint(multidesktop) {
+                width: 45px;
+                height: 40px;
+            }
+        }
+
+        .selection-image {
+            @include flex-center;
+
+            margin-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 12px;
+            }
+
+            img {
+                height: 80px;
+                object-fit: contain;
+                width: 80px;
+
+                @include breakpoint(multidesktop) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+
+        .selection-name {
+            @include flex-container(flex-start, center);
+
+            font-weight: $fw-bold;
+            padding-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                padding-left: 12px;
+            }
+        }
+
+        .selection-content {
+            margin-left: 24px;
+
+            @include breakpoint(multidesktop) {
+                margin-left: 12px;
+            }
+
+            .selection-past-price {
+                @include flex-center;
+
+                background-color: $color-white;
+                color: $early-price-text;
+                font-size: $font-40;
+                font-weight: $fw-normal;
+                height: 56px;
+                margin-right: $spacing-20;
+                width: 160px;
+
+                @include breakpoint(multidesktop) {
+                    font-size: $font-20;
+                    height: 28px;
+                    width: 80px;
+                    margin-right: 10px;
+                }
+            }
+
+            .selection-current-price,
+            .selection-plus1-market {
+                @include flex-center;
+
+                font-weight: $fw-bold;
+                height: 84px;
+
+                @include breakpoint(multidesktop) {
+                    height: 42px;
+                }
+            }
+
+            .selection-plus1-market {
+                &.betting-bg {
+                    background: $betting-bg;
+                }
+            }
+
+            .selection-current-price {
+                background-color: $color-white;
+                color: $early-price-text;
+            }
+
+            .selection-plus1-market {
+                background-color: $top-2-finish-bg;
+                color: $color-white;
+                margin-left: $spacing-20;
+
+                @include breakpoint(multidesktop) {
+                    margin-left: calc($spacing-20 / 2);
+                }
+            }
+
+            .favorite-box {
+                background-color: $theme-yellow;
+            }
+        }
+    }
+
+    &.rcTemplate12 {
+        // $columns, $rows, $row-gap, $column-gap
+        @include grid-colum-flow(2, 6, 0, 20px);
+    }
+
+    &.rcTemplate14 {
+        @include grid-colum-flow(2, 7, 0, 20px);
+    }
+
+    &.rcTemplate16 {
+        @include grid-colum-flow(2, 8, 0, 20px);
+    }
+
+    &.rcTemplate20 {
+        @include grid-colum-flow(2, 10, 0, 20px);
+    }
+
+    &.rcTemplate10,
+    &.rcTemplate12,
+    &.rcTemplate14,
+    &.rcTemplate16,
+    &.rcTemplate20 {
+        li {
+            font-size: $font-44;
+
+            @include breakpoint(multidesktop) {
+                font-size: $font-22;
+            }
+
+            @include breakpoint(multidesktophalf) {
+                font-size: $font-32;
+            }
+
+            .selection-content {
+                .selection-current-price,
+                .selection-plus1-market {
+                    height: 70px;
+
+                    @include breakpoint(multidesktop) {
+                        height: 35px;
+                    }
+
+                    @include breakpoint(multidesktophalf) {
+                        height: 42px;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint(multidesktophalf) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &.rcTemplate12,
+    &.rcTemplate14,
+    &.rcTemplate16,
+    &.rcTemplate20 {
+        li {
+            .selection-content {
+                margin-left: 0px;
+
+                @include breakpoint(multidesktop) {
+                    margin-left: 0px;
+                }
+
+                &::before {
+                    content: none;
+
+                    @include breakpoint(multidesktophalf) {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+
+    &.rcTemplate16.adjusted-scroll {
+        .autoScroll {
+            @include breakpoint(multidesktophalf) {
+                max-height: 238px;
+            }
+        }
+    }
+
+    .racingpost-image {
+        width: 280px;
+        height: 50px;
+        margin-right: auto;
+        display: flex;
+        background: $color-black;
+        border-radius: 100px;
+        padding: 16px 30px;
+
+        @include breakpoint(multidesktop) {
+            width: 140px;
+            height: 25px;
+            padding: 8px 15px;
+        }
+
+        img {
+            width: 220px;
+            height: auto;
+
+            @include breakpoint(multidesktop) {
+                width: 110px;
+            }
+        }
+    }
+
+    .autoScroll {
+        max-height: 292px;
+        overflow: hidden;
+        padding-bottom: 1px;
+        scroll-behavior: smooth;
+
+        @include breakpoint(multidesktop) {
+            max-height: 146px;
+        }
+
+        @include breakpoint(multidesktophalf) {
+            max-height: 280px;
+        }
+
+        .ng-trigger-autoScroll {
+            backface-visibility: hidden;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+    }
+
+    .autoScroll::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.places {
+    min-width: 234px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        min-width: 117px;
+    }
+}
+
+.wins {
+    width: 234px;
+    text-align: center;
+
+    @include breakpoint(multidesktop) {
+        width: 117px;
+    }
+}
+
+// Scrolling Assets
+.racing__scrolling-assets {
+    display: grid;
+    height: 100%;
+}
+
+.post-pic-section {
+    @include flex-container(flex-start, center);
+
+    align-self: end;
+    background: $color-white;
+    border-radius: 12.5px;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 20px;
+    height: 170px;
+    margin: 10px 0 20px;
+    overflow: hidden;
+    padding: 19px 86px 16px;
+
+    &__logo {
+        line-height: 0;
+
+        img {
+            height: 24.9px;
+            object-fit: cover;
+            width: 293px;
+        }
+    }
+
+    &__content {
+        color: $color-black;
+        font-size: $font-28;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        max-height: 90px;
+        text-align: center;
+
+        .spotlightHorseName {
+            color: $color-red;
+        }
+    }
+}

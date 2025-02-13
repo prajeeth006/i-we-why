@@ -1,0 +1,300 @@
+
+@use '../../../shared-css/helpers/mixins' as helper;
+@use '../../../shared-css/abstracts' as abstract;
+@import '../../../shared-css/variables.scss';
+@import '../../../shared-css/carosuel-modal-popup-styles.scss';
+
+
+::ng-deep .cdk-overlay-container {
+    
+    .mat-mdc-select-panel{
+        min-width: 100%;
+        padding: 0px;
+    }
+    
+    .mat-mdc-option.mdc-list-item {
+        min-height: 42px;
+        padding: 0 16px;
+        font-size: $txt-sm-font-size;
+        line-height: 42px;
+        letter-spacing: normal;
+    }
+
+    .mat-mdc-option .mat-pseudo-checkbox-minimal {
+        display: none;
+    }
+
+    .mdc-list-item--selected {
+        --mat-option-selected-state-layer-color: #0000001f;
+    }
+}
+
+:host::ng-deep .sequence-preset-carousel {
+
+    .mat-mdc-form-field .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex,
+    .mdc-text-field {
+        width: 100%;
+    }
+
+    .mdc-line-ripple,
+    .mdc-line-ripple--active,
+    .mdc-line-ripple--deactivating {
+        display: none;
+    }
+
+    .mat-mdc-form-field-focus-overlay {
+        background-color: $white;
+    }
+
+    .mdc-text-field--filled,
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: $white;
+        border: 1px solid $border-grey-2;
+        border-radius: 3px;
+        color: $text-black-color;
+        padding-left: 15px;
+        padding-right: 11px;
+        height: 30px;
+    }
+
+    .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+        padding: 7px 0;
+    }
+
+    .mat-mdc-form-field-flex {
+        @include helper.font-styles($txt-sm-font-size, $fw-regular, 0.25px, 16px);
+        text-align: left;
+    }
+
+    .mat-mdc-select {
+        padding-top: 2px;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 28px;
+            background: $border-grey-2;
+            top: 0px;
+            right: 20px;
+        }
+    }
+
+    .mat-mdc-select-trigger .mat-mdc-select-value {
+        font-size: 12px;
+    }
+
+    .search-container {
+
+        .mdc-text-field--filled,
+        .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+            padding-left: 7px;
+        }
+
+        .mat-mdc-form-field-icon-prefix>.mat-icon {
+            padding: 0 3px 0 0;
+            color: $search-icon;
+        }
+    }
+
+    .preset-content {
+        position: relative;
+
+        .mat-mdc-form-field-subscript-wrapper {
+            bottom: 0;
+            display: block;
+            position: absolute;
+
+            .mat-mdc-form-field-error-wrapper {
+                padding: 0;
+            }
+        }
+    }
+
+    .mat-mdc-select-arrow {
+        width: 8px;
+        height: 4px;
+    }
+
+    .mat-mdc-select-arrow svg {
+        fill: $text-black-color;
+    }
+
+    .mat-mdc-option .mat-pseudo-checkbox-minimal {
+        display: none;
+    }
+
+    .mdc-list-item--selected {
+        --mat-option-selected-state-layer-color: #0000001f;
+    }
+
+    .preset-select {
+        .mat-mdc-select-value {
+            width: calc(100% - 15px);
+        }
+
+        .mat-mdc-select-arrow-wrapper {
+            padding-left: 15px;
+        }
+    }
+}
+
+.carousel-content{
+
+    &__grid{
+
+        .table-wrapper {
+            height: 520px;
+        }
+        
+        .search-container {
+            background-color: $background-grey-color;
+            margin-top: 20px;
+            padding: 20px 20px 10px 20px;
+            border-radius: 8px 8px 0 0;
+
+            .mat-mdc-form-field {
+                width: 100%;
+            }
+
+            .mat-mdc-form-field-icon-prefix {
+                padding: 0 7px 0 0;
+            }
+
+            .mat-mdc-form-field-icon-prefix>.mat-icon {
+                padding: 0;
+            }
+        }
+        
+        .tb-header {
+            background-color: $background-grey-color;
+            text-transform: uppercase;
+            height: 24px;
+            color: $text-black-color;
+            @include helper.font-styles($txt-sm-font-size, $fw-bold, 1.25px, 14.06px);
+            margin-bottom: 10px;
+        }
+        
+        .th-row {
+            @include helper.flex-container(space-between, center);
+            column-gap: 20px;
+        }
+        
+        @include horse-racing-columns;
+        
+        .tb-row {
+            background-color: $white;
+            @include helper.flex-container(space-between, center);
+            column-gap: 20px;
+        }
+        
+        .tb-body {
+            height: 396px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            @include helper.customScrollBar;
+            margin: 0px -20px;
+        
+            &::-webkit-scrollbar {
+                width: 6px;
+                margin: -45px;
+            }
+        
+            .tb-row {
+                height: 35px;
+                border-bottom: solid 1px $body-color-p2-lighter-bg;
+                color: $color-black-light;
+                @include helper.font-styles($txt-sm-font-size, $fw-regular, .25px, 16px);
+                margin: 0 20px;
+                position: relative;
+        
+                &.resulted-row {
+                    opacity: 50%;
+                    &::before {
+                        @include helper.overlay-parent(5);
+                        background: transparent;
+                        user-select: none;
+                    }
+                }
+        
+                .number {
+                    position: relative;
+        
+                    &::after {
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $white;
+                        bottom: -11px;
+                        left: 0;
+                        content: '';
+                    }
+                }
+        
+                &:hover {
+                    background-color: $body-color-p2-lighter-bg;
+        
+                    .number::after {
+                        background-color: $body-color-p2-lighter-bg;
+                        bottom: -10px;
+                    }
+                }
+        
+                &:last-child {
+                    border-bottom: none;
+                }
+        
+                .close {
+                    cursor: pointer;
+        
+                    &.disabled {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        .select-preset {
+            @include helper.flex-container(flex-start, center);
+            border-radius: 2px;
+            // border: 1px dashed $text-black-color;
+            margin: 20px 0;
+            // height: 521px;
+            background: $white;
+            color: $text-black-color;
+            @include helper.font-styles($txt-sm-font-size, $fw-bold, 0.4px, 14.52px);
+
+            .select-preset-style {
+                @include helper.flex-container(center, center);
+                width: 100%;
+            }
+        }
+
+        .message {
+            background-color: $light-grey-bg-6;
+            margin-top: auto;
+            padding: 8px 0;
+            border-radius: 5px;
+            color: $faded-black;
+            @include helper.flex-container(center, center);
+            @include helper.font-styles($txt-sm-font-size, $fw-bold, 0.4px, 14.06px);
+
+            span {
+                font-weight: $fw-regular;
+                margin-left: 5px;
+            }
+        }
+    }
+    
+    &__empty{
+        @extend .carousel-body-content-table;
+    }
+}
+
+.preview-item-section {
+    @include horse-racing-columns;
+    background-color: $body-color-p2-lighter-bg;
+    overflow: hidden;
+}

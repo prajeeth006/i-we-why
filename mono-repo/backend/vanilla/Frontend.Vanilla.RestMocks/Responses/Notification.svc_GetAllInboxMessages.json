@@ -1,0 +1,2183 @@
+{
+    "messageDetails": [
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516169492363)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4065426_bz_jumio_bwin77_151616949111",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/2102713A-67AA-4C08-B043-AE809EDE09F0",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "12.25"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{BlackJack=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "12.25_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "12.25_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "100"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "12.25_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "12.25"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "12.25"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "100"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "100"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063870"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "7"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "12.25_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "BLACKJACK5000"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "100"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{BlackJack=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4065426"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "12.25_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "17/01/2018 07:11 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "17/01/2018 07:11 AM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119302222",
+            "messageSource": "BONUS",
+            "messageStatus": "UNREAD",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/034640CE-548D-4583-B2DF-52D2E41385E4",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "[Book Of Horus=ivybookofhorus]"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Book Of Horus=ivybookofhorus}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119333333",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "PROMO_TARGET",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/3C70E041-2272-4330-9191-76F0640C3079",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119334444",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/4D11EA59-11A2-4A78-914E-78EEBA88F4A1",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119335555",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/1271A0C1-BB3E-4441-90C9-6ADD88343E16",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119336666",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/23d3c01a-88de-4297-9b7c-8838181f4b8a",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119337777",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/23d3c01a-88de-4297-9b7c-8838181f4b8a",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1519139302222",
+            "messageSource": "BONUS",
+            "messageStatus": "READ",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_NEW",
+            "templateId": "/id/cf9148da-b6e5-44c5-820b-d6a9a2b7eaa0",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        },
+        {
+            "campaignMetaData": null,
+            "createdDate": "/Date(1516119331815)/",
+            "eligibleProducts": ["CASINO"],
+            "id": "B_4064438_bz_jumio_bwin77_1516119338888",
+            "messageSource": "BONUS",
+            "messageStatus": "UNREAD",
+            "messageType": "BONUS_OFFER",
+            "priority": 0,
+            "sourceStatus": "OFFER_EXPIRED",
+            "templateId": "/id/23d3c01a-88de-4297-9b7c-8838181f4b8a",
+            "templateMetaData": [
+                {
+                    "Key": "#TNC_ACCPETANCE_FLAG#",
+                    "Value": null
+                },
+                {
+                    "Key": "#IS_TNC_APPLICABLE_FOR_FE#",
+                    "Value": "YES"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_TIMEZONE#",
+                    "Value": "CET"
+                },
+                {
+                    "Key": "#APPLICABLE_NONMOBILE_CHANNELS#",
+                    "Value": "DESKTOPWEB,DOWNLOADCLIENT"
+                },
+                {
+                    "Key": "#BONUS_APPLICABLE_CHANNEL#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#PRODUCT#",
+                    "Value": "Casino"
+                },
+                {
+                    "Key": "#GAME_ACTIVITY_TYPE#",
+                    "Value": "WG"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#CLAIM_PERIOD#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#STATIC_MULTIPLIER#",
+                    "Value": "STATIC_MULTIPLIER_BONUS"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#BONUS_VALUE_IN_PLAYER_CURRENCY#",
+                    "Value": "6.12"
+                },
+                {
+                    "Key": "#STATIC_RECOVERY#",
+                    "Value": "STATIC_RECOVERY_BONUS"
+                },
+                {
+                    "Key": "#FORMAT_CURRENCY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#PAY_MODES#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#SOURCE_REFERENCE_ID#",
+                    "Value": "123"
+                },
+                {
+                    "Key": "#RELEASE_CRITERIA_STATIC_KEY#",
+                    "Value": "STATIC_RR,STATIC_WG_CASINO"
+                },
+                {
+                    "Key": "#MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#RESTRICTION_FULLFILL_DAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MINIMUM_DEPOSIT#",
+                    "Value": "0_$"
+                },
+                {
+                    "Key": "#TNC_TEMPLATE#",
+                    "Value": "POST_TNC_CASINO_RR_FB_OPTIN_WG"
+                },
+                {
+                    "Key": "#BONUS_RESTRICTION_FULLFILLDAYS#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#BONUS_MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#NO_OF_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#REST_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#BONUS_MIN_ODDS#",
+                    "Value": null
+                },
+                {
+                    "Key": "#APPLICABLE_ALL_PRODUCTS#",
+                    "Value": "STATIC_CASINO"
+                },
+                {
+                    "Key": "#OFFER_ID#",
+                    "Value": "159063627"
+                },
+                {
+                    "Key": "#EXPIRY_TAKE_BACK#",
+                    "Value": "BONUS"
+                },
+                {
+                    "Key": "#MINIMUM_DEPOSIT#",
+                    "Value": "0"
+                },
+                {
+                    "Key": "#BONUS_TYPE#",
+                    "Value": "6"
+                },
+                {
+                    "Key": "#FORMAT_DATE_OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM_CET"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_REST_ACTIVITY_VALUE#",
+                    "Value": "1.22_$"
+                },
+                {
+                    "Key": "#OFFER_EXPIRY_DATE#",
+                    "Value": "01/02/2019 05:59 AM CET"
+                },
+                {
+                    "Key": "#BRAND#",
+                    "Value": "BWINCOM"
+                },
+                {
+                    "Key": "#CASINO_ACTIVITY_VALUE#",
+                    "Value": "1.22"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_MAXIMUM_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#APPLICABLE_MOBILE_CHANNELS#",
+                    "Value": "MOBILEAPP,MOBILEWEB"
+                },
+                {
+                    "Key": "#BONUS_CODE#",
+                    "Value": "INCIDENT500"
+                },
+                {
+                    "Key": "#NO_OF_PARTIAL_RR_SLABS#",
+                    "Value": "1"
+                },
+                {
+                    "Key": "#BONUS_TIME_TO_CLAIM#",
+                    "Value": "30"
+                },
+                {
+                    "Key": "#APPLICABLE_NON_MOBILE_GAMES#",
+                    "Value": "{Slots=ALL=ALL}"
+                },
+                {
+                    "Key": "#BONUS_ID#",
+                    "Value": "4064438"
+                },
+                {
+                    "Key": "#APPLICABLE_CHANNELS#",
+                    "Value": "ALL"
+                },
+                {
+                    "Key": "#STATIC_RESTED#",
+                    "Value": "STATIC_RESTED_BONUS"
+                },
+                {
+                    "Key": "#BONUS_VALUE_TYPE#",
+                    "Value": "FIXED"
+                },
+                {
+                    "Key": "#FORMAT_EMPTY_CURRENCY#",
+                    "Value": "USD"
+                },
+                {
+                    "Key": "#FORMAT_AMOUNT_BONUS_VALUE#",
+                    "Value": "6.12_$"
+                },
+                {
+                    "Key": "#INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                },
+                {
+                    "Key": "#FORMAT_DATE_INBOX_MESSAGE_CREATED_DATE#",
+                    "Value": "16/01/2018 05:15 PM_CET"
+                }
+            ]
+        }
+    ],
+    "newMessageCount": 0
+}

@@ -1,0 +1,64 @@
+<div class="banner">
+    <div id="banner" class="banner-title-block">
+        <div class="banner-title-block-left">
+            <div id="leadTitle" class="lead-title">{{ leadTitle }}</div>
+            <div class="main-title-row">
+                <div id="mainTitle" class="main-title">
+                    {{ title | uppercase }}<span *ngIf="result"> {{ result | uppercase }} </span>
+                </div>
+                <div id="mainTimer" class="main-timer" *ngIf="timer">
+                    <span> {{ timer | date: 'hh:mm a' }} </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-title-block-right">
+            <div *ngIf="imageRight"><img class="h-logo" [retrySrc]="imageRight" height="50vh" /></div>
+            <div *ngIf="nonImageTextRight" class="rightText">{{ nonImageTextRight }}</div>
+        </div>
+
+        <div class="meeting-result-betting-market" *ngIf="!!placePot || !!quadPot || !!jackPot">
+            <div *ngIf="jackPot" class="market-row">
+                <span class="market-text">{{ contentParameter?.Jackpot }}:</span>
+                <div class="market-value">
+                    {{ jackPotIsNum(jackPot) ? (jackPot | fixedDecimal | currency: 'GBP' : true) : (jackPot | uppercase) }}
+                </div>
+            </div>
+            <div *ngIf="placePot" class="market-row">
+                <span class="market-text">{{ contentParameter?.Placepot }}:</span>
+                <div class="market-value">
+                    {{
+                        !!placePot
+                            ? (placePot | fixedDecimal) == DividendValue
+                                ? contentParameter?.NotWon
+                                : (placePot | fixedDecimal | currency: 'GBP' : true)
+                            : ''
+                    }}
+                </div>
+            </div>
+            <div *ngIf="quadPot" class="market-row">
+                <span class="market-text">{{ contentParameter?.Quadpot }}:</span>
+                <div class="market-value">
+                    {{
+                        !!quadPot
+                            ? (quadPot | fixedDecimal) == DividendValue
+                                ? contentParameter?.NotWon
+                                : (quadPot | fixedDecimal | currency: 'GBP' : true)
+                            : ''
+                    }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner-sub-title" *ngIf="subtitleLeft || subtitleRight">
+        <ng-content select="[sub-title-container]"></ng-content>
+        <ng-container class="div">
+            <div *ngIf="subtitleLeft" id="subtitlelefttext" class="banner-sub-title-left">{{ subtitleLeft }}</div>
+            <div *ngIf="subtitleRight" class="banner-sub-title-right">
+                <span id="headerrighttext" id="subtitlerighttext" class="subtitle-text">{{ subtitleRight | uppercase }}</span>
+            </div>
+        </ng-container>
+    </div>
+
+    <ng-content></ng-content>
+</div>

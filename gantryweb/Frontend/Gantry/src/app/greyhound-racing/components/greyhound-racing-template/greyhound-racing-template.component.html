@@ -1,0 +1,12 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+        <ng-container *ngIf="vm.isAnyEventResulted">
+            <gn-greyhound-result></gn-greyhound-result>
+        </ng-container>
+        <ng-container *ngIf="!vm.isAnyEventResulted">
+            <gn-greyhound-runners></gn-greyhound-runners>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<gn-error [errorMessage$]="errorMessage$"></gn-error>

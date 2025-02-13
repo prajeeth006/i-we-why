@@ -1,0 +1,21 @@
+<span class="ds-btn-container">
+    @if (loading && !loadingTemplate) {
+        <i class="ds-button-loader"></i>
+    }
+    <ng-content select="[slot=start]" />
+    <span class="ds-btn-text" [ngClass]="{ 'ds-btn-txt-wrap': wrapText }">
+        @if (loading && loadingTemplate) {
+            <ng-container *ngTemplateOutlet="loadingTemplate" />
+        } @else {
+            <ng-content />
+        }
+    </span>
+    <ng-content select="[slot=end]" />
+</span>
+
+<!-- subtext only in large supported -->
+@if (size === 'large') {
+    <span class="ds-btn-sub-text" [ngClass]="{ 'ds-btn-txt-wrap': wrapText }">
+        <ng-content select="[slot=subtext]" />
+    </span>
+}

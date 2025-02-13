@@ -1,0 +1,17 @@
+@import '../../../../../../../../src/dark-theme-global-style/all-variables';
+
+.totalframes-betting {
+    margin-top: 28px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 14px;
+    }
+}
+
+.draw-totalframes-betting {
+    margin-top: 88px;
+
+    @include breakpoint(multidesktop) {
+        margin-top: 44px;
+    }
+}

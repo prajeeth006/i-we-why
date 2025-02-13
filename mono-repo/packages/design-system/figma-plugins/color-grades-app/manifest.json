@@ -1,0 +1,16 @@
+{
+    "name": "ColorGrades",
+    "id": "1338837554091392457",
+    "api": "1.0.0",
+    "main": "code.js",
+    "capabilities": [],
+    "enableProposedApi": false,
+    "editorType": ["figma"],
+    "ui": "ui.html",
+    "networkAccess": {
+        "allowedDomains": [
+            "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
+            "https://html2canvas.hertzen.com/dist/html2canvas.js"
+        ]
+    }
+}

@@ -1,0 +1,88 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="!(errorMessage$ | async)">
+        <ng-container *ngIf="!(fillerPageMessage$ | async)">
+            <img class="avr-bg-image" [retrySrc]="vm.backgroundImageUrl">
+            <div [ngClass]="{'motor-race':vm.avrEventType == isMotorRace}">
+                <gn-base-page>
+                    <ng-container header-content>
+                        <gn-avr-banner [leadTitle]="vm.staticContent?.contentParameters?.Title" [title]="vm.eventName"
+                            [countDownTitle]="vm.staticContent?.contentParameters?.CountdownToOff"
+                            [countDownValue$]="vm.counterValue$" [imageRight]="vm?.brandImageUrl" [distance]="vm.distance"
+                            [runnerCount]="!!vm.runnerCount ? (vm.runnerCount + ' ' + vm.staticContent?.contentParameters?.Runners) : ''"
+                            [eachWay]="!!vm.eachWay ? (vm.staticContent?.contentParameters?.EachWay + ' ' + vm.eachWay) : ''">
+                        </gn-avr-banner>
+                    </ng-container>
+                    <ng-container body-content *ngIf="vm.avrEventType== isMotorRace; then motorRace else remainingRace">
+                    </ng-container>
+    
+                    <ng-template #motorRace>
+                        <gn-avr-motor-preamble [result]="vm"></gn-avr-motor-preamble>
+                    </ng-template>
+                    <ng-template #remainingRace>
+                        <ul class="avr-preamble-table">
+                            <div *ngIf='scrollAtTop' (wheel)="$event.preventDefault()">
+                                <div class="autoScroll" [style.maxHeight]="autoScrollHeight + 'px'">
+                                    <div [@autoScroll]="{value:animationState, params: { nextPosition : nextPosition }}"
+                                        (@autoScroll.done)="onEnd($event)">
+                                        <li #scrollItem *ngFor="let runner of avrAutoScrollRunners">
+                                            <ng-template *ngTemplateOutlet="tplResultsTable; context: {$implicit: runner, vm: vm}">
+                                            </ng-template>
+                                        </li>
+                                    </div>
+                                </div>
+                                <li *ngFor="let runner of avrFixedRunnersResult">
+                                    <ng-template *ngTemplateOutlet="tplResultsTable; context: {$implicit: runner, vm: vm}">
+                                    </ng-template>
+                                </li>
+                            </div>
+    
+                            <div *ngIf='!scrollAtTop' (wheel)="$event.preventDefault()">
+                                <li *ngFor="let runner of avrFixedRunnersResult"
+                                    [ngClass]="avrFixedRunnersResult?.length <=6 && 'largeresult'">
+                                    <ng-template *ngTemplateOutlet="tplResultsTable; context: {$implicit: runner, vm: vm}">
+                                    </ng-template>
+                                </li>
+    
+                                <div class="autoScroll" [style.maxHeight]="autoScrollHeight + 'px'">
+                                    <div [@autoScroll]="{value:animationState, params: { nextPosition : nextPosition }}"
+                                        (@autoScroll.done)="onEnd($event)">
+                                        <li #scrollItem *ngFor="let runner of avrAutoScrollRunners">
+                                            <ng-template *ngTemplateOutlet="tplResultsTable; context: {$implicit: runner, vm: vm}">
+                                            </ng-template>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+    
+                        <ng-template #tplResultsTable let-runner let-vm="vm">
+                            <div class="table-item-1 items border-dark">
+                                <img *ngIf="!!runner?.imageSourceUrl" [retrySrc]="runner?.imageSourceUrl" height="50px" />
+                            </div>
+                            <div class="table-item-2 items border-dark table-center" [ngClass]="vm.avrEventType== isHorseRace? 'ishorse' : 'isdog' ">
+                                <span *ngIf="!!runner.runnerNumber && (vm.avrEventType== isHorseRace)">
+                                    {{ runner.runnerNumber }}
+                                </span>
+                            </div>
+                            <div class="table-item-3 items border-dark">
+                                <span *ngIf="!!runner.runnerName">
+                                    {{ runner.runnerName | uppercase }}
+                                </span>
+                            </div>
+                            <div class="table-item-4 items border-dark table-left">
+                                <span *ngIf="!!runner.price" class="badge"
+                                    [ngClass]="runner.isFavourite? 'favourite-class': 'regular-class'">
+                                    {{ runner.price | marketPriceTransform }}
+                                </span>
+                            </div>
+                        </ng-template>
+                        <div *ngIf="!(vm.counterValue$ | async) && vm.isResultedOrOff" class="off-event">
+                            <span id="offEvent">OFF</span>
+                        </div>
+                    </ng-template>
+    
+                </gn-base-page>
+            </div>
+        </ng-container>
+    </ng-container>
+</ng-container>

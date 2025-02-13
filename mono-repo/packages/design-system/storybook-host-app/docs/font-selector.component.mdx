@@ -1,0 +1,19 @@
+import { ArgTypes, Canvas, Controls, Meta } from '@storybook/blocks';
+
+import * as DsMyFontSelectorStories from '../src/lib/storybook-components/my-font-selector/font-selector.component.stories';
+
+<Meta title="Introduction/Font Selector" />
+
+## Documentation
+
+This component allows you to compare two different font families side-by-side. You can select each font family and, 
+if needed, overlay one font on top of the other to visually inspect their differences.
+
+## Configurations:
+
+For a basic comparison, select different font families for Font Family 1 and Font Family 2 with Overlap off.
+Enable Overlap to observe subtle differences in line height, width, and baseline positioning.
+
+<Canvas of={DsMyFontSelectorStories.FontSelector}></Canvas>
+
+<Controls of={DsMyFontSelectorStories.FontSelector} />

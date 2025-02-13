@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Frontend.TestWeb.Host.props" />
+</Project>
